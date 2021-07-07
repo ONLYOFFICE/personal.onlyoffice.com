@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "storybook": "start-storybook -p 8082 -s public"
   },
   "dependencies": {
