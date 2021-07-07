@@ -21,8 +21,6 @@ const Template = ({ ...args }) => {
   );
 };
 
-const types = ["primary", "secondary", "transparent"];
-
 export const Default = Template.bind({});
 Default.args = {
   label: "Some Label",

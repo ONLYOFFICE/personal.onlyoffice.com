@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import React from "react";
 import StyledForm from "./styled-form";
 
 const Form = (props) => {
