@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledButton from "./styled-button";
+import { useTheme } from "../theme-provider";
 
 const Button = ({ label, isDisabled, ...rest }) => {
+  const theme = useTheme();
   return (
-    <StyledButton disabled={isDisabled} {...rest}>
+    <StyledButton disabled={isDisabled} {...rest} theme={theme}>
       {label}
     </StyledButton>
   );

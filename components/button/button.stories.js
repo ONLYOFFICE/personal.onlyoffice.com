@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./";
+import { useTheme } from "../theme-provider";
 
 export default {
   title: "Components/Button",
