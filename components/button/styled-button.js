@@ -1,43 +1,64 @@
 import { styled } from "linaria/react";
+import { Base } from "../themes";
 
 const StyledButton = styled.button`
-  box-sizing: border-box;
+  overflow: ${(props) => props.theme.button.overflow};
+  text-overflow: ${(props) => props.theme.button.textOverflow};
+  white-space: ${(props) => props.theme.button.whiteSpace};
+  outline: ${(props) => props.theme.button.outline};
+  box-sizing: ${(props) => props.theme.button.boxSizing};
+  margin: ${(props) => props.theme.button.margin};
+  display: ${(props) => props.theme.button.display};
+  text-align: ${(props) => props.theme.button.textAlign};
+  text-decoration: ${(props) => props.theme.button.textDecoration};
+
   height: ${(props) => props.height};
   width: ${(props) => (props.scale ? "100%" : props.width)};
   min-width: ${(props) => props.minwidth};
 
-  border: ${(props) => props.type === "transparent" && "1px solid #444444"};
-  border-radius: 3px;
+  border: ${(props) =>
+    props.type === "transparent" && props.theme.button.borderTransparentType};
+  border-radius: ${(props) => props.theme.button.borderRadius};
 
-  font-size: 13px;
-  font-weight: 600;
-  font-family: "​Open Sans", sans-serif;
-  text-transform: uppercase;
+  font-size: ${(props) => props.theme.button.fontSize};
+  font-weight: ${(props) => props.theme.button.fontWeight};
+  text-transform: ${(props) => props.theme.button.textTransform};
+  line-height: ${(props) => props.theme.button.lineHeight};
 
-  color: ${(props) => (props.type === "transparent" ? "#444444" : "#ffffff")};
+  color: ${(props) =>
+    props.type === "transparent"
+      ? props.theme.button.textColorTransparentType
+      : props.type === "secondary"
+      ? props.theme.button.textColorSecondaryType
+      : props.theme.button.textColor};
 
-  padding: 21px 22px 22px 22px;
+  padding: 0 22px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  outline: none;
 
   background-color: ${(props) =>
     props.type === "primary"
-      ? "#ff6f3d"
+      ? props.theme.button.backgroundColorPrimary
       : props.type === "transparent"
       ? "transparent"
-      : "#444444"};
+      : props.theme.button.backgroundColorSecondary};
 
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
       props.type === "primary"
-        ? "#ff865c"
+        ? props.theme.button.backgroundColorPrimaryHover
         : props.type === "transparent"
         ? "transparent"
-        : "#555555"};
-    border-color: ${(props) => props.type === "transparent" && "#ff6f3d"};
-    color: ${(props) => (props.type === "transparent" ? "#ff6f3d" : "#ffffff")};
+        : props.theme.button.backgroundColorSecondaryHover};
+    border-color: ${(props) =>
+      props.type === "transparent" && props.theme.button.borderColorHover};
+    color: ${(props) =>
+      props.type === "transparent"
+        ? props.theme.button.textColorTransparentTypeHover
+        : props.type === "secondary"
+        ? props.theme.button.textColorSecondaryType
+        : props.theme.button.textColor};
   }
 
   &:disabled {
@@ -45,13 +66,21 @@ const StyledButton = styled.button`
     opacity: 0.3;
     background-color: ${(props) =>
       props.type === "primary"
-        ? "#ff6f3d"
+        ? props.theme.button.backgroundColorPrimary
         : props.type === "transparent"
         ? "transparent"
-        : "#444444"};
-    border-color: ${(props) => props.type === "transparent" && "#444444"};
-    color: ${(props) => (props.type === "transparent" ? "#444444" : "#ffffff")};
+        : props.theme.button.backgroundColorSecondary};
+    border-color: ${(props) =>
+      props.type === "transparent" && props.theme.button.borderColor};
+    color: ${(props) =>
+      props.type === "transparent"
+        ? props.theme.button.textColorTransparentType
+        : props.type === "secondary"
+        ? props.theme.button.textColorSecondaryType
+        : props.theme.button.textColor};
   }
 `;
+
+StyledButton.defaultProps = { theme: Base };
 
 export default StyledButton;
