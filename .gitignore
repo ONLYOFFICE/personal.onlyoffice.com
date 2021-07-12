@@ -36,3 +36,9 @@ node_modules
 
 # linaria cache
 /.linaria-cache/
+
+# gatsby cache 
+/.cache/
+
+# gatsby build bundle
+/public/

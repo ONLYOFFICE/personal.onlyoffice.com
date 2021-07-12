@@ -37,7 +37,7 @@ module.exports = ({ config }) => {
     new CopyPlugin({
       patterns: [
         {
-          from: "../public/images",
+          from: "../src/images",
           to: "./static/images",
           toType: "dir",
           context: "storybook-static",

@@ -5,6 +5,7 @@ import { useTheme } from "../theme-provider";
 
 const Button = ({ label, isDisabled, ...rest }) => {
   const theme = useTheme();
+
   return (
     <StyledButton disabled={isDisabled} {...rest} theme={theme}>
       {label}

@@ -10,7 +10,7 @@ You must have yarn and latest node.js installed.
 
 You need to install LTS version
 
-https://nodejs.org/ru/
+[Node.js](https://nodejs.org/)
 
 ### Installs yarn globally
 
@@ -30,10 +30,26 @@ yarn
 ### Run the development server:
 
 ```bash
-yarn dev
+yarn develop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
+
+```bash
+gatsby develop
+```
+
+Open [http://localhost:8000](http://localhost:8000) with your browser to see the result.
+
+### Build
+
+Run:
+
+```bash
+yarn build
+```
+
+to build website into /public folder with one page per locale automatically generated.
 
 ### Run the storybook
 
@@ -47,7 +63,7 @@ Open [http://localhost:8082](http://localhost:8082) with your browser to see the
 
 ### The stack we are using:
 
-- [Next.js](https://nextjs.org) - The React Framework for SSG and SSR
+- [Gatsbyjs](https://www.gatsbyjs.com) - The static site generator
 - [Linaria](https://linaria.dev) - Zero-Runtime CSS in JS
 - [Storybook](https://storybook.js.org) - Sandbox to build UIs
 
