@@ -2,13 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledButton from "./styled-button";
 import { useTheme } from "../theme-provider";
+import { ReactSVG } from "react-svg";
 
-const Button = ({ label, isDisabled, ...rest }) => {
+const Icon = ({ icon }) => {
+  return <ReactSVG src={icon} className="btn-with-icon" />;
+};
+
+const Button = ({ label, isDisabled, icon, ...rest }) => {
   const theme = useTheme();
 
   return (
-    <StyledButton disabled={isDisabled} {...rest} theme={theme}>
-      {label}
+    <StyledButton disabled={isDisabled} theme={theme} {...rest}>
+      {icon && <Icon icon={icon} />} {label}
     </StyledButton>
   );
 };
@@ -26,8 +31,8 @@ Button.propTypes = {
   height: PropTypes.string,
   /** Scale width of button to 100% */
   scale: PropTypes.bool,
-  /** Icon node element */
-  icon: PropTypes.node,
+  /** Icon src  */
+  icon: PropTypes.string,
   /** Button tab index */
   tabIndex: PropTypes.number,
   /** Accepts class */
