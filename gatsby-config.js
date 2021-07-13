@@ -10,6 +10,7 @@ module.exports = {
     "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -58,6 +59,12 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
       },
     },
   ],
