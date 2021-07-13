@@ -34,6 +34,22 @@ const Base = {
     textTransform: "uppercase",
     fontSize: "13px",
   },
+
+a: {
+    textColor: orangeMain,
+
+    padding: "0",
+    margin: "0",
+    display: "inline-box",
+    textAlign: "left",
+    hoverTextDecoration: "none",
+    textDecoration: "underline",
+    textTransform: "none",
+    lineHeight: "21px",
+    fontSize: "14px",
+    fontWeight: "400",
+    textOverflow: "none",
+  },
 };
 
 export default Base;
