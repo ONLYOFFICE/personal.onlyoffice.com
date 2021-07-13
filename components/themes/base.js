@@ -14,7 +14,7 @@ const Base = {
     backgroundColorPrimaryHover: orangeHover,
     backgroundColorSecondaryHover: grayHover,
 
-    borderTransparentType: `1px solid ${globalColors.grayMain}`,
+    borderTransparentType: `1px solid ${grayMain}`,
     borderRadius: "3px",
 
     overflow: "hidden",
@@ -32,10 +32,10 @@ const Base = {
     bottomVerticalAlign: "text-bottom",
     lineHeight: "13px",
     textTransform: "uppercase",
-    fontSize: "13px",
+    fontSize: "12px",
   },
 
-a: {
+  a: {
     textColor: orangeMain,
 
     padding: "0",
