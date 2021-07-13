@@ -5,7 +5,7 @@ Custom External Link.
 ### Usage
 
 ```js
-import Link from "../components/external-link";
+import ELink from "../components/external-link";
 ```
 
 ```jsx
