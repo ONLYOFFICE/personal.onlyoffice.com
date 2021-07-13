@@ -30,4 +30,5 @@ Default.args = {
   width: "auto",
   height: "56px",
   tabIndex: -1,
+  icon: "/static/images/google.react.svg",
 };

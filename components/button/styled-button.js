@@ -79,6 +79,11 @@ const StyledButton = styled.button`
         ? props.theme.button.textColorSecondaryType
         : props.theme.button.textColor};
   }
+
+  .btn-with-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
 `;
 
 StyledButton.defaultProps = { theme: Base };
