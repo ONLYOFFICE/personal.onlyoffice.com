@@ -25,7 +25,7 @@ export const Default = Template.bind({});
 Default.args = {
   label: "Test label",
   type: "text",
-  value: "Test input",
+  value: "",
   isDisabled: false,
   tabIndex: -1
 };

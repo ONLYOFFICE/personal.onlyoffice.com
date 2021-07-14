@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import StyledTextInput from "./styled-text-input";
 import StyledInput from "./styled-input";
@@ -18,19 +18,16 @@ const TextInput = ({
   ...rest}) => {
 
   const inputTextRef = useRef(null);
-
-  if(isAutoFocussed) {
+  
     useEffect(()=>{
-      inputTextRef.current.focus();
+      if(isAutoFocussed) inputTextRef.current.focus();
     }, []);
-  }
-
+  
   return (
             <StyledInput {...rest}>    
                 <StyledTextInput 
                   type={type} 
-                  className={className} 
-                  value={value}
+                  className={className}             
                   disabled={isDisabled}
                   isAutoFocussed={isAutoFocussed}
                   isSuccess={isSuccess}
