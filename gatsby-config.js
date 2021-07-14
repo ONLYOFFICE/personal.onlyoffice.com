@@ -1,3 +1,7 @@
+const languages = require("./src/helpers/languages");
+
+const availableLangs = languages.map((el) => el.shortKey);
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -48,7 +52,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: [`en`, `ru`],
+        languages: availableLangs,
         defaultLanguage: `en`,
         siteUrl: `https://personal.onlyoffice.com/`,
 

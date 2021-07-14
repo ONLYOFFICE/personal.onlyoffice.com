@@ -1,14 +1,7 @@
 import React from "react";
 
 
-class Error404Page extends React.PureComponent {
-render(){
-    return (
-        <div>
-            404!!!
-        </div>
+const NotFoundPage = () => <>Not Found</>;
 
-    );
-  }
-};
-export default Error404Page;
+export default NotFoundPage;
+
