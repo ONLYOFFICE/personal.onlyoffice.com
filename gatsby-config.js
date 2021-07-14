@@ -55,6 +55,7 @@ module.exports = {
         languages: availableLangs,
         defaultLanguage: `en`,
         siteUrl: `https://personal.onlyoffice.com/`,
+        redirect: false,
 
         i18nextOptions: {
           interpolation: {
