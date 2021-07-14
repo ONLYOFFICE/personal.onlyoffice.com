@@ -9,7 +9,7 @@ import Button from "../../components/button";
 
 const IndexPage = () => {
   const { t } = useTranslation();
-  console.log(languages, "--------");
+
   return (
     <Layout>
       <Head
