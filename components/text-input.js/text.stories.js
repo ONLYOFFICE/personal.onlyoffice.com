@@ -22,4 +22,10 @@ const Template = ({ ...args }) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  label: "Test label",
+  type: "text",
+  value: "Test input",
+  isDisabled: false,
+  tabIndex: -1
+};

@@ -1,13 +1,75 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledTextInput from "./styled-text-input";
+import StyledInput from "./styled-input";
+import Label from "./styled-label";
 
-const TextInput = (props) => {
-  return <StyledTextInput {...props} />;
+const TextInput = ({ 
+  className, 
+  type, 
+  DefaultValue, 
+  label, 
+  value,
+  isDisabled, 
+  ...rest}) => {
+  return (
+            <StyledInput {...rest}>    
+                <StyledTextInput 
+                  type={type} 
+                  className={className} 
+                  value={value}
+                  isDisabled={isDisabled}
+                  disabled={isDisabled}  
+                  {...rest} 
+                />
+                <Label defaultChecked={value !== ""}>{label}</Label>                  
+            </StyledInput>
+  );
 };
 
-TextInput.propTypes = {};
+TextInput.propTypes = {
+    /**   text color */
+    padding: PropTypes.string,
+    /**   text color */
+    width: PropTypes.string,
+    /**   text color */
+    height: PropTypes.string,
+    /**   text color */
+    color: PropTypes.string,
+    /**   text color */
+    colorHover: PropTypes.string,
+    /**   text font-size */
+    fontSize: PropTypes.string,
+    /**   text font-weight */
+    fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    /**  */
+    value: PropTypes.string.isRequired,
+    /**  */
+    label: PropTypes.string,
+    /**  */
+    type: PropTypes.oneOf(["email", "password", "text"]),
+    /**  */
+    name: PropTypes.string,
+    /** 100% */
+    scale: PropTypes.bool,
+    /**  */
+    isDisabled: PropTypes.bool,
+    /**  */
+    onChange: PropTypes.func,
+    /**  */
+    tabIndex: PropTypes.number,
+    /** Accepts id */
+    id: PropTypes.string,
+    /** Accepts class */
+    className: PropTypes.string,
+};
 
-TextInput.defaultProps = {};
+TextInput.defaultProps = {
+  label: "",
+  type: "text",
+  value: "",
+  isDisabled: false,
+  tabIndex: -1
+};
 
 export default TextInput;
