@@ -1,28 +1,45 @@
-import React from "react";
+import React, {useRef} from "react";
 import PropTypes from "prop-types";
 import StyledTextInput from "./styled-text-input";
 import StyledInput from "./styled-input";
 import Label from "./styled-label";
 
 const TextInput = ({ 
-  className, 
+  className,
+  id, 
   type, 
-  DefaultValue, 
   label, 
   value,
-  isDisabled, 
+  onChange,
+  isDisabled,
+  isAutoFocussed,
+  isSuccess,
+  isError, 
   ...rest}) => {
+
+  const inputTextRef = useRef(null);
+
+  if(isAutoFocussed) {
+    useEffect(()=>{
+      inputTextRef.current.focus();
+    }, []);
+  }
+
   return (
             <StyledInput {...rest}>    
                 <StyledTextInput 
                   type={type} 
                   className={className} 
                   value={value}
-                  isDisabled={isDisabled}
-                  disabled={isDisabled}  
+                  disabled={isDisabled}
+                  isAutoFocussed={isAutoFocussed}
+                  isSuccess={isSuccess}
+                  isError={isError}
+                  onChange={onChange}
+                  ref={inputTextRef}
                   {...rest} 
                 />
-                <Label defaultChecked={value !== ""}>{label}</Label>                  
+                <Label defaultChecked={Boolean(value)}>{label}</Label>                  
             </StyledInput>
   );
 };
@@ -55,6 +72,12 @@ TextInput.propTypes = {
     /**  */
     isDisabled: PropTypes.bool,
     /**  */
+    isAutoFocussed: PropTypes.bool,
+    /**  */
+    isSuccess: PropTypes.bool,
+    /**  */
+    isError: PropTypes.bool, 
+    /**  */
     onChange: PropTypes.func,
     /**  */
     tabIndex: PropTypes.number,
@@ -69,6 +92,9 @@ TextInput.defaultProps = {
   type: "text",
   value: "",
   isDisabled: false,
+  isAutoFocussed: false,
+  isSuccess: false,
+  isError: false, 
   tabIndex: -1
 };
 
