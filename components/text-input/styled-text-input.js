@@ -1,5 +1,6 @@
 import { styled } from "linaria/react";
 import { Base } from "../themes";
+import { device } from "../utils/devices";
 
 const StyledTextInput = styled.input`
 position: ${(props) => props.theme.textInput.position};
@@ -77,14 +78,14 @@ background-color: ${(props) =>
     background-color: ${(props) => props.theme.textInput.backgroundColorDisabled};
   }
   
-  @media (max-width: 768px) {
+  @media ${device.tablet} {
     width: ${(props) => 
     props.scale ? "100%"
     : props.width || props.theme.textInput.media.width };
     font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   }
 
-  @media (max-width: 425px) {
+  @media ${device.mobileL} {
     width: ${(props) => 
     props.scale ? "100%"
     : props.width || props.theme.textInput.media.width };
