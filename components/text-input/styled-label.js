@@ -4,11 +4,11 @@ import { Base } from "../themes";
 const Label = styled.label`
 
 position: absolute;
-top: ${(props) => (props.defaultChecked 
-  ? "3px" 
+top: ${(props) => (props.defaultChecked
+  ? props.theme.textInput.label.top
   : "15px")};
 font-size: ${(props) => (props.defaultChecked 
-  ? "12px" 
+  ? props.theme.textInput.label.fontSize 
   : props.theme.textInput.fontSize)};  
 padding: ${(props) => props.padding || props.theme.textInput.padding};
 margin: ${(props) => props.margin || props.theme.textInput.margin};

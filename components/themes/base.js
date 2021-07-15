@@ -88,6 +88,11 @@ textInput: {
     textTransform: "none",
     textShadow:"none",
     outline: "none",
+    
+    label: {
+      top: "3px",
+      fontSize: "12px",
+    },
   },
 };
 
