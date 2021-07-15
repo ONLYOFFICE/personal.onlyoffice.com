@@ -63,6 +63,7 @@ const TextInput = ({
                   isSuccess={isSuccess}
                   isError={isError} 
                   onClick={onClick}
+                  height={rest.height}
                   style={styleButton}
                   icon={iconButton}
                   squareButton={squareButton}

@@ -93,6 +93,11 @@ textInput: {
       top: "3px",
       fontSize: "12px",
     },
+
+    media: {
+      width: "100%",
+      fontSize: "13px",
+    }
   },
 };
 

@@ -9,7 +9,8 @@ const StyledButton = styled(Button)`
     (props.height || props.theme.textInput.height)
     : "auto"};
    left: -3px; 
-   overflow: visible;
+   overflow: ${(props) => props.theme.button.overflow};
+   text-overflow: ${(props) => props.theme.button.textOverflow};
    position: relative;
    float: right;
 `;

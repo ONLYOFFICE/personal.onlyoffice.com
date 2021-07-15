@@ -37,45 +37,60 @@ border-right: ${(props) =>
     
 border-color: ${(props) =>
     (props.isError && props.theme.textInput.borderColorError) ||
-    (props.isDisabled && props.theme.textInput.borderColorDisabled) ||
     (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
     props.theme.textInput.borderColor};
 
 background-color: ${(props) =>
     (props.isError && props.theme.textInput.backgroundColorError) ||
-    (props.isDisabled && props.theme.textInput.backgroundColorDisabled) ||
     (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
     props.theme.textInput.backgroundColor};
 
-    :hover{
+    cursor: pointer;
+
+    &:hover{
     border-color: ${(props) =>
         (props.isError && props.theme.textInput.borderColorError) ||
-        (props.isDisabled && props.theme.textInput.borderColorDisabled) ||
         (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
         props.theme.textInput.borderColor};
 
     background-color: ${(props) =>
         (props.isError && props.theme.textInput.backgroundColorError) ||
-        (props.isDisabled && props.theme.textInput.backgroundColorDisabled) ||
         (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
         props.theme.textInput.backgroundColor};
     }
 
-    :focus{
+    &:focus{
     border-color: ${(props) =>
         (props.isError && props.theme.textInput.borderColorError) ||
-        (props.isDisabled && props.theme.textInput.borderColorDisabled) ||
         (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
         props.theme.textInput.borderColorHover};
         
     background-color: ${(props) =>
         (props.isError && props.theme.textInput.backgroundColorError) ||
-        (props.isDisabled && props.theme.textInput.backgroundColorDisabled) ||
         (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
         props.theme.textInput.backgroundColorPrimaryHover};
     }
 
-    cursor: ${(props) =>(props.isDisabled ? "default" : "pointer")};
+    &:disabled {
+    cursor: default;
+    border-color: ${(props) => props.theme.textInput.borderColorDisabled};
+    background-color: ${(props) => props.theme.textInput.backgroundColorDisabled};
+  }
+  
+  @media (max-width: 768px) {
+    width: ${(props) => 
+    props.scale ? "100%"
+    : props.width || props.theme.textInput.media.width };
+    font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
+  }
+
+  @media (max-width: 425px) {
+    width: ${(props) => 
+    props.scale ? "100%"
+    : props.width || props.theme.textInput.media.width };
+    font-size: ${(props) => props.theme.textInput.media.fontSize};
+  }
+
 `;
 
 StyledTextInput.defaultProps = { theme: Base };
