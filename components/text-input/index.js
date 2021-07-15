@@ -44,6 +44,8 @@ const TextInput = ({
                   isAutoFocussed={isAutoFocussed}
                   isSuccess={isSuccess}
                   isError={isError}
+                  checkButton={checkButton}
+                  isDisabled={isDisabled}
                   onChange={onChange}
                   ref={inputTextRef}
                   {...rest} 

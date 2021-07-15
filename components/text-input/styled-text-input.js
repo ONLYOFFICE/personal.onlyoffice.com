@@ -31,7 +31,10 @@ box-shadow: ${(props) => props.theme.textInput.boxShadow};
 box-sizing: ${(props) => props.theme.textInput.boxSizing};
 border: ${(props) => props.theme.textInput.border};
 
-border-right-color: ${(props) => props.checkButton && "none"};
+border-right: ${(props) => 
+    (props.checkButton && "none") || 
+    props.theme.textInput.border};
+    
 border-color: ${(props) =>
     (props.isError && props.theme.textInput.borderColorError) ||
     (props.isDisabled && props.theme.textInput.borderColorDisabled) ||
