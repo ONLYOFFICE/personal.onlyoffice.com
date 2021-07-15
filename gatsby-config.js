@@ -10,11 +10,9 @@ module.exports = {
 
   plugins: [
     "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-image",
     "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -23,8 +21,6 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -33,6 +29,9 @@ module.exports = {
       },
       __key: "images",
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -70,6 +69,13 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-portal`,
+      options: {
+        key: "portal",
+        id: "portal",
       },
     },
   ],
