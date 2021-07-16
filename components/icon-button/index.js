@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import StyledIconButton from "./styled-icon-button";
 
-import isEmpty from "lodash/isEmpty";
 import { ReactSVG } from "react-svg";
 
 function IconButton(props) {
@@ -102,12 +101,11 @@ function IconButton(props) {
     className,
     size,
     isDisabled,
-    isFill,
     isClickable,
     onClick,
     id,
     style,
-    dataTip,
+    grayed,
     title
   } = props;
 
@@ -122,16 +120,13 @@ function IconButton(props) {
       onMouseUp={onMouseUp}
       onClick={onClick}
       isClickable={typeof onClick === "function" || isClickable}
-      data-tip={dataTip}
-      data-event="click focus"
-      data-for={id}
       style={style}
       color={state.currentIconColor}
+      grayed={grayed}
       title={title}
       {...props}
     >
 
-      <p>{state.currentIconName}</p>
       <ReactSVG
         className="icon-button_svg not-selectable"
         src={state.currentIconName}
@@ -160,10 +155,10 @@ IconButton.propTypes = {
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Tells when the button should present a disabled state */
   isDisabled: PropTypes.bool,
-  /** Determines if icon fill is needed */
-  isFill: PropTypes.bool,
   /** Set cursor value */
   isClickable: PropTypes.bool,
+  /** Set grayed styling */
+  grayed: PropTypes.bool,
   /** What the button will trigger when clicked  */
   onClick: PropTypes.func,
   /**  What the button will trigger when cursor down */
@@ -180,16 +175,13 @@ IconButton.propTypes = {
   title: PropTypes.string,
   /** Button height and width value */
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  dataTip: PropTypes.string,
 };
 
 IconButton.defaultProps = {
-  size: 24,
-  isFill: true,
-  iconName: "/static/social_icons/facebook.react.svg",
-  isDisabled: false,
+  iconName: "/static/images/social_icons/facebook.react.svg",
   isClickable: false,
-  dataTip: "",
+  isDisabled: false,
+  size: 24,
 };
 
 export default IconButton;
