@@ -4,6 +4,7 @@ import Base from "../themes/base";
 const StyledLabel = styled.label `
   display: flex;
   align-items: center;
+  gap: 8px;
   position: relative;
   margin: 0;
 
@@ -13,14 +14,12 @@ const StyledLabel = styled.label `
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+  color: ${(props) => props.theme.checkbox.color};
+  font-size: ${(props) => props.theme.checkbox.fontSize};
+  padding-bottom: ${(props) => props.theme.checkbox.paddingBottom};
+  line-height: ${(props) => props.theme.checkbox.lineHeight};
+
   cursor: ${(props) => props.isDisabled ? "not-allowed" : "pointer"}
-  
-  .checkbox-text {
-    color: ${(props) =>
-      props.isDisabled
-        ? props.theme.checkbox.disableColor
-        : props.theme.checkbox.color};
-  }
 `;
 
 StyledLabel.defaultProps = { theme: Base };

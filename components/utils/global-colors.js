@@ -12,7 +12,6 @@ const globalColors = {
   orangeHover: "#ff865c",
   green: "#8BB825",
   greenMain: "#F9FEEF",
-
-  grayCheckbox: "#A3A9AE",};
+};
 
 export default globalColors;
