@@ -1,6 +1,6 @@
 import globalColors from "../utils/global-colors";
 
-const { white, grayMain, grayHover, orangeMain, orangeHover } = globalColors;
+const { white, grayMain, grayHover, orangeMain, orangeHover, grayCheckbox, black } = globalColors;
 
 const Base = {
   button: {
@@ -34,6 +34,12 @@ const Base = {
     textTransform: "uppercase",
     fontSize: "13px",
   },
+
+  checkbox: {
+    disableColor: grayCheckbox,
+    color: black,
+  },
+
 };
 
 export default Base;
