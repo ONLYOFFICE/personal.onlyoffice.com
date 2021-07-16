@@ -1,6 +1,6 @@
 import globalColors from "../utils/global-colors";
 
-const { white, grayMain, grayHover, orangeMain, orangeHover } = globalColors;
+const { white, grayMain, grayHover, orangeMain, orangeHover, graySecnodary, gray, grayTextInputHover } = globalColors;
 
 const Base = {
   button: {
@@ -14,7 +14,7 @@ const Base = {
     backgroundColorPrimaryHover: orangeHover,
     backgroundColorSecondaryHover: grayHover,
 
-    borderTransparentType: `1px solid ${globalColors.grayMain}`,
+    borderTransparentType: `1px solid ${grayMain}`,
     borderRadius: "3px",
 
     overflow: "hidden",
@@ -32,10 +32,10 @@ const Base = {
     bottomVerticalAlign: "text-bottom",
     lineHeight: "13px",
     textTransform: "uppercase",
-    fontSize: "13px",
+    fontSize: "12px",
   },
 
-a: {
+  a: {
     textColor: orangeMain,
 
     padding: "0",
@@ -49,6 +49,55 @@ a: {
     fontSize: "14px",
     fontWeight: "400",
     textOverflow: "none",
+  },
+
+textInput: {
+    textColor: gray,
+    textColorHover: grayHover,
+    textColorSecondaryType: graySecnodary,
+    textColorSecondaryTypeHover: gray,
+
+    backgroundColor: grayTextInputHover,
+    backgroundColorPrimaryHover: white,
+    backgroundColorDisabled: "#F9F9F9",
+    backgroundColorSuccess: "#F9FEEF",
+    backgroundColorError: "#FFF7F7",
+
+    border: "1px solid",
+    borderRadius: "3px",
+    borderColor: "#AAAAAA",
+    borderColorHover: "#666666",
+    borderColorDisabled: "#AAAAAA",
+    borderColorSuccess: "#8BB825",
+    borderColorError: "#CB0000",
+
+    position: "absolute",
+    display: "block",
+    boxSizing: "border-box",
+    width: "544px",
+    height: "56px",
+    padding: "0 16px",
+    margin: "0",
+    overflow: "auto",
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "22px",
+    textAlign: "left",
+    verticalAlign: "center",
+    textDecoration: "none",
+    textTransform: "none",
+    textShadow:"none",
+    outline: "none",
+    
+    label: {
+      top: "3px",
+      fontSize: "12px",
+    },
+
+    media: {
+      width: "100%",
+      fontSize: "13px",
+    }
   },
 
   iconButton: {
