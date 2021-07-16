@@ -50,6 +50,10 @@ a: {
     fontWeight: "400",
     textOverflow: "none",
   },
+
+  iconButton: {
+    width: "20px"
+  }
 };
 
 export default Base;
