@@ -2,17 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledText from "./styled-text";
 
-const Text = ({ as, text, ...rest}) => {
+const Text = ({ as, children, ...rest }) => {
   return (
-      <StyledText as={as} {...rest}>
-        {text}
+      <StyledText
+      as={as} 
+      {...rest}
+      >
+        {children}
       </StyledText>
   );
 };
 
 Text.propTypes = {
-    /** Text */
-    text: PropTypes.string,
     /**   text color */
     color: PropTypes.string,
     /**   text font-size */

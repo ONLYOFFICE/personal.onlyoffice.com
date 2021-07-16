@@ -13,15 +13,17 @@ export default {
   },
 };
 
-const Template = ({ ...args }) => {
+const Template = ({ children, ...args }) => {
   return (
     <div style={{ width: "100%" }}>
-      <Text {...args} />
+      <Text {...args}>
+        {children}
+      </Text>
     </div>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  text: "defautl Text"
+  children: "defautl Text"
 };

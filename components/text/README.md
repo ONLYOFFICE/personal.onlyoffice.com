@@ -9,7 +9,7 @@ import Text from "../components/text";
 ```
 
 ```jsx
-<Text text="default text"/>
+<Text>default text</Text>
 ```
 
 ### Properties
@@ -18,7 +18,6 @@ import Text from "../components/text";
 | ----------- | :------------: | :------: | :----: | :-----: | ----------------- |
 | `className` |    `string`    |    -     |   -    |    -    | Accepts class     |
 | `id`        |    `string`    |    -     |   -    |    -    | Accepts id        |
-| `text`        |    `string`    |    -     |   -    |    -    | Accepts text        |
 | `style`     | `obj`, `array` |    -     |   -    |    -    | Accepts css style |
 | `color`        |    `string`    |    -     |   -    |    -    | text color        |
 | `fontSize`        |    `string`    |    -     |   -    |    -    | text font-size        |
