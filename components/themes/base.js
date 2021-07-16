@@ -116,6 +116,24 @@ const Base = {
     textOverflow: "none",
     overflow: "hidden",
   },
+
+  separator: {
+    display: "flex",
+    width: "1px",
+    alignItems: "center",
+
+    div: {
+      backgroundColor: "#CCCCCC",
+
+      height: "1px",
+      flex: "1",
+    },
+
+    span: {
+      padding: "0 12px",
+    },
+  },
+
 };
 
 export default Base;

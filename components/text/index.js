@@ -19,10 +19,12 @@ Text.propTypes = {
     fontSize: PropTypes.string,
     /**   text font-weight */
     fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    /**   text text-transform*/
+    /**   text-transform*/
     textTransform: PropTypes.string,
-    /** text text decoration */
+    /**  text decoration */
     textDecoration: PropTypes.string,
+    /** text align */
+    textAlign: PropTypes.string,
     /** hover text-decoration  */
     hoverTextDecoration: PropTypes.string,
     /** Change `html` tag*/
@@ -40,7 +42,6 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  text: "",
   color: "#333333",
   fontSize: "14px",
   tabIndex: -1

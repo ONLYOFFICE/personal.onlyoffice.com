@@ -23,8 +23,8 @@ import Text from "../components/text";
 | `color`        |    `string`    |    -     |   -    |    -    | text color        |
 | `fontSize`        |    `string`    |    -     |   -    |    -    | text font-size        |
 | `fontWeight`        |    `string`    |    -     |   -    |    -    | text font-weight        |
-| `textTransform`        |    `string`    |    -     |   -    |    -    | text text-transform        |
-| `textDecoration`        |    `string`    |    -     |   -    |    -    | text text decoration        |
+| `textTransform`        |    `string`    |    -     |   -    |    -    | text transform        |
+| `textDecoration`        |    `string`    |    -     |   -    |    -    | text decoration        |
 | `hoverTextDecoration`        |    `string`    |    -     |   -    |    -    | hover text-decoration        |
 | `as`        |    `string`    |    -     |   -    |    -    | Change `html` tag        |
 | `onClick`        |    `func`    |    -     |   -    |    -    | What the will trigger when clicked        |
