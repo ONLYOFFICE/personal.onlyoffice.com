@@ -2,14 +2,17 @@ const globalColors = {
   white: "#ffffff",
   whiteHover: "#F2F2F2",
 
+  gray: "#333333",
   grayMain: "#444444",
   grayHover: "#555555",
+  grayTextInput: "#666666",
+  grayTextInputHover: "#F9F9F9",
 
   orangeMain: "#ff6f3d",
   orangeHover: "#ff865c",
+  green: "#8BB825",
+  greenMain: "#F9FEEF",
 
-  grayCheckbox: "#A3A9AE",
-  black: "#333333",
-};
+  grayCheckbox: "#A3A9AE",};
 
 export default globalColors;
