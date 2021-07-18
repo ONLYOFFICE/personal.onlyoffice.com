@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import StyledIconButton from "./styled-icon-button";
 
 import { ReactSVG } from "react-svg";
 
 function IconButton(props) {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     currentIconName: props.iconName,
-    currentIconColor: props.color
-  })
+  });
 
   const onMouseEnter = (e) => {
     const {
       isDisabled,
       iconHoverName,
       iconName,
-      hoverColor,
-      color,
+
       onMouseEnter,
     } = props;
 
@@ -26,20 +24,18 @@ function IconButton(props) {
       currentIconName: !("ontouchstart" in document.documentElement)
         ? iconHoverName || iconName
         : iconName,
-      currentIconColor: hoverColor || color,
     });
 
     onMouseEnter && onMouseEnter(e);
-  }
+  };
 
   const onMouseLeave = (e) => {
-    const { isDisabled, iconName, color, onMouseLeave } = props;
+    const { isDisabled, iconName, onMouseLeave } = props;
 
     if (isDisabled) return;
 
     setState({
       currentIconName: iconName,
-      currentIconColor: color,
     });
 
     onMouseLeave && onMouseLeave(e);
@@ -50,8 +46,7 @@ function IconButton(props) {
       isDisabled,
       iconClickName,
       iconName,
-      clickColor,
-      color,
+
       onMouseDown,
     } = props;
 
@@ -61,20 +56,13 @@ function IconButton(props) {
       currentIconName: !("ontouchstart" in document.documentElement)
         ? iconClickName || iconName
         : iconName,
-      currentIconColor: clickColor || color,
     });
 
     onMouseDown && onMouseDown(e);
   };
 
   const onMouseUp = (e) => {
-    const {
-      isDisabled,
-      iconHoverName,
-      iconName,
-      color,
-      onMouseUp,
-    } = props;
+    const { isDisabled, iconHoverName, iconName, color, onMouseUp } = props;
 
     if (isDisabled) return;
 
@@ -106,11 +94,19 @@ function IconButton(props) {
     id,
     style,
     grayed,
-    title
+    title,
+    clickColor,
+    color,
+    hoverColor,
   } = props;
+
+  const classNameSVG = `icon-button_svg ${color && "user-color"} ${
+    clickColor && "user-click-color"
+  } ${hoverColor && "user-hover-color"} `;
 
   return (
     <StyledIconButton
+      id={id}
       className={className}
       size={size}
       isDisabled={isDisabled}
@@ -121,20 +117,18 @@ function IconButton(props) {
       onClick={onClick}
       isClickable={typeof onClick === "function" || isClickable}
       style={style}
-      color={state.currentIconColor}
+      color={color}
+      clickColor={clickColor}
+      hoverColor={hoverColor}
       grayed={grayed}
       title={title}
       {...props}
     >
-
-      <ReactSVG
-        className="icon-button_svg not-selectable"
-        src={state.currentIconName}
-      />
+      <ReactSVG className={classNameSVG} src={state.currentIconName} />
     </StyledIconButton>
   );
   //}
-};
+}
 
 IconButton.propTypes = {
   /** Set component class */
@@ -145,7 +139,7 @@ IconButton.propTypes = {
   clickColor: PropTypes.string,
   /** Icon color on hover action */
   hoverColor: PropTypes.string,
-  /** Icon name */
+  /** Takes the path to the icon (the icon must be located in a static folder) */
   iconName: PropTypes.string.isRequired,
   /** Icon name on click action */
   iconClickName: PropTypes.string,
