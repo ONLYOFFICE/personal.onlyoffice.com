@@ -9,7 +9,9 @@ import Separator from "../components/separator";
 ```
 
 ```jsx
-<Separator />
+<Separator>
+    Separator text
+</Separator>
 ```
 
 ### Properties
@@ -19,3 +21,7 @@ import Separator from "../components/separator";
 | `className` |    `string`    |    -     |   -    |    -    | Accepts class     |
 | `id`        |    `string`    |    -     |   -    |    -    | Accepts id        |
 | `style`     | `obj`, `array` |    -     |   -    |    -    | Accepts css style |
+| `tabIndex`        |    `number`    |    -     |   -    |    -    | Accepts tab Index       |
+| `padding`        |    `string`    |    -     |   -    |    -    | Separator text padding        |
+| `height`        |    `string`    |    -     |   -    |    -    | Separator height        |
+| `color`        |    `string`    |    -     |   -    |    -    | Separator color        |
