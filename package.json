@@ -8,7 +8,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "storybook": "start-storybook -p 8082 -s src/images"
+    "storybook": "start-storybook -p 8082 -s static"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
@@ -25,6 +25,7 @@
     "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-react-i18next": "^1.1.1",
+    "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-plugin-sitemap": "^4.5.0",
     "gatsby-plugin-typescript": "^3.9.0",
