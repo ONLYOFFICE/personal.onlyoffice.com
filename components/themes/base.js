@@ -39,7 +39,7 @@ const Base = {
 
     padding: "0",
     margin: "0",
-    display: "inline-box",
+    display: "inline-block",
     textAlign: "left",
     hoverTextDecoration: "none",
     textDecoration: "underline",
@@ -50,7 +50,7 @@ const Base = {
     textOverflow: "none",
   },
 
-textInput: {
+  textInput: {
     textColor: gray,
     textColorHover: grayHover,
     textColorSecondaryType: graySecnodary,
@@ -98,6 +98,41 @@ textInput: {
       fontSize: "13px",
     }
   },
+
+  text: {
+    colorText: gray,
+
+    display: "inline-block",
+    padding: "0",
+    margin: "0",
+    textAlign: "left",
+    hoverTextDecoration: "none",
+    textDecoration: "none",
+    textTransform: "none",
+    lineHeight: "21px",
+    fontSize: "14px",
+    fontWeight: "400",
+    textOverflow: "none",
+    overflow: "hidden",
+  },
+
+  separator: {
+    display: "flex",
+    width: "1px",
+    alignItems: "center",
+
+    div: {
+      backgroundColor: "#CCCCCC",
+
+      height: "1px",
+      flex: "1",
+    },
+
+    span: {
+      padding: "0 12px",
+    },
+  },
+
 
   checkbox: {
     color: grayTextInput,
