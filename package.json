@@ -8,7 +8,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "storybook": "start-storybook -p 8082 -s static"
+    "storybook": "start-storybook -p 8082 -s ./static"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
