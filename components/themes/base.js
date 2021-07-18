@@ -1,7 +1,6 @@
 import globalColors from "../utils/global-colors";
 
-const { white, grayMain, grayHover, orangeMain, orangeHover, graySecnodary, gray, grayTextInputHover } = globalColors;
-
+const { white, grayMain, grayHover, orangeMain, orangeHover, graySecnodary, gray, grayTextInput, grayTextInputHover } = globalColors;
 const Base = {
   button: {
     textColor: white,
@@ -134,6 +133,13 @@ const Base = {
     },
   },
 
+
+  checkbox: {
+    color: grayTextInput,
+    fontSize: "14px",
+    paddingBottom: "12px",
+    lineHeight: "160%",
+  },
 };
 
 export default Base;
