@@ -10,7 +10,7 @@ const StyledText = styled.p`
     text-overflow: ${(props) => props.theme.text.textOverflow};
     overflow: ${(props) => props.theme.text.overflow};
     text-align: ${(props) =>  (props.textAlign || props.theme.text.textAlign)};
-    line-height: ${(props) =>  props.theme.text.lineHeight};
+    line-height: ${(props) =>  ( props.lineHeight || props.theme.text.lineHeight)};
 
     display: ${(props) =>  props.theme.text.display};
     margin: ${(props) =>  props.theme.text.margin};
