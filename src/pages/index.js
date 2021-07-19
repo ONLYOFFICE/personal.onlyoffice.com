@@ -61,12 +61,7 @@ const IndexPage = () => {
                   <ul>
                     <li className="studio-top-logo">
                       <Link className="top-logo" title="ONLYOFFICE" to="/">
-                        <img
-                          src={HeaderLogo}
-                          alt="logo"
-                          loading="eager"
-                          className="image-wrapper"
-                        />
+                        <HeaderLogo className="image-wrapper" />
                       </Link>
                     </li>
 

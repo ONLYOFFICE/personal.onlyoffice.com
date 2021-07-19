@@ -38,11 +38,7 @@ const LanguageSelector = (props) => {
         width={"18px"}
       />
       <div className="arrow-image">
-        {isOpen ? (
-          <img src={ArrowUp} alt="arrow-down" />
-        ) : (
-          <img src={ArrowDown} alt="arrow-up" />
-        )}
+        {isOpen ? <ArrowDown alt="arrow-down" /> : <ArrowUp alt="arrow-up" />}
       </div>
       <ItemsList className="languages-list" t={t} isOpen={isOpen} />
     </StyledLanguageSelector>
