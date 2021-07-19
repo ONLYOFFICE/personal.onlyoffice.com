@@ -2,13 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ReactSVG } from "react-svg";
 import StyledStar from "./styled-star";
-import RatingImg from "../../../src/images/rating/star.react.svg";
 
 const Star = ({ className, ...rest }) => {
   return(
         <StyledStar>
             <ReactSVG 
-                src={RatingImg} 
+                src={`/icons/star.react.svg`} 
                 className={className}
                 wrapper="svg"
              />

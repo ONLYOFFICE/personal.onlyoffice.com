@@ -23,4 +23,9 @@ const Template = ({ ...args }) => {
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  headerText: "Mario Hamel",
+  countStar: 4,
+  mainText: "“I've been using OnlyOffice Personal for couple years with my Acer ChromeBook 11 and CloudReady Desktop at Home for couple years now. I like having access to all my Cloud Storage such as Dropbox and Google Drive.”",
+
+};
