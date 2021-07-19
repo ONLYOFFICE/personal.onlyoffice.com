@@ -19,9 +19,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head
-        metaDescription={t("MetaDescription")}
-        metaKeywords={t("MetaKeywords")}
-        title={t("PageTitle")}
+        metaDescription={t("AuthDocsMetaDescription")}
+        metaKeywords={t("AuthDocsMetaKeywords")}
+        title={t("AuthDocsTitlePage")}
         metaDescriptionOg={t("MetaDescriptionOg")}
       />
 
@@ -884,7 +884,12 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["translations", "fallback"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
