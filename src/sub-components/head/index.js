@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import languages from "../../helpers/languages";
+import languages from "../../../languages";
 
 const Head = (props) => {
   const { metaDescription, metaKeywords, title, metaDescriptionOg } = props;
@@ -59,13 +59,16 @@ const Head = (props) => {
       />
 
       {languages.map((lng) => {
-        const { key, href } = lng;
+        const { key, shortKey } = lng;
         return (
           <link
             key={key}
             rel="alternate"
-            href={"https://www.personal.onlyoffice.com/" + href}
-            hrefLang={key}
+            href={
+              "https://www.personal.onlyoffice.com/" + shortKey === "en"
+                ? ""
+                : shortKey
+            }
           ></link>
         );
       })}
