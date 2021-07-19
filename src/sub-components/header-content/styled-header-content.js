@@ -6,11 +6,15 @@ const StyledHeaderContent = styled.div`
   margin: 0 auto;
 
   display: grid;
-  grid-gap: 31px;
+  grid-gap: 24px;
   grid-template-columns: minmax(54px, 910px) 102px 34px;
 
   .logo-wrapper {
     margin-top: 26px;
+
+    .header-text {
+      float: right;
+    }
   }
 
   .header-button {
@@ -21,6 +25,7 @@ const StyledHeaderContent = styled.div`
 
   .language-selector {
     margin-top: 27px;
+    margin-left: 10px;
   }
 
   @media (max-width: 1200px) {
@@ -31,6 +36,16 @@ const StyledHeaderContent = styled.div`
   @media (max-width: 1023px) {
     max-width: none;
     width: 90vw;
+  }
+
+  @media (max-width: 768px) {
+    .header-text {
+      display: none;
+    }
+
+    .header-button {
+      visibility: ${(props) => props.toHideButton && "hidden"};
+    }
   }
 
   @media (max-width: 592px) {

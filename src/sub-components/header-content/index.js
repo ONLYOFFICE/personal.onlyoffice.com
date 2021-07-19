@@ -8,7 +8,7 @@ import Button from "../../../components/button";
 import Text from "../../../components/text";
 
 const HeaderContent = (props) => {
-  const { t, language, href, labelButton, headingText, ...rest } = props;
+  const { t, language, href, labelButton, headerText, ...rest } = props;
 
   const homepagePath = language === "en" ? "/" : `/${language}`;
 
@@ -18,13 +18,13 @@ const HeaderContent = (props) => {
         <Link className="top-logo" title="ONLYOFFICE" to={homepagePath}>
           <HeaderLogo className="image-wrapper" />
         </Link>
-      </div>
-      <div className="header-button">
-        {headingText && (
-          <Text className="header-text" as="span">
-            {headingText}
+        {headerText && (
+          <Text className="header-text" as="span" fontSize="16px">
+            {headerText}
           </Text>
         )}
+      </div>
+      <div className="header-button">
         <Link className="top-logo" title="ONLYOFFICE" to={href}>
           <Button
             label={labelButton}

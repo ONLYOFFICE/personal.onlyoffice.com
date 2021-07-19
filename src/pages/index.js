@@ -26,6 +26,7 @@ const IndexPage = () => {
       <Layout.PageHeader>
         <HeaderContent
           t={t}
+          toHideButton
           language={language}
           href="authentication"
           labelButton={t("LoginBtn")}
