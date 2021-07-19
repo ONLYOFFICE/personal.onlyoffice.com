@@ -29,6 +29,7 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
   }
 
 @media ${device.mobileL} {
+    margin: 0px;
     padding: ${(props) => props.theme.reviewPanel.media.mobile.padding};
     p{
         font-size: ${(props) => props.theme.reviewPanel.media.mobile.fontSize};
