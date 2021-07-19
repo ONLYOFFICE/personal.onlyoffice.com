@@ -3,12 +3,18 @@ import Layout from "../../components/layout";
 import Head from "../sub-components/head";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import languages from "../helpers/languages";
+import LanguageSelector from "../../components/language-selector";
+
+import HeaderLogo from "../../static/icons/header-logo.react.svg";
+import { Link } from "gatsby";
 
 import Button from "../../components/button";
 
 const IndexPage = () => {
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   return (
     <Layout>
@@ -18,6 +24,7 @@ const IndexPage = () => {
         title={t("PageTitle")}
         metaDescriptionOg={t("MetaDescriptionOg")}
       />
+
       <div className="pure-orange">
         <form
           method="post"
@@ -53,109 +60,16 @@ const IndexPage = () => {
                 <div className="studio-top-panel mainPageLayout try-welcome-top">
                   <ul>
                     <li className="studio-top-logo">
-                      <a className="top-logo" title="ONLYOFFICE" href="/">
-                        <img
-                          alt=""
-                          src="https://static.onlyoffice.com/studio/tag/personal.11.5.3/skins/default/images/personal_logo/logo_personal_auth.svg"
-                        />
-                      </a>
+                      <Link className="top-logo" title="ONLYOFFICE" to="/">
+                        <HeaderLogo className="image-wrapper" />
+                      </Link>
                     </li>
 
-                    <div className="personal-languages">
-                      <div
-                        className="personal-languages_select ru-RU"
-                        data-lang="ru-RU"
-                      >
-                        <span>Russian (Russia)</span>
-                      </div>
-                      <div
-                        id="AuthFormLanguagesPanel"
-                        className="studio-action-panel"
-                      >
-                        <ul className="personal-languages_list dropdown-content">
-                          <li className="dropdown-item az-Latn-AZ">
-                            <a href="/az/">Azerbaijani (Latin, Azerbaijan)</a>
-                          </li>
-                          <li className="dropdown-item bg-BG">
-                            <a href="/bg/">Bulgarian (Bulgaria)</a>
-                          </li>
-                          <li className="dropdown-item zh-CN">
-                            <a href="/zh/">Chinese (Simplified, PRC)</a>
-                          </li>
-                          <li className="dropdown-item cs-CZ">
-                            <a href="/cs/">Czech (Czech Republic)</a>
-                          </li>
-                          <li className="dropdown-item nl-NL">
-                            <a href="/nl/">Dutch (Netherlands)</a>
-                          </li>
-                          <li className="dropdown-item en-GB">
-                            <a href="/en-GB/">English (United Kingdom)</a>
-                          </li>
-                          <li className="dropdown-item en-US">
-                            <a href="/en/">English (United States)</a>
-                          </li>
-                          <li className="dropdown-item fi-FI">
-                            <a href="/fi/">Finnish (Finland)</a>
-                          </li>
-                          <li className="dropdown-item fr-FR">
-                            <a href="/fr/">French (France)</a>
-                          </li>
-                          <li className="dropdown-item de-DE">
-                            <a href="/de/">German (Germany)</a>
-                          </li>
-                          <li className="dropdown-item de-CH">
-                            <a href="/de-CH/">German (Switzerland)</a>
-                          </li>
-                          <li className="dropdown-item el-GR">
-                            <a href="/el/">Greek (Greece)</a>
-                          </li>
-                          <li className="dropdown-item it-IT">
-                            <a href="/it/">Italian (Italy)</a>
-                          </li>
-                          <li className="dropdown-item ja-JP">
-                            <a href="/ja/">Japanese (Japan)</a>
-                          </li>
-                          <li className="dropdown-item ko-KR">
-                            <a href="/ko/">Korean (Korea)</a>
-                          </li>
-                          <li className="dropdown-item lv-LV">
-                            <a href="/lv/">Latvian (Latvia)</a>
-                          </li>
-                          <li className="dropdown-item pl-PL">
-                            <a href="/pl/">Polish (Poland)</a>
-                          </li>
-                          <li className="dropdown-item pt-BR">
-                            <a href="/pt-BR/">Portuguese (Brazil)</a>
-                          </li>
-                          <li className="dropdown-item pt-PT">
-                            <a href="/pt/">Portuguese (Portugal)</a>
-                          </li>
-                          <li className="dropdown-item ru-RU">
-                            <a href="/ru/">Russian (Russia)</a>
-                          </li>
-                          <li className="dropdown-item sk-SK">
-                            <a href="/sk/">Slovak (Slovakia)</a>
-                          </li>
-                          <li className="dropdown-item sl-SI">
-                            <a href="/sl/">Slovenian (Slovenia)</a>
-                          </li>
-                          <li className="dropdown-item es-MX">
-                            <a href="/es-MX/">Spanish (Mexico)</a>
-                          </li>
-                          <li className="dropdown-item es-ES">
-                            <a href="/es/">Spanish (Spain)</a>
-                          </li>
-                          <li className="dropdown-item tr-TR">
-                            <a href="/tr/">Turkish (Turkey)</a>
-                          </li>
-                          <li className="dropdown-item uk-UA">
-                            <a href="/uk/">Ukrainian (Ukraine)</a>
-                          </li>
-                          <li className="dropdown-item vi-VN">
-                            <a href="/vi/">Vietnamese (Vietnam)</a>
-                          </li>
-                        </ul>
-                      </div>
+                    <div
+                      className="personal-languages"
+                      style={{ position: "relative" }}
+                    >
+                      <LanguageSelector currentLanguage={language} t={t} />
                     </div>
 
                     <li id="personalLogin" className="personal-login">

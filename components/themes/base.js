@@ -141,6 +141,10 @@ const Base = {
     lineHeight: "160%",
   },
 
+  iconButton: {
+    width: "20px"
+  },
+
   reviewPanel: {
     margin: "16px",
     padding: "24px",
@@ -163,7 +167,7 @@ const Base = {
         paddingBottom: "0px",
       },
     },
-  }
+  },
 };
 
 export default Base;

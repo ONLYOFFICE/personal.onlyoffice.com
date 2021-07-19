@@ -1,20 +1,21 @@
-const languages = require("./src/helpers/languages");
+const languages = require("./languages.json");
 
-const availableLangs = languages.map((el) => el.shortKey);
+const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.personal.onlyoffice.com",
     title: "personal-gatsby",
   },
 
   plugins: [
-    "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -23,8 +24,6 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -33,6 +32,7 @@ module.exports = {
       },
       __key: "images",
     },
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -52,9 +52,10 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: availableLangs,
+        languages: availableLanguages,
         defaultLanguage: `en`,
         siteUrl: `https://personal.onlyoffice.com/`,
+        redirect: false,
 
         i18nextOptions: {
           interpolation: {
@@ -69,6 +70,21 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-portal`,
+      options: {
+        key: "portal",
+        id: "portal",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.react.svg$/,
+        },
       },
     },
   ],

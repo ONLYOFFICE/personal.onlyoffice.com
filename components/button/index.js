@@ -31,7 +31,7 @@ Button.propTypes = {
   height: PropTypes.string,
   /** Scale width of button to 100% */
   scale: PropTypes.bool,
-  /** Icon src  */
+  /** Takes the path to the icon (the icon must be located in a static folder)  */
   icon: PropTypes.string,
   /** Button tab index */
   tabIndex: PropTypes.number,
