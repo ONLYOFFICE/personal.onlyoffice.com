@@ -54,10 +54,8 @@ Button.defaultProps = {
   height: "56px",
   icon: null,
   tabIndex: -1,
-  minwidth: null,
+  minwidth: "none",
   isDisabled: false,
 };
-
-Button.displayName = "Button";
 
 export default Button;
