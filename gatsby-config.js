@@ -1,14 +1,17 @@
-const languages = require("./src/helpers/languages");
+const languages = require("./languages.json");
 
-const availableLangs = languages.map((el) => el.shortKey);
+const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.personal.onlyoffice.com",
     title: "personal-gatsby",
   },
 
   plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
@@ -29,9 +32,7 @@ module.exports = {
       },
       __key: "images",
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -51,7 +52,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: availableLangs,
+        languages: availableLanguages,
         defaultLanguage: `en`,
         siteUrl: `https://personal.onlyoffice.com/`,
         redirect: false,
