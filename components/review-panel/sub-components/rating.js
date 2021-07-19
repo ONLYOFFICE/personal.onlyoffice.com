@@ -2,11 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledRating from "./styled-rating";
 import Star from "./star";
-//https://codepen.io/martijndevalk/pen/oNWxaLZ
-//https://codepen.io/aledebarba/pen/JjWPjVG
-//https://www.figma.com/file/LQgvSxoucrvUb2IE6HNjm0/Personal.onlyoffice.com?node-id=443%3A0
 
-const Rating = ({ idStar, countStar, ...rest }) => {
+const Rating = ({ countStar, ...rest }) => {
   const MAX_STAR = 5;
   const ARR_STAR = new Array(5).fill();
   return (
@@ -15,7 +12,7 @@ const Rating = ({ idStar, countStar, ...rest }) => {
           ? ARR_STAR.map((it, i) => 
             <Star 
               key={i} 
-              className={`star-class-${countStar >= i+1 ? "gold" : "default"}`} 
+              className={`star-class-${countStar >= i+1 ? "gold" : "default"}`}
             />)
           : null
         }
@@ -24,9 +21,18 @@ const Rating = ({ idStar, countStar, ...rest }) => {
 };
 
 Rating.propTypes = {
-
+  /** Rating */
+  countStar: PropTypes.number,
+  /** External link tab index */
+  tabIndex: PropTypes.number,
+  /** Accepts id */
+  id: PropTypes.string,
+  /** Accepts class */
+  className: PropTypes.string,
 };
 
-Rating.defaultProps = {};
+Rating.defaultProps = {
+  tabIndex: -1,
+};
 
 export default Rating;

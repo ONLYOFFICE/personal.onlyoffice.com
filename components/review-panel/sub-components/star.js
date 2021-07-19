@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ReactSVG } from "react-svg";
 import StyledStar from "./styled-star";
-import RatingImg from "../../../src/images/icons/star.react.svg";
+import RatingImg from "../../../src/images/rating/star.react.svg";
 
-const Star = ({ idStar, className, ...rest }) => {
+const Star = ({ className, ...rest }) => {
   return(
         <StyledStar>
             <ReactSVG 
@@ -17,9 +17,18 @@ const Star = ({ idStar, className, ...rest }) => {
 };
 
 Star.propTypes = {
-
+  /** Icon src */
+  RatingImg: PropTypes.string,
+  /** Image tab index */
+  tabIndex: PropTypes.number,
+  /** Accepts id */
+  id: PropTypes.string,
+  /** Accepts class */
+  className: PropTypes.string,
 };
 
-Star.defaultProps = {};
+Star.defaultProps = {
+  tabIndex: -1,
+};
 
 export default Star;

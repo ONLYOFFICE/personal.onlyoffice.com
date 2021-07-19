@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewPanel from ".";
+import ReviewPanel from "./";
 
 export default {
   title: "Components/ReviewPanel",
@@ -22,4 +22,5 @@ const Template = ({ ...args }) => {
 };
 
 export const Default = Template.bind({});
+
 Default.args = {};

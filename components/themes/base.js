@@ -140,6 +140,30 @@ const Base = {
     paddingBottom: "12px",
     lineHeight: "160%",
   },
+
+  reviewPanel: {
+    margin: "16px",
+    padding: "24px",
+    paddingBottom: "7px",
+    display: "flex",
+    maxWidth: "336px",
+    minWidth: "260px",
+    backgroundColor: "#FFFFFF",
+    border: "1px solid #CCCCCC",
+    borderRadius: "5px",
+
+    media:{
+      device: {
+        paddingBottom: "4px",
+      },
+      mobile: {
+        padding: "16px",
+        fontSize: "14px",
+        lineHeight: "22px",
+        paddingBottom: "0px",
+      },
+    },
+  }
 };
 
 export default Base;
