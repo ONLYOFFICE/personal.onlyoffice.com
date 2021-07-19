@@ -3,12 +3,8 @@ import Layout from "../../components/layout";
 import Head from "../sub-components/head";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import LanguageSelector from "../../components/language-selector";
 
-import HeaderLogo from "../../static/icons/header-logo.react.svg";
-import { Link } from "gatsby";
-
-import Button from "../../components/button";
+import HeaderContent from "../sub-components/header-content";
 
 const IndexPage = () => {
   const {
@@ -18,98 +14,54 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Head
-        metaDescription={t("AuthDocsMetaDescription")}
-        metaKeywords={t("AuthDocsMetaKeywords")}
-        title={t("AuthDocsTitlePage")}
-        metaDescriptionOg={t("MetaDescriptionOg")}
-      />
+      <Layout.PageHead>
+        <Head
+          metaDescription={t("AuthDocsMetaDescription")}
+          metaKeywords={t("AuthDocsMetaKeywords")}
+          title={t("AuthDocsTitlePage")}
+          metaDescriptionOg={t("MetaDescriptionOg")}
+        />
+      </Layout.PageHead>
 
-      <div className="pure-orange">
-        <form
-          method="post"
-          action="./?lang=ru"
-          id="aspnetForm"
-          style={{ margin: 0, height: "100%", padding: 0 }}
-          encType="multipart/form-data"
-        >
-          <div className="aspNetHidden">
-            <input
-              type="hidden"
-              name="__VIEWSTATE"
-              id="__VIEWSTATE"
-              value="ixGrTIlw6kUT1tS3e/fYejPFBm2dGLY2aF14d9ed7IOTgP8xoJYgw2hsttH1uZ9A25JWZp8U6b+ba5G8OppSRyMCqnoB9vrOrdhUPwVJXLs="
-            />
-          </div>
-
-          <div className="aspNetHidden">
-            <input
-              type="hidden"
-              name="__VIEWSTATEGENERATOR"
-              id="__VIEWSTATEGENERATOR"
-              value="CB4E55BE"
-            />
-          </div>
-
-          <div
-            id="studioPageContent"
-            className="studio-container disabled-side-panel"
+      <Layout.PageHeader>
+        <HeaderContent
+          t={t}
+          language={language}
+          href="authentication"
+          labelButton={t("LoginBtn")}
+        />
+      </Layout.PageHeader>
+      <Layout.SectionMain>
+        <div className="pure-orange">
+          <form
+            method="post"
+            action="./?lang=ru"
+            id="aspnetForm"
+            style={{ margin: 0, height: "100%", padding: 0 }}
+            encType="multipart/form-data"
           >
-            <header>
-              <div className="header-content">
-                <div className="studio-top-panel mainPageLayout try-welcome-top">
-                  <ul>
-                    <li className="studio-top-logo">
-                      <Link className="top-logo" title="ONLYOFFICE" to="/">
-                        <HeaderLogo className="image-wrapper" />
-                      </Link>
-                    </li>
+            <div className="aspNetHidden">
+              <input
+                type="hidden"
+                name="__VIEWSTATE"
+                id="__VIEWSTATE"
+                value="ixGrTIlw6kUT1tS3e/fYejPFBm2dGLY2aF14d9ed7IOTgP8xoJYgw2hsttH1uZ9A25JWZp8U6b+ba5G8OppSRyMCqnoB9vrOrdhUPwVJXLs="
+              />
+            </div>
 
-                    <div
-                      className="personal-languages"
-                      style={{ position: "relative" }}
-                    >
-                      <LanguageSelector currentLanguage={language} t={t} />
-                    </div>
+            <div className="aspNetHidden">
+              <input
+                type="hidden"
+                name="__VIEWSTATEGENERATOR"
+                id="__VIEWSTATEGENERATOR"
+                value="CB4E55BE"
+              />
+            </div>
 
-                    <li id="personalLogin" className="personal-login">
-                      <Button
-                        label={t("LoginBtn")}
-                        type="transparent"
-                        height="48px"
-                        minwidth="104px"
-                      />
-                    </li>
-
-                    <li className="clear"></li>
-                  </ul>
-
-                  <div
-                    id="studio_dropMailPopupPanel"
-                    className="studio-action-panel"
-                  >
-                    <div id="drop-mail-box" className="drop-list-box mail">
-                      <div className="list"></div>
-                      <div className="loader-text-block">
-                        Идет загрузка, пожалуйста, подождите
-                      </div>
-                      <div className="mail-readed-msg">
-                        <span>
-                          Нет непрочитанных писем. Перейдите в Почту, чтобы
-                          просмотреть все сообщения.
-                        </span>
-                      </div>
-                      <a className="see-all-btn" href="/addons/mail/">
-                        Посмотреть всё
-                      </a>
-                      <span className="mark-all-btn">Пометить прочтённым</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </header>
-
-            <main>
+            <div
+              id="studioPageContent"
+              className="studio-container disabled-side-panel"
+            >
               <div className="bar-content">
                 <noscript>
                   <div className="info-box excl">
@@ -700,147 +652,134 @@ const IndexPage = () => {
                     <a>Создать сейчас</a>
                   </div>
                 </div>
-
-                <div className="personal-footer">
-                  <div className="personal-footer_w clearFix">
-                    <ul className="ListSocLink">
-                      <li>
-                        <a
-                          className="faceBook"
-                          href="https://www.facebook.com/pages/OnlyOffice/833032526736775"
-                          target="_blank"
-                        >
-                          <label
-                            title="Facebook"
-                            className="social_grey_fb"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="twitter"
-                          href="https://twitter.com/ONLY_OFFICE"
-                          target="_blank"
-                          rel="nofollow"
-                        >
-                          <label
-                            title="Twitter"
-                            className="social_grey_twi"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="linkedin"
-                          href="https://www.linkedin.com/groups/6726380/"
-                          target="_blank"
-                          rel="nofollow"
-                        >
-                          <label
-                            title="LinkedIn"
-                            className="social_grey_in"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="youtube"
-                          href="https://www.youtube.com/user/onlyofficeTV"
-                          target="_blank"
-                          rel="nofollow"
-                        >
-                          <label
-                            title="YouTube"
-                            className="social_grey_tube"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="blog"
-                          href="https://www.onlyoffice.com/blog"
-                          target="_blank"
-                        >
-                          <label
-                            title="Блог"
-                            className="social_grey_blog"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="medium"
-                          href="https://medium.com/onlyoffice"
-                          target="_blank"
-                        >
-                          <label
-                            title="Medium"
-                            className="social_grey_medium"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="instagram"
-                          href="https://www.instagram.com/the_onlyoffice/"
-                          target="_blank"
-                        >
-                          <label
-                            title="Instagram"
-                            className="social_grey_instagram"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="github"
-                          href="https://github.com/ONLYOFFICE/"
-                          target="_blank"
-                        >
-                          <label
-                            title="GitHub"
-                            className="social_grey_github"
-                          ></label>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="fosstodon"
-                          href="https://fosstodon.org/@ONLYOFFICE"
-                          target="_blank"
-                        >
-                          <label
-                            title="Fosstodon"
-                            className="social_grey_fosstodon"
-                          ></label>
-                        </a>
-                      </li>
-                    </ul>
-                    <div className="partial-personal-footer">
-                      <ul className="personal-footer-links">
-                        <li>
-                          <a href="/Terms.aspx?lang=ru-RU" target="_blank">
-                            Условия использования
-                          </a>
-                        </li>
-                        <li>
-                          <a href="https://www.onlyoffice.com" target="blank">
-                            Корпоративное использование
-                          </a>
-                        </li>
-                      </ul>
-                      <div className="personal-footer_rights">
-                        © Ascensio System SIA 2021. Все права защищены
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </Layout.SectionMain>
+      <Layout.PageFooter>
+        <div>
+          <div className="personal-footer">
+            <div className="personal-footer_w clearFix">
+              <ul className="ListSocLink">
+                <li>
+                  <a
+                    className="faceBook"
+                    href="https://www.facebook.com/pages/OnlyOffice/833032526736775"
+                    target="_blank"
+                  >
+                    <label title="Facebook" className="social_grey_fb"></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="twitter"
+                    href="https://twitter.com/ONLY_OFFICE"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <label title="Twitter" className="social_grey_twi"></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="linkedin"
+                    href="https://www.linkedin.com/groups/6726380/"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <label title="LinkedIn" className="social_grey_in"></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="youtube"
+                    href="https://www.youtube.com/user/onlyofficeTV"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <label title="YouTube" className="social_grey_tube"></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="blog"
+                    href="https://www.onlyoffice.com/blog"
+                    target="_blank"
+                  >
+                    <label title="Блог" className="social_grey_blog"></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="medium"
+                    href="https://medium.com/onlyoffice"
+                    target="_blank"
+                  >
+                    <label
+                      title="Medium"
+                      className="social_grey_medium"
+                    ></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="instagram"
+                    href="https://www.instagram.com/the_onlyoffice/"
+                    target="_blank"
+                  >
+                    <label
+                      title="Instagram"
+                      className="social_grey_instagram"
+                    ></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="github"
+                    href="https://github.com/ONLYOFFICE/"
+                    target="_blank"
+                  >
+                    <label
+                      title="GitHub"
+                      className="social_grey_github"
+                    ></label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="fosstodon"
+                    href="https://fosstodon.org/@ONLYOFFICE"
+                    target="_blank"
+                  >
+                    <label
+                      title="Fosstodon"
+                      className="social_grey_fosstodon"
+                    ></label>
+                  </a>
+                </li>
+              </ul>
+              <div className="partial-personal-footer">
+                <ul className="personal-footer-links">
+                  <li>
+                    <a href="/Terms.aspx?lang=ru-RU" target="_blank">
+                      Условия использования
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.onlyoffice.com" target="blank">
+                      Корпоративное использование
+                    </a>
+                  </li>
+                </ul>
+                <div className="personal-footer_rights">
+                  © Ascensio System SIA 2021. Все права защищены
                 </div>
               </div>
-              <div className="paging-content"></div>
-            </main>
+            </div>
           </div>
-        </form>
-
+        </div>
+        <div className="paging-content"></div>
         <div
           id="container"
           style={{ position: "absolute", top: 0, left: 0 }}
@@ -875,7 +814,7 @@ const IndexPage = () => {
           type="text/javascript"
           src="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-x9QFUVlyiL5NEPXurV8mZg2.js?ver=PERSONAL.COM20210620 85533"
         ></script>
-      </div>
+      </Layout.PageFooter>
     </Layout>
   );
 };
