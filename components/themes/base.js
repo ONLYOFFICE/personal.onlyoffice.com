@@ -140,6 +140,10 @@ const Base = {
     paddingBottom: "12px",
     lineHeight: "160%",
   },
+
+  iconButton: {
+    width: "20px"
+  }
 };
 
 export default Base;

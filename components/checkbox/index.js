@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Text from "../text";
 import { StyledLabel, HiddenInput } from "./styled-checkbox";
-import CheckboxCheckedIcon from "../../src/images/checkbox/checkbox.checked.svg";
-import CheckboxIcon from "../../src/images/checkbox/checkbox.svg";
+
+import CheckedIcon from "./svg/checkbox.checked.react.svg";
+import UncheckedIcon from "./svg/checkbox.react.svg";
 
 const Checkbox = (props) => {
   const ref = React.createRef();
@@ -22,6 +23,7 @@ const Checkbox = (props) => {
       isDisabled={props.isDisabled}
       isIndeterminate={props.isIndeterminate}
       className={props.className}
+      isChecked={state.checked}
     >
       <HiddenInput
         type="checkbox"
@@ -31,7 +33,7 @@ const Checkbox = (props) => {
         value={props.value}
         onChange={onInputChange}
       />
-      <img src={state.checked ? CheckboxCheckedIcon : CheckboxIcon} />
+      {state.checked ? <CheckedIcon /> : <UncheckedIcon />}
       {props.label && (
         <Text
           as="span"

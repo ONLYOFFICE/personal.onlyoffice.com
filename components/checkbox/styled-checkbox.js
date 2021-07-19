@@ -1,7 +1,7 @@
 import { styled } from "linaria/react";
 import Base from "../themes/base";
 
-const StyledLabel = styled.label `
+const StyledLabel = styled.label`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -19,7 +19,7 @@ const StyledLabel = styled.label `
   padding-bottom: ${(props) => props.theme.checkbox.paddingBottom};
   line-height: ${(props) => props.theme.checkbox.lineHeight};
 
-  cursor: ${(props) => props.isDisabled ? "not-allowed" : "pointer"}
+  cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 `;
 
 StyledLabel.defaultProps = { theme: Base };

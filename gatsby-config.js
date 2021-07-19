@@ -71,5 +71,13 @@ module.exports = {
         fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.react.svg$/,
+        },
+      },
+    },
   ],
 };

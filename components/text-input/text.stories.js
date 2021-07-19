@@ -14,10 +14,14 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const [value, isValue] = React.useState('');
+  const [value, isValue] = React.useState("");
   return (
     <div style={{ width: "100%" }}>
-      <TextInput {...args} value={value} onChange={(event) => isValue(event.target.value)}/>
+      <TextInput
+        {...args}
+        value={value}
+        onChange={(event) => isValue(event.target.value)}
+      />
     </div>
   );
 };
@@ -30,8 +34,8 @@ Default.args = {
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,
-  isError: false, 
+  isError: false,
   checkButton: false,
   squareButton: false,
-  tabIndex: -1
+  tabIndex: -1,
 };

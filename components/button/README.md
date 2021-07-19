@@ -19,16 +19,16 @@ import Button from "../components/button";
 
 ### Properties
 
-| Props        |      Type      | Required |                Values                 |  Default  | Description                                           |
-| ------------ | :------------: | :------: | :-----------------------------------: | :-------: | ----------------------------------------------------- |
-| `className`  |    `string`    |    -     |                   -                   |     -     | Accepts class                                         |
-| `icon`       |     `node`     |    -     |                   -                   |  `null`   | Icon node element                                     |
-| `id`         |    `string`    |    -     |                   -                   |     -     | Accepts id                                            |
-| `type`       |    `string`    |    -     | `primary`, `secondary`, `transparent` | `primary` | Tells type of button style                            |
-| `isDisabled` |     `bool`     |    -     |                   -                   |  `false`  | Tells when the button should present a disabled state |
-| `label`      |    `string`    |    -     |                   -                   |     -     | Button text                                           |
-| `onClick`    |     `func`     |    -     |                   -                   |     -     | What the button will trigger when clicked             |
-| `scale`      |     `bool`     |    -     |                   -                   |  `false`  | Scale width of button to 100%                         |
-| `style`      | `obj`, `array` |    -     |                   -                   |     -     | Accepts css style                                     |
-| `tabIndex`   |    `number`    |    -     |                   -                   |   `-1`    | Button tab index                                      |
-| `minwidth`   |    `string`    |    -     |                   -                   |  `null`   | Sets the min width of the button                      |
+| Props        |      Type      | Required |                Values                 |  Default  | Description                                                              |
+| ------------ | :------------: | :------: | :-----------------------------------: | :-------: | ------------------------------------------------------------------------ |
+| `className`  |    `string`    |    -     |                   -                   |     -     | Accepts class                                                            |
+| `icon`       |     `node`     |    -     |                   -                   |  `null`   | Takes the path to the icon (the icon must be located in a static folder) |
+| `id`         |    `string`    |    -     |                   -                   |     -     | Accepts id                                                               |
+| `type`       |    `string`    |    -     | `primary`, `secondary`, `transparent` | `primary` | Tells type of button style                                               |
+| `isDisabled` |     `bool`     |    -     |                   -                   |  `false`  | Tells when the button should present a disabled state                    |
+| `label`      |    `string`    |    -     |                   -                   |     -     | Button text                                                              |
+| `onClick`    |     `func`     |    -     |                   -                   |     -     | What the button will trigger when clicked                                |
+| `scale`      |     `bool`     |    -     |                   -                   |  `false`  | Scale width of button to 100%                                            |
+| `style`      | `obj`, `array` |    -     |                   -                   |     -     | Accepts css style                                                        |
+| `tabIndex`   |    `number`    |    -     |                   -                   |   `-1`    | Button tab index                                                         |
+| `minwidth`   |    `string`    |    -     |                   -                   |  `null`   | Sets the min width of the button                                         |
