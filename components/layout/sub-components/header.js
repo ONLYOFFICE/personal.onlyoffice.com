@@ -1,13 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import StyledHeader from "./styled-header";
 
 const Header = (props) => {
-  return <StyledHeader {...props} />;
+  return <StyledHeader>{props.children} </StyledHeader>;
 };
 
-StyledHeader.propTypes = {};
+Header.displayName = "PageHeader";
 
-StyledHeader.defaultProps = {};
-
-export default StyledHeader;
+export default Header;

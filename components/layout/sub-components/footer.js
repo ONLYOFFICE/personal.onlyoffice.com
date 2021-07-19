@@ -1,13 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import StyledFooter from "./styled-footer";
 
 const Footer = (props) => {
   return <StyledFooter {...props} />;
 };
 
-Footer.propTypes = {};
-
-Footer.defaultProps = {};
+Footer.displayName = "PageFooter";
 
 export default Footer;
