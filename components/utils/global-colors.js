@@ -10,10 +10,8 @@ const globalColors = {
 
   orangeMain: "#ff6f3d",
   orangeHover: "#ff865c",
-
   green: "#8BB825",
   greenMain: "#F9FEEF",
-  
 };
 
 export default globalColors;
