@@ -79,5 +79,13 @@ module.exports = {
         id: "portal",
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.react.svg$/,
+        },
+      },
+    },
   ],
 };

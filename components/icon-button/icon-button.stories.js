@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "IconButton is used for a action on a page.",
+        component: "IconButton is used for an action on a page.",
       },
     },
   },
@@ -22,4 +22,8 @@ const Template = ({ ...args }) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  size: 24,
+  iconName: "social-icons/facebook.react.svg",
+  isDisabled: false,
+};

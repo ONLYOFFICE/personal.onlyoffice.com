@@ -1,7 +1,6 @@
 import globalColors from "../utils/global-colors";
 
-const { white, grayMain, grayHover, orangeMain, orangeHover } = globalColors;
-
+const { white, grayMain, grayHover, orangeMain, orangeHover, graySecnodary, gray, grayTextInput, grayTextInputHover } = globalColors;
 const Base = {
   button: {
     textColor: white,
@@ -40,7 +39,7 @@ const Base = {
 
     padding: "0",
     margin: "0",
-    display: "inline-box",
+    display: "inline-block",
     textAlign: "left",
     hoverTextDecoration: "none",
     textDecoration: "underline",
@@ -50,6 +49,101 @@ const Base = {
     fontWeight: "400",
     textOverflow: "none",
   },
+
+  textInput: {
+    textColor: gray,
+    textColorHover: grayHover,
+    textColorSecondaryType: graySecnodary,
+    textColorSecondaryTypeHover: gray,
+
+    backgroundColor: grayTextInputHover,
+    backgroundColorPrimaryHover: white,
+    backgroundColorDisabled: "#F9F9F9",
+    backgroundColorSuccess: "#F9FEEF",
+    backgroundColorError: "#FFF7F7",
+
+    border: "1px solid",
+    borderRadius: "3px",
+    borderColor: "#AAAAAA",
+    borderColorHover: "#666666",
+    borderColorDisabled: "#AAAAAA",
+    borderColorSuccess: "#8BB825",
+    borderColorError: "#CB0000",
+
+    position: "absolute",
+    display: "block",
+    boxSizing: "border-box",
+    width: "544px",
+    height: "56px",
+    padding: "0 16px",
+    margin: "0",
+    overflow: "auto",
+    fontSize: "16px",
+    fontWeight: "400",
+    lineHeight: "22px",
+    textAlign: "left",
+    verticalAlign: "center",
+    textDecoration: "none",
+    textTransform: "none",
+    textShadow:"none",
+    outline: "none",
+    
+    label: {
+      top: "3px",
+      fontSize: "12px",
+    },
+
+    media: {
+      width: "100%",
+      fontSize: "13px",
+    }
+  },
+
+  text: {
+    colorText: gray,
+
+    display: "inline-block",
+    padding: "0",
+    margin: "0",
+    textAlign: "left",
+    hoverTextDecoration: "none",
+    textDecoration: "none",
+    textTransform: "none",
+    lineHeight: "21px",
+    fontSize: "14px",
+    fontWeight: "400",
+    textOverflow: "none",
+    overflow: "hidden",
+  },
+
+  separator: {
+    display: "flex",
+    width: "1px",
+    alignItems: "center",
+
+    div: {
+      backgroundColor: "#CCCCCC",
+
+      height: "1px",
+      flex: "1",
+    },
+
+    span: {
+      padding: "0 12px",
+    },
+  },
+
+
+  checkbox: {
+    color: grayTextInput,
+    fontSize: "14px",
+    paddingBottom: "12px",
+    lineHeight: "160%",
+  },
+
+  iconButton: {
+    width: "20px"
+  }
 };
 
 export default Base;
