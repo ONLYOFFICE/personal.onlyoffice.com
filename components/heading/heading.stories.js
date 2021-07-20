@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import Heading from "./";
 
 export default {
@@ -13,13 +13,19 @@ export default {
   },
 };
 
-const Template = ({ ...args }) => {
+const Template = ({ children, ...args }) => {
   return (
     <div style={{ width: "100%" }}>
-      <Heading {...args} />
+      <Heading {...args}>
+        {children}
+      </Heading>
     </div>
   );
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  children: "Heading",
+  hLevel: 1,
+  tabIndex: -1,
+};
