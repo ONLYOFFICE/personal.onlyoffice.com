@@ -22,11 +22,9 @@ const IndexPage = () => {
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>
-
       <Layout.PageHeader>
         <HeaderContent
           t={t}
-          toHideButton
           language={language}
           href="authentication"
           labelButton={t("LoginBtn")}
