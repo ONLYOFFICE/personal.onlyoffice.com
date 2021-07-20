@@ -1,10 +1,10 @@
 import * as React from "react";
 import Layout from "../../components/layout";
-import Head from "../sub-components/head";
+import Head from "./sub-components/head";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import HeaderContent from "../sub-components/header-content";
+import HeaderContent from "./sub-components/header-content";
 
 const IndexPage = () => {
   const {
@@ -26,11 +26,12 @@ const IndexPage = () => {
         <HeaderContent
           t={t}
           language={language}
-          href="authentication"
-          labelButton={t("LoginBtn")}
+          href="sign-in"
+          labelButton={t("AuthDocsSignIn")}
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
+        <section></section>
         <div className="pure-orange">
           <form
             method="post"
