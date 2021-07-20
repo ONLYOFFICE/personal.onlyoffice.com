@@ -7,7 +7,7 @@ const StyledHeaderContent = styled.div`
 
   display: grid;
   grid-gap: 24px;
-  grid-template-columns: minmax(54px, 910px) 102px 34px;
+  grid-template-columns: minmax(54px, 910px) min-content 34px;
 
   .logo-wrapper {
     margin-top: 26px;
@@ -19,13 +19,13 @@ const StyledHeaderContent = styled.div`
 
   .header-button {
     height: 48px;
-    width: 105px;
+    min-width: 105px;
     margin-top: 14px;
   }
 
   .language-selector {
     margin-top: 27px;
-    margin-left: 10px;
+    margin-left: 6px;
   }
 
   @media (max-width: 1200px) {
