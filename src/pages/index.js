@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Layout from "../../components/layout";
 import Head from "./sub-components/head";
 import { graphql } from "gatsby";
@@ -27,7 +27,7 @@ const IndexPage = () => {
           t={t}
           language={language}
           href="sign-in"
-          labelButton={t("AuthDocsSignIn")}
+          labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
@@ -823,12 +823,7 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(
-      filter: {
-        ns: { in: ["translations", "fallback"] }
-        language: { eq: $language }
-      }
-    ) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
