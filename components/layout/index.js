@@ -1,4 +1,6 @@
 import React from "react";
+
+import StyledLayout from "./styled-layout";
 import Header from "./sub-components/header";
 import Main from "./sub-components/main";
 import Footer from "./sub-components/footer";
@@ -60,12 +62,12 @@ class Layout extends React.Component {
     });
 
     return (
-      <>
+      <StyledLayout>
         <Head>{headContent ? headContent.props.children : null}</Head>
         <Header>{headerContent ? headerContent.props.children : null}</Header>
         <Main>{mainContent ? mainContent.props.children : null}</Main>
         <Footer>{footerContent ? footerContent.props.children : null}</Footer>
-      </>
+      </StyledLayout>
     );
   }
 }
