@@ -10,12 +10,13 @@ export default function LangsList(props) {
     <StyledItemsList isOpen={isOpen} countLanguages={languages.length}>
       {languages.map((language) => {
         const { shortKey, iconName, key } = language;
+        const languageName = t ? t(key) : key;
         return (
           <StyledItem key={key}>
             <Link to={shortKey !== "en" ? `/${shortKey}` : "/"}>
               <img src={`/flags/${iconName}`} alt={key} width="18px" />
               <Text as="span" className="title-lng">
-                {t(key)}
+                {languageName}
               </Text>
             </Link>
           </StyledItem>
