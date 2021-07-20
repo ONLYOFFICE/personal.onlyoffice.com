@@ -28,7 +28,7 @@ const HeaderContent = (props) => {
         <Link className="top-logo" title="ONLYOFFICE" to={href}>
           <Button
             label={labelButton}
-            type="transparent"
+            typeButton="transparent"
             height="100%"
             width="100%"
           />
