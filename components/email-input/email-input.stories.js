@@ -15,9 +15,15 @@ export default {
 };
 
 const Template = ({ ...args }) => {
+  const [value, isValue] = React.useState('');
+
   return (
     <div style={{ width: "100%" }}>
-      <EmailInput {...args} />
+      <EmailInput  
+      {...args}
+      value={value}
+      onChange={(event) => isValue(event.target.value)}
+      />
     </div>
   );
 };

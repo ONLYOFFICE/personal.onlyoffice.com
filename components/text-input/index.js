@@ -13,6 +13,7 @@ const TextInput = ({
   label,
   placeholder,
   scale,
+  onBlur,
   onChange,
   isDisabled,
   isAutoFocussed,
@@ -30,12 +31,10 @@ const TextInput = ({
   ...rest}) => {
 
   const inputTextRef = useRef(null);
-  
-    useEffect(()=>{
-      if(isAutoFocussed) inputTextRef.current.focus();
-    }, []);
-  
-  
+  useEffect(()=>{
+    if(isAutoFocussed) inputTextRef.current.focus();
+  }, []); 
+
   return (
           <StyleGroupInput>
             <StyledInput {...rest}>    
@@ -123,6 +122,8 @@ TextInput.propTypes = {
     onChange: PropTypes.func,
     /** What the button will trigger when clicked */
     onClick: PropTypes.func,
+    /** onBlur func */
+    onBlur: PropTypes.func,
     /** Text input tab index */
     tabIndex: PropTypes.number,
     /** Accepts id */
