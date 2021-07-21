@@ -28,7 +28,7 @@ import Button from "../components/button";
 | `isDisabled` |     `bool`     |    -     |                   -                   |  `false`  | Tells when the button should present a disabled state                    |
 | `label`      |    `string`    |    -     |                   -                   |     -     | Button text                                                              |
 | `onClick`    |     `func`     |    -     |                   -                   |     -     | What the button will trigger when clicked                                |
-| `scale`      |     `bool`     |    -     |                   -                   |  `false`  | Scale width of button to 100%                                            |
+| `isScale`    |     `bool`     |    -     |                   -                   |  `false`  | Scale width of button to 100%                                            |
 | `style`      | `obj`, `array` |    -     |                   -                   |     -     | Accepts css style                                                        |
 | `tabIndex`   |    `number`    |    -     |                   -                   |   `-1`    | Button tab index                                                         |
 | `minwidth`   |    `string`    |    -     |                   -                   |  `null`   | Sets the min width of the button                                         |

@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   text-decoration: ${(props) => props.theme.button.textDecoration};
 
   height: ${(props) => props.height};
-  width: ${(props) => (props.scale ? "100%" : props.width)};
+  width: ${(props) => (props.isScale ? "100%" : props.width)};
   min-width: ${(props) => props.minwidth};
 
   border: ${(props) =>

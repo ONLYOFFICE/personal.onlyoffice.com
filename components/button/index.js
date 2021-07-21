@@ -8,7 +8,7 @@ const Icon = ({ icon }) => {
   return <ReactSVG src={icon} className="btn-with-icon" />;
 };
 
-const Button = ({ label, isDisabled, icon, isSubmit, scale, ...rest }) => {
+const Button = ({ label, isDisabled, icon, isSubmit, isScale, ...rest }) => {
   const theme = useTheme();
 
   return (
@@ -16,7 +16,7 @@ const Button = ({ label, isDisabled, icon, isSubmit, scale, ...rest }) => {
       disabled={isDisabled}
       theme={theme}
       type={isSubmit ? "submit" : undefined}
-      scale={scale ? scale : undefined}
+      isScale={isScale ? isScale : undefined}
       {...rest}
     >
       {icon && <Icon icon={icon} />} {label}
@@ -36,7 +36,7 @@ Button.propTypes = {
   /** Height of button */
   height: PropTypes.string,
   /** Scale width of button to 100% */
-  scale: PropTypes.bool,
+  isScale: PropTypes.bool,
   /** Takes the path to the icon (the icon must be located in a static folder)  */
   icon: PropTypes.string,
   /** Button tab index */
