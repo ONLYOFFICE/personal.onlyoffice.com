@@ -14,14 +14,14 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const [value, isValue] = React.useState("");
+  const [value, setValue] = React.useState("");
+  const onChangeHandler = (e) => {
+    console.log(e.target.value);
+    setValue(e.target.value);
+  };
   return (
     <div style={{ width: "100%" }}>
-      <TextInput
-        {...args}
-        value={value}
-        onChange={(event) => isValue(event.target.value)}
-      />
+      <TextInput {...args} value={value} onChange={onChangeHandler} />
     </div>
   );
 };

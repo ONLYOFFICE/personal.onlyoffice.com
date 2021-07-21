@@ -15,15 +15,16 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const [value, isValue] = React.useState('');
+  const [value, setValue] = React.useState("");
+
+  const onChangeHandler = (e, isValid) => {
+    setValue(e.target.value);
+    console.log(e.target.value, `isValid: ${isValid}`);
+  };
 
   return (
     <div style={{ width: "100%" }}>
-      <EmailInput  
-      {...args}
-      value={value}
-      onChange={(event) => isValue(event.target.value)}
-      />
+      <EmailInput {...args} value={value} onChange={onChangeHandler} />
     </div>
   );
 };
