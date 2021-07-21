@@ -18,7 +18,7 @@ const EmailInput = ({
   const REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const [email, setEmail] = useState('');
-  const [valid, setValid] = useState();
+  const [valid, setValid] = useState('');
   const [errorText, setErrorText] = useState('');
   const [emailDefault, setEmailDefault] = useState(true);
   const [emailSuccess, setEmailSuccess] = useState(false);

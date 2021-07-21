@@ -10,6 +10,7 @@ padding: ${(props) => props.padding || props.theme.textInput.padding};
 height: ${(props) => props.height || props.theme.textInput.height};
 width: ${(props) => props.scale ? props.theme.textInput.scale
 : (props.width || props.theme.textInput.width)};
+padding-top: 13px;
 
 color: ${(props) => props.color || props.theme.textInput.textColor};
 font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
