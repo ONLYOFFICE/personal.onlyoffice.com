@@ -36,24 +36,28 @@ border-right: ${(props) =>
     props.theme.textInput.border};
     
 border-color: ${(props) =>
+    (props.defaultInput && props.theme.textInput.borderColor) ||
     (props.isError && props.theme.textInput.borderColorError) ||
     (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
     props.theme.textInput.borderColor};
 
 background-color: ${(props) =>
+    (props.defaultInput && props.theme.textInput.backgroundColor) ||
     (props.isError && props.theme.textInput.backgroundColorError) ||
     (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
     props.theme.textInput.backgroundColor};
 
-    cursor: pointer;
+cursor: pointer;
 
     &:hover{
     border-color: ${(props) =>
+        (props.defaultInput && props.theme.textInput.borderColor) ||
         (props.isError && props.theme.textInput.borderColorError) ||
         (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
         props.theme.textInput.borderColor};
 
     background-color: ${(props) =>
+        (props.defaultInput && props.theme.textInput.backgroundColor) ||
         (props.isError && props.theme.textInput.backgroundColorError) ||
         (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
         props.theme.textInput.backgroundColor};
@@ -61,11 +65,13 @@ background-color: ${(props) =>
 
     &:focus{
     border-color: ${(props) =>
+        (props.defaultInput && props.theme.textInput.borderColorHover) ||
         (props.isError && props.theme.textInput.borderColorError) ||
         (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
         props.theme.textInput.borderColorHover};
         
     background-color: ${(props) =>
+        (props.defaultInput && props.theme.textInput.backgroundColorPrimaryHover) ||
         (props.isError && props.theme.textInput.backgroundColorError) ||
         (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
         props.theme.textInput.backgroundColorPrimaryHover};
@@ -75,7 +81,11 @@ background-color: ${(props) =>
     cursor: default;
     border-color: ${(props) => props.theme.textInput.borderColorDisabled};
     background-color: ${(props) => props.theme.textInput.backgroundColorDisabled};
-  }
+    }
+
+    ::placeholder {
+        display: none;
+    }
   
   @media ${device.tablet} {
     width: ${(props) => props.scale 

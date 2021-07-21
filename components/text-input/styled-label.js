@@ -25,7 +25,7 @@ vertical-align: ${(props) => props.theme.textInput.verticalAlign};
 -webkit-transition: top .2s ease-in-out, 
                     font-size .2s ease-in-out;
 transition: top .2s ease-in-out, 
-            font-size .2s ease-in-out;
+            font-size .2s ease-in-out;          
 `;
 
 Label.defaultProps = { theme: Base };

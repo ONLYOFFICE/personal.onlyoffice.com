@@ -15,6 +15,7 @@ const TextInput = ({
   onBlur,
   placeholder,
   onChange,
+  defaultInput,
   isDisabled,
   isAutoFocussed,
   isSuccess,
@@ -44,6 +45,7 @@ const TextInput = ({
           className={className}
           disabled={isDisabled}
           isAutoFocussed={isAutoFocussed}
+          defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
           checkButton={checkButton}
@@ -52,7 +54,7 @@ const TextInput = ({
           ref={inputTextRef}
           {...rest}
         />
-        <Label defaultChecked={rest.value !== ""}>{label}</Label>
+        <Label defaultChecked={rest.value !== ""}>{label || placeholder}</Label>
       </StyledInput>
       {Boolean(checkButton) && (
         <StyledButton
@@ -102,6 +104,8 @@ TextInput.propTypes = {
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
+  /** Default input color*/
+  defaultInput: PropTypes.bool,
   /** Scale width to 100% */
   scale: PropTypes.bool,
   /** Indicates that the field cannot be used */

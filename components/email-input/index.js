@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import StyledEmailInput from "./styled-email-input";
 import TextInput from "../text-input";
@@ -6,56 +6,58 @@ import Text from "../text";
 
 const EmailInput = ({ 
   isError, 
-  isSuccess, 
-  value, 
+  isSuccess,
+  defaultInput,
+  value,
+  errText,
+  isErrText, 
   onChange, 
   type, 
   ...rest}) => {
 
   const REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const [email, setEmail] = React.useState('');
-  const [valid, setValid] = React.useState();
-  const [errorText, setErrorText] = React.useState('');
-  const [emailSuccess, setEmailSuccess] = React.useState(false);
-  const [emailError, setEmailError] = React.useState(false);
+  const [email, setEmail] = useState('');
+  const [valid, setValid] = useState();
+  const [errorText, setErrorText] = useState('');
+  const [emailDefault, setEmailDefault] = useState(true);
+  const [emailSuccess, setEmailSuccess] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   
   function Validate(email){
     return REGEX.test(email);
   }
 
-  function changeHandler(event){
-    const email = event.target.value;
+  function onChangeHandler(e){
+    const email = e.target.value;
     const emailValid = Validate(email);
     setEmail(email);
     setValid(emailValid);
   }
 
-  const onBlur = React.useCallback((e) => {
+  function onBlur(e){
     if(!e.currentTarget.contains(e.relatedTarget)) {
-      if(!valid){
-        setEmailError(true);
-        setEmailSuccess(false);
-      } else{
-        setEmailError(false);
-        setEmailSuccess(true); 
-      }
-      if(!emailError){
-        if(email === ''){
-          setErrorText('This field can’t be empty');
-        } else{
-          setErrorText('Incorrect email format');
-        }
-      }
+        email === '' ? setEmailDefault(true) : setEmailDefault(false);
+        !valid && setEmailError(true);
+        !emailError && setErrorText(errText);     
     }
-  }, [valid]);  
+  };  
 
- const onFocus = React.useEffect(() => {
-    if(valid){
-      setEmailError(false);
-      setEmailSuccess(true); 
-    } 
-  },[valid]);
+  function onFocus(){
+    if(valid)
+      { 
+        setEmailDefault(false);       
+        setEmailSuccess(true); 
+      }else{
+        setEmailDefault(true);
+        setEmailError(false);
+        setEmailSuccess(false); 
+      }
+  } 
+
+  useEffect(() => {
+    onFocus(valid, email)
+  }, [valid, email]);
 
   return(
     <StyledEmailInput 
@@ -65,13 +67,14 @@ const EmailInput = ({
     >
       <TextInput 
         type="email"
+        defaultInput={emailDefault}
         isSuccess={emailSuccess}
         isError={emailError}
         value={email}
-        onChange={changeHandler}
+        onChange={onChangeHandler}
         {...rest}
       />
-      {emailError
+      {isErrText
         &&
           <Text 
             fontSize="13px"
@@ -107,6 +110,8 @@ EmailInput.propTypes = {
     label: PropTypes.string,
     /** Name text in button */
     labelButton: PropTypes.string,
+    /** Error text */
+    errText: PropTypes.string,
     /** Supported type of the input fields */
     type: PropTypes.oneOf(["email", "password", "text"]),
     /** Type of the button */
@@ -115,6 +120,8 @@ EmailInput.propTypes = {
     name: PropTypes.string,
     /** Scale width to 100% */
     scale: PropTypes.bool,
+    /** Check error text */
+    isErrText: PropTypes.bool,
     /** Indicates that the field cannot be used */
     isDisabled: PropTypes.bool,
     /** Focus the input field on initial render */
@@ -145,6 +152,8 @@ EmailInput.propTypes = {
     classNameButton: PropTypes.string,
 };
 
-EmailInput.defaultProps = {};
+EmailInput.defaultProps = {
+  isErrText: true,
+};
 
 export default EmailInput;

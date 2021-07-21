@@ -7,6 +7,10 @@ const StyledInput = styled.div`
   width: ${(props) => props.theme.textInput.scale};
   padding: 0;
   margin: 0;
+  input:focus + label{
+    top: ${(props) => props.theme.textInput.label.top};
+    font-size: ${(props) => props.theme.textInput.label.fontSize}; 
+} 
 `;
 
 StyledInput.defaultProps = { theme: Base };
