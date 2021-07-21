@@ -12,6 +12,7 @@ const TextInput = ({
   type, 
   label,
   placeholder,
+  scale,
   onChange,
   isDisabled,
   isAutoFocussed,
@@ -47,6 +48,7 @@ const TextInput = ({
                   checkButton={checkButton}
                   isDisabled={isDisabled}
                   onChange={onChange}
+                  scale={scale ? scale.toString() : undefined}
                   placeholder={placeholder}
                   ref={inputTextRef}
                   {...rest} 

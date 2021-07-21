@@ -73,6 +73,7 @@ const Base = {
     position: "absolute",
     display: "block",
     boxSizing: "border-box",
+    boxShadow: "none",
     width: "544px",
     height: "56px",
     scale: "100%",

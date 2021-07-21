@@ -8,8 +8,7 @@ display: ${(props) => props.theme.textInput.display};
 margin: ${(props) => props.theme.textInput.margin};
 padding: ${(props) => props.padding || props.theme.textInput.padding};
 height: ${(props) => props.height || props.theme.textInput.height};
-width: ${(props) => 
-props.scale ? props.theme.textInput.scale
+width: ${(props) => props.scale ? props.theme.textInput.scale
 : (props.width || props.theme.textInput.width)};
 
 color: ${(props) => props.color || props.theme.textInput.textColor};
