@@ -75,6 +75,7 @@ const Base = {
     boxSizing: "border-box",
     width: "544px",
     height: "56px",
+    scale: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",

@@ -10,7 +10,8 @@ const TextInput = ({
   className,
   id, 
   type, 
-  label, 
+  label,
+  placeholder,
   onChange,
   isDisabled,
   isAutoFocussed,
@@ -39,7 +40,6 @@ const TextInput = ({
             <StyledInput {...rest}>    
                 <StyledTextInput 
                   type={type} 
-                  className={className}             
                   disabled={isDisabled}
                   isAutoFocussed={isAutoFocussed}
                   isSuccess={isSuccess}
@@ -47,10 +47,11 @@ const TextInput = ({
                   checkButton={checkButton}
                   isDisabled={isDisabled}
                   onChange={onChange}
+                  placeholder={placeholder}
                   ref={inputTextRef}
                   {...rest} 
                 />
-                <Label defaultChecked={rest.value !== ""}>{label}</Label>                  
+                <Label defaultChecked={rest.value !== "" || placeholder !== ""}>{label}</Label>                  
             </StyledInput>
             {Boolean(checkButton) 
               && <StyledButton
@@ -90,6 +91,8 @@ TextInput.propTypes = {
     fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     /** Value of the input */
     value: PropTypes.string.isRequired,
+    /** Text placeholder in input */
+    placeholder: PropTypes.string,
     /** label text in input */
     label: PropTypes.string,
     /** Name text in button */
@@ -124,16 +127,17 @@ TextInput.propTypes = {
     id: PropTypes.string,
     /** Accepts class */
     className: PropTypes.string,
-     /** Accepts button id */
-     idButton: PropTypes.string,
-     /** Accepts button class */
-     classNameButton: PropTypes.string,
+    /** Accepts button id */
+    idButton: PropTypes.string,
+    /** Accepts button class */
+    classNameButton: PropTypes.string,
 };
 
 TextInput.defaultProps = {
-  label: "",
   type: "text",
+  label: "",
   value: "",
+  placeholder: "",
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,

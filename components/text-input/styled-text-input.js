@@ -9,8 +9,8 @@ margin: ${(props) => props.theme.textInput.margin};
 padding: ${(props) => props.padding || props.theme.textInput.padding};
 height: ${(props) => props.height || props.theme.textInput.height};
 width: ${(props) => 
-props.scale ? "100%"
-: props.width || props.theme.textInput.width };
+props.scale ? props.theme.textInput.scale
+: (props.width || props.theme.textInput.width)};
 
 color: ${(props) => props.color || props.theme.textInput.textColor};
 font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
@@ -79,16 +79,16 @@ background-color: ${(props) =>
   }
   
   @media ${device.tablet} {
-    width: ${(props) => 
-    props.scale ? "100%"
-    : props.width || props.theme.textInput.media.width };
+    width: ${(props) => props.scale 
+    ? props.theme.textInput.scale
+    : (props.width || props.theme.textInput.media.width) };
     font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   }
 
   @media ${device.mobileL} {
     width: ${(props) => 
-    props.scale ? "100%"
-    : props.width || props.theme.textInput.media.width };
+    props.scale ? props.theme.textInput.scale
+    : (props.width || props.theme.textInput.media.width) };
     font-size: ${(props) => props.theme.textInput.media.fontSize};
   }
 
