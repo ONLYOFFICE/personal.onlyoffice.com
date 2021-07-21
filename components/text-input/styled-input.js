@@ -10,6 +10,8 @@ const StyledInput = styled.div`
   input:focus + label{
     top: ${(props) => props.theme.textInput.label.top};
     font-size: ${(props) => props.theme.textInput.label.fontSize}; 
+    left: ${(props) => props.theme.textInput.label.left};
+    color: ${(props) => props.theme.textInput.label.colorHover};
 } 
 `;
 

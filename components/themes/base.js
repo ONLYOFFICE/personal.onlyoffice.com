@@ -77,7 +77,7 @@ const Base = {
     width: "544px",
     height: "56px",
     scale: "100%",
-    padding: "0 16px",
+    padding: "0 15px",
     margin: "0",
     overflow: "auto",
     fontSize: "16px",
@@ -91,7 +91,10 @@ const Base = {
     outline: "none",
     
     label: {
-      top: "3px",
+      color: "#AAAAAA",
+      colorHover: gray,
+      left: "3px",
+      top: "6px",
       fontSize: "12px",
     },
 

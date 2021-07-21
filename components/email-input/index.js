@@ -24,18 +24,19 @@ const EmailInput = ({
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [emailError, setEmailError] = useState(false);
   
-  function Validate(email){
+  const Validate = (email) => {
     return REGEX.test(email);
-  }
+  };
 
-  function onChangeHandler(e){
+  const onChangeHandler = (e) => {
     const email = e.target.value;
     const emailValid = Validate(email);
     setEmail(email);
     setValid(emailValid);
+    onChange && onChangeHandler(email);
   }
 
-  function onBlur(e){
+  const onBlur = (e) => {
     if(!e.currentTarget.contains(e.relatedTarget)) {
         email === '' ? setEmailDefault(true) : setEmailDefault(false);
         !valid && setEmailError(true);
@@ -43,7 +44,7 @@ const EmailInput = ({
     }
   };  
 
-  function onFocus(){
+  const onFocus = () => {
     if(valid)
       { 
         setEmailDefault(false);       
@@ -53,7 +54,7 @@ const EmailInput = ({
         setEmailError(false);
         setEmailSuccess(false); 
       }
-  } 
+  } ;
 
   useEffect(() => {
     onFocus(valid, email)
