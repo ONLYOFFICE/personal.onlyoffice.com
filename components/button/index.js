@@ -8,11 +8,17 @@ const Icon = ({ icon }) => {
   return <ReactSVG src={icon} className="btn-with-icon" />;
 };
 
-const Button = ({ label, isDisabled, icon, ...rest }) => {
+const Button = ({ label, isDisabled, icon, isSubmit, scale, ...rest }) => {
   const theme = useTheme();
 
   return (
-    <StyledButton disabled={isDisabled} theme={theme} {...rest}>
+    <StyledButton
+      disabled={isDisabled}
+      theme={theme}
+      type={isSubmit ? "submit" : undefined}
+      scale={scale ? scale : undefined}
+      {...rest}
+    >
       {icon && <Icon icon={icon} />} {label}
     </StyledButton>
   );
@@ -22,7 +28,7 @@ Button.propTypes = {
   /** Button text */
   label: PropTypes.string,
   /** Tells type of button style */
-  type: PropTypes.oneOf(["primary", "secondary", "transparent"]),
+  typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Tells when the button should present a disabled state */
   isDisabled: PropTypes.bool,
   /** Width of button */
@@ -45,6 +51,8 @@ Button.propTypes = {
   minwidth: PropTypes.string,
   /** What the button will trigger when clicked */
   onClick: PropTypes.func,
+  /** If the button should submit the form */
+  isSubmit: PropTypes.bool,
 };
 
 Button.defaultProps = {

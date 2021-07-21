@@ -17,7 +17,8 @@ const StyledButton = styled.button`
   min-width: ${(props) => props.minwidth};
 
   border: ${(props) =>
-    props.type === "transparent" && props.theme.button.borderTransparentType};
+    props.typeButton === "transparent" &&
+    props.theme.button.borderTransparentType};
   border-radius: ${(props) => props.theme.button.borderRadius};
 
   font-size: ${(props) => props.theme.button.fontSize};
@@ -26,9 +27,9 @@ const StyledButton = styled.button`
   line-height: ${(props) => props.theme.button.lineHeight};
 
   color: ${(props) =>
-    props.type === "transparent"
+    props.typeButton === "transparent"
       ? props.theme.button.textColorTransparentType
-      : props.type === "secondary"
+      : props.typeButton === "secondary"
       ? props.theme.button.textColorSecondaryType
       : props.theme.button.textColor};
 
@@ -37,26 +38,27 @@ const StyledButton = styled.button`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   background-color: ${(props) =>
-    props.type === "primary"
+    props.typeButton === "primary"
       ? props.theme.button.backgroundColorPrimary
-      : props.type === "transparent"
+      : props.typeButton === "transparent"
       ? "transparent"
       : props.theme.button.backgroundColorSecondary};
 
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.type === "primary"
+      props.typeButton === "primary"
         ? props.theme.button.backgroundColorPrimaryHover
-        : props.type === "transparent"
+        : props.typeButton === "transparent"
         ? "transparent"
         : props.theme.button.backgroundColorSecondaryHover};
     border-color: ${(props) =>
-      props.type === "transparent" && props.theme.button.borderColorHover};
+      props.typeButton === "transparent" &&
+      props.theme.button.borderColorHover};
     color: ${(props) =>
-      props.type === "transparent"
+      props.typeButton === "transparent"
         ? props.theme.button.textColorTransparentTypeHover
-        : props.type === "secondary"
+        : props.typeButton === "secondary"
         ? props.theme.button.textColorSecondaryType
         : props.theme.button.textColor};
   }
@@ -65,17 +67,17 @@ const StyledButton = styled.button`
     cursor: default;
     opacity: 0.3;
     background-color: ${(props) =>
-      props.type === "primary"
+      props.typeButton === "primary"
         ? props.theme.button.backgroundColorPrimary
-        : props.type === "transparent"
+        : props.typeButton === "transparent"
         ? "transparent"
         : props.theme.button.backgroundColorSecondary};
     border-color: ${(props) =>
-      props.type === "transparent" && props.theme.button.borderColor};
+      props.typeButton === "transparent" && props.theme.button.borderColor};
     color: ${(props) =>
-      props.type === "transparent"
+      props.typeButton === "transparent"
         ? props.theme.button.textColorTransparentType
-        : props.type === "secondary"
+        : props.typeButton === "secondary"
         ? props.theme.button.textColorSecondaryType
         : props.theme.button.textColor};
   }

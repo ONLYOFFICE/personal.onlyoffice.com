@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import StyleGroupInput from "./styled-group";
 import StyledTextInput from "./styled-text-input";
@@ -6,7 +6,7 @@ import StyledButton from "./styled-button";
 import StyledInput from "./styled-input";
 import Label from "./styled-label";
 
-const TextInput = ({ 
+const TextInput = ({
   className,
   id, 
   type, 
@@ -28,8 +28,8 @@ const TextInput = ({
   labelButton,
   iconButton,
   onClick,
-  ...rest}) => {
-
+  ...rest
+}) => {
   const inputTextRef = useRef(null);
   useEffect(()=>{
     if(isAutoFocussed) inputTextRef.current.focus();
@@ -144,10 +144,10 @@ TextInput.defaultProps = {
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,
-  isError: false, 
+  isError: false,
   checkButton: false,
   squareButton: false,
-  tabIndex: -1
+  tabIndex: -1,
 };
 
 export default TextInput;

@@ -24,7 +24,7 @@ import Button from "../components/button";
 | `className`  |    `string`    |    -     |                   -                   |     -     | Accepts class                                                            |
 | `icon`       |     `node`     |    -     |                   -                   |  `null`   | Takes the path to the icon (the icon must be located in a static folder) |
 | `id`         |    `string`    |    -     |                   -                   |     -     | Accepts id                                                               |
-| `type`       |    `string`    |    -     | `primary`, `secondary`, `transparent` | `primary` | Tells type of button style                                               |
+| `typeButton` |    `string`    |    -     | `primary`, `secondary`, `transparent` | `primary` | Tells type of button style                                               |
 | `isDisabled` |     `bool`     |    -     |                   -                   |  `false`  | Tells when the button should present a disabled state                    |
 | `label`      |    `string`    |    -     |                   -                   |     -     | Button text                                                              |
 | `onClick`    |     `func`     |    -     |                   -                   |     -     | What the button will trigger when clicked                                |
