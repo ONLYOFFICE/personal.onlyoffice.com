@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import StyleGroupInput from "./styled-group";
 import StyledTextInput from "./styled-text-input";
@@ -32,14 +32,19 @@ const TextInput = ({
   ...rest
 }) => {
   const inputTextRef = useRef(null);
+  const [isFocus, setIsFocus] = useState(isAutoFocussed);
 
   useEffect(() => {
     if (isAutoFocussed) inputTextRef.current.focus();
   }, []);
 
+  const onFocusHandler = () => {
+    setIsFocus(!isFocus);
+  };
+
   return (
     <StyleGroupInput>
-      <StyledInput {...rest}>
+      <StyledInput {...rest} onFocus={onFocusHandler} onBlur={onFocusHandler}>
         <StyledTextInput
           type={type}
           className={className}
@@ -60,6 +65,7 @@ const TextInput = ({
           defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
+          isFocus={isFocus}
         >
           {label || placeholder}
         </Label>
@@ -128,7 +134,7 @@ TextInput.propTypes = {
   squareButton: PropTypes.bool,
   /** enable  button*/
   withButton: PropTypes.bool,
-  /** if the button should submit the form  */
+  /** Set to true if the button should submit the form  */
   isSubmit: PropTypes.bool,
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value */
   onChange: PropTypes.func,

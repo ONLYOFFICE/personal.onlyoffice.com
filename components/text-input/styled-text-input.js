@@ -10,7 +10,7 @@ const StyledTextInput = styled.input`
   height: ${(props) => props.height || props.theme.textInput.height};
   width: ${(props) =>
     props.withButton ? "102%" : props.width || props.theme.textInput.width};
-  padding-top: 11px;
+  padding-top: ${(props) => props.placeholder && "11px"};
 
   color: ${(props) => props.color || props.theme.textInput.textColor};
   font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
@@ -41,9 +41,7 @@ const StyledTextInput = styled.input`
     (props.isError && props.theme.textInput.borderColorError) ||
     (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
     props.theme.textInput.borderColor};
-
   background-color: ${(props) =>
-    (props.defaultInput && props.theme.textInput.backgroundColor) ||
     (props.isError && props.theme.textInput.backgroundColorError) ||
     (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
     props.theme.textInput.backgroundColor};
@@ -58,7 +56,6 @@ const StyledTextInput = styled.input`
       props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
-      (props.defaultInput && props.theme.textInput.backgroundColor) ||
       (props.isError && props.theme.textInput.backgroundColorError) ||
       (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
       props.theme.textInput.backgroundColor};
@@ -72,11 +69,9 @@ const StyledTextInput = styled.input`
       props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
-      (props.defaultInput &&
-        props.theme.textInput.backgroundColorPrimaryHover) ||
       (props.isError && props.theme.textInput.backgroundColorError) ||
       (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
-      props.theme.textInput.backgroundColorPrimaryHover};
+      props.theme.textInput.backgroundColor};
   }
 
   &:disabled {

@@ -64,8 +64,8 @@ const EmailInput = ({
       <TextInput
         type="email"
         defaultInput={emailDefault}
-        isSuccess={emailSuccess}
-        isError={emailError}
+        isSuccess={emailSuccess || isSuccess}
+        isError={emailError || isError}
         value={email}
         onChange={onChangeHandler}
         {...rest}
@@ -110,8 +110,6 @@ EmailInput.propTypes = {
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
-  /** Scale width to 100% */
-  scale: PropTypes.bool,
   /** Check error text */
   isErrText: PropTypes.bool,
   /** Indicates that the field cannot be used */
