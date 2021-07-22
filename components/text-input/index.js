@@ -48,6 +48,7 @@ const TextInput = ({
           isDisabled={isDisabled}
           onChange={onChange}
           ref={inputTextRef}
+          withButton={checkButton}
           {...rest}
         />
         <Label defaultChecked={rest.value !== ""}>{label}</Label>

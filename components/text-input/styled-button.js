@@ -9,7 +9,7 @@ const StyledButton = styled(Button)`
     props.squareButton
       ? props.height || props.theme.textInput.height
       : "min-content"};
-  left: -3px;
+
   overflow: ${(props) => props.theme.button.overflow};
   text-overflow: ${(props) => props.theme.button.textOverflow};
   position: relative;
