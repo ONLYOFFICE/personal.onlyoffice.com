@@ -9,12 +9,8 @@ const StyledTextInput = styled.input`
   padding: ${(props) => props.padding || props.theme.textInput.padding};
   height: ${(props) => props.height || props.theme.textInput.height};
   width: ${(props) =>
-    props.scale && props.withButton
-      ? "102%"
-      : props.scale
-      ? "100%"
-      : props.width || props.theme.textInput.width};
-padding-top: 11px;
+    props.withButton ? "102%" : props.width || props.theme.textInput.width};
+  padding-top: 11px;
 
   color: ${(props) => props.color || props.theme.textInput.textColor};
   font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
@@ -38,7 +34,7 @@ padding-top: 11px;
   border: ${(props) => props.theme.textInput.border};
 
   border-right: ${(props) =>
-    (props.checkButton && "none") || props.theme.textInput.border};
+    (props.withButton && "none") || props.theme.textInput.border};
 
   border-color: ${(props) =>
     (props.defaultInput && props.theme.textInput.borderColor) ||
@@ -56,59 +52,56 @@ padding-top: 11px;
 
   &:hover {
     border-color: ${(props) =>
-        (props.defaultInput && props.theme.textInput.borderColorHover) ||
-        (props.isError && props.theme.textInput.borderColorError) ||
-        (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-        props.theme.textInput.borderColorHover};
+      (props.defaultInput && props.theme.textInput.borderColorHover) ||
+      (props.isError && props.theme.textInput.borderColorError) ||
+      (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
+      props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
-        (props.defaultInput && props.theme.textInput.backgroundColor) ||
-        (props.isError && props.theme.textInput.backgroundColorError) ||
-        (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
-        props.theme.textInput.backgroundColor};
-    }
+      (props.defaultInput && props.theme.textInput.backgroundColor) ||
+      (props.isError && props.theme.textInput.backgroundColorError) ||
+      (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
+      props.theme.textInput.backgroundColor};
+  }
 
   &:focus {
     border-color: ${(props) =>
-        (props.defaultInput && props.theme.textInput.borderColorHover) ||
-        (props.isError && props.theme.textInput.borderColorError) ||
-        (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-        props.theme.textInput.borderColorHover};
-        
+      (props.defaultInput && props.theme.textInput.borderColorHover) ||
+      (props.isError && props.theme.textInput.borderColorError) ||
+      (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
+      props.theme.textInput.borderColorHover};
+
     background-color: ${(props) =>
-        (props.defaultInput && props.theme.textInput.backgroundColorPrimaryHover) ||
-        (props.isError && props.theme.textInput.backgroundColorError) ||
-        (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
-        props.theme.textInput.backgroundColorPrimaryHover};
-    }
+      (props.defaultInput &&
+        props.theme.textInput.backgroundColorPrimaryHover) ||
+      (props.isError && props.theme.textInput.backgroundColorError) ||
+      (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
+      props.theme.textInput.backgroundColorPrimaryHover};
+  }
 
   &:disabled {
     cursor: default;
     border-color: ${(props) => props.theme.textInput.borderColorDisabled};
     background-color: ${(props) =>
       props.theme.textInput.backgroundColorDisabled};
-    }
+  }
 
-    ::placeholder {
-        display: none;
-    }
+  ::placeholder {
+    display: none;
+  }
 
   @media ${device.tablet} {
     width: ${(props) =>
-      props.scale && props.withButton
+      props.withButton
         ? "102%"
-        : props.scale
-        ? "100%"
         : props.width || props.theme.textInput.media.width};
     font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   }
 
   @media ${device.mobileL} {
     width: ${(props) =>
-      props.scale && props.withButton
+      props.withButton
         ? "102%"
-        : props.scale
-        ? "100%"
         : props.width || props.theme.textInput.media.width};
     font-size: ${(props) => props.theme.textInput.media.fontSize};
   }

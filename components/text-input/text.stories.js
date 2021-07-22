@@ -35,7 +35,7 @@ Default.args = {
   isAutoFocussed: false,
   isSuccess: false,
   isError: false,
-  checkButton: false,
+  withButton: false,
   squareButton: false,
   tabIndex: -1,
 };

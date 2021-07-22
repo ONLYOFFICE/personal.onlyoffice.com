@@ -11,7 +11,6 @@ const TextInput = ({
   id,
   type,
   label,
-  scale,
   onBlur,
   placeholder,
   onChange,
@@ -20,7 +19,7 @@ const TextInput = ({
   isAutoFocussed,
   isSuccess,
   isError,
-  checkButton,
+  withButton,
   idButton,
   classNameButton,
   typeButton,
@@ -49,20 +48,23 @@ const TextInput = ({
           defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
-          checkButton={checkButton}
+          withButton={withButton}
           isDisabled={isDisabled}
           onChange={onChange}
           ref={inputTextRef}
-          withButton={checkButton}
+          withButton={withButton}
           {...rest}
         />
-        <Label 
-          defaultChecked={rest.value !== ""} 
+        <Label
+          defaultChecked={rest.value !== ""}
           defaultInput={defaultInput}
           isSuccess={isSuccess}
-          isError={isError}>{label || placeholder}</Label>
+          isError={isError}
+        >
+          {label || placeholder}
+        </Label>
       </StyledInput>
-      {Boolean(checkButton) && (
+      {Boolean(withButton) && (
         <StyledButton
           id={idButton}
           className={classNameButton}
@@ -114,8 +116,6 @@ TextInput.propTypes = {
   name: PropTypes.string,
   /** Default input color*/
   defaultInput: PropTypes.bool,
-  /** Scale width to 100% */
-  scale: PropTypes.bool,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
   /** Focus the input field on initial render */
@@ -127,7 +127,9 @@ TextInput.propTypes = {
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
-  checkButton: PropTypes.bool,
+  withButton: PropTypes.bool,
+  /** if the button should submit the form  */
+  isSubmit: PropTypes.bool,
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value */
   onChange: PropTypes.func,
   /** What the button will trigger when clicked */
@@ -153,7 +155,7 @@ TextInput.defaultProps = {
   isAutoFocussed: false,
   isSuccess: false,
   isError: false,
-  checkButton: false,
+  withButton: false,
   squareButton: false,
   tabIndex: -1,
 };

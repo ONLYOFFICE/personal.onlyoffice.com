@@ -125,7 +125,7 @@ EmailInput.propTypes = {
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
-  checkButton: PropTypes.bool,
+  withButton: PropTypes.bool,
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value. Returns the current value and the flag of validity */
   onChange: PropTypes.func,
   /** What the button will trigger when clicked */

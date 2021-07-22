@@ -1,9 +1,11 @@
 import React from "react";
 import EmailInput from "./";
+import TextInput from "../text-input";
 
 export default {
   title: "Components/EmailInput",
   component: EmailInput,
+  subcomponents: { TextInput },
   parameters: {
     docs: {
       description: {
