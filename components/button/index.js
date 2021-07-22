@@ -57,7 +57,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   label: "",
-  type: "primary",
+  typeButton: "primary",
   width: "auto",
   height: "56px",
   icon: null,
