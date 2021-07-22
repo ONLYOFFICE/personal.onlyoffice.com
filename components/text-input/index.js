@@ -54,7 +54,11 @@ const TextInput = ({
           ref={inputTextRef}
           {...rest}
         />
-        <Label defaultChecked={rest.value !== ""}>{label || placeholder}</Label>
+        <Label 
+          defaultChecked={rest.value !== ""} 
+          defaultInput={defaultInput}
+          isSuccess={isSuccess}
+          isError={isError}>{label || placeholder}</Label>
       </StyledInput>
       {Boolean(checkButton) && (
         <StyledButton

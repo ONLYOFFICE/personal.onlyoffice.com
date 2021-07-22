@@ -56,7 +56,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: grayTextInputHover,
+    backgroundColor: "transparent",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",
@@ -77,7 +77,7 @@ const Base = {
     width: "544px",
     height: "56px",
     scale: "100%",
-    padding: "0 15px",
+    padding: "0 16px",
     margin: "0",
     overflow: "auto",
     fontSize: "16px",
@@ -93,7 +93,8 @@ const Base = {
     label: {
       color: "#AAAAAA",
       colorHover: gray,
-      left: "3px",
+      padding: "0 15px",
+      left: "2px",
       top: "6px",
       fontSize: "12px",
     },

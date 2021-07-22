@@ -10,7 +10,7 @@ padding: ${(props) => props.padding || props.theme.textInput.padding};
 height: ${(props) => props.height || props.theme.textInput.height};
 width: ${(props) => props.scale ? props.theme.textInput.scale
 : (props.width || props.theme.textInput.width)};
-padding-top: 13px;
+padding-top: 11px;
 
 color: ${(props) => props.color || props.theme.textInput.textColor};
 font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
@@ -52,10 +52,10 @@ cursor: pointer;
 
     &:hover{
     border-color: ${(props) =>
-        (props.defaultInput && props.theme.textInput.borderColor) ||
+        (props.defaultInput && props.theme.textInput.borderColorHover) ||
         (props.isError && props.theme.textInput.borderColorError) ||
         (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-        props.theme.textInput.borderColor};
+        props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
         (props.defaultInput && props.theme.textInput.backgroundColor) ||

@@ -14,9 +14,12 @@ font-size: ${(props) => (props.defaultChecked
   ? props.theme.textInput.label.fontSize 
   : props.theme.textInput.fontSize)};  
 color: ${(props) => (props.defaultChecked 
-  ? props.theme.textInput.label.colorHover 
+  ? ((props.defaultInput && props.theme.textInput.backgroundColor) ||
+    (props.isError && props.theme.textInput.borderColorError) ||
+    (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
+    props.theme.textInput.label.colorHover) 
   : props.theme.textInput.label.color)};
-padding: ${(props) => props.padding || props.theme.textInput.padding};
+padding: ${(props) => props.padding || props.theme.textInput.label.padding};
 margin: ${(props) => props.margin || props.theme.textInput.margin};
 
 background-color: none;
