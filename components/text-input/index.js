@@ -29,6 +29,7 @@ const TextInput = ({
   labelButton,
   iconButton,
   onClick,
+  isSubmit,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -52,6 +53,7 @@ const TextInput = ({
           isDisabled={isDisabled}
           onChange={onChange}
           ref={inputTextRef}
+          withButton={checkButton}
           {...rest}
         />
         <Label 
@@ -75,6 +77,8 @@ const TextInput = ({
           style={styleButton}
           icon={iconButton}
           squareButton={squareButton}
+          isSubmit={isSubmit}
+          minwidth="min-content"
         />
       )}
     </StyleGroupInput>

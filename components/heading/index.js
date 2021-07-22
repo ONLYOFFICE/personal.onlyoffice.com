@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledHeading from "./styled-heading";
 
-const Heading = ({ hLevel, children, ...rest }) => {
+const Heading = ({ level, children, ...rest }) => {
   return (
-    <StyledHeading as={`h${hLevel}`} hLevel={hLevel} {...rest}>
+    <StyledHeading as={`h${level}`} level={level} {...rest}>
       {children}
     </StyledHeading>
   );
@@ -12,7 +12,7 @@ const Heading = ({ hLevel, children, ...rest }) => {
 
 Heading.propTypes = {
   /** The heading level */
-  hLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /**   text color */
   color: PropTypes.string,
   /**   text font-size */
@@ -38,7 +38,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  hLevel: 1,
+  level: 1,
   tabIndex: -1,
 };
 

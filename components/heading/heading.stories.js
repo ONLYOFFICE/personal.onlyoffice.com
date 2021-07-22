@@ -16,9 +16,7 @@ export default {
 const Template = ({ children, ...args }) => {
   return (
     <div style={{ width: "100%" }}>
-      <Heading {...args}>
-        {children}
-      </Heading>
+      <Heading {...args}>{children}</Heading>
     </div>
   );
 };
@@ -26,6 +24,6 @@ const Template = ({ children, ...args }) => {
 export const Default = Template.bind({});
 Default.args = {
   children: "Heading",
-  hLevel: 1,
+  level: 1,
   tabIndex: -1,
 };
