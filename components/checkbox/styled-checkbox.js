@@ -16,7 +16,7 @@ const StyledLabel = styled.label`
 
   color: ${(props) => props.theme.checkbox.color};
   font-size: ${(props) => props.theme.checkbox.fontSize};
-  padding-bottom: ${(props) => props.theme.checkbox.paddingBottom};
+  //padding-bottom: ${(props) => props.theme.checkbox.paddingBottom};
   line-height: ${(props) => props.theme.checkbox.lineHeight};
 
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};

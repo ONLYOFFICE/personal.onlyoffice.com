@@ -10,7 +10,7 @@ const StyledTextInput = styled.input`
   height: ${(props) => props.height || props.theme.textInput.height};
   width: ${(props) =>
     props.scale && props.withButton
-      ? "101%"
+      ? "102%"
       : props.scale
       ? "100%"
       : props.width || props.theme.textInput.width};
@@ -85,7 +85,7 @@ const StyledTextInput = styled.input`
   @media ${device.tablet} {
     width: ${(props) =>
       props.scale && props.withButton
-        ? "101%"
+        ? "102%"
         : props.scale
         ? "100%"
         : props.width || props.theme.textInput.media.width};
@@ -95,7 +95,7 @@ const StyledTextInput = styled.input`
   @media ${device.mobileL} {
     width: ${(props) =>
       props.scale && props.withButton
-        ? "101%"
+        ? "102%"
         : props.scale
         ? "100%"
         : props.width || props.theme.textInput.media.width};

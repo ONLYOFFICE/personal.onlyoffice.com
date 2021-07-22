@@ -5,11 +5,7 @@ const StyledInput = styled.div`
   display: block;
   position: relative;
   width: ${(props) =>
-    props.scale
-      ? "100%"
-      : props.withButton
-      ? "101%"
-      : props.width || props.theme.textInput.width};
+    props.scale ? "100%" : props.width || props.theme.textInput.width};
   padding: "0";
   margin: "0";
 
