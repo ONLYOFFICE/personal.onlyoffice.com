@@ -61,8 +61,11 @@ class Layout extends React.Component {
       }
     });
 
+    console.log(children);
+
     return (
       <StyledLayout>
+        {children}
         <Head>{headContent ? headContent.props.children : null}</Head>
         <Header>{headerContent ? headerContent.props.children : null}</Header>
         <Main>{mainContent ? mainContent.props.children : null}</Main>
