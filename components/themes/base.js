@@ -67,7 +67,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: grayTextInputHover,
+    backgroundColor: "transparent",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",
@@ -84,8 +84,10 @@ const Base = {
     position: "absolute",
     display: "block",
     boxSizing: "border-box",
-    width: "544px",
+    boxShadow: "none",
+    width: "100%",
     height: "56px",
+    width: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",
@@ -102,7 +104,11 @@ const Base = {
     placeholderColor: "#CCC",
 
     label: {
-      top: "3px",
+      color: "#AAAAAA",
+      colorHover: gray,
+      padding: "0 15px",
+      left: "2px",
+      top: "6px",
       fontSize: "12px",
     },
 

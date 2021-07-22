@@ -9,11 +9,8 @@ const StyledTextInput = styled.input`
   padding: ${(props) => props.padding || props.theme.textInput.padding};
   height: ${(props) => props.height || props.theme.textInput.height};
   width: ${(props) =>
-    props.scale && props.withButton
-      ? "102%"
-      : props.scale
-      ? "100%"
-      : props.width || props.theme.textInput.width};
+    props.withButton ? "102%" : props.width || props.theme.textInput.width};
+  padding-top: ${(props) => props.placeholder && "11px"};
 
   color: ${(props) => props.color || props.theme.textInput.textColor};
   font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
@@ -37,13 +34,13 @@ const StyledTextInput = styled.input`
   border: ${(props) => props.theme.textInput.border};
 
   border-right: ${(props) =>
-    (props.checkButton && "none") || props.theme.textInput.border};
+    (props.withButton && "none") || props.theme.textInput.border};
 
   border-color: ${(props) =>
+    (props.defaultInput && props.theme.textInput.borderColor) ||
     (props.isError && props.theme.textInput.borderColorError) ||
     (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
     props.theme.textInput.borderColor};
-
   background-color: ${(props) =>
     (props.isError && props.theme.textInput.backgroundColorError) ||
     (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
@@ -53,9 +50,10 @@ const StyledTextInput = styled.input`
 
   &:hover {
     border-color: ${(props) =>
+      (props.defaultInput && props.theme.textInput.borderColorHover) ||
       (props.isError && props.theme.textInput.borderColorError) ||
       (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-      props.theme.textInput.borderColor};
+      props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
       (props.isError && props.theme.textInput.backgroundColorError) ||
@@ -65,6 +63,7 @@ const StyledTextInput = styled.input`
 
   &:focus {
     border-color: ${(props) =>
+      (props.defaultInput && props.theme.textInput.borderColorHover) ||
       (props.isError && props.theme.textInput.borderColorError) ||
       (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
       props.theme.textInput.borderColorHover};
@@ -72,7 +71,7 @@ const StyledTextInput = styled.input`
     background-color: ${(props) =>
       (props.isError && props.theme.textInput.backgroundColorError) ||
       (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
-      props.theme.textInput.backgroundColorPrimaryHover};
+      props.theme.textInput.backgroundColor};
   }
 
   &:disabled {
@@ -82,22 +81,22 @@ const StyledTextInput = styled.input`
       props.theme.textInput.backgroundColorDisabled};
   }
 
+  ::placeholder {
+    display: none;
+  }
+
   @media ${device.tablet} {
     width: ${(props) =>
-      props.scale && props.withButton
+      props.withButton
         ? "102%"
-        : props.scale
-        ? "100%"
         : props.width || props.theme.textInput.media.width};
     font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   }
 
   @media ${device.mobileL} {
     width: ${(props) =>
-      props.scale && props.withButton
+      props.withButton
         ? "102%"
-        : props.scale
-        ? "100%"
         : props.width || props.theme.textInput.media.width};
     font-size: ${(props) => props.theme.textInput.media.fontSize};
   }

@@ -23,7 +23,7 @@ const FormEmailInput = (props) => {
       typeButton={typeButton}
       onChange={callback}
       scale
-      checkButton={withButton}
+      withButton={withButton}
       isSubmit={isSubmit}
       value={value}
       labelButton={labelButton}
