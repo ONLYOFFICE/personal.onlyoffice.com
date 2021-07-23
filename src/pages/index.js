@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import Head from "./sub-components/head";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import InfoPanel from "../../components/info-panel";
 
 import HeaderContent from "./sub-components/header-content";
 
@@ -305,19 +306,15 @@ const IndexPage = () => {
                   </div>
                   <div className="auth-downloads-block">
                     <h2>Онлайн, десктопные и мобильные приложения</h2>
-                    <div className="auth-download-block d-chrome-extension">
-                      <div className="auth-download-txt">
-                        <b>Получите быстрый доступ к ONLYOFFICE Personal.</b>
-                        Скачайте бесплатное расширение для Chrome.
-                        <div>
-                          <a
-                            className="button"
-                            href="https://chrome.google.com/webstore/detail/onlyoffice/ohdlcmpahmacjddiaokoogleflddlahc"
-                          ></a>
-                        </div>
-                      </div>
-                      <div className="auth-download-img"></div>
-                    </div>
+                    <InfoPanel
+                    imgleft={true}
+                    textColor={"#333"}
+                    imgUrl={`/images/online_${language}.png`}
+                    bgColor={"#fff"}              
+                    
+                    >
+                    <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
+                    </InfoPanel>
                     <div className="auth-download-block d-desktop-app">
                       <div className="auth-download-txt">
                         Скачайте <b>бесплатное десктопное приложение</b> и

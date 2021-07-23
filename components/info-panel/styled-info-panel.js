@@ -26,12 +26,12 @@ const StyledInfoPanelText = styled.div`
 `;
 
 const StyledInfoPanelImg = styled.div`
-    width:50%
+    width:50%;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 380px;
-    width: 550px;
+    height: 380px;    
+    
 `;
 
 
