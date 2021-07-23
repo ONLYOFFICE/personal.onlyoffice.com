@@ -310,45 +310,33 @@ const IndexPage = () => {
                     imgleft={true}
                     textColor={"#333"}
                     imgUrl={`/images/online_${language}.png`}
-                    bgColor={"#fff"}              
-                    
+                    bgColor={"#fff"}
+                                 
                     >
                     <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
                     </InfoPanel>
-                    <div className="auth-download-block d-desktop-app">
-                      <div className="auth-download-txt">
-                        Скачайте <b>бесплатное десктопное приложение</b> и
-                        редактируйте файлы офлайн или подключитесь к облаку.
-                        <div>
-                          <a
-                            className="button"
-                            href="https://www.onlyoffice.com/ru/download-desktop.aspx"
-                            target="_blank"
-                          >
-                            Скачать
-                          </a>
-                        </div>
-                      </div>
-                      <div className="auth-download-img"></div>
-                    </div>
-                    <div className="auth-download-block d-apps">
-                      <div className="auth-download-txt">
-                        Работайте с документами
-                        <span className="nowrapping">на мобильных</span> в
-                        <b>приложениях ONLYOFFICE</b>.
-                        <div>
-                          <a
-                            href="https://itunes.apple.com/app/onlyoffice-documents/id944896972?mt=8"
-                            className="app-store"
-                          ></a>
-                          <a
-                            href="https://play.google.com/store/apps/details?id=com.onlyoffice.documents"
-                            className="google-play"
-                          ></a>
-                        </div>
-                      </div>
-                      <div className="auth-download-img"></div>
-                    </div>
+
+                    <InfoPanel
+                    imgleft={false}
+                    textColor={"#fff"}
+                    imgUrl={`/images/online_${language}.png`}
+                    bgColor={"inear-gradient(100.79deg,#666 23.25%,#444 78.7%)"}  
+                                    
+                    >
+                    <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
+                    </InfoPanel>
+
+                    <InfoPanel
+                    imgleft={true}
+                    textColor={"#333"}
+                    imgUrl={`/images/online_${language}.png`}
+                    bgColor={"#fff"}  
+                    
+                    
+                    >
+                    Работайте с документами на мобильных в <b>приложениях ONLYOFFICE.</b>
+                    </InfoPanel>
+                    
                   </div>
                   <div className="auth-quote-block">
                     <div className="auth-quote-container">

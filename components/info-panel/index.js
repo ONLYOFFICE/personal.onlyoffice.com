@@ -1,27 +1,51 @@
 import React, {useState} from "react";
 import PropTypes from "prop-types";
-import {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg} from "./styled-info-panel";
+import {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg,StyledGroupButton} from "./styled-info-panel";
 import Text from "../text/index";
 import Button from "../button/index";
 
 const InfoPanel = (props) => {
   const [errorLaodSrc, setErrorLaodSrc] = useState(true);
+
+  const onError = (e) => { 
+    if(errorLaodSrc) { 
+      setErrorLaodSrc(errorLaodSrc);
+        e.target.src = '/images/online_en.png'
+    }
+  };
+
+ 
   
   if(props.imgleft){
     return(
       <StyledInfoPanel
+      bgColor={props.bgColor}
 
       >
+        {console.log(props.bgColor)}
         <StyledInfoPanelText>
 
           <Text 
           lineHeight={"28px"} 
           fontSize={"22px"} 
           color={props.textColor}
+          textAlign={"center"}
           >
             {props.children}
           </Text>
-        
+          <StyledGroupButton>
+            <Button
+              icon="icons/google.react.svg"
+              onClick={() => {}}
+              typeButton="transparent"
+            />
+            <Button
+              icon="icons/google.react.svg"
+              onClick={() => {}}
+              typeButton="transparent"
+            />
+          </StyledGroupButton>
+          
 
          
 
@@ -30,12 +54,7 @@ const InfoPanel = (props) => {
         <StyledInfoPanelImg>
           <img 
           src={props.imgUrl} 
-          onError={e => { 
-              if(errorLaodSrc) { 
-                setErrorLaodSrc(errorLaodSrc);
-                  e.target.src = '/images/online_en.png'
-              }
-          }}          
+          onError={onError}       
           />         
         </StyledInfoPanelImg>        
         

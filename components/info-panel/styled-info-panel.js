@@ -13,6 +13,8 @@ const StyledInfoPanel = styled.div`
     border: 1px solid #ccc;
     box-shadow: 0px 7px 15px rgb(85 85 85 / 10%);
     box-sizing: border-box;
+    background-image: ${(props) =>  ( props.bgColor )};
+    border-radius: 5px;
 
 `;
 const StyledInfoPanelText = styled.div`
@@ -34,6 +36,11 @@ const StyledInfoPanelImg = styled.div`
     
 `;
 
+const StyledGroupButton = styled.div`
+        
+    
+`;
 
 
-export {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg};
+
+export {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg,StyledGroupButton};
