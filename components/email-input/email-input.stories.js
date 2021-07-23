@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import EmailInput from "./";
 import TextInput from "../text-input";
 
@@ -17,7 +17,7 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = useState("");
 
   const onChangeHandler = (e, isValid) => {
     setValue(e.target.value);
