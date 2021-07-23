@@ -3,7 +3,7 @@ import { Base } from "../themes";
 
 const Label = styled.label`
   font-size: ${(props) =>
-    props.isFocus
+    !props.isEmpty
       ? props.theme.textInput.label.fontSize
       : props.theme.textInput.fontSize};
 

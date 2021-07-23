@@ -11,6 +11,9 @@ const StyledTextInput = styled.input`
   width: ${(props) =>
     props.withButton ? "102%" : props.width || props.theme.textInput.width};
 
+  padding-top: ${(props) => props.isPlaceholder && "12px"};
+  padding-bottom: ${(props) => !props.isPlaceholder && "2px"};
+
   color: ${(props) => props.color || props.theme.textInput.textColor};
   font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   font-weight: ${(props) =>
@@ -51,7 +54,7 @@ const StyledTextInput = styled.input`
     border-color: ${(props) =>
       (props.isError && props.theme.textInput.borderColorError) ||
       (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-      props.theme.textInput.borderColor};
+      props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
       (props.isError && props.theme.textInput.backgroundColorError) ||

@@ -108,7 +108,7 @@ const Base = {
       colorHover: gray,
       padding: "0 15px",
       left: "2px",
-      top: "6px",
+      top: "8px",
       fontSize: "12px",
     },
 

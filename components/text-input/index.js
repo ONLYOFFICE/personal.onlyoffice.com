@@ -31,19 +31,20 @@ const TextInput = ({
   ...rest
 }) => {
   const inputTextRef = useRef(null);
-  const [isFocus, setIsFocus] = useState(isAutoFocussed);
+  const [isEmpty, setIsEmpty] = useState(true);
+
+  const onChangeHandler = (e) => {
+    setIsEmpty(!e.target.value.trim());
+    onChange && onChange(e);
+  };
 
   useEffect(() => {
     if (isAutoFocussed) inputTextRef.current.focus();
   }, []);
 
-  const onFocusHandler = () => {
-    setIsFocus(!isFocus);
-  };
-
   return (
     <StyleGroupInput>
-      <StyledInput {...rest} onFocus={onFocusHandler} onBlur={onFocusHandler}>
+      <StyledInput {...rest}>
         <StyledTextInput
           type={type}
           className={className}
@@ -54,9 +55,10 @@ const TextInput = ({
           isError={isError}
           withButton={withButton}
           isDisabled={isDisabled}
-          onChange={onChange}
+          onChange={onChangeHandler}
           ref={inputTextRef}
           withButton={withButton}
+          isPlaceholder={!!placeholder}
           {...rest}
         />
         <Label
@@ -64,7 +66,7 @@ const TextInput = ({
           defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
-          isFocus={isFocus}
+          isEmpty={isEmpty}
         >
           {placeholder}
         </Label>
