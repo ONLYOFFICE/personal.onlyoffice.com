@@ -10,7 +10,6 @@ const TextInput = ({
   className,
   id,
   type,
-  label,
   onBlur,
   placeholder,
   onChange,
@@ -67,7 +66,7 @@ const TextInput = ({
           isError={isError}
           isFocus={isFocus}
         >
-          {label || placeholder}
+          {placeholder}
         </Label>
       </StyledInput>
       {Boolean(withButton) && (
@@ -111,7 +110,7 @@ TextInput.propTypes = {
   /** Value of the input */
   value: PropTypes.string.isRequired,
   /** label text in input */
-  label: PropTypes.string,
+  placeholder: PropTypes.string,
   /** Name text in button */
   labelButton: PropTypes.string,
   /** Supported type of the input fields */
@@ -153,7 +152,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-  label: "",
+  placeholder: "",
   type: "text",
   value: "",
   placeholder: "",

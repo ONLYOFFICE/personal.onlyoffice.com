@@ -25,11 +25,13 @@ const Template = ({ ...args }) => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", maxWidth: "400px" }}>
       <EmailInput {...args} value={value} onChange={onChangeHandler} />
     </div>
   );
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  placeholder: "Your email*",
+};

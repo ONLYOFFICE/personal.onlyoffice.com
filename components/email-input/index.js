@@ -71,7 +71,7 @@ const EmailInput = ({
         {...rest}
       />
       {isErrText && (
-        <Text fontSize="13px" color="#CB0000">
+        <Text className="email-error-text" fontSize="13px" color="#CB0000">
           {errorText}
         </Text>
       )}
@@ -98,8 +98,6 @@ EmailInput.propTypes = {
   value: PropTypes.string.isRequired,
   /** Text placeholder in input */
   placeholder: PropTypes.string,
-  /** label text in input */
-  label: PropTypes.string,
   /** Name text in button */
   labelButton: PropTypes.string,
   /** Error text */

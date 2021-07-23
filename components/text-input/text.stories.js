@@ -20,7 +20,7 @@ const Template = ({ ...args }) => {
     setValue(e.target.value);
   };
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", maxWidth: "500px" }}>
       <TextInput {...args} value={value} onChange={onChangeHandler} />
     </div>
   );
@@ -28,7 +28,7 @@ const Template = ({ ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "",
+  placeholder: "Your text",
   type: "text",
   labelButton: "default",
   isDisabled: false,
