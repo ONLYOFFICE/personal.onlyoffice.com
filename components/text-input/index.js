@@ -28,6 +28,7 @@ const TextInput = ({
   iconButton,
   onClick,
   isSubmit,
+  backgroundColor,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -59,6 +60,7 @@ const TextInput = ({
           ref={inputTextRef}
           withButton={withButton}
           isPlaceholder={!!placeholder}
+          backgroundColor={backgroundColor}
           {...rest}
         />
         <Label
@@ -151,6 +153,8 @@ TextInput.propTypes = {
   idButton: PropTypes.string,
   /** Accepts button class */
   classNameButton: PropTypes.string,
+  /** Custom background color */
+  backgroundColor: PropTypes.string,
 };
 
 TextInput.defaultProps = {

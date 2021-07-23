@@ -39,4 +39,5 @@ Default.args = {
     digits: false,
     specSymbols: false,
   },
+  backgroundColor: "#f9f9f9",
 };
