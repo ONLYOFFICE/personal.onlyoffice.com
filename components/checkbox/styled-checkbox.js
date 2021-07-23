@@ -2,8 +2,9 @@ import { styled } from "linaria/react";
 import Base from "../themes/base";
 
 const StyledLabel = styled.label`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: start;
   gap: 8px;
   position: relative;
   margin: 0;
@@ -16,10 +17,18 @@ const StyledLabel = styled.label`
 
   color: ${(props) => props.theme.checkbox.color};
   font-size: ${(props) => props.theme.checkbox.fontSize};
-  //padding-bottom: ${(props) => props.theme.checkbox.paddingBottom};
   line-height: ${(props) => props.theme.checkbox.lineHeight};
 
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
+
+  .checkbox-text {
+    margin-top: 2px;
+  }
+
+  .checkbox-text * {
+    display: inline;
+    padding-right: 4px;
+  }
 `;
 
 StyledLabel.defaultProps = { theme: Base };
