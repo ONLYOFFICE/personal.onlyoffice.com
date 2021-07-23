@@ -29,6 +29,7 @@ const TextInput = ({
   onClick,
   isSubmit,
   backgroundColor,
+  onButtonClick,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -83,7 +84,7 @@ const TextInput = ({
           isAutoFocussed={isAutoFocussed}
           isSuccess={isSuccess}
           isError={isError}
-          onClick={onClick}
+          onClick={onButtonClick}
           height={rest.height}
           style={styleButton}
           icon={iconButton}

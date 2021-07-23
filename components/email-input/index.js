@@ -141,7 +141,7 @@ EmailInput.propTypes = {
 };
 
 EmailInput.defaultProps = {
-  isErrText: true,
+  isErrText: false,
 };
 
 export default EmailInput;

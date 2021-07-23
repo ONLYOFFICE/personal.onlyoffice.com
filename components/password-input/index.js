@@ -154,7 +154,7 @@ PasswordInput.propTypes = {
 };
 
 PasswordInput.defaultProps = {
-  isErrText: true,
+  isErrText: false,
   generatorSpecial: "!@#$%^&*",
   passwordSettings: {
     minLength: 8,
