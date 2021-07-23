@@ -1,14 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg} from "./styled-info-panel";
 import Text from "../text/index";
 import Button from "../button/index";
 
 const InfoPanel = (props) => {
-  const errorLaodSrc = useState(,);
-  onError = () => {
-
-  }
+  const [errorLaodSrc, setErrorLaodSrc] = useState(true);
+  
   if(props.imgleft){
     return(
       <StyledInfoPanel
@@ -23,14 +21,21 @@ const InfoPanel = (props) => {
           >
             {props.children}
           </Text>
-          <Button></Button>
+        
+
+         
 
         </StyledInfoPanelText>
 
         <StyledInfoPanelImg>
           <img 
           src={props.imgUrl} 
-          onError={this.onError}
+          onError={e => { 
+              if(errorLaodSrc) { 
+                setErrorLaodSrc(errorLaodSrc);
+                  e.target.src = '/images/online_en.png'
+              }
+          }}          
           />         
         </StyledInfoPanelImg>        
         
