@@ -5,12 +5,13 @@ import Text from "../text/index";
 import Button from "../button/index";
 
 const InfoPanel = (props) => {
+  console.log(props);
   const [errorLaodSrc, setErrorLaodSrc] = useState(true);
-
+  
   const onError = (e) => { 
     if(errorLaodSrc) { 
       setErrorLaodSrc(errorLaodSrc);
-        e.target.src = '/images/online_en.png'
+        e.target.src = props.defaultImgUrl;
     }
   };
 
@@ -20,9 +21,8 @@ const InfoPanel = (props) => {
     return(
       <StyledInfoPanel
       bgColor={props.bgColor}
-
       >
-        {console.log(props.bgColor)}
+
         <StyledInfoPanelText>
 
           <Text 
@@ -32,22 +32,23 @@ const InfoPanel = (props) => {
           textAlign={"center"}
           >
             {props.children}
-          </Text>
-          <StyledGroupButton>
-            <Button
-              icon="icons/google.react.svg"
-              onClick={() => {}}
-              typeButton="transparent"
-            />
-            <Button
-              icon="icons/google.react.svg"
-              onClick={() => {}}
-              typeButton="transparent"
-            />
-          </StyledGroupButton>
-          
+          </Text>   
 
-         
+          <StyledGroupButton>
+            
+              <Button
+                icon="icons/google.react.svg"
+                onClick={() => {}}
+                typeButton="transparent"
+              />
+              <Button
+                icon="icons/google.react.svg"
+                onClick={() => {}}
+                typeButton="transparent"
+              />
+            
+            
+          </StyledGroupButton>     
 
         </StyledInfoPanelText>
 

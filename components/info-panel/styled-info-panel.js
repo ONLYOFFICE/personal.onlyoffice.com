@@ -37,6 +37,8 @@ const StyledInfoPanelImg = styled.div`
 `;
 
 const StyledGroupButton = styled.div`
+    display: block;
+    padding-top: 24px;
         
     
 `;

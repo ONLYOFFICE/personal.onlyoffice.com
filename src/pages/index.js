@@ -308,34 +308,16 @@ const IndexPage = () => {
                     <h2>Онлайн, десктопные и мобильные приложения</h2>
                     <InfoPanel
                     imgleft={true}
+                    textContent={"<b>Получите быстрый доступ к ONLYOFFICE Personal.</b>" }
                     textColor={"#333"}
-                    imgUrl={`/images/online_${language}.png`}
+                    imgUrl={`/images/online_${language}.png`}                     
+                    defaultImgUrl={`/images/online_en.png`}
                     bgColor={"#fff"}
-                                 
                     >
                     <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
                     </InfoPanel>
 
-                    <InfoPanel
-                    imgleft={false}
-                    textColor={"#fff"}
-                    imgUrl={`/images/online_${language}.png`}
-                    bgColor={"inear-gradient(100.79deg,#666 23.25%,#444 78.7%)"}  
-                                    
-                    >
-                    <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
-                    </InfoPanel>
 
-                    <InfoPanel
-                    imgleft={true}
-                    textColor={"#333"}
-                    imgUrl={`/images/online_${language}.png`}
-                    bgColor={"#fff"}  
-                    
-                    
-                    >
-                    Работайте с документами на мобильных в <b>приложениях ONLYOFFICE.</b>
-                    </InfoPanel>
                     
                   </div>
                   <div className="auth-quote-block">
