@@ -26,10 +26,9 @@ const TextInput = ({
   squareButton,
   labelButton,
   iconButton,
-  onClick,
   isSubmit,
   backgroundColor,
-  onButtonClick,
+  buttonClick,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -84,7 +83,7 @@ const TextInput = ({
           isAutoFocussed={isAutoFocussed}
           isSuccess={isSuccess}
           isError={isError}
-          onClick={onButtonClick}
+          onClick={buttonClick}
           height={rest.height}
           style={styleButton}
           icon={iconButton}
@@ -143,7 +142,7 @@ TextInput.propTypes = {
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value */
   onChange: PropTypes.func,
   /** What the button will trigger when clicked */
-  onClick: PropTypes.func,
+  buttonClick: PropTypes.func,
   /** Text input tab index */
   tabIndex: PropTypes.number,
   /** Accepts id */

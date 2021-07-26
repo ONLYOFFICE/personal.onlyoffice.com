@@ -4,51 +4,66 @@ import PropTypes from "prop-types";
 import StyledForm from "./styled-form";
 
 import FormHeading from "./sub-components/form-heading";
-import FormEmailInput from "./sub-components/form-email-input";
-import FormPasswordInput from "./sub-components/form-password-input";
-import FormTextInput from "./sub-components/form-text-input";
-import FormCheckbox from "./sub-components/form-checkbox";
-import Button from "../button";
+import FormInput from "./sub-components/form-input";
+import FormButton from "./sub-components/form-button";
 
 import Separator from "../separator";
+import Checkbox from "../checkbox";
 
 const Form = (props) => {
-  const { isPanel, formData, onSubmitForm } = props;
+  const { isPanel, formData, submitForm } = props;
+
+  const onSubmitHandler = (e) => {
+    submitForm && submitForm(e);
+  };
 
   const formElements = [];
 
   formData.map((item, indx) => {
-    switch (item.element) {
+    switch (item.type) {
       case "heading":
         formElements.push(
           <FormHeading
-            key={`${item.element}-${indx}`}
+            key={`${item.type}-${indx}`}
             item={item}
             isPanel={isPanel}
           />
         );
         break;
-
-      case "email-input":
+      case "input":
         formElements.push(
-          <FormEmailInput key={`${item.element}-${indx}`} item={item} />
-        );
-        break;
-      case "password-input":
-        formElements.push(
-          <FormPasswordInput key={`${item.element}-${indx}`} item={item} />
-        );
-        break;
-      case "text-input":
-        formElements.push(
-          <FormTextInput key={`${item.element}-${indx}`} item={item} />
+          <FormInput key={`${item.type}-${indx}`} item={item} />
         );
         break;
       case "checkbox":
         formElements.push(
-          <FormCheckbox key={`${item.element}-${indx}`} item={item} />
+          <Checkbox
+            className="form-checkbox"
+            key={`${item.type}-${indx}`}
+            onChange={item.callback}
+            isChecked={item.isChecked}
+            label={item.label}
+          />
         );
         break;
+      case "button":
+        formElements.push(
+          <FormButton key={`${item.type}-${indx}`} item={item} />
+        );
+        break;
+      case "separator":
+        formElements.push(
+          <Separator
+            key={`${item.type}-${indx}`}
+            className="form-separator"
+            fontSize="14px"
+            fontWeight="bold"
+          >
+            {item.separatorText}
+          </Separator>
+        );
+      case "other":
+        formElements.push(item.element);
       default:
         break;
     }
@@ -57,15 +72,19 @@ const Form = (props) => {
   const itemsCount = formElements.length;
 
   return (
-    <StyledForm {...props} itemsCount={itemsCount} onSubmit={onSubmitForm}>
+    <StyledForm {...props} itemsCount={itemsCount} onSubmit={onSubmitHandler}>
       {formElements}
     </StyledForm>
   );
 };
 
 Form.propTypes = {
+  /** To set view */
   isPanel: PropTypes.bool,
+  /** Child components  */
   formData: PropTypes.arrayOf(PropTypes.object),
+  /** Called when the onSubmit event occurs  */
+  submitForm: PropTypes.func,
 };
 
 Form.defaultProps = {};

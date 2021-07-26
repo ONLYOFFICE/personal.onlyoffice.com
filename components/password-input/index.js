@@ -138,7 +138,7 @@ PasswordInput.propTypes = {
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value. Returns the current value and the flag of validity */
   onChange: PropTypes.func,
   /** What the button will trigger when clicked */
-  onClick: PropTypes.func,
+  buttonClick: PropTypes.func,
   /** onBlur func */
   onBlur: PropTypes.func,
   /** Text input tab index */

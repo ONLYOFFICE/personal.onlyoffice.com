@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "./";
 import ExternalLink from "../external-link";
 import Text from "../text";
+import SocialButton from "../social-button";
 
 export default {
   title: "Components/Form",
@@ -15,17 +16,76 @@ export default {
   },
 };
 
+const ComboLabel = () => {
+  return (
+    <>
+      <Text as="span">Combo label - </Text>
+      <ExternalLink
+        label="External Link"
+        href="https://github.com/ONLYOFFICE/personal.onlyoffice.com"
+        target="_blank"
+      />
+      <Text as="span">
+        and some very very very very very very very very very very very very
+        very very very very very very long text
+      </Text>
+    </>
+  );
+};
+
+const ELink = () => {
+  return (
+    <ExternalLink
+      label="External Link"
+      href="https://github.com/ONLYOFFICE/personal.onlyoffice.com"
+      target="_blank"
+      style={{ margin: "0 auto" }}
+    />
+  );
+};
+
 const Template = ({ ...args }) => {
   const [isValid, setIsValid] = useState();
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
-  const [text, setText] = useState("");
   const [isCheckedOne, setIsCheckedOne] = useState(false);
   const [isCheckedTwo, setIsCheckedTwo] = useState(true);
 
+  const clickSocialButton = (e) => {
+    console.log(e);
+  };
+
+  const SocialButtons = () => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          width: "min-content",
+          margin: "auto",
+        }}
+      >
+        <SocialButton
+          iconName="social-icons/google.react.svg"
+          onClick={clickSocialButton}
+        />
+        <SocialButton
+          iconName="social-icons/facebook.react.svg"
+          onClick={clickSocialButton}
+        />
+        <SocialButton
+          iconName="social-icons/linkedin.react.svg"
+          onClick={clickSocialButton}
+        />
+      </div>
+    );
+  };
+
   const onSubmitFormHandler = (e) => {
-    e.preventDefault();
-    alert(`onSubmit called! isValid: ${isValid}, email: ${email}, pwd: ${pwd}`);
+    console.log(e);
+    alert(
+      `onSubmit called! isValid: ${isValid}, email: ${email}, pwd: ${pwd}, checkbox one: ${isCheckedOne}, checkbox two: ${isCheckedTwo}`
+    );
   };
 
   const emailChangeHandler = (e, isValid) => {
@@ -38,14 +98,14 @@ const Template = ({ ...args }) => {
     alert("Button Email Click!");
   };
 
-  const pwdChangePassword = (e) => {
-    console.log("PaswwordInput callback", e.target.value);
+  const pwdChangePassword = (e, pwdValid) => {
+    console.log(
+      "PaswwordInput callback",
+      e.target.value,
+      "Password valid: ",
+      pwdValid
+    );
     setPwd(e.target.value);
-  };
-
-  const textChangePassword = (e) => {
-    console.log("TextInput callback", e.target.value);
-    setText(e.target.value);
   };
 
   const checkboxOneChange = (e) => {
@@ -58,20 +118,30 @@ const Template = ({ ...args }) => {
     setIsCheckedTwo(e.target.checked);
   };
 
+  const buttonClick = (e) => {
+    console.log("Button click", e.target);
+  };
+
+  const buttonSubmitClick = (e) => {
+    console.log("on submit button click", e.target);
+  };
+
   const formData = [
     {
-      element: "heading",
+      type: "heading",
       headingText: "Heading",
       isHeader: true,
     },
     {
-      element: "password-input",
+      type: "input",
+      inputType: "password",
       placeholder: "Some password",
       callback: pwdChangePassword,
       value: pwd,
     },
     {
-      element: "email-input",
+      type: "input",
+      inputType: "email",
       placeholder: "Some email",
       callback: emailChangeHandler,
       value: email,
@@ -79,55 +149,48 @@ const Template = ({ ...args }) => {
       typeButton: "primary",
       isSubmit: true,
       labelButton: "Label Button",
-      isSubmit: true,
-      onButtonClick: onButtonEmailClick,
+      buttonClick: onButtonEmailClick,
     },
     {
-      element: "heading",
-      headingText: "Sub-heading",
-    },
-    {
-      element: "text-input",
-      placeholder: "Some password",
-      callback: textChangePassword,
-      value: text,
-    },
-    {
-      element: "checkbox",
+      type: "checkbox",
       callback: checkboxOneChange,
       isChecked: isCheckedOne,
       label: "Simple Label",
     },
     {
-      element: "checkbox",
+      type: "checkbox",
       callback: checkboxTwoChange,
       isChecked: isCheckedTwo,
-      label: ["Combo Label", <ExternalLink label="link" />],
+      label: <ComboLabel />,
     },
     {
-      element: "button",
-      callback: (e) => console.log(e, "Button callback"),
+      type: "button",
+      callback: buttonClick,
+      typeButton: "secondary",
+      isSubmit: false,
+      toHideButton: false,
+      label: "Some Button",
     },
     {
-      element: "separator",
+      type: "button",
+      callback: buttonSubmitClick,
+      isSubmit: true,
+      toHideButton: true,
+      label: "Is Submit Button",
+    },
+    { type: "other", element: <ELink key="external-link" /> },
+    {
+      type: "separator",
       separatorText: "Separator Text",
     },
     {
-      element: "social-buttons",
+      type: "other",
+      element: <SocialButtons key="social-buttons" />,
     },
   ];
 
   return (
-    <div
-      style={{
-        minWidth: "100px",
-        maxWidth: "400px",
-        width: "100%",
-        height: "min-content",
-      }}
-    >
-      <Form {...args} formData={formData} onSubmitForm={onSubmitFormHandler} />
-    </div>
+    <Form {...args} formData={formData} submitForm={onSubmitFormHandler} />
   );
 };
 
