@@ -318,11 +318,13 @@ const IndexPage = () => {
                           iconButton: `/images/online_${language}.png`,
                           typeButton: "transparent",
                           textButton: "Button",
+                          href:"$",
                         }, 
                         {
                           iconButton: `/images/online_${language}.png`,
                           typeButton: "transparent",
                           textButton: "Button",
+                          href:"#",
                         }
                         ]}
                     >

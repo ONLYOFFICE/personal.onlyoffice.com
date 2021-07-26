@@ -4,8 +4,8 @@ import StyledButton from "./styled-button";
 import { useTheme } from "../theme-provider";
 import { ReactSVG } from "react-svg";
 
-const Icon = ({ icon }) => {
-  return <ReactSVG src={icon} className="btn-with-icon" />;
+const Icon = ({ icon, iconDefault }) => {
+  return <ReactSVG src={icon} className="btn-with-icon"/>;
 };
 
 const Button = ({ label, isDisabled, icon, isSubmit, scale, ...rest }) => {
