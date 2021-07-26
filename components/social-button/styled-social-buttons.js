@@ -1,7 +1,7 @@
 import { styled } from "linaria/react";
 
 const StyledSocialButton = styled.div`
-  display: flex;
+  display: inline-block;
   width: max-content;
   height: "40px";
   max-width: 100%;

@@ -52,10 +52,12 @@ const PasswordInput = ({
   };
 
   const onBlur = (e) => {
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      password === "" ? setIsDefault(true) : setIsDefault(false);
+    if (!e.currentTarget.contains(e.relatedTarget) && password !== "") {
+      setIsDefault(false);
       !isValid && setIsPwdError(true);
       !isPwdError && setErrorText(errText);
+    } else {
+      setIsDefault(true);
     }
   };
 

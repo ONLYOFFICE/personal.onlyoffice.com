@@ -39,8 +39,8 @@ const EmailInput = ({
   const onBlur = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
       email === "" ? setEmailDefault(true) : setEmailDefault(false);
-      !valid && setEmailError(true);
-      !emailError && setErrorText(errText);
+      !valid && !!email && setEmailError(true);
+      !emailError && !!email && setErrorText(errText);
     }
   };
 
