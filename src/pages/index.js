@@ -307,12 +307,24 @@ const IndexPage = () => {
                   <div className="auth-downloads-block">
                     <h2>Онлайн, десктопные и мобильные приложения</h2>
                     <InfoPanel
-                    imgleft={true}
-                    textContent={"<b>Получите быстрый доступ к ONLYOFFICE Personal.</b>" }
-                    textColor={"#333"}
-                    imgUrl={`/images/online_${language}.png`}                     
-                    defaultImgUrl={`/images/online_en.png`}
-                    bgColor={"#fff"}
+                      imgleft={true}
+                      textContent={"<b>Получите быстрый доступ к ONLYOFFICE Personal.</b>" }
+                      textColor={"#333"}
+                      imgUrl={`/images/online_${language}.png`}                     
+                      defaultImgUrl={`/images/online_en.png`}
+                      bgColor={"#fff"}
+                      countButton={[
+                        {
+                          iconButton: `/images/online_${language}.png`,
+                          typeButton: "transparent",
+                          textButton: "Button",
+                        }, 
+                        {
+                          iconButton: `/images/online_${language}.png`,
+                          typeButton: "transparent",
+                          textButton: "Button",
+                        }
+                        ]}
                     >
                     <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
                     </InfoPanel>

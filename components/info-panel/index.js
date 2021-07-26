@@ -35,17 +35,15 @@ const InfoPanel = (props) => {
           </Text>   
 
           <StyledGroupButton>
-            
-              <Button
-                icon="icons/google.react.svg"
-                onClick={() => {}}
-                typeButton="transparent"
-              />
-              <Button
-                icon="icons/google.react.svg"
-                onClick={() => {}}
-                typeButton="transparent"
-              />
+            {
+              (props.countButton).map((btn) => 
+                <Button
+                  icon={btn.iconButton}
+                  type={btn.typeButton}
+                  label={btn.textButton}/>
+              )
+            }
+              
             
             
           </StyledGroupButton>     
