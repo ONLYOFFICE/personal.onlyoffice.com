@@ -14,11 +14,9 @@ const StyledAdditionalSection = styled.div`
     .additional-text {
       margin: 0 auto;
     }
-  }
 
-  @media (max-width: 592px) {
     .additional-button {
-      height: 50px;
+      height: 48px;
     }
   }
 `;
