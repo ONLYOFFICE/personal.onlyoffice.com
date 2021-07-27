@@ -6,10 +6,20 @@ import Button from "../../../../components/button";
 import StyledAdditionalSection from "./styled-additional-section";
 
 const AdditionalSection = (props) => {
-  const { textLabel, buttonHref, buttonLabel } = props;
+  const {
+    textLabel,
+    buttonHref,
+    buttonLabel,
+    marginTop,
+    smallMarginTop,
+  } = props;
 
   return (
-    <StyledAdditionalSection key="additional">
+    <StyledAdditionalSection
+      key="additional"
+      marginTop={marginTop}
+      smallMarginTop={smallMarginTop}
+    >
       <Text className="additional-text" fontWeight="600">
         {textLabel}
       </Text>

@@ -9,7 +9,7 @@ const StyledAdditionalSection = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 15px;
 
-    margin-top: 32px;
+    margin-top: ${(props) => props.marginTop || "32px"};
 
     .additional-text {
       margin: 0 auto;
@@ -18,6 +18,10 @@ const StyledAdditionalSection = styled.div`
     .additional-button {
       height: 48px;
     }
+  }
+
+  @media (max-width: 592px) {
+    margin-top: ${(props) => props.smallMarginTop || "32px"};
   }
 `;
 
