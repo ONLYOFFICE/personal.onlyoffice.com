@@ -32,7 +32,11 @@ const Form = (props) => {
         break;
       case "input":
         formElements.push(
-          <FormInput key={`${item.type}-${indx}`} item={item} />
+          <FormInput
+            key={`${item.type}-${indx}`}
+            item={item}
+            isPanel={isPanel}
+          />
         );
         break;
       case "checkbox":

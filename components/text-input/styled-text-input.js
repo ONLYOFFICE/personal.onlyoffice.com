@@ -73,6 +73,7 @@ const StyledTextInput = styled.input`
     background-color: ${(props) =>
       (props.isError && props.theme.textInput.backgroundColorError) ||
       (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
+      (props.backgroundColor && props.backgroundColor) ||
       props.theme.textInput.backgroundColor};
   }
 

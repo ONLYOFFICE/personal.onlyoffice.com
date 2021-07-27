@@ -5,7 +5,7 @@ import EmailInput from "../../email-input";
 import PasswordInput from "../../password-input";
 
 const FormTextInput = (props) => {
-  const { item } = props;
+  const { item, isPanel } = props;
   const { type, inputType, buttonClick, withButton, callback, ...rest } = item;
 
   const [withButtonCheck, setWidthButton] = useState(false);
@@ -42,6 +42,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
+          backgroundColor={!isPanel && "#fff"}
         />
       );
     case "email":
@@ -53,6 +54,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
+          backgroundColor={!isPanel && "#fff"}
         />
       );
     case "password":
@@ -64,6 +66,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
+          backgroundColor={!isPanel && "#fff"}
         />
       );
     default:

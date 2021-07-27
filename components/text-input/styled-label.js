@@ -11,7 +11,7 @@ const Label = styled.label`
 
   position: absolute;
   top: ${(props) =>
-    props.defaultChecked ? props.theme.textInput.label.top : "34%"};
+    props.defaultChecked ? props.theme.textInput.label.top : "32%"};
   left: ${(props) =>
     props.defaultChecked ? props.theme.textInput.label.left : "0px"};
   color: ${(props) =>
