@@ -61,8 +61,6 @@ class Layout extends React.Component {
       }
     });
 
-    console.log(children);
-
     return (
       <StyledLayout>
         {children}
