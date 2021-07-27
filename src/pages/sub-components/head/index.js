@@ -41,7 +41,7 @@ const Head = (props) => {
         href="https://personal.onlyoffice.com/services/whatsnew/feed.ashx?c=Teamlab+Portal"
       />
 
-      <link type="text/css" rel="stylesheet" href="/skins/default/layout.css" />
+      {/*<link type="text/css" rel="stylesheet" href="/skins/default/layout.css" />
       <link
         type="text/css"
         href="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-YzuApczujyOn0GeqVXW_iQ2.css?ver=PERSONAL.COM20210620 85533"
@@ -56,7 +56,7 @@ const Head = (props) => {
         type="text/css"
         href="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-ezyIHpZ7j6FAp5A3ZSR4QQ2.css?ver=PERSONAL.COM20210620 85533"
         rel="stylesheet"
-      />
+  /> */}
 
       {languages.map((lng) => {
         const { key, shortKey } = lng;

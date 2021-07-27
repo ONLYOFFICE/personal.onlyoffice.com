@@ -9,11 +9,17 @@ const CustomLink = ({ children, label, href, className, type, ...rest }) => {
     : "external-link";
 
   return type === "external" ? (
-    <StyledLink as="a" href={href} {...rest} className={linkClassName}>
+    <StyledLink
+      as="a"
+      href={href}
+      {...rest}
+      style={style}
+      className={linkClassName}
+    >
       {children}
     </StyledLink>
   ) : (
-    <Link to={href}>
+    <Link to={href} style={style}>
       <StyledLink as="span" {...rest} className={linkClassName}>
         {children}
       </StyledLink>
