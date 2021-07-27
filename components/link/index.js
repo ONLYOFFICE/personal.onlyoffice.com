@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import StyledLink from "./styled-link";
 import { Link } from "gatsby";
 
-const CustomLink = ({ label, href, className, type, ...rest }) => {
+const CustomLink = ({ children, label, href, className, type, ...rest }) => {
   const linkClassName = className
     ? className + " external-link"
     : "external-link";
 
   return type === "external" ? (
     <StyledLink as="a" href={href} {...rest} className={linkClassName}>
-      {label}
+      {children}
     </StyledLink>
   ) : (
     <Link to={href}>
       <StyledLink as="span" {...rest} className={linkClassName}>
-        {label}
+        {children}
       </StyledLink>
     </Link>
   );
