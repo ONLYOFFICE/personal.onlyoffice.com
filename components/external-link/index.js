@@ -2,20 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledLink from "./styled-link";
 
-const ExternalLink = ({ label, href, className, ...rest }) => {
+const ExternalLink = ({ children, href, className, ...rest }) => {
   const linkClassName = className
     ? className + " external-link"
     : "external-link";
   return (
     <StyledLink href={href} {...rest} className={linkClassName}>
-      {label}
+      {children}
     </StyledLink>
   );
 };
 
 ExternalLink.propTypes = {
-  /** External link text */
-  label: PropTypes.string,
   /** External link text color */
   color: PropTypes.string,
   /** External link text font-size */
@@ -47,7 +45,6 @@ ExternalLink.propTypes = {
 };
 
 ExternalLink.defaultProps = {
-  label: "",
   fontSize: "14px",
   href: undefined,
   title: undefined,

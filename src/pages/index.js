@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import HeaderContent from "./sub-components/header-content";
-
+import FooterContent from "./sub-components/footer-content";
 const IndexPage = () => {
   const {
     t,
@@ -658,162 +658,11 @@ const IndexPage = () => {
         </div>
       </Layout.SectionMain>
       <Layout.PageFooter>
-        <div>
-          <div className="personal-footer">
-            <div className="personal-footer_w clearFix">
-              <ul className="ListSocLink">
-                <li>
-                  <a
-                    className="faceBook"
-                    href="https://www.facebook.com/pages/OnlyOffice/833032526736775"
-                    target="_blank"
-                  >
-                    <label title="Facebook" className="social_grey_fb"></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="twitter"
-                    href="https://twitter.com/ONLY_OFFICE"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    <label title="Twitter" className="social_grey_twi"></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="linkedin"
-                    href="https://www.linkedin.com/groups/6726380/"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    <label title="LinkedIn" className="social_grey_in"></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="youtube"
-                    href="https://www.youtube.com/user/onlyofficeTV"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    <label title="YouTube" className="social_grey_tube"></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="blog"
-                    href="https://www.onlyoffice.com/blog"
-                    target="_blank"
-                  >
-                    <label title="Блог" className="social_grey_blog"></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="medium"
-                    href="https://medium.com/onlyoffice"
-                    target="_blank"
-                  >
-                    <label
-                      title="Medium"
-                      className="social_grey_medium"
-                    ></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="instagram"
-                    href="https://www.instagram.com/the_onlyoffice/"
-                    target="_blank"
-                  >
-                    <label
-                      title="Instagram"
-                      className="social_grey_instagram"
-                    ></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="github"
-                    href="https://github.com/ONLYOFFICE/"
-                    target="_blank"
-                  >
-                    <label
-                      title="GitHub"
-                      className="social_grey_github"
-                    ></label>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="fosstodon"
-                    href="https://fosstodon.org/@ONLYOFFICE"
-                    target="_blank"
-                  >
-                    <label
-                      title="Fosstodon"
-                      className="social_grey_fosstodon"
-                    ></label>
-                  </a>
-                </li>
-              </ul>
-              <div className="partial-personal-footer">
-                <ul className="personal-footer-links">
-                  <li>
-                    <a href="/Terms.aspx?lang=ru-RU" target="_blank">
-                      Условия использования
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.onlyoffice.com" target="blank">
-                      Корпоративное использование
-                    </a>
-                  </li>
-                </ul>
-                <div className="personal-footer_rights">
-                  © Ascensio System SIA 2021. Все права защищены
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="paging-content"></div>
-        <div
-          id="container"
-          style={{ position: "absolute", top: 0, left: 0 }}
-        ></div>
+        
+        
+       <FooterContent  footerHomePage={true} t={t}/>
 
-        <script
-          type="text/javascript"
-          src="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-dE7WK7FevoJSWs_vfdhk9w2.js?ver=PERSONAL.COM20210620 85533"
-        ></script>
-
-        <script
-          type="text/javascript"
-          src="/clientscript/488YrvltC2Gv2clyZUJpag2_ru-ru.js?ver=PERSONAL.COM20210620 8553378S-qnMomdEB8dGBg_XITQ2"
-        ></script>
-        <script
-          type="text/javascript"
-          src="/clientscript/ktXRENh8ZLbf9RJlHV1Qyw2_ru-ru.js?ver=PERSONAL.COM20210620 855336muLpV5mEKuCoCYC5hxOOw2"
-        ></script>
-
-        <span id="ctl00_InlineScriptBefore">
-          <script type="text/javascript">
-            window.ASC.Resources.Master.IsProductAdmin = false;
-            window.ASC.Resources.Master.ShowPromotions = true;
-            window.ASC.Resources.Master.ShowTips = true;
-          </script>
-        </span>
-        <script
-          type="text/javascript"
-          src="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-vpDp10LebOHz5cWHVCJiag2.js?ver=PERSONAL.COM20210620 85533"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://static.onlyoffice.com/studio/tag/personal.11.5.3/bundle/common-x9QFUVlyiL5NEPXurV8mZg2.js?ver=PERSONAL.COM20210620 85533"
-        ></script>
+       
       </Layout.PageFooter>
     </Layout>
   );

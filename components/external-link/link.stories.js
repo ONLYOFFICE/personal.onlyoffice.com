@@ -23,7 +23,7 @@ const Template = ({ ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "External Link",
+  children: "External Link",
   fontSize: "20px",
   fontWeight: 300,
   textTransform: "none",

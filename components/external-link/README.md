@@ -22,7 +22,6 @@ import ELink from "../components/external-link";
 | ------------------------- | :----------------: | :------: | :---------------------------------------: | :-------------------------: | ----------------- |
 | `className`               |      `string`      |    -     |                   -                       |               -             | Accepts class     |
 | `id`                      |      `string`      |    -     |                   -                       |               -             | Accepts id        |
-| `label`                   |      `string`      |    -     |                   -                       |               -             | External link text |
 | `fontSize`                |      `string`      |    -     |                   -                       |             `14px`          | External link text font-size |
 | `fontWeight`              | `number`, `string` |    -     |                   -                       |               -             | External link text font-weight |
 | `textTransform`           |      `string`      |    -     |                   -                       |               -             | External link text text-transform |
