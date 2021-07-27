@@ -14,8 +14,6 @@ const currentYear = date.getFullYear();
 const FooterContent = (props) => {
   const { t, language, footerHomePage, ...rest } = props;
 
-  const homepagePath = language === "en" ? "/" : `/${language}`;
-
   return(      
     <StyledFooter {...rest}>
         <div className="personal-footer">               
@@ -44,7 +42,7 @@ const FooterContent = (props) => {
             <div className="item-personal-footer">
                 <div className="personal-footer-links">
                     <CustomLink className="personal-footer-link" color="#444444" href={`/Terms.aspx`}>{t("Terms of Service")}</CustomLink>
-                    <CustomLink color="#444444" href={`https://www.onlyoffice.com${homepagePath}/`} type={"external"}>{t("Corporate Use")}</CustomLink>
+                    <CustomLink color="#444444" href={`https://www.onlyoffice.com`} type={"external"}>{t("Corporate Use")}</CustomLink>
                 </div>
                     <Text color="#444444" className="personal-footer_rights">
                         {t("© Ascensio System SIA")} {currentYear}. {t("All rights reserved")}
