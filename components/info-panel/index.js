@@ -4,19 +4,18 @@ import {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg,StyledGroupButt
 import Text from "../text/index";
 import Button from "../button/index";
 import Img from "./img";
-const InfoPanel = ({bgColor, imgUrl, defaultImgUrl, ...rest}) => {
-
-
- 
-  
+const InfoPanel = ({
+  bgColor, 
+  imgUrl, 
+  defaultImgUrl, 
+  ...rest
+}) => {
   if(rest.imgleft){
     return(
       <StyledInfoPanel
       bgColor={bgColor}
       >
-
         <StyledInfoPanelText>
-
           <Text 
           lineHeight={"28px"} 
           fontSize={"22px"} 
@@ -25,36 +24,27 @@ const InfoPanel = ({bgColor, imgUrl, defaultImgUrl, ...rest}) => {
           >
             {rest.children}
           </Text>   
-
-          <StyledGroupButton>
-            {
-              (rest.countButton).map((btn) => 
+        <StyledGroupButton>
+          {(rest.countButton).map((btn) => 
               <a href={btn.href}>
                 <Button
                   icon={btn.iconButton}
                   type={btn.typeButton}
                   label={btn.textButton}
                 />
-               </a> 
-              )
-            }
-              
-            
-            
+              </a> 
+            )}                                 
           </StyledGroupButton>     
-
         </StyledInfoPanelText>
-
         <StyledInfoPanelImg>
           <Img            
             imgUrl={imgUrl} 
             defaultImgUrl={defaultImgUrl}
           />         
         </StyledInfoPanelImg>        
-        
       </StyledInfoPanel>
-    )
-  } else {
+  )} 
+  else {
     return(
       <StyledInfoPanel>
         <StyledInfoPanelImg
