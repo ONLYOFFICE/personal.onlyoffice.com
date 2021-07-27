@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "./";
-import ExternalLink from "../external-link";
+import Link from "../link";
 import Text from "../text";
 import SocialButton from "../social-button";
 
@@ -20,7 +20,7 @@ const ComboLabel = () => {
   return (
     <>
       <Text as="span">Combo label - </Text>
-      <ExternalLink
+      <Link
         label="External Link"
         href="https://github.com/ONLYOFFICE/personal.onlyoffice.com"
         target="_blank"
@@ -33,9 +33,9 @@ const ComboLabel = () => {
   );
 };
 
-const ELink = () => {
+const LinkComponent = () => {
   return (
-    <ExternalLink
+    <Link
       label="External Link"
       href="https://github.com/ONLYOFFICE/personal.onlyoffice.com"
       target="_blank"
@@ -178,7 +178,7 @@ const Template = ({ ...args }) => {
       toHideButton: true,
       label: "Is Submit Button",
     },
-    { type: "other", element: <ELink key="external-link" /> },
+    { type: "other", element: <LinkComponent key="external-link" /> },
     {
       type: "separator",
       separatorText: "Separator Text",
