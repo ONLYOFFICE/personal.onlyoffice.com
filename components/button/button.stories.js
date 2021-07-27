@@ -26,7 +26,7 @@ Default.args = {
   label: "Some Label",
   typeButton: "primary",
   isDisabled: false,
-  scale: false,
+  isScale: false,
   width: "auto",
   height: "56px",
   tabIndex: -1,

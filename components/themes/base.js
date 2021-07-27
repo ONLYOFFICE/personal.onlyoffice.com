@@ -1,6 +1,17 @@
 import globalColors from "../utils/global-colors";
 
-const { white, grayMain, grayHover, orangeMain, orangeHover, graySecnodary, gray, grayTextInput, grayTextInputHover } = globalColors;
+const {
+  white,
+  grayMain,
+  grayHover,
+  orangeMain,
+  orangeHover,
+  graySecnodary,
+  gray,
+  grayTextInput,
+  grayTextInputHover,
+  grayLight,
+} = globalColors;
 const Base = {
   button: {
     textColor: white,
@@ -56,7 +67,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: grayTextInputHover,
+    backgroundColor: "transparent",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",
@@ -73,8 +84,10 @@ const Base = {
     position: "absolute",
     display: "block",
     boxSizing: "border-box",
-    width: "544px",
+    boxShadow: "none",
+    width: "100%",
     height: "56px",
+    width: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",
@@ -85,18 +98,24 @@ const Base = {
     verticalAlign: "center",
     textDecoration: "none",
     textTransform: "none",
-    textShadow:"none",
+    textShadow: "none",
     outline: "none",
-    
+
+    placeholderColor: "#CCC",
+
     label: {
-      top: "3px",
+      color: "#AAAAAA",
+      colorHover: gray,
+      padding: "0 15px",
+      left: "2px",
+      top: "8px",
       fontSize: "12px",
     },
 
     media: {
       width: "100%",
       fontSize: "13px",
-    }
+    },
   },
 
   text: {
@@ -122,7 +141,7 @@ const Base = {
     alignItems: "center",
 
     div: {
-      backgroundColor: "#CCCCCC",
+      backgroundColor: grayLight,
 
       height: "1px",
       flex: "1",
@@ -133,7 +152,6 @@ const Base = {
     },
   },
 
-
   checkbox: {
     color: grayTextInput,
     fontSize: "14px",
@@ -142,7 +160,7 @@ const Base = {
   },
 
   iconButton: {
-    width: "20px"
+    width: "20px",
   },
 
   reviewPanel: {
@@ -156,7 +174,7 @@ const Base = {
     border: "1px solid #CCCCCC",
     borderRadius: "5px",
 
-    media:{
+    media: {
       device: {
         paddingBottom: "4px",
       },
@@ -171,11 +189,19 @@ const Base = {
 
   header: {
     fontSize: ["48px", "40px", "32px", "24px", "18px", "14px", "14px"],
-    lineHeight: ["74px", "53px", "32px", "32px", "24px", "19px", "19px"],
+    lineHeight: ["74px", "53px", "38px", "32px", "24px", "19px", "19px"],
     fontWeight: 700,
-    overflow: "auto"
+    overflow: "auto",
   },
-  
+
+  form: {
+    border: `1px solid ${grayLight}`,
+    borderRadius: "5px",
+    boxShadow: "0px 20px 50px rgb(85 85 85 / 15%)",
+    padding: "24px 32px 44px 32px",
+  },
+
+  socialButton: {},
 };
 
 export default Base;

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import StyleGroupInput from "./styled-group";
 import StyledTextInput from "./styled-text-input";
@@ -10,13 +10,15 @@ const TextInput = ({
   className,
   id,
   type,
-  label,
+  onBlur,
+  placeholder,
   onChange,
+  defaultInput,
   isDisabled,
   isAutoFocussed,
   isSuccess,
   isError,
-  checkButton,
+  withButton,
   idButton,
   classNameButton,
   typeButton,
@@ -24,10 +26,18 @@ const TextInput = ({
   squareButton,
   labelButton,
   iconButton,
-  onClick,
+  isSubmit,
+  backgroundColor,
+  buttonClick,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
+  const [isEmpty, setIsEmpty] = useState(true);
+
+  const onChangeHandler = (e) => {
+    setIsEmpty(!e.target.value.trim());
+    onChange && onChange(e);
+  };
 
   useEffect(() => {
     if (isAutoFocussed) inputTextRef.current.focus();
@@ -41,17 +51,29 @@ const TextInput = ({
           className={className}
           disabled={isDisabled}
           isAutoFocussed={isAutoFocussed}
+          defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
-          checkButton={checkButton}
+          withButton={withButton}
           isDisabled={isDisabled}
-          onChange={onChange}
+          onChange={onChangeHandler}
           ref={inputTextRef}
+          withButton={withButton}
+          isPlaceholder={!!placeholder}
+          backgroundColor={backgroundColor}
           {...rest}
         />
-        <Label defaultChecked={rest.value !== ""}>{label}</Label>
+        <Label
+          defaultChecked={rest.value !== ""}
+          defaultInput={defaultInput}
+          isSuccess={isSuccess}
+          isError={isError}
+          isEmpty={isEmpty}
+        >
+          {placeholder}
+        </Label>
       </StyledInput>
-      {Boolean(checkButton) && (
+      {Boolean(withButton) && (
         <StyledButton
           id={idButton}
           className={classNameButton}
@@ -61,11 +83,13 @@ const TextInput = ({
           isAutoFocussed={isAutoFocussed}
           isSuccess={isSuccess}
           isError={isError}
-          onClick={onClick}
+          onClick={buttonClick}
           height={rest.height}
           style={styleButton}
           icon={iconButton}
           squareButton={squareButton}
+          isSubmit={isSubmit}
+          minwidth="min-content"
         />
       )}
     </StyleGroupInput>
@@ -90,7 +114,7 @@ TextInput.propTypes = {
   /** Value of the input */
   value: PropTypes.string.isRequired,
   /** label text in input */
-  label: PropTypes.string,
+  placeholder: PropTypes.string,
   /** Name text in button */
   labelButton: PropTypes.string,
   /** Supported type of the input fields */
@@ -99,8 +123,8 @@ TextInput.propTypes = {
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
-  /** Scale width to 100% */
-  scale: PropTypes.bool,
+  /** Default input color*/
+  defaultInput: PropTypes.bool,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
   /** Focus the input field on initial render */
@@ -112,11 +136,13 @@ TextInput.propTypes = {
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
-  checkButton: PropTypes.bool,
+  withButton: PropTypes.bool,
+  /** Set to true if the button should submit the form  */
+  isSubmit: PropTypes.bool,
   /**Called with the new value. Required when input is not read only. Parent should pass it back as value */
   onChange: PropTypes.func,
   /** What the button will trigger when clicked */
-  onClick: PropTypes.func,
+  buttonClick: PropTypes.func,
   /** Text input tab index */
   tabIndex: PropTypes.number,
   /** Accepts id */
@@ -127,17 +153,20 @@ TextInput.propTypes = {
   idButton: PropTypes.string,
   /** Accepts button class */
   classNameButton: PropTypes.string,
+  /** Custom background color */
+  backgroundColor: PropTypes.string,
 };
 
 TextInput.defaultProps = {
-  label: "",
+  placeholder: "",
   type: "text",
   value: "",
+  placeholder: "",
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,
   isError: false,
-  checkButton: false,
+  withButton: false,
   squareButton: false,
   tabIndex: -1,
 };

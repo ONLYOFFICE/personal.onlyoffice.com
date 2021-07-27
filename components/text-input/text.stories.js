@@ -14,28 +14,28 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const [value, isValue] = React.useState("");
+  const [value, setValue] = React.useState("");
+  const onChangeHandler = (e) => {
+    console.log(e.target.value);
+    setValue(e.target.value);
+  };
   return (
-    <div style={{ width: "100%" }}>
-      <TextInput
-        {...args}
-        value={value}
-        onChange={(event) => isValue(event.target.value)}
-      />
+    <div style={{ width: "100%", maxWidth: "500px" }}>
+      <TextInput {...args} value={value} onChange={onChangeHandler} />
     </div>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "",
+  placeholder: "Your text",
   type: "text",
   labelButton: "default",
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,
   isError: false,
-  checkButton: false,
+  withButton: false,
   squareButton: false,
   tabIndex: -1,
 };

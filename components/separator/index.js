@@ -1,15 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledSeparator from "./styled-separator";
+import Text from "../text";
 
-const Separator = (props) => {
+const Separator = ({ fontSize, fontWeight, children, ...rest }) => {
   return (
-      <StyledSeparator {...props}>
-        <div/>
-            <span>{props.children}</span>
-        <div/>
-      </StyledSeparator>
-    );
+    <StyledSeparator {...rest}>
+      <div />
+      <Text as="span" fontSize={fontSize} fontWeight={fontWeight}>
+        {children}
+      </Text>
+      <div />
+    </StyledSeparator>
+  );
 };
 
 Separator.propTypes = {
@@ -27,6 +30,10 @@ Separator.propTypes = {
   id: PropTypes.string,
   /** Accepts class */
   className: PropTypes.string,
+  /** To set font-size */
+  fontSize: PropTypes.string,
+  /** To set font-weight */
+  fontWeight: PropTypes.string,
 };
 
 Separator.defaultProps = {

@@ -6,4 +6,31 @@ html {
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+  position: relative;
+
+  background-color: transparent;
+  background-image: url("../static/background.svg");
+  background-position: center -508px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    background-position: -67vw -46vw;
+    background-size: 225vw;
+  }
+}
+@media screen and (max-width: 1023px) {
+  body {
+    background-position: -114vw -67vw;
+    background-size: 320vw;
+  }
+}
+
+@media screen and (max-width: 592px) {
+  body {
+    background-position: -353vw -164vw;
+    background-size: 780vw;
+  }
 }

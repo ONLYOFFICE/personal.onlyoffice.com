@@ -63,10 +63,13 @@ class Layout extends React.Component {
 
     return (
       <StyledLayout>
+        {children}
         <Head>{headContent ? headContent.props.children : null}</Head>
         <Header>{headerContent ? headerContent.props.children : null}</Header>
         <Main>{mainContent ? mainContent.props.children : null}</Main>
-        <Footer>{footerContent ? footerContent.props.children : null}</Footer>
+        <Footer className="footer">
+          {footerContent ? footerContent.props.children : null}
+        </Footer>
       </StyledLayout>
     );
   }
