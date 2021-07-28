@@ -7,7 +7,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Custom  Link.",
+        component:
+          "Custom  Link. You can pass the nested elements as children, or if the nested element is just text, then using the prop label",
       },
     },
   },

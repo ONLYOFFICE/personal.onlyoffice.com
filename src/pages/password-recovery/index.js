@@ -5,13 +5,13 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 
-import Head from "../sub-components/head";
-import HeaderContent from "../sub-components/header-content";
-import StyledSection from "../sub-components/section";
-import FormLink from "../sub-components/form-link";
-import FormDescription from "../sub-components/form-description";
-import AdditionalSection from "../sub-components/additional-section";
-import FooterContent from "../sub-components/footer-content";
+import Head from "../../sub-components/head";
+import HeaderContent from "../../sub-components/header-content";
+import StyledSection from "../../sub-components/section";
+import FormLink from "../../sub-components/form-link";
+import FormDescription from "../../sub-components/form-description";
+import AdditionalSection from "../../sub-components/additional-section";
+import FooterContent from "../../sub-components/footer-content";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");

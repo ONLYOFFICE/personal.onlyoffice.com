@@ -1,12 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout";
-import Head from "./sub-components/head";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import InfoPanel from "../../components/info-panel";
 
-import HeaderContent from "./sub-components/header-content";
-import FooterContent from "./sub-components/footer-content";
+import Layout from "../../components/layout";
+
+import Head from "../sub-components/head";
+import HeaderContent from "../sub-components/header-content";
+import FooterContent from "../sub-components/footer-content";
+
 const IndexPage = () => {
   const {
     t,

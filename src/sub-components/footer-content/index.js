@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CustomLink from "../../../../components/link";
-import IconButton from "../../../../components/icon-button";
-import Text from "../../../../components/text";
+import CustomLink from "../../../components/link";
+import IconButton from "../../../components/icon-button";
+import Text from "../../../components/text";
 
 import StyledFooter from "./styled-footer-content";
 import Social from "./sub-components/social-item";
@@ -27,7 +27,7 @@ const FooterContent = (props) => {
                   target={item.target}
                   title={item.title}
                   rel={item.rel}
-                  type={"external"}
+                  target="_blank"
                 >
                   <IconButton
                     iconName={item.src}
@@ -45,13 +45,14 @@ const FooterContent = (props) => {
               className="personal-footer-link"
               color="#444444"
               href={`/Terms.aspx`}
+              target="_blank"
             >
               {t("Terms of Service")}
             </CustomLink>
             <CustomLink
               color="#444444"
               href={`https://www.onlyoffice.com`}
-              type={"external"}
+              target="_blank"
             >
               {t("Corporate Use")}
             </CustomLink>
