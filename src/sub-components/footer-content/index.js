@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CustomLink from "../../../../components/link";
-import IconButton from "../../../../components/icon-button";
-import Text from "../../../../components/text";
+import CustomLink from "../../../components/link";
+import IconButton from "../../../components/icon-button";
+import Text from "../../../components/text";
 
 import StyledFooter from "./styled-footer-content";
 import Social from "./sub-components/social-item";
