@@ -15,6 +15,8 @@ border-radius: 5px;
 flex-direction: ${(props) => props.imgleft ? "row-reverse" : "none"};
 
 .infoPanelText{
+    max-width: 510px;
+    margin: 0 30px;
     padding-top: 10px;
 }
 `;

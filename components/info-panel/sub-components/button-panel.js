@@ -17,7 +17,6 @@ amountButton,
             <CustomLink 
                 key={i} 
                 href={item.href} 
-                type={"external"} 
                 {...rest}
             >
               {item.typeButton === "iconButton"

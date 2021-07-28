@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import InfoPanel from "../../components/info-panel";
+import Info from "../sub-components/info";
 
 import Layout from "../../components/layout";
 
@@ -33,7 +33,9 @@ const IndexPage = () => {
           labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
+      <Layout.SectionMain>
+        <Info t={t} language={language} />
+      </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>
