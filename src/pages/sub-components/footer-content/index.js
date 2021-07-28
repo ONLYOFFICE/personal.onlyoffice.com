@@ -27,7 +27,7 @@ const FooterContent = (props) => {
                   target={item.target}
                   title={item.title}
                   rel={item.rel}
-                  type={"external"}
+                  target="_blank"
                 >
                   <IconButton
                     iconName={item.src}
@@ -45,13 +45,14 @@ const FooterContent = (props) => {
               className="personal-footer-link"
               color="#444444"
               href={`/Terms.aspx`}
+              target="_blank"
             >
               {t("Terms of Service")}
             </CustomLink>
             <CustomLink
               color="#444444"
               href={`https://www.onlyoffice.com`}
-              type={"external"}
+              target="_blank"
             >
               {t("Corporate Use")}
             </CustomLink>

@@ -1,36 +1,23 @@
 import React from "react";
+import Link from "../link";
 import PropTypes from "prop-types";
-import StyledLink from "./styled-link";
+import { Link as GatsbyLink } from "gatsby";
 
-const CustomLink = ({
-  children,
-  href,
-  style,
-  className,
-  type,
-  label,
-  ...rest
-}) => {
+const InternalLink = ({ children, href, style, className, label, ...rest }) => {
   const linkClassName = className
-    ? className + " external-link"
-    : "external-link";
+    ? className + " internal-link"
+    : "internal-link";
 
   return (
-    <StyledLink
-      as="a"
-      href={href}
-      {...rest}
-      style={style}
-      className={linkClassName}
-    >
-      {children || label}
-    </StyledLink>
+    <GatsbyLink to={href} style={style}>
+      <Link as="span" {...rest} className={linkClassName}>
+        {children || label}
+      </Link>
+    </GatsbyLink>
   );
 };
 
-CustomLink.propTypes = {
-  /**  link text */
-  label: PropTypes.string,
+InternalLink.propTypes = {
   /**  link text color */
   color: PropTypes.string,
   /**  link text font-size */
@@ -61,8 +48,7 @@ CustomLink.propTypes = {
   className: PropTypes.string,
 };
 
-CustomLink.defaultProps = {
-  label: "",
+InternalLink.defaultProps = {
   fontSize: "14px",
   href: undefined,
   title: undefined,
@@ -70,4 +56,4 @@ CustomLink.defaultProps = {
   tabIndex: -1,
 };
 
-export default CustomLink;
+export default InternalLink;

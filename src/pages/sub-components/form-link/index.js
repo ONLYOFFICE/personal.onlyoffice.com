@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "../../../../components/link";
+import Link from "../../../../components/internal-link";
 
 const FormLink = (props) => {
   const { href, label, currentLanguage } = props;

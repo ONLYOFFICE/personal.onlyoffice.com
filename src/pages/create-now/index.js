@@ -4,7 +4,6 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
-import Link from "../../../components/link";
 
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
