@@ -5,6 +5,9 @@ const StyledForm = styled.section`
 
   .login-form {
     margin-top: 96px;
+    padding-bottom: 184px;
+  }
+  @media (max-width: 1024px) {
   }
 
   @media (max-width: 768px) {

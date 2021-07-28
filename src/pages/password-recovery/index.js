@@ -11,6 +11,7 @@ import StyledSection from "../sub-components/section";
 import FormLink from "../sub-components/form-link";
 import FormDescription from "../sub-components/form-description";
 import AdditionalSection from "../sub-components/additional-section";
+import FooterContent from "../sub-components/footer-content";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -114,7 +115,9 @@ const PasswordRecoveryPage = () => {
           />
         </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter>test</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} />
+      </Layout.PageFooter>
     </Layout>
   );
 };
