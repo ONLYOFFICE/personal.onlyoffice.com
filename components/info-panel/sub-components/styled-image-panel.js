@@ -1,8 +1,11 @@
 import { styled } from "linaria/react";
 
 const StyledInfoPanelImg = styled.div`
-/*bottom: 0;
-min-height: 308px;   */
+height: 380px;
+img{
+    bottom: 0;
+    height: 100%;
+}
 `;
 
 export default StyledInfoPanelImg;

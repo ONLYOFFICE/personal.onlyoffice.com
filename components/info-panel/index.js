@@ -23,7 +23,7 @@ const InfoPanel = ({
     <StyledInfoPanel bgColor={bgColor} imgleft={imgleft} {...rest}>
       <div className="infoPanelText">
         <Text 
-          lineHeight={lineHeight || "28px"} 
+          lineHeight={lineHeight || "160%"} 
           fontSize={fontSize || "22px"} 
           color={textColor}
           textAlign={textAlign || "center"}

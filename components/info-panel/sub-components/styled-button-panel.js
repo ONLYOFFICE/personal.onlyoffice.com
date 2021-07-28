@@ -7,7 +7,7 @@ flex-direction: row;
 flex-wrap: wrap;
 align-content: center;
 justify-content: center;
-    a{
+    a {
         padding: 4px;
     }
 `;

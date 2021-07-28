@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes, { object } from "prop-types";
+
 import Button from "../../button";
 import IconButton from "../../icon-button";
 import CustomLink from "../../link";
@@ -26,7 +27,6 @@ amountButton,
                       size={item.size}
                       onClick={item.onClick}
                       isDisabled={item.isDisabled}
-                      isClickable={item.isClickable}
                     />
                   : <Button
                       icon={item.iconButton}
