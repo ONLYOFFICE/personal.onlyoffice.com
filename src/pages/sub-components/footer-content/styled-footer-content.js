@@ -2,7 +2,7 @@ import { styled } from "linaria/react";
 import { device } from "../../../../components/utils/devices";
 
 const StyledFooter = styled.div`
-background: #f9f9f9;
+background: ${(props) => props.footerHomePage ? "#f9f9f9" : "transparent"};
 line-height: 160%;
 position: relative;
 padding: 0 0 40px;
@@ -58,7 +58,7 @@ padding: 0 0 40px;
 
 }
 
-@media ${device.laptop} {
+@media ${device.laptopM} {
 
 .personal-footer{
     max-width: 928px;
@@ -79,7 +79,7 @@ padding: 0 0 40px;
 
 }
 
-@media ${device.tablet} {
+@media ${device.laptop} {
 
 .personal-footer{
     max-width: 689px;

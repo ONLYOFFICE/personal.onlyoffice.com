@@ -15,7 +15,7 @@ const FooterContent = (props) => {
   const { t, language, footerHomePage, ...rest } = props;
 
   return (
-    <StyledFooter {...rest}>
+    <StyledFooter {...rest} footerHomePage={footerHomePage}>
       <div className="personal-footer">
         {footerHomePage && (
           <ul className="personal-social-links">
