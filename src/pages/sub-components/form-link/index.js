@@ -9,12 +9,13 @@ const FormLink = (props) => {
       href={
         currentLanguage === "en" ? `/${href}` : `/${currentLanguage}/${href}`
       }
-      label={label}
       textDecoration="none"
       hoverTextDecoration="underline"
       type="internal"
       style={{ margin: "0 auto" }}
-    />
+    >
+      {label}
+    </Link>
   );
 };
 

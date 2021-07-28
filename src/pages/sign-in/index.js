@@ -11,6 +11,7 @@ import StyledSection from "../sub-components/section";
 import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import FormLink from "../sub-components/form-link";
+import FooterContent from "../sub-components/footer-content";
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -142,7 +143,9 @@ const SignInPage = () => {
           />
         </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter>test</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} />
+      </Layout.PageFooter>
     </Layout>
   );
 };
