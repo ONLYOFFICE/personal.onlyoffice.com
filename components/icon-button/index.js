@@ -9,6 +9,11 @@ function IconButton(props) {
     currentIconName: props.iconName,
   });
 
+  const onError = (error, svg) => {
+    error &&
+      setState({ currentIconName: props.defaultIcon });
+  }
+
   const onMouseEnter = (e) => {
     const {
       isDisabled,
@@ -124,7 +129,11 @@ function IconButton(props) {
       title={title}
       {...props}
     >
-      <ReactSVG className={classNameSVG} src={state.currentIconName} />
+      <ReactSVG 
+        className={classNameSVG} 
+        src={state.currentIconName} 
+        afterInjection={onError}
+      />
     </StyledIconButton>
   );
   //}
@@ -141,6 +150,8 @@ IconButton.propTypes = {
   hoverColor: PropTypes.string,
   /** Takes the path to the icon (the icon must be located in a static folder) */
   iconName: PropTypes.string.isRequired,
+  /** Takes the path to the icon (the icon must be located in a static folder) */
+  defaultIcon: PropTypes.string.isRequired,
   /** Icon name on click action */
   iconClickName: PropTypes.string,
   /** Icon name on hover action */
@@ -155,6 +166,8 @@ IconButton.propTypes = {
   grayed: PropTypes.bool,
   /** What the button will trigger when clicked  */
   onClick: PropTypes.func,
+  /** If no image is found  */
+  onError: PropTypes.func,
   /**  What the button will trigger when cursor down */
   onMouseDown: PropTypes.func,
   /** What the button will trigger when cursor enter */

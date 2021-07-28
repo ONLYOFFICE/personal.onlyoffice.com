@@ -1,78 +1,52 @@
-import React, {useState} from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg,StyledGroupButton} from "./styled-info-panel";
 import Text from "../text/index";
-import Button from "../button/index";
-import Img from "./img";
+import StyledInfoPanel from "./styled-info-panel";
+import ImagePanel from "./sub-components/image-panel";
+import ButtonPanel from "./sub-components/button-panel";
+
 const InfoPanel = ({
+  imgleft,
   bgColor,
   children,
   lineHeight,
   fontSize, 
   textColor,
   textAlign,
+  amountButton,
   imgUrl, 
   defaultImgUrl, 
   ...rest
 }) => {
-  if(rest.imgleft){
-    return(
-      <StyledInfoPanel bgColor={bgColor}>
-        <StyledInfoPanelText>
-          <Text 
-            lineHeight={lineHeight || "28px"} 
-            fontSize={fontSize || "22px"} 
-            color={textColor}
-            textAlign={textAlign || "center"}
-          >
-            {children}
-          </Text>   
-        <StyledGroupButton>
-          {(rest.countButton).map((item, i) => 
-              <a key={i} href={item.href}>
-                <Button
-                  icon={item.iconButton}
-                  type={item.typeButton}
-                  label={item.textButton}
-                />
-              </a> 
-            )}                                 
-          </StyledGroupButton>     
-        </StyledInfoPanelText>
-        <StyledInfoPanelImg>
-          <Img            
-            imgUrl={imgUrl} 
-            defaultImgUrl={defaultImgUrl}
-          />         
-        </StyledInfoPanelImg>        
-      </StyledInfoPanel>
+  
+  return(
+    <StyledInfoPanel bgColor={bgColor} imgleft={imgleft} {...rest}>
+      <div className="infoPanelText">
+        <Text 
+          lineHeight={lineHeight || "28px"} 
+          fontSize={fontSize || "22px"} 
+          color={textColor}
+          textAlign={textAlign || "center"}
+        >
+          {children}
+        </Text>   
+        <ButtonPanel amountButton={amountButton} />  
+      </div>
+      <ImagePanel imgUrl={imgUrl} defaultImgUrl={defaultImgUrl} />            
+    </StyledInfoPanel>
   )} 
-  else {
-    return(
-      <StyledInfoPanel>
-        <StyledInfoPanelImg
-          imgUrl={rest.imgUrl}
-        >          
-        </StyledInfoPanelImg>
-        <StyledInfoPanelText>         
-          <Text 
-          fontSize={rest.fontSize} 
-          color={rest.textColor}
-          lineHeight={rest.lineHeight}
-          >
-            {rest.children}
-          </Text>
-          <Button></Button>
-        </StyledInfoPanelText>        
-      </StyledInfoPanel>
-    )
-  } 
- 
-}
 
-InfoPanel.propTypes = {};
+InfoPanel.propTypes = {
+  imgleft: PropTypes.bool,
+  bgColor: PropTypes.string,
+  amountButton: PropTypes.arrayOf(PropTypes.object),
+  imgUrl: PropTypes.string,
+  defaultImgUrl: PropTypes.string,
+};
 
-InfoPanel.defaultrest = {};
+InfoPanel.propTypes = {
+  imgleft: false,
+};
 
 export default InfoPanel;
 

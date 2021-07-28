@@ -14,33 +14,8 @@ box-shadow: 0px 7px 15px rgb(85 85 85 / 10%);
 box-sizing: border-box;
 background-image: ${(props) =>  ( props.bgColor )};
 border-radius: 5px;
-`;
-const StyledInfoPanelText = styled.div`
-    width:50%;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    line-height: 256px;
-    padding: 32px;
-    text-align: center;
-    width: 504px;
+flex-direction: ${(props) => props.imgleft ? "row-reverse" : "none"};
+
 `;
 
-const StyledInfoPanelImg = styled.div`
-    width:50%;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 380px;    
-    
-`;
-
-const StyledGroupButton = styled.div`
-    display: block;
-    padding-top: 24px;
-        
-    
-`;
-
-
-
-export {StyledInfoPanel, StyledInfoPanelText, StyledInfoPanelImg,StyledGroupButton};
+export default StyledInfoPanel;
