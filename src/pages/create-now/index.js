@@ -12,6 +12,7 @@ import StyledSection from "../sub-components/section";
 import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import LicenceLink from "../sub-components/license";
+import FooterContent from "../sub-components/footer-content";
 
 const CreateNowPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -128,7 +129,9 @@ const CreateNowPage = () => {
           />
         </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter>test</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} />
+      </Layout.PageFooter>
     </Layout>
   );
 };

@@ -8,7 +8,6 @@ const StyledForm = styled.section`
     padding-bottom: 184px;
   }
   @media (max-width: 1024px) {
-    padding-bottom: 163px;
   }
 
   @media (max-width: 768px) {
@@ -20,7 +19,6 @@ const StyledForm = styled.section`
   @media (max-width: 592px) {
     .login-form {
       margin-top: 0px;
-      padding: 96px 0 0;
     }
   }
 `;
