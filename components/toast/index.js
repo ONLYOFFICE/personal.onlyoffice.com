@@ -14,21 +14,21 @@ const Toast = (props) => {
     const cookie = "onlyoffice_personal_cookie=true";
 
     const getCookie = (name) => { 
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");        
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
         if (parts.length == 2) {
-            return true;            
+            return true;
         } else {
             return false;
-        }        
+        }
     };
 
-    const setCookiesHandler = () => {        
+    const setCookiesHandler = () => {
         document.cookie = cookie;
         setDisplay(!display);
     };
 
-    useEffect(() => {       
+    useEffect(() => {
         const cookie = getCookie(cookiesName);
         setDisplay(!cookie);
     });
@@ -41,17 +41,17 @@ const Toast = (props) => {
                     fontSize={"13px"}
                     display= {"block"}
                     >
-                        {t("На этом сайте используются файлы cookie. Продолжая просмотр этого сайта, вы принимаете условия нашей ")}
+                        {t("This website uses cookies. By continuing to browse the website you agree to our ")}
                         <Link
                         href={"https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.239950403.1196593722.1525950411-169631771.1404734630"}
-                        label={"политики конфиденциальности"}
+                        label={"privacy policy"}
                         color={"#ff6f3d"}
                         fontSize={"12px"}
                         hoverTextDecoration={"none"}
                         ></Link>
                     </Text>
                     <div className = "personalcookie">
-                        <Button                            
+                        <Button
                             label= {"Понятно"}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
