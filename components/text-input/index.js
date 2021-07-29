@@ -29,6 +29,7 @@ const TextInput = ({
   isSubmit,
   backgroundColor,
   buttonClick,
+  autoComplete,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -41,7 +42,7 @@ const TextInput = ({
 
   useEffect(() => {
     if (isAutoFocussed) inputTextRef.current.focus();
-  }, []);
+  }, [isAutoFocussed]);
 
   return (
     <StyleGroupInput>
@@ -54,13 +55,13 @@ const TextInput = ({
           defaultInput={defaultInput}
           isSuccess={isSuccess}
           isError={isError}
-          withButton={withButton}
           isDisabled={isDisabled}
           onChange={onChangeHandler}
           ref={inputTextRef}
           withButton={withButton}
           isPlaceholder={!!placeholder}
           backgroundColor={backgroundColor}
+          autoComplete={autoComplete}
           {...rest}
         />
         <Label
@@ -161,7 +162,6 @@ TextInput.defaultProps = {
   placeholder: "",
   type: "text",
   value: "",
-  placeholder: "",
   isDisabled: false,
   isAutoFocussed: false,
   isSuccess: false,
@@ -169,6 +169,7 @@ TextInput.defaultProps = {
   withButton: false,
   squareButton: false,
   tabIndex: -1,
+  autoComplete: "off",
 };
 
 export default TextInput;
