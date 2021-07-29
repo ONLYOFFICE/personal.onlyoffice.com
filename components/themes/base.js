@@ -202,6 +202,49 @@ const Base = {
   },
 
   socialButton: {},
+
+  infoPanel: {
+    display: "flex",
+    flexDirectionLeft: "row-reverse",
+    flexDirectionRight: "none",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "1120px",
+    minHeight: "380px",
+    margin: "0 auto",
+    marginBottom: "32px",
+    
+    background: "transparent",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    boxShadow: "0px 7px 15px rgb(85 85 85 / 10%)",
+    boxSizing: "border-box",
+
+    infoPanelText: {
+      padding: "10px",
+      pWidthLeft: "504px",
+      pWidthRight: "568px",
+    },
+
+    laptopM: {
+      width: "928px",
+      padding: "32px",
+      minHeight: "355px",
+    },
+    laptop: {
+      width: "calc(100% - 96px)",
+      padding: "16px 15px 32px",
+      flexDirection: "column",
+      height: "100%",
+    },
+    mobileL: {
+      width: "90%",
+      padding: "16px 10px 20px",
+      flexDirection: "column",
+      height: "100%",
+    },
+  },
+  
 };
 
 export default Base;

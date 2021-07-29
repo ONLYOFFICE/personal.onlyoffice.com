@@ -36,6 +36,15 @@ height: 200px;
         height: 195px;
     }
 }
+
+@media (${device.mobileM}) {
+height: 175px;
+    img{
+        bottom: 0;
+        padding-top: 5px;
+        height: 175px;
+    }
+}
 `;
 
 export default StyledInfoPanelImg;

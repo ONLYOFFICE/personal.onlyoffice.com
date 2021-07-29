@@ -29,8 +29,8 @@ amountButton,
                     />
                   : <Button
                       icon={item.iconButton}
-                      type={item.typeButton}
-                      label={item.textButton}
+                      typeButton={item.typeButton}
+                      label={item.label}
                       onClick={item.onClick}
                       isDisabled={item.isDisabled}
                       width={item.width}

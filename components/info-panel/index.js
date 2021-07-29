@@ -6,7 +6,7 @@ import ImagePanel from "./sub-components/image-panel";
 import ButtonPanel from "./sub-components/button-panel";
 
 const InfoPanel = ({
-  imgleft,
+  imgLeft,
   bgColor,
   children,
   lineHeight,
@@ -20,7 +20,7 @@ const InfoPanel = ({
 }) => {
   
   return(
-    <StyledInfoPanel bgColor={bgColor} imgleft={imgleft} {...rest}>
+    <StyledInfoPanel bgColor={bgColor} imgLeft={imgLeft} {...rest}>
       <div className="infoPanelText">
         <Text 
           lineHeight={lineHeight || "160%"} 
@@ -37,15 +37,28 @@ const InfoPanel = ({
   )} 
 
 InfoPanel.propTypes = {
-  imgleft: PropTypes.bool,
+  /** Position image*/
+  imgLeft: PropTypes.bool,
+  /** Background color*/
   bgColor: PropTypes.string,
+  /** Array button*/
   amountButton: PropTypes.arrayOf(PropTypes.object),
+  /** URL image*/
   imgUrl: PropTypes.string,
+  /** On error loading image, use default image*/
   defaultImgUrl: PropTypes.string,
+  /** Text line height*/
+  lineHeight: PropTypes.string,
+  /** Text font-size*/
+  fontSize: PropTypes.string,
+  /** Text color*/
+  textColor: PropTypes.string,
+  /** Text align*/
+  textAlign: PropTypes.string,
 };
 
 InfoPanel.propTypes = {
-  imgleft: false,
+  amountButton: [],
 };
 
 export default InfoPanel;

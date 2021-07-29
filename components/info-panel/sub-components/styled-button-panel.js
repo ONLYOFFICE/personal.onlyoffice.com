@@ -18,7 +18,7 @@ padding-top: 12px;
 padding-bottom: 12px;
     button {
         width: 100%;
-        min-width: 350px;
+        min-width: 335px;
     }
 }
 

@@ -14,8 +14,16 @@ import InfoPanel from "../components/info-panel";
 
 ### Properties
 
-| Props       |      Type      | Required | Values | Default | Description       |
-| ----------- | :------------: | :------: | :----: | :-----: | ----------------- |
-| `className` |    `string`    |    -     |   -    |    -    | Accepts class     |
-| `id`        |    `string`    |    -     |   -    |    -    | Accepts id        |
-| `style`     | `obj`, `array` |    -     |   -    |    -    | Accepts css style |
+| Props                  |      Type      | Required | Values | Default | Description                                     |
+| ---------------------- | :------------: | :------: | :----: | :-----: | ----------------------------------------------- |
+| `className`            |    `string`    |    -     |   -    |    -    | Accepts class                                   |
+| `id`                   |    `string`    |    -     |   -    |    -    | Accepts id                                      |
+| `imgLeft`              |    `bool`      |    -     |   -    |    -    | Position image                                  |
+| `bgColor`              |    `string`    |    -     |   -    |    -    | Background color                                |
+| `amountButton`         |    `array`     |    -     |   -    |    -    | Array button                                    |
+| `imgUrl`               |    `string`    |    -     |   -    |    -    | URL image                                       |
+| `defaultImgUrl`        |    `string`    |    -     |   -    |    -    | On error loading image, use default image       |
+| `lineHeight`           |    `string`    |    -     |   -    |    -    | Text line height                                |
+| `fontSize`             |    `string`    |    -     |   -    |    -    | Text font-size                                  |
+| `textColor`            |    `string`    |    -     |   -    |    -    | Text color                                      |
+| `textAlign`            |    `string`    |    -     |   -    |    -    | Text align                                      |

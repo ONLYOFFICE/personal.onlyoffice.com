@@ -3,27 +3,12 @@ import InfoPanel from "../../../components/info-panel";
 import StyledInfo from "./styled-info";
 const Info = (props) => {
     const { t, language, footerHomePage, ...rest } = props;
+    const onClick = () => {
+        alert("CLICK");
+    }
     return(
         <StyledInfo>
-        <InfoPanel
-            imgleft={false}
-            textColor={"#333"}
-            imgUrl={`/images/online_${language}.png`}                     
-            defaultImgUrl={`/images/online_en.png`}
-            bgColor={"white"}
-            amountButton={[
-                {
-                    iconName: `/images/chrome_web_store_${language}.svg`,
-                    defaultIcon: `/images/chrome_web_store_en.svg`, 
-                    typeButton: "iconButton",
-                    size: "188px",
-                    href:"#",
-                }
-            ]}
-        >
-        <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
-        </InfoPanel>
-        
+
         <InfoPanel
             imgleft={true}
             textColor={"#fff"}
@@ -37,13 +22,34 @@ const Info = (props) => {
                     typeButton: "defaultButton",
                     height: "56px",
                     minwidth: "130px",                    
-                    href:"$",
+                    onClick: onClick,
                 }
             ]}
         >
         Работайтеs <b>приложениях ONLYOFFICE</b> и редактируйте файлы офлайн или подключитесь к облаку.
         </InfoPanel>
+        {false && 
 
+        <>
+    
+        <InfoPanel
+            imgleft={false}
+            textColor={"#333"}
+            imgUrl={`/images/online_${language}.png`}                     
+            defaultImgUrl={`/images/online_en.png`}
+            bgColor={"white"}
+            amountButton={[
+                {
+                    iconName: `/images/chrome_web_store_${language}.svg`,
+                    defaultIcon: `/images/chrome_web_store_en.svg`, 
+                    typeButton: "iconButton",
+                    size: "188px",
+                    onClick: onClick
+                }
+            ]}
+        >
+        <b>Получите быстрый доступ к ONLYOFFICE Personal.</b> Скачайте бесплатное расширение для Chrome.
+        </InfoPanel>
         <InfoPanel
             imgleft={false}
             textColor={"#fff"}
@@ -67,6 +73,9 @@ const Info = (props) => {
         >
          Работайте с документами на мобильных в <b>приложениях ONLYOFFICE</b>
         </InfoPanel>
+            </>
+        }
+        
         </StyledInfo>
     );
 }

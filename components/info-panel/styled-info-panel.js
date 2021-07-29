@@ -1,36 +1,40 @@
 import { styled } from "linaria/react";
 import { device } from "../utils/devices";
+import { Base } from "../themes";
 
 const StyledInfoPanel = styled.div`
-display: flex;
-align-items: center;
-margin: 0 auto;
-width: 1120px;
-margin-bottom: 32px;
-min-height: 380px;
-border: 1px solid #ccc;
-box-shadow: 0px 7px 15px rgb(85 85 85 / 10%);
-box-sizing: border-box;
-background: ${(props) => (props.bgColor || "transparent")};
-border-radius: 5px;
-flex-direction: ${(props) => props.imgleft ? "row-reverse" : "none"};
-justify-content: space-between;
+display: ${(props) => props.theme.infoPanel.display};
+flex-direction: ${(props) => props.imgLeft 
+    ? props.theme.infoPanel.flexDirectionLeft
+    : props.theme.infoPanel.flexDirectionRight};
+justify-content: ${(props) => props.theme.infoPanel.justifyContent};
+align-items: ${(props) => props.theme.infoPanel.alignItems};
+width: ${(props) => props.theme.infoPanel.width};
+min-height: ${(props) => props.theme.infoPanel.minHeight};
+margin: ${(props) => props.theme.infoPanel.margin};
+margin-bottom: ${(props) => props.theme.infoPanel.marginBottom};
+
+background: ${(props) => (props.bgColor || props.theme.infoPanel.background)};
+border: ${(props) => props.theme.infoPanel.border};
+border-radius: ${(props) => props.theme.infoPanel.borderRadius};
+box-shadow: ${(props) => props.theme.infoPanel.boxShadow}; 
+box-sizing: ${(props) => props.theme.infoPanel.boxSizing};
 
 .infoPanelText{
-    padding: 10px;
+    padding: ${(props) => props.theme.infoPanel.infoPanelText.padding};
     padding-left: 10px;
-    padding-right: ${(props) => props.imgleft ? "10px" : "0px"};
+    padding-right:10px;
     p {
-        width: ${(props) => props.imgleft ? "504px" : "568px"};
+        width: ${(props) => props.theme.infoPanel.infoPanelText.pWidthRight};
     }
 }
 
 @media ${device.laptopM} {
-    width: 928px;
-    min-height: 355px;
+    width: ${(props) => props.theme.infoPanel.laptopM.width};
+    min-height: ${(props) => props.theme.infoPanel.laptopM.minHeight};
     .infoPanelText{
         width: 100%;
-        padding: 32px;
+        padding: ${(props) => props.theme.infoPanel.laptopM.padding};
         p {
             width:100%;
         }
@@ -38,26 +42,23 @@ justify-content: space-between;
 }
 
 @media ${device.laptop} {
-    width: calc(100% - 96px);
-    height: 100%;
+    width: ${(props) => props.theme.infoPanel.laptop.width};
+    height: ${(props) => props.theme.infoPanel.laptop.height};
     min-height: 354px;
-    flex-direction: column;
+    flex-direction: ${(props) => props.theme.infoPanel.laptop.flexDirection};
     .infoPanelText{
-        padding: 16px 15px 32px;
-        p {
-            
-        }
+        padding: ${(props) => props.theme.infoPanel.laptop.padding};
     }
 }
 
 @media ${device.mobileL} {
-    width: 90%;
-    height: 100%;
+    width: ${(props) => props.theme.infoPanel.mobileL.width};
+    height: ${(props) => props.theme.infoPanel.mobileL.height};
     min-height: auto;
-    flex-direction: column;
+    flex-direction: ${(props) => props.theme.infoPanel.mobileL.flexDirection};
     .infoPanelText{
-       width: 90%;
-       padding: 16px 10px 20px;
+       width: ${(props) => props.theme.infoPanel.mobileL.width};
+       padding: ${(props) => props.theme.infoPanel.mobileL.padding};
        margin: 0 auto;
        text-align: center;
         p {
@@ -65,8 +66,8 @@ justify-content: space-between;
         }
     }
 }
-
-
 `;
+
+StyledInfoPanel.defaultProps = { theme: Base };
 
 export default StyledInfoPanel;
