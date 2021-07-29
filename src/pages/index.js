@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import Info from "../sub-components/info";
 
 import Layout from "../../components/layout";
 
@@ -34,7 +33,6 @@ const IndexPage = () => {
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <Info t={t} language={language} />
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />

@@ -23,9 +23,11 @@ box-sizing: ${(props) => props.theme.infoPanel.boxSizing};
 .infoPanelText{
     padding: ${(props) => props.theme.infoPanel.infoPanelText.padding};
     padding-left: 10px;
-    padding-right:10px;
+    padding-right: ${(props) => props.imgLeft ? "10px" : "0px"};
     p {
-        width: ${(props) => props.theme.infoPanel.infoPanelText.pWidthRight};
+        width: ${(props) => props.imgLeft 
+            ? props.theme.infoPanel.infoPanelText.pWidthLeft 
+            : props.theme.infoPanel.infoPanelText.pWidthRight};
     }
 }
 
