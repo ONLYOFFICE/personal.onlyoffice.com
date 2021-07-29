@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import Text from "../../../../components/text";
-import Button from "../../../../components/button";
+import Text from "../../../components/text";
+import Button from "../../../components/button";
 
 import StyledAdditionalSection from "./styled-additional-section";
 

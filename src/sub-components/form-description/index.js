@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "linaria/react";
 
-import Text from "../../../../components/text";
+import Text from "../../../components/text";
 
 const StyledDescription = styled(Text)`
   font-size: 16px;
