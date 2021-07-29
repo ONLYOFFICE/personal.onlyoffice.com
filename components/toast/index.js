@@ -3,12 +3,13 @@ import Portal from "../portal";
 import Text from "../text";
 import CookieMess from "./styled-toast";
 import Button from '../button';
+import Link from "../link";
 
 
 const Toast = (props) => {
 
     const [display, setDisplay] = useState(true);
-
+    const {t}= props;
     const cookiesName ="onlyoffice_personal_cookie"
     const cookie = "onlyoffice_personal_cookie=true";
 
@@ -39,14 +40,23 @@ const Toast = (props) => {
                     <Text
                     fontSize={"13px"}
                     display= {"block"}
-                    >На этом сайте используются файлы cookie. Продолжая просмотр этого сайта, вы принимаете условия нашей <a target="_blank" href="$">политики конфиденциальности</a></Text>
+                    >
+                        {t("На этом сайте используются файлы cookie. Продолжая просмотр этого сайта, вы принимаете условия нашей ")}
+                        <Link
+                        href={"https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.239950403.1196593722.1525950411-169631771.1404734630"}
+                        label={"политики конфиденциальности"}
+                        color={"#ff6f3d"}
+                        fontSize={"12px"}
+                        hoverTextDecoration={"none"}
+                        ></Link>
+                    </Text>
                     <div className = "personalcookie">
-                        <Button
+                        <Button                            
                             label= {"Понятно"}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
                             display= {"block"}
-                            height ={"41px"}                            
+                            height ={"41px"}
                             onClick = {setCookiesHandler}
                         >
                         </Button>

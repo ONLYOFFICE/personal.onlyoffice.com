@@ -11,6 +11,8 @@ import StyledSection from "../sub-components/section";
 import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import FormLink from "../sub-components/form-link";
+import Portal from "../../../components/portal";
+import Toast from "../../../components/toast";
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -141,6 +143,12 @@ const SignInPage = () => {
             formData={formData}
           />
         </StyledSection>
+        <Portal>
+            <Toast
+            t={t}
+            >
+            </Toast>
+        </Portal>
       </Layout.SectionMain>
       <Layout.PageFooter>test</Layout.PageFooter>
     </Layout>

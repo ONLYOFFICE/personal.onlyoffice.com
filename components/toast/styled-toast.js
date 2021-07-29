@@ -1,4 +1,5 @@
 import { styled } from "linaria/react";
+import { device } from "../../components/utils/devices";
 
 
 const CookieMess = styled.div`
@@ -20,15 +21,8 @@ display: ${props => props.display ? 'block': 'none' };
     align-items: center;
     margin: 0 auto;
     padding: 16px;
-    width: 544px;        
+    width: 544px;
 
-        a {
-            color: #ff6f3d;
-            font-size: 13px;
-                &:hover{
-                    text-decoration:none;
-                }
-        }
         button {
             transition-duration: 0.3s;
         }
@@ -36,7 +30,29 @@ display: ${props => props.display ? 'block': 'none' };
 
 .personalcookie{
     margin-left: 24px;
-    
+}
+
+@media screen and (max-width:592px) {
+    .cookieMess_container {
+        border-radius: 0;
+        display: block;
+        width: 100%;
+
+        p {
+            font-size: 12px;
+        }
+        a span{
+            font-size: 12px;
+        }
+    }
+    .personalcookie{
+        margin: 16px 0 0;
+
+        button{
+            display:block;
+            width:100%
+        }
+    }
 }
 `;
 
