@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CustomLink from "../../../components/link";
+import Link from "../../../components/link";
 import IconButton from "../../../components/icon-button";
 import Text from "../../../components/text";
 
@@ -21,7 +21,7 @@ const FooterContent = (props) => {
           <ul className="personal-social-links">
             {Social.map((item, i) => (
               <li key={i}>
-                <CustomLink
+                <Link
                   className={item.className}
                   href={item.href}
                   target={item.target}
@@ -34,28 +34,28 @@ const FooterContent = (props) => {
                     size={item.size}
                     grayed={item.filter}
                   />
-                </CustomLink>
+                </Link>
               </li>
             ))}
           </ul>
         )}
         <div className="item-personal-footer">
           <div className="personal-footer-links">
-            <CustomLink
+            <Link
               className="personal-footer-link"
               color="#444444"
               href={`/Terms.aspx`}
               target="_blank"
             >
               {t("Terms of Service")}
-            </CustomLink>
-            <CustomLink
+            </Link>
+            <Link
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
             >
               {t("Corporate Use")}
-            </CustomLink>
+            </Link>
           </div>
           <Text color="#444444" className="personal-footer_rights">
             {t("© Ascensio System SIA")} {currentYear}.{" "}
