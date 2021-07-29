@@ -9,11 +9,11 @@ module.exports = {
   },
 
   plugins: [
+    "gatsby-plugin-linaria",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {

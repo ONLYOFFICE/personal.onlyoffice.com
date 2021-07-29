@@ -9,7 +9,6 @@ const {
   graySecnodary,
   gray,
   grayTextInput,
-  grayTextInputHover,
   grayLight,
 } = globalColors;
 const Base = {
@@ -87,7 +86,6 @@ const Base = {
     boxShadow: "none",
     width: "100%",
     height: "56px",
-    width: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",

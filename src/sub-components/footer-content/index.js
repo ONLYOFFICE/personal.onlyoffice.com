@@ -24,7 +24,6 @@ const FooterContent = (props) => {
                 <CustomLink
                   className={item.className}
                   href={item.href}
-                  target={item.target}
                   title={item.title}
                   rel={item.rel}
                   target="_blank"
