@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout";
 import Head from "./sub-components/head";
+import Blockquote from "./sub-components/blockquote";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
@@ -30,7 +31,15 @@ const IndexPage = () => {
           labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
+      <Layout.SectionMain>
+      <Blockquote 
+          bgColor="#FFF"
+          bgLogo="icons/softpedia.svg"
+          buttonHref="#"
+          label={t("Softpedia")}
+          text={t("SoftpediaDescription")}
+        ></Blockquote>
+      </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>
