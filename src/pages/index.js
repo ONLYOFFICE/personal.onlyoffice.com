@@ -7,6 +7,7 @@ import Layout from "../../components/layout";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import FooterContent from "../sub-components/footer-content";
+import ConnectAnyCloud from "../../components/connect-any-cloud"
 
 const IndexPage = () => {
   const {
@@ -32,7 +33,13 @@ const IndexPage = () => {
           labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
+      <Layout.SectionMain>
+        <ConnectAnyCloud
+          t={t}
+          language={language}
+          textHeading={t("AuthDocsConnect")}
+        ></ConnectAnyCloud>
+      </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>
