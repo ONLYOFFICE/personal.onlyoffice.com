@@ -27,6 +27,8 @@ Heading.propTypes = {
   textDecoration: PropTypes.string,
   /** text align */
   textAlign: PropTypes.string,
+  /** text padding */
+  padding: PropTypes.string,
   /** Accepts CSS style */
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   /**   tab index */
