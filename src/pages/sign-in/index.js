@@ -144,15 +144,14 @@ const SignInPage = () => {
             formData={formData}
           />
         </StyledSection>
-        <Portal>
-            <Snackbar
-            flag={getCookie}
+        {/* <Portal>
+            <Snackbar            
             t={t}
             text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
             buttonText={t("Got it!")}
             >
             </Snackbar>
-        </Portal>
+        </Portal> */}
       </Layout.SectionMain>
       <Layout.PageFooter>test</Layout.PageFooter>
     </Layout>

@@ -9,30 +9,14 @@ import Link from "../link";
 const Snackbar = (props) => {
     console.log(props);
     const [display, setDisplay] = useState(true);
-    const {t}= props;
-    const cookiesName ="onlyoffice_personal_cookie"
-    const cookie = "onlyoffice_personal_cookie=true";
-
-    const getCookie = (name) => { 
-        let value = "; " + document.cookie;
-        let parts = value.split("; " + name + "=");
-        if (parts.length == 2) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+    const cookie = "onlyoffice_personal_cookie=true";  
 
     const setCookiesHandler = () => {
         document.cookie = cookie;
         setDisplay(!display);
     };
 
-    useEffect(() => {
-        const cookie = getCookie(cookiesName);
-        setDisplay(!cookie);
-    });
-
+    
     return (
         <Portal >
             <CookieMess display={display}>
@@ -52,7 +36,7 @@ const Snackbar = (props) => {
                     </Text>
                     <div className = "personalcookie">
                         <Button
-                            label= {props.buttonText}
+                            label= {props.label}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
                             display= {"block"}
@@ -67,7 +51,7 @@ const Snackbar = (props) => {
             
         </Portal>
         
-    );
+    ); 
 };
 
 export default Snackbar;
