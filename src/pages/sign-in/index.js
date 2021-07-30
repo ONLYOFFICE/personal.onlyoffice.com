@@ -65,6 +65,7 @@ const SignInPage = () => {
       placeholder: t("Password"),
       callback: onPasswordChangeHandler,
       value: passwordValue,
+      autoComplete: "current-password",
     },
     {
       type: "checkbox",

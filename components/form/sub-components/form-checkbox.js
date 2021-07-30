@@ -3,10 +3,11 @@ import Checkbox from "../../checkbox";
 
 const FormCheckbox = (props) => {
   const { item } = props;
-  const { callback, isChecked, label } = item;
+  const { callback, isChecked, label, ...itemProps } = item;
 
   return (
     <Checkbox
+      {...itemProps}
       className="form-checkbox"
       onChange={callback}
       isChecked={isChecked}

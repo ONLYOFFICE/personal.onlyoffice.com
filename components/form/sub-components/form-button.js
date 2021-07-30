@@ -3,7 +3,14 @@ import Button from "../../button";
 
 const FormButton = (props) => {
   const { item } = props;
-  const { callback, label, isSubmit, toHideButton, typeButton } = item;
+  const {
+    callback,
+    label,
+    isSubmit,
+    toHideButton,
+    typeButton,
+    ...itemProps
+  } = item;
 
   let classNameItem = "form-button";
 
@@ -13,6 +20,7 @@ const FormButton = (props) => {
 
   return (
     <Button
+      {...itemProps}
       className={classNameItem}
       onClick={callback}
       isSubmit={isSubmit}

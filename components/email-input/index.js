@@ -68,6 +68,7 @@ const EmailInput = ({
         isError={emailError || isError}
         value={email}
         onChange={onChangeHandler}
+        autoComplete="email"
         {...rest}
       />
       {isErrText && (

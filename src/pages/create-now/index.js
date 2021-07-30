@@ -75,6 +75,7 @@ const CreateNowPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
+      isDisabled: !isAcceptLicence,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
