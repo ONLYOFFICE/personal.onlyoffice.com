@@ -31,6 +31,13 @@ h2 {
         display: inline-block;
         margin: 0;
         margin: 40px 15px;
+        
+        .cloud_item {
+            -webkit-transition: filter 0.5s,-webkit-filter 0.5s;
+            -moz-transition: filter 0.5s,-webkit-filter 0.5s;
+            -o-transition: filter 0.5s,-webkit-filter 0.5s;
+            transition: filter 0.5s,-webkit-filter 0.5s;
+        }
     }
 }
 
