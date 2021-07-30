@@ -6,6 +6,7 @@ import Layout from "../../components/layout";
 
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
+import Toast from "../../components/toast";
 import FooterContent from "../sub-components/footer-content";
 
 const IndexPage = () => {
@@ -33,6 +34,9 @@ const IndexPage = () => {
         />
       </Layout.PageHeader>
       <Layout.SectionMain></Layout.SectionMain>
+      <Toast
+          text={t("Неверный логин или пароль")}
+      ></Toast>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>
