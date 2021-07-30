@@ -10,21 +10,22 @@ const ConnectAnyCloud = (props) => {
       <Heading
         as="h2"
         textAlign="center"
-        lineHeight="133%">
-          {props.textHeading}
+        lineHeight="133%"
+      >
+        {props.textHeading}
       </Heading>
       <div>
-      <ul className="clouds">
-            {Clouds.map((item, i) => (
-              <li key={i}>
-                <IconButton
-                  iconName={item.src}
-                  grayed={item.filter}
-                  size={item.size}
-                />
-              </li>
-            ))}
-          </ul>
+        <ul className="clouds">
+          {Clouds.map((item, i) => (
+            <li key={i}>
+              <IconButton
+                iconName={item.src}
+                grayed={item.filter}
+                size={item.size}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </StyledConnectAnyCloud>
   );
