@@ -12,7 +12,8 @@ import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import FormLink from "../sub-components/form-link";
 import Portal from "../../../components/portal";
-import Toast from "../../../components/toast";
+import Snackbar from "../../../components/snackbar";
+
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -144,10 +145,13 @@ const SignInPage = () => {
           />
         </StyledSection>
         <Portal>
-            <Toast
+            <Snackbar
+            flag={getCookie}
             t={t}
+            text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
+            buttonText={t("Got it!")}
             >
-            </Toast>
+            </Snackbar>
         </Portal>
       </Layout.SectionMain>
       <Layout.PageFooter>test</Layout.PageFooter>

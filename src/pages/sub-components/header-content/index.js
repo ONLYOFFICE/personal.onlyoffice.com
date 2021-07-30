@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "gatsby";
 
 import StyledHeaderContent from "./styled-header-content";
@@ -11,6 +11,25 @@ const HeaderContent = (props) => {
   const { t, language, href, labelButton, headerText, ...rest } = props;
 
   const homepagePath = language === "en" ? "/" : `/${language}`;
+
+  const cookiesName ="onlyoffice_personal_cookie";
+
+  const getCookie = (name) => { 
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+        return true;
+    } else {
+        return false;
+    }
+  };
+
+  useEffect(() => {
+      const cookie = getCookie(cookiesName);
+      console.log(cookie);       
+  });  
+
+
 
   return (
     <StyledHeaderContent {...rest}>

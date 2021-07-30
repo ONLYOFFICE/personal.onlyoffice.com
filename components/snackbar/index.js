@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Portal from "../portal";
 import Text from "../text";
-import CookieMess from "./styled-toast";
+import CookieMess from "./styled-snackbar";
 import Button from '../button';
 import Link from "../link";
 
 
-const Toast = (props) => {
-
+const Snackbar = (props) => {
+    console.log(props);
     const [display, setDisplay] = useState(true);
     const {t}= props;
     const cookiesName ="onlyoffice_personal_cookie"
@@ -39,9 +39,9 @@ const Toast = (props) => {
                 <div className = "cookieMess_container">
                     <Text
                     fontSize={"13px"}
-                    display= {"block"}
+                    display= {"block"}                    
                     >
-                        {t("This website uses cookies. By continuing to browse the website you agree to our ")}
+                    {props.text}                            
                         <Link
                         href={"https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.239950403.1196593722.1525950411-169631771.1404734630"}
                         label={"privacy policy"}
@@ -52,7 +52,7 @@ const Toast = (props) => {
                     </Text>
                     <div className = "personalcookie">
                         <Button
-                            label= {"Понятно"}
+                            label= {props.buttonText}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
                             display= {"block"}
@@ -70,4 +70,4 @@ const Toast = (props) => {
     );
 };
 
-export default Toast;
+export default Snackbar;
