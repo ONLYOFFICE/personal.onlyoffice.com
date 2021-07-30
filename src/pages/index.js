@@ -7,7 +7,7 @@ import Layout from "../../components/layout";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import FooterContent from "../sub-components/footer-content";
-import ConnectAnyCloud from "../../components/connect-any-cloud"
+import ConnectAnyCloud from "../sub-components/connect-any-cloud"
 
 const IndexPage = () => {
   const {

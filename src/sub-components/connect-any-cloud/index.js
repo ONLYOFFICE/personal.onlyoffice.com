@@ -1,8 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import StyledConnectAnyCloud from "./styled-connect-any-clouds";
-import Heading from "../../components/heading"
-import IconButton from "../icon-button"
+import Heading from "../../../components/heading"
+import IconButton from "../../../components/icon-button"
 import Clouds from "./sub-components/cloud-item";
 
 const ConnectAnyCloud = (props) => {
@@ -11,12 +10,11 @@ const ConnectAnyCloud = (props) => {
       <Heading
         as="h2"
         textAlign="center"
-        fontSize="32px"
         lineHeight="133%">
           {props.textHeading}
       </Heading>
       <div>
-      <ul className="personal-social-links">
+      <ul className="clouds">
             {Clouds.map((item, i) => (
               <li key={i}>
                 <IconButton
@@ -31,9 +29,5 @@ const ConnectAnyCloud = (props) => {
     </StyledConnectAnyCloud>
   );
 };
-
-ConnectAnyCloud.propTypes = {};
-
-ConnectAnyCloud.defaultProps = {};
 
 export default ConnectAnyCloud;
