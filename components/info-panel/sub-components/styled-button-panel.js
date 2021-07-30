@@ -12,27 +12,33 @@ justify-content: center;
         padding: 4px;
     }
 
+    :hover{
+
+    }
 @media ${device.mobileL} {
 flex-direction: column;
 padding-top: 12px;
 padding-bottom: 12px;
+    a {
+        margin: 0 auto;
+    }
     button {
-        width: 100%;
-        min-width: 335px;
+        width: calc(100% - 40px);
+        min-width: 300px;
     }
 }
 
 @media ${device.mobileM} {
     button {
         width: 100%;
-        min-width: 300px;
+        min-width: 280px;
     }
 }
 
 @media ${device.mobileS} {
     button {
         width: 100%;
-        min-width: 250px;
+        min-width: 220px;
     }
 }
 `;
