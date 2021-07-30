@@ -8,9 +8,9 @@ const ConnectAnyCloud = (props) => {
   return (
     <StyledConnectAnyCloud {...props}>
       <Heading
-        as="h2"
         textAlign="center"
-        lineHeight="133%"
+        padding="0 0 30px"
+        level={2}
       >
         {props.textHeading}
       </Heading>

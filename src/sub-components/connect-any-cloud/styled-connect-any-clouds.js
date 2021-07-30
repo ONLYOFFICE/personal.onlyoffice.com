@@ -7,10 +7,7 @@ background-color: ${(props) => props.bgColor || "white"};
 
 h2 {
     display: block;
-    color: #333;
-    text-align: center;
     padding: 0 0 30px;
-    font-size: 32px !important;
 }
 
 .clouds {
