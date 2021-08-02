@@ -31,6 +31,10 @@ const Template = ({ children, amountButton, ...args }) => {
       width: "170px",
       typeButton: "transparent",
       label: "Default Button",
+      themeButton: false,
+      textColorHover: "#ffffff",
+      borderColorHover: "#ffffff",
+      
       onClick: onClick
     }
   ];  
@@ -48,7 +52,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   imgLeft: true,
-  amountButton: [],
+  amountButton: [{}],
   children: "Работайте с документами на мобильных в приложениях ONLYOFFICE",
   bgColor: "linear-gradient(100.79deg, #666666 23.25%, #444444 78.7%)", 
   imgUrl: "/images/mobile_editor.png",

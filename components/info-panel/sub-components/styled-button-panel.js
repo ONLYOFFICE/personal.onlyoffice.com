@@ -10,11 +10,19 @@ align-content: center;
 justify-content: center;
     a {
         padding: 4px;
-    }
+        /*:hover{ 
+            svg{
+                opacity: 0.8;  
+                background: transparent;
+            }            
 
-    :hover{
-
+            button{
+                opacity: 0.8;  
+                background: transparent;
+            }
+        }*/    
     }
+    
 @media ${device.mobileL} {
 flex-direction: column;
 padding-top: 12px;

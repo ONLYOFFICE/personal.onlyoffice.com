@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import StyledButton from "./styled-button";
 import { useTheme } from "../theme-provider";
 import { ReactSVG } from "react-svg";
-
+import { Base } from "../themes";
+import { Dark } from "../themes";
 const Icon = ({ icon, iconDefault }) => {
   return <ReactSVG src={icon} className="btn-with-icon"/>;
 };
 
-const Button = ({ label, isDisabled, icon, isSubmit, isScale, ...rest }) => {
-  const theme = useTheme();
+const Button = ({ label, isDisabled, icon, themeButton, isSubmit, isScale, ...rest }) => {
+  const theme = useTheme(themeButton ? Base : Dark);
 
   return (
     <StyledButton
@@ -17,6 +18,7 @@ const Button = ({ label, isDisabled, icon, isSubmit, isScale, ...rest }) => {
       theme={theme}
       type={isSubmit ? "submit" : undefined}
       isScale={isScale ? isScale : undefined}
+      themeButton={themeButton}
       {...rest}
     >
       {icon && <Icon icon={icon} />} {label}
@@ -37,6 +39,8 @@ Button.propTypes = {
   height: PropTypes.string,
   /** Scale width of button to 100% */
   isScale: PropTypes.bool,
+  /** Propority button hover */
+  isHover: PropTypes.bool,
   /** Takes the path to the icon (the icon must be located in a static folder)  */
   icon: PropTypes.string,
   /** Button tab index */
@@ -45,6 +49,8 @@ Button.propTypes = {
   className: PropTypes.string,
   /** Accepts id */
   id: PropTypes.string,
+  /** Theme Button*/
+  themeButton: PropTypes.bool,
   /** Accepts CSS style */
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   /** Sets the nim width of the button */
@@ -60,6 +66,7 @@ Button.defaultProps = {
   typeButton: "primary",
   width: "auto",
   height: "56px",
+  themeButton: true,
   icon: null,
   tabIndex: -1,
   minwidth: "unset",

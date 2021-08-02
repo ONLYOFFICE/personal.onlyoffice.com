@@ -10,6 +10,7 @@ const StyledIconButton = styled.div`
     props.isDisabled || !props.isClickable ? "default" : "pointer"};
   line-height: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: ${(props) => props.background || "none"};
 
   &:active .user-click-color {
     path {

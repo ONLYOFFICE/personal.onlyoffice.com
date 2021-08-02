@@ -99,6 +99,7 @@ function IconButton(props) {
     id,
     style,
     grayed,
+    background,
     title,
     clickColor,
     color,
@@ -125,6 +126,7 @@ function IconButton(props) {
       color={color}
       clickColor={clickColor}
       hoverColor={hoverColor}
+      background={background}
       grayed={grayed}
       title={title}
       {...props}

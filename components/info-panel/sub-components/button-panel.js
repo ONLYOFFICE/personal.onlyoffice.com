@@ -26,6 +26,9 @@ amountButton,
                       size={item.size}
                       onClick={item.onClick}
                       isDisabled={item.isDisabled}
+                      hoverColor={item.hoverColor}
+                      background={item.background}
+                      style={item.style}
                     />
                   : <Button
                       icon={item.iconButton}
@@ -36,6 +39,11 @@ amountButton,
                       width={item.width}
                       height={item.height}
                       minwidth={item.minwidth}
+                      themeButton={item.themeButton}
+                      backgroundColorHover={item.backgroundColorHover}
+                      borderColorHover={item.borderColorHover}
+                      textColorHover={item.textColorHover}
+                      style={item.style}
                     />
               }
             </CustomLink>
