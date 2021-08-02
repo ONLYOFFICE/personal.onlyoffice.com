@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Portal from "../portal";
 import Text from "../text";
 import CookieMess from "./styled-snackbar";
 import Button from '../button';
 import Link from "../link";
-import SetCookie from '../setcookie';
+
 
 
 const Snackbar = (props) => {    
-    const [display, setDisplay] = useState(true);
-    const cookie = "onlyoffice_personal_cookie=true";  
-
-    const setCookiesHandler = () => {
-        document.cookie = cookie;
-        setDisplay(!display);
-    };
-    
-
     
     return (
         <Portal >
-            <CookieMess display={display}>
+            <CookieMess {...props}
+            display={props.display}
+            >
                 <div className = "cookieMess_container">
                     <Text
                     fontSize={"13px"}
@@ -36,15 +29,17 @@ const Snackbar = (props) => {
                         ></Link>
                     </Text>
                     <div className = "personalcookie">
-                        <Button
+                        { props.isButton &&
+                            <Button
                             label= {props.buttonLabel}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
                             display= {"block"}
                             height ={"41px"}
-                            onClick = {setCookiesHandler}
-                        >
-                        </Button>
+                            onClick = {props.onClick}
+                        />
+                        }
+                        
                     </div>
                 </div>
             </CookieMess>

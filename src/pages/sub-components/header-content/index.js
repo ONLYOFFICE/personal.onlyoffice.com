@@ -31,6 +31,13 @@ const HeaderContent = (props) => {
       const cookie = getCookie(cookiesName);
           
   }); 
+  
+  const [display, setDisplay] = useState(true);
+  const cookie = "onlyoffice_personal_cookie=true";  
+  const setCookiesHandler = () => {
+    document.cookie = cookie;
+    setDisplay(!display);
+};
 
  
 
@@ -62,12 +69,14 @@ const HeaderContent = (props) => {
       {
         isCookieCheck &&
         <Snackbar 
-        width = {""}
-        height = {""}          
+        display = {display} 
         text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
-        backGround = {"rgba(249,249,249,0.95"}
-        button = {true}
+        backGround = {"rgba(249,249,249,0.95)"}
+        width = {"544px"}
+        isButton = {true}
         buttonLabel={t("Got it!")}
+        onClick ={setCookiesHandler}
+
 
         />       
       }
