@@ -13,6 +13,8 @@ import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "../../sub-components/license";
 import FooterContent from "../../sub-components/footer-content";
 
+import { join } from "../../api/";
+
 const CreateNowPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
@@ -43,6 +45,7 @@ const CreateNowPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    join(emailValue).catch((err) => alert(err));
     console.log("onSubmit, valid: ", emailIsValid);
   };
 
