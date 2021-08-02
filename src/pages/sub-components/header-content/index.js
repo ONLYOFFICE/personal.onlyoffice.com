@@ -61,15 +61,15 @@ const HeaderContent = (props) => {
             
       {
         isCookieCheck &&
-        <Snackbar            
+        <Snackbar 
+        width = {""}
+        height = {""}          
         text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
-        buttonText={t("Got it!")}
+        backGround = {"rgba(249,249,249,0.95"}
+        button = {true}
+        buttonLabel={t("Got it!")}
 
-        >
-          <Button 
-            label={t("Got it!")}
-          />  
-        </Snackbar>
+        />       
       }
             
       

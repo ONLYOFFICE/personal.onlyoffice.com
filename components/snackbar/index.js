@@ -4,10 +4,10 @@ import Text from "../text";
 import CookieMess from "./styled-snackbar";
 import Button from '../button';
 import Link from "../link";
+import SetCookie from '../setcookie';
 
 
-const Snackbar = (props) => {
-    console.log(props);
+const Snackbar = (props) => {    
     const [display, setDisplay] = useState(true);
     const cookie = "onlyoffice_personal_cookie=true";  
 
@@ -15,6 +15,7 @@ const Snackbar = (props) => {
         document.cookie = cookie;
         setDisplay(!display);
     };
+    
 
     
     return (
@@ -36,7 +37,7 @@ const Snackbar = (props) => {
                     </Text>
                     <div className = "personalcookie">
                         <Button
-                            label= {props.label}
+                            label= {props.buttonLabel}
                             typeButton= {"transparent"}
                             fontSize= {"12px"}
                             display= {"block"}

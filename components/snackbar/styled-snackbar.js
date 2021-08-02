@@ -1,5 +1,5 @@
 import { styled } from "linaria/react";
-import { device } from "../../components/utils/devices";
+
 
 
 const CookieMess = styled.div`

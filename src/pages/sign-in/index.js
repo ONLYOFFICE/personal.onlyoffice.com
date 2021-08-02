@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
@@ -11,8 +11,6 @@ import StyledSection from "../sub-components/section";
 import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import FormLink from "../sub-components/form-link";
-import Portal from "../../../components/portal";
-import Snackbar from "../../../components/snackbar";
 
 
 const SignInPage = () => {
@@ -21,6 +19,24 @@ const SignInPage = () => {
   const [passwordValue, setPasswordValue] = useState("");
   const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
+
+  const [isCoocieCheck, SetCookieCheck] = useState(false);
+  const cookieName = "onlyoffice_personal_cookie";
+
+  const getCookie = (name) => {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if(parts.length == 2){
+      return SetCookieCheck(false);
+    } else {
+      return SetCookieCheck(true);
+    }
+  };
+
+  useEffect(() => {
+    const cookie = getCookie(cookieName);
+  });
+
 
   const {
     t,
@@ -143,15 +159,7 @@ const SignInPage = () => {
             submitForm={onSubmitHandler}
             formData={formData}
           />
-        </StyledSection>
-        {/* <Portal>
-            <Snackbar            
-            t={t}
-            text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
-            buttonText={t("Got it!")}
-            >
-            </Snackbar>
-        </Portal> */}
+        </StyledSection>   
       </Layout.SectionMain>
       <Layout.PageFooter>test</Layout.PageFooter>
     </Layout>
