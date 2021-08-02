@@ -23,7 +23,7 @@ export function login(userName, passwordHash) {
 export function join(email) {
   const data = { email };
   return request({
-    method: "get",
+    method: "post",
     url: "/settings/sendjoininvite",
     data,
   });

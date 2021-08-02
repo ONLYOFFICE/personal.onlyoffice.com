@@ -41,8 +41,6 @@ const CreateNowPage = () => {
     setIsLicense(e.target.checked);
   };
 
-  const clickSocialButton = (e) => {};
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
     join(emailValue).catch((err) => alert(err));
@@ -83,12 +81,7 @@ const CreateNowPage = () => {
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
       type: "other",
-      element: (
-        <SocialButtons
-          key="social-buttons"
-          clickSocialButton={clickSocialButton}
-        />
-      ),
+      element: <SocialButtons key="social-buttons" />,
     },
     {
       type: "other",

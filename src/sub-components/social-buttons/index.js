@@ -6,15 +6,12 @@ import StyledSocialButtons from "./styled-social-buttons";
 
 const providersData = Object.freeze({
   Google: {
-    label: "Google",
     icon: "/social-icons/google.react.svg",
   },
   Facebook: {
-    label: "Facebook",
     icon: "/social-icons/facebook.react.svg",
   },
   LinkedIn: {
-    label: "LinkedIn",
     icon: "/social-icons/linkedin.react.svg",
   },
 });
@@ -50,8 +47,8 @@ const SocialButtons = () => {
             clearInterval(interval);
             reject();
           }
-        } catch {
-          return;
+        } catch (err) {
+          console.log(err);
         }
       }, 500);
     });
