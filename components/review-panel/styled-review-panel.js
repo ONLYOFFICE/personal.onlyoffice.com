@@ -3,8 +3,9 @@ import { device } from "../utils/devices";
 import { Base } from "../themes";
 
 const StyledReviewPanel = styled.div`
-margin: ${(props) => props.theme.reviewPanel.margin};
-padding: ${(props) => props.theme.reviewPanel.padding};
+width: 310px;
+margin: ${(props) => props.margin || props.theme.reviewPanel.margin};
+padding: ${(props) => props.padding || props.theme.reviewPanel.padding};
 display: ${(props) => props.theme.reviewPanel.display};
 flex-direction: column;
 max-width: ${(props) => props.theme.reviewPanel.maxWidth};
@@ -18,7 +19,11 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: ${(props) => props.theme.reviewPanel.paddingBottom};
+    padding-bottom: ${(props) => props.paddingBottomHeader || props.theme.reviewPanel.paddingBottom};
+}
+
+@media ${device.tablet} {
+    width: 290px;
 }
 
 @media ${device.tablet} {
@@ -26,7 +31,7 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     .headerReviewPanel{
         padding-bottom: ${(props) => props.theme.reviewPanel.media.device.paddingBottom};
     }
-  }
+}
 
 @media ${device.mobileL} {
     margin: 0px;
@@ -38,7 +43,11 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     .headerReviewPanel{
         padding-bottom: ${(props) => props.theme.reviewPanel.media.mobile.paddingBottom};
     }
-  }
+}
+
+@media ${device.mobileL} {
+    width: 290px; 
+}
 `;
 
 StyledReviewPanel.defaultProps = { theme: Base };

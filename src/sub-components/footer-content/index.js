@@ -46,19 +46,19 @@ const FooterContent = (props) => {
               href={`/Terms.aspx`}
               target="_blank"
             >
-              {t("Terms of Service")}
+              {props.TermsOfService}
             </CustomLink>
             <CustomLink
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
             >
-              {t("Corporate Use")}
+              {props.CorpseUse}
             </CustomLink>
           </div>
           <Text color="#444444" className="personal-footer_rights">
-            {t("© Ascensio System SIA")} {currentYear}.{" "}
-            {t("All rights reserved")}
+            {props.SystemSIA} {currentYear}.{" "}
+            {props.AllRight}
           </Text>
         </div>
       </div>

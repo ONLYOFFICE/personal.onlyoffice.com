@@ -7,6 +7,7 @@ import Layout from "../../components/layout";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import FooterContent from "../sub-components/footer-content";
+import ReviewSection from "../sub-components/main-page/review-section";
 
 const IndexPage = () => {
   const {
@@ -32,9 +33,24 @@ const IndexPage = () => {
           labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
+      <Layout.SectionMain>
+        <ReviewSection 
+          header={t("Hear the web")}
+          textFrontLink={t("The user reviews are taken from ")}
+          textLink={t("Capterra.com")}
+          hrefLink={t("https://www.capterra.com/")}
+          textAfterLink={t(". Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.")}
+        />
+      </Layout.SectionMain>
       <Layout.PageFooter>
-        <FooterContent footerHomePage={true} t={t} />
+        <FooterContent 
+          footerHomePage={true} 
+          t={t} 
+          TermsOfService={t("Terms of Service")}
+          CorpseUse={t("Corporate Use")}
+          SystemSIA={t("© Ascensio System SIA")}
+          AllRight={t("All rights reserved")}
+        />
       </Layout.PageFooter>
     </Layout>
   );

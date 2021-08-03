@@ -162,7 +162,7 @@ const Base = {
   },
 
   reviewPanel: {
-    margin: "16px",
+    margin: "8px",
     padding: "24px",
     paddingBottom: "7px",
     display: "flex",
