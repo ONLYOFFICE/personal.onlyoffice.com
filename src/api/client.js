@@ -34,7 +34,6 @@ const getResponseError = (res) => {
 };
 
 export const request = (options) => {
-  console.log(options);
   const onSuccess = function (response) {
     const error = getResponseError(response);
     if (error) throw new Error(error);
