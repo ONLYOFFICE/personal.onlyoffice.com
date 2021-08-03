@@ -15,6 +15,7 @@ const PasswordInput = ({
   type,
   passwordSettings,
   generatorSpecial,
+  autoComplete,
   ...rest
 }) => {
   const [password, setPassword] = useState("");
@@ -85,6 +86,7 @@ const PasswordInput = ({
         isError={isPwdError || isError}
         value={password}
         onChange={onChangeHandler}
+        autoComplete={autoComplete}
         {...rest}
       />
       {isErrText && (

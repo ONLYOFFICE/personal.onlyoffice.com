@@ -4,7 +4,7 @@ import Heading from "../../heading";
 const FormHeading = (props) => {
   const { item, isPanel } = props;
 
-  const { headingText, isHeader } = item;
+  const { headingText, isHeader, ...itemProps } = item;
 
   const fontSize = isPanel || !isHeader ? "18px" : "32px";
   const headingLevel = isHeader ? 2 : 4;
@@ -14,6 +14,7 @@ const FormHeading = (props) => {
 
   return (
     <Heading
+      {...itemProps}
       className={cssClass}
       level={headingLevel}
       fontSize={fontSize}

@@ -1,23 +1,23 @@
 # Link
 
-Custom Link.
+Custom Internal Link. Used for navigation within the application.
 
 ### Usage
 
 You can pass the nested elements as children, or if the nested element is just text, then using the prop label
 
 ```js
-import Link from "../components/link";
+import InternalLink from "../components/internal-link";
 ```
 
 ```jsx
-<Link label="link" href="/" target="_blank" />
+<InternalLink label="link" href="/" target="_blank" />
 ```
 
 ```jsx
-<Link href="/" target="_blank">
+<InternalLink href="/" target="_blank">
   <div>Link</div>
-</Link>
+</InternalLink>
 ```
 
 ### Properties

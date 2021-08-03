@@ -4,14 +4,16 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
-import Link from "../../../components/link";
 
-import Head from "../sub-components/head";
-import HeaderContent from "../sub-components/header-content";
-import StyledSection from "../sub-components/section";
-import AdditionalSection from "../sub-components/additional-section";
-import SocialButtons from "../sub-components/social-buttons";
-import LicenceLink from "../sub-components/license";
+import Head from "../../sub-components/head";
+import HeaderContent from "../../sub-components/header-content";
+import StyledSection from "../../sub-components/section";
+import AdditionalSection from "../../sub-components/additional-section";
+import SocialButtons from "../../sub-components/social-buttons";
+import LicenceLink from "../../sub-components/license";
+import FooterContent from "../../sub-components/footer-content";
+
+import { join } from "../../api/";
 
 const CreateNowPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -39,10 +41,9 @@ const CreateNowPage = () => {
     setIsLicense(e.target.checked);
   };
 
-  const clickSocialButton = (e) => {};
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    join(emailValue).catch((err) => alert(err));
     console.log("onSubmit, valid: ", emailIsValid);
   };
 
@@ -75,16 +76,12 @@ const CreateNowPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
+      isDisabled: !isAcceptLicence,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
       type: "other",
-      element: (
-        <SocialButtons
-          key="social-buttons"
-          clickSocialButton={clickSocialButton}
-        />
-      ),
+      element: <SocialButtons key="social-buttons" />,
     },
     {
       type: "other",
@@ -128,7 +125,9 @@ const CreateNowPage = () => {
           />
         </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter>test</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} />
+      </Layout.PageFooter>
     </Layout>
   );
 };
