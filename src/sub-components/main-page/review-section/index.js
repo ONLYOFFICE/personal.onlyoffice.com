@@ -21,7 +21,7 @@ textAfterLink,
         <Section 
               background= {"#f9f9f9"}
               padding= {"50px 0 200px 0"}
-              tabletMargin={"50px 0 250px 0"}
+              tabletPadding={"50px 0 250px 0"}
               mobileLPadding={"50px 0 260px 0"}
           {...rest}
         >
