@@ -1,10 +1,7 @@
 import { styled } from "linaria/react";
-import { device } from "../../../components/utils/devices";
+import { device } from "../../../../components/utils/devices";
 
 const StyledConnectAnyCloud = styled.div`
-padding: 112px 0;
-background-color: ${(props) => props.bgColor || "white"};
-
 h2 {
     display: block;
     padding: 0 0 30px;
@@ -42,8 +39,6 @@ h2 {
 }
 
 @media ${device.tablet} {
-padding: 82px 0;
-
 h2 {
     padding: 0 0 20px;
     font-size: 30px !important;
@@ -51,8 +46,6 @@ h2 {
 }
     
 @media ${device.mobileL} {
-padding: 48px 0 80px;
-
 h2 {
     padding: 0 0 10px;
     font-size: 20px !important;
