@@ -4,12 +4,12 @@ import { Base } from "../themes";
 
 const StyledReviewPanel = styled.div`
 width: 310px;
+
 margin: ${(props) => props.margin || props.theme.reviewPanel.margin};
 padding: ${(props) => props.padding || props.theme.reviewPanel.padding};
 display: ${(props) => props.theme.reviewPanel.display};
 flex-direction: column;
 max-width: ${(props) => props.theme.reviewPanel.maxWidth};
-min-width: ${(props) => props.theme.reviewPanel.minWidth};
 background-color: ${(props) => props.theme.reviewPanel.backgroundColor};
 border: ${(props) => props.theme.reviewPanel.border};
 border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
@@ -22,8 +22,12 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     padding-bottom: ${(props) => props.paddingBottomHeader || props.theme.reviewPanel.paddingBottom};
 }
 
-@media ${device.tablet} {
-    width: 290px;
+@media(max-width: 1200px){
+    width: 239px;
+}
+
+@media ${device.laptop} {
+    width: 239px;
 }
 
 @media ${device.tablet} {

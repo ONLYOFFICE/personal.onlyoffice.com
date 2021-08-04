@@ -15,7 +15,7 @@ background: ${(props) => props.background || "transparent"};
     margin: 0px auto;
 }
 
-@media(max-width: 1210px){
+@media(max-width: 1200px){
 margin: ${(props) => props.margin || "0px"};
 padding: ${(props) => props.padding || "0px"};
 
