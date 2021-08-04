@@ -1,0 +1,16 @@
+services:  
+  onlyoffice-personal-login-site:
+    build:
+      context: ./
+      dockerfile: "${DOCKERFILE}"
+      target: personal-site
+    image: "${REPO}/${STATUS}personal-login-site:${SRV_VERSION}"
+    container_name: onlyoffice-personal-login-site
+    restart: always
+    expose:
+      - ${SERVICE_PORT}
+    
+networks:
+  default:
+    external:
+      name: "onlyoffice"
