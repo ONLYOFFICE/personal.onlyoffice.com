@@ -68,5 +68,9 @@
   "es-ES": "Spanish (Spain)",
   "tr-TR": "Turkish (Turkey)",
   "uk-UA": "Ukrainian (Ukraine)",
-  "vi-VN": "Vietnamese (Vietnam)"
+  "vi-VN": "Vietnamese (Vietnam)",
+  "AuthDocsLogIn": "Entrar",
+  "AuthDocsAccessQuickly": "Acesse ONLYOFFICE pessoal rapidamente.",
+  "AuthDocsFreeDesktopApp": "Baixe o {0}app de desktop gratuito{1} para editar arquivos offline ou se conectar à sua nuvem.",
+  "AuthDocsWorkWithDocs": "Trabalhe em documentos {0}on-the-go{1} com {2}ONLYOFFICE Documentos de solicitação{3}."
 }

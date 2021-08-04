@@ -1,0 +1,7 @@
+{
+    "api": {
+        "url": "/api/2.0",
+        "timeout": "30000"
+    },
+    "appServerUrl": ""
+}
