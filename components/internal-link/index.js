@@ -9,7 +9,7 @@ const InternalLink = ({ children, href, style, className, label, ...rest }) => {
     : "internal-link";
 
   return (
-    <GatsbyLink to={href} style={style}>
+    <GatsbyLink to={href} style={{ ...style, outline: "none" }}>
       <Link as="span" {...rest} className={linkClassName}>
         {children || label}
       </Link>

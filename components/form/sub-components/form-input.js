@@ -42,7 +42,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
-          backgroundColor={!isPanel && "#fff"}
+          backgroundColor={isPanel && "#f9f9f9"}
         />
       );
     case "email":
@@ -54,7 +54,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
-          backgroundColor={!isPanel && "#fff"}
+          backgroundColor={isPanel && "#f9f9f9"}
         />
       );
     case "password":
@@ -66,7 +66,7 @@ const FormTextInput = (props) => {
           classNameButton={classNameButton}
           withButton={withButtonCheck}
           onChange={callback}
-          backgroundColor={!isPanel && "#fff"}
+          backgroundColor={isPanel && "#f9f9f9"}
         />
       );
     default:

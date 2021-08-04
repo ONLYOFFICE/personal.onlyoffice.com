@@ -10,6 +10,8 @@ const StyledForm = styled.form`
   box-shadow: ${(props) => props.isPanel && props.theme.form.boxShadow};
   padding: ${(props) => props.theme.form.padding};
 
+  background-color: ${(props) => (props.isPanel ? "white" : "transparent")};
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: ${(props) =>

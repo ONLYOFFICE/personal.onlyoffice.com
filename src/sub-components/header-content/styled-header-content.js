@@ -7,7 +7,7 @@ const StyledHeaderContent = styled.div`
 
   display: grid;
   grid-gap: 24px;
-  grid-template-columns: minmax(54px, 910px) min-content 34px;
+  grid-template-columns: minmax(54px, 924px) min-content 34px;
 
   .logo-wrapper {
     margin-top: 26px;

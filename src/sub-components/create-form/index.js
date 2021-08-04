@@ -32,6 +32,20 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
     console.log("onSubmit, valid: ", emailIsValid);
   };
 
+  const additionalSection = isPanel
+    ? null
+    : {
+        type: "other",
+        element: (
+          <AdditionalSection
+            key="additional"
+            textLabel={t("AuthDocsAlready")}
+            buttonHref={buttonHref}
+            buttonLabel={t("AuthDocsSignIn")}
+          />
+        ),
+      };
+
   const formData = [
     { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
 
@@ -41,6 +55,12 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       placeholder: t("AuthDocsYourEmail"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      withButton: true,
+      typeButton: "primary",
+      isSubmit: true,
+      labelButton: t("RegistryButtonCreateNow"),
+      buttonClick: onSubmitHandler,
+      isDisabledButton: !isAcceptLicence,
     },
     {
       type: "checkbox",
@@ -58,10 +78,10 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       type: "button",
       callback: onSubmitHandler,
       isSubmit: true,
-      toHideButton: false,
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
       isDisabled: !isAcceptLicence,
+      toHideButton: true,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
@@ -69,15 +89,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       element: <SocialButtons key="social-buttons" />,
     },
     {
-      type: "other",
-      element: (
-        <AdditionalSection
-          key="additional"
-          textLabel={t("AuthDocsAlready")}
-          buttonHref={buttonHref}
-          buttonLabel={t("AuthDocsSignIn")}
-        />
-      ),
+      ...additionalSection,
     },
   ];
 

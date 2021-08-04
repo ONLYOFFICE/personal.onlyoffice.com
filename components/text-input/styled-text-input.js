@@ -51,7 +51,7 @@ const StyledTextInput = styled.input`
 
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(:focus) {
     border-color: ${(props) =>
       (props.isError && props.theme.textInput.borderColorError) ||
       (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
@@ -65,14 +65,9 @@ const StyledTextInput = styled.input`
   }
 
   &:focus {
-    border-color: ${(props) =>
-      (props.isError && props.theme.textInput.borderColorError) ||
-      (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-      props.theme.textInput.borderColorHover};
+    border-color: ${(props) => props.theme.textInput.borderColorHover};
 
     background-color: ${(props) =>
-      (props.isError && props.theme.textInput.backgroundColorError) ||
-      (props.isSuccess && props.theme.textInput.backgroundColorSuccess) ||
       (props.backgroundColor && props.backgroundColor) ||
       props.theme.textInput.backgroundColor};
   }

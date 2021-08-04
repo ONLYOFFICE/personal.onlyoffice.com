@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import StyledHeaderContent from "./styled-header-content";
 import LanguageSelector from "../../../components/language-selector";
 import HeaderLogo from "../../../static/icons/header-logo.react.svg";
 import Button from "../../../components/button";
 import Text from "../../../components/text";
+import Link from "../../../components/internal-link";
 
 const HeaderContent = (props) => {
   const {
@@ -23,7 +23,7 @@ const HeaderContent = (props) => {
   return (
     <StyledHeaderContent {...rest}>
       <div className="logo-wrapper">
-        <Link className="top-logo" title="ONLYOFFICE" to={homepagePath}>
+        <Link className="top-logo" title="ONLYOFFICE" href={homepagePath}>
           <HeaderLogo className="image-wrapper" />
         </Link>
         {headerText && (
@@ -33,10 +33,11 @@ const HeaderContent = (props) => {
         )}
       </div>
 
-      <div className="header-button">
+      <div>
         {!withoutButton && (
-          <Link className="top-logo" title="ONLYOFFICE" to={href}>
+          <Link title="ONLYOFFICE" href={href}>
             <Button
+              className="header-button"
               label={labelButton}
               typeButton="transparent"
               height="100%"
