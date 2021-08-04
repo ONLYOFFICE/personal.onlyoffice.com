@@ -21,20 +21,23 @@ const Template = ({ children, amountButton, ...args }) => {
 
   const item = [
     {
-      iconName: `/icons/app-store.react.svg`,
-      typeButton: "iconButton",
-      size: "170px",
+      iconName: `icons/app-store.react.svg`,
+      typeButton: "transparent",
+      width: "180px",
+      themeButton: false,
+      textColorHover: "#ffffff",
+      borderColorHover: "#ffffff",
+      backgroundColorHover: "#666",
       href:"#",
     }, 
     {
-      iconName: `/icons/app-store.react.svg`,
       width: "170px",
       typeButton: "transparent",
       label: "Default Button",
       themeButton: false,
       textColorHover: "#ffffff",
       borderColorHover: "#ffffff",
-      
+      backgroundColorHover: "#666",
       onClick: onClick
     }
   ];  

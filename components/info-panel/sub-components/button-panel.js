@@ -27,11 +27,10 @@ amountButton,
                       onClick={item.onClick}
                       isDisabled={item.isDisabled}
                       hoverColor={item.hoverColor}
-                      background={item.background}
                       style={item.style}
                     />
                   : <Button
-                      icon={item.iconButton}
+                      icon={item.iconName}
                       typeButton={item.typeButton}
                       label={item.label}
                       onClick={item.onClick}

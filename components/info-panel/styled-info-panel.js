@@ -14,7 +14,7 @@ min-height: ${(props) => props.theme.infoPanel.minHeight};
 margin: ${(props) => props.theme.infoPanel.margin};
 margin-bottom: ${(props) => props.theme.infoPanel.marginBottom};
 
-background: ${(props) => (props.bgColor || props.theme.infoPanel.background)};
+background-image: ${(props) => (props.bgColor || props.theme.infoPanel.background)};
 border: ${(props) => props.theme.infoPanel.border};
 border-radius: ${(props) => props.theme.infoPanel.borderRadius};
 box-shadow: ${(props) => props.theme.infoPanel.boxShadow}; 

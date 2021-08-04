@@ -5,7 +5,7 @@ import { useTheme } from "../theme-provider";
 import { ReactSVG } from "react-svg";
 import { Base } from "../themes";
 import { Dark } from "../themes";
-const Icon = ({ icon, iconDefault }) => {
+const Icon = ({ icon }) => {
   return <ReactSVG src={icon} className="btn-with-icon"/>;
 };
 
