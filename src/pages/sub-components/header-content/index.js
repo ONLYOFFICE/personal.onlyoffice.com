@@ -7,37 +7,35 @@ import HeaderLogo from "../../../../static/icons/header-logo.react.svg";
 import Button from "../../../../components/button";
 import Text from "../../../../components/text";
 import Snackbar from "../../../../components/snackbar";
+import CookieContent from "./sub-components/cookie-content";
 
 const HeaderContent = (props) => {
   const { t, language, href, labelButton, headerText, ...rest } = props;
 
   const homepagePath = language === "en" ? "/" : `/${language}`;
 
-  const [isCookieCheck, setcookieCheck] = useState(false)
   const cookiesName ="onlyoffice_personal_cookie";
 
+  const [isCookieCheck, setСookieCheck] = useState(false)
+
+  useEffect(() => {
+    const cookie = getCookie(cookiesName);
+        
+});
 
   const getCookie = (name) => { 
     let value = "; " + document.cookie;
     let parts = value.split("; " + name + "=");
     if (parts.length == 2) {
-        return setcookieCheck(false);
+        return setСookieCheck(false);
     } else {
-        return setcookieCheck(true);
+        return setСookieCheck(true);
     }
-  };
-
-  useEffect(() => {
-      const cookie = getCookie(cookiesName);
-          
-  }); 
-  
-  const [display, setDisplay] = useState(true);
-  const cookie = "onlyoffice_personal_cookie=true";  
-  const setCookiesHandler = () => {
-    document.cookie = cookie;
-    setDisplay(!display);
 };
+  
+  
+
+  
 
  
 
@@ -69,16 +67,20 @@ const HeaderContent = (props) => {
       {
         isCookieCheck &&
         <Snackbar 
-        display = {display} 
-        text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
-        backGround = {"rgba(249,249,249,0.95)"}
-        width = {"544px"}
-        isButton = {true}
-        buttonLabel={t("Got it!")}
-        onClick ={setCookiesHandler}
+                   
+         backGround={"rgba(249,249,249,0.95)"}
 
-
-        />       
+        >           
+          <CookieContent
+            
+            backGround={"rgba(249,249,249,0.95)"}
+            width={"544px"}
+            text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
+            buttonLabel={t("Got it!")}
+                     
+          />
+        
+        </Snackbar>  
       }
             
       

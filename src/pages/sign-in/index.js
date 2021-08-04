@@ -11,6 +11,7 @@ import StyledSection from "../sub-components/section";
 import AdditionalSection from "../sub-components/additional-section";
 import SocialButtons from "../sub-components/social-buttons";
 import FormLink from "../sub-components/form-link";
+import Snackbar from "../../../components/snackbar";
 
 
 const SignInPage = () => {
@@ -152,6 +153,7 @@ const SignInPage = () => {
           toHideButton
         />
       </Layout.PageHeader>
+
       <Layout.SectionMain>
         <StyledSection>
           <Form
@@ -159,7 +161,8 @@ const SignInPage = () => {
             submitForm={onSubmitHandler}
             formData={formData}
           />
-        </StyledSection>   
+        </StyledSection>
+          
       </Layout.SectionMain>
       <Layout.PageFooter>test</Layout.PageFooter>
     </Layout>
