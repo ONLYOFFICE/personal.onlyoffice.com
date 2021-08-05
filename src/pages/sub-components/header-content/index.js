@@ -21,25 +21,19 @@ const HeaderContent = (props) => {
   useEffect(() => {
     const cookie = getCookie(cookiesName);
         
-});
+  });
 
   const getCookie = (name) => { 
-    let value = "; " + document.cookie;
-    let parts = value.split("; " + name + "=");
-    if (parts.length == 2) {
-        return setСookieCheck(false);
-    } else {
+    let value = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    console.log(value);    
+    if (value == null) {
         return setСookieCheck(true);
+    } else {
+        return setСookieCheck(false);
     }
-};
+  };
   
   
-
-  
-
- 
-
-
 
   return (
     <StyledHeaderContent {...rest}>
@@ -66,20 +60,15 @@ const HeaderContent = (props) => {
             
       {
         isCookieCheck &&
-        <Snackbar 
-                   
-         backGround={"rgba(249,249,249,0.95)"}
+        <Snackbar>     
 
-        >           
           <CookieContent
-            
             backGround={"rgba(249,249,249,0.95)"}
             width={"544px"}
             text={t("This website uses cookies. By continuing to browse the website you agree to our ")}
             buttonLabel={t("Got it!")}
-                     
           />
-        
+          
         </Snackbar>  
       }
             

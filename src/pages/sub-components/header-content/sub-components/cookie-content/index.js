@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
+import PropTypes from "prop-types";
 import Text from '../../../../../../components/text';
 import Link from "../../../../../../components/link/";
 import CookieMessContainer from "./styled-cookie-content"
@@ -48,5 +49,23 @@ const CookieContent = (props) => {
         </CookieMessContainer>
     );
 };
+
+CookieContent.propTypes = {
+    /** CookieMessContainer back-ground color */
+    backGround: PropTypes.string,        
+    /** Width of CookieContent */
+    width: PropTypes.string,
+    /** Text */
+    text: PropTypes.string,
+    /** Button label */
+    buttonLabel: PropTypes.bool,
+    
+  };
+  
+  CookieMessContainer.defaultProps = {
+    backGround: "rgba(249,249,249,0.95)",    
+    width: "544px",
+    
+  };
 
 export default CookieContent;
