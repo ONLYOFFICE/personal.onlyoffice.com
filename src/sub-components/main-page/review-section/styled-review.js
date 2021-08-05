@@ -1,184 +1,53 @@
 import { styled } from "linaria/react";
-import { device } from "../../../../components/utils/devices";
 
 const StyledReview = styled.div`
-
-
 display: flex;
 position: relative;
 margin: 0 auto;
 flex-direction: column;
 align-items: center;
-/*
-.review-panel-block{
-    position: relative;
-    width: 100%;
-    height: 596px;
-    .review_block_1{
-        position: absolute;
-        left: 0px;
-        top: 56px;
-    }
-    .review_block_2{
-        position: absolute;
-    left: 0px;
-    top: 361px;
-    }
-    .review_block_3{
-        position: absolute;
-    left: 0px;
-    top: 196px;
-    }
-    .review_block_4{
-        position: absolute;
-    left: 752px;
-    top: 271px;
-    }
-    .review_block_5{
-        position: absolute;
-    left: 376px;
-    top: 56px;
-    }
-    .review_block_6{
-        position: absolute;
-    left: 376px;
-    top: 436px;
-    }
-    .review_block_7{
-        position: absolute;
-    left: 376px;
-    top: 246px;
-    }
-    .review_block_8{
-        position: absolute;
-    left: 752px;
-    top: 56px;
-    }
-}*/
 
-
+p{
+    max-width: 806px;
+}
 
 .review-panel-block{
     padding: 25px 0;
     box-sizing: border-box;
-    display: grid;
-    grid-gap: 10px;
-   /* grid-template-columns: repeat(3, 1fr);*/
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-auto-flow: dense;
-    /*div:first-child {
-			grid-column: 1/ -1;
-	}*/
+    display: flex;
+    gap: 1em;
+
+    .review-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1em; 
+        .review_block_fcs{
+            display: block;
+        }
+        .review_block_last{
+            display: none;
+        }
+    }
 }
 
-
-
-
-
-/*
-@media(max-width: 1200px){
-    max-width: 928px;
-    width: 91vw;
-    .review-panel-block{
-    position: relative;
-    height: 670px;
-    .review_block_1{
-        position: absolute;
-        left: 0px;
-        top: 56px;
-    }
-    .review_block_2{
-        position: absolute;
-    left: 0px;
-    top: 361px;
-    }
-    .review_block_3{
-        position: absolute;
-    left: 0px;
-    top: 196px;
-    }
-    .review_block_4{
-        position: absolute;
-    left: 752px;
-    top: 271px;
-    }
-    .review_block_5{
-        position: absolute;
-    left: 376px;
-    top: 56px;
-    }
-    .review_block_6{
-        position: absolute;
-    left: 376px;
-    top: 436px;
-    }
-    .review_block_7{
-        position: absolute;
-    left: 376px;
-    top: 246px;
-    }
-    .review_block_8{
-        position: absolute;
-    left: 752px;
-    top: 56px;
-    }
-}
-}
-*/
-
-
-/**
-.review-panel-block{
-        width: 928px;
-
-        .review_block_1{
-        left: 0px;
-        top: 56px;
-    }
-    .review_block_2{
-        position: absolute;
-    left: 0px;
-    top: 436px;
-    }
-    .review_block_3{
-        position: absolute;
-    left: 0px;
-    top: 220px;
-    }
-    .review_block_4{
-        position: absolute;
-    left: 640px;
-    top: 300px;
-    }
-    .review_block_5{
-    left: 376px;
-    top: 56px;
-    }
-    .review_block_6{
-        position: absolute;
-    left: 376px;
-    top: 436px;
-    }
-    .review_block_7{
-        position: absolute;
-    left: 376px;
-    top: 246px;
-    }
-    .review_block_8{
-    left: 640px;
-    top: 56px;
-    }
-    } */
 @media(max-width: 1024px){
     .review-panel-block{
         display: grid;
         grid-template-columns: 1fr 1fr;
-    }
-}
+        grid-gap: 1em;
 
-@media(${device.tablet}){
-    
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1em; 
+            .review_block_fcs{
+                display: none;
+            }
+            .review_block_last{
+            display: block;
+            }
+        }   
+    }  
 }
 
 @media(max-width: 578px){

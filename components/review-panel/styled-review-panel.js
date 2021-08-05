@@ -37,6 +37,10 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     }
 }
 
+@media (max-width: 527px) {
+    width: 100%; 
+}
+
 @media ${device.mobileL} {
     margin: 0px;
     padding: ${(props) => props.theme.reviewPanel.media.mobile.padding};
