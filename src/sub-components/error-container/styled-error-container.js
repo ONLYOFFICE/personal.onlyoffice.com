@@ -38,7 +38,6 @@ const StyledErrorContainer = styled.div`
     margin: 0 0 auto 0;
   }
   #button {
-    background: #33B2E3;
     display: inline-block;
     margin: 0 0 36px 0;
   }
