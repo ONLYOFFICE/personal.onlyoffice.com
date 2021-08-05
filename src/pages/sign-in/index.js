@@ -49,6 +49,7 @@ const SignInPage = () => {
   };
 
   const onPasswordChangeHandler = (e, isValid) => {
+    console.log(e, isValid);
     setPasswordValue(e.target.value);
     setPasswordIsValid(isValid);
   };
@@ -61,9 +62,12 @@ const SignInPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    console.log("on submit", e, passwordValue, passwordIsValid);
+    if (!passwordValue || !emailValue) return;
+
     const hash = createPasswordHash(passwordValue, hashSettings);
-    emailIsValid &&
-      passwordIsValid &&
+
+    if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
         .then(getUser)
         .then((user) => {
@@ -75,6 +79,9 @@ const SignInPage = () => {
         })
         .then(() => (window.location.href = "/"))
         .catch((e) => console.log(e));
+    } else {
+      console.log("not valid");
+    }
   };
 
   const formData = [
@@ -86,6 +93,8 @@ const SignInPage = () => {
       placeholder: t("Email"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      tabIndexProp: 1,
+      isAutoFocussed: true,
     },
     {
       type: "input",
@@ -94,6 +103,7 @@ const SignInPage = () => {
       callback: onPasswordChangeHandler,
       value: passwordValue,
       autoComplete: "current-password",
+      tabIndexProp: 2,
     },
     {
       type: "checkbox",
@@ -108,6 +118,7 @@ const SignInPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("AuthDocsSignIn"),
+      tabIndexProp: 3,
     },
     {
       type: "other",

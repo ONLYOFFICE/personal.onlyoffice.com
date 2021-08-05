@@ -28,7 +28,8 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    join(emailValue).catch((err) => alert(err));
+    if (isAcceptLicence && emailIsValid)
+      join(emailValue).catch((err) => alert(err));
     console.log("onSubmit, valid: ", emailIsValid);
   };
 
@@ -61,6 +62,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       labelButton: t("RegistryButtonCreateNow"),
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
+      tabIndexProp: 1,
     },
     {
       type: "checkbox",
@@ -82,6 +84,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       label: t("RegistryButtonCreateNow"),
       isDisabled: !isAcceptLicence,
       toHideButton: true,
+      tabIndexProp: 2,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {

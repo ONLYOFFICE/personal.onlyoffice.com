@@ -31,6 +31,7 @@ const TextInput = ({
   backgroundColor,
   buttonClick,
   autoComplete,
+  tabIndexProp,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -64,6 +65,7 @@ const TextInput = ({
           backgroundColor={backgroundColor}
           autoComplete={autoComplete}
           {...rest}
+          tabIndex={tabIndexProp}
         />
         <Label
           defaultChecked={rest.value !== ""}
@@ -95,6 +97,7 @@ const TextInput = ({
           fontSize="14px"
           fontWeight="bold"
           lineHeight="16px"
+          tabIndex={tabIndexProp}
         />
       )}
     </StyleGroupInput>

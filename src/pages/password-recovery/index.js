@@ -61,6 +61,7 @@ const PasswordRecoveryPage = () => {
       placeholder: t("Email"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      tabIndexProp: 1,
     },
     {
       type: "button",
@@ -69,6 +70,7 @@ const PasswordRecoveryPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("Send"),
+      tabIndexProp: 2,
     },
     {
       type: "other",

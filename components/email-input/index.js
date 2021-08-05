@@ -13,6 +13,7 @@ const EmailInput = ({
   isErrText,
   onChange,
   type,
+  autoComplete,
   ...rest
 }) => {
   const REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -68,7 +69,7 @@ const EmailInput = ({
         isError={emailError || isError}
         value={email}
         onChange={onChangeHandler}
-        autoComplete="email"
+        autoComplete={autoComplete}
         {...rest}
       />
       {isErrText && (

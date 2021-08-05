@@ -23,7 +23,12 @@ const HeaderContent = (props) => {
   return (
     <StyledHeaderContent {...rest}>
       <div className="logo-wrapper">
-        <Link className="top-logo" title="ONLYOFFICE" href={homepagePath}>
+        <Link
+          className="top-logo"
+          title="ONLYOFFICE"
+          href={homepagePath}
+          tabIndex={-1}
+        >
           <HeaderLogo className="image-wrapper" />
         </Link>
         {headerText && (
@@ -35,7 +40,7 @@ const HeaderContent = (props) => {
 
       <div>
         {!withoutButton && (
-          <Link title="ONLYOFFICE" href={href}>
+          <Link title="ONLYOFFICE" href={href} tabIndex={-1}>
             <Button
               className="header-button"
               label={labelButton}

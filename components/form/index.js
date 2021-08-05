@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import StyledForm from "./styled-form";
@@ -13,10 +13,23 @@ import Checkbox from "../checkbox";
 const Form = (props) => {
   const { isPanel, formData, submitForm } = props;
 
+  useEffect(() => {
+    window && document.addEventListener("keydown", onKeyDownHandler);
+    return () =>
+      window && document.removeEventListener("keydown", onKeyDownHandler);
+  }, []);
+
   const onSubmitHandler = (e) => {
-    submitForm && submitForm(e);
+    console.log("submit");
+    submitForm(e);
   };
 
+  const onKeyDownHandler = (e) => {
+    console.log("here", e.which);
+    if (e.which === 13) {
+      onSubmitHandler(e);
+    }
+  };
   const formElements = [];
 
   formData.forEach((item, indx) => {
@@ -78,7 +91,12 @@ const Form = (props) => {
   const itemsCount = formElements && formElements.length;
 
   return (
-    <StyledForm {...props} itemsCount={itemsCount} onSubmit={onSubmitHandler}>
+    <StyledForm
+      {...props}
+      itemsCount={itemsCount}
+      onSubmit={onSubmitHandler}
+      //onKeyDown={onKeyDownHandler}
+    >
       {formElements}
     </StyledForm>
   );
