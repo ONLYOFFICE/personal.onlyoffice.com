@@ -11,12 +11,10 @@ RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null && \
     apt-get -y update && \
     apt-get install -yq git yarn 
 
-RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null && \
-    echo ${GIT_BRANCH}  && \
+RUN echo ${GIT_BRANCH}  && \
     git clone --depth 1 -b ${GIT_BRANCH} https://github.com/ONLYOFFICE/personal.onlyoffice.com.git ${SRC_PATH}
 
-RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null && \ 
-    cd ${SRC_PATH} && \
+RUN cd ${SRC_PATH} && \
     yarn && \
     yarn build
 
