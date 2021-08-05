@@ -49,7 +49,6 @@ const SignInPage = () => {
   };
 
   const onPasswordChangeHandler = (e, isValid) => {
-    console.log(e, isValid);
     setPasswordValue(e.target.value);
     setPasswordIsValid(isValid);
   };
@@ -62,7 +61,7 @@ const SignInPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("on submit", e, passwordValue, passwordIsValid);
+
     if (!passwordValue || !emailValue) return;
 
     const hash = createPasswordHash(passwordValue, hashSettings);
@@ -71,7 +70,6 @@ const SignInPage = () => {
       login(emailValue, hash)
         .then(getUser)
         .then((user) => {
-          console.log(user, language);
           const currentLanguage = languages.find(
             (el) => el.shortKey === language
           );

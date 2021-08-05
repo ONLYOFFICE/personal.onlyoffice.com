@@ -36,7 +36,6 @@ const PasswordRecoveryPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("onSubmit, valid: ", emailIsValid);
     recoveryPassword(emailValue)
       .then((res) => {
         navigate("/sign-in");
