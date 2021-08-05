@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop -p 9000",
+    "start": "gatsby develop -p 9000",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.1",
     "react-svg": "^14.0.3",
+    "sjcl": "^1.0.8",
     "zlib": "^1.0.5"
   },
   "devDependencies": {

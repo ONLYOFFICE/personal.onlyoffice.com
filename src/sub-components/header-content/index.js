@@ -8,7 +8,15 @@ import Button from "../../../components/button";
 import Text from "../../../components/text";
 
 const HeaderContent = (props) => {
-  const { t, language, href, labelButton, headerText, ...rest } = props;
+  const {
+    t,
+    language,
+    href,
+    labelButton,
+    headerText,
+    withoutButton,
+    ...rest
+  } = props;
 
   const homepagePath = language === "en" ? "/" : `/${language}`;
 
@@ -24,15 +32,18 @@ const HeaderContent = (props) => {
           </Text>
         )}
       </div>
+
       <div className="header-button">
-        <Link className="top-logo" title="ONLYOFFICE" to={href}>
-          <Button
-            label={labelButton}
-            typeButton="transparent"
-            height="100%"
-            width="100%"
-          />
-        </Link>
+        {!withoutButton && (
+          <Link className="top-logo" title="ONLYOFFICE" to={href}>
+            <Button
+              label={labelButton}
+              typeButton="transparent"
+              height="100%"
+              width="100%"
+            />
+          </Link>
+        )}
       </div>
       <LanguageSelector
         className="language-selector"

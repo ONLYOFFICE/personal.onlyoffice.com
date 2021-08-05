@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
@@ -13,12 +13,27 @@ import SocialButtons from "../../sub-components/social-buttons";
 import FormLink from "../../sub-components/form-link";
 import FooterContent from "../../sub-components/footer-content";
 
+import { getSettings, login, getUser, updateUserCulture } from "../../api";
+
+import createPasswordHash from "../../helpers/createPasswordHash";
+import languages from "../../../languages.json";
+
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [passwordValue, setPasswordValue] = useState("");
   const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
+
+  const [hashSettings, setHashSettings] = useState();
+
+  useEffect(() => {
+    getSettings()
+      .then((res) => {
+        setHashSettings(res.passwordHash);
+      })
+      .catch((e) => console.error(e));
+  }, []);
 
   const {
     t,
@@ -46,7 +61,20 @@ const SignInPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("onSubmit, valid: ", emailIsValid && passwordIsValid);
+    const hash = createPasswordHash(passwordValue, hashSettings);
+    emailIsValid &&
+      passwordIsValid &&
+      login(emailValue, hash)
+        .then(getUser)
+        .then((user) => {
+          console.log(user, language);
+          const currentLanguage = languages.find(
+            (el) => el.shortKey === language
+          );
+          updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+        })
+        .then(() => (window.location.href = "/"))
+        .catch((e) => console.log(e));
   };
 
   const formData = [

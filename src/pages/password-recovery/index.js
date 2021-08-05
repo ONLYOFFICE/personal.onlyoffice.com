@@ -13,6 +13,10 @@ import FormDescription from "../../sub-components/form-description";
 import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
 
+import { recoveryPassword } from "../../api";
+
+import { navigate } from "gatsby";
+
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
@@ -33,6 +37,11 @@ const PasswordRecoveryPage = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log("onSubmit, valid: ", emailIsValid);
+    recoveryPassword(emailValue)
+      .then((res) => {
+        navigate("/sign-in");
+      })
+      .catch((e) => alert(e));
   };
 
   const formData = [
