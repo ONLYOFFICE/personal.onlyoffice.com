@@ -4,6 +4,7 @@ import StyledErrorContainer from "./styled-error-container";
 import Heading from "../../../components/heading";
 import Text from "../../../components/text";
 import Button from "../../../components/button";
+import Link from "../../../components/internal-link";
 
 const ErrorContainer = (props) => {
   //console.log("ErrorContainer render");
@@ -332,16 +333,13 @@ const ErrorContainer = (props) => {
       )}
       {bodyText && <Text id="text">{bodyText}</Text>}
       {buttonText && buttonUrl && (
-        <div id="button-container">
+        <Link id="button-container" title="ONLYOFFICE" href={buttonUrl}>
           <Button
             id="button"
-            size="big"
-            scale
-            primary
+            typeButton="primary"
             label={buttonText}
-            onClick={() => (window.location.href = buttonUrl)}
           />
-        </div>
+        </Link>
       )}
     </StyledErrorContainer>
   );
