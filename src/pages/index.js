@@ -8,11 +8,19 @@ import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import FooterContent from "../sub-components/footer-content";
 
+import Carousel from "../../components/carousel";
+
 const IndexPage = () => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
+
+const arrayImage = [
+  {id: 1, Heading: "Heading", Text: "Heading1", src: "/screenshots/en/doc.png", defaultSrc: "screenshots/en/doc.png", alt: "image",},
+  {id: 2, Heading: "Heading2", Text: "Heading2", src: "/screenshots/en/pres.png", defaultSrc: "screenshots/en/pres.png", alt: "image",},
+  {id: 3, Heading: "Heading3", Text: "Heading3", src: "/screenshots/en/tab.png", defaultSrc: "screenshots/en/tab.png", alt: "image",},
+];
 
   return (
     <Layout>
@@ -32,7 +40,11 @@ const IndexPage = () => {
           labelButton={t("AuthDocsLogIn")}
         />
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
+      <Layout.SectionMain>
+        <Carousel 
+          arrayImage = {arrayImage}
+        />
+      </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>
