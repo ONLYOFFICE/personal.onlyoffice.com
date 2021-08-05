@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import ErrorContainer from "../sub-components/error-container";
 
-
 const NotFoundPage = () => {
     const {
         t,
@@ -16,7 +15,7 @@ const NotFoundPage = () => {
           buttonText = {t("ErrorPageButtonText")}
           buttonUrl = "/"
            />
-      )
+      );
 };
 
 export default NotFoundPage;
