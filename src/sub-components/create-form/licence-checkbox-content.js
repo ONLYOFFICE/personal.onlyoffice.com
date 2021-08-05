@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "linaria/react";
+import { Trans } from "gatsby-plugin-react-i18next";
 
-import Text from "../../../components/text";
 import Link from "../../../components/link";
 
 const StyledLicenceCheckbox = styled.div`
@@ -11,12 +11,25 @@ const StyledLicenceCheckbox = styled.div`
 
 const LicenseCheckboxContent = (props) => {
   const { t } = props;
+
+  const terms = t("TermAndCondition");
+  const privacy = t("PrivacyStatement");
+
   return (
     <StyledLicenceCheckbox>
-      <Text as="span">{t("RegistrySettingTerms")}</Text>
-      <Link className="licence-link">{t("TermAndCondition")}</Link>
-      <Text as="span">{t("And")}</Text>
-      <Link className="licence-link">{t("PrivacyStatement")}</Link>
+      <Trans
+        i18nKey="RegistrySettingTerms"
+        terms={t("TermAndCondition")}
+        privacy={t("PrivacyStatement")}
+      >
+        I agree to ONLYOFFICE
+        <Link href="https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4543205&doc=VXlOK1NnMVdIYStuSFpMeFR4UVpmNE5VS3VTdENYdU50WjJ5Unh0OERiUT0_IjQ1NDMyMDUi0">
+          {{ terms }}
+        </Link>
+        <Link href="https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.248662407.1867121315.1526272545-169631771.1404734630">
+          {{ privacy }}
+        </Link>
+      </Trans>
     </StyledLicenceCheckbox>
   );
 };

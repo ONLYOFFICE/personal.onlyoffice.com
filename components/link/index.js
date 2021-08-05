@@ -68,6 +68,7 @@ CustomLink.defaultProps = {
   title: undefined,
   rel: "noopener noreferrer",
   tabIndex: -1,
+  target: "_blank",
 };
 
 export default CustomLink;
