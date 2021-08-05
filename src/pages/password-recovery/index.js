@@ -36,11 +36,15 @@ const PasswordRecoveryPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    recoveryPassword(emailValue)
-      .then((res) => {
-        navigate("/sign-in");
-      })
-      .catch((e) => alert(e));
+    if (emailIsValid) {
+      recoveryPassword(emailValue)
+        .then((res) => {
+          navigate("/sign-in");
+        })
+        .catch((e) => alert(e));
+    } else {
+      console.log("email not valid");
+    }
   };
 
   const formData = [

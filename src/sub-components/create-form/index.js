@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
-import LicenceLink from "../../sub-components/license";
+import LicenceLink from "./licence-checkbox-content";
 
 import { join } from "../../api";
 

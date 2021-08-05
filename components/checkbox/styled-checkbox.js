@@ -3,7 +3,7 @@ import Base from "../themes/base";
 
 const StyledLabel = styled.label`
   display: grid;
-  grid-template-columns: min-content auto;
+  grid-template-columns: min-content 100%;
   align-items: start;
   gap: 8px;
   position: relative;
@@ -26,8 +26,8 @@ const StyledLabel = styled.label`
   }
 
   .checkbox-text * {
-    display: inline;
     padding-right: 4px;
+    vertical-align: bottom;
   }
 `;
 
