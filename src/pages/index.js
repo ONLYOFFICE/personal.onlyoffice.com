@@ -4,9 +4,10 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
 
+import CreateSection from "../sub-components/create-section";
+import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-import FooterContent from "../sub-components/footer-content";
 import ReviewSection from "../sub-components/main-page/review-section";
 
 const IndexPage = () => {
@@ -14,6 +15,8 @@ const IndexPage = () => {
     t,
     i18n: { language },
   } = useTranslation();
+
+  console.log(useTranslation());
 
   return (
     <Layout>
@@ -34,6 +37,7 @@ const IndexPage = () => {
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
+        <CreateSection t={t} />
         <ReviewSection 
           header={t("Hear the web")}
           textFrontLink={t("The user reviews are taken from ")}
@@ -60,7 +64,7 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

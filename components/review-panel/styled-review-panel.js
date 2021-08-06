@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { device } from "../utils/devices";
 import { Base } from "../themes";
 
@@ -14,7 +14,7 @@ background-color: ${(props) => props.theme.reviewPanel.backgroundColor};
 border: ${(props) => props.theme.reviewPanel.border};
 border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
 
-.headerReviewPanel{
+  .headerReviewPanel {
     display: ${(props) => props.theme.reviewPanel.display};
     flex-direction: row;
     justify-content: space-between;
@@ -32,9 +32,11 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
 
 @media ${device.tablet} {
     width: auto;
+
     padding: ${(props) => props.theme.reviewPanel.padding};
-    .headerReviewPanel{
-        padding-bottom: ${(props) => props.theme.reviewPanel.media.device.paddingBottom};
+    .headerReviewPanel {
+      padding-bottom: ${(props) =>
+        props.theme.reviewPanel.media.device.paddingBottom};
     }
 }
 
@@ -42,15 +44,17 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     width: auto; 
 }
 
-@media ${device.mobileL} {
+  @media ${device.mobileL} {
     margin: 0px;
     padding: ${(props) => props.theme.reviewPanel.media.mobile.padding};
-    p{
-        font-size: ${(props) => props.theme.reviewPanel.media.mobile.fontSize};
-        line-height: ${(props) => props.theme.reviewPanel.media.mobile.lineHeight};
+    p {
+      font-size: ${(props) => props.theme.reviewPanel.media.mobile.fontSize};
+      line-height: ${(props) =>
+        props.theme.reviewPanel.media.mobile.lineHeight};
     }
-    .headerReviewPanel{
-        padding-bottom: ${(props) => props.theme.reviewPanel.media.mobile.paddingBottom};
+    .headerReviewPanel {
+      padding-bottom: ${(props) =>
+        props.theme.reviewPanel.media.mobile.paddingBottom};
     }
 }
 

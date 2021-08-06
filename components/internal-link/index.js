@@ -3,14 +3,26 @@ import Link from "../link";
 import PropTypes from "prop-types";
 import { Link as GatsbyLink } from "gatsby";
 
-const InternalLink = ({ children, href, style, className, label, ...rest }) => {
+const InternalLink = ({
+  children,
+  href,
+  style,
+  className,
+  label,
+  tabIndex,
+  ...rest
+}) => {
   const linkClassName = className
     ? className + " internal-link"
     : "internal-link";
 
   return (
-    <GatsbyLink to={href} style={style}>
-      <Link as="span" {...rest} className={linkClassName}>
+    <GatsbyLink
+      to={href}
+      style={{ ...style, outline: "none" }}
+      tabIndex={tabIndex}
+    >
+      <Link as="span" {...rest} className={linkClassName} tabIndex={tabIndex}>
         {children || label}
       </Link>
     </GatsbyLink>

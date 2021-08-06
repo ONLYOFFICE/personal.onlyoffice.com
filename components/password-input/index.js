@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import StyledPasswordInput from "./styled-password-input";
 import TextInput from "../text-input";
@@ -62,7 +62,7 @@ const PasswordInput = ({
     }
   };
 
-  const onFocus = () => {
+  const onFocus = useCallback(() => {
     if (isValid) {
       setIsDefault(false);
       setSuccess(true);
@@ -71,11 +71,11 @@ const PasswordInput = ({
       setIsPwdError(false);
       setSuccess(false);
     }
-  };
+  }, [isValid]);
 
   useEffect(() => {
     onFocus(isValid, password);
-  }, [isValid, password]);
+  }, [isValid, password, onFocus]);
 
   return (
     <StyledPasswordInput {...rest} onBlur={onBlur} onFocus={onFocus}>
@@ -161,7 +161,7 @@ PasswordInput.defaultProps = {
   isErrText: false,
   generatorSpecial: "!@#$%^&*",
   passwordSettings: {
-    minLength: 8,
+    minLength: 1,
     upperCase: false,
     digits: false,
     specSymbols: false,

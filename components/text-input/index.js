@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import StyleGroupInput from "./styled-group";
 import StyledTextInput from "./styled-text-input";
-import StyledButton from "./styled-button";
+import StyledButtonInput from "./styled-button-input";
 import StyledInput from "./styled-input";
 import Label from "./styled-label";
 
@@ -15,6 +15,7 @@ const TextInput = ({
   onChange,
   defaultInput,
   isDisabled,
+  isDisabledButton,
   isAutoFocussed,
   isSuccess,
   isError,
@@ -30,6 +31,7 @@ const TextInput = ({
   backgroundColor,
   buttonClick,
   autoComplete,
+  tabIndexProp,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -63,6 +65,7 @@ const TextInput = ({
           backgroundColor={backgroundColor}
           autoComplete={autoComplete}
           {...rest}
+          tabIndex={tabIndexProp}
         />
         <Label
           defaultChecked={rest.value !== ""}
@@ -75,12 +78,12 @@ const TextInput = ({
         </Label>
       </StyledInput>
       {Boolean(withButton) && (
-        <StyledButton
+        <StyledButtonInput
           id={idButton}
           className={classNameButton}
           typeButton={typeButton}
           label={labelButton}
-          isDisabled={isDisabled}
+          isDisabled={isDisabledButton}
           isAutoFocussed={isAutoFocussed}
           isSuccess={isSuccess}
           isError={isError}
@@ -90,7 +93,11 @@ const TextInput = ({
           icon={iconButton}
           squareButton={squareButton}
           isSubmit={isSubmit}
-          minwidth="min-content"
+          minwidth="149px"
+          fontSize="14px"
+          fontWeight="bold"
+          lineHeight="16px"
+          tabIndex={tabIndexProp}
         />
       )}
     </StyleGroupInput>

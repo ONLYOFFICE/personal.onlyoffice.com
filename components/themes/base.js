@@ -66,7 +66,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: "transparent",
+    backgroundColor: "#fff",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",

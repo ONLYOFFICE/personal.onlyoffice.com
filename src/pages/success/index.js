@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
+import Icon from "../../../components/icon-button";
 
 import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
-import FormLink from "../../sub-components/form-link";
 import FormDescription from "../../sub-components/form-description";
-import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
-
-import { recoveryPassword } from "../../api";
 
 import { navigate } from "gatsby";
 
-const PasswordRecoveryPage = () => {
-  const [emailValue, setEmailValue] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(false);
-
+const SuccessfullyPage = ({ location }) => {
   const {
     t,
     i18n: { language },
@@ -29,42 +23,36 @@ const PasswordRecoveryPage = () => {
   const buttonHref =
     language === "en" ? "/create-now" : `/${language}/create-now`;
 
-  const onEmailChangeHandler = (e, isValid) => {
-    setEmailValue(e.target.value);
-    setEmailIsValid(isValid);
-  };
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (emailIsValid) {
-      recoveryPassword(emailValue)
-        .then((res) => {
-          navigate("/sign-in");
-        })
-        .catch((e) => alert(e));
-    } else {
-      console.log("email not valid");
-    }
+    navigate("/");
   };
 
   const formData = [
-    { type: "heading", headingText: t("PasswordRecovery"), isHeader: true },
+    {
+      type: "other",
+      element: (
+        <Icon
+          style={{ margin: "0 auto" }}
+          iconName="/reg-success-checkmark.react.svg"
+        />
+      ),
+    },
+    {
+      type: "heading",
+      headingText: t("CreateSuccessfullyHeader"),
+      isHeader: true,
+    },
     {
       type: "other",
       element: (
         <FormDescription
           key="recovery-instructions"
-          label={t("RecoveryInstructions")}
+          label={t("CreateSuccessfullyDesc", {
+            email: location.state ? location.state.email : "",
+          })}
         />
       ),
-    },
-    {
-      type: "input",
-      inputType: "email",
-      placeholder: t("Email"),
-      callback: onEmailChangeHandler,
-      value: emailValue,
-      tabIndexProp: 1,
     },
     {
       type: "button",
@@ -72,32 +60,8 @@ const PasswordRecoveryPage = () => {
       isSubmit: true,
       toHideButton: false,
       typeButton: "primary",
-      label: t("Send"),
-      tabIndexProp: 2,
-    },
-    {
-      type: "other",
-      element: (
-        <FormLink
-          key="pass-recovery-link"
-          currentLanguage={language}
-          href="sign-in"
-          label={t("AuthDocsToLogin")}
-        />
-      ),
-    },
-    {
-      type: "other",
-      element: (
-        <AdditionalSection
-          marginTop="56px"
-          smallMarginTop="22px"
-          key="additional"
-          textLabel={t("AuthDocsDontHave")}
-          buttonHref={buttonHref}
-          buttonLabel={t("RegistryButtonCreateNow")}
-        />
-      ),
+      label: t("CreateSuccessfullyButton"),
+      tabIndexProp: 1,
     },
   ];
   return (
@@ -136,7 +100,7 @@ const PasswordRecoveryPage = () => {
   );
 };
 
-export default PasswordRecoveryPage;
+export default SuccessfullyPage;
 
 export const query = graphql`
   query($language: String!) {
