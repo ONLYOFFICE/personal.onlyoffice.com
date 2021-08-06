@@ -1,16 +1,156 @@
 import { styled } from "linaria/react";
+import {ToastContainer} from "react-toastify";
+import { device } from "../utils/devices";
+import Base from "../themes/base";
 
-const StyledToast = styled.div`
+const StyledToast = styled(ToastContainer)`
+  z-index: 9999;
+  -webkit-transform: translateZ(9999px);
+  position: fixed;
+  width: 365px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  top: 60px;
+  right: 12px;
+  margin-top: 0px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
+  .Toastify__progress-bar--animated {
+    animation: Toastify__trackProgress linear 1 forwards;
+  }
+  .Toastify__toast-body {
+    margin: auto 0;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .Toastify__close-button {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s ease;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+  .Toastify__close-button:focus,
+  .Toastify__close-button:hover {
+    opacity: 1;
+  }
+  @keyframes SlideIn {
+    from {
+      transform: translate3d(150%, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .SlideIn {
+    animation-name: SlideIn;
+  }
+  @keyframes SlideOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .SlideOut {
+    animation-name: SlideOut;
+  }
+  @keyframes Toastify__trackProgress {
+    0% {
+      transform: scaleX(1);
+    }
+    to {
+      transform: scaleX(0);
+    }
+  }
+  .Toastify__toast--success {
+    background-color: #CAE796;
 
-.toast-title {
-    font-weight: bold;
-}
+    &:hover {
+      background-color: #BCDf7E;
+    }
+  }
+  .Toastify__toast--error {
+    background-color: #ffbfaa;
 
-.toast-message {
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-    font-size: 12px;
-}
+    &:hover {
+      background-color: #ffa98d;
+    }
+  }
+  .Toastify__toast {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    max-height: 800px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #000000;
+    margin: 0 0 12px;
+    padding: 12px 15px 7px;
+    min-height: 32px;
+    font: normal 12px "Open Sans", sans-serif;
+    width: 100%;
+    right: 0;
+    transition: 0.2s;
+
+    &:hover{
+        box-shadow: 1px 2px 4px #D1D1D1;
+    }
+
+    @media ${device.tablet} {
+      // TODO: Discuss the behavior of notifications on mobile devices
+      position: absolute;
+      &:nth-child(1) {
+        z-index: 3;
+        top: 0px;
+      }
+      &:nth-child(2) {
+        z-index: 2;
+        top: 8px;
+      }
+      &:nth-child(3) {
+        z-index: 1;
+        top: 16px;
+      }
+    }
+  }
+  .Toastify__toast-body {
+    display: flex;
+    align-items: center;
+  }
+  @media ${device.tablet} {
+    right: 16px;
+  }
+  @media only screen and (max-width: 480px) {
+    left: 0;
+    margin: auto;
+    right: 0;
+    width: 100%;
+    max-width: calc(100% - 32px);
+
+    @keyframes SlideIn {
+      from {
+        transform: translate3d(0, -150%, 0);
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+/* Old toaster */
 
 .toast-message a,
 .toast-message label {
@@ -188,5 +328,6 @@ const StyledToast = styled.div`
     margin: 1px 0 1px 0;
 }
 `;
+StyledToast.defaultProps = { theme: Base };
 
 export default StyledToast;

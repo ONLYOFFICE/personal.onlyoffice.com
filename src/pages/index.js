@@ -3,10 +3,12 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
+import Button from "../../components/button";
 
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import Toast from "../../components/toast";
+import toastr from "../../components/toast/toastr";
 import FooterContent from "../sub-components/footer-content";
 
 const IndexPage = () => {
@@ -32,11 +34,14 @@ const IndexPage = () => {
           href="sign-in"
           labelButton={t("AuthDocsLogIn")}
         />
+        <Toast/>
       </Layout.PageHeader>
-      <Layout.SectionMain></Layout.SectionMain>
-      <Toast
-          text={t("Неверный логин или пароль")}
-      ></Toast>
+      <Layout.SectionMain>
+        <Button
+          label="go toast!"
+          onClick = {() => toastr.success(t("MetaDescriptionOg"))}
+        ></Button>
+      </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
       </Layout.PageFooter>

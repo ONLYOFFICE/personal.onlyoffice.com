@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.1",
     "react-svg": "^14.0.3",
+    "react-toastify": "^7.0.4",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
