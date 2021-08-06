@@ -4,9 +4,10 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
 
+import CreateSection from "../sub-components/create-section";
+import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-import FooterContent from "../sub-components/footer-content";
 
 import Carousel from "../../components/carousel";
 
@@ -21,6 +22,7 @@ const arrayImage = [
   {id: 2, Heading: "Heading2", Text: "Heading2", src: "/screenshots/en/pres.png", defaultSrc: "screenshots/en/pres.png", alt: "image",},
   {id: 3, Heading: "Heading3", Text: "Heading3", src: "/screenshots/en/tab.png", defaultSrc: "screenshots/en/tab.png", alt: "image",},
 ];
+  console.log(useTranslation());
 
   return (
     <Layout>
@@ -41,6 +43,7 @@ const arrayImage = [
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
+        <CreateSection t={t} />
         <Carousel 
           arrayImage = {arrayImage}
         />
@@ -56,7 +59,7 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

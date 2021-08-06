@@ -39,7 +39,9 @@
   "PersonalLogin": "Вход в аккаунт",
   "RegistryButtonCreateNow": "Создать сейчас",
   "RegistrySettingSpam": "Я хочу подписаться на рассылку новостей ONLYOFFICE",
-  "RegistrySettingTerms": "Я принимаю {0}Условия использования{1} и {2}Положение о конфиденциальности{3} ONLYOFFICE",
+  "RegistrySettingTerms": "Я принимаю <1>{{terms}}</1>и <2>{{privacy}}</2>ONLYOFFICE",
+  "TermAndCondition": "Условия использования",
+  "PrivacyStatement": "Положение о конфиденциальности",
   "az-Latn-AZ": "Azerbaijani (Latin, Azerbaijan)",
   "bg-BG": "Bulgarian (Bulgaria)",
   "zh-CN": "Chinese (Simplified, PRC)",
@@ -67,7 +69,6 @@
   "tr-TR": "Turkish (Turkey)",
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
-
   "Password": "Пароль",
   "Remember": "Запомнить",
   "PasswordRecovery": "Восстановление пароля",
@@ -79,5 +80,7 @@
   "AuthDocsAccessQuickly": "Получите быстрый доступ к ONLYOFFICE Personal.",
   "AuthDocsFreeDesktopApp": "Скачайте {0}бесплатное десктопное приложение{1} и редактируйте файлы офлайн или подключитесь к облаку.",
   "AuthDocsWorkWithDocs": "Работайте с документами {0}на мобильных{1} в {2}приложениях ONLYOFFICE{3}.",
-  "AuthFooterBlog": "Блог"
+  "AuthFooterBlog": "Блог",
+  "HomeDescription": "Высокая совместимость с форматами MS Office",
+  "CreateFormHeader": "Создайте бесплатное облако"
 }

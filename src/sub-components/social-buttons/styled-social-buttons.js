@@ -1,8 +1,8 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 
 const StyledSocialButtons = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 26px;
   width: min-content;
   margin: auto;
 `;

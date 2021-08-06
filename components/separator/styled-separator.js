@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 const StyledSeparator = styled.div`

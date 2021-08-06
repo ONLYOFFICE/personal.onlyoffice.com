@@ -1,7 +1,11 @@
 import axios from "axios";
-import config from "./config";
 
-const { appServerUrl, apiTimeout, apiPrefixURL } = config;
+import config from "../../config.json";
+
+const { appServerUrl, api } = config;
+
+const apiPrefixURL = (api && api.url) || "/api/2.0";
+const apiTimeout = (api && api.timeout) || 30000;
 
 const apiUrl = appServerUrl + apiPrefixURL;
 

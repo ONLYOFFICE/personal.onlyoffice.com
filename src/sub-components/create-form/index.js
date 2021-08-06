@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
-import LicenceLink from "../../sub-components/license";
+import LicenceLink from "./licence-checkbox-content";
 
 import { join } from "../../api";
 
@@ -28,12 +29,30 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    join(emailValue).catch((err) => alert(err));
-    console.log("onSubmit, valid: ", emailIsValid);
+    if (isAcceptLicence && emailIsValid)
+      join(emailValue)
+        .then(() => {
+          navigate("/success", { state: { email: emailValue } });
+        })
+        .catch((err) => alert(err));
   };
 
+  const additionalSection = isPanel
+    ? null
+    : {
+        type: "other",
+        element: (
+          <AdditionalSection
+            key="additional"
+            textLabel={t("AuthDocsAlready")}
+            buttonHref={buttonHref}
+            buttonLabel={t("AuthDocsSignIn")}
+          />
+        ),
+      };
+
   const formData = [
-    { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
+    { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
 
     {
       type: "input",
@@ -41,6 +60,13 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       placeholder: t("AuthDocsYourEmail"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      withButton: isPanel,
+      typeButton: "primary",
+      isSubmit: true,
+      labelButton: t("RegistryButtonCreateNow"),
+      buttonClick: onSubmitHandler,
+      isDisabledButton: !isAcceptLicence,
+      tabIndexProp: 1,
     },
     {
       type: "checkbox",
@@ -58,10 +84,11 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       type: "button",
       callback: onSubmitHandler,
       isSubmit: true,
-      toHideButton: false,
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
       isDisabled: !isAcceptLicence,
+      toHideButton: isPanel,
+      tabIndexProp: 2,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
@@ -69,15 +96,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       element: <SocialButtons key="social-buttons" />,
     },
     {
-      type: "other",
-      element: (
-        <AdditionalSection
-          key="additional"
-          textLabel={t("AuthDocsAlready")}
-          buttonHref={buttonHref}
-          buttonLabel={t("AuthDocsSignIn")}
-        />
-      ),
+      ...additionalSection,
     },
   ];
 

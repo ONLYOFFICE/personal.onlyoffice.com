@@ -1,0 +1,4 @@
+#!/bin/bash
+export SRV_VERSION=$DOCKER_TAG
+docker-compose -f docker-compose.yml build \
+    --build-arg GIT_BRANCH=$SOURCE_BRANCH 
