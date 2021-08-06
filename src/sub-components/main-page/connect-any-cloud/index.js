@@ -14,14 +14,14 @@ textHeading,
     <Section
       background="white"
       padding="112px 0"
-      tabletPadding="82px 0"
-      mobileLPadding="48px 0 80px"
+      tabletPadding="104px 0 80px"
+      mobileLPadding="60px 0 48px"
       {...rest}
     >
       <StyledConnectAnyCloud>
         <Heading
           textAlign="center"
-          padding="0 0 30px"
+          padding="0 0 40px"
           level={2}
         >
           {textHeading}
