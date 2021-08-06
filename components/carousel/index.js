@@ -18,6 +18,10 @@ arrayImage,
       dots: false,
       infinite: true,
       speed: 500,
+      arrows: true,
+      appendArrows: '.your-class-arrow',
+      nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+      prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
       slidesToShow: 1,
       slidesToScroll: 1
     }
@@ -28,9 +32,11 @@ arrayImage,
           {
             arrayImage.map((item) => 
               <div key={item.id}>
-                 <Heading>{item.Heading}</Heading>
-                 <Text>{item.Text}</Text>
-                 <img src={item.src} alt={item.alt} />
+                <div className="text-slider">
+                  <Heading textAlign="center" level={2}>{item.Heading}</Heading>
+                  <Text textAlign="center" fontSize={"18px"}>{item.Text}</Text>
+                </div>                
+                <img src={item.src} alt={item.alt} />
               </div>
             )
           }
