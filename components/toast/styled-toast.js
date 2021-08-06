@@ -1,18 +1,18 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import {ToastContainer} from "react-toastify";
 import { device } from "../utils/devices";
 import Base from "../themes/base";
 
 const StyledToast = styled(ToastContainer)`
-  z-index: 9999;
+  z-index: ${(props) => props.theme.toast.zIndex};
   -webkit-transform: translateZ(9999px);
   position: fixed;
-  width: 365px;
+  width: ${(props) => props.theme.toast.width};
   box-sizing: border-box;
-  color: #FFFFFF;
-  top: 60px;
-  right: 12px;
-  margin-top: 0px;
+  color: ${(props) => props.theme.toast.color};
+  top: ${(props) => props.theme.toast.top};
+  right: ${(props) => props.theme.toast.right};
+  margin-top: ${(props) => props.theme.toast.marginTop};
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
   .Toastify__progress-bar--animated {
@@ -24,22 +24,22 @@ const StyledToast = styled(ToastContainer)`
     flex: 1;
   }
   .Toastify__close-button {
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 14px;
-    background: transparent;
+    color: ${(props) => props.theme.toast.closeButton.color}; 
+    font-weight: ${(props) => props.theme.toast.closeButton.fontWeight};
+    font-size: ${(props) => props.theme.toast.closeButton.fontSize};
+    background: ${(props) => props.theme.toast.closeButton.background};
     outline: none;
     border: none;
-    padding: 0;
+    padding: ${(props) => props.theme.toast.closeButton.padding};
     cursor: pointer;
-    opacity: 0.7;
-    transition: 0.3s ease;
+    opacity: ${(props) => props.theme.toast.closeButton.opacity};
+    transition: ${(props) => props.theme.toast.closeButton.transition};
     -ms-flex-item-align: start;
     align-self: flex-start;
   }
   .Toastify__close-button:focus,
   .Toastify__close-button:hover {
-    opacity: 1;
+    opacity: ${(props) => props.theme.toast.closeButton.hoverOpacity};
   }
   @keyframes SlideIn {
     from {
@@ -72,41 +72,42 @@ const StyledToast = styled(ToastContainer)`
     }
   }
   .Toastify__toast--success {
-    background-color: #CAE796;
+    background-color: ${(props) => props.theme.toast.active.success};
 
     &:hover {
-      background-color: #BCDf7E;
+      background-color: ${(props) => props.theme.toast.hover.success};
     }
   }
   .Toastify__toast--error {
-    background-color: #ffbfaa;
+    background-color: ${(props) => props.theme.toast.active.error};
 
     &:hover {
-      background-color: #ffa98d;
+      background-color: ${(props) => props.theme.toast.hover.error};
     }
   }
   .Toastify__toast {
     box-sizing: border-box;
-    margin-bottom: 1rem;
+    margin-bottom: ${(props) => props.theme.toast.main.marginBottom};
     display: flex;
     justify-content: space-between;
-    max-height: 800px;
-    overflow: hidden;
+    max-height: ${(props) => props.theme.toast.main.maxHeight};
+    overflow: ${(props) => props.theme.toast.main.overflow};
     cursor: pointer;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    color: #000000;
-    margin: 0 0 12px;
-    padding: 12px 15px 7px;
-    min-height: 32px;
+    border-radius: ${(props) => props.theme.toast.main.borderRadius};
+    -moz-border-radius: ${(props) => props.theme.toast.main.borderRadius};
+    -webkit-border-radius: ${(props) => props.theme.toast.main.borderRadius};
+    color: ${(props) => props.theme.toast.main.color};
+    margin: ${(props) => props.theme.toast.main.margin};
+    padding: ${(props) => props.theme.toast.main.padding};
+    min-height: ${(props) => props.theme.toast.main.minHeight};
     font: normal 12px "Open Sans", sans-serif;
-    width: 100%;
-    right: 0;
-    transition: 0.2s;
+    width: ${(props) => props.theme.toast.main.width};
+    right: ${(props) => props.theme.toast.main.right};
+    transition: ${(props) => props.theme.toast.main.transition};
 
     &:hover{
-        box-shadow: 1px 2px 4px #D1D1D1;
+        box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
+        -webkit-box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
     }
 
     @media ${device.tablet} {
@@ -149,184 +150,6 @@ const StyledToast = styled(ToastContainer)`
       }
     }
   }
-
-/* Old toaster */
-
-.toast-message a,
-.toast-message label {
-    color: #000;
-}
-
-.toast-message a:hover {
-    text-decoration: underline;
-}
-
-.toast-top-full-width {
-    top: 0;
-    right: 0;
-    width: 100%;
-}
-
-.toast-bottom-full-width {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
-
-.toast-top-left {
-    top: 12px;
-    left: 12px;
-}
-
-.toast-top-right {
-    right: 12px;
-    top: 60px;
-}
-
-.toast-bottom-right {
-    right: 12px;
-    bottom: 12px;
-}
-
-.toast-bottom-left {
-    bottom: 12px;
-    left: 12px;
-}
-
-#toast-container {
-    display: ${(props) => (props.isOpen ? "block" : "none")};
-    position: fixed;
-    z-index: 999999;
-}
-.toast-container {
-    width: 100%;
-}
-#toast-container > div,
-.toast-container > div,
-.toast-popup-container > div {
-    background-position: 15px center;
-    background-repeat: no-repeat;
-    border-radius: 3px;
-    color: #000;
-    margin: 0 0 6px;
-    padding: 15px 15px 15px 50px;
-}
-#toast-container > div,
-.toast-popup-container > div {
-    width: 300px;
-}
-
-.toast {
-    background-color: #030303;
-}
-
-.toast-success {
-    background-color: #cae796;
-}
-
-.toast-error {
-    background-color: #ffbfaa;
-}
-
-.toast-info {
-    background-color: #f1da92;
-}
-
-.toast-warning {
-    background-color: #F89406;
-}
-
-#toast-container .toast-success:hover {
-    background-color: #bcdf7e;
-}
-
-#toast-container .toast-error:hover {
-    background-color: #ffa98d;
-}
-
-#toast-container .toast-info:hover {
-    background-color: #eed27b;
-}
-
-#toast-container > :hover {
-    box-shadow: 1px, 2px, 4px, #D1D1D1;
-    cursor: pointer;
-}
-
-#toast-container > .toast-info,
-.toast-container > .toast-info,
-.toast-popup-container > .toast-info {
-    background-image: url("/icons/toast_icon03.png");
-}
-
-#toast-container > .toast-error,
-.toast-container > .toast-error,
-.toast-popup-container > .toast-error {
-    background-image: url("/icons/toast_icon01.png");
-}
-
-#toast-container > .toast-success,
-.toast-container > .toast-success,
-.toast-popup-container > .toast-success {
-    background-image: url("/icons/toast_icon02.png");
-}
-
-#toast-container > .toast-warning,
-.toast-container > .toast-warning,
-.toast-popup-container > .toast-warning  {
-    background-image: url("/icons/toast_icon01.png");
-}
-
-/*Popup Toasts*/
-
-.toast-popup-container .toast {
-    width: auto;
-    padding: 14px 0 14px 40px; 
-    background-position: 8px center;
-    border-radius: 0;
-    margin-top:6px;
-}
-
-.toast-popup-container .toast .toast-message {
-    color: #333;
-}
-
-/*Responsive Design*/
-
-@media all and (max-width: 240px) {
-    #toast-container > div {
-        padding: 8px 8px 8px 50px;
-        width: 108px;
-    }
-}
-
-@media all and (min-width: 241px) and (max-width: 320px) {
-    #toast-container > div {
-        padding: 8px 8px 8px 50px;
-        width: 128px;
-    }
-}
-
-@media all and (min-width: 321px) and (max-width: 480px) {
-    #toast-container > div {
-        padding: 8px 8px 8px 50px;
-        width: 192px;
-    }
-}
-
-@media all and (min-width: 481px) and (max-width: 768px) {
-    #toast-container > div {
-        padding: 15px 15px 15px 50px;
-        width: 300px;
-    }
-}
-
-/* overrides */
-#toast-container.toast-top-full-width > div,
-#toast-container.toast-bottom-full-width > div {
-    width: 100%;
-    margin: 1px 0 1px 0;
-}
 `;
 StyledToast.defaultProps = { theme: Base };
 

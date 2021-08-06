@@ -41,7 +41,9 @@
   "PersonalLogin": "Login de conta",
   "RegistryButtonCreateNow": "Criar agora",
   "RegistrySettingSpam": "Quero assinar o boletim informativo ONLYOFFICE",
-  "RegistrySettingTerms": "Eu concordo com a ONLYOFFICE {0}Termos e condições{1} e {2}Declaração de privacidade{3}.",
+  "RegistrySettingTerms": "Eu concordo com a ONLYOFFICE  <1>{{terms}}</1>e <2>{{privacy}}</2>.",
+  "TermAndCondition": "Termos e condições",
+  "PrivacyStatement": "Declaração de privacidade",
   "az-Latn-AZ": "Azerbaijani (Latin, Azerbaijan)",
   "bg-BG": "Bulgarian (Bulgaria)",
   "zh-CN": "Chinese (Simplified, PRC)",
@@ -68,5 +70,9 @@
   "es-ES": "Spanish (Spain)",
   "tr-TR": "Turkish (Turkey)",
   "uk-UA": "Ukrainian (Ukraine)",
-  "vi-VN": "Vietnamese (Vietnam)"
+  "vi-VN": "Vietnamese (Vietnam)",
+  "AuthDocsLogIn": "Entrar",
+  "AuthDocsAccessQuickly": "Acesse ONLYOFFICE pessoal rapidamente.",
+  "AuthDocsFreeDesktopApp": "Baixe o {0}app de desktop gratuito{1} para editar arquivos offline ou se conectar à sua nuvem.",
+  "AuthDocsWorkWithDocs": "Trabalhe em documentos {0}on-the-go{1} com {2}ONLYOFFICE Documentos de solicitação{3}."
 }

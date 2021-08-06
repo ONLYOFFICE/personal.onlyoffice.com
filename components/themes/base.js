@@ -9,8 +9,12 @@ const {
   graySecnodary,
   gray,
   grayTextInput,
-  grayTextInputHover,
   grayLight,
+
+  activeSuccess,
+  activeError,
+  hoverSuccess,
+  hoverError,
 } = globalColors;
 const Base = {
   button: {
@@ -67,7 +71,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: "transparent",
+    backgroundColor: "#fff",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",
@@ -87,7 +91,6 @@ const Base = {
     boxShadow: "none",
     width: "100%",
     height: "56px",
-    width: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",
@@ -202,6 +205,74 @@ const Base = {
   },
 
   socialButton: {},
+
+  toastr: {
+    svg: {
+      width: "24px",
+      minWidth: "24px",
+      height: "24px",
+      minHeight: "24px",
+      color: grayTextInput,
+      marginRight: "11px",
+    },
+
+    title: {
+      wordWrap: "break-word",
+      fontSize: "12px",
+      margin: "0px",
+      lineHeight: "24px",
+      cursor: "pointer",
+      userSelect: "none",
+      color: grayTextInput,
+    },
+  },
+
+  toast: {
+    active: {
+      success: activeSuccess,
+      error: activeError,
+    },
+    hover: {
+      success: hoverSuccess,
+      error: hoverError,
+    },
+
+    zIndex: "9999",
+    width: "365px",
+    color: white,
+    top: "60px",
+    right: "12px",
+    marginTop: "0px",
+
+    closeButton: {
+      color: white,
+      fontWeight: "700",
+      fontSize: "14px",
+      background: "transparent",
+      padding: "0px",
+      opacity: "0.7",
+      hoverOpacity: "1",
+      transition: "0.3s ease",
+    },
+
+    main: {
+      marginBottom: "1rem",
+      maxHeight: "800px",
+      overflow: "hidden",
+      borderRadius: "3px",
+      color: gray,
+      margin: "0 0 12px",
+      padding: "12px 15px 7px",
+      minHeight: "32px",
+      width: "100%",
+      right: "0",
+      transition: "0.2s",
+
+      hover: {
+        boxShadow: "1px 2px 4px #D1D1D1",
+      }
+    },
+  }
 };
 
 export default Base;
