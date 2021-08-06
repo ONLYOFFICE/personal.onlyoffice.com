@@ -9,7 +9,7 @@ margin: ${(props) => props.margin || props.theme.reviewPanel.margin};
 padding: ${(props) => props.padding || props.theme.reviewPanel.padding};
 display: ${(props) => props.theme.reviewPanel.display};
 flex-direction: column;
-max-width: ${(props) => props.theme.reviewPanel.maxWidth};
+/**max-width: ${(props) => props.theme.reviewPanel.maxWidth};*/
 background-color: ${(props) => props.theme.reviewPanel.backgroundColor};
 border: ${(props) => props.theme.reviewPanel.border};
 border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
@@ -31,6 +31,7 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
 }
 
 @media ${device.tablet} {
+    width: auto;
     padding: ${(props) => props.theme.reviewPanel.padding};
     .headerReviewPanel{
         padding-bottom: ${(props) => props.theme.reviewPanel.media.device.paddingBottom};
@@ -38,7 +39,7 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
 }
 
 @media (max-width: 527px) {
-    width: 100%; 
+    width: auto; 
 }
 
 @media ${device.mobileL} {
@@ -53,9 +54,6 @@ border-radius: ${(props) => props.theme.reviewPanel.borderRadius};
     }
 }
 
-@media ${device.mobileL} {
-    width: 290px; 
-}
 `;
 
 StyledReviewPanel.defaultProps = { theme: Base };

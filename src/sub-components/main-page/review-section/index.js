@@ -21,13 +21,18 @@ data,
     return (
         <Section 
             background= {"#f9f9f9"}
-            padding= {"50px 0 200px 0"}
-            tabletPadding={"50px 0 250px 0"}
-            mobileLPadding={"50px 0 260px 0"}
+            padding= {"112px 0 230px"}
+            tabletPadding={"80px 0 270px"}
+            mobileLPadding={"48px 0 300px"}
             {...rest}
         >
             <StyledReview>
-                <Heading textAlign="center">{header}</Heading> 
+                <Heading 
+                    textAlign="center"
+                    level={3}
+                >
+                    {header}
+                </Heading> 
                 <div className="review-panel-block">            
                     {Indx.map((it) => {
                     return(<div className={`review-card`}>
@@ -47,7 +52,14 @@ data,
                         })
                     }
                 </div>          
-                <Text textAlign="center">{textFrontLink}<Link href={hrefLink}>{textLink}</Link>{textAfterLink}</Text>
+                <Text 
+                    className="review-description"
+                    textAlign="center" 
+                    fontStyle="italic" 
+                    lineHeight="160%"
+                >
+                    {textFrontLink}
+                <Link href={hrefLink}>{textLink}</Link>{textAfterLink}</Text>
             </StyledReview>
         </Section>
     );

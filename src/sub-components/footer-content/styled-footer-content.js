@@ -51,7 +51,7 @@ const StyledFooter = styled.div`
 
       .personal-footer-links {
         a {
-          margin: 0 32px 2px 0;
+          margin: 0 24px 2px 0;
         }
       }
     }
@@ -105,15 +105,18 @@ const StyledFooter = styled.div`
     }
   }
 
-  @media ${device.mobileL} {
+  @media (max-width: 572px) {
     .personal-footer {
-      max-width: 278px;
+      max-width: 90vh;
       .personal-social-links {
         justify-content: center;
-        max-width: 216px;
         margin: 0 auto;
+        max-width: 35vh;
+        p {
+          font-size: 13px !important;
+        }
         li {
-          padding: 8px;
+          padding: 12px;
         }
       }
       .item-personal-footer {
