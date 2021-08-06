@@ -1,6 +1,6 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "develop": "gatsby develop -p 9000",
@@ -9,7 +9,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 8082 -s ./static",
-    "bump": "lerna version --no-push --no-git-tag-version"
+    "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
@@ -38,7 +38,6 @@
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "i18next": "^20.3.2",
-    "lerna": "^3.22.1",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
     "prop-types": "^15.7.2",
