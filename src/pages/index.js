@@ -39,11 +39,11 @@ const IndexPage = () => {
       <Layout.SectionMain>
         <CreateSection t={t} />
         <ReviewSection 
-          header={t("Hear the web")}
-          textFrontLink={t("The user reviews are taken from ")}
+          header={t("ReviewSectionTextHeader")}
+          textFrontLink={t("ReviewSectionTextFrontLink")}
           textLink={t("Capterra.com")}
           hrefLink={t("https://www.capterra.com/")}
-          textAfterLink={t(". Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.")}
+          textAfterLink={t("ReviewSectionTextAfterLink")}
         />
       </Layout.SectionMain>
       <Layout.PageFooter>

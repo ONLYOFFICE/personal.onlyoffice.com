@@ -21,9 +21,9 @@ data,
     return (
         <Section 
             background= {"#f9f9f9"}
-            padding= {"112px 0 230px"}
-            tabletPadding={"80px 0 270px"}
-            mobileLPadding={"48px 0 300px"}
+            padding= {"112px 0"}
+            tabletPadding={"80px 0 96px"}
+            mobileLPadding={"48px 0"}
             {...rest}
         >
             <StyledReview>
