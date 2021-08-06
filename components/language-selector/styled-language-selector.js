@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 
 export default styled.div`
   width: 36px;
@@ -26,7 +26,10 @@ const StyledItemsList = styled.div`
   border: 1px solid #ccc;
   border-radius: 3px;
   grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(${(props) => props.countLanguages / 3}, auto);
+  grid-template-rows: repeat(
+    ${(props) => Math.ceil(props.countLanguages / 3)},
+    auto
+  );
   grid-auto-flow: column;
   grid-row-gap: 22px;
   grid-column-gap: 32px;
@@ -59,6 +62,7 @@ const StyledItem = styled.div`
     margin-left: 12px;
     margin-top: -5px;
     color: #333;
+    vertical-align: middle;
   }
   .title-lng:hover {
     color: #ff865c;

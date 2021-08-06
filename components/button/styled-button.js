@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 const StyledButton = styled.button`
@@ -24,8 +24,9 @@ const StyledButton = styled.button`
   min-width: ${(props) => props.minwidth || "min-content"};
 
   border: ${(props) =>
-    props.typeButton === "transparent" &&
-    props.theme.button.borderTransparentType};
+    props.typeButton === "transparent"
+      ? props.theme.button.borderTransparentType
+      : "unset"};
   border-radius: ${(props) => props.theme.button.borderRadius};
 
   font-size: ${(props) => props.fontSize || props.theme.button.fontSize};

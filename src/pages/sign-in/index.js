@@ -13,10 +13,10 @@ import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
 import SocialButtons from "../../sub-components/social-buttons";
 
-import { getSettings, login, getUser, updateUserCulture } from "../../api";
+import { getSettings, login, getUser } from "../../api";
 
 import createPasswordHash from "../../helpers/createPasswordHash";
-import languages from "../../../languages.json";
+//import languages from "../../../languages.json";
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -69,13 +69,13 @@ const SignInPage = () => {
     if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
         .then(getUser)
-        .then((user) => {
-          const currentLanguage = languages.find(
-            (el) => el.shortKey === language
-          );
-          updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
-        })
-        .then(() => (window.location.href = "/"))
+        // .then((user) => {
+        //   // const currentLanguage = languages.find(
+        //   //   (el) => el.shortKey === language
+        //   // );
+        //   // updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+        // })
+        .then(() => window.open("/", "_self"))
         .catch((e) => console.log(e));
     } else {
       console.log("not valid");
@@ -192,7 +192,7 @@ export default SignInPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import HomeSection from "../home-section";
 
 const StyledCreateSection = styled(HomeSection)`
@@ -27,6 +27,8 @@ const StyledCreateSection = styled(HomeSection)`
 
       .description {
         padding-top: 24px;
+        font-size: 22px;
+        line-height: 150%;
       }
     }
 

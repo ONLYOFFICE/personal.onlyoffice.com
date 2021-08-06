@@ -15,6 +15,8 @@ const IndexPage = () => {
     i18n: { language },
   } = useTranslation();
 
+  console.log(useTranslation());
+
   return (
     <Layout>
       <Layout.PageHead>
@@ -47,7 +49,7 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

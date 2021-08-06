@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 
 const StyledErrorContainer = styled.div`
   //background: #ffffff;

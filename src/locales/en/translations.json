@@ -79,5 +79,11 @@
   "ErrorPageButtonText": "Return to homepage",
   "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1>and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
-  "PrivacyStatement": "Privacy statement"
+  "PrivacyStatement": "Privacy statement",
+  "HomeDescription": "Highly compatible with MS Office formats",
+  "CreateSuccessfullyHeader": "Thank you for registering your Personal ONLYOFFICE.",
+  "CreateSuccessfullyDesc": "Your activation email has been sent to {{email}}. Check your email inbox to confirm the account.",
+  "CreateSuccessfullyButton": "Go to main page",
+  "RecoveryInstructions": "Please enter the email you used while registering on the portal. The password recovery instructions will be sent to that email address.",
+  "CreateFormHeader": "Create your free office"
 }

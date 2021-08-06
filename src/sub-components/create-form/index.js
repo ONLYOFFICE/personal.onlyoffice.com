@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
@@ -29,8 +30,11 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (isAcceptLicence && emailIsValid)
-      join(emailValue).catch((err) => alert(err));
-    console.log("onSubmit, valid: ", emailIsValid);
+      join(emailValue)
+        .then(() => {
+          navigate("/success", { state: { email: emailValue } });
+        })
+        .catch((err) => alert(err));
   };
 
   const additionalSection = isPanel
@@ -48,7 +52,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       };
 
   const formData = [
-    { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
+    { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
 
     {
       type: "input",
@@ -56,7 +60,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       placeholder: t("AuthDocsYourEmail"),
       callback: onEmailChangeHandler,
       value: emailValue,
-      withButton: true,
+      withButton: isPanel,
       typeButton: "primary",
       isSubmit: true,
       labelButton: t("RegistryButtonCreateNow"),
@@ -83,7 +87,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
       isDisabled: !isAcceptLicence,
-      toHideButton: true,
+      toHideButton: isPanel,
       tabIndexProp: 2,
     },
     { type: "separator", separatorText: t("AuthDocsOr") },

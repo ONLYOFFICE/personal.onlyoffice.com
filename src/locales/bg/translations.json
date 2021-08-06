@@ -65,5 +65,6 @@
   "AuthDocsSignIn": "Впиши се",
   "RegistrySettingTerms": "Приемам ONLYOFFICE <1>{{terms}}</1>и <2>{{privacy}}</2>",
   "TermAndCondition": "Общи условия",
-  "PrivacyStatement": "Декларация за поверителност"
+  "PrivacyStatement": "Декларация за поверителност",
+  "HomeDescription": "Високо съвместим с MS Office формати за документ"
 }

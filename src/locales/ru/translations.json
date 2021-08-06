@@ -81,5 +81,6 @@
   "AuthDocsFreeDesktopApp": "Скачайте {0}бесплатное десктопное приложение{1} и редактируйте файлы офлайн или подключитесь к облаку.",
   "AuthDocsWorkWithDocs": "Работайте с документами {0}на мобильных{1} в {2}приложениях ONLYOFFICE{3}.",
   "AuthFooterBlog": "Блог",
-  "HomeDescription": "Высокая совместимость с форматами MS Office"
+  "HomeDescription": "Высокая совместимость с форматами MS Office",
+  "CreateFormHeader": "Создайте бесплатное облако"
 }
