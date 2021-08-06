@@ -33,7 +33,7 @@ import Link from "../components/link";
 | `href`          |      `string`      |    -     |                  -                   |           -           | Used as HTML 'href' property                                                                |
 | `title`         |      `string`      |    -     |                  -                   |           -           | Used as HTML 'title' property                                                               |
 | `tabIndex`      |      `number`      |    -     |                  -                   |         `-1`          | link tab index                                                                              |
-| `target`        |      `string`      |    -     | `_blank`, `_self`, `_parent`, `_top` |           -           | The target attribute specifies where the linked document will open when the link is clicked |
+| `target`        |      `string`      |    -     | `_blank`, `_self`, `_parent`, `_top` |       `_blank`        | The target attribute specifies where the linked document will open when the link is clicked |
 | `color`         |      `string`      |    -     |                  -                   |           -           | link text color                                                                             |
 | `onClick`       |       `func`       |    -     |                  -                   |           -           | Accepts css style                                                                           |
 | `rel`           |      `string`      |    -     |                  -                   | `noopener noreferrer` | Attribute defines the relationship between a linked resource and the current document       |

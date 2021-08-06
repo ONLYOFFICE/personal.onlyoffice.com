@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 import { Dark } from "../themes";
 
@@ -13,19 +13,27 @@ const StyledButton = styled.button`
   text-align: ${(props) => props.theme.button.textAlign};
   text-decoration: ${(props) => props.theme.button.textDecoration};
 
+  outline: none;
+  outline-color: none;
+
+  font-family: "OpenSans", sans-serif;
+  letter-spacing: normal;
+
   height: ${(props) => props.height};
   width: ${(props) => (props.isScale ? "100%" : props.width)};
-  min-width: ${(props) => props.minwidth};
+
+  min-width: ${(props) => props.minwidth || "min-content"};
 
   border: ${(props) =>
-    props.typeButton === "transparent" &&
-    props.theme.button.borderTransparentType};
+    props.typeButton === "transparent"
+      ? props.theme.button.borderTransparentType
+      : "unset"};
   border-radius: ${(props) => props.theme.button.borderRadius};
 
-  font-size: ${(props) => props.theme.button.fontSize};
-  font-weight: ${(props) => props.theme.button.fontWeight};
+  font-size: ${(props) => props.fontSize || props.theme.button.fontSize};
+  font-weight: ${(props) => props.fontWeight || props.theme.button.fontWeight};
   text-transform: ${(props) => props.theme.button.textTransform};
-  line-height: ${(props) => props.theme.button.lineHeight};
+  line-height: ${(props) => props.lineHeight || props.theme.button.lineHeight};
 
   color: ${(props) =>
     props.typeButton === "transparent"
@@ -69,10 +77,10 @@ const StyledButton = styled.button`
 
   &:disabled {
     cursor: default;
-    opacity: 0.3;
+    opacity: ${(props) => (props.typeButton !== "primary" ? 0.3 : 1)};
     background-color: ${(props) =>
       props.typeButton === "primary"
-        ? props.theme.button.backgroundColorPrimary
+        ? "#ffd4c5"
         : props.typeButton === "transparent"
         ? "transparent"
         : props.theme.button.backgroundColorSecondary};

@@ -84,7 +84,7 @@ const SocialButtons = () => {
     const providerButtons =
       providers &&
       providers.map((item) => {
-        if (!providersData[item.provider]) return;
+        if (!providersData[item.provider]) return false;
 
         const { icon } = providersData[item.provider];
 
