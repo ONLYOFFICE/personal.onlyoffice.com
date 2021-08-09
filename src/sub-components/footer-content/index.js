@@ -31,6 +31,7 @@ const FooterContent = (props) => {
                 title={item.title}
                 rel={item.rel}
                 target="_blank"
+                key={item.title}
               >
                 <IconButton
                   iconName={item.src}

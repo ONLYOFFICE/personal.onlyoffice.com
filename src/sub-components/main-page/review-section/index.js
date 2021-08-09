@@ -13,33 +13,34 @@ const ReviewSection = ({ t, ...rest }) => {
   const linkText = "Capterra.com";
   return (
     <StyledReview
-      background={"#f9f9f9"}
-      padding={"112px 0"}
-      tabletPadding={"80px 0 96px"}
-      mobileLPadding={"48px 0"}
+      background="#f9f9f9"
+      padding="112px 0"
+      tabletPadding="80px 0 96px"
+      mobileLPadding="48px 0"
       {...rest}
     >
       <Heading textAlign="center" level={3} className="review-heading">
         {t("AuthDocsHearTheWeb")}
       </Heading>
       <div className="review-panel-block">
-        {Indx.map((it) => {
+        {Indx.map((it, index) => {
           return (
-            <div className={`review-card`}>
-              {Reviews.map(
-                (item, idx) =>
+            <div className="review-card" key={`${it}-${index}`}>
+              {Reviews.map((item, indx) => {
+                return (
                   item.indx === it && (
                     <ReviewPanel
-                      key={idx}
-                      margin={"0px"}
-                      paddingBottomHeader={"1px"}
+                      key={`${item.fullName}-${it}-${indx}`}
+                      margin="0px"
+                      paddingBottomHeader="1px"
                       className={item.className}
                       headerText={item.fullName}
                       countStar={item.rating}
                       mainText={item.review}
                     />
                   )
-              )}
+                );
+              })}
             </div>
           );
         })}

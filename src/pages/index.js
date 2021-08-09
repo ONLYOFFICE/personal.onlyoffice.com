@@ -16,8 +16,6 @@ const IndexPage = () => {
     i18n: { language },
   } = useTranslation();
 
-  console.log(useTranslation());
-
   return (
     <Layout>
       <Layout.PageHead>
