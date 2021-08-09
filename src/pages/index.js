@@ -10,6 +10,7 @@ import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import ReviewSection from "../sub-components/main-page/review-section";
 import CloudsSection from "../sub-components/main-page/clouds-section";
+import BlockquoteSection from "../sub-components/main-page/blockquote-section";
 
 const IndexPage = () => {
   const {
@@ -37,11 +38,8 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
-        <CloudsSection
-          t={t}
-          language={language}
-          textHeading={t("AuthDocsConnect")}
-        />
+        <CloudsSection textHeading={t("AuthDocsConnect")} />
+        <BlockquoteSection text={t("SoftpediaDescription")} />
         <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
