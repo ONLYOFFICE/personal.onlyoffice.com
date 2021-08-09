@@ -1,39 +1,42 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Text from "../text/index";
 import StyledInfoPanel from "./styled-info-panel";
-import ImagePanel from "./sub-components/image-panel";
-import ButtonPanel from "./sub-components/button-panel";
+import ImagesGroup from "./sub-components/images-group";
+import ButtonsGroup from "./sub-components/buttons-group";
 
+console.log(ImagesGroup, ButtonsGroup, StyledInfoPanel);
 const InfoPanel = ({
   imgLeft,
   bgColor,
   children,
   lineHeight,
-  fontSize, 
+  fontSize,
   textColor,
   textAlign,
   amountButton,
-  imgUrl, 
-  defaultImgUrl, 
+  imgUrl,
+  defaultImgUrl,
   ...rest
 }) => {
-  
-  return(
+  console.log("here");
+  return (
     <StyledInfoPanel bgColor={bgColor} imgLeft={imgLeft} {...rest}>
       <div className="infoPanelText">
-        <Text 
-          lineHeight={lineHeight || "160%"} 
-          fontSize={fontSize || "22px"} 
+        <Text
+          lineHeight={lineHeight || "160%"}
+          fontSize={fontSize || "22px"}
           color={textColor}
           textAlign={textAlign || "center"}
         >
           {children}
-        </Text>   
-        <ButtonPanel amountButton={amountButton} />  
+        </Text>
+        <ButtonsGroup amountButton={amountButton} />
       </div>
-      <ImagePanel imgUrl={imgUrl} defaultImgUrl={defaultImgUrl} />            
+      <ImagesGroup imgUrl={imgUrl} defaultImgUrl={defaultImgUrl} />
     </StyledInfoPanel>
-  )} 
+  );
+};
 
 InfoPanel.propTypes = {
   /** Position image*/
@@ -56,10 +59,4 @@ InfoPanel.propTypes = {
   textAlign: PropTypes.string,
 };
 
-InfoPanel.propTypes = {
-  amountButton: [],
-};
-
 export default InfoPanel;
-
-
