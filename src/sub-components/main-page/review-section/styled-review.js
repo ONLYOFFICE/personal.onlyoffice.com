@@ -6,9 +6,9 @@ const StyledReview = styled(HomeSection)`
   position: relative;
   margin: 0 auto;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 
-  p {
+  .review-description {
     max-width: 806px;
   }
 
@@ -62,8 +62,8 @@ const StyledReview = styled(HomeSection)`
       padding: 12px 0 8px 0;
     }
 
-    h3 {
-      font-size: 18px !important;
+    .review-heading {
+      font-size: 18px;
     }
   }
 

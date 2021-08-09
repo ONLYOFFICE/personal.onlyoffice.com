@@ -19,7 +19,7 @@ const ReviewSection = ({ t, ...rest }) => {
       mobileLPadding={"48px 0"}
       {...rest}
     >
-      <Heading textAlign="center" level={3}>
+      <Heading textAlign="center" level={3} className="review-heading">
         {t("AuthDocsHearTheWeb")}
       </Heading>
       <div className="review-panel-block">
