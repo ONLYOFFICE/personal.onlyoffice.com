@@ -13,12 +13,12 @@ const date = new Date();
 const currentYear = date.getFullYear();
 
 const FooterContent = (props) => {
-  const { t, language, footerHomePage, ...rest } = props;
+  const { t, language, isHomePage, ...rest } = props;
 
   return (
-    <StyledFooter {...rest} footerHomePage={footerHomePage}>
+    <StyledFooter {...rest} isHomePage={isHomePage}>
       <div className="personal-footer">
-        {footerHomePage && (
+        {isHomePage && (
           <ul className="personal-social-links">
             {Social.map((item, i) => (
               <li key={i}>
@@ -71,11 +71,11 @@ const FooterContent = (props) => {
 };
 
 FooterContent.propTypes = {
-  footerHomePage: PropTypes.bool,
+  isHomePage: PropTypes.bool,
 };
 
 FooterContent.defaultProps = {
-  footerHomePage: false,
+  isHomePage: false,
 };
 
 export default FooterContent;

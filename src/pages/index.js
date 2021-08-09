@@ -38,16 +38,10 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
-        <ReviewSection
-          header={t("ReviewSectionTextHeader")}
-          textFrontLink={t("ReviewSectionTextFrontLink")}
-          textLink={t("Capterra.com")}
-          hrefLink={t("https://www.capterra.com/")}
-          textAfterLink={t("ReviewSectionTextAfterLink")}
-        />
+        <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter>
-        <FooterContent t={t} footerHomePage={true} />
+        <FooterContent t={t} isHomePage />
       </Layout.PageFooter>
     </Layout>
   );

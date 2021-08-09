@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { device } from "../../../components/utils/devices";
 
 const StyledFooter = styled.div`
-  background: ${(props) => (props.footerHomePage ? "#f9f9f9" : "transparent")};
+  background: ${(props) => (props.isHomePage ? "#f9f9f9" : "transparent")};
   line-height: 160%;
   position: relative;
   padding: 0 0 40px;
