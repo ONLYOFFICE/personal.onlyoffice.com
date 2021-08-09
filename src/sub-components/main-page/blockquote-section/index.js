@@ -4,23 +4,27 @@ import Text from "../../../../components/text";
 import StyledBlockquote from "./styled-blockquote";
 
 const Blockquote = (props) => {
-  const { label, text } = props;
+  const { text } = props;
 
   return (
     <StyledBlockquote>
-      <div className="auth-quote-container">
-        <Text
-          fontSize={"24px"}
-          color={"#333333"}
-          fontWeight={"400"}
-          lineHeight={"160%"}
-        >
-          {text}
-        </Text>
-        <Link href={"#"} type={"external"} color={"#FF6F3D"}>
-          {label}
-        </Link>
-      </div>
+      <Text
+        className="blockquote-description"
+        fontSize="24px"
+        color="#333333"
+        fontWeight="400"
+        lineHeight="160%"
+        fontStyle="italic"
+      >
+        {text}
+      </Text>
+      <Link
+        className="blockquote-link"
+        href="https://webapps.softpedia.com/app/OnlyOffice-Personal/"
+        type="external"
+      >
+        Softpedia
+      </Link>
     </StyledBlockquote>
   );
 };

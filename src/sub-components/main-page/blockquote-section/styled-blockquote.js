@@ -5,61 +5,60 @@ import { device } from "../../../../components/utils/devices";
 const StyledBlockquote = styled(HomeSection)`
   display: block;
   width: 100%;
-  padding: 165px 0 112px;
+  padding: 112px 0 112px;
   text-align: center;
 
-  .auth-quote-container {
-    max-width: 772px;
-    margin: 0 auto;
+  max-width: 772px;
+  margin: 0 auto;
 
-    :before {
-      content: "";
-      background-image: url(/icons/softpedia.svg), url(/icons/blockqute.svg);
-      background-position: center 60%, top;
-      background-repeat: no-repeat;
-      display: block;
-      height: 160px;
-      margin: 0 auto -24px;
-      width: 196px;
-    }
-  }
+  :before {
+    content: "";
+    background-image: url(/icons/softpedia.svg), url(/icons/blockqute.svg);
+    background-position: center 60%, top;
+    background-repeat: no-repeat;
+    display: block;
+    height: 160px;
+    margin: 0 auto -24px;
+    width: 196px;
 
-  p {
-    font-style: italic;
-    text-align: center;
-  }
-
-  a {
-    margin-top: 32px;
-  }
-
-  @media ${device.laptop} {
-    padding: 212px 0 110px;
-  }
-
-  @media ${device.tablet} {
-    padding: 80px 0 80px;
-
-    .auth-quote-container {
-      max-width: 100%;
-    }
-
-    p {
-      font-size: 20px;
-    }
-  }
-
-  @media ${device.mobileL} {
-    padding: 48px 0 48px;
-
-    .auth-quote-container:before {
+    @media (max-width: 592px) {
       background-size: 100%, 82px 66px;
       height: 92px;
       margin-bottom: 8px;
     }
-    p {
+  }
+
+  .blockquote-description {
+    text-align: center;
+  }
+
+  .blockquote-link {
+    margin-top: 28px;
+  }
+
+  @media ${device.laptop} {
+    padding: 80px 0 82px;
+
+    .section-page {
+      max-width: 100%;
+    }
+
+    .blockquote-description {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 592px) {
+    padding: 47px 0 49px;
+
+    .blockquote-description {
       font-size: 18px;
     }
+  }
+
+  @media ${device.mobileL} {
+    background-size: 100%, 82px 66px;
+    margin-bottom: 8px;
   }
 `;
 
