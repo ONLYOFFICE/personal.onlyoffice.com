@@ -5,18 +5,18 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 
+import AdditionalSection from "../../sub-components/additional-section";
+import FooterContent from "../../sub-components/footer-content";
+import FormLink from "../../sub-components/form-link";
 import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
-import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
-import FormLink from "../../sub-components/form-link";
-import FooterContent from "../../sub-components/footer-content";
 
-import { getSettings, login, getUser, updateUserCulture } from "../../api";
+import { getSettings, login, getUser } from "../../api";
 
 import createPasswordHash from "../../helpers/createPasswordHash";
-import languages from "../../../languages.json";
+//import languages from "../../../languages.json";
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -61,20 +61,25 @@ const SignInPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+
+    if (!passwordValue || !emailValue) return;
+
     const hash = createPasswordHash(passwordValue, hashSettings);
-    emailIsValid &&
-      passwordIsValid &&
+
+    if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
         .then(getUser)
-        .then((user) => {
-          console.log(user, language);
-          const currentLanguage = languages.find(
-            (el) => el.shortKey === language
-          );
-          updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
-        })
-        .then(() => (window.location.href = "/"))
+        // .then((user) => {
+        //   // const currentLanguage = languages.find(
+        //   //   (el) => el.shortKey === language
+        //   // );
+        //   // updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+        // })
+        .then(() => window.open("/", "_self"))
         .catch((e) => console.log(e));
+    } else {
+      console.log("not valid");
+    }
   };
 
   const formData = [
@@ -86,6 +91,8 @@ const SignInPage = () => {
       placeholder: t("Email"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      tabIndexProp: 1,
+      isAutoFocussed: true,
     },
     {
       type: "input",
@@ -94,6 +101,7 @@ const SignInPage = () => {
       callback: onPasswordChangeHandler,
       value: passwordValue,
       autoComplete: "current-password",
+      tabIndexProp: 2,
     },
     {
       type: "checkbox",
@@ -108,6 +116,7 @@ const SignInPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("AuthDocsSignIn"),
+      tabIndexProp: 3,
     },
     {
       type: "other",
@@ -183,7 +192,7 @@ export default SignInPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

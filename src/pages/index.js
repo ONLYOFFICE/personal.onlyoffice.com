@@ -4,9 +4,11 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
 
+import CreateSection from "../sub-components/main-page/create-section";
+import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-import FooterContent from "../sub-components/footer-content";
+import ReviewSection from "../sub-components/main-page/review-section";
 import ConnectAnyCloud from "../sub-components/main-page/connect-any-cloud";
 
 const IndexPage = () => {
@@ -34,14 +36,16 @@ const IndexPage = () => {
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
+        <CreateSection t={t} />
         <ConnectAnyCloud 
           t={t}
           language={language}
           textHeading={t("AuthDocsConnect")}
         />
+        <ReviewSection t={t} />
       </Layout.SectionMain>
-      <Layout.PageFooter>
-        <FooterContent footerHomePage={true} t={t} />
+      <Layout.PageFooter isHomePage>
+        <FooterContent t={t} isHomePage />
       </Layout.PageFooter>
     </Layout>
   );
@@ -51,7 +55,7 @@ export default IndexPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

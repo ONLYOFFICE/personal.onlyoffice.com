@@ -1,8 +1,8 @@
-import { styled } from "@linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 import Button from "../button";
 
-const StyledButton = styled(Button)`
+const StyledButtonInput = styled(Button)`
   padding: ${(props) => props.padding || props.theme.textInput.padding};
   height: ${(props) => props.height || props.theme.textInput.height};
   width: ${(props) =>
@@ -14,8 +14,10 @@ const StyledButton = styled(Button)`
   text-overflow: ${(props) => props.theme.button.textOverflow};
   position: relative;
   float: right;
+
+  padding: 20px;
 `;
 
-StyledButton.defaultProps = { theme: Base };
+StyledButtonInput.defaultProps = { theme: Base };
 
-export default StyledButton;
+export default StyledButtonInput;

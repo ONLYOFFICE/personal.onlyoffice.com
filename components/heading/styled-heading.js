@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 import StyledText from "../text/styled-text";
 
@@ -15,6 +15,7 @@ text-decoration: ${(props) => props.textDecoration || props.theme.header.textDec
 text-align: ${(props) => props.textAlign || props.theme.header.textAlign};
 padding: ${(props) => props.padding || props.theme.header.padding};
 /*overflow: ${(props) => props.theme.header.overflow};*/
+  color: ${(props) => props.textColor || "#333"};
 `;
 
 StyledHeading.defaultProps = { theme: Base };

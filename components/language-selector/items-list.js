@@ -11,6 +11,7 @@ export default function LangsList(props) {
       {languages.map((language) => {
         const { shortKey, iconName, key } = language;
         const languageName = t ? t(key) : key;
+
         return (
           <StyledItem key={key}>
             <Link to={shortKey !== "en" ? `/${shortKey}` : "/"}>

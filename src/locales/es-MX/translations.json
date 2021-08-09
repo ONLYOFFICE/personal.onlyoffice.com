@@ -43,10 +43,10 @@
   "PersonalLogin": "Acceso a la cuenta",
   "RegistryButtonCreateNow": "Crear ahora",
   "RegistrySettingSpam": "Quiero suscribirme al boletín de ONLYOFFICE",
-  "RegistrySettingTerms": "Acepto los {0}Términos y condiciones{1} de ONLYOFFICE y {2}Declaración de privacidad {3}",
+  "RegistrySettingTerms": "Acepto los <1>{{terms}}</1>de ONLYOFFICE y <2>{{privacy}}</2>",
   "AuthDocsAlready": "¿Ya tiene una cuenta?",
   "AuthDocsConnect": "Conecta cualquier nube",
-  "AuthDocsDisclaimer": "Las reseñas de los usuarios provienen de {0}Capterra.com{1}. Las reseñas de Capterra son opiniones subjetivas de usuarios finales individuales basadas en sus propias experiencias y no representan los puntos de vista de Capterra o sus afiliados.",
+  "AuthDocsDisclaimer": "Las reseñas de los usuarios provienen de <1>{{linkText}}</1>. Las reseñas de Capterra son opiniones subjetivas de usuarios finales individuales basadas en sus propias experiencias y no representan los puntos de vista de Capterra o sus afiliados.",
   "AuthDocsDontHave": "¿No tienes cuenta?",
   "AuthDocsDownload": "Descargar",
   "AuthDocsHearTheWeb": "Escucha la web",
@@ -71,5 +71,8 @@
   "AuthDocsAccessQuickly": "Accede a ONLYOFFICE Personal rápidamente.",
   "AuthDocsFreeDesktopApp": "Descárgate {0}la aplicación gratuita de escritorio{1} para editar archivos sin conexión o conectarte a tu nube.",
   "AuthDocsWorkWithDocs": "Trabaja con documentos sobre la marcha usando {0}las aplicaciones ONLYOFFICE Documents{1}.",
-  "AuthDocsToMainPage": "Ir a la página principal"
+  "AuthDocsToMainPage": "Ir a la página principal",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Todos los derechos reservados",
+  "TermsOfService": "Términos del servicio",
+  "CorporateUse": "Uso corporativo"
 }

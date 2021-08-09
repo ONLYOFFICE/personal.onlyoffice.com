@@ -1,4 +1,4 @@
-import { styled } from "@linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 const StyledInput = styled.div`
@@ -16,6 +16,13 @@ const StyledInput = styled.div`
       (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
       (props.isError && props.theme.textInput.borderColorError) ||
       props.theme.textInput.label.colorHover};
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
 `;
 

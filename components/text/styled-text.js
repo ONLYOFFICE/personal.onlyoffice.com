@@ -1,9 +1,9 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 const StyledText = styled.p`
   color: ${(props) => props.color || props.theme.text.textColor};
-
+  font-style: ${(props) => props.fontStyle || "normal"};
   font-size: ${(props) => props.fontSize || props.theme.text.fontSize};
   font-weight: ${(props) => props.fontWeight || props.theme.text.fontWeight};
   text-transform: ${(props) =>

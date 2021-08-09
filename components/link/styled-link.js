@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 import Text from "../text";
@@ -25,6 +25,8 @@ const StyledLink = styled(Text)`
     text-decoration: ${(props) =>
       props.hoverTextDecoration || props.theme.a.hoverTextDecoration};
   }
+
+  outline: none;
 `;
 
 StyledLink.defaultProps = { theme: Base };

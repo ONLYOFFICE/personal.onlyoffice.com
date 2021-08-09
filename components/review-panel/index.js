@@ -13,13 +13,13 @@ const ReviewPanel = ({
   mainText, 
   ...rest}) => {
   return (
-        <StyledReviewPanel {...rest}>
+        <StyledReviewPanel {...rest} className={className}>
           <div className={"headerReviewPanel"}>
             <Text 
               fontSize="13px" 
               fontWeight="700" 
               style={styledHeaderText}
-                >
+            >
                 {headerText}
             </Text>
             <Rating countStar={countStar} />
@@ -28,7 +28,7 @@ const ReviewPanel = ({
             fontSize="16px"
             lineHeight="26px" 
             style={styledMainText}
-            >
+          >
               {mainText}
           </Text>
         </StyledReviewPanel>
