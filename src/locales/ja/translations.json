@@ -46,7 +46,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "あらゆるクラウドに対応",
-  "AuthDocsDisclaimer": "ユーザーレビューは{0}Capterra.com{1}から引用されています。Capterraのレビューは、個々のエンドユーザーの経験に基づく主観的な意見であり、Capterraまたはその関連会社の見解を示すものではありません。",
+  "AuthDocsDisclaimer": "ユーザーレビューは<1>{{linkText}}</1>から引用されています。Capterraのレビューは、個々のエンドユーザーの経験に基づく主観的な意見であり、Capterraまたはその関連会社の見解を示すものではありません。",
   "AuthDocsDownload": "ダウンロード",
   "AuthDocsHearTheWeb": "ウェブで試す",
   "AuthDocsLogIn": "ログイン",
@@ -66,5 +66,8 @@
   "AuthDocsUsingChrome": "クイックアクセスのためのChrome拡張機能をご利用ください。",
   "AuthDocsFreeDesktopApp": "{0}無料のデスクトップアプリ{1}をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
   "Email": "メール",
-  "AuthDocsSignIn": "にサインイン"
+  "AuthDocsSignIn": "にサインイン",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 版権所有",
+  "TermsOfService": "利用規約",
+  "CorporateUse": "共同利用"
 }

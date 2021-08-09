@@ -2,7 +2,7 @@
   "AuthDocsAlready": "Já possui conta?",
   "AuthDocsCheckEmail": "Verifique a sua caixa de entrada para confirmar a conta.",
   "AuthDocsConnect": "Conecte qualquer nuvem",
-  "AuthDocsDisclaimer": "As revisões dos usuários são retiradas do {0}Capterra.com{1}. As revisões da Capterra constituem as opiniões subjetivas dos usuários finais individuais baseadas em suas próprias experiências e não representam as opiniões da Capterra ou de suas afiliadas.",
+  "AuthDocsDisclaimer": "As revisões dos usuários são retiradas do <1>{{linkText}}</1>. As revisões da Capterra constituem as opiniões subjetivas dos usuários finais individuais baseadas em suas próprias experiências e não representam as opiniões da Capterra ou de suas afiliadas.",
   "AuthDocsDontHave": "Não possui uma conta?",
   "AuthDocsDownload": "Baixar",
   "AuthDocsEmailHint": "Iserir seu endereço de e-mail",
@@ -74,5 +74,8 @@
   "AuthDocsLogIn": "Entrar",
   "AuthDocsAccessQuickly": "Acesse ONLYOFFICE pessoal rapidamente.",
   "AuthDocsFreeDesktopApp": "Baixe o {0}app de desktop gratuito{1} para editar arquivos offline ou se conectar à sua nuvem.",
-  "AuthDocsWorkWithDocs": "Trabalhe em documentos {0}on-the-go{1} com {2}ONLYOFFICE Documentos de solicitação{3}."
+  "AuthDocsWorkWithDocs": "Trabalhe em documentos {0}on-the-go{1} com {2}ONLYOFFICE Documentos de solicitação{3}.",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Todos os direitos reservados",
+  "TermsOfService": "Termos de Serviço",
+  "CorporateUse": "Uso empresarial"
 }

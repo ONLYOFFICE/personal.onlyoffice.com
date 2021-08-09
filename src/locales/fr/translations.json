@@ -45,7 +45,7 @@
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsAlready": "Avez-vous un compte déjà ?",
   "AuthDocsConnect": "Connectez un cloud",
-  "AuthDocsDisclaimer": "Les avis des utilisateurs ont été récupérés depuis {0}Capterra.com{1}. Les avis sur Capterra sont des opinions subjectives publiées par les utilisateurs finaux en se basant sur leur propre expérience et ne reflètent pas les avis de Capterra et de ses affiliés.",
+  "AuthDocsDisclaimer": "Les avis des utilisateurs ont été récupérés depuis <1>{{linkText}}</1>. Les avis sur Capterra sont des opinions subjectives publiées par les utilisateurs finaux en se basant sur leur propre expérience et ne reflètent pas les avis de Capterra et de ses affiliés.",
   "AuthDocsDontHave": "Vous n'avez pas de compte ?",
   "AuthDocsDownload": "Télécharger",
   "AuthDocsHearTheWeb": "Avis utilisateurs",
@@ -73,5 +73,8 @@
   "AuthDocsToMainPage": "Passer à la page principale",
   "RegistrySettingTerms": "J'accept les <1>{{terms}}</1>d'ONLYOFFICE et la <2>{{privacy}}</2>",
   "TermAndCondition": "Termes et conditions",
-  "PrivacyStatement": "Déclarations de confidentialité"
+  "PrivacyStatement": "Déclarations de confidentialité",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tous droits réservés",
+  "TermsOfService": "Conditions d'utilisation",
+  "CorporateUse": "Utilisation en entreprise"
 }
