@@ -40,7 +40,7 @@ const IndexPage = () => {
         <CreateSection t={t} />
         <ReviewSection t={t} />
       </Layout.SectionMain>
-      <Layout.PageFooter>
+      <Layout.PageFooter isHomePage>
         <FooterContent t={t} isHomePage />
       </Layout.PageFooter>
     </Layout>
