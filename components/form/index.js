@@ -14,12 +14,17 @@ const Form = (props) => {
   const { isPanel, formData, submitForm } = props;
 
   const onSubmitHandler = (e) => {
-    submitForm && submitForm(e);
+    submitForm(e);
   };
 
+  const onKeyDownHandler = (e) => {
+    if (e.which === 13) {
+      onSubmitHandler(e);
+    }
+  };
   const formElements = [];
 
-  formData.map((item, indx) => {
+  formData.forEach((item, indx) => {
     switch (item.type) {
       case "heading":
         formElements.push(
@@ -66,17 +71,24 @@ const Form = (props) => {
             {item.separatorText}
           </Separator>
         );
+        break;
       case "other":
         formElements.push(item.element);
+        break;
       default:
         break;
     }
   });
 
-  const itemsCount = formElements.length;
+  const itemsCount = formElements && formElements.length;
 
   return (
-    <StyledForm {...props} itemsCount={itemsCount} onSubmit={onSubmitHandler}>
+    <StyledForm
+      {...props}
+      itemsCount={itemsCount}
+      onSubmit={onSubmitHandler}
+      onKeyDown={onKeyDownHandler}
+    >
       {formElements}
     </StyledForm>
   );

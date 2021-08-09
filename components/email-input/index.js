@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import StyledEmailInput from "./styled-email-input";
 import TextInput from "../text-input";
@@ -13,9 +13,11 @@ const EmailInput = ({
   isErrText,
   onChange,
   type,
+  autoComplete,
   ...rest
 }) => {
-  const REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  //TODO: use email-addresses package
+  const REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const [email, setEmail] = useState("");
   const [valid, setValid] = useState("");
@@ -44,7 +46,7 @@ const EmailInput = ({
     }
   };
 
-  const onFocus = () => {
+  const onFocus = useCallback(() => {
     if (valid) {
       setEmailDefault(false);
       setEmailSuccess(true);
@@ -53,11 +55,11 @@ const EmailInput = ({
       setEmailError(false);
       setEmailSuccess(false);
     }
-  };
+  }, [valid]);
 
   useEffect(() => {
     onFocus(valid, email);
-  }, [valid, email]);
+  }, [valid, email, onFocus]);
 
   return (
     <StyledEmailInput {...rest} onBlur={onBlur} onFocus={onFocus}>
@@ -68,6 +70,7 @@ const EmailInput = ({
         isError={emailError || isError}
         value={email}
         onChange={onChangeHandler}
+        autoComplete={autoComplete}
         {...rest}
       />
       {isErrText && (

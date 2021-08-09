@@ -9,7 +9,6 @@ const {
   graySecnodary,
   gray,
   grayTextInput,
-  grayTextInputHover,
   grayLight,
 } = globalColors;
 const Base = {
@@ -67,7 +66,7 @@ const Base = {
     textColorSecondaryType: graySecnodary,
     textColorSecondaryTypeHover: gray,
 
-    backgroundColor: "transparent",
+    backgroundColor: "#fff",
     backgroundColorPrimaryHover: white,
     backgroundColorDisabled: "#F9F9F9",
     backgroundColorSuccess: "#F9FEEF",
@@ -87,7 +86,6 @@ const Base = {
     boxShadow: "none",
     width: "100%",
     height: "56px",
-    width: "100%",
     padding: "0 16px",
     margin: "0",
     overflow: "auto",

@@ -1,19 +1,21 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop -p 9000",
+    "start": "gatsby develop -p 9000",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "storybook": "start-storybook -p 8082 -s ./static"
+    "storybook": "start-storybook -p 8082 -s ./static",
+    "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.13.2",
     "browserify-zlib": "^0.2.0",
     "gatsby": "^3.9.0",
     "gatsby-cli": "^3.9.0",
@@ -22,7 +24,6 @@
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.9.0",
-    "gatsby-plugin-linaria": "^2.2.0",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-portal": "^1.0.7",
@@ -31,12 +32,12 @@
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-plugin-sitemap": "^4.5.0",
+    "gatsby-plugin-styled-components": "^4.11.0",
     "gatsby-plugin-typescript": "^3.9.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "i18next": "^20.3.2",
-    "linaria": "^3.0.0-beta.3",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -45,6 +46,8 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.1",
     "react-svg": "^14.0.3",
+    "sjcl": "^1.0.8",
+    "styled-components": "^5.3.0",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
