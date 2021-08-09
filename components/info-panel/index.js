@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Text from "../text/index";
 import StyledInfoPanel from "./styled-info-panel";
 import ImagePanel from "./sub-components/image-panel";

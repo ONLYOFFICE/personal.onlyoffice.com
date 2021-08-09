@@ -10,6 +10,11 @@ const {
   gray,
   grayTextInput,
   grayLight,
+
+  activeSuccess,
+  activeError,
+  hoverSuccess,
+  hoverError,
 } = globalColors;
 const Base = {
   button: {
@@ -162,7 +167,7 @@ const Base = {
   },
 
   reviewPanel: {
-    margin: "16px",
+    margin: "8px",
     padding: "24px",
     paddingBottom: "7px",
     display: "flex",
@@ -190,6 +195,11 @@ const Base = {
     lineHeight: ["74px", "53px", "38px", "32px", "24px", "19px", "19px"],
     fontWeight: 700,
     overflow: "auto",
+    color: gray,
+    textTransform: "none",
+    textDecoration: "none",
+    textAlign: "left",
+    padding: "0px",
   },
 
   form: {
@@ -200,6 +210,74 @@ const Base = {
   },
 
   socialButton: {},
+
+  toastr: {
+    svg: {
+      width: "24px",
+      minWidth: "24px",
+      height: "24px",
+      minHeight: "24px",
+      color: grayTextInput,
+      marginRight: "11px",
+    },
+
+    title: {
+      wordWrap: "break-word",
+      fontSize: "12px",
+      margin: "0px",
+      lineHeight: "24px",
+      cursor: "pointer",
+      userSelect: "none",
+      color: grayTextInput,
+    },
+  },
+
+  toast: {
+    active: {
+      success: activeSuccess,
+      error: activeError,
+    },
+    hover: {
+      success: hoverSuccess,
+      error: hoverError,
+    },
+
+    zIndex: "9999",
+    width: "365px",
+    color: white,
+    top: "60px",
+    right: "12px",
+    marginTop: "0px",
+
+    closeButton: {
+      color: white,
+      fontWeight: "700",
+      fontSize: "14px",
+      background: "transparent",
+      padding: "0px",
+      opacity: "0.7",
+      hoverOpacity: "1",
+      transition: "0.3s ease",
+    },
+
+    main: {
+      marginBottom: "1rem",
+      maxHeight: "800px",
+      overflow: "hidden",
+      borderRadius: "3px",
+      color: gray,
+      margin: "0 0 12px",
+      padding: "12px 15px 7px",
+      minHeight: "32px",
+      width: "100%",
+      right: "0",
+      transition: "0.2s",
+
+      hover: {
+        boxShadow: "1px 2px 4px #D1D1D1",
+      }
+    },
+  }
 
   infoPanel: {
     display: "flex",

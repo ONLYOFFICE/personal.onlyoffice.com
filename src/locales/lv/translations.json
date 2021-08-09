@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Izveidojiet savienojumu ar jebkuru mākoni",
-  "AuthDocsDisclaimer": "Lietotāju atsauksmes ir ņemtas no vietnes {0}Capterra.com{1}. “Capterra” pārskati ir individuālu galalietotāju subjektīvie viedokļi no viņu pašu pieredzes, un tie neatspoguļo “Capterra” vai tā saistīto uzņēmumu viedokli.",
+  "AuthDocsDisclaimer": "Lietotāju atsauksmes ir ņemtas no vietnes <1>{{linkText}}</1>. “Capterra” pārskati ir individuālu galalietotāju subjektīvie viedokļi no viņu pašu pieredzes, un tie neatspoguļo “Capterra” vai tā saistīto uzņēmumu viedokli.",
   "AuthDocsDownload": "Lejupielādēt",
   "AuthDocsHearTheWeb": "Kas par to sakāms tīmeklī",
   "AuthDocsLogIn": "Pieteikties",
@@ -56,5 +56,9 @@
   "AuthDocsSubtitle": "Ļoti saderīgs ar MS Office dokumentu formātiem",
   "AuthDocsUsingChrome": "Lai ātri piekļūtu, iegūstiet Chrome paplašinājumu.",
   "CreatePersonalButton": "Izveidojiet bezmaksas biroju",
-  "AuthDocsSignIn": "Pierakstīties"
+  "AuthDocsSignIn": "Pierakstīties",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Visas tiesības paturētas",
+  "TermsOfService": "Lietošanas nosacījumi",
+  "CorporateUse": "Korporatīvā lietošana",
+  "SoftpediaDescription": "ONLYOFFICE Personal ir tiešsaistes redaktors ar nepieciešamajiem rīkiem, lai izveidotu Microsoft saderīgus dokumentus, izklājlapas un prezentācijas, kā arī sadarbotos ar darba grupas locekļiem."
 }

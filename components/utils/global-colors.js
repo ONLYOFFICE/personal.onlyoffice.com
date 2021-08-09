@@ -14,6 +14,12 @@ const globalColors = {
   greenMain: "#F9FEEF",
 
   grayLight: "#CCCCCC",
+
+  activeSuccess: "#CAE796",
+  activeError: "#FFBFAA",
+
+  hoverSuccess: "#BCDf7E",
+  hoverError: "#FFA98D",
 };
 
 export default globalColors;

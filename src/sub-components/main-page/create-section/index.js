@@ -1,10 +1,10 @@
 import React from "react";
 
-import Heading from "../../../components/heading";
-import Text from "../../../components/text";
+import Heading from "../../../../components/heading";
+import Text from "../../../../components/text";
 
 import StyledCreateSection from "./styled-create-section";
-import CreateForm from "../create-form";
+import CreateForm from "../../create-form";
 
 const CreateSection = ({ t }) => {
   return (

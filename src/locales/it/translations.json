@@ -48,7 +48,7 @@
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsAlready": "Sei già registrato?",
   "AuthDocsConnect": "Connetti qualsiasi cloud",
-  "AuthDocsDisclaimer": "Le recensioni degli utenti sono tratte da {0}Capterra.com{1}. Le recensioni su Capterra esprimono i punti di vista soggettivi degli utenti finali basati sulla loro esperienza personale e non rappresentano il punto di vista di Capterra o suoi affiliati.",
+  "AuthDocsDisclaimer": "Le recensioni degli utenti sono tratte da <1>{{linkText}}</1>. Le recensioni su Capterra esprimono i punti di vista soggettivi degli utenti finali basati sulla loro esperienza personale e non rappresentano il punto di vista di Capterra o suoi affiliati.",
   "AuthDocsDownload": "Scarica",
   "AuthDocsHearTheWeb": "Ascolta il web",
   "AuthDocsOnlineDesktopMobile": "Online, Desktop & Mobile",
@@ -67,5 +67,9 @@
   "AuthDocsAccessQuickly": "Accedi ONLYOFFICE personal subito.",
   "AuthDocsFreeDesktopApp": "Scarica {0}applicazione su desktop gratuita{1} per modificare i file offline o connettere al tuo cloud.",
   "AuthDocsWorkWithDocs": "Lavora con i documenti {0}on-the-go{1} con {2}le applicazioni ONLYOFFICE Documents{3}.",
-  "AuthDocsSignIn": "Accedi"
+  "AuthDocsSignIn": "Accedi",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tutti i diritti riservati",
+  "TermsOfService": "Termini di servizio",
+  "CorporateUse": "Uso aziendale",
+  "SoftpediaDescription": "ONLYOFFICE Personal è un editor online che confeziona i strumenti necessari per creare documenti, fogli di calcolo e presentazioni compatibili con Microsoft e lavorare in collaborazione in tempo reale."
 }
