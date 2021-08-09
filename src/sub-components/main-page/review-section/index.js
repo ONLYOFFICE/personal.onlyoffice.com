@@ -6,60 +6,57 @@ import Heading from "../../../../components/heading";
 import Text from "../../../../components/text";
 import Link from "../../../../components/link";
 
-import Section from "../../home-section";
 import StyledReview from "./styled-review";
 import { Reviews, Indx } from "./sub-components/review";
 
 const ReviewSection = ({ t, ...rest }) => {
   const linkText = "Capterra.com";
   return (
-    <Section
+    <StyledReview
       background={"#f9f9f9"}
       padding={"112px 0"}
       tabletPadding={"80px 0 96px"}
       mobileLPadding={"48px 0"}
       {...rest}
     >
-      <StyledReview>
-        <Heading textAlign="center" level={3}>
-          {t("AuthDocsHearTheWeb")}
-        </Heading>
-        <div className="review-panel-block">
-          {Indx.map((it) => {
-            return (
-              <div className={`review-card`}>
-                {Reviews.map(
-                  (item, idx) =>
-                    item.indx === it && (
-                      <ReviewPanel
-                        key={idx}
-                        margin={"0px"}
-                        paddingBottomHeader={"1px"}
-                        className={item.className}
-                        headerText={item.fullName}
-                        countStar={item.rating}
-                        mainText={item.review}
-                      />
-                    )
-                )}
-              </div>
-            );
-          })}
-        </div>
+      <Heading textAlign="center" level={3}>
+        {t("AuthDocsHearTheWeb")}
+      </Heading>
+      <div className="review-panel-block">
+        {Indx.map((it) => {
+          return (
+            <div className={`review-card`}>
+              {Reviews.map(
+                (item, idx) =>
+                  item.indx === it && (
+                    <ReviewPanel
+                      key={idx}
+                      margin={"0px"}
+                      paddingBottomHeader={"1px"}
+                      className={item.className}
+                      headerText={item.fullName}
+                      countStar={item.rating}
+                      mainText={item.review}
+                    />
+                  )
+              )}
+            </div>
+          );
+        })}
+      </div>
 
-        <Text
-          className="review-description"
-          textAlign="center"
-          fontStyle="italic"
-          lineHeight="160%"
-        >
-          <Trans i18nKey="AuthDocsDisclaimer" linkText="Capterra.com">
-            The user reviews are taken from
-            <Link href="https://www.capterra.com/">{{ linkText }}</Link>
-          </Trans>
-        </Text>
-      </StyledReview>
-    </Section>
+      <Text
+        className="review-description"
+        textAlign="center"
+        fontStyle="italic"
+        lineHeight="160%"
+      >
+        <Trans i18nKey="AuthDocsDisclaimer" linkText="Capterra.com">
+          The user reviews are taken from
+          <Link href="https://www.capterra.com/">{{ linkText }}</Link>
+        </Trans>
+      </Text>
+    </StyledReview>
   );
 };
 
