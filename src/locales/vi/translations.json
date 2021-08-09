@@ -57,5 +57,8 @@
   "AuthDocsUsingChrome": "Tải tiện ích mở rộng của Chrome để truy cập nhanh.",
   "CreatePersonalButton": "Tạo văn phòng miễn phí",
   "AuthDocsFreeDesktopApp": "Tải xuống ứng {0}dụng miễn phí dành cho máy tính{1} để giúp chỉnh sửa tài liệu khi ngoại tuyến hoặc kết nối với đám mây của bạn.",
-  "AuthDocsSignIn": "Đăng nhập"
+  "AuthDocsSignIn": "Đăng nhập",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Bảo lưu mọi quyền",
+  "TermsOfService": "Điều khoản dịch vụ",
+  "CorporateUse": "Sử dụng cho Doanh nghiệp"
 }

@@ -83,5 +83,7 @@
   "AuthFooterBlog": "Блог",
   "HomeDescription": "Высокая совместимость с форматами MS Office",
   "CreateFormHeader": "Создайте бесплатное облако",
-  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Все права защищены"
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Все права защищены",
+  "TermsOfService": "Условия использования",
+  "CorporateUse": "Корпоративное использование"
 }

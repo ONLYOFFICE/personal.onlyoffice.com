@@ -56,5 +56,8 @@
   "CreatePersonalButton": "Vytvoření bezplatné kanceláře",
   "AuthDocsFreeDesktopApp": "Pracujte s dokumenty na cestách s {0}bezplatnou aplikací{1} Dokumenty ONLYOFFICE.",
   "AuthDocsLogIn": "Přihlásit se",
-  "AuthDocsSignIn": "Přihlásit se"
+  "AuthDocsSignIn": "Přihlásit se",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Všechna práva vyhrazena",
+  "TermsOfService": "Podmínky použití",
+  "CorporateUse": "Firemní použití"
 }

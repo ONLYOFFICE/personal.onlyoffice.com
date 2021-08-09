@@ -57,5 +57,8 @@
   "AuthDocsUsingChrome": "Pobierz rozszerzenie dla Chrome, aby uzyskać szybki dostęp.",
   "CreatePersonalButton": "Utwórz bezpłatne biuro",
   "AuthDocsFreeDesktopApp": "Pobierz {0}darmową aplikację komputerową{1}, aby edytować pliki offline lub połączyć się ze swoją chmurą.",
-  "AuthDocsSignIn": "Zaloguj się"
+  "AuthDocsSignIn": "Zaloguj się",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Wszelkie prawa zastrzeżone",
+  "TermsOfService": "Warunki usługi",
+  "CorporateUse": "Korporacyjne użytkowanie"
 }

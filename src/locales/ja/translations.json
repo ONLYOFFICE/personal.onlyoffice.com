@@ -66,5 +66,8 @@
   "AuthDocsUsingChrome": "クイックアクセスのためのChrome拡張機能をご利用ください。",
   "AuthDocsFreeDesktopApp": "{0}無料のデスクトップアプリ{1}をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
   "Email": "メール",
-  "AuthDocsSignIn": "にサインイン"
+  "AuthDocsSignIn": "にサインイン",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 版権所有",
+  "TermsOfService": "利用規約",
+  "CorporateUse": "共同利用"
 }

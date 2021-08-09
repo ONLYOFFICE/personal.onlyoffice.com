@@ -56,5 +56,8 @@
   "AuthDocsSubtitle": "MS Office belge formatlarıyla son derece uyumlu",
   "CreatePersonalButton": "Ücretsiz ofis oluşturun",
   "AuthDocsFreeDesktopApp": "Dosyaları çevrimdışı düzenlemek veya bulutunuza bağlanmak için {0}ücretsiz masaüstü uygulamasını{1} indirin.",
-  "AuthDocsSignIn": "Giriş Yap"
+  "AuthDocsSignIn": "Giriş Yap",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tüm hakları saklıdır",
+  "TermsOfService": "Hizmet Şartları",
+  "CorporateUse": "Kurumsal Kullanım"
 }

@@ -75,5 +75,8 @@
   "AuthFooterBlog": "Blog",
   "AuthDocsToLogin": "Zum Einloggen",
   "AuthDocsToMainPage": "Zur Hauptseite",
-  "AuthDocsLogIn": "Anmelden"
+  "AuthDocsLogIn": "Anmelden",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle Rechte vorbehalten",
+  "TermsOfService": "Nutzungsbedingungen",
+  "CorporateUse": "Unternehmenseinsatz"
 }

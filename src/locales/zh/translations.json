@@ -60,5 +60,8 @@
   "CreatePersonalButton": "创建免费办公室",
   "AuthDocsFreeDesktopApp": "下载{0}免费桌面版应用{1}以离线编辑或连接至云端。",
   "Email": "电子邮件",
-  "AuthDocsSignIn": "登录"
+  "AuthDocsSignIn": "登录",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 保留所有权利",
+  "TermsOfService": "服务条款",
+  "CorporateUse": "公司使用"
 }

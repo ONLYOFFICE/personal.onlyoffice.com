@@ -57,5 +57,8 @@
   "AuthDocsUsingChrome": "Získajte rozšírenie pre Chrome, ktoré Vám zabezpečí rýchly prístup.",
   "CreatePersonalButton": "Vytvorte si kanceláriu zadarmo",
   "AuthDocsFreeDesktopApp": "Stiahnite si {0}bezplatnú aplikáciu{1} pre počítač a upravujte súbory offline alebo sa pripojte k Vášmu cloudu.",
-  "AuthDocsSignIn": "Prihlásiť sa"
+  "AuthDocsSignIn": "Prihlásiť sa",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Všetky práva vyhradené",
+  "TermsOfService": "Podmienky používania",
+  "CorporateUse": "Firemné použitie"
 }

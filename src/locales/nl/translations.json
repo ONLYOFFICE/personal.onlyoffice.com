@@ -57,5 +57,8 @@
   "AuthDocsUsingChrome": "Download de Chrome extensie voor snelle toegang.",
   "CreatePersonalButton": "Maak gratis office",
   "AuthDocsFreeDesktopApp": "Download {0}gratis desktop app{1} om bestanden offline te bewerken of maak verbinding met uw cloud.",
-  "AuthDocsSignIn": "Inloggen"
+  "AuthDocsSignIn": "Inloggen",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle rechten voorbehouden",
+  "TermsOfService": "Servicevoorwaarden",
+  "CorporateUse": "Zakelijk Gebruik"
 }

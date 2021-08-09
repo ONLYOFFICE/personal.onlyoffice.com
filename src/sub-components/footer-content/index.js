@@ -47,14 +47,14 @@ const FooterContent = (props) => {
               href={`https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4543205&doc=VXlOK1NnMVdIYStuSFpMeFR4UVpmNE5VS3VTdENYdU50WjJ5Unh0OERiUT0_IjQ1NDMyMDUi0`}
               target="_blank"
             >
-              {t("Terms of Service")}
+              {t("TermsOfService")}
             </CustomLink>
             <CustomLink
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
             >
-              {t("Corporate Use")}
+              {t("CorporateUse")}
             </CustomLink>
           </div>
           <Text color="#444444" className="personal-footer_rights">

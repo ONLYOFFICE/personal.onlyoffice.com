@@ -56,5 +56,8 @@
   "AuthDocsSubtitle": "Ļoti saderīgs ar MS Office dokumentu formātiem",
   "AuthDocsUsingChrome": "Lai ātri piekļūtu, iegūstiet Chrome paplašinājumu.",
   "CreatePersonalButton": "Izveidojiet bezmaksas biroju",
-  "AuthDocsSignIn": "Pierakstīties"
+  "AuthDocsSignIn": "Pierakstīties",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Visas tiesības paturētas",
+  "TermsOfService": "Lietošanas nosacījumi",
+  "CorporateUse": "Korporatīvā lietošana"
 }

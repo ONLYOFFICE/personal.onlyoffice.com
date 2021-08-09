@@ -58,5 +58,8 @@
   "CreatePersonalButton": "Створити безкоштовний офіс",
   "AuthDocsFreeDesktopApp": "Завантажте {0}безкоштовну настільну програму{1}, щоб редагувати файли в автономному режимі або підключатися до своєї хмари.",
   "Email": "Електронна пошта",
-  "AuthDocsSignIn": "Вхід"
+  "AuthDocsSignIn": "Вхід",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Усі права захищені",
+  "TermsOfService": "Умови обслуговування",
+  "CorporateUse": "Корпоративне використання"
 }

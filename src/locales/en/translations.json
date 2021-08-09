@@ -89,5 +89,7 @@
   "ReviewSectionTextHeader": "Hear the web",
   "ReviewSectionTextFrontLink": "The user reviews are taken from ",
   "ReviewSectionTextAfterLink": ". Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
-  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. All rights reserved"
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. All rights reserved",
+  "TermsOfService": "Terms of Service",
+  "CorporateUse": "Corporate Use"
 }
