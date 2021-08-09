@@ -1,5 +1,5 @@
 import React from "react";
-import Blockquote from "./sub-components/blockquote";
+import Blockquote from "../sub-components/blockquote-section";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
@@ -38,6 +38,10 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
+        <Blockquote
+          label={t("Softpedia")}
+          text={t("SoftpediaDescription")}
+        ></Blockquote>
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />

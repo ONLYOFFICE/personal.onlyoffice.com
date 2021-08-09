@@ -1,12 +1,12 @@
-import { styled } from "linaria/react";
-import { device, size } from "../../../components/utils/devices";
+import styled from "styled-components"
+import HomeSection from "../home-section";
+import { device } from "../../../components/utils/devices";
 
-const StyledBlockquote = styled.section`
+const StyledBlockquote = styled(HomeSection)`
   display: block;
   width: 100%;
   padding: 165px 0 112px;
   text-align: center;
-  background-color: ${(props) => (props.bgColor || "transparent")};
 
   .auth-quote-container{
     max-width: 772px;
@@ -14,9 +14,7 @@ const StyledBlockquote = styled.section`
 
     :before{
         content: '';
-        background-image: ${(props) => props.bgImage 
-            ? `url(${props.bgLogo}), url(${props.bgImage})` 
-            : `url(${props.bgLogo}), url(icons/blockqute.svg)`};
+        background-image: url(/icons/softpedia.svg), url(/icons/blockqute.svg);
         background-position: center 60%,top;
         background-repeat: no-repeat;
         display: block;
@@ -45,7 +43,6 @@ const StyledBlockquote = styled.section`
 
     .auth-quote-container{
       max-width: 100%;
-      padding: 0 40px;
     }
 
     p{

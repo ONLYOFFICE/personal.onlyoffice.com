@@ -5,16 +5,12 @@ import StyledBlockquote from "./styled-blockquote";
 
 const Blockquote = (props) => {
     const {
-        bgImage,
-        bgLogo,
-        bgColor,
-        buttonHref,
         label,
         text,
       } = props;
 
     return (
-    <StyledBlockquote bgColor={bgColor} bgImage={bgImage} bgLogo={bgLogo}>
+    <StyledBlockquote>
         <div className="auth-quote-container">
             <Text
                 fontSize={"24px"}
@@ -25,7 +21,7 @@ const Blockquote = (props) => {
                 {text}
             </Text>
             <Link 
-                to={buttonHref}
+                href={"#"}
                 type={"external"}
                 color={"#FF6F3D"}>
                 {label}
