@@ -9,6 +9,7 @@ import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import ReviewSection from "../sub-components/main-page/review-section";
+import CloudsSection from "../sub-components/main-page/clouds-section";
 
 const IndexPage = () => {
   const {
@@ -36,6 +37,11 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
+        <CloudsSection
+          t={t}
+          language={language}
+          textHeading={t("AuthDocsConnect")}
+        />
         <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
