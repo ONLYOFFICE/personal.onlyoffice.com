@@ -68,6 +68,7 @@ const StyledReview = styled(HomeSection)`
   }
 
   @media (max-width: 578px) {
+    padding-bottom: 68px;
     .review-panel-block {
       display: grid;
       grid-template-columns: 1fr;

@@ -16,28 +16,30 @@ const FooterContent = (props) => {
   const { t, language, isHomePage, ...rest } = props;
 
   return (
-    <StyledFooter {...rest} isHomePage={isHomePage}>
+    <StyledFooter
+      {...rest}
+      isHomePage={isHomePage}
+      countSocialLink={Social.length}
+    >
       <div className="personal-footer">
         {isHomePage && (
-          <ul className="personal-social-links">
+          <div className="personal-social-links">
             {Social.map((item, i) => (
-              <li key={i}>
-                <CustomLink
-                  className={item.className}
-                  href={item.href}
-                  title={item.title}
-                  rel={item.rel}
-                  target="_blank"
-                >
-                  <IconButton
-                    iconName={item.src}
-                    size={item.size}
-                    grayed={item.filter}
-                  />
-                </CustomLink>
-              </li>
+              <CustomLink
+                className={item.className}
+                href={item.href}
+                title={item.title}
+                rel={item.rel}
+                target="_blank"
+              >
+                <IconButton
+                  iconName={item.src}
+                  size={item.size}
+                  grayed={item.filter}
+                />
+              </CustomLink>
             ))}
-          </ul>
+          </div>
         )}
         <div className="item-personal-footer">
           <div className="personal-footer-links">
@@ -50,6 +52,7 @@ const FooterContent = (props) => {
               {t("TermsOfService")}
             </CustomLink>
             <CustomLink
+              className="personal-footer-link"
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
@@ -57,7 +60,11 @@ const FooterContent = (props) => {
               {t("CorporateUse")}
             </CustomLink>
           </div>
-          <Text color="#444444" className="personal-footer_rights">
+          <Text
+            color="#444444"
+            className="personal-footer_rights"
+            fontSize="14px"
+          >
             {t("CopyrightAndRights", { currentYear })}
             <span style={{ color: "#f9f9f9" }}>{
               //TODO: deleted before release
