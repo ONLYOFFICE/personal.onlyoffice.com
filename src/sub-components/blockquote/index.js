@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "../../../../components/link"
-import Text from "../../../../components/text";
+import Link from "../../../components/link"
+import Text from "../../../components/text";
 import StyledBlockquote from "./styled-blockquote";
 
 const Blockquote = (props) => {

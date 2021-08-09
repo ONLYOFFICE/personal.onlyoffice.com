@@ -1,5 +1,5 @@
 import { styled } from "linaria/react";
-import { device, size } from "../../../../components/utils/devices";
+import { device, size } from "../../../components/utils/devices";
 
 const StyledBlockquote = styled.section`
   display: block;
