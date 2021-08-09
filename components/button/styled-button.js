@@ -52,7 +52,7 @@ const StyledButton = styled.button`
       : props.typeButton === "transparent"
       ? "transparent"
       : props.theme.button.backgroundColorSecondary};
-  
+
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
@@ -63,8 +63,7 @@ const StyledButton = styled.button`
         ? "transparent"
         : props.theme.button.backgroundColorSecondaryHover)};
     border-color: ${(props) =>
-      props.borderColorHover ||
-      props.typeButton === "transparent" &&
+      (props.borderColorHover || props.typeButton === "transparent") &&
       props.theme.button.borderColorHover};
     color: ${(props) =>
       props.textColorHover ||
@@ -100,8 +99,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const themeButton = props => props.themeButton ? Base : Dark;
+const themeButton = (props) => (props.themeButton ? Base : Dark);
 
-StyledButton.defaultProps = { theme:  themeButton};
+StyledButton.defaultProps = { theme: themeButton };
 
 export default StyledButton;

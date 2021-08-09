@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import packages from "../../../package.json";
 
-import Link from "../../../components/link";
+import CustomLink from "../../../components/link";
 import IconButton from "../../../components/icon-button";
 import Text from "../../../components/text";
 
@@ -44,22 +44,22 @@ const FooterContent = (props) => {
         )}
         <div className="item-personal-footer">
           <div className="personal-footer-links">
-            <Link
+            <CustomLink
               className="personal-footer-link"
               color="#444444"
               href={`https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4543205&doc=VXlOK1NnMVdIYStuSFpMeFR4UVpmNE5VS3VTdENYdU50WjJ5Unh0OERiUT0_IjQ1NDMyMDUi0`}
               target="_blank"
             >
               {t("TermsOfService")}
-            </Link>
-            <Link
+            </CustomLink>
+            <CustomLink
               className="personal-footer-link"
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
             >
               {t("CorporateUse")}
-            </Link>
+            </CustomLink>
           </div>
           <Text
             color="#444444"

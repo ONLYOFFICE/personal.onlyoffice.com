@@ -6,10 +6,18 @@ import { ReactSVG } from "react-svg";
 import { Base } from "../themes";
 import { Dark } from "../themes";
 const Icon = ({ icon }) => {
-  return <ReactSVG src={icon} className="btn-with-icon"/>;
+  return <ReactSVG src={icon} className="btn-with-icon" />;
 };
 
-const Button = ({ label, isDisabled, icon, themeButton, isSubmit, isScale, ...rest }) => {
+const Button = ({
+  label,
+  isDisabled,
+  icon,
+  themeButton,
+  isSubmit,
+  isScale,
+  ...rest
+}) => {
   const theme = useTheme(themeButton ? Base : Dark);
 
   return (
