@@ -9,6 +9,7 @@ import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import ReviewSection from "../sub-components/main-page/review-section";
+import Blockquote from "../sub-components/main-page/blockquote-section";
 
 const IndexPage = () => {
   const {
@@ -36,6 +37,7 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
+        <Blockquote label={t("Softpedia")} text={t("SoftpediaDescription")} />
         <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
