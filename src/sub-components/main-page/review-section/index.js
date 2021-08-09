@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 import ReviewPanel from "../../../../components/review-panel";
 import Heading from "../../../../components/heading";
@@ -7,14 +8,10 @@ import Link from "../../../../components/link";
 
 import Section from "../../home-section";
 import StyledReview from "./styled-review";
-import { Review, Indx } from "./sub-components/review";
+import { Reviews, Indx } from "./sub-components/review";
 
-const ReviewSection = ({
-  t,
-
-  data,
-  ...rest
-}) => {
+const ReviewSection = ({ t, ...rest }) => {
+  const linkText = "Capterra.com";
   return (
     <Section
       background={"#f9f9f9"}
@@ -25,13 +22,13 @@ const ReviewSection = ({
     >
       <StyledReview>
         <Heading textAlign="center" level={3}>
-          {t("ReviewSectionTextHeader")}
+          {t("AuthDocsHearTheWeb")}
         </Heading>
         <div className="review-panel-block">
           {Indx.map((it) => {
             return (
               <div className={`review-card`}>
-                {Review.map(
+                {Reviews.map(
                   (item, idx) =>
                     item.indx === it && (
                       <ReviewPanel
@@ -49,15 +46,17 @@ const ReviewSection = ({
             );
           })}
         </div>
+
         <Text
           className="review-description"
           textAlign="center"
           fontStyle="italic"
           lineHeight="160%"
         >
-          {t("ReviewSectionTextFrontLink")}
-          <Link href="https://www.capterra.com/">{t("Capterra.com")}</Link>
-          {t("ReviewSectionTextAfterLink")}
+          <Trans i18nKey="AuthDocsDisclaimer" linkText="Capterra.com">
+            The user reviews are taken from
+            <Link href="https://www.capterra.com/">{{ linkText }}</Link>
+          </Trans>
         </Text>
       </StyledReview>
     </Section>
