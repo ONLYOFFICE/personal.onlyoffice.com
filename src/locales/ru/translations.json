@@ -74,7 +74,7 @@
   "PasswordRecovery": "Восстановление пароля",
   "RecoveryInstructions": "Пожалуйста, введите адрес электронной почты, указанный при регистрации на портале. Инструкции для восстановления пароля будут отправлены на этот адрес электронной почты.",
   "Send": "Отправить",
-  "AuthDocsDisclaimer": "Отзывы взяты с сайта {0}Capterra.com{1}. Они представляют собой субъективные мнения отдельных конечных пользователей и не отражают точку зрения Capterra.",
+  "AuthDocsDisclaimer": "Отзывы взяты с сайта <1>{{linkText}}</1>. Они представляют собой субъективные мнения отдельных конечных пользователей и не отражают точку зрения Capterra.",
   "AuthDocsHearTheWeb": "Отзывы пользователей",
   "AuthDocsOnlineDesktopMobile": "Онлайн, десктопные и мобильные приложения",
   "AuthDocsAccessQuickly": "Получите быстрый доступ к ONLYOFFICE Personal.",
@@ -82,5 +82,8 @@
   "AuthDocsWorkWithDocs": "Работайте с документами {0}на мобильных{1} в {2}приложениях ONLYOFFICE{3}.",
   "AuthFooterBlog": "Блог",
   "HomeDescription": "Высокая совместимость с форматами MS Office",
-  "CreateFormHeader": "Создайте бесплатное облако"
+  "CreateFormHeader": "Создайте бесплатное облако",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Все права защищены",
+  "TermsOfService": "Условия использования",
+  "CorporateUse": "Корпоративное использование"
 }

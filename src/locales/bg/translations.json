@@ -44,7 +44,7 @@
   "RegistryButtonCreateNow": "Създайте сега",
   "RegistrySettingSpam": "Искам да се абонирам за бюлетина на ONLYOFFICE",
   "AuthDocsConnect": "Свържете се с всеки облак",
-  "AuthDocsDisclaimer": "Потребителските рецензии са взети от {0}Capterra.com{1}. Capterra рецензиите констатират субективното мнение на отделни потребители на база на личния им опит, не представляват възгледите на Capterra или служителите му.",
+  "AuthDocsDisclaimer": "Потребителските рецензии са взети от <1>{{linkText}}</1>. Capterra рецензиите констатират субективното мнение на отделни потребители на база на личния им опит, не представляват възгледите на Capterra или служителите му.",
   "AuthDocsDownload": "Изтегли",
   "AuthDocsHearTheWeb": "Чуйте мрежата",
   "AuthDocsLogIn": "Влизам",
@@ -66,5 +66,8 @@
   "RegistrySettingTerms": "Приемам ONLYOFFICE <1>{{terms}}</1>и <2>{{privacy}}</2>",
   "TermAndCondition": "Общи условия",
   "PrivacyStatement": "Декларация за поверителност",
-  "HomeDescription": "Високо съвместим с MS Office формати за документ"
+  "HomeDescription": "Високо съвместим с MS Office формати за документ",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Всички права запазени",
+  "TermsOfService": "Условия за ползване",
+  "CorporateUse": "Корпоративно ползване"
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HomeSection from "../home-section";
+import HomeSection from "../../home-section";
 
 const StyledCreateSection = styled(HomeSection)`
   background-image: url("/background-homepage.svg");

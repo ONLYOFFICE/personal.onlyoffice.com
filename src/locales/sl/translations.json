@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Povežite v oblak",
-  "AuthDocsDisclaimer": "Ocene uporabnikov so privzete is {0}Capterra.com{1}. Ocene Capterra predstavljajo subjektivna mnenja posameznih uporabnikov na podlagi njihovih lastnih izkušenj in ne predstavljajo stališč družbe Capterra ali njenih povezanih podjetij.",
+  "AuthDocsDisclaimer": "Ocene uporabnikov so privzete is <1>{{linkText}}</1>. Ocene Capterra predstavljajo subjektivna mnenja posameznih uporabnikov na podlagi njihovih lastnih izkušenj in ne predstavljajo stališč družbe Capterra ali njenih povezanih podjetij.",
   "AuthDocsDownload": "Prenos",
   "AuthDocsHearTheWeb": "Poslušaj splet",
   "AuthDocsLogIn": "Prijava",
@@ -57,5 +57,8 @@
   "AuthDocsUsingChrome": "Dobite Chrome razširitev za hiter dostop.",
   "CreatePersonalButton": "Ustvari brezplačno pisarno",
   "AuthDocsFreeDesktopApp": "Prenesite {0}brezplačno namizno aplikacijo{1} za urejanje datotek brez povezave ali s povezavo z oblakom.",
-  "AuthDocsSignIn": "Vpiši se"
+  "AuthDocsSignIn": "Vpiši se",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Vse pravice so pridržane",
+  "TermsOfService": "Pogoji uporabe",
+  "CorporateUse": "Korporativna uporaba"
 }

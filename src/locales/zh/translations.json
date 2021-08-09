@@ -41,7 +41,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "连接云服务",
-  "AuthDocsDisclaimer": "用户评论摘自{0}Capterra.com{1}。Capterra评论仅代表个人最终用户基于自身经验的主观意见，不代表Capterra或其附属公司的观点。",
+  "AuthDocsDisclaimer": "用户评论摘自<1>{{linkText}}</1>。Capterra评论仅代表个人最终用户基于自身经验的主观意见，不代表Capterra或其附属公司的观点。",
   "AuthDocsDownload": "下载",
   "AuthDocsHearTheWeb": "聆听网络之声",
   "AuthDocsLogIn": "登录",
@@ -60,5 +60,8 @@
   "CreatePersonalButton": "创建免费办公室",
   "AuthDocsFreeDesktopApp": "下载{0}免费桌面版应用{1}以离线编辑或连接至云端。",
   "Email": "电子邮件",
-  "AuthDocsSignIn": "登录"
+  "AuthDocsSignIn": "登录",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 保留所有权利",
+  "TermsOfService": "服务条款",
+  "CorporateUse": "公司使用"
 }

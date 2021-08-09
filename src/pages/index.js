@@ -4,18 +4,17 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
 
-import CreateSection from "../sub-components/create-section";
+import CreateSection from "../sub-components/main-page/create-section";
 import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
+import ReviewSection from "../sub-components/main-page/review-section";
 
 const IndexPage = () => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
-
-  console.log(useTranslation());
 
   return (
     <Layout>
@@ -37,9 +36,10 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
+        <ReviewSection t={t} />
       </Layout.SectionMain>
-      <Layout.PageFooter>
-        <FooterContent footerHomePage={true} t={t} />
+      <Layout.PageFooter isHomePage>
+        <FooterContent t={t} isHomePage />
       </Layout.PageFooter>
     </Layout>
   );
