@@ -82,5 +82,6 @@
   "AuthDocsWorkWithDocs": "Работайте с документами {0}на мобильных{1} в {2}приложениях ONLYOFFICE{3}.",
   "AuthFooterBlog": "Блог",
   "HomeDescription": "Высокая совместимость с форматами MS Office",
-  "CreateFormHeader": "Создайте бесплатное облако"
+  "CreateFormHeader": "Создайте бесплатное облако",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Все права защищены"
 }

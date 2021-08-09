@@ -47,22 +47,20 @@ const FooterContent = (props) => {
               href={`https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4543205&doc=VXlOK1NnMVdIYStuSFpMeFR4UVpmNE5VS3VTdENYdU50WjJ5Unh0OERiUT0_IjQ1NDMyMDUi0`}
               target="_blank"
             >
-              {props.TermsOfService}
+              {t("Terms of Service")}
             </CustomLink>
             <CustomLink
               color="#444444"
               href={`https://www.onlyoffice.com`}
               target="_blank"
             >
-              {props.CorpseUse}
+              {t("Corporate Use")}
             </CustomLink>
           </div>
           <Text color="#444444" className="personal-footer_rights">
-            {props.SystemSIA} {currentYear}.{" "}
-            {props.AllRight}{" "}
+            {t("CopyrightAndRights", { currentYear })}
             <span style={{ color: "#f9f9f9" }}>{
               //TODO: deleted before release
-
               `(v.${packages.version})`
             }</span>
           </Text>

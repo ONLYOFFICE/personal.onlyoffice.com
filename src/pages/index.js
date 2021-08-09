@@ -38,7 +38,7 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
-        <ReviewSection 
+        <ReviewSection
           header={t("ReviewSectionTextHeader")}
           textFrontLink={t("ReviewSectionTextFrontLink")}
           textLink={t("Capterra.com")}
@@ -47,14 +47,7 @@ const IndexPage = () => {
         />
       </Layout.SectionMain>
       <Layout.PageFooter>
-        <FooterContent 
-          footerHomePage={true} 
-          t={t} 
-          TermsOfService={t("Terms of Service")}
-          CorpseUse={t("Corporate Use")}
-          SystemSIA={t("© Ascensio System SIA")}
-          AllRight={t("All rights reserved")}
-        />
+        <FooterContent t={t} footerHomePage={true} />
       </Layout.PageFooter>
     </Layout>
   );
