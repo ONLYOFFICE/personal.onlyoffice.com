@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Pripojte sa k akémukoľvek cloudu",
-  "AuthDocsDisclaimer": "Recenzie používateľov sú prevzaté z webu {0}Capterra.com{1}. Recenzie spoločnosti Capterra predstavujú subjektívne názory jednotlivých koncových používateľov na základe ich vlastných skúseností a nereprezentujú názory spoločnosti Capterra alebo jej pridružených spoločností.",
+  "AuthDocsDisclaimer": "Recenzie používateľov sú prevzaté z webu <1>{{linkText}}</1>. Recenzie spoločnosti Capterra predstavujú subjektívne názory jednotlivých koncových používateľov na základe ich vlastných skúseností a nereprezentujú názory spoločnosti Capterra alebo jej pridružených spoločností.",
   "AuthDocsDownload": "Stiahnuť",
   "AuthDocsHearTheWeb": "Čo sa hovorí na webe",
   "AuthDocsLogIn": "Prihlásiť sa",

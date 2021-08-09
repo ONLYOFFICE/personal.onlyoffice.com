@@ -2,7 +2,7 @@
   "AuthDocsAlready": "Já possui conta?",
   "AuthDocsCheckEmail": "Verifique a sua caixa de entrada para confirmar a conta.",
   "AuthDocsConnect": "Conecte qualquer nuvem",
-  "AuthDocsDisclaimer": "As revisões dos usuários são retiradas do {0}Capterra.com{1}. As revisões da Capterra constituem as opiniões subjetivas dos usuários finais individuais baseadas em suas próprias experiências e não representam as opiniões da Capterra ou de suas afiliadas.",
+  "AuthDocsDisclaimer": "As revisões dos usuários são retiradas do <1>{{linkText}}</1>. As revisões da Capterra constituem as opiniões subjetivas dos usuários finais individuais baseadas em suas próprias experiências e não representam as opiniões da Capterra ou de suas afiliadas.",
   "AuthDocsDontHave": "Não possui uma conta?",
   "AuthDocsDownload": "Baixar",
   "AuthDocsEmailHint": "Iserir seu endereço de e-mail",

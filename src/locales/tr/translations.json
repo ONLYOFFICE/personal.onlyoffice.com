@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "İstediğiniz buluta bağlanın",
-  "AuthDocsDisclaimer": "Kullanıcı yorumları {0}Capterra.com{1}'dan alınmıştır. Capterra incelemeleri, bireysel son kullanıcıların kendi deneyimlerine dayalı öznel görüşlerini oluşturur ve Capterra veya iştiraklerinin görüşlerini temsil etmez.",
+  "AuthDocsDisclaimer": "Kullanıcı yorumları <1>{{linkText}}</1>'dan alınmıştır. Capterra incelemeleri, bireysel son kullanıcıların kendi deneyimlerine dayalı öznel görüşlerini oluşturur ve Capterra veya iştiraklerinin görüşlerini temsil etmez.",
   "AuthDocsDownload": "İndir",
   "AuthDocsHearTheWeb": "Web’e kulak verin",
   "AuthDocsLogIn": "Giriş",

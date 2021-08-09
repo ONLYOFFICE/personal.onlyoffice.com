@@ -41,7 +41,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "连接云服务",
-  "AuthDocsDisclaimer": "用户评论摘自{0}Capterra.com{1}。Capterra评论仅代表个人最终用户基于自身经验的主观意见，不代表Capterra或其附属公司的观点。",
+  "AuthDocsDisclaimer": "用户评论摘自<1>{{linkText}}</1>。Capterra评论仅代表个人最终用户基于自身经验的主观意见，不代表Capterra或其附属公司的观点。",
   "AuthDocsDownload": "下载",
   "AuthDocsHearTheWeb": "聆听网络之声",
   "AuthDocsLogIn": "登录",

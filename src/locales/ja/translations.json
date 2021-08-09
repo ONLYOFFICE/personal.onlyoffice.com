@@ -46,7 +46,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "あらゆるクラウドに対応",
-  "AuthDocsDisclaimer": "ユーザーレビューは{0}Capterra.com{1}から引用されています。Capterraのレビューは、個々のエンドユーザーの経験に基づく主観的な意見であり、Capterraまたはその関連会社の見解を示すものではありません。",
+  "AuthDocsDisclaimer": "ユーザーレビューは<1>{{linkText}}</1>から引用されています。Capterraのレビューは、個々のエンドユーザーの経験に基づく主観的な意見であり、Capterraまたはその関連会社の見解を示すものではありません。",
   "AuthDocsDownload": "ダウンロード",
   "AuthDocsHearTheWeb": "ウェブで試す",
   "AuthDocsLogIn": "ログイン",

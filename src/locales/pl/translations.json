@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Połącz z dowolną chmurą",
-  "AuthDocsDisclaimer": "Recenzje użytkowników pochodzą ze strony {0}Capterra.com{1}. Recenzje opublikowane na stronie Capterra stanowią subiektywną opinię indywidualnych użytkowników końcowych wyrażoną na podstawie własnego doświadczenia i nie odzwierciedlają poglądów firmy Capterra ani jej podmiotów zależnych.",
+  "AuthDocsDisclaimer": "Recenzje użytkowników pochodzą ze strony <1>{{linkText}}</1>. Recenzje opublikowane na stronie Capterra stanowią subiektywną opinię indywidualnych użytkowników końcowych wyrażoną na podstawie własnego doświadczenia i nie odzwierciedlają poglądów firmy Capterra ani jej podmiotów zależnych.",
   "AuthDocsDownload": "Pobierz",
   "AuthDocsHearTheWeb": "Co na to Internet?",
   "AuthDocsLogIn": "Zaloguj się",

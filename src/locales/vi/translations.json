@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Kết nối với bất kỳ đám mây nào",
-  "AuthDocsDisclaimer": "Các đánh giá của người dùng được lấy từ {0}Capterra.com{1}. Các đánh giá của Capterra là nhận xét chủ quan của người dùng cuối dựa trên trải nghiệm của chính họ và không đại diện cho quan điểm của Capterra hoặc các cộng tác viên của Capterra.",
+  "AuthDocsDisclaimer": "Các đánh giá của người dùng được lấy từ <1>{{linkText}}</1>. Các đánh giá của Capterra là nhận xét chủ quan của người dùng cuối dựa trên trải nghiệm của chính họ và không đại diện cho quan điểm của Capterra hoặc các cộng tác viên của Capterra.",
   "AuthDocsDownload": "Tải về",
   "AuthDocsHearTheWeb": "Hãy xem người khác nói gì về trang web",
   "AuthDocsLogIn": "Đăng nhập",

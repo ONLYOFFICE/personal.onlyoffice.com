@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Verbind elke cloud",
-  "AuthDocsDisclaimer": "De gebruikersrecensies zijn afkomstig van {0}Capterra.com{1}. Capterra recensies zijn de subjectieve meningen van individuele eindgebruikers gebaseerd op hun eigen ervaringen en vertegenwoordigen niet de standpunten van Capterra of haar dochterondernemingen.",
+  "AuthDocsDisclaimer": "De gebruikersrecensies zijn afkomstig van <1>{{linkText}}</1>}. Capterra recensies zijn de subjectieve meningen van individuele eindgebruikers gebaseerd op hun eigen ervaringen en vertegenwoordigen niet de standpunten van Capterra of haar dochterondernemingen.",
   "AuthDocsDownload": "Download",
   "AuthDocsHearTheWeb": "Hoor het internet",
   "AuthDocsLogIn": "Inloggen",

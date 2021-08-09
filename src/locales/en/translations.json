@@ -30,7 +30,7 @@
   "AuthDocsAlready": "Already have account?",
   "AuthDocsCheckEmail": "Check your email inbox to confirm the account.",
   "AuthDocsConnect": "Connect any cloud",
-  "AuthDocsDisclaimer": "The user reviews are taken from {0}Capterra.com{1}. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
+  "AuthDocsDisclaimer": "The user reviews are taken from <1>{{linkText}}</1>. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
   "AuthDocsDontHave": "Don't have an account?",
   "AuthDocsDownload": "Download",
   "AuthDocsEmailHint": "Enter your email address",
@@ -86,9 +86,6 @@
   "CreateSuccessfullyButton": "Go to main page",
   "RecoveryInstructions": "Please enter the email you used while registering on the portal. The password recovery instructions will be sent to that email address.",
   "CreateFormHeader": "Create your free office",
-  "ReviewSectionTextHeader": "Hear the web",
-  "ReviewSectionTextFrontLink": "The user reviews are taken from ",
-  "ReviewSectionTextAfterLink": ". Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. All rights reserved",
   "TermsOfService": "Terms of Service",
   "CorporateUse": "Corporate Use"

@@ -48,7 +48,7 @@
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsAlready": "Sei già registrato?",
   "AuthDocsConnect": "Connetti qualsiasi cloud",
-  "AuthDocsDisclaimer": "Le recensioni degli utenti sono tratte da {0}Capterra.com{1}. Le recensioni su Capterra esprimono i punti di vista soggettivi degli utenti finali basati sulla loro esperienza personale e non rappresentano il punto di vista di Capterra o suoi affiliati.",
+  "AuthDocsDisclaimer": "Le recensioni degli utenti sono tratte da <1>{{linkText}}</1>. Le recensioni su Capterra esprimono i punti di vista soggettivi degli utenti finali basati sulla loro esperienza personale e non rappresentano il punto di vista di Capterra o suoi affiliati.",
   "AuthDocsDownload": "Scarica",
   "AuthDocsHearTheWeb": "Ascolta il web",
   "AuthDocsOnlineDesktopMobile": "Online, Desktop & Mobile",
