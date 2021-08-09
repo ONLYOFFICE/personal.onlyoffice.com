@@ -17,6 +17,8 @@ Text.propTypes = {
   fontSize: PropTypes.string,
   /**   text font-weight */
   fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**   text font style*/
+  fontStyle: PropTypes.string,
   /**   text line height */
   lineHeight: PropTypes.string,
   /**   text-transform*/

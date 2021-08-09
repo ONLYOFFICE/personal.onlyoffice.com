@@ -48,7 +48,7 @@
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsAlready": "Sie haben bereits ein Konto?",
   "AuthDocsConnect": "Jede Cloud verbinden",
-  "AuthDocsDisclaimer": "Diese Bewertungen wurden auf {0}Capterra.com{1} veröffentlicht und stellen individuelle Meinungen von Endkunden dar. Diese basieren auf ihren persönlichen Erfahrungen und vertreten Meinungen von Capterra oder den Partnern nicht.",
+  "AuthDocsDisclaimer": "Diese Bewertungen wurden auf <1>{{linkText}}</1> veröffentlicht und stellen individuelle Meinungen von Endkunden dar. Diese basieren auf ihren persönlichen Erfahrungen und vertreten Meinungen von Capterra oder den Partnern nicht.",
   "AuthDocsDontHave": "Haben Sie noch kein Konto?",
   "AuthDocsDownload": "Herunterladen",
   "AuthDocsHearTheWeb": "Bewertungen von Benutzer/innen",
@@ -75,5 +75,9 @@
   "AuthFooterBlog": "Blog",
   "AuthDocsToLogin": "Zum Einloggen",
   "AuthDocsToMainPage": "Zur Hauptseite",
-  "AuthDocsLogIn": "Anmelden"
+  "AuthDocsLogIn": "Anmelden",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle Rechte vorbehalten",
+  "TermsOfService": "Nutzungsbedingungen",
+  "CorporateUse": "Unternehmenseinsatz",
+  "SoftpediaDescription": "ONLYOFFICE Personal ist ein Online-Editor mit allen notwendigen Tools für gemeinsame Erstellung von Dokumenten, Tabellenkalkulationen und Präsentationen. Die höchste Kompatibilität mit Microsoft-Formaten ist garantiert."
 }

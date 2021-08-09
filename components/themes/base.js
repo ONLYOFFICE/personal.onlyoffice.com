@@ -167,7 +167,7 @@ const Base = {
   },
 
   reviewPanel: {
-    margin: "16px",
+    margin: "8px",
     padding: "24px",
     paddingBottom: "7px",
     display: "flex",
@@ -195,6 +195,11 @@ const Base = {
     lineHeight: ["74px", "53px", "38px", "32px", "24px", "19px", "19px"],
     fontWeight: 700,
     overflow: "auto",
+    color: gray,
+    textTransform: "none",
+    textDecoration: "none",
+    textAlign: "left",
+    padding: "0px",
   },
 
   form: {

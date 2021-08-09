@@ -33,7 +33,7 @@
   "AuthDocsAlready": "Already have account?",
   "AuthDocsCheckEmail": "Check your email inbox to confirm the account.",
   "AuthDocsConnect": "Connect any cloud",
-  "AuthDocsDisclaimer": "The user reviews are taken from {0}Capterra.com{1}. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
+  "AuthDocsDisclaimer": "The user reviews are taken from <1>{{linkText}}</1>. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
   "AuthDocsDontHave": "Don't have an account?",
   "AuthDocsDownload": "Download",
   "AuthDocsEmailHint": "Enter your email address",
