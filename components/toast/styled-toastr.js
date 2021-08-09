@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Base from "../themes/base";
 
 const IconWrapper = styled.div`
-align-self: end;
-display: flex;
+  align-self: start;
+  display: flex;
   svg {
     width: ${(props) => props.theme.toastr.svg.width};
     min-width: ${(props) => props.theme.toastr.svg.minWidth};
@@ -16,7 +16,7 @@ display: flex;
 IconWrapper.defaultProps = { theme: Base };
 
 const StyledDiv = styled.div`
- .toast-title {
+  .toast-title {
     -ms-word-wrap: ${(props) => props.theme.toastr.title.wordWrap};
     word-wrap: ${(props) => props.theme.toastr.title.wordWrap};
     font-size: ${(props) => props.theme.toastr.title.fontSize};
@@ -33,4 +33,4 @@ const StyledDiv = styled.div`
 `;
 StyledDiv.defaultProps = { theme: Base };
 
-export {StyledDiv, IconWrapper };
+export { StyledDiv, IconWrapper };

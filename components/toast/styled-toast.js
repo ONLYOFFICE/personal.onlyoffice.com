@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { device } from "../utils/devices";
 import Base from "../themes/base";
 
 const StyledToast = styled(ToastContainer)`
   z-index: ${(props) => props.theme.toast.zIndex};
-  -webkit-transform: translateZ(9999px);
+  transform: translateZ(9999px);
   position: fixed;
   width: ${(props) => props.theme.toast.width};
   box-sizing: border-box;
@@ -14,7 +14,7 @@ const StyledToast = styled(ToastContainer)`
   right: ${(props) => props.theme.toast.right};
   margin-top: ${(props) => props.theme.toast.marginTop};
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  
+
   .Toastify__progress-bar--animated {
     animation: Toastify__trackProgress linear 1 forwards;
   }
@@ -24,7 +24,7 @@ const StyledToast = styled(ToastContainer)`
     flex: 1;
   }
   .Toastify__close-button {
-    color: ${(props) => props.theme.toast.closeButton.color}; 
+    color: ${(props) => props.theme.toast.closeButton.color};
     font-weight: ${(props) => props.theme.toast.closeButton.fontWeight};
     font-size: ${(props) => props.theme.toast.closeButton.fontSize};
     background: ${(props) => props.theme.toast.closeButton.background};
@@ -40,6 +40,10 @@ const StyledToast = styled(ToastContainer)`
   .Toastify__close-button:focus,
   .Toastify__close-button:hover {
     opacity: ${(props) => props.theme.toast.closeButton.hoverOpacity};
+  }
+
+  .Toastify__close-button {
+    display: none;
   }
   @keyframes SlideIn {
     from {
@@ -105,9 +109,9 @@ const StyledToast = styled(ToastContainer)`
     right: ${(props) => props.theme.toast.main.right};
     transition: ${(props) => props.theme.toast.main.transition};
 
-    &:hover{
-        box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
-        -webkit-box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
+    &:hover {
+      box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
+      -webkit-box-shadow: ${(props) => props.theme.toast.main.hover.boxShadow};
     }
 
     @media ${device.tablet} {

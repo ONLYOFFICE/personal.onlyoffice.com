@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
-import Button from "../../components/button";
 
 import CreateSection from "../sub-components/main-page/create-section";
 import FooterContent from "../sub-components/footer-content";
@@ -12,8 +11,6 @@ import HeaderContent from "../sub-components/header-content";
 import ReviewSection from "../sub-components/main-page/review-section";
 import CloudsSection from "../sub-components/main-page/clouds-section";
 import BlockquoteSection from "../sub-components/main-page/blockquote-section";
-import Toast from "../../components/toast";
-import toastr from "../../components/toast/toastr";
 
 const IndexPage = () => {
   const {
@@ -38,13 +35,9 @@ const IndexPage = () => {
           href="sign-in"
           labelButton={t("AuthDocsLogIn")}
         />
-        <Toast/>
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <Button
-          label="go toast!"
-          onClick = {() => toastr.success(t("MetaDescriptionOg"))}
-        ></Button>
+        <CreateSection t={t} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
         <BlockquoteSection text={t("SoftpediaDescription")} />
         <ReviewSection t={t} />
