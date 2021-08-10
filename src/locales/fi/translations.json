@@ -58,5 +58,9 @@
   "AuthDocsAccessQuickly": "Access ONLYOFFICE personal quickly.",
   "AuthDocsFreeDesktopApp": "Lataa {0}ilmainen työpöytäsovellus{1}, jos haluat muokata tiedostoja offline-tilassa tai muodostaa yhteyden pilveen.",
   "Email": "Sähköposti",
-  "AuthDocsSignIn": "Kirjaudu sisään"
+  "AuthDocsSignIn": "Kirjaudu sisään",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Kaikki oikeudet pidätetään",
+  "TermsOfService": "Palvelun Käyttöehdot",
+  "CorporateUse": "Yrityskäyttö",
+  "SoftpediaDescription": "ONLYOFFICE Personal on online-editori, joka sisältää tarvittavat työkalut, joilla voi luoda Microsoft-yhteensopivia asiakirjoja, taulukoita, esityksiä sekä yhteistyöhön ryhmän jäsenten kanssa."
 }

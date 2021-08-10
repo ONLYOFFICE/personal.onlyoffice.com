@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Verbind elke cloud",
-  "AuthDocsDisclaimer": "De gebruikersrecensies zijn afkomstig van {0}Capterra.com{1}. Capterra recensies zijn de subjectieve meningen van individuele eindgebruikers gebaseerd op hun eigen ervaringen en vertegenwoordigen niet de standpunten van Capterra of haar dochterondernemingen.",
+  "AuthDocsDisclaimer": "De gebruikersrecensies zijn afkomstig van <1>{{linkText}}</1>}. Capterra recensies zijn de subjectieve meningen van individuele eindgebruikers gebaseerd op hun eigen ervaringen en vertegenwoordigen niet de standpunten van Capterra of haar dochterondernemingen.",
   "AuthDocsDownload": "Download",
   "AuthDocsHearTheWeb": "Hoor het internet",
   "AuthDocsLogIn": "Inloggen",
@@ -57,5 +57,9 @@
   "AuthDocsUsingChrome": "Download de Chrome extensie voor snelle toegang.",
   "CreatePersonalButton": "Maak gratis office",
   "AuthDocsFreeDesktopApp": "Download {0}gratis desktop app{1} om bestanden offline te bewerken of maak verbinding met uw cloud.",
-  "AuthDocsSignIn": "Inloggen"
+  "AuthDocsSignIn": "Inloggen",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle rechten voorbehouden",
+  "TermsOfService": "Servicevoorwaarden",
+  "CorporateUse": "Zakelijk Gebruik",
+  "SoftpediaDescription": "ONLYOFFICE Personal is een online editor die de nodige tools bevat om met Microsoft te gebruiken documenten, spreadsheets en presentaties te maken, en om samen te werken met teamleden."
 }

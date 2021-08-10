@@ -38,7 +38,7 @@
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
   "AuthDocsConnect": "Kết nối với bất kỳ đám mây nào",
-  "AuthDocsDisclaimer": "Các đánh giá của người dùng được lấy từ {0}Capterra.com{1}. Các đánh giá của Capterra là nhận xét chủ quan của người dùng cuối dựa trên trải nghiệm của chính họ và không đại diện cho quan điểm của Capterra hoặc các cộng tác viên của Capterra.",
+  "AuthDocsDisclaimer": "Các đánh giá của người dùng được lấy từ <1>{{linkText}}</1>. Các đánh giá của Capterra là nhận xét chủ quan của người dùng cuối dựa trên trải nghiệm của chính họ và không đại diện cho quan điểm của Capterra hoặc các cộng tác viên của Capterra.",
   "AuthDocsDownload": "Tải về",
   "AuthDocsHearTheWeb": "Hãy xem người khác nói gì về trang web",
   "AuthDocsLogIn": "Đăng nhập",
@@ -57,5 +57,9 @@
   "AuthDocsUsingChrome": "Tải tiện ích mở rộng của Chrome để truy cập nhanh.",
   "CreatePersonalButton": "Tạo văn phòng miễn phí",
   "AuthDocsFreeDesktopApp": "Tải xuống ứng {0}dụng miễn phí dành cho máy tính{1} để giúp chỉnh sửa tài liệu khi ngoại tuyến hoặc kết nối với đám mây của bạn.",
-  "AuthDocsSignIn": "Đăng nhập"
+  "AuthDocsSignIn": "Đăng nhập",
+  "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Bảo lưu mọi quyền",
+  "TermsOfService": "Điều khoản dịch vụ",
+  "CorporateUse": "Sử dụng cho Doanh nghiệp",
+  "SoftpediaDescription": "ONLYOFFICE Personal là một trình soạn thảo trực tuyến bao gồm các công cụ cần thiết để tạo các tài liệu, bảng tính và bản trình bày tương thích với Microsoft và cho phép cùng làm việc với các thành viên trong nhóm."
 }
