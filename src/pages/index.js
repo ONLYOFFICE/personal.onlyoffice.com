@@ -8,8 +8,7 @@ import CreateSection from "../sub-components/create-section";
 import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-
-import Carousel from "../../components/carousel";
+import CarouselSection from "../sub-components/main-page/carousel-section";
 
 const IndexPage = () => {
   const {
@@ -17,11 +16,6 @@ const IndexPage = () => {
     i18n: { language },
   } = useTranslation();
 
-const arrayImage = [
-  {id: 1, Heading: "Heading", Text: "Heading1", src: "/screenshots/en/doc.png", defaultSrc: "screenshots/en/doc.png", alt: "image",},
-  {id: 2, Heading: "Heading2", Text: "Heading2", src: "/screenshots/en/pres.png", defaultSrc: "screenshots/en/pres.png", alt: "image",},
-  {id: 3, Heading: "Heading3", Text: "Heading3", src: "/screenshots/en/tab.png", defaultSrc: "screenshots/en/tab.png", alt: "image",},
-];
   console.log(useTranslation());
 
   return (
@@ -44,9 +38,7 @@ const arrayImage = [
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
-        <Carousel 
-          arrayImage = {arrayImage}
-        />
+        <CarouselSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent footerHomePage={true} t={t} />
