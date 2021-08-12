@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import StyledHeaderContent from "./styled-header-content";
 import LanguageSelector from "../../../components/language-selector";
@@ -6,8 +6,8 @@ import HeaderLogo from "../../../static/icons/header-logo.react.svg";
 import Button from "../../../components/button";
 import Text from "../../../components/text";
 import Link from "../../../components/internal-link";
-import Snackbar from "../../../components/snackbar";
-import CookieContent from "../cookie-content";
+
+import CookieSnackbar from "../cookie-snackbar";
 
 const HeaderContent = (props) => {
   const {
@@ -19,30 +19,8 @@ const HeaderContent = (props) => {
     withoutButton,
     ...rest
   } = props;
-  const [isCookieCheck, setСookieCheck] = useState(false);
-  const cookiesName = "onlyoffice_personal_cookie";
-
-  useEffect(() => {
-    const cookie = getCookie(cookiesName);
-  });
 
   const homepagePath = language === "en" ? "/" : `/${language}`;
-
-  const getCookie = (name) => {
-    let value = document.cookie.match(
-      new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    console.log(value);
-    if (value == null) {
-      return setСookieCheck(true);
-    } else {
-      return setСookieCheck(false);
-    }
-  };
 
   return (
     <StyledHeaderContent {...rest}>
@@ -61,7 +39,6 @@ const HeaderContent = (props) => {
           </Text>
         )}
       </div>
-
       <div>
         {!withoutButton && (
           <Link title="ONLYOFFICE" href={href} tabIndex={-1}>
@@ -80,19 +57,7 @@ const HeaderContent = (props) => {
         currentLanguage={language}
         t={t}
       />
-
-      {isCookieCheck && (
-        <Snackbar>
-          <CookieContent
-            backGround={"rgba(249,249,249,0.95)"}
-            width={"544px"}
-            text={t(
-              "This website uses cookies. By continuing to browse the website you agree to our "
-            )}
-            buttonLabel={t("Got it!")}
-          />
-        </Snackbar>
-      )}
+      <CookieSnackbar buttonLabel={t("CookieMessButton")} />
     </StyledHeaderContent>
   );
 };
