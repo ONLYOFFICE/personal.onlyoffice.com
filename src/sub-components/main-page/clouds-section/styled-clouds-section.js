@@ -21,6 +21,10 @@ const StyledCloudsSection = styled(HomeSection)`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
+
+    .item-cloud {
+      cursor: default;
+    }
   }
 
   @media ${device.laptopM} {

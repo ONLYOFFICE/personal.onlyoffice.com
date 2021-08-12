@@ -42,7 +42,7 @@ const StyledButton = styled.button`
       ? props.theme.button.textColorSecondaryType
       : props.theme.button.textColor};
 
-  padding: 0 20px;
+  padding: ${(props) => (props.padding ? props.padding : "0 20px")};
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
