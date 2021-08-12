@@ -89,5 +89,8 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. All rights reserved",
   "TermsOfService": "Terms of Service",
   "CorporateUse": "Corporate Use",
-  "SoftpediaDescription": "ONLYOFFICE Personal is an online editor that packs the necessary tools to create Microsoft compatible documents, spreadsheets, and presentations, and collaboratively work in real time."
+  "SoftpediaDescription": "ONLYOFFICE Personal is an online editor that packs the necessary tools to create Microsoft compatible documents, spreadsheets, and presentations, and collaboratively work in real time.",
+  "DownloadExtensionChrome": "Получите быстрый доступ к ONLYOFFICE Personal. <1>Скачайте бесплатное расширение для Chrome.</1>",
+  "DownloadDesktopApp": "Скачайте <1>бесплатное десктопное приложение</1> и редактируйте файлы офлайн или подключитесь к облаку.",
+  "DownloadMobileApp": "Работайте с документами на мобильных в <1>приложениях ONLYOFFICE.</1>"
 }
