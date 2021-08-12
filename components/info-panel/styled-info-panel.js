@@ -1,74 +1,105 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { device } from "../utils/devices";
 import { Base } from "../themes";
 
+const headingStyle = css`
+  .info-panel-heading * {
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    line-height: 160%;
+    color: ${(props) => (props.whiteBackground ? "#333333" : "#ffffff")};
+    vertical-align: baseline;
+    display: inline;
+    margin-right: 4px;
+  }
+`;
+
+const orangeStyle = css`
+  background: linear-gradient(98.93deg, #ff8e3d 16.64%, #ff6f3d 99.83%);
+  border: 1px solid #cccccc;
+
+  ${headingStyle}
+`;
+
+const grayStyle = css`
+  background: linear-gradient(100.79deg, #666 23.25%, #444 78.7%);
+  border: 1px solid #cccccc;
+
+  ${headingStyle}
+`;
+
+const whiteStyle = css`
+  background: #ffffff;
+  border: 1px solid #cccccc;
+
+  ${headingStyle}
+`;
+
 const StyledInfoPanel = styled.div`
-  display: ${(props) => props.theme.infoPanel.display};
-  flex-direction: ${(props) =>
-    props.imgLeft
-      ? props.theme.infoPanel.flexDirectionLeft
-      : props.theme.infoPanel.flexDirectionRight};
-  justify-content: ${(props) => props.theme.infoPanel.justifyContent};
-  align-items: ${(props) => props.theme.infoPanel.alignItems};
-  width: ${(props) => props.theme.infoPanel.width};
-  min-height: ${(props) => props.theme.infoPanel.minHeight};
-  margin: ${(props) => props.theme.infoPanel.margin};
-  margin-bottom: ${(props) => props.theme.infoPanel.marginBottom};
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 
-  background-image: ${(props) =>
-    props.bgColor || props.theme.infoPanel.background};
-  border: ${(props) => props.theme.infoPanel.border};
-  border-radius: ${(props) => props.theme.infoPanel.borderRadius};
-  box-shadow: ${(props) => props.theme.infoPanel.boxShadow};
-  box-sizing: ${(props) => props.theme.infoPanel.boxSizing};
+  width: 1120px;
+  min-height: 380px;
+  margin: 0 auto;
 
-  .infoPanelText {
-    padding: ${(props) => props.theme.infoPanel.infoPanelText.padding};
-    padding-left: 10px;
-    padding-right: ${(props) => (props.imgLeft ? "10px" : "0px")};
-    p {
-      width: ${(props) =>
-        props.imgLeft
-          ? props.theme.infoPanel.infoPanelText.pWidthLeft
-          : props.theme.infoPanel.infoPanelText.pWidthRight};
-    }
+  overflow: hidden;
+
+  ${(props) => props.orangeBackground && orangeStyle}
+  ${(props) => props.grayBackground && grayStyle}
+  ${(props) => props.whiteBackground && whiteStyle}
+
+  border-radius: 5px;
+  box-shadow: 0px 7px 15px rgba(85, 85, 85, 0.1);
+
+  align-items: center;
+
+  .info-panel-heading {
+    grid-area: ${(props) =>
+      props.imgLeft ? "1 / 2 / 1 / 2" : "1 / 1 / 1 / 1"};
+  }
+
+  .info-panel-button-group {
+    grid-area: ${(props) =>
+      props.imgLeft ? "2 / 2 / 2 / 2" : "2 / 1 / 2 / 1"};
+  }
+
+  .info-panel-image-group {
+    grid-area: ${(props) =>
+      props.imgLeft ? "1 / 1 / 3 / 1" : "1 / 2 / 3 / 2"};
   }
 
   @media ${device.laptopM} {
-    width: ${(props) => props.theme.infoPanel.laptopM.width};
-    min-height: ${(props) => props.theme.infoPanel.laptopM.minHeight};
-    .infoPanelText {
-      width: 100%;
-      padding: ${(props) => props.theme.infoPanel.laptopM.padding};
-      p {
-        width: 100%;
-      }
-    }
+    max-width: 928px;
+    width: 91vw;
   }
 
   @media ${device.laptop} {
-    width: ${(props) => props.theme.infoPanel.laptop.width};
-    height: ${(props) => props.theme.infoPanel.laptop.height};
-    min-height: 354px;
-    flex-direction: ${(props) => props.theme.infoPanel.laptop.flexDirection};
-    .infoPanelText {
-      padding: ${(props) => props.theme.infoPanel.laptop.padding};
+    width: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+
+    padding: 32px 16px 0 16px;
+
+    .info-panel-heading {
+      grid-area: unset;
+    }
+
+    .info-panel-button-group {
+      grid-area: unset;
+    }
+
+    .info-panel-image-group {
+      grid-area: unset;
     }
   }
 
-  @media ${device.mobileL} {
-    width: ${(props) => props.theme.infoPanel.mobileL.width};
-    height: ${(props) => props.theme.infoPanel.mobileL.height};
-    min-height: auto;
-    flex-direction: ${(props) => props.theme.infoPanel.mobileL.flexDirection};
-    .infoPanelText {
-      width: ${(props) => props.theme.infoPanel.mobileL.width};
-      padding: ${(props) => props.theme.infoPanel.mobileL.padding};
-      margin: 0 auto;
-      text-align: center;
-      p {
-        font-size: 16px;
-      }
+  @media (max-width: 592px) {
+    width: 100%;
+
+    .info-panel-image-group {
+      width: 100%;
     }
   }
 `;

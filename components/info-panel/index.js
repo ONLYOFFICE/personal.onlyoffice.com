@@ -1,39 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Text from "../text/index";
-import StyledInfoPanel from "./styled-info-panel";
-import ImagesGroup from "./sub-components/images-group";
-import ButtonsGroup from "./sub-components/buttons-group";
 
-console.log(ImagesGroup, ButtonsGroup, StyledInfoPanel);
+import StyledInfoPanel from "./styled-info-panel";
+import ImageGroup from "./sub-components/image-group";
+import ButtonGroup from "./sub-components/button-group";
+import HeadingGroup from "./sub-components/heading-group";
+
 const InfoPanel = ({
   imgLeft,
   bgColor,
-  children,
-  lineHeight,
-  fontSize,
-  textColor,
-  textAlign,
-  amountButton,
   imgUrl,
   defaultImgUrl,
+  headingComponent,
+  linkComponents,
   ...rest
 }) => {
-  console.log("here");
   return (
     <StyledInfoPanel bgColor={bgColor} imgLeft={imgLeft} {...rest}>
-      <div className="infoPanelText">
-        <Text
-          lineHeight={lineHeight || "160%"}
-          fontSize={fontSize || "22px"}
-          color={textColor}
-          textAlign={textAlign || "center"}
-        >
-          {children}
-        </Text>
-        <ButtonsGroup amountButton={amountButton} />
-      </div>
-      <ImagesGroup imgUrl={imgUrl} defaultImgUrl={defaultImgUrl} />
+      <HeadingGroup
+        className="info-panel-heading"
+        key="heading-group"
+        heading={headingComponent}
+      />
+      <ButtonGroup
+        key="button-group"
+        className="info-panel-button-group"
+        components={linkComponents}
+      />
+      <ImageGroup
+        key="image-group"
+        className="info-panel-image-group"
+        imgLeft={imgLeft}
+        imgUrl={imgUrl}
+        defaultImgUrl={defaultImgUrl}
+      />
     </StyledInfoPanel>
   );
 };
@@ -44,19 +44,11 @@ InfoPanel.propTypes = {
   /** Background color*/
   bgColor: PropTypes.string,
   /** Array button*/
-  amountButton: PropTypes.arrayOf(PropTypes.object),
+  linkComponents: PropTypes.arrayOf(PropTypes.object),
   /** URL image*/
   imgUrl: PropTypes.string,
   /** On error loading image, use default image*/
   defaultImgUrl: PropTypes.string,
-  /** Text line height*/
-  lineHeight: PropTypes.string,
-  /** Text font-size*/
-  fontSize: PropTypes.string,
-  /** Text color*/
-  textColor: PropTypes.string,
-  /** Text align*/
-  textAlign: PropTypes.string,
 };
 
 export default InfoPanel;

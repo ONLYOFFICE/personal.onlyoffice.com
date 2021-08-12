@@ -20,7 +20,7 @@ import InfoPanel from "../components/info-panel";
 | `id`            | `string` |    -     |   -    |    -    | Accepts id                                |
 | `imgLeft`       |  `bool`  |    -     |   -    |    -    | Position image                            |
 | `bgColor`       | `string` |    -     |   -    |    -    | Background color                          |
-| `amountButton`  | `array`  |    -     |   -    |    -    | Array button                              |
+| `panelData`     | `array`  |    -     |   -    |    -    | Array button                              |
 | `imgUrl`        | `string` |    -     |   -    |    -    | URL image                                 |
 | `defaultImgUrl` | `string` |    -     |   -    |    -    | On error loading image, use default image |
 | `lineHeight`    | `string` |    -     |   -    |    -    | Text line height                          |

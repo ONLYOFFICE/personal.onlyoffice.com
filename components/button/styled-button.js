@@ -63,8 +63,10 @@ const StyledButton = styled.button`
         ? "transparent"
         : props.theme.button.backgroundColorSecondaryHover)};
     border-color: ${(props) =>
-      (props.borderColorHover || props.typeButton === "transparent") &&
-      props.theme.button.borderColorHover};
+      props.borderColorHover
+        ? props.borderColorHove
+        : props.typeButton === "transparent" &&
+          props.theme.button.borderColorHover};
     color: ${(props) =>
       props.textColorHover ||
       (props.typeButton === "transparent"

@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import { ReactSVG } from "react-svg";
 
-import StyledInfoPanelImg from "./styled-images-group";
+import StyledInfoPanelImg from "./styled-image-group";
 
 const ImagePanel = ({ imgUrl, defaultImgUrl, ...rest }) => {
-  const [errorLaodSrc, setErrorLaodSrc] = useState(true);
-
   const onError = (e) => {
-    if (errorLaodSrc) {
-      setErrorLaodSrc(errorLaodSrc);
-      e.target.src = defaultImgUrl;
-    }
+    return <ReactSVG className="info-panel-img" src={defaultImgUrl} />;
   };
 
   return (
     <StyledInfoPanelImg {...rest}>
-      <img src={imgUrl} onError={onError} />
+      <ReactSVG
+        className="info-panel-img"
+        src={imgUrl}
+        fallback={onError}
+        alt="info-img"
+      />
     </StyledInfoPanelImg>
   );
 };
