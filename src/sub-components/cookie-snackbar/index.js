@@ -4,6 +4,8 @@ import { Trans } from "gatsby-plugin-react-i18next";
 import Text from "../../../components/text";
 import Link from "../../../components/link";
 import Button from "../../../components/button";
+import Portal from "../../../components/portal";
+import Snackbar from "../../../components/snackbar";
 
 import { getCookie } from "../../helpers";
 import { PERSONAL_COOKIE } from "../../helpers/constnts";
@@ -26,33 +28,37 @@ const CookieSnackbar = ({ buttonLabel }) => {
   };
 
   return (
-    <StyledCookieSnackbar isVisible={showCookieBar}>
-      <Text color="#333" fontSize="13px" className="cookie-text">
-        <Trans i18nKey="CookieMessText">
-          {" "}
-          <Link
-            className="cookie-link"
-            href={
-              "https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.239950403.1196593722.1525950411-169631771.1404734630"
-            }
-            fontSize="13px"
-          >
-            {" "}
-          </Link>
-        </Trans>
-      </Text>
+    <Portal>
+      <Snackbar isVisible={showCookieBar}>
+        <StyledCookieSnackbar>
+          <Text color="#333" fontSize="13px" className="cookie-text">
+            <Trans i18nKey="CookieMessText">
+              {" "}
+              <Link
+                className="cookie-link"
+                href={
+                  "https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.239950403.1196593722.1525950411-169631771.1404734630"
+                }
+                fontSize="13px"
+              >
+                {" "}
+              </Link>
+            </Trans>
+          </Text>
 
-      <Button
-        className="cookie-button"
-        label={buttonLabel}
-        typeButton="transparent"
-        fontSize="12px"
-        height="41px"
-        onClick={onSetCookie}
-        minwidth="99px"
-        isScale
-      />
-    </StyledCookieSnackbar>
+          <Button
+            className="cookie-button"
+            label={buttonLabel}
+            typeButton="transparent"
+            fontSize="12px"
+            height="41px"
+            onClick={onSetCookie}
+            minwidth="99px"
+            isScale
+          />
+        </StyledCookieSnackbar>
+      </Snackbar>
+    </Portal>
   );
 };
 

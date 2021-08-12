@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import Snackbar from "../../../components/snackbar";
 
-const StyledCookieSnackbar = styled(Snackbar)`
+const StyledCookieSnackbar = styled.div`
   display: grid;
   grid-template-columns: 1fr 99px;
   grid-gap: 28px;
