@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const StyledCookieSnackbar = styled.div`
   display: grid;
-  grid-template-columns: 1fr 99px;
-  grid-gap: 28px;
+  grid-template-columns: 1fr auto;
+  grid-gap: 14px;
   align-items: center;
 
   width: "100%";
@@ -16,6 +16,7 @@ const StyledCookieSnackbar = styled.div`
 
   .cookie-button {
     width: max-content;
+    white-space: normal;
   }
 
   @media (max-width: 592px) {

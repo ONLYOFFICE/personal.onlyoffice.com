@@ -55,6 +55,7 @@ const CookieSnackbar = ({ buttonLabel }) => {
             onClick={onSetCookie}
             minwidth="99px"
             isScale
+            padding="unset"
           />
         </StyledCookieSnackbar>
       </Snackbar>
