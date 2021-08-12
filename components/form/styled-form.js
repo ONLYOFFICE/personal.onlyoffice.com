@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import { Base } from "../themes";
 
 const StyledForm = styled.form`
@@ -9,6 +9,8 @@ const StyledForm = styled.form`
   border-radius: ${(props) => props.theme.form.borderRadius};
   box-shadow: ${(props) => props.isPanel && props.theme.form.boxShadow};
   padding: ${(props) => props.theme.form.padding};
+
+  background-color: ${(props) => (props.isPanel ? "white" : "transparent")};
 
   display: grid;
   grid-template-columns: 1fr;

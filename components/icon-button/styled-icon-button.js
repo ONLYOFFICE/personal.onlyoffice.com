@@ -1,4 +1,4 @@
-import { styled } from "linaria/react";
+import styled from "styled-components";
 import Base from "../themes/base";
 
 const StyledIconButton = styled.div`
@@ -33,19 +33,9 @@ const StyledIconButton = styled.div`
     }
   }
 
-  ${(props) =>
-    props.grayed &&
-    `
-    filter: grayscale(1);
-    &:hover {
-      filter: grayscale(0);
-    }
-  `}
-  &.grayed {
-    filter: grayscale(1);
-    &:hover {
-      filter: grayscale(0);
-    }
+  filter: ${(props) => (props.grayed ? "grayscale(1)" : "grayscale(0)")};
+  &:hover {
+    filter: ${(props) => (props.grayed ? "grayscale(0)" : "none")};
   }
 `;
 

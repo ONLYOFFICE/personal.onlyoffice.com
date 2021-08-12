@@ -1,14 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledLink from "./styled-link";
-import { Link } from "gatsby";
 
-const CustomLink = ({ label, href, className, type, style, ...rest }) => {
+const CustomLink = ({
+  children,
+  href,
+  style,
+  className,
+  type,
+  label,
+  ...rest
+}) => {
   const linkClassName = className
     ? className + " external-link"
     : "external-link";
 
-  return type === "external" ? (
+  return (
     <StyledLink
       as="a"
       href={href}
@@ -16,14 +23,8 @@ const CustomLink = ({ label, href, className, type, style, ...rest }) => {
       style={style}
       className={linkClassName}
     >
-      {label}
+      {children || label}
     </StyledLink>
-  ) : (
-    <Link to={href} style={style}>
-      <StyledLink as="span" {...rest} className={linkClassName}>
-        {label}
-      </StyledLink>
-    </Link>
   );
 };
 
@@ -58,8 +59,6 @@ CustomLink.propTypes = {
   id: PropTypes.string,
   /** Accepts class */
   className: PropTypes.string,
-  /** Type of Link */
-  type: PropTypes.oneOf(["external", "internal"]),
 };
 
 CustomLink.defaultProps = {
@@ -69,6 +68,7 @@ CustomLink.defaultProps = {
   title: undefined,
   rel: "noopener noreferrer",
   tabIndex: -1,
+  target: "_blank",
 };
 
 export default CustomLink;

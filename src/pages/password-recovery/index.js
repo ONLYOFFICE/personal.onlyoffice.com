@@ -5,12 +5,17 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 
-import Head from "../sub-components/head";
-import HeaderContent from "../sub-components/header-content";
-import StyledSection from "../sub-components/section";
-import FormLink from "../sub-components/form-link";
-import FormDescription from "../sub-components/form-description";
-import AdditionalSection from "../sub-components/additional-section";
+import Head from "../../sub-components/head";
+import HeaderContent from "../../sub-components/header-content";
+import StyledSection from "../../sub-components/section";
+import FormLink from "../../sub-components/form-link";
+import FormDescription from "../../sub-components/form-description";
+import AdditionalSection from "../../sub-components/additional-section";
+import FooterContent from "../../sub-components/footer-content";
+
+import { recoveryPassword } from "../../api";
+
+import { navigate } from "gatsby";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -31,7 +36,15 @@ const PasswordRecoveryPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("onSubmit, valid: ", emailIsValid);
+    if (emailIsValid) {
+      recoveryPassword(emailValue)
+        .then((res) => {
+          navigate("/sign-in");
+        })
+        .catch((e) => alert(e));
+    } else {
+      console.log("email not valid");
+    }
   };
 
   const formData = [
@@ -51,6 +64,7 @@ const PasswordRecoveryPage = () => {
       placeholder: t("Email"),
       callback: onEmailChangeHandler,
       value: emailValue,
+      tabIndexProp: 1,
     },
     {
       type: "button",
@@ -59,6 +73,7 @@ const PasswordRecoveryPage = () => {
       toHideButton: false,
       typeButton: "primary",
       label: t("Send"),
+      tabIndexProp: 2,
     },
     {
       type: "other",
@@ -114,7 +129,9 @@ const PasswordRecoveryPage = () => {
           />
         </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter>test</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} />
+      </Layout.PageFooter>
     </Layout>
   );
 };
@@ -123,7 +140,7 @@ export default PasswordRecoveryPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
       edges {
         node {
           ns

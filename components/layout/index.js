@@ -5,6 +5,9 @@ import Header from "./sub-components/header";
 import Main from "./sub-components/main";
 import Footer from "./sub-components/footer";
 import Head from "./sub-components/head";
+
+import Toast from "../toast";
+
 import "../../styles/globals.css";
 
 function PageHead() {
@@ -67,9 +70,10 @@ class Layout extends React.Component {
         <Head>{headContent ? headContent.props.children : null}</Head>
         <Header>{headerContent ? headerContent.props.children : null}</Header>
         <Main>{mainContent ? mainContent.props.children : null}</Main>
-        <Footer className="footer">
+        <Footer className="footer" isHomePage={footerContent.props.isHomePage}>
           {footerContent ? footerContent.props.children : null}
         </Footer>
+        <Toast />
       </StyledLayout>
     );
   }

@@ -1,4 +1,5 @@
 const languages = require("./languages.json");
+const { defaultLanguage } = require("./config.json");
 
 const availableLanguages = languages.map((el) => el.shortKey);
 
@@ -9,11 +10,11 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-styled-components`,
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-linaria",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
@@ -53,11 +54,14 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`,
         languages: availableLanguages,
-        defaultLanguage: `en`,
+        defaultLanguage,
         siteUrl: `https://personal.onlyoffice.com/`,
-        redirect: false,
+        redirect: true,
+        generateDefaultLanguagePage: `/en`,
 
         i18nextOptions: {
+          fallbackLng: defaultLanguage,
+
           interpolation: {
             escapeValue: false,
           },
