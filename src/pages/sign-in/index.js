@@ -12,7 +12,6 @@ import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
 import SocialButtons from "../../sub-components/social-buttons";
-import Snackbar from "../../../components/snackbar";
 
 import { getSettings, login, getUser } from "../../api";
 
@@ -182,7 +181,6 @@ const SignInPage = () => {
             formData={formData}
           />
         </StyledSection>
-          
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent t={t} />
