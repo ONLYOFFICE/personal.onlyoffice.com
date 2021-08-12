@@ -15,8 +15,7 @@ import SocialButtons from "../../sub-components/social-buttons";
 
 import { getSettings, login, getUser } from "../../api";
 
-import createPasswordHash from "../../helpers/createPasswordHash";
-//import languages from "../../../languages.json";
+import { createPasswordHash } from "../../helpers/";
 
 const SignInPage = () => {
   const [emailValue, setEmailValue] = useState("");
