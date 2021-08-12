@@ -5,7 +5,7 @@ import SnackBar from "./styled-snackbar";
 const Snackbar = (props) => {
   return (
     <Portal>
-      <SnackBar {...props}>{props.children}</SnackBar>
+      <SnackBar {...props} />
     </Portal>
   );
 };
