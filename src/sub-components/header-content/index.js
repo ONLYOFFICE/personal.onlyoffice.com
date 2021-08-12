@@ -7,6 +7,8 @@ import Button from "../../../components/button";
 import Text from "../../../components/text";
 import Link from "../../../components/internal-link";
 
+import CookieSnackbar from "../cookie-snackbar";
+
 const HeaderContent = (props) => {
   const {
     t,
@@ -37,7 +39,6 @@ const HeaderContent = (props) => {
           </Text>
         )}
       </div>
-
       <div>
         {!withoutButton && (
           <Link title="ONLYOFFICE" href={href} tabIndex={-1}>
@@ -56,6 +57,7 @@ const HeaderContent = (props) => {
         currentLanguage={language}
         t={t}
       />
+      <CookieSnackbar buttonLabel={t("CookieMessButton")} />
     </StyledHeaderContent>
   );
 };
