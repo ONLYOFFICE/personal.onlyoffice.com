@@ -46,7 +46,7 @@ const secondItemsCarousel = {
                 {
                     type: "image", 
                     src: "doc.react.svg", 
-                    defaultSrc: "doc.png", 
+                    defaultSrc: "doc.react.svg", 
                     alt: "doc"
                 },
             ]
@@ -57,7 +57,7 @@ const secondItemsCarousel = {
                 {
                     type: "image", 
                     src: "tab.react.svg", 
-                    defaultSrc: "tab.png", 
+                    defaultSrc: "tab.react.svg", 
                     alt: "tab"
                 },
             ]
@@ -68,7 +68,7 @@ const secondItemsCarousel = {
                 {
                     type: "image", 
                     src: "pres.react.svg", 
-                    defaultSrc: "pres.png", 
+                    defaultSrc: "pres.react.svg", 
                     alt: "pres"
                 },
             ]
@@ -79,7 +79,7 @@ const secondItemsCarousel = {
                 {
                     type: "image", 
                     src: "collaboration.react.svg", 
-                    defaultSrc: "collaboration.png", 
+                    defaultSrc: "collaboration.react.svg", 
                     alt: "collaboration"
                 },
             ]
