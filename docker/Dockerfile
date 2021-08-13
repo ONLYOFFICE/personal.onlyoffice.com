@@ -23,5 +23,6 @@ FROM nginx:alpine AS personal-site
 ARG SRC_PATH
 
 WORKDIR /usr/share/nginx/html
-RUN rm -rf *
+RUN rm -rf * && \
+    sed -i "s!server_name.*!server_name localhost;\n add_header Cache-Control \"no-cache, no-store, must-revalidate\";!" /etc/nginx/conf.d/default.conf
 COPY --from=base ${SRC_PATH}/public/ .
