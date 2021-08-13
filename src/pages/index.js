@@ -39,7 +39,7 @@ const IndexPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
-        <CarouselSection t={t} />
+        <CarouselSection t={t} language={language} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
         <BlockquoteSection text={t("SoftpediaDescription")} />
         <ReviewSection t={t} />

@@ -79,5 +79,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle Rechte vorbehalten",
   "TermsOfService": "Nutzungsbedingungen",
   "CorporateUse": "Unternehmenseinsatz",
-  "SoftpediaDescription": "ONLYOFFICE Personal ist ein Online-Editor mit allen notwendigen Tools für gemeinsame Erstellung von Dokumenten, Tabellenkalkulationen und Präsentationen. Die höchste Kompatibilität mit Microsoft-Formaten ist garantiert."
+  "SoftpediaDescription": "ONLYOFFICE Personal ist ein Online-Editor mit allen notwendigen Tools für gemeinsame Erstellung von Dokumenten, Tabellenkalkulationen und Präsentationen. Die höchste Kompatibilität mit Microsoft-Formaten ist garantiert.",
+  "DocSlideSecitonCarouselHeading" : "Textdokumente bearbeiten",
+  "DocSlideSecitonCarouselText" : "Erhalten Sie alle Tools für Bearbeitung und Formatierung jedes Dokuments.",
+  "TabSlideSecitonCarouselHeading" : "Daten in Tabellenkalkulationen organisieren",
+  "TabSlideSecitonCarouselText" : "Organisieren, analysieren und berechnen Sie komplexe Daten.",
+  "PresSlideSecitonCarouselHeading" : "Präsentationen erstellen",
+  "PresSlideSecitonCarouselText" : "Stellen Sie Ihre Ideen dem Publikum einfacher vor.",
+  "CollaborationSlideSecitonCarouselHeading" : "Online zusammenarbeiten",
+  "CollaborationSlideSecitonCarouselText" : "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein."
 }

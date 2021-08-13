@@ -5,49 +5,16 @@ const StyledCarousel = styled.div`
     padding: 0px;
 
     .slick-slider {
-        margin: 0px;
+        margin: 0 auto;
         padding: 0px;
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            object-fit: cover;
+
+    .slide{
+        display: grid !important;
+        .carousel-image{
             width: 100%;
-        }
-
-        ${(props) => true &&
-            `
-            .slick-slide-div {
-                background-size:cover;
-                background-position:center;
-                background-repeat:no-repeat;  
-                background-size: contain;
-                background-repeat: no-repeat;
-                display: inline-block;
-                float: right;
-                height: 690px;
-                max-width: 100vw;
-                position: relative;
-                outline: none;
-                width: 1182px;
-                margin: 0 -30px;
-            }
-            ` 
-        }
-
-        .text-carousel {
-            display: grid;
-            margin: 0 auto;
-            h2 {
-                text-align: center !important;
-            }
-            p {
-                margin: 0 auto;
-                padding: 24px 0 40px;
-            }
-        }
-
-        ${(props) => props.arrows &&
+        }       
+    }
+    ${(props) => props.arrows ?
         `.slick-arrow {
             background: none;
             border-color: transparent;
@@ -102,33 +69,39 @@ const StyledCarousel = styled.div`
             z-index: 1;
             transform: rotate(-45deg);
         }`
-
+        : `.slick-arrow {
+            display: none !important;
+        }`
     }
-        
 }
 
 
-@media(max-width: 1210px) {
+@media(max-width: 1200px) {
     .slick-slider {
-        .slick-slide-div {
-            background-size: 115vw;
-            background-position-x: center;
+        .slide-carousel {
+            width: 100vw;
             height: 65vw;
         }
-        .text-carousel{
-            display: grid;
-            margin: 0 auto;
-            h2 {
-                text-align: center !important;
-            }
-            p {
-                margin: 0 auto;
-                padding: 24px 0 40px;
-            }
+        .slick-arrow{
+            display: none !important;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .slick-slider {
+        .slide-carousel {
+            width: 100vw;
+            height: 60vw;
         }
 
-        .slick-arrow{
-            display: none;
+    }
+}
+
+@media(max-width: 576px) {
+    .slick-slider {
+        .slide-carousel {
+            margin: 0;
         }
     }
 }

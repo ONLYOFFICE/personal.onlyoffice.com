@@ -1,94 +1,97 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Carousel from "../../../../components/carousel";
-import Section from "../../home-section";
 import StyledCarouselSection from "./styled-carousel-section";
-import { CarouselImage, CarouselText } from "./sub-components/carousel-item";
+import { firstSettingsCarousel, secondSettingsCarousel } from "./sub-components/carousel-settings";
+import { firstItemsCarousel, secondItemsCarousel } from "./sub-components/carousel-slides";
 
-class CarouselSection extends Component {
+const CarouselSection = (props) => {
+    const { t, language } = props;
 
-constructor(props) {
-    super(props);
-    this.state = {
-        nav1: null,
-        nav2: null
-    };
-}
-    
-componentDidMount() {
-    this.setState({
-        nav1: this.slider1,
-        nav2: this.slider2
-    });
-}
+    const [state, setState] = useState({ nav1: null, nav2: null });
+    const slider1 = useRef();
+    const slider2 = useRef();
 
-settingsTextSlider = {
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-};
+    useEffect(() => {
+        setState({
+            nav1: slider1.current,
+            nav2: slider2.current
+        });
+    }, []);
 
-settingsImageSlider = {
-    fade: false,
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    responsive:[ 
-        {
-          breakpoint: 1210,
-          settings: {
-                arrows: false 
-            }
-        }
-    ],
-};
+    const { nav1, nav2 } = state;
 
-CarouselTextTranslate = CarouselText.map((it) => {
-    return {
-        id: it.id,
-        Heading: this.props.t(it.Heading), 
-        Text: this.props.t(it.Text)
-    };
-});
+    let firstPanelCarousel, secondPanelCarousel = [];
 
+    let defaultLanguage = "en";
 
-    render () {
-        return (
-            <Section
-                background="#fff"
-                padding="112px 0 48px"
-                tabletPadding="104px 0"
-                mobileLPadding="102px 0 60px"
-                {...this.props}
-            >
-                <StyledCarouselSection>
-                    <Carousel                            
-                        arrows={false} 
-                        arrayImage={false}
-                        isTextCarousel={true}
-                        isImageCarousel={false}
-                        settingsSlider={this.settingsTextSlider}
-                        itemCarousel={this.CarouselTextTranslate}
-                        asNavForCarousel={this.state.nav2}
-                        refCarousel={slider => (this.slider1 = slider)}
-                        className="carousel-text"
-                    />
-                    <Carousel 
-                        arrows={true} 
-                        itemCarousel={CarouselImage}
-                        settingsSlider={this.settingsImageSlider}
-                        asNavForCarousel={this.state.nav1}
-                        refCarousel={slider => (this.slider2 = slider)}
-                        className="carousel-image"
-                    />
-                </StyledCarouselSection>
-            </Section>
+    let srcImage = `/screenshots/${language}/`;
+    let defaultSrcImage = `/screenshots/${defaultLanguage}/`;
+
+    const itemsCarouselTranslate = (arrayItems) => {
+        return arrayItems.slides.map((item, idx) =>
+            item.slide.map((it) => {
+                switch (it.type) {
+                    case "heading":
+                        return {
+                            ...it,
+                            id: idx,
+                            headingText: t(it.headingText),
+                        };
+
+                    case "text":
+                        return {
+                            ...it,
+                            id: idx,
+                            text: t(it.text),
+                        };
+
+                    case "image":
+                        return {
+                            ...it,
+                            id: idx,
+                            src: srcImage + it.src,
+                            defaultSrc: defaultSrcImage + it.defaultSrc
+                        };
+
+                    default:
+                        return { ...it };
+                }
+            })
         );
     }
+
+    firstPanelCarousel = itemsCarouselTranslate(firstItemsCarousel);
+    secondPanelCarousel = itemsCarouselTranslate(secondItemsCarousel);
+
+    return (
+        <StyledCarouselSection
+            background="#fff"
+            padding="112px 0 48px"
+            tabletPadding="104px 0"
+            mobileLPadding="102px 0 60px"
+            maxWidth="100%"
+            maxWidthLaptop="100%"
+            {...props}
+        >
+            <Carousel
+                arrows={false}
+                panelCarousel={firstPanelCarousel}
+                settingsCarousel={firstSettingsCarousel}
+                asNavForCarousel={nav2}
+                refCarousel={slider => (slider1.current = slider)}
+                className="text-carousel"
+            />
+            <Carousel
+                arrows={true}
+                panelCarousel={secondPanelCarousel}
+                settingsCarousel={secondSettingsCarousel}
+                asNavForCarousel={nav1}
+                refCarousel={slider => (slider2.current = slider)}
+                className="image-carousel"
+            />
+        </StyledCarouselSection>
+    );
 }
 
 export default CarouselSection;

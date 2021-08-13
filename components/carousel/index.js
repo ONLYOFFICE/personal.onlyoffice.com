@@ -1,74 +1,99 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Heading from "../heading";
-import Text from "../text";
 
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import StyledCarousel from "./styled-carousel";
-import Image from "./sub-components";
+import CarouselHeading from "./sub-components/carousel-heading";
+import CarouselText from "./sub-components/carousel-text"
+import CarouselImage from "./sub-components/carousel-image";
 
 const Carousel = ({
-settingsSlider,
-isTextCarousel,
-isImageCarousel, 
-isArrows,
-isImage,
-itemCarousel,
-refCarousel,
-asNavForCarousel,
-...rest
+  settingsCarousel,
+  isArrows,
+  panelCarousel,
+  refCarousel,
+  asNavForCarousel,
+  ...rest
 }) => {
 
-  const settings = settingsSlider ||
-    {
-      fade: true,
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+  const settings = settingsCarousel ||
+  {
+    fade: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
+  const Slides = [];
+
+  panelCarousel.forEach((it) => {
+    let ellementsSlide = [];
+
+    it.forEach((item, idx) => {
+      switch (item.type) {
+
+        case "heading":
+          ellementsSlide.push(
+            <CarouselHeading
+              key={`${item.type}-${idx}`}
+              item={item}
+            />
+          );
+          break;
+
+        case "text":
+          ellementsSlide.push(
+            <CarouselText
+              key={`${item.type}-${idx}`}
+              item={item}
+            />
+          );
+          break;
+
+        case "image":
+          ellementsSlide.push(
+            <CarouselImage
+              key={`${item.type}-${idx}`}
+              item={item}
+            />
+          );
+          break;
+
+        case "other":
+          ellementsSlide.push(item.element);
+          break;
+
+        default:
+          break;
+      }
+    });
+
+    return Slides.push(ellementsSlide);
+  });
+
+  let Slide = Slides.map((it, i) =>
+    <div key={`slide-${i}`} className={`slide slide-${i}`}>
+      {
+        it.map((item) => {
+          return item;
+        })
+      }
+    </div>
+  )
 
   return (
     <StyledCarousel arrows={isArrows} {...rest}>
-      <Slider 
-        ref={refCarousel}
+      <Slider
         asNavFor={asNavForCarousel}
+        ref={refCarousel}
         {...settings}
       >
-          {
-            itemCarousel.map((item) => 
-              <div key={item.id}>
-                {isTextCarousel &&
-                  <div className="text-carousel">
-                    <Heading 
-                      textAlign="center" 
-                      level={2}
-                    >
-                      {item.Heading}
-                    </Heading>
-                    <Text 
-                      textAlign="center" 
-                      fontSize={"18px"}
-                    >
-                      {item.Text}
-                    </Text>
-                  </div>  
-                }
-                {isImageCarousel &&
-                 <Image 
-                    src={item.src}
-                    defaultSrc={item.defaultSrc}
-                    alt={item.alt}
-                    isImage={isImage}
-                  />
-                }
-              </div>
-            )
-          }
+        {Slide}
       </Slider>
     </StyledCarousel>
   );
@@ -76,18 +101,12 @@ asNavForCarousel,
 
 Carousel.propTypes = {
   /** Carousel settings*/
-  settingsSlider: PropTypes.object,
+  settingsCarousel: PropTypes.object,
   /** Carousel array item*/
-  itemCarousel: PropTypes.arrayOf(PropTypes.object),
-  /** Carousel text*/
-  isTextCarousel: PropTypes.bool,
-  /** Carousel image*/
-  isImageCarousel: PropTypes.bool,
+  panelCarousel: PropTypes.arrayOf(PropTypes.array),
   /** Carousel arrows*/
   isArrows: PropTypes.bool,
-  /** */
-  isImage: PropTypes.bool,
-  /** Button tab index */
+  /** Carousel tab index */
   tabIndex: PropTypes.number,
   /** Accepts class */
   className: PropTypes.string,
@@ -96,13 +115,9 @@ Carousel.propTypes = {
 };
 
 Carousel.defaultProps = {
-  settingsSlider: {},
-  itemCarousel: [{}],
-  isTextCarousel: false,
-  isImageCarousel: true,
+  settingsCarousel: {},
+  panelCarousel: [{}],
   isArrows: true,
-  isImage: false,
-  backGroundImage: true,
   tabIndex: -1
 };
 
