@@ -2,22 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ReactSVG } from "react-svg";
 
-import StyledInfoPanelImg from "./styled-image-group";
+//import StyledInfoPanelImg from "./styled-image-group";
 
-const ImagePanel = ({ imgUrl, defaultImgUrl, ...rest }) => {
+const ImagePanel = ({ imgUrl, defaultImgUrl, className, ...rest }) => {
   const onError = (e) => {
     return <ReactSVG className="info-panel-img" src={defaultImgUrl} />;
   };
 
   return (
-    <StyledInfoPanelImg {...rest}>
+    <div {...rest} className={`info-panel-image-group ${className}`}>
       <ReactSVG
         className="info-panel-img"
         src={imgUrl}
         fallback={onError}
         alt="info-img"
       />
-    </StyledInfoPanelImg>
+    </div>
   );
 };
 
