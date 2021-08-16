@@ -9,8 +9,8 @@ function IconButton(props) {
     currentIconName: props.iconName,
   });
 
-  const onError = (error, svg) => {
-    error && setState({ currentIconName: props.defaultIcon });
+  const onError = () => {
+    return <ReactSVG src={props.defaultIcon} onClick={props.onClick} />;
   };
 
   const onMouseEnter = (e) => {
@@ -18,11 +18,11 @@ function IconButton(props) {
       isDisabled,
       iconHoverName,
       iconName,
-
+      defaultIcon,
       onMouseEnter,
     } = props;
 
-    if (isDisabled) return;
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: !("ontouchstart" in document.documentElement)
@@ -34,9 +34,9 @@ function IconButton(props) {
   };
 
   const onMouseLeave = (e) => {
-    const { isDisabled, iconName, onMouseLeave } = props;
+    const { isDisabled, iconName, onMouseLeave, defaultIcon } = props;
 
-    if (isDisabled) return;
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: iconName,
@@ -50,11 +50,11 @@ function IconButton(props) {
       isDisabled,
       iconClickName,
       iconName,
-
+      defaultIcon,
       onMouseDown,
     } = props;
 
-    if (isDisabled) return;
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: !("ontouchstart" in document.documentElement)
@@ -66,9 +66,16 @@ function IconButton(props) {
   };
 
   const onMouseUp = (e) => {
-    const { isDisabled, iconHoverName, iconName, color, onMouseUp } = props;
+    const {
+      isDisabled,
+      iconHoverName,
+      iconName,
+      color,
+      onMouseUp,
+      defaultIcon,
+    } = props;
 
-    if (isDisabled) return;
+    if (isDisabled || defaultIcon) return;
 
     switch (e.nativeEvent.which) {
       case 1: //Left click
@@ -133,7 +140,7 @@ function IconButton(props) {
       <ReactSVG
         className={classNameSVG}
         src={state.currentIconName}
-        afterInjection={onError}
+        fallback={onError}
       />
     </StyledIconButton>
   );
