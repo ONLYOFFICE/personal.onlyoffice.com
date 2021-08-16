@@ -11,7 +11,7 @@ import InfoPanel, {
   ButtonGroup,
 } from "../../../../../components/info-panel";
 
-const DesktopAppPanel = ({ t }) => {
+const DesktopAppPanel = ({ t, currentLanguage }) => {
   const headingComponent = (
     <Text>
       <Trans i18nKey="DownloadDesktopApp">
@@ -25,7 +25,7 @@ const DesktopAppPanel = ({ t }) => {
     <Link
       className="desktop-link"
       key="desktop-app"
-      href="https://www.onlyoffice.com/ru/download-desktop.aspx"
+      href="https://www.onlyoffice.com/download-desktop.aspx"
     >
       <Button
         className="desktop-button-component"
@@ -52,7 +52,7 @@ const DesktopAppPanel = ({ t }) => {
       </ButtonGroup>
       <ImageGroup
         className="panel-image desktop-image"
-        imgUrl="/info-screenshots/en/desktop.react.svg"
+        imgUrl={`/info-screenshots/${currentLanguage}/desktop.react.svg`}
         defaultImgUrl="/info-screenshots/en/desktop.react.svg"
       />
     </InfoPanel>

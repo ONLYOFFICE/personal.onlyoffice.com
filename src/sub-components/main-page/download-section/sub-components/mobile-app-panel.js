@@ -11,7 +11,7 @@ import InfoPanel, {
   ButtonGroup,
 } from "../../../../../components/info-panel";
 
-const MobileAppPanel = () => {
+const MobileAppPanel = ({ currentLanguage }) => {
   const headingComponent = (
     <Text>
       <Trans i18nKey="DownloadMobileApp">
@@ -24,24 +24,26 @@ const MobileAppPanel = () => {
   const linkComponents = [
     <Link
       key="app-store-link"
-      to="https://apps.apple.com/app/onlyoffice-documents/id944896972"
+      href="https://apps.apple.com/app/onlyoffice-documents/id944896972"
       target="_self"
       style={{ width: "min-content", margin: "0 auto" }}
     >
       <IconButton
         size="min-content"
-        iconName={`/apps-icons/en/appstore_white.react.svg`}
+        iconName={`/apps-icons/${currentLanguage}/appstore_white.react.svg`}
+        defaultIcon="/apps-icons/en/appstore_white.react.svg"
       />
     </Link>,
     <Link
       key="google-play-link"
-      to="https://play.google.com/store/apps/details?id=com.onlyoffice.documents"
+      href="https://play.google.com/store/apps/details?id=com.onlyoffice.documents"
       target="_self"
       style={{ width: "min-content", margin: "0 auto" }}
     >
       <IconButton
         size="min-content"
-        iconName={`/apps-icons/en/googleplay_white.react.svg`}
+        iconName={`/apps-icons/${currentLanguage}/googleplay_white.react.svg`}
+        defaultIcon="/apps-icons/en/googleplay_white.react.svg"
       />
     </Link>,
   ];
@@ -60,7 +62,7 @@ const MobileAppPanel = () => {
       </ButtonGroup>
       <ImageGroup
         className="mobile-app-img panel-image"
-        imgUrl="/info-screenshots/en/mobile.react..svg"
+        imgUrl={`/info-screenshots/${currentLanguage}/mobile.react.svg`}
         defaultImgUrl="/info-screenshots/en/mobile.react.svg"
       />
     </InfoPanel>

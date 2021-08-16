@@ -138,6 +138,7 @@ const StyledDownloadSection = styled(HomeSection)`
 
     .desktop-button {
       margin-bottom: 17px;
+      padding-right: 0;
     }
 
     .mobile-button {

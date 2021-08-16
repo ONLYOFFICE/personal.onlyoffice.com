@@ -10,7 +10,7 @@ import Text from "../../../../../components/text";
 import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
 
-const ChromeExtensionPanel = () => {
+const ChromeExtensionPanel = ({ currentLanguage }) => {
   const headingComponent = (
     <Text fontWeight="bold">
       <Trans i18nKey="DownloadExtensionChrome">
@@ -24,11 +24,14 @@ const ChromeExtensionPanel = () => {
     <Link
       key="extension-link"
       href="https://chrome.google.com/webstore/detail/onlyoffice/ohdlcmpahmacjddiaokoogleflddlahc"
-      target="_self"
       className="icon-button-style"
       style={{ width: "min-content", margin: "0 auto" }}
     >
-      <IconButton size="auto" iconName={`/apps-icons/en/chrome.react.svg`} />
+      <IconButton
+        size="auto"
+        iconName={`/apps-icons/${currentLanguage}/chrome.react.svg`}
+        defaultIcon={`/apps-icons/en/chrome.react.svg`}
+      />
     </Link>,
   ];
 
@@ -42,7 +45,7 @@ const ChromeExtensionPanel = () => {
       </ButtonGroup>
       <ImageGroup
         className="extension-img panel-image"
-        imgUrl="/info-screenshots/en/extension.react.svg"
+        imgUrl={`/info-screenshots/${currentLanguage}/extension.react.svg`}
         defaultImgUrl="/info-screenshots/en/extension.react.svg"
       />
     </InfoPanel>

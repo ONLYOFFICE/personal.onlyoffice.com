@@ -13,9 +13,21 @@ const DownloadSection = ({ t, language }) => {
       <Heading textAlign="center" level={2} className="download-heading">
         {t("AuthDocsOnlineDesktopMobile")}
       </Heading>
-      <ChromeExtensionPanel className="download-info-panel" t={t} />
-      <DesktopAppPanel className="download-info-panel" t={t} />
-      <MobileAppPanel className="download-info-panel" t={t} />
+      <ChromeExtensionPanel
+        className="download-info-panel"
+        t={t}
+        currentLanguage={language}
+      />
+      <DesktopAppPanel
+        className="download-info-panel"
+        t={t}
+        currentLanguage={language}
+      />
+      <MobileAppPanel
+        className="download-info-panel"
+        t={t}
+        currentLanguage={language}
+      />
     </StyledDownloadSection>
   );
 };

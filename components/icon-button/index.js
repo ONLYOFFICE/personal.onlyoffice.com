@@ -10,9 +10,8 @@ function IconButton(props) {
   });
 
   const onError = (error, svg) => {
-    error &&
-      setState({ currentIconName: props.defaultIcon });
-  }
+    error && setState({ currentIconName: props.defaultIcon });
+  };
 
   const onMouseEnter = (e) => {
     const {
@@ -131,9 +130,9 @@ function IconButton(props) {
       title={title}
       {...props}
     >
-      <ReactSVG 
-        className={classNameSVG} 
-        src={state.currentIconName} 
+      <ReactSVG
+        className={classNameSVG}
+        src={state.currentIconName}
         afterInjection={onError}
       />
     </StyledIconButton>
@@ -151,9 +150,9 @@ IconButton.propTypes = {
   /** Icon color on hover action */
   hoverColor: PropTypes.string,
   /** Takes the path to the icon (the icon must be located in a static folder) */
-  iconName: PropTypes.string.isRequired,
+  iconName: PropTypes.string,
   /** Takes the path to the icon (the icon must be located in a static folder) */
-  defaultIcon: PropTypes.string.isRequired,
+  defaultIcon: PropTypes.string,
   /** Icon name on click action */
   iconClickName: PropTypes.string,
   /** Icon name on hover action */
