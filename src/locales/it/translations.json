@@ -44,5 +44,8 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tutti i diritti riservati",
   "TermsOfService": "Termini di servizio",
   "CorporateUse": "Uso aziendale",
+  "DownloadExtensionChrome": "Accedi ONLYOFFICE personal subito. <1>Aggiungi estensione a Chrome per un accesso rapido</1>",
+  "DownloadDesktopApp": "Scarica <1>applicazione su desktop gratuita</1> per modificare i file offline o connettere al tuo cloud.",
+  "DownloadMobileApp": "Lavora con i documenti on-the-go con <1>le applicazioni ONLYOFFICE Documents.</1>",
   "SoftpediaDescription": "ONLYOFFICE Personal è un editor online che confeziona i strumenti necessari per creare documenti, fogli di calcolo e presentazioni compatibili con Microsoft e lavorare in collaborazione in tempo reale."
 }
