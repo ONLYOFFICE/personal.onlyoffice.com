@@ -5,7 +5,11 @@ import Text from "../../../../../components/text";
 import Link from "../../../../../components/link";
 import IconButton from "../../../../../components/icon-button";
 
-import InfoPanel from "../../../../../components/info-panel";
+import InfoPanel, {
+  ImageGroup,
+  HeadingGroup,
+  ButtonGroup,
+} from "../../../../../components/info-panel";
 
 const MobileAppPanel = () => {
   const headingComponent = (
@@ -45,11 +49,21 @@ const MobileAppPanel = () => {
   return (
     <InfoPanel
       grayBackground
-      imgUrl="/info-screenshots/en/mobile.react..svg"
-      defaultImgUrl="/info-screenshots/en/mobile.react.svg"
       headingComponent={headingComponent}
       linkComponents={linkComponents}
-    />
+    >
+      <HeadingGroup className="panel-text mobile-text">
+        {headingComponent}
+      </HeadingGroup>
+      <ButtonGroup className="panel-buttons mobile-button">
+        {linkComponents}
+      </ButtonGroup>
+      <ImageGroup
+        className="mobile-app-img panel-image"
+        imgUrl="/info-screenshots/en/mobile.react..svg"
+        defaultImgUrl="/info-screenshots/en/mobile.react.svg"
+      />
+    </InfoPanel>
   );
 };
 

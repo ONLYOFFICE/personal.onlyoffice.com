@@ -1,7 +1,11 @@
 import React from "react";
 import { Trans } from "gatsby-plugin-react-i18next";
 
-import InfoPanel from "../../../../../components/info-panel";
+import InfoPanel, {
+  ImageGroup,
+  HeadingGroup,
+  ButtonGroup,
+} from "../../../../../components/info-panel";
 import Text from "../../../../../components/text";
 import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
@@ -29,13 +33,19 @@ const ChromeExtensionPanel = () => {
   ];
 
   return (
-    <InfoPanel
-      whiteBackground
-      headingComponent={headingComponent}
-      linkComponents={linkComponent}
-      imgUrl="/info-screenshots/en/extension.react..svg"
-      defaultImgUrl="/info-screenshots/en/extension.react.svg"
-    />
+    <InfoPanel whiteBackground>
+      <HeadingGroup className="panel-text extension-text">
+        {headingComponent}
+      </HeadingGroup>
+      <ButtonGroup className="panel-buttons extension-button">
+        {linkComponent}
+      </ButtonGroup>
+      <ImageGroup
+        className="extension-img panel-image"
+        imgUrl="/info-screenshots/en/extension.react.svg"
+        defaultImgUrl="/info-screenshots/en/extension.react.svg"
+      />
+    </InfoPanel>
   );
 };
 

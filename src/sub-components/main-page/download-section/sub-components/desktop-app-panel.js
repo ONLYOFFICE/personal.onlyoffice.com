@@ -1,25 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Trans } from "gatsby-plugin-react-i18next";
 
 import Text from "../../../../../components/text";
 import Link from "../../../../../components/link";
 import Button from "../../../../../components/button";
 
-import InfoPanel from "../../../../../components/info-panel";
+import InfoPanel, {
+  ImageGroup,
+  HeadingGroup,
+  ButtonGroup,
+} from "../../../../../components/info-panel";
 
 const DesktopAppPanel = ({ t }) => {
-  const [isScaleButton, setIsScaleButton] = useState(false);
-
-  useEffect(() => {
-    if (window && window.innerWidth <= 592) {
-      setIsScaleButton(true);
-      console.log("here");
-    } else {
-      setIsScaleButton(false);
-      console.log("here");
-    }
-  }, []);
-
   const headingComponent = (
     <Text>
       <Trans i18nKey="DownloadDesktopApp">
@@ -31,10 +23,12 @@ const DesktopAppPanel = ({ t }) => {
 
   const linkComponents = [
     <Link
+      className="desktop-link"
       key="desktop-app"
       href="https://www.onlyoffice.com/ru/download-desktop.aspx"
     >
       <Button
+        className="desktop-button-component"
         themeButton={false}
         textColorHover="#ffffff"
         borderColorHover="#ffffff"
@@ -43,20 +37,25 @@ const DesktopAppPanel = ({ t }) => {
         typeButton="transparent"
         label={t("AuthDocsDownload")}
         minwidth="130px"
-        isScale={true}
+        isScale
       />
     </Link>,
   ];
 
   return (
-    <InfoPanel
-      orangeBackground
-      imgLeft
-      imgUrl="/info-screenshots/en/desktop.react.svg"
-      defaultImgUrl="/info-screenshots/en/desktop.react.svg"
-      headingComponent={headingComponent}
-      linkComponents={linkComponents}
-    />
+    <InfoPanel orangeBackground imageOnLeft>
+      <HeadingGroup className="panel-text desktop-text">
+        {headingComponent}
+      </HeadingGroup>
+      <ButtonGroup className="panel-buttons desktop-button">
+        {linkComponents}
+      </ButtonGroup>
+      <ImageGroup
+        className="panel-image desktop-image"
+        imgUrl="/info-screenshots/en/desktop.react.svg"
+        defaultImgUrl="/info-screenshots/en/desktop.react.svg"
+      />
+    </InfoPanel>
   );
 };
 
