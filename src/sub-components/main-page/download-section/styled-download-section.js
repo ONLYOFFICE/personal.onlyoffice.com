@@ -3,6 +3,11 @@ import HomeSection from "../../home-section";
 
 const StyledDownloadSection = styled(HomeSection)`
   margin: 0 auto;
+  padding-bottom: 112px;
+  .download-heading {
+    margin-top: 104px;
+    margin-bottom: 26px;
+  }
   .section-page {
     display: grid;
     grid-template-columns: 1fr;
@@ -70,6 +75,9 @@ const StyledDownloadSection = styled(HomeSection)`
   }
 
   @media (max-width: 1200px) {
+    .download-heading {
+      margin-top: 114px;
+    }
     .panel-text {
       width: 312px;
       margin-top: 67px;
@@ -107,6 +115,11 @@ const StyledDownloadSection = styled(HomeSection)`
 
   @media (max-width: 1024px) {
     width: 100%;
+
+    .download-heading {
+      font-size: 30px;
+      margin-top: 89px;
+    }
 
     .section-page {
       width: auto;
@@ -163,6 +176,13 @@ const StyledDownloadSection = styled(HomeSection)`
   }
 
   @media (max-width: 592px) {
+    padding-bottom: 48px;
+    .download-heading {
+      font-size: 20px;
+      margin-top: -8px;
+      margin-bottom: -14px;
+    }
+
     .section-page {
       padding: 0 16px;
     }
