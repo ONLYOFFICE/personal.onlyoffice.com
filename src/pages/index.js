@@ -11,6 +11,7 @@ import HeaderContent from "../sub-components/header-content";
 import ReviewSection from "../sub-components/main-page/review-section";
 import CloudsSection from "../sub-components/main-page/clouds-section";
 import BlockquoteSection from "../sub-components/main-page/blockquote-section";
+import DownloadSection from "../sub-components/main-page/download-section";
 
 const IndexPage = () => {
   const {
@@ -39,6 +40,7 @@ const IndexPage = () => {
       <Layout.SectionMain>
         <CreateSection t={t} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
+        <DownloadSection t={t} language={language} />
         <BlockquoteSection text={t("SoftpediaDescription")} />
         <ReviewSection t={t} />
       </Layout.SectionMain>
