@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledHeaderContent = styled.div`
   width: 1120px;
@@ -8,6 +8,14 @@ const StyledHeaderContent = styled.div`
   display: grid;
   grid-gap: 24px;
   grid-template-columns: minmax(54px, 924px) min-content 34px;
+
+  ${(props) =>
+    props.withoutButton &&
+    css`
+      .header-button {
+        display: hidden !important;
+      }
+    `}
 
   .logo-wrapper {
     margin-top: 26px;
