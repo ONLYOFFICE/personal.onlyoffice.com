@@ -92,5 +92,17 @@
   "es-ES": "Spanish (Spain)",
   "tr-TR": "Turkish (Turkey)",
   "uk-UA": "Ukrainian (Ukraine)",
-  "vi-VN": "Vietnamese (Vietnam)"
+  "vi-VN": "Vietnamese (Vietnam)",
+  "FirstName": "First Name",
+  "LastName": "Last Name",
+  "Password": "Password",
+  "Join": "Join",
+  "ConfirmJoinDescription": "You've successfully confirmed your registration. Create a password and start your work!",
+  "ConfirmPasswordChangeTitle": "Now you can create a new password.",
+  "Ok": "Ok",
+  "ConfirmDeleteAccountHeader": "Attention! You are about to delete your account",
+  "ConfirmDeleteAccountDesc": "By clicking the \"Delete my account\" button you agree with our <1>Privacy policy</1>.",
+  "ConfirmDeleteAccountButton": "Delete my account",
+  "ConfirmDeleteAccountSuccessHeader": "Your account has been successfully deleted",
+  "ConfirmDeleteAccountSuccessDesc": "See our <1>Privacy policy</1> to learn more about deleting your account and data associated with it."
 }
