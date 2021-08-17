@@ -1,4 +1,5 @@
 import sjcl from "sjcl";
+import * as queryString from "query-string";
 export function getCookie(name) {
   let matches = document.cookie.match(
     new RegExp(name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") + "=([^;]*)")
@@ -28,4 +29,10 @@ export function createPasswordHash(password, hashSettings) {
   const hash = sjcl.codec.hex.fromBits(bits);
 
   return hash;
+}
+
+export function parseQueryParams(params) {
+  if (!params) return false;
+  const parsedParams = queryString.parse(params);
+  return parsedParams;
 }
