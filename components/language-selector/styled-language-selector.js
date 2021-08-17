@@ -27,7 +27,7 @@ const StyledItemsList = styled.div`
   border-radius: 3px;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(
-    ${(props) => Math.ceil(props.countLanguages / 3)},
+    ${(props) => Math.ceil(props.countLanguages + 1 / 3)},
     auto
   );
   grid-auto-flow: column;
@@ -37,6 +37,21 @@ const StyledItemsList = styled.div`
   padding: 36px 32px;
   top: 20px;
   right: 18px;
+
+  .header-lng {
+    display: none;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight:bold;    
+    color: #444444;
+    
+  }
+  .close-button-img{
+    display: none;
+    position: fixed;
+    top:21px;
+    right: 21px;
+  }
 
   @media (max-width: 892px) {
     grid-template-columns: repeat(2, auto);
@@ -51,6 +66,31 @@ const StyledItemsList = styled.div`
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(${(props) => props.countLanguages}, auto);
     max-height: 492px;
+  }
+  @media (max-width: 592px) {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(${(props) => props.countLanguages + 2}, auto);
+    min-height: 492px;   
+    position: fixed;
+    top: 0px;
+    right: -0px;
+    min-width: 100vw;
+    max-height: 100vh;    
+    padding: 36px 32px;
+
+    .header-lng {
+    display: block;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;    
+    color: #444444;
+    margin-bottom: 4px;
+    
+    }
+    .close-button-img{
+      display: block;
+    }
   }
 `;
 
