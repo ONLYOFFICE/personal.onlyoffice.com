@@ -41,6 +41,16 @@ const PasswordChangePage = ({ location }) => {
   };
 
   const onSubmitHandler = () => {
+    let hasError = false;
+
+    if (!password.trim()) {
+      hasError = true;
+      setIsPwdValid(false);
+    }
+
+    if (hasError) {
+      return false;
+    }
     const hash = createPasswordHash(password, hashSettings);
 
     changePassword(params.uid, hash, params.key)
@@ -49,7 +59,6 @@ const PasswordChangePage = ({ location }) => {
       })
       .catch((error) => {
         toastr.error(t(`${error}`));
-        this.setState({ isLoading: false });
       });
   };
   const formData = [
@@ -67,6 +76,7 @@ const PasswordChangePage = ({ location }) => {
       value: password,
       autoComplete: "new-password",
       tabIndexProp: 1,
+      isError: !isPwdValid,
     },
 
     {
