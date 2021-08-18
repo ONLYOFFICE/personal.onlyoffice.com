@@ -108,5 +108,7 @@
   "CantBeEmpty": "This field can't be empty",
   "InvalidUserNameOrPwd": "Invalid user name or password.",
   "IncorrectEmail": "Incorrect email",
-  "SendChangePasswordInstructionSuccess": "If a user with the {{email}} email exists, the password change instruction has been sent to this email address"
+  "SendChangePasswordInstructionSuccess": "If a user with the {{email}} email exists, the password change instruction has been sent to this email address",
+  "EmailChanged": "Email changed",
+  "EmailChangeError": "Change client email error"
 }
