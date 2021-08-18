@@ -4,6 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
+import toastr from "../../../components/toast/toastr";
 
 import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
@@ -17,11 +18,11 @@ import { getSettings, login, getUser } from "../../api";
 
 import { createPasswordHash } from "../../helpers/";
 
-const SignInPage = () => {
+const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(true);
   const [passwordValue, setPasswordValue] = useState("");
-  const [passwordIsValid, setPasswordIsValid] = useState(false);
+  const [passwordIsValid, setPasswordIsValid] = useState(true);
   const [isChecked, setIsChecked] = useState(true);
 
   const [hashSettings, setHashSettings] = useState();
@@ -33,6 +34,13 @@ const SignInPage = () => {
       })
       .catch((e) => console.error(e));
   }, []);
+
+  useEffect(() => {
+    if (location.state) {
+      location.state.hasOwnProperty("toastr") &&
+        toastr.success(location.state.toastr.text);
+    }
+  }, [location.state]);
 
   const {
     t,
@@ -61,7 +69,19 @@ const SignInPage = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    if (!passwordValue || !emailValue) return;
+    let hasError;
+
+    if (!passwordValue.trim()) {
+      hasError = true;
+      setPasswordIsValid(false);
+    }
+
+    if (!emailValue.trim()) {
+      hasError = true;
+      setEmailIsValid(false);
+    }
+
+    if (hasError) return;
 
     const hash = createPasswordHash(passwordValue, hashSettings);
 
@@ -75,9 +95,9 @@ const SignInPage = () => {
         //   // updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
         // })
         .then(() => window.open("/", "_self"))
-        .catch((e) => console.log(e));
+        .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {
-      console.log("not valid");
+      toastr.error(t("InvalidUserNameOrPwd"));
     }
   };
 
@@ -92,6 +112,7 @@ const SignInPage = () => {
       value: emailValue,
       tabIndexProp: 1,
       isAutoFocussed: true,
+      isError: !emailIsValid,
     },
     {
       type: "input",
@@ -101,6 +122,7 @@ const SignInPage = () => {
       value: passwordValue,
       autoComplete: "current-password",
       tabIndexProp: 2,
+      isError: !passwordIsValid,
     },
     {
       type: "checkbox",
@@ -111,6 +133,7 @@ const SignInPage = () => {
     {
       type: "button",
       callback: onSubmitHandler,
+
       isSubmit: true,
       toHideButton: false,
       typeButton: "primary",

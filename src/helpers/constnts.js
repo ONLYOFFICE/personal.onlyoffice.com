@@ -1,1 +1,1 @@
-export const PERSONAL_COOKIE = "onluoffice_personal_cookie";
+export const PERSONAL_COOKIE = "onlyoffice_personal_cookie";
