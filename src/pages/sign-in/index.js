@@ -37,10 +37,10 @@ const SignInPage = ({ location }) => {
 
   useEffect(() => {
     if (location.state) {
-      location.state.toastr.success &&
+      location.state.hasOwnProperty("toastr") &&
         toastr.success(location.state.toastr.text);
     }
-  }, []);
+  }, [location.state]);
 
   const {
     t,
