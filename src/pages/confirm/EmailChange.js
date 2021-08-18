@@ -18,9 +18,17 @@ const EmailChangePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  const params = parseQueryParams(location.search);
-  const confirmHeader = getConfirmHeader(location);
   useEffect(() => {
+    // const params = parseQueryParams(location.search);
+    // const confirmHeader = getConfirmHeader(location);
+    navigate("/", {
+      state: {
+        toastr: {
+          error: true,
+          text: t("EmailChangeError"),
+        },
+      },
+    });
     // const { email } = params;
     // //getUser(email)
     // //.then((user) => {

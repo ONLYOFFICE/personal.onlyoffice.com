@@ -11,7 +11,7 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { getSettings, login, changePassword } from "../../api";
+import { getSettings, changePassword } from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
@@ -37,9 +37,6 @@ const PasswordChangePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  const params = parseQueryParams(location.search);
-  const confirmHeader = getConfirmHeader(location);
-
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
     setIsPwdValid(isValid);
@@ -56,6 +53,9 @@ const PasswordChangePage = ({ location }) => {
     if (hasError) {
       return false;
     }
+
+    const params = parseQueryParams(location.search);
+    const confirmHeader = getConfirmHeader(location);
     const hash = createPasswordHash(password, hashSettings);
 
     changePassword(params.uid, hash, confirmHeader)

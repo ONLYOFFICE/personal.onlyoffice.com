@@ -24,10 +24,9 @@ const ProfileRemovePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  const params = parseQueryParams(location.search);
-  const confirmHeader = getConfirmHeader(location);
-
   const onSubmitHandler = () => {
+    // const params = parseQueryParams(location.search);
+    // const confirmHeader = getConfirmHeader(location);
     // deleteSelf(confirmHeader)
     //   .then((res) => {
     //     setIsProfileDeleted(true);

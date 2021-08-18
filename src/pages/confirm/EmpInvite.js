@@ -43,10 +43,6 @@ const EmpInvitePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  const params = parseQueryParams(location.search);
-
-  const confirmHeader = getConfirmHeader(location);
-
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);
     setFirstName(e.target.value);
@@ -120,6 +116,8 @@ const EmpInvitePage = ({ location }) => {
       return false;
     }
 
+    const params = parseQueryParams(location.search);
+    const confirmHeader = getConfirmHeader(location);
     const hash = createPasswordHash(password, hashSettings);
 
     const loginData = {
