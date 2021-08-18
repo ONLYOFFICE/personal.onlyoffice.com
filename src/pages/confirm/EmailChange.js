@@ -21,33 +21,32 @@ const EmailChangePage = ({ location }) => {
   const params = parseQueryParams(location.search);
   const confirmHeader = getConfirmHeader(location);
   useEffect(() => {
-    const { email } = params;
-    console.log(params);
-    getUser(email)
-      .then((user) => {
-        changeEmail(user.id, email, confirmHeader).then((res) => {
-          console.log(res);
-          // navigate("/", {
-          //   state: {
-          //     toastr: {
-          //       success: true,
-          //       text: t("EmailChanged"),
-          //     },
-          //   },
-          // });
-        });
-      })
-      .catch((e) => {
-        console.log(e);
-        // navigate("/", {
-        //   state: {
-        //     toastr: {
-        //       error: true,
-        //       text: t("EmailChangeError"),
-        //     },
-        //   },
-        // });
-      });
+    // const { email } = params;
+    // //getUser(email)
+    // //.then((user) => {
+    // changeEmail(params.key, email, confirmHeader)
+    //   .then((res) => {
+    //     console.log(res);
+    //     // navigate("/", {
+    //     //   state: {
+    //     //     toastr: {
+    //     //       success: true,
+    //     //       text: t("EmailChanged"),
+    //     //     },
+    //     //   },
+    //     // });
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //     // navigate("/", {
+    //     //   state: {
+    //     //     toastr: {
+    //     //       error: true,
+    //     //       text: t("EmailChangeError"),
+    //     //     },
+    //     //   },
+    //     // });
+    //   });
   });
 
   return (

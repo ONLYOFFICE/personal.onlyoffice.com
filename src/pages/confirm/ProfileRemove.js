@@ -28,15 +28,15 @@ const ProfileRemovePage = ({ location }) => {
   const confirmHeader = getConfirmHeader(location);
 
   const onSubmitHandler = () => {
-    deleteSelf(confirmHeader)
-      .then((res) => {
-        setIsProfileDeleted(true);
-        console.log("success delete", res);
-      })
-      .catch((e) => {
-        //setIsProfileDeleted(true);
-        toastr.error(`${e}`);
-      });
+    // deleteSelf(confirmHeader)
+    //   .then((res) => {
+    //     setIsProfileDeleted(true);
+    //     console.log("success delete", res);
+    //   })
+    //   .catch((e) => {
+    //     //setIsProfileDeleted(true);
+    //     toastr.error(`${e}`);
+    //   });
   };
 
   const DeleteProfileDesc = (
