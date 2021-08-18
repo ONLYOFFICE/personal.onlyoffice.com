@@ -10,7 +10,7 @@ const TextInput = ({
   className,
   id,
   type,
-  onBlur,
+
   placeholder,
   onChange,
   defaultInput,

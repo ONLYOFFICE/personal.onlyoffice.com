@@ -27,6 +27,8 @@ const EmpInvitePage = ({ location }) => {
 
   const [firstNameValid, setFirstNameValid] = useState(true);
   const [lastNameValid, setLastNameValid] = useState(true);
+  const [firstNameIsSuccess, setFirstNameIsSuccess] = useState(false);
+  const [lastNameIsSuccess, setLastNameIsSuccess] = useState(false);
 
   useEffect(() => {
     getSettings()
@@ -78,6 +80,22 @@ const EmpInvitePage = ({ location }) => {
     console.log("Login", response);
 
     return user;
+  };
+
+  const firstNameOnBlurHandler = () => {
+    if (!!firstName.trim()) {
+      setFirstNameIsSuccess(true);
+    } else {
+      setFirstNameIsSuccess(false);
+    }
+  };
+
+  const lastNameOnBlurHandler = () => {
+    if (!!lastName.trim()) {
+      setLastNameIsSuccess(true);
+    } else {
+      setLastNameIsSuccess(false);
+    }
   };
 
   const onSubmitHandler = () => {
@@ -142,6 +160,8 @@ const EmpInvitePage = ({ location }) => {
       tabIndexProp: 1,
       autoComplete: "given-name",
       isError: !firstNameValid,
+      onBlur: firstNameOnBlurHandler,
+      isSuccess: firstNameIsSuccess,
     },
     {
       type: "input",
@@ -152,6 +172,8 @@ const EmpInvitePage = ({ location }) => {
       tabIndexProp: 2,
       autoComplete: "family-name",
       isError: !lastNameValid,
+      onBlur: lastNameOnBlurHandler,
+      isSuccess: lastNameIsSuccess,
     },
     {
       type: "input",
