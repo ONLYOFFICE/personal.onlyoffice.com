@@ -12,7 +12,7 @@ import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
 import { deleteSelf } from "../../api";
-import { parseQueryParams } from "../../helpers";
+import { parseQueryParams, getConfirmHeader } from "../../helpers";
 import IconButton from "../../../components/icon-button";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
@@ -25,14 +25,16 @@ const ProfileRemovePage = ({ location }) => {
   } = useTranslation();
 
   const params = parseQueryParams(location.search);
+  const confirmHeader = getConfirmHeader(location);
 
   const onSubmitHandler = () => {
-    deleteSelf(params.key)
+    deleteSelf(confirmHeader)
       .then((res) => {
         setIsProfileDeleted(true);
         console.log("success delete", res);
       })
       .catch((e) => {
+        //setIsProfileDeleted(true);
         toastr.error(`${e}`);
       });
   };

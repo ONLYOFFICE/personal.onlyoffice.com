@@ -12,7 +12,11 @@ import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
 
 import { getSettings, createUser, login } from "../../api";
-import { parseQueryParams, createPasswordHash } from "../../helpers";
+import {
+  parseQueryParams,
+  createPasswordHash,
+  getConfirmHeader,
+} from "../../helpers";
 
 const EmpInvitePage = ({ location }) => {
   const [firstName, setFirstName] = useState("");
@@ -38,6 +42,8 @@ const EmpInvitePage = ({ location }) => {
   } = useTranslation();
 
   const params = parseQueryParams(location.search);
+
+  const confirmHeader = getConfirmHeader(location);
 
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);
@@ -109,7 +115,7 @@ const EmpInvitePage = ({ location }) => {
       email: params.email,
     };
 
-    createConfirmUser(personalData, loginData, params.key)
+    createConfirmUser(personalData, loginData, confirmHeader)
       .then(() => window.location.replace("/"))
       .catch((error) => {
         toastr.error(`${error}`);

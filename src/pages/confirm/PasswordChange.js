@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
@@ -12,7 +12,11 @@ import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
 import { getSettings, login, changePassword } from "../../api";
-import { parseQueryParams, createPasswordHash } from "../../helpers";
+import {
+  parseQueryParams,
+  createPasswordHash,
+  getConfirmHeader,
+} from "../../helpers";
 
 const PasswordChangePage = ({ location }) => {
   const [password, setPassword] = useState("");
@@ -34,6 +38,7 @@ const PasswordChangePage = ({ location }) => {
   } = useTranslation();
 
   const params = parseQueryParams(location.search);
+  const confirmHeader = getConfirmHeader(location);
 
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
@@ -53,9 +58,9 @@ const PasswordChangePage = ({ location }) => {
     }
     const hash = createPasswordHash(password, hashSettings);
 
-    changePassword(params.uid, hash, params.key)
+    changePassword(params.uid, hash, confirmHeader)
       .then(() => {
-        login(params.email, hash);
+        navigate("/sign-in");
       })
       .catch((error) => {
         toastr.error(`${error}`);
