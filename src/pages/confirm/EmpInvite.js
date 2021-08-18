@@ -18,8 +18,10 @@ const EmpInvitePage = ({ location }) => {
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [isPwdValid, setIsPwdValid] = useState(true);
-
   const [hashSettings, setHashSettings] = useState();
+
+  const [firstNameValid, setFirstNameValid] = useState(true);
+  const [lastNameValid, setLastNameValid] = useState(true);
 
   useEffect(() => {
     getSettings()
@@ -37,10 +39,12 @@ const EmpInvitePage = ({ location }) => {
   const params = parseQueryParams(location.search);
 
   const onChangeFirstName = (e) => {
+    if (!firstNameValid) setFirstNameValid(true);
     setFirstName(e.target.value);
   };
 
   const onChangeLastName = (e) => {
+    if (!lastNameValid) setLastNameValid(true);
     setLastName(e.target.value);
   };
 
@@ -70,8 +74,28 @@ const EmpInvitePage = ({ location }) => {
   };
 
   const onSubmitHandler = () => {
-    const hash = createPasswordHash(password, hashSettings);
-    const isVisitor = parseInt(params.emplType) === 2;
+    let hasError = false;
+
+    if (!firstName.trim()) {
+      hasError = true;
+      setFirstNameValid(false);
+    }
+
+    if (!lastName.trim()) {
+      hasError = true;
+      setLastNameValid(false);
+    }
+
+    if (!password.trim()) {
+      hasError = true;
+      setIsPwdValid(false);
+    }
+
+    if (hasError) {
+      return false;
+    }
+
+    const hash = createPasswordHash(password.trim(), hashSettings);
 
     const loginData = {
       userName: params.email,
@@ -79,16 +103,12 @@ const EmpInvitePage = ({ location }) => {
     };
 
     const personalData = {
-      firstname: firstName,
-      lastname: lastName,
+      firstname: firstName.trim(),
+      lastname: lastName.trim(),
       email: params.email,
     };
 
-    const registerData = Object.assign(personalData, {
-      isVisitor: isVisitor,
-    });
-
-    createConfirmUser(registerData, loginData, params.key)
+    createConfirmUser(personalData, loginData, params.key)
       .then(() => window.location.replace("/"))
       .catch((error) => {
         console.error("confirm error", error);
@@ -113,6 +133,7 @@ const EmpInvitePage = ({ location }) => {
       value: firstName,
       tabIndexProp: 1,
       autoComplete: "given-name",
+      isError: !firstNameValid,
     },
     {
       type: "input",
@@ -122,6 +143,7 @@ const EmpInvitePage = ({ location }) => {
       value: lastName,
       tabIndexProp: 2,
       autoComplete: "family-name",
+      isError: !lastNameValid,
     },
     {
       type: "input",
@@ -131,6 +153,8 @@ const EmpInvitePage = ({ location }) => {
       value: password,
       autoComplete: "new-password",
       tabIndexProp: 3,
+      isError: !isPwdValid,
+      errText: t("CantBeEmpty"),
     },
 
     {
