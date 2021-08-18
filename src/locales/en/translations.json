@@ -104,5 +104,6 @@
   "ConfirmDeleteAccountDesc": "By clicking the \"Delete my account\" button you agree with our <1>Privacy policy</1>.",
   "ConfirmDeleteAccountButton": "Delete my account",
   "ConfirmDeleteAccountSuccessHeader": "Your account has been successfully deleted",
-  "ConfirmDeleteAccountSuccessDesc": "See our <1>Privacy policy</1> to learn more about deleting your account and data associated with it."
+  "ConfirmDeleteAccountSuccessDesc": "See our <1>Privacy policy</1> to learn more about deleting your account and data associated with it.",
+  "CantBeEmpty": "This field can't be empty"
 }
