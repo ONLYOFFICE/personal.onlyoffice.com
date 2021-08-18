@@ -18,7 +18,7 @@ import { getSettings, login, getUser } from "../../api";
 
 import { createPasswordHash } from "../../helpers/";
 
-const SignInPage = () => {
+const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [passwordValue, setPasswordValue] = useState("");
@@ -33,6 +33,13 @@ const SignInPage = () => {
         setHashSettings(res.passwordHash);
       })
       .catch((e) => console.error(e));
+  }, []);
+
+  useEffect(() => {
+    if (location.state) {
+      location.state.toastr.success &&
+        toastr.success(location.state.toastr.text);
+    }
   }, []);
 
   const {
@@ -64,8 +71,6 @@ const SignInPage = () => {
 
     let hasError;
 
-    console.log(hasError);
-
     if (!passwordValue.trim()) {
       hasError = true;
       setPasswordIsValid(false);
@@ -75,7 +80,7 @@ const SignInPage = () => {
       hasError = true;
       setEmailIsValid(false);
     }
-    console.log(hasError);
+
     if (hasError) return;
 
     const hash = createPasswordHash(passwordValue, hashSettings);
@@ -90,9 +95,9 @@ const SignInPage = () => {
         //   // updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
         // })
         .then(() => window.open("/", "_self"))
-        .catch((e) => toastr.error(`${e}`));
+        .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {
-      console.log("not valid");
+      toastr.error(t("InvalidUserNameOrPwd"));
     }
   };
 
