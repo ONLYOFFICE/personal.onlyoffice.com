@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
+import toastr from "../../../components/toast/toastr";
 
 import FooterContent from "../../sub-components/footer-content";
 import HeaderContent from "../../sub-components/header-content";
@@ -32,7 +33,7 @@ const ProfileRemovePage = ({ location }) => {
         console.log("success delete", res);
       })
       .catch((e) => {
-        console.log("error delete", e);
+        toastr.error(`${e}`);
       });
   };
 

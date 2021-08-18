@@ -58,7 +58,7 @@ const PasswordChangePage = ({ location }) => {
         login(params.email, hash);
       })
       .catch((error) => {
-        toastr.error(t(`${error}`));
+        toastr.error(`${error}`);
       });
   };
   const formData = [

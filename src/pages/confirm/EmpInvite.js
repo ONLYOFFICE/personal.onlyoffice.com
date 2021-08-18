@@ -9,6 +9,7 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import FormDescription from "../../sub-components/form-description";
 import Form from "../../../components/form";
+import toastr from "../../../components/toast/toastr";
 
 import { getSettings, createUser, login } from "../../api";
 import { parseQueryParams, createPasswordHash } from "../../helpers";
@@ -95,7 +96,7 @@ const EmpInvitePage = ({ location }) => {
       return false;
     }
 
-    const hash = createPasswordHash(password.trim(), hashSettings);
+    const hash = createPasswordHash(password, hashSettings);
 
     const loginData = {
       userName: params.email,
@@ -103,17 +104,18 @@ const EmpInvitePage = ({ location }) => {
     };
 
     const personalData = {
-      firstname: firstName.trim(),
-      lastname: lastName.trim(),
+      firstname: firstName,
+      lastname: lastName,
       email: params.email,
     };
 
     createConfirmUser(personalData, loginData, params.key)
       .then(() => window.location.replace("/"))
       .catch((error) => {
-        console.error("confirm error", error);
+        toastr.error(`${error}`);
       });
   };
+
   const formData = [
     { type: "heading", headingText: t("Join"), isHeader: true },
     {
@@ -156,7 +158,6 @@ const EmpInvitePage = ({ location }) => {
       isError: !isPwdValid,
       errText: t("CantBeEmpty"),
     },
-
     {
       type: "button",
       callback: onSubmitHandler,
