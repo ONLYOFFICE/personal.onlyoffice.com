@@ -105,5 +105,8 @@
   "ConfirmDeleteAccountButton": "Delete my account",
   "ConfirmDeleteAccountSuccessHeader": "Your account has been successfully deleted",
   "ConfirmDeleteAccountSuccessDesc": "See our <1>Privacy policy</1> to learn more about deleting your account and data associated with it.",
-  "CantBeEmpty": "This field can't be empty"
+  "CantBeEmpty": "This field can't be empty",
+  "InvalidUserNameOrPwd": "Invalid user name or password.",
+  "IncorrectEmail": "Incorrect email",
+  "SendChangePasswordInstructionSuccess": "If a user with the {{email}} email exists, the password change instruction has been sent to this email address"
 }
