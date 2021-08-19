@@ -54,5 +54,13 @@
   "DownloadExtensionChrome": "Acesse ONLYOFFICE pessoal rapidamente. <1>Obtenha a extensão do Chrome para acesso rápido.</1>",
   "DownloadDesktopApp": "Baixe o <1>app de desktop gratuito</1> para editar arquivos offline ou se conectar à sua nuvem.",
   "DownloadMobileApp": "Trabalhe em documentos on-the-go com <1>ONLYOFFICE Documentos de solicitação.</1>",
-  "SoftpediaDescription": "O ONLYOFFICE Personal é um editor online que reúne as ferramentas necessárias para criar documentos, planilhas e apresentações compatíveis com a Microsoft e trabalhar em colaboração com outros membros da equipe."
+  "SoftpediaDescription": "O ONLYOFFICE Personal é um editor online que reúne as ferramentas necessárias para criar documentos, planilhas e apresentações compatíveis com a Microsoft e trabalhar em colaboração com outros membros da equipe.",
+  "DocSlideSectionCarouselHeading": "Trabalhe com documentos",
+  "DocSlideSectionCarouselText": "Obtenha todas as ferramentas de que você precisa para editar e formatar qualquer documento.",
+  "TabSlideSectionCarouselHeading": "Organize dados em planilhas",
+  "TabSlideSectionCarouselText": "Organize, examine e calcule quaisquer dados complexos.",
+  "PresSlideSectionCarouselHeading": "Crie apresentações",
+  "PresSlideSectionCarouselText": "Expresse suas ideias e as apresente para o público facilmente.",
+  "CollaborationSlideSecitonCarouselHeading": "Colaborar online",
+  "CollaborationSlideSectionCarouselText": "Convide qualquer pessoa para editar documentos em conjunto ou obter revisões de seu trabalho."
 }

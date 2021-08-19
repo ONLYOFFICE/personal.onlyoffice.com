@@ -34,5 +34,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle rechten voorbehouden",
   "TermsOfService": "Servicevoorwaarden",
   "CorporateUse": "Zakelijk Gebruik",
-  "SoftpediaDescription": "ONLYOFFICE Personal is een online editor die de nodige tools bevat om met Microsoft te gebruiken documenten, spreadsheets en presentaties te maken, en om samen te werken met teamleden."
+  "SoftpediaDescription": "ONLYOFFICE Personal is een online editor die de nodige tools bevat om met Microsoft te gebruiken documenten, spreadsheets en presentaties te maken, en om samen te werken met teamleden.",
+  "DocSlideSectionCarouselHeading": "Werk met documenten",
+  "DocSlideSectionCarouselText": "Krijg alle tools die u nodig hebt om elk document te bewerken en op te maken.",
+  "TabSlideSectionCarouselHeading": "Organiseer gegevens in spreadsheets",
+  "TabSlideSectionCarouselText": "Complexe gegevens ordenen, onderzoeken en berekenen.",
+  "PresSlideSectionCarouselHeading": "Maak presentaties",
+  "PresSlideSectionCarouselText": "Druk uw ideeën uit en presenteer ze gemakkelijk aan het publiek.",
+  "CollaborationSlideSecitonCarouselHeading": "Werk online samen",
+  "CollaborationSlideSectionCarouselText": "Nodig iedereen uit om samen documenten te bewerken of beoordelingen op uw werk te krijgen."
 }

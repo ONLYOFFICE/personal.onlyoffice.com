@@ -35,5 +35,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Усі права захищені",
   "TermsOfService": "Умови обслуговування",
   "CorporateUse": "Корпоративне використання",
-  "SoftpediaDescription": "ONLYOFFICE Personal — це онлайн-редактор, який містить інструменти для створення сумісних із Microsoft Office документів, електронних таблиць та презентацій, а також спільної роботи з командою."
+  "SoftpediaDescription": "ONLYOFFICE Personal — це онлайн-редактор, який містить інструменти для створення сумісних із Microsoft Office документів, електронних таблиць та презентацій, а також спільної роботи з командою.",
+  "DocSlideSectionCarouselHeading": "Робота з документами",
+  "DocSlideSectionCarouselText": "Отримайте всі інструменти, необхідні для редагування та форматування будь-яких документів.",
+  "TabSlideSectionCarouselHeading": "Організація даних в електронні таблиці",
+  "TabSlideSectionCarouselText": "Організовуйте, досліджуйте та обчислюйте будь-які складні дані.",
+  "PresSlideSectionCarouselHeading": "Створення презентацій",
+  "PresSlideSectionCarouselText": "Виражайте свої ідеї та легко презентуйте їх аудиторії.",
+  "CollaborationSlideSecitonCarouselHeading": "Онлайн-співпраця",
+  "CollaborationSlideSectionCarouselText": "Запросіть будь-яку особу до спільного редагування документів або рецензування вашої роботи."
 }
