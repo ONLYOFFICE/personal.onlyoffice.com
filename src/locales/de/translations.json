@@ -54,16 +54,15 @@
   "TermsOfService": "Nutzungsbedingungen",
   "CorporateUse": "Unternehmenseinsatz",
   "SoftpediaDescription": "ONLYOFFICE Personal ist ein Online-Editor mit allen notwendigen Tools für gemeinsame Erstellung von Dokumenten, Tabellenkalkulationen und Präsentationen. Die höchste Kompatibilität mit Microsoft-Formaten ist garantiert.",
-  "DocSlideSecitonCarouselHeading" : "Textdokumente bearbeiten",
-  "DocSlideSecitonCarouselText" : "Erhalten Sie alle Tools für Bearbeitung und Formatierung jedes Dokuments.",
-  "TabSlideSecitonCarouselHeading" : "Daten in Tabellenkalkulationen organisieren",
-  "TabSlideSecitonCarouselText" : "Organisieren, analysieren und berechnen Sie komplexe Daten.",
-  "PresSlideSecitonCarouselHeading" : "Präsentationen erstellen",
-  "PresSlideSecitonCarouselText" : "Stellen Sie Ihre Ideen dem Publikum einfacher vor.",
-  "CollaborationSlideSecitonCarouselHeading" : "Online zusammenarbeiten",
-  "CollaborationSlideSecitonCarouselText" : "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein."
+  "DocSlideSectionCarouselHeading": "Textdokumente bearbeiten",
+  "DocSlideSectionCarouselText": "Erhalten Sie alle Tools für Bearbeitung und Formatierung jedes Dokuments.",
+  "TabSlideSectionCarouselHeading": "Daten in Tabellenkalkulationen organisieren",
+  "TabSlideSectionCarouselText": "Organisieren, analysieren und berechnen Sie komplexe Daten.",
+  "PresSlideSectionCarouselHeading": "Präsentationen erstellen",
+  "PresSlideSectionCarouselText": "Stellen Sie Ihre Ideen dem Publikum einfacher vor.",
+  "CollaborationSlideSecitonCarouselHeading": "Online zusammenarbeiten",
+  "CollaborationSlideSectionCarouselText": "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein.",
   "DownloadExtensionChrome": "Greifen Sie auf ONLYOFFICE Personal einfacher zu. <1>Erhalten Sie die Chrome-Erweiterung für schnelleren Zugriff.</1>",
   "DownloadDesktopApp": "Erhalten Sie <1>die kostenlose Desktop-App,</1> um Dateien offline zu bearbeiten oder Ihre Cloud zu verbinden.",
-  "DownloadMobileApp": "Bearbeiten Sie Dokumente auch unterwegs mit <1>ONLYOFFICE Documents.</1>",
-  "SoftpediaDescription": "ONLYOFFICE Personal ist ein Online-Editor mit allen notwendigen Tools für gemeinsame Erstellung von Dokumenten, Tabellenkalkulationen und Präsentationen. Die höchste Kompatibilität mit Microsoft-Formaten ist garantiert."
+  "DownloadMobileApp": "Bearbeiten Sie Dokumente auch unterwegs mit <1>ONLYOFFICE Documents.</1>"
 }
