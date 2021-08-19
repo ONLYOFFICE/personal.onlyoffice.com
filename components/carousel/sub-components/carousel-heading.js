@@ -2,21 +2,31 @@ import React from "react";
 import Heading from "../../heading";
 
 const CarouselHeading = (props) => {
-    const { item } = props;
-    const { headingText, level, fontSize, lineHeight, textAlign, headingClassName } = item;
-    const ClassName = headingClassName || "carousel-item-heading";
+  const { item } = props;
+  const {
+    headingText,
+    level,
+    fontSize,
+    lineHeight,
+    textAlign,
+    headingClassName,
+  } = item;
 
-    return (
-        <Heading
-            level={level}
-            fontSize={fontSize}
-            lineHeight={lineHeight}
-            textAlign={textAlign}
-            className={ClassName}
-        >
-            {headingText}
-        </Heading>
-    );
-}
+  const modifiedClassName = `carousel-item-heading ${
+    headingClassName ? headingClassName : ""
+  } `;
+
+  return (
+    <Heading
+      level={level}
+      fontSize={fontSize}
+      lineHeight={lineHeight}
+      textAlign={textAlign}
+      className={modifiedClassName}
+    >
+      {headingText}
+    </Heading>
+  );
+};
 
 export default CarouselHeading;

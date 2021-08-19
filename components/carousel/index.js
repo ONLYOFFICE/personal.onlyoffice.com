@@ -7,93 +7,57 @@ import "slick-carousel/slick/slick-theme.css";
 
 import StyledCarousel from "./styled-carousel";
 import CarouselHeading from "./sub-components/carousel-heading";
-import CarouselText from "./sub-components/carousel-text"
+import CarouselText from "./sub-components/carousel-text";
 import CarouselImage from "./sub-components/carousel-image";
 
 const Carousel = ({
   settingsCarousel,
   isArrows,
-  panelCarousel,
+  items,
   refCarousel,
   asNavForCarousel,
   ...rest
 }) => {
-
-  const settings = settingsCarousel ||
-  {
+  const settings = settingsCarousel || {
     fade: false,
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
-  const Slides = [];
+  const sliders = items.map((item, idx) => {
+    switch (item.type) {
+      case "text":
+        return (
+          <div className="slide" key={`${item.type}-text-${idx}`}>
+            <CarouselHeading key={`${item.type}-heading-${idx}`} item={item} />
+            <CarouselText key={`${item.type}-description-${idx}`} item={item} />
+          </div>
+        );
 
-  panelCarousel.forEach((it) => {
-    let ellementsSlide = [];
+      case "image":
+        return (
+          <CarouselImage
+            key={`${item.type}-image-${idx}`}
+            item={item}
+            className="slide"
+          />
+        );
 
-    it.forEach((item, idx) => {
-      switch (item.type) {
+      case "other":
+        return item.element;
 
-        case "heading":
-          ellementsSlide.push(
-            <CarouselHeading
-              key={`${item.type}-${idx}`}
-              item={item}
-            />
-          );
-          break;
-
-        case "text":
-          ellementsSlide.push(
-            <CarouselText
-              key={`${item.type}-${idx}`}
-              item={item}
-            />
-          );
-          break;
-
-        case "image":
-          ellementsSlide.push(
-            <CarouselImage
-              key={`${item.type}-${idx}`}
-              item={item}
-            />
-          );
-          break;
-
-        case "other":
-          ellementsSlide.push(item.element);
-          break;
-
-        default:
-          break;
-      }
-    });
-
-    return Slides.push(ellementsSlide);
+      default:
+        return false;
+    }
   });
-
-  let Slide = Slides.map((it, i) =>
-    <div key={`slide-${i}`} className={`slide slide-${i}`}>
-      {
-        it.map((item) => {
-          return item;
-        })
-      }
-    </div>
-  )
 
   return (
     <StyledCarousel arrows={isArrows} {...rest}>
-      <Slider
-        asNavFor={asNavForCarousel}
-        ref={refCarousel}
-        {...settings}
-      >
-        {Slide}
+      <Slider asNavFor={asNavForCarousel} ref={refCarousel} {...settings}>
+        {sliders}
       </Slider>
     </StyledCarousel>
   );
@@ -103,7 +67,7 @@ Carousel.propTypes = {
   /** Carousel settings*/
   settingsCarousel: PropTypes.object,
   /** Carousel array item*/
-  panelCarousel: PropTypes.arrayOf(PropTypes.array),
+  items: PropTypes.arrayOf(PropTypes.object),
   /** Carousel arrows*/
   isArrows: PropTypes.bool,
   /** Carousel tab index */
@@ -116,9 +80,9 @@ Carousel.propTypes = {
 
 Carousel.defaultProps = {
   settingsCarousel: {},
-  panelCarousel: [{}],
+  items: [{}],
   isArrows: true,
-  tabIndex: -1
+  tabIndex: -1,
 };
 
 export default Carousel;

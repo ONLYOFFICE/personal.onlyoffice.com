@@ -9,7 +9,7 @@ import Carousel from "../components/carousel";
 ```
 
 ```jsx
-<Carousel panelCarousel={PanelCarousel} settingsCarousel={SettingsCarousel} />
+<Carousel items={items} settingsCarousel={SettingsCarousel} />
 ```
 
 ### Properties
@@ -21,4 +21,4 @@ import Carousel from "../components/carousel";
 | `tabIndex`         |  `int`   |    -     |   -    |    -    | Carousel tab index  |
 | `isArrows`         |  `bool`  |    -     |   -    |    -    | Carousel arrows     |
 | `settingsCarousel` |  `obj`   |    -     |   -    |    -    | Carousel settings   |
-| `panelCarousel`    | `array`  |    -     |   -    |    -    | Carousel array item |
+| `items`            | `array`  |    -     |   -    |    -    | Carousel array item |

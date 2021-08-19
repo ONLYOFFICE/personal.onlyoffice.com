@@ -1,27 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Image = (props) => {
-  const { item } = props;
-  const { src, defaultSrc, alt, imageClassName } = item;
-  const ClassName = imageClassName || "carousel-item-image";
+const CarouselImage = (props) => {
+  const { item, ...rest } = props;
+  const { alt, imageClassName, src } = item;
 
-  const [errorLaodSrc, setErrorLaodSrc] = useState(true);
+  const modifiedClassName = `carousel-item-image ${
+    imageClassName ? imageClassName : ""
+  } `;
 
-  const onError = (e) => {
-    if (errorLaodSrc) {
-      setErrorLaodSrc(errorLaodSrc);
-      e.target.src = defaultSrc;
-    }
-  };
+  return <img {...rest} src={src} alt={alt} className={modifiedClassName} />;
+};
 
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className={ClassName}
-      onError={onError}
-    />
-  );
-}
-
-export default Image;
+export default CarouselImage;
