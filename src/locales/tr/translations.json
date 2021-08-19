@@ -33,5 +33,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tüm hakları saklıdır",
   "TermsOfService": "Hizmet Şartları",
   "CorporateUse": "Kurumsal Kullanım",
-  "SoftpediaDescription": "ONLYOFFICE Personal, Microsoft uyumlu belgeler, tablolar ve sunumlar oluşturmak ve ekip üyeleriyle işbirliği içinde çalışmak için gerekli araçları bir araya getiren çevrimiçi bir düzenleyicidir."
+  "SoftpediaDescription": "ONLYOFFICE Personal, Microsoft uyumlu belgeler, tablolar ve sunumlar oluşturmak ve ekip üyeleriyle işbirliği içinde çalışmak için gerekli araçları bir araya getiren çevrimiçi bir düzenleyicidir.",
+  "DocSlideSectionCarouselHeading": "Belgeler üzerinde çalışın",
+  "DocSlideSectionCarouselText": "Herhangi bir belgeyi düzenlemek ve biçimlendirmek için ihtiyacınız olan tüm araçları edinin.",
+  "TabSlideSectionCarouselHeading": "Verileri tablolarda düzenleyin",
+  "TabSlideSectionCarouselText": "Karmaşık verileri düzenleyin, inceleyin ve hesaplayın",
+  "PresSlideSectionCarouselHeading": "Sunumlar hazırlayın",
+  "PresSlideSectionCarouselText": "Fikirlerinizi ortaya koyun ve hedef kitlenize kolayca sunun.",
+  "CollaborationSlideSecitonCarouselHeading": "Çevrimiçi işbirliği yapın",
+  "CollaborationSlideSectionCarouselText": "Belgeleri birlikte düzenlemek veya çalışmanız hakkında yorum almak için istediğiniz kişiyi davet edin."
 }

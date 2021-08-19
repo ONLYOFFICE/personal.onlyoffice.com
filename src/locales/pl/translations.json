@@ -34,5 +34,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Wszelkie prawa zastrzeżone",
   "TermsOfService": "Warunki usługi",
   "CorporateUse": "Korporacyjne użytkowanie",
-  "SoftpediaDescription": "ONLYOFFICE Personal to internetowy pakiet biurowy, który oferuje narzędzia pozwalające tworzyć dokumenty, arkusze kalkulacyjne i prezentacje kompatybilne z oprogramowaniem Microsoft oraz ułatwia sprawną współpracę członkom zespołu."
+  "SoftpediaDescription": "ONLYOFFICE Personal to internetowy pakiet biurowy, który oferuje narzędzia pozwalające tworzyć dokumenty, arkusze kalkulacyjne i prezentacje kompatybilne z oprogramowaniem Microsoft oraz ułatwia sprawną współpracę członkom zespołu.",
+  "DocSlideSectionCarouselHeading": "Pracuj z dokumentami",
+  "DocSlideSectionCarouselText": "Zdobądź wszystkie narzędzia, których potrzebujesz, aby móc edytować i formatować dowolne dokumenty.",
+  "TabSlideSectionCarouselHeading": "Organizuj dane w arkuszach kalkulacyjnych",
+  "TabSlideSectionCarouselText": "Organizuj, analizuj i obliczaj różnego rodzaju skomplikowane dane.",
+  "PresSlideSectionCarouselHeading": "Twórz prezentacje",
+  "PresSlideSectionCarouselText": "Wizualizuj swoje pomysły i z łatwością prezentuj je odbiorcom.",
+  "CollaborationSlideSecitonCarouselHeading": "Współpracuj przez Internet",
+  "CollaborationSlideSectionCarouselText": "Zaproś, kogokolwiek zechcesz do wspólnej edycji lub samodzielnego sprawdzenia dokumentów."
 }

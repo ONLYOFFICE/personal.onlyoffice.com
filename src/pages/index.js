@@ -9,6 +9,7 @@ import CreateSection from "../sub-components/main-page/create-section";
 import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
+import CarouselSection from "../sub-components/main-page/carousel-section";
 import ReviewSection from "../sub-components/main-page/review-section";
 import CloudsSection from "../sub-components/main-page/clouds-section";
 import BlockquoteSection from "../sub-components/main-page/blockquote-section";
@@ -51,6 +52,7 @@ const IndexPage = ({ location }) => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} />
+        <CarouselSection t={t} language={language} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
         <DownloadSection t={t} language={language} />
         <BlockquoteSection text={t("SoftpediaDescription")} />

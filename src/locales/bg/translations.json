@@ -44,5 +44,13 @@
   "TermsOfService": "Условия за ползване",
   "CorporateUse": "Корпоративно ползване",
   "SoftpediaDescription": "ONLYOFFICE Personal е онлайн редактор, който има нужните инструменти за създаване на съвместими с Microsoft документи, таблици и презентации и съвместна работа с членове на екипа.",
-  "DownloadDesktopApp": "Изтеглете <1>безплатното настолно приложение</1> за редактиране на файлове офлайн или за свързване с вашия облак."
+  "DownloadDesktopApp": "Изтеглете <1>безплатното настолно приложение</1> за редактиране на файлове офлайн или за свързване с вашия облак.",
+  "DocSlideSectionCarouselHeading": "Работете с документи",
+  "DocSlideSectionCarouselText": "Получете всички инструменти, от които се нуждаете, за да редактирате и форматирате всеки документ.",
+  "TabSlideSectionCarouselHeading": "Организирайте данни в таблици",
+  "TabSlideSectionCarouselText": "Организирайте, разглеждайте и пресмятайте всякакви сложни данни.",
+  "PresSlideSectionCarouselHeading": "Създавайте презентации",
+  "PresSlideSectionCarouselText": "Изразете идеите си и лесно ги презентирайте на аудиторията.",
+  "CollaborationSlideSecitonCarouselHeading": "Сътрудничете си онлайн",
+  "CollaborationSlideSectionCarouselText": "Поканете всеки да редактира документи или да получавате рецензии за работата си."
 }

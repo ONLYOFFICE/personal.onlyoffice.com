@@ -34,5 +34,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Vse pravice so pridržane",
   "TermsOfService": "Pogoji uporabe",
   "CorporateUse": "Korporativna uporaba",
-  "SoftpediaDescription": "ONLYOFFICE Personal je spletni urejevalnik, ki združuje orodja za ustvarjanje Microsoft kompatibilnih dokumentov, tabel in predstavitev ter timsko delo s sodelovanjem članov ekipe."
+  "SoftpediaDescription": "ONLYOFFICE Personal je spletni urejevalnik, ki združuje orodja za ustvarjanje Microsoft kompatibilnih dokumentov, tabel in predstavitev ter timsko delo s sodelovanjem članov ekipe.",
+  "DocSlideSectionCarouselHeading": "Delo z dokumenti",
+  "DocSlideSectionCarouselText": "Vsa orodja, ki jih potrebujete za urejanje in formatiranje vsakega dokumenta.",
+  "TabSlideSectionCarouselHeading": "Organizacija podatkov in tabel",
+  "TabSlideSectionCarouselText": "Organizirajte, pregledujte in preračunavajte vse kompleksne podatke.",
+  "PresSlideSectionCarouselHeading": "Ustvarite predstavitve",
+  "PresSlideSectionCarouselText": "Izrazite svoje ideje in jih predstavite na enostaven način občinstvu.",
+  "CollaborationSlideSecitonCarouselHeading": "Sodelujte na spletu",
+  "CollaborationSlideSectionCarouselText": "Povabite druge k urejanju dokumenta ali poiščite ocene svojega dela."
 }

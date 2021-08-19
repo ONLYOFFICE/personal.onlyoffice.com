@@ -34,5 +34,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Všetky práva vyhradené",
   "TermsOfService": "Podmienky používania",
   "CorporateUse": "Firemné použitie",
-  "SoftpediaDescription": "ONLYOFFICE Personal je online editor, ktorý obsahuje potrebné nástroje na vytváranie dokumentov, tabuliek a prezentácií kompatibilných s analogickými dokumentmi Microsoftom a umožňuje spoluprácu s členmi tímu."
+  "SoftpediaDescription": "ONLYOFFICE Personal je online editor, ktorý obsahuje potrebné nástroje na vytváranie dokumentov, tabuliek a prezentácií kompatibilných s analogickými dokumentmi Microsoftom a umožňuje spoluprácu s členmi tímu.",
+  "DocSlideSectionCarouselHeading": "Pracujte s dokumentmi",
+  "DocSlideSectionCarouselText": "Získajte všetky nástroje, ktoré potrebujete na úpravu a formátovanie akéhokoľvek dokumentu.",
+  "TabSlideSectionCarouselHeading": "Usporiadajte údaje do tabuliek",
+  "TabSlideSectionCarouselText": "Organizujte, analyzujte akékoľvek údaje a robte výpočty s akejkoľvek zložitosti.",
+  "PresSlideSectionCarouselHeading": "Vytvárajte prezentácie",
+  "PresSlideSectionCarouselText": "Vyjadrite svoje nápady a jednoducho ich predstavte publiku.",
+  "CollaborationSlideSecitonCarouselHeading": "Spolupracujte online",
+  "CollaborationSlideSectionCarouselText": "Pozvite kohokoľvek, aby spoločne s Vami upravoval dokumenty alebo posúdil Vašu prácu."
 }
