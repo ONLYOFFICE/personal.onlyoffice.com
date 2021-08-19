@@ -14,6 +14,7 @@ const EmailInput = ({
   onChange,
   type,
   autoComplete,
+  offValidation,
   ...rest
 }) => {
   //TODO: use email-addresses package
@@ -34,7 +35,7 @@ const EmailInput = ({
     const email = e.target.value;
     const emailValid = Validate(email);
     setEmail(email);
-    setValid(emailValid);
+    offValidation ? setValid(true) : setValid(emailValid);
     onChange && onChange(e, emailValid);
   };
 
@@ -121,6 +122,8 @@ EmailInput.propTypes = {
   isSuccess: PropTypes.bool,
   /** Indicates the input field has an error */
   isError: PropTypes.bool,
+  /** Disabled validation*/
+  offValidation: PropTypes.bool,
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
@@ -145,6 +148,7 @@ EmailInput.propTypes = {
 
 EmailInput.defaultProps = {
   isErrText: false,
+  offValidation: false,
 };
 
 export default EmailInput;

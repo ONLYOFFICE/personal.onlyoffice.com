@@ -39,6 +39,7 @@
   "AuthDocsToLogin": "Revenir à la connexion",
   "AuthDocsUsingChrome": "Obtenez une extension Chrome pour un accès rapide.",
   "AuthDocsYourEmail": "Votre adresse de courriel*",
+  "AuthErrorIndicationText": "Entrez une adresse e-mail",
   "Email": "Adresse de courriel",
   "AuthDocsAccessQuickly": "Accédez rapidement à ONLYOFFICE personal.",
   "AuthDocsFreeDesktopApp": "Téléchargez les {0}applications de bureau gratuites{1} pour éditer vos documents ou connectez-vous à un cloud.",

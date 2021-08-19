@@ -16,6 +16,7 @@ const PasswordInput = ({
   passwordSettings,
   generatorSpecial,
   autoComplete,
+  offValidation,
   ...rest
 }) => {
   const [password, setPassword] = useState("");
@@ -48,7 +49,7 @@ const PasswordInput = ({
     const pwd = e.target.value;
     const pwdIsValid = validationCheck(pwd);
     setPassword(pwd);
-    setIsValid(pwdIsValid);
+    offValidation ? setIsValid(true) : setIsValid(pwdIsValid);
     onChange && onChange(e, pwdIsValid);
   };
 
@@ -133,6 +134,8 @@ PasswordInput.propTypes = {
   isSuccess: PropTypes.bool,
   /** Indicates the input field has an error */
   isError: PropTypes.bool,
+  /** Disabled validation */
+  offValidation: PropTypes.bool,
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
@@ -160,6 +163,7 @@ PasswordInput.propTypes = {
 PasswordInput.defaultProps = {
   isErrText: false,
   generatorSpecial: "!@#$%^&*",
+  offValidation: false,
   passwordSettings: {
     minLength: 1,
     upperCase: false,

@@ -4,6 +4,7 @@ import StyleGroupInput from "./styled-group";
 import StyledTextInput from "./styled-text-input";
 import StyledButtonInput from "./styled-button-input";
 import StyledInput from "./styled-input";
+import Text from "../text";
 import Label from "./styled-label";
 
 const TextInput = ({
@@ -30,6 +31,8 @@ const TextInput = ({
   isSubmit,
   backgroundColor,
   buttonClick,
+  errorIndicationText,
+  isErrorIndicationText,
   autoComplete,
   tabIndexProp,
   ...rest
@@ -47,60 +50,72 @@ const TextInput = ({
   }, [isAutoFocussed]);
 
   return (
-    <StyleGroupInput>
-      <StyledInput {...rest}>
-        <StyledTextInput
-          type={type}
-          className={className}
-          disabled={isDisabled}
-          isAutoFocussed={isAutoFocussed}
-          defaultInput={defaultInput}
-          isSuccess={isSuccess}
-          isError={isError}
-          isDisabled={isDisabled}
-          onChange={onChangeHandler}
-          ref={inputTextRef}
-          withButton={withButton}
-          isPlaceholder={!!placeholder}
-          backgroundColor={backgroundColor}
-          autoComplete={autoComplete}
-          {...rest}
-          tabIndex={tabIndexProp}
-        />
-        <Label
-          defaultChecked={rest.value !== ""}
-          defaultInput={defaultInput}
-          isSuccess={isSuccess}
-          isError={isError}
-          isEmpty={isEmpty}
+    <>
+      <StyleGroupInput>
+        <StyledInput {...rest}>
+          <StyledTextInput
+            type={type}
+            className={className}
+            disabled={isDisabled}
+            isAutoFocussed={isAutoFocussed}
+            defaultInput={defaultInput}
+            isSuccess={isSuccess}
+            isError={isError || isErrorIndicationText}
+            isDisabled={isDisabled}
+            onChange={onChangeHandler}
+            ref={inputTextRef}
+            withButton={withButton}
+            isPlaceholder={!!placeholder}
+            backgroundColor={backgroundColor}
+            autoComplete={autoComplete}
+            {...rest}
+            tabIndex={tabIndexProp}
+          />
+          <Label
+            defaultChecked={rest.value !== ""}
+            defaultInput={defaultInput}
+            isSuccess={isSuccess}
+            isError={isError}
+            isEmpty={isEmpty}
+          >
+            {placeholder}
+          </Label>
+        </StyledInput>
+        {Boolean(withButton) && (
+          <StyledButtonInput
+            id={idButton}
+            className={classNameButton}
+            typeButton={typeButton}
+            label={labelButton}
+            isDisabled={isDisabledButton}
+            isAutoFocussed={isAutoFocussed}
+            isSuccess={isSuccess}
+            isError={isError}
+            onClick={buttonClick}
+            height={rest.height}
+            style={styleButton}
+            icon={iconButton}
+            squareButton={squareButton}
+            isSubmit={isSubmit}
+            minwidth="149px"
+            fontSize="14px"
+            fontWeight="bold"
+            lineHeight="16px"
+            tabIndex={tabIndexProp}
+          />
+        )}
+      </StyleGroupInput>
+      {(isErrorIndicationText) &&
+        <Text
+          className="indication-text"
+          fontSize="13px"
+          color="#CB0000"
+          lineHeight="20px"
         >
-          {placeholder}
-        </Label>
-      </StyledInput>
-      {Boolean(withButton) && (
-        <StyledButtonInput
-          id={idButton}
-          className={classNameButton}
-          typeButton={typeButton}
-          label={labelButton}
-          isDisabled={isDisabledButton}
-          isAutoFocussed={isAutoFocussed}
-          isSuccess={isSuccess}
-          isError={isError}
-          onClick={buttonClick}
-          height={rest.height}
-          style={styleButton}
-          icon={iconButton}
-          squareButton={squareButton}
-          isSubmit={isSubmit}
-          minwidth="149px"
-          fontSize="14px"
-          fontWeight="bold"
-          lineHeight="16px"
-          tabIndex={tabIndexProp}
-        />
-      )}
-    </StyleGroupInput>
+          {errorIndicationText}
+        </Text>
+      }
+    </>
   );
 };
 
@@ -133,8 +148,12 @@ TextInput.propTypes = {
   name: PropTypes.string,
   /** Default input color*/
   defaultInput: PropTypes.bool,
+  /** Error display text */
+  errorIndicationText: PropTypes.string,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
+  /** Indicates error display text*/
+  isErrorIndication: PropTypes.bool,
   /** Focus the input field on initial render */
   isAutoFocussed: PropTypes.bool,
   /** Indicates the input field has an success*/
@@ -175,6 +194,7 @@ TextInput.defaultProps = {
   isError: false,
   withButton: false,
   squareButton: false,
+  isErrorIndication: false,
   tabIndex: -1,
   autoComplete: "off",
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
@@ -8,11 +8,17 @@ import LicenceLink from "./licence-checkbox-content";
 
 import { join } from "../../api";
 
-const CreateForm = ({ t, isPanel, buttonHref }) => {
+import useErrorValidationIndication from "./sub-components/validation";
+
+const CreateForm = ({ t, isPanel, buttonHref, isErrorIndicationText }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [isSubscribe, setIsChecked] = useState(true);
   const [isAcceptLicence, setIsLicense] = useState(false);
+
+  const validations = { isEmpty: "", incorrectValue: "" };
+  const validationsErrorText = {errorEmptyValue: t("AuthErrorIndicationText"), errorIncorrectValue: t("AuthErrorIndicationIncorrectEmail")}
+  let valid = useErrorValidationIndication(emailValue, emailIsValid, validations, validationsErrorText, isAcceptLicence);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -40,16 +46,16 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const additionalSection = isPanel
     ? null
     : {
-        type: "other",
-        element: (
-          <AdditionalSection
-            key="additional"
-            textLabel={t("AuthDocsAlready")}
-            buttonHref={buttonHref}
-            buttonLabel={t("AuthDocsSignIn")}
-          />
-        ),
-      };
+      type: "other",
+      element: (
+        <AdditionalSection
+          key="additional"
+          textLabel={t("AuthDocsAlready")}
+          buttonHref={buttonHref}
+          buttonLabel={t("AuthDocsSignIn")}
+        />
+      ),
+    };
 
   const formData = [
     { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
@@ -67,6 +73,9 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
       tabIndexProp: 1,
+      isErrorIndicationText: isErrorIndicationText ? valid.isErrorLabel : false,
+      errorIndicationText: valid.isErrorValueText,
+      offValidation: false,
     },
     {
       type: "checkbox",
