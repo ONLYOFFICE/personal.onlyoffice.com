@@ -49,7 +49,7 @@
   "AuthFooterBlog": "Blog",
   "Error404HeaderText": "Error 404. Page not found",
   "Error404BodyText": "This page was removed, renamed or doesn’t exist anymore.",
-  "ErrorPageButtonText": "Return to homepage",
+  "Error404PageButtonText": "Return to homepage",
   "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1>and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
   "PrivacyStatement": "Privacy statement",
@@ -118,5 +118,7 @@
   "IncorrectEmail": "Incorrect email",
   "SendChangePasswordInstructionSuccess": "If a user with the {{email}} email exists, the password change instruction has been sent to this email address",
   "EmailChanged": "Email changed",
-  "EmailChangeError": "Change client email error"
+  "EmailChangeError": "Change client email error",
+  "SomethingWentWrong": "Something went wrong.",
+  "TryLatter": "The service is currently unavailable, please try again later."
 }
