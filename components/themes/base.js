@@ -277,6 +277,11 @@ const Base = {
         boxShadow: "1px 2px 4px #D1D1D1",
       }
     },
+  },
+
+  scrollbar: {
+    backgroundColorVertical: "rgba(0, 0, 0, 0.1)",
+    backgroundColorHorizontal: "rgba(0, 0, 0, 0.1)",
   }
 };
 
