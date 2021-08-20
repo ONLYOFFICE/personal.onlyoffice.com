@@ -64,8 +64,6 @@ const SignInPage = ({ location }) => {
     setIsChecked(e.target.checked);
   };
 
-  const clickSocialButton = (e) => {};
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -154,12 +152,7 @@ const SignInPage = ({ location }) => {
     { type: "separator", separatorText: t("AuthDocsEnterViaSocial") },
     {
       type: "other",
-      element: (
-        <SocialButtons
-          key="social-buttons"
-          clickSocialButton={clickSocialButton}
-        />
-      ),
+      element: <SocialButtons key="social-buttons" t={t} />,
     },
     {
       type: "other",

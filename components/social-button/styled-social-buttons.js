@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import IconButton from "../icon-button";
 
-const StyledSocialButton = styled(IconButton)`
+const StyledSocialButton = styled.div`
   display: inline-block;
   width: max-content;
   height: "40px";

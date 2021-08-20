@@ -19,7 +19,7 @@ const providersData = Object.freeze({
   },
 });
 
-const SocialButtons = () => {
+const SocialButtons = ({ t }) => {
   const [providers, setProviders] = useState();
 
   const authCallback = (profile) => {
@@ -68,8 +68,10 @@ const SocialButtons = () => {
   };
 
   const onSocialButtonClick = (e) => {
-    const providerName = e.target.dataset.providername;
-    const url = e.target.dataset.url;
+    const targetButton = e.target.closest(".social-button");
+    if (!targetButton) toastr.error(t("SomethingWentWrong"));
+    const providerName = targetButton.dataset.providername;
+    const url = targetButton.dataset.url;
 
     try {
       const tokenGetterWin = window.open(
@@ -106,8 +108,8 @@ const SocialButtons = () => {
           <SocialButton
             key={item.provider}
             iconName={icon}
-            data-url={item.url}
-            data-providername={item.provider}
+            dataUrl={item.url}
+            dataProvidername={item.provider}
             onClick={onSocialButtonClick}
           />
         );

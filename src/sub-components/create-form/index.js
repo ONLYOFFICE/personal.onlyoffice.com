@@ -109,7 +109,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
       type: "other",
-      element: <SocialButtons key="social-buttons" />,
+      element: <SocialButtons key="social-buttons" t={t} />,
     },
     {
       ...additionalSection,
