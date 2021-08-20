@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import ErrorContainer from "../sub-components/error-container";
+import ErrorContainer from "../../components/error-container";
 
 const NotFoundPage = () => {
   const { t } = useTranslation();

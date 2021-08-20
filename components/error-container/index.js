@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledErrorContainer from "./styled-error-container";
-import Heading from "../../../components/heading";
-import Text from "../../../components/text";
-import Button from "../../../components/button";
-import Link from "../../../components/internal-link";
+import Heading from "../heading";
+import Text from "../text";
+import Button from "../button";
+import Link from "../internal-link";
 
 const ErrorContainer = (props) => {
   //console.log("ErrorContainer render");
@@ -334,11 +334,7 @@ const ErrorContainer = (props) => {
       {bodyText && <Text id="text">{bodyText}</Text>}
       {buttonText && buttonUrl && (
         <Link id="button-container" title="ONLYOFFICE" href={buttonUrl}>
-          <Button
-            id="button"
-            typeButton="primary"
-            label={buttonText}
-          />
+          <Button id="button" typeButton="primary" label={buttonText} />
         </Link>
       )}
     </StyledErrorContainer>
