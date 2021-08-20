@@ -102,3 +102,11 @@ export function changeEmail(userId, email, key) {
     headers: { confirm: key },
   });
 }
+
+export function thirdPartyLogin(SerializedProfile) {
+  return request({
+    method: "post",
+    url: "authentication.json",
+    data: { SerializedProfile },
+  });
+}
