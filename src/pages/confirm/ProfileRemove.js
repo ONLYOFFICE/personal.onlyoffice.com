@@ -25,17 +25,17 @@ const ProfileRemovePage = ({ location }) => {
   } = useTranslation();
 
   const onSubmitHandler = () => {
-    // const params = parseQueryParams(location.search);
-    // const confirmHeader = getConfirmHeader(location);
-    // deleteSelf(confirmHeader)
-    //   .then((res) => {
-    //     setIsProfileDeleted(true);
-    //     console.log("success delete", res);
-    //   })
-    //   .catch((e) => {
-    //     //setIsProfileDeleted(true);
-    //     toastr.error(`${e}`);
-    //   });
+    const params = parseQueryParams(location.search);
+    const confirmHeader = getConfirmHeader(location);
+    deleteSelf(confirmHeader)
+      .then((res) => {
+        setIsProfileDeleted(true);
+        console.log("success delete", res);
+      })
+      .catch((e) => {
+        //setIsProfileDeleted(true);
+        toastr.error(`${e}`);
+      });
   };
 
   const DeleteProfileDesc = (
@@ -93,7 +93,7 @@ const ProfileRemovePage = ({ location }) => {
   ];
 
   return (
-    <Layout>
+    <Layout t={t}>
       <Layout.PageHead>
         <Head
           metaDescription={t("AuthDocsMetaDescription")}

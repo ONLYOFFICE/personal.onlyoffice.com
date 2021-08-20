@@ -33,7 +33,7 @@ const IndexPage = ({ location }) => {
   }, [location.state]);
 
   return (
-    <Layout>
+    <Layout t={t}>
       <Layout.PageHead>
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
