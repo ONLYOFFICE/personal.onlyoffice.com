@@ -1,18 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import IconButton from "../icon-button";
 import StyledSocialButton from "./styled-social-buttons";
 
 const SocialButton = ({ iconName, ...rest }) => {
   return (
-    <StyledSocialButton {...rest}>
-      <IconButton
-        iconName={iconName}
-        className="social-button-img"
-        size="max-content"
-      />
-    </StyledSocialButton>
+    <StyledSocialButton
+      {...rest}
+      iconName={iconName}
+      className="social-button-img"
+      size="max-content"
+    />
   );
 };
 
