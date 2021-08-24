@@ -39,7 +39,7 @@
   "PersonalLogin": "Вход в аккаунт",
   "RegistryButtonCreateNow": "Создать сейчас",
   "RegistrySettingSpam": "Я хочу подписаться на рассылку новостей ONLYOFFICE",
-  "RegistrySettingTerms": "Я принимаю <1>{{terms}}</1>и <2>{{privacy}}</2>ONLYOFFICE",
+  "RegistrySettingTerms": "Я принимаю <1>{{terms}}</1> и <2>{{privacy}}</2> ONLYOFFICE",
   "TermAndCondition": "Условия использования",
   "PrivacyStatement": "Положение о конфиденциальности",
   "Password": "Пароль",

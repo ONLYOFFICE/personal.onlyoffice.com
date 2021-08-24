@@ -44,7 +44,7 @@
   "AuthDocsFreeDesktopApp": "Téléchargez les {0}applications de bureau gratuites{1} pour éditer vos documents ou connectez-vous à un cloud.",
   "AuthDocsWorkWithDocs": "Travaillez sur les documents {0}partout avec{1} {2}les applications ONLYOFFICE Documents{3}.",
   "AuthDocsToMainPage": "Passer à la page principale",
-  "RegistrySettingTerms": "J'accept les <1>{{terms}}</1>d'ONLYOFFICE et la <2>{{privacy}}</2>",
+  "RegistrySettingTerms": "J'accept les <1>{{terms}}</1> d'ONLYOFFICE et la <2>{{privacy}}</2>",
   "TermAndCondition": "Termes et conditions",
   "PrivacyStatement": "Déclarations de confidentialité",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tous droits réservés",
