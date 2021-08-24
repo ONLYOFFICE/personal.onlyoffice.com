@@ -4,13 +4,20 @@ import PropTypes from "prop-types";
 import IconButton from "../icon-button";
 import StyledSocialButton from "./styled-social-buttons";
 
-const SocialButton = ({ dataUrl, dataProvidername, onClick, ...rest }) => {
+const SocialButton = ({
+  dataUrl,
+  dataProvidername,
+  onClick,
+  isDisabled,
+  ...rest
+}) => {
   return (
     <StyledSocialButton
       onClick={onClick}
       data-url={dataUrl}
       data-providername={dataProvidername}
       className="social-button"
+      isDisabled={isDisabled}
     >
       <IconButton className="social-button-img" size="max-content" {...rest} />
     </StyledSocialButton>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledSocialButton = styled.div`
   display: inline-block;
@@ -15,6 +15,14 @@ const StyledSocialButton = styled.div`
 
   .social-button-img {
     bottom: 11px;
+    ${(props) =>
+      props.isDisabled &&
+      css`
+        opacity: 0.5;
+        svg {
+          cursor: default;
+        }
+      `}
   }
 `;
 

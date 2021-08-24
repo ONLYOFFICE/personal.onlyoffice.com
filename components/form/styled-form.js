@@ -1,55 +1,92 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Base } from "../themes";
 
+const panelStyle = css`
+  border: ${(props) => props.theme.form.border};
+  box-shadow: ${(props) => props.theme.form.boxShadow};
+  max-width: 100%;
+  background-color: white;
+  grid-gap: 16px;
+
+  .form-header {
+    letter-spacing: -0.02em;
+    text-align: "center";
+  }
+
+  .form-button {
+    margin: 8px 0;
+  }
+
+  .form-input {
+    margin-bottom: 8px;
+  }
+
+  .form-separator {
+    margin-top: -2px;
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: 592px) {
+    grid-gap: 16px;
+
+    .form-header {
+      margin-bottom: 2px;
+    }
+
+    .form-separator {
+      margin-top: 8px;
+      margin-bottom: 22px;
+    }
+
+    .form-separator {
+      margin-top: 5px;
+      margin-bottom: 18px;
+    }
+
+    .form-button {
+      margin-top: 0px;
+    }
+  } ;
+`;
+
 const StyledForm = styled.form`
-  max-width: ${(props) =>
-    !props.isPanel ? props.maxwidth || "544px" : "100%"};
+  max-width: ${(props) => props.maxwidth || "544px"};
   margin: 0 auto;
-  border: ${(props) => props.isPanel && props.theme.form.border};
   border-radius: ${(props) => props.theme.form.borderRadius};
-  box-shadow: ${(props) => props.isPanel && props.theme.form.boxShadow};
   padding: ${(props) => props.theme.form.padding};
 
-  background-color: ${(props) => (props.isPanel ? "white" : "transparent")};
+  background-color: transparent;
 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: ${(props) =>
     `repeat(${props.itemsCount}, 'min-content')`};
 
-  grid-gap: ${(props) =>
-    props.gap ? props.gap : props.isPanel ? "16px" : "32px"};
-
-  .form-header {
-    text-align: ${(props) => (!props.isPanel ? "center" : "unset")};
-  }
-
-  .form-button {
-    margin: ${(props) => props.isPanel && "8px 0"};
-  }
+  grid-gap: ${(props) => (props.gap ? props.gap : "32px")};
 
   .to-hide-button {
     display: none;
   }
 
-  .form-input {
-    margin-bottom: ${(props) => props.isPanel && "8px"};
-  }
-
   .form-separator {
-    margin-top: ${(props) => (props.isPanel ? "-4px" : "6px")};
-    margin-bottom: ${(props) => (props.isPanel ? "18px" : "-2px")};
+    margin-top: 6px;
+    margin-bottom: -2px;
   }
 
   @media (max-width: 1023px) {
     .form-header {
       text-align: center;
+      margin-bottom: 1px;
     }
   }
 
   @media (max-width: 592px) {
-    grid-gap: ${(props) =>
-      props.gap ? props.gap : props.isPanel ? "16px" : "24px"};
+    grid-gap: ${(props) => (props.gap ? props.gap : "24px")};
+    .form-checkbox * {
+      font-size: 13px;
+    }
+
+    border: unset;
 
     .form-button {
       height: 48px;
@@ -57,7 +94,6 @@ const StyledForm = styled.form`
     }
 
     .form-input {
-      height: 50px;
       margin: 0;
     }
 
@@ -66,8 +102,8 @@ const StyledForm = styled.form`
     }
 
     .form-separator {
-      margin-top: ${(props) => (props.isPanel ? "8px" : "-8px")};
-      margin-bottom: ${(props) => (props.isPanel ? "22px" : "unset")};
+      margin-top: -8px;
+      margin-bottom: unset;
     }
 
     .form-header {
@@ -75,6 +111,8 @@ const StyledForm = styled.form`
       margin-bottom: -8px;
     }
   }
+
+  ${(props) => props.isPanel && panelStyle}
 `;
 
 StyledForm.defaultProps = {
