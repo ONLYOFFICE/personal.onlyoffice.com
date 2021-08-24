@@ -1,8 +1,4 @@
 {
-  "PageTitle": "Personal online office",
-  "MetaDescription": "ONLYOFFICE Personal is a free online editing suite for text documents, spreadsheets and presentations with an individual cloud storage.",
-  "MetaDescriptionOg": "ONLYOFFICE is a cloud office that enables you to manage documents, projects, team and customer relations in one place.",
-  "MetaKeywords": "edit word online, word editor online, word online free, word office online",
   "az-Latn-AZ": "Azerbaijani (Latin, Azerbaijan)",
   "bg-BG": "Bulgarian (Bulgaria)",
   "zh-CN": "Chinese (Simplified, PRC)",
@@ -30,6 +26,10 @@
   "tr-TR": "Turkish (Turkey)",
   "uk-UA": "Ukrainian (Ukraine)",
   "vi-VN": "Vietnamese (Vietnam)",
+  "PageTitle": "Personal online office",
+  "MetaDescription": "ONLYOFFICE Personal is a free online editing suite for text documents, spreadsheets and presentations with an individual cloud storage.",
+  "MetaDescriptionOg": "ONLYOFFICE is a cloud office that enables you to manage documents, projects, team and customer relations in one place.",
+  "MetaKeywords": "edit word online, word editor online, word online free, word office online",
   "AuthDocsAlready": "Already have account?",
   "AuthDocsCheckEmail": "Check your email inbox to confirm the account.",
   "AuthDocsConnect": "Connect any cloud",
@@ -67,7 +67,7 @@
   "AuthDocsYourEmail": "Your e-mail*",
   "AuthDocsAccessYourDocs": "Access your documents from anywhere.",
   "CookieMessButton": "Got it!",
-  "CookieMessText": "This website uses cookies. By continuing to browse the website you agree to our {0}privacy policy{1}",
+  "CookieMessText": "This website uses cookies. By continuing to browse the website you agree to our <1>privacy policy</1>",
   "CreatePersonalButton": "Create ONLYOFFICE account",
   "Email": "E-mail",
   "PersonalLogin": "Account Login",
@@ -83,5 +83,5 @@
   "HomeDescription": "Highly compatible with MS Office formats",
   "Error404HeaderText": "Error 404. Page not found",
   "Error404BodyText": "This page was removed, renamed or doesn’t exist anymore.",
-  "ErrorPageButtonText": "Return to homepage"
+  "Error404PageButtonText": "Return to homepage"
 }

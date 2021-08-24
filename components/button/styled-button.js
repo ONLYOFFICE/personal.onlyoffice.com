@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Base } from "../themes";
+import { Dark } from "../themes";
 
 const StyledButton = styled.button`
   overflow: ${(props) => props.theme.button.overflow};
@@ -41,7 +42,7 @@ const StyledButton = styled.button`
       ? props.theme.button.textColorSecondaryType
       : props.theme.button.textColor};
 
-  padding: 0 20px;
+  padding: ${(props) => (props.padding ? props.padding : "0 20px")};
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -55,20 +56,24 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.typeButton === "primary"
+      props.backgroundColorHover ||
+      (props.typeButton === "primary"
         ? props.theme.button.backgroundColorPrimaryHover
         : props.typeButton === "transparent"
         ? "transparent"
-        : props.theme.button.backgroundColorSecondaryHover};
+        : props.theme.button.backgroundColorSecondaryHover)};
     border-color: ${(props) =>
-      props.typeButton === "transparent" &&
-      props.theme.button.borderColorHover};
+      props.borderColorHover
+        ? props.borderColorHove
+        : props.typeButton === "transparent" &&
+          props.theme.button.borderColorHover};
     color: ${(props) =>
-      props.typeButton === "transparent"
+      props.textColorHover ||
+      (props.typeButton === "transparent"
         ? props.theme.button.textColorTransparentTypeHover
         : props.typeButton === "secondary"
         ? props.theme.button.textColorSecondaryType
-        : props.theme.button.textColor};
+        : props.theme.button.textColor)};
   }
 
   &:disabled {
@@ -96,6 +101,8 @@ const StyledButton = styled.button`
   }
 `;
 
-StyledButton.defaultProps = { theme: Base };
+const themeButton = (props) => (props.themeButton ? Base : Dark);
+
+StyledButton.defaultProps = { theme: themeButton };
 
 export default StyledButton;

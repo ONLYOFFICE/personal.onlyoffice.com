@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import SocialButton from "../../../components/social-button";
 import { getAuthProviders } from "../../api";
+import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
+
+import { thirdPartyLogin } from "../../api";
 
 const providersData = Object.freeze({
   Google: {
@@ -16,10 +19,20 @@ const providersData = Object.freeze({
   },
 });
 
-const SocialButtons = () => {
+const SocialButtons = ({ t }) => {
   const [providers, setProviders] = useState();
 
+  const authCallback = (profile) => {
+    thirdPartyLogin(profile.Serialized)
+      .then(() => {
+        window.location.href = "/";
+      })
+      .catch(() => {
+        toastr.error("ProviderNotConnected");
+      });
+  };
   useEffect(() => {
+    window.authCallback = authCallback;
     getAuthProviders()
       .then((providers) => {
         setProviders(providers);
@@ -54,8 +67,11 @@ const SocialButtons = () => {
     });
   };
 
-  const onSocialButtonClick = (e, item) => {
-    const { providerName, url } = item;
+  const onSocialButtonClick = (e) => {
+    const targetButton = e.target.closest(".social-button");
+    if (!targetButton) toastr.error(t("SomethingWentWrong"));
+    const providerName = targetButton.dataset.providername;
+    const url = targetButton.dataset.url;
 
     try {
       const tokenGetterWin = window.open(
@@ -92,9 +108,9 @@ const SocialButtons = () => {
           <SocialButton
             key={item.provider}
             iconName={icon}
-            data-url={item.url}
-            data-providername={item.provider}
-            onClick={(e) => onSocialButtonClick(e, item)}
+            dataUrl={item.url}
+            dataProvidername={item.provider}
+            onClick={onSocialButtonClick}
           />
         );
       });

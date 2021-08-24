@@ -60,3 +60,53 @@ export function getAuthProviders() {
     url: `/people/thirdparty/providers`,
   });
 }
+
+export function createUser(data, confirmKey = null) {
+  const options = {
+    method: "post",
+    url: "/people",
+    data: data,
+  };
+
+  if (confirmKey) options.headers = { confirm: confirmKey };
+
+  return request(options);
+}
+
+export function changePassword(userId, passwordHash, key) {
+  const data = { passwordHash };
+
+  return request({
+    method: "put",
+    url: `/people/${userId}/password`,
+    data,
+    headers: { confirm: key },
+  });
+}
+
+export function deleteSelf(key) {
+  return request({
+    method: "delete",
+    url: "/people/@self",
+    headers: { confirm: key },
+  });
+}
+
+export function changeEmail(userId, email, key) {
+  const data = { email };
+
+  return request({
+    method: "put",
+    url: `/people/${userId}/password`,
+    data,
+    headers: { confirm: key },
+  });
+}
+
+export function thirdPartyLogin(SerializedProfile) {
+  return request({
+    method: "post",
+    url: "authentication.json",
+    data: { SerializedProfile },
+  });
+}

@@ -7,12 +7,14 @@ import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
 
 import { join } from "../../api";
+import toastr from "../../../components/toast/toastr";
 
 const CreateForm = ({ t, isPanel, buttonHref }) => {
   const [emailValue, setEmailValue] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(true);
   const [isSubscribe, setIsChecked] = useState(true);
   const [isAcceptLicence, setIsLicense] = useState(false);
+  const [emailIsEmpty, setEmailIsEmpty] = useState(true);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -29,12 +31,25 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (isAcceptLicence && emailIsValid)
+
+    let hasError = false;
+
+    if (!emailValue.trim()) {
+      hasError = true;
+      setEmailIsValid(false);
+      setEmailIsEmpty(true);
+    } else {
+      setEmailIsEmpty(false);
+    }
+
+    if (hasError) return false;
+
+    if (emailIsValid)
       join(emailValue)
         .then(() => {
           navigate("/success", { state: { email: emailValue } });
         })
-        .catch((err) => alert(err));
+        .catch((err) => toastr.error(`${err}`));
   };
 
   const additionalSection = isPanel
@@ -67,6 +82,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
       tabIndexProp: 1,
+      isError: emailIsEmpty && !emailIsValid,
     },
     {
       type: "checkbox",
@@ -93,7 +109,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
       type: "other",
-      element: <SocialButtons key="social-buttons" />,
+      element: <SocialButtons key="social-buttons" t={t} />,
     },
     {
       ...additionalSection,

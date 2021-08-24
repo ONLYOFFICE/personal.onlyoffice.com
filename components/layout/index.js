@@ -1,5 +1,7 @@
 import React from "react";
 
+import ErrorBoundary from "../error-boundary";
+
 import StyledLayout from "./styled-layout";
 import Header from "./sub-components/header";
 import Main from "./sub-components/main";
@@ -66,20 +68,25 @@ class Layout extends React.Component {
 
     return (
       <StyledLayout>
-        {children}
-        <Head>{headContent ? headContent.props.children : null}</Head>
-        <Scrollbar
+        <ErrorBoundary t={this.props.t}>
+          {children}
+          <Head>{headContent ? headContent.props.children : null}</Head>
+          <Scrollbar
           id="articleScrollBar"
           className="custom-scrollbar"
           stype="mediumBlack"
         >
           <Header>{headerContent ? headerContent.props.children : null}</Header>
           <Main>{mainContent ? mainContent.props.children : null}</Main>
-          <Footer className="footer" isHomePage={footerContent.props.isHomePage}>
+          <Footer
+            className="footer"
+            isHomePage={footerContent.props.isHomePage}
+          >
             {footerContent ? footerContent.props.children : null}
           </Footer>
-        </Scrollbar>
-        <Toast />
+          </Scrollbar>
+          <Toast />
+        </ErrorBoundary>
       </StyledLayout>
     );
   }

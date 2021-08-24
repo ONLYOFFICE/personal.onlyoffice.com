@@ -10,7 +10,6 @@ const StyledDescription = styled(Text)`
     font-size: 13px;
   }
 `;
-
 const FormDescription = (props) => {
   const { label } = props;
   return <StyledDescription>{label}</StyledDescription>;
