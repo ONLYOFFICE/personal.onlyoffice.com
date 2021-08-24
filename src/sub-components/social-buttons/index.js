@@ -19,7 +19,7 @@ const providersData = Object.freeze({
   },
 });
 
-const SocialButtons = ({ t }) => {
+const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
 
   const authCallback = (profile) => {
@@ -68,6 +68,7 @@ const SocialButtons = ({ t }) => {
   };
 
   const onSocialButtonClick = (e) => {
+    if (isDisabled) return false;
     const targetButton = e.target.closest(".social-button");
     if (!targetButton) toastr.error(t("SomethingWentWrong"));
     const providerName = targetButton.dataset.providername;
@@ -111,6 +112,7 @@ const SocialButtons = ({ t }) => {
             dataUrl={item.url}
             dataProvidername={item.provider}
             onClick={onSocialButtonClick}
+            isDisabled={isDisabled}
           />
         );
       });
