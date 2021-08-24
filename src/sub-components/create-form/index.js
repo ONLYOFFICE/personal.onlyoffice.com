@@ -42,6 +42,10 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       setEmailIsEmpty(false);
     }
 
+    if (!isAcceptLicence) {
+      hasError = true;
+    }
+
     if (hasError) return false;
 
     if (emailIsValid)
@@ -109,7 +113,13 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
       type: "other",
-      element: <SocialButtons key="social-buttons" t={t} />,
+      element: (
+        <SocialButtons
+          key="social-buttons"
+          t={t}
+          isDisabled={!isAcceptLicence}
+        />
+      ),
     },
     {
       ...additionalSection,
