@@ -72,18 +72,18 @@ class Layout extends React.Component {
           {children}
           <Head>{headContent ? headContent.props.children : null}</Head>
           <Scrollbar
-          id="articleScrollBar"
-          className="custom-scrollbar"
-          stype="mediumBlack"
-        >
-          <Header>{headerContent ? headerContent.props.children : null}</Header>
-          <Main>{mainContent ? mainContent.props.children : null}</Main>
-          <Footer
-            className="footer"
-            isHomePage={footerContent.props.isHomePage}
+            id="articleScrollBar"
+            className="custom-scrollbar"
+            stype="mediumBlack"
           >
-            {footerContent ? footerContent.props.children : null}
-          </Footer>
+            <Header>{headerContent ? headerContent.props.children : null}</Header>
+            <Main>{mainContent ? mainContent.props.children : null}</Main>
+            <Footer
+              className="footer"
+              isHomePage={footerContent.props.isHomePage}
+            >
+              {footerContent ? footerContent.props.children : null}
+            </Footer>
           </Scrollbar>
           <Toast />
         </ErrorBoundary>
