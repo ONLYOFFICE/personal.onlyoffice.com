@@ -17,20 +17,24 @@ const LanguageSelector = (props) => {
   });
 
   const handleClickOutside = (e) => {
-    if (!e.target.closest("lng-selector")) {
+    if (
+      !e.target.closest(".lng-selector") ||
+      e.target.closest(".close-button-img")
+    ) {
       onCloseSelector();
-      console.log(e.target.closest(".lng-selector"));
     }
   };
 
   const onClickHandler = (e) => {
-    setIsOpen(!isOpen);
-    props.onClick && props.onClick(e);
+    if (e.target.closest(".flag-image") || e.target.closest(".arrow-image")) {
+      setIsOpen(!isOpen);
+      props.onClick && props.onClick(e);
+    }
   };
-  
+
   const onCloseSelector = () => {
     setIsOpen(false);
-  }
+  };
 
   const { currentLanguage, t } = props;
 
@@ -46,7 +50,7 @@ const LanguageSelector = (props) => {
         {isOpen ? <ArrowDown alt="arrow-down" /> : <ArrowUp alt="arrow-up" />}
       </div>
       <ItemsList
-        className="languages-list"
+        className="languages-list lng-selector"
         t={t}
         isOpen={isOpen}
         currentLanguage={currentLanguage}

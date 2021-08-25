@@ -17,7 +17,11 @@ export default function LangsList(props) {
   }
 
   return (
-    <StyledItemsList isOpen={isOpen} countLanguages={languages.length}>
+    <StyledItemsList
+      isOpen={isOpen}
+      countLanguages={languages.length}
+      className="lng-selector"
+    >
       <Text className="header-lng">{t("ChooseLanguage")}</Text>
       <IconButton
         iconName="/close-icon/close.react.svg"
