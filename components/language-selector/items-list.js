@@ -6,7 +6,16 @@ import Text from "../text";
 import IconButton from "../icon-button";
 
 export default function LangsList(props) {
-  const { t, isOpen, onCloseSelector } = props;
+  const { t, isOpen, currentLanguage, onCloseSelector } = props;
+
+  let path = "";
+  if (typeof window !== "undefined") {
+    const {
+      location: { pathname },
+    } = window;
+    path = pathname.includes(currentLanguage) ? pathname : `/en${pathname}`;
+  }
+
   return (
     
     <StyledItemsList isOpen={isOpen} countLanguages={languages.length}>
@@ -22,15 +31,15 @@ export default function LangsList(props) {
       
       {languages.map((language) => {
         const { shortKey, iconName, key } = language;
-        const languageName = t ? t(key) : key;
+        const localizedPath = path.replace(currentLanguage, shortKey);
 
         return (
           
           <StyledItem key={key}>            
-            <Link to={shortKey !== "en" ? `/${shortKey}` : "/"}>
+            <Link to={`${localizedPath}`}>
               <img src={`/flags/${iconName}`} alt={key} width="18px" />
               <Text as="span" className="title-lng">
-                {languageName}
+                {t(key)}
               </Text>
             </Link>
           </StyledItem>

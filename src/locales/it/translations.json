@@ -16,7 +16,7 @@
   "PersonalLogin": "Account Login",
   "RegistryButtonCreateNow": "Crea adesso",
   "RegistrySettingSpam": "Desidero ricevere Newsletter di ONLYOFFICE ",
-  "RegistrySettingTerms": "Accetto i <1>{{terms}}</1>e l'<2>{{privacy}}</2>di ONLYOFFICE",
+  "RegistrySettingTerms": "Accetto i <1>{{terms}}</1> e l'<2>{{privacy}}</2> di ONLYOFFICE",
   "TermAndCondition": "Termini e condizioni",
   "PrivacyStatement": "Informativa sulla privacy",
   "AuthDocsAlready": "Sei già registrato?",
@@ -44,5 +44,16 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tutti i diritti riservati",
   "TermsOfService": "Termini di servizio",
   "CorporateUse": "Uso aziendale",
-  "SoftpediaDescription": "ONLYOFFICE Personal è un editor online che confeziona i strumenti necessari per creare documenti, fogli di calcolo e presentazioni compatibili con Microsoft e lavorare in collaborazione in tempo reale."
+  "DownloadExtensionChrome": "Accedi ONLYOFFICE personal subito. <1>Aggiungi estensione a Chrome per un accesso rapido</1>",
+  "DownloadDesktopApp": "Scarica <1>applicazione su desktop gratuita</1> per modificare i file offline o connettere al tuo cloud.",
+  "DownloadMobileApp": "Lavora con i documenti on-the-go con <1>le applicazioni ONLYOFFICE Documents.</1>",
+  "SoftpediaDescription": "ONLYOFFICE Personal è un editor online che confeziona i strumenti necessari per creare documenti, fogli di calcolo e presentazioni compatibili con Microsoft e lavorare in collaborazione in tempo reale.",
+  "DocSlideSectionCarouselHeading": "Lavora con i documenti di testo",
+  "DocSlideSectionCarouselText": "Ottieni tutti i strumenti di cui hai bisogno per modificare e formattare qualsiasi documento.",
+  "TabSlideSectionCarouselHeading": "Organizza i dati in fogli di calcolo.",
+  "TabSlideSectionCarouselText": "Sistema, esamina e calcola i dati d'alcun complesso",
+  "PresSlideSectionCarouselHeading": "Crea presentazioni",
+  "PresSlideSectionCarouselText": "Esprimi le tue idee e presentale al pubblico facilmente.",
+  "CollaborationSlideSecitonCarouselHeading": "Collabora in tempo reale",
+  "CollaborationSlideSectionCarouselText": "Invita chiunque a modificare i documenti insieme o ottieni recensioni sul tuo lavoro."
 }

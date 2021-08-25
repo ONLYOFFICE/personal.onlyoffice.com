@@ -10,7 +10,7 @@ const TextInput = ({
   className,
   id,
   type,
-  onBlur,
+
   placeholder,
   onChange,
   defaultInput,
@@ -73,6 +73,7 @@ const TextInput = ({
           isSuccess={isSuccess}
           isError={isError}
           isEmpty={isEmpty}
+          className="input-label"
         >
           {placeholder}
         </Label>

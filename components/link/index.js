@@ -11,6 +11,7 @@ const CustomLink = ({
   label,
   ...rest
 }) => {
+
   const linkClassName = className
     ? className + " external-link"
     : "external-link";

@@ -45,7 +45,13 @@ const LanguageSelector = (props) => {
       <div className="arrow-image">
         {isOpen ? <ArrowDown alt="arrow-down" /> : <ArrowUp alt="arrow-up" />}
       </div>
-      <ItemsList className="languages-list" t={t} isOpen={isOpen} onCloseSelector={onCloseSelector}/>
+      <ItemsList
+        className="languages-list"
+        t={t}
+        isOpen={isOpen}
+        currentLanguage={currentLanguage}
+        onCloseSelector={onCloseSelector}
+      />
     </StyledLanguageSelector>
   );
 };

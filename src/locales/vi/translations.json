@@ -34,5 +34,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Bảo lưu mọi quyền",
   "TermsOfService": "Điều khoản dịch vụ",
   "CorporateUse": "Sử dụng cho Doanh nghiệp",
-  "SoftpediaDescription": "ONLYOFFICE Personal là một trình soạn thảo trực tuyến bao gồm các công cụ cần thiết để tạo các tài liệu, bảng tính và bản trình bày tương thích với Microsoft và cho phép cùng làm việc với các thành viên trong nhóm."
+  "SoftpediaDescription": "ONLYOFFICE Personal là một trình soạn thảo trực tuyến bao gồm các công cụ cần thiết để tạo các tài liệu, bảng tính và bản trình bày tương thích với Microsoft và cho phép cùng làm việc với các thành viên trong nhóm.",
+  "DocSlideSectionCarouselHeading": "Làm việc với các tài liệu",
+  "DocSlideSectionCarouselText": "Dùng tất cả các công cụ bạn cần để chỉnh sửa và định dạng bất kỳ tài liệu nào.",
+  "TabSlideSectionCarouselHeading": "Sắp xếp dữ liệu trong bảng tính",
+  "TabSlideSectionCarouselText": "Sắp xếp, kiểm tra và tính toán bất kỳ dữ liệu phức tạp nào.",
+  "PresSlideSectionCarouselHeading": "Tạo bản trình bày",
+  "PresSlideSectionCarouselText": "Thể hiện và trình bày ý tưởng của bạn cho người xem một cách dễ dàng.",
+  "CollaborationSlideSecitonCarouselHeading": "Cùng làm việc trực tuyến",
+  "CollaborationSlideSectionCarouselText": "Mời bất kỳ ai cùng chỉnh sửa tài liệu hoặc nhận đánh giá đối với công việc của bạn."
 }

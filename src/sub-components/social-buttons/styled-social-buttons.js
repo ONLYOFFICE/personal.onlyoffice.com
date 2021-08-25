@@ -5,6 +5,7 @@ const StyledSocialButtons = styled.div`
   gap: 26px;
   width: min-content;
   margin: auto;
+  margin-bottom: 1px;
 `;
 
 export default StyledSocialButtons;

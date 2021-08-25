@@ -106,6 +106,7 @@ const StyledItem = styled.div`
   }
   .title-lng:hover {
     color: #ff865c;
+    cursor: pointer;
   }
 `;
 

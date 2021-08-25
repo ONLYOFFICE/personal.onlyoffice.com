@@ -73,7 +73,7 @@
   "PersonalLogin": "Account Login",
   "RegistryButtonCreateNow": "Create now",
   "RegistrySettingSpam": "I want to subscribe to the ONLYOFFICE newsletter",
-  "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1>and <2>{{privacy}}</2>",
+  "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1> and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
   "PrivacyStatement": "Privacy statement",
   "AuthDocsAccessQuickly": "Access ONLYOFFICE personal quickly.",
@@ -83,5 +83,5 @@
   "HomeDescription": "Highly compatible with MS Office formats",
   "Error404HeaderText": "Error 404. Page not found",
   "Error404BodyText": "This page was removed, renamed or doesn’t exist anymore.",
-  "ErrorPageButtonText": "Return to homepage"
+  "Error404PageButtonText": "Return to homepage"
 }

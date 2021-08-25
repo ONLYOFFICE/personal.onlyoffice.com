@@ -4,6 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
+import toastr from "../../../components/toast/toastr";
 
 import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
@@ -19,7 +20,7 @@ import { navigate } from "gatsby";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(true);
 
   const {
     t,
@@ -36,14 +37,32 @@ const PasswordRecoveryPage = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    let hasError = false;
+
+    if (!emailValue.trim()) {
+      hasError = true;
+      setEmailIsValid(false);
+    }
+
+    if (hasError) return;
+
     if (emailIsValid) {
       recoveryPassword(emailValue)
-        .then((res) => {
-          navigate("/sign-in");
-        })
-        .catch((e) => alert(e));
+        .then(() =>
+          navigate("/sign-in", {
+            state: {
+              toastr: {
+                success: true,
+                text: t("SendChangePasswordInstructionSuccess", {
+                  email: emailValue,
+                }),
+              },
+            },
+          })
+        )
+        .catch((e) => toastr.error(t("IncorrectEmail")));
     } else {
-      console.log("email not valid");
+      toastr.error(t("IncorrectEmail"));
     }
   };
 
@@ -65,6 +84,7 @@ const PasswordRecoveryPage = () => {
       callback: onEmailChangeHandler,
       value: emailValue,
       tabIndexProp: 1,
+      isError: !emailIsValid,
     },
     {
       type: "button",
@@ -101,7 +121,7 @@ const PasswordRecoveryPage = () => {
     },
   ];
   return (
-    <Layout>
+    <Layout t={t}>
       <Layout.PageHead>
         <Head
           metaDescription={t("AuthDocsMetaDescription")}

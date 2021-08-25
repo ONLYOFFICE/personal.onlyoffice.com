@@ -1,19 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import ErrorContainer from "../sub-components/error-container";
+import { Error404 } from "../../components/errors";
 
 const NotFoundPage = () => {
   const { t } = useTranslation();
 
-  return (
-    <ErrorContainer
-      headerText={t("Error404HeaderText")}
-      bodyText={t("Error404BodyText")}
-      buttonText={t("ErrorPageButtonText")}
-      buttonUrl="/"
-    />
-  );
+  return <Error404 t={t} />;
 };
 
 export default NotFoundPage;
