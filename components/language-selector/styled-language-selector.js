@@ -27,7 +27,7 @@ const StyledItemsList = styled.div`
   border-radius: 3px;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(
-    ${(props) => Math.ceil(props.countLanguages  / 3)},
+    ${(props) => Math.ceil(props.countLanguages / 3)},
     auto
   );
   grid-auto-flow: column;
@@ -42,53 +42,41 @@ const StyledItemsList = styled.div`
     display: none;
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
-    font-weight:bold;    
+    font-weight: bold;
     color: #444444;
-    
   }
-  .close-button-img{
+  .close-button-img {
     display: none;
     position: fixed;
-    top:21px;
+    top: 21px;
     right: 21px;
   }
 
-  @media (max-width: 892px) {
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(
-      ${(props) => Math.ceil(props.countLanguages / 2)},
-      auto
-    );
-  }
-  @media (max-width: 622px) {
+  @media (max-width: 767px) {
     overflow: scroll;
     overflow-x: hidden;
-    grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(${(props) => props.countLanguages}, auto);
-    max-height: 492px;
-  }
-  @media (max-width: 592px) {
-    box-sizing: border-box;
-    overflow-x: hidden;
+
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(${(props) => props.countLanguages + 2}, auto);
-    min-height: 492px;   
+    min-height: 100%;
     position: fixed;
+    grid-gap: 18px;
     top: 0px;
-    right: -0px;
+    left: 0;
     min-width: 100vw;
-    max-height: 100vh;    
-    padding: 36px 32px;
+    max-height: 100vh;
+    padding: 36px 20px;
+
+    border: none;
 
     .header-lng {
-    display: block;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;    
-    color: #444444;
-    margin-bottom: 4px;
-    
+      display: block;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+      color: #444444;
+      margin-bottom: 4px;
     }
-    .close-button-img{
+    .close-button-img {
       display: block;
     }
   }
