@@ -125,7 +125,7 @@ const SocialButtons = ({ t, isDisabled }) => {
 
       return (
         <SocialButton
-          key={provider?.provider}
+          key={el.name}
           iconName={el.icon}
           dataUrl={provider?.url}
           dataProvidername={provider?.provider}
