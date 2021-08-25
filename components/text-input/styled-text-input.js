@@ -87,6 +87,10 @@ const StyledTextInput = styled.input`
     font-size: ${(props) => props.fontSize || props.theme.textInput.fontSize};
   }
 
+  @media (max-width: 592px) {
+    height: 48px;
+  }
+
   @media ${device.mobileL} {
     width: ${(props) =>
       props.withButton
