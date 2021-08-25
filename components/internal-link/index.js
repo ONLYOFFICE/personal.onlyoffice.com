@@ -19,10 +19,16 @@ const InternalLink = ({
   return (
     <GatsbyLink
       to={href}
-      style={{ ...style, outline: "none" }}
+      style={{ ...style, outline: "none", textDecoration: "none" }}
       tabIndex={tabIndex}
     >
-      <Link as="span" {...rest} className={linkClassName} tabIndex={tabIndex}>
+      <Link
+        as="span"
+        {...rest}
+        className={linkClassName}
+        tabIndex={tabIndex}
+        {...rest}
+      >
         {children || label}
       </Link>
     </GatsbyLink>

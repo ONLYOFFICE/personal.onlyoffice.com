@@ -7,17 +7,20 @@ import StyledSocialButtons from "./styled-social-buttons";
 
 import { thirdPartyLogin } from "../../api";
 
-const providersData = Object.freeze({
-  Google: {
+const providersIcons = [
+  {
+    name: "Google",
     icon: "/social-icons/google.react.svg",
   },
-  Facebook: {
+  {
+    name: "Facebook",
     icon: "/social-icons/facebook.react.svg",
   },
-  LinkedIn: {
+  {
+    name: "LinkedIn",
     icon: "/social-icons/linkedin.react.svg",
   },
-});
+];
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
@@ -97,30 +100,47 @@ const SocialButtons = ({ t, isDisabled }) => {
     }
   };
 
-  const providerButtons = () => {
-    const providerButtons =
-      providers &&
-      providers.map((item) => {
-        if (!providersData[item.provider]) return false;
+  const renderButtons = () => {
+    // const providerButtons =
+    //   providers &&
+    //   providers.map((item) => {
+    //     if (!providersData[item.provider]) return false;
+    //     const { icon } = providersData[item.provider];
+    //     return (
+    //       <SocialButton
+    //         key={item.provider}
+    //         iconName={icon}
+    //         dataUrl={item.url}
+    //         dataProvidername={item.provider}
+    //         onClick={onSocialButtonClick}
+    //         isDisabled={isDisabled}
+    //       />
+    //     );
+    //   });
+    // return providerButtons;
 
-        const { icon } = providersData[item.provider];
+    const providerButtons = providersIcons.map((el) => {
+      const provider =
+        providers && providers.find((item) => item.provider === el.name);
 
-        return (
-          <SocialButton
-            key={item.provider}
-            iconName={icon}
-            dataUrl={item.url}
-            dataProvidername={item.provider}
-            onClick={onSocialButtonClick}
-            isDisabled={isDisabled}
-          />
-        );
-      });
+      return (
+        <SocialButton
+          key={provider?.provider}
+          iconName={el.icon}
+          dataUrl={provider?.url}
+          dataProvidername={provider?.provider}
+          onClick={onSocialButtonClick}
+          isDisabled={isDisabled || !provider}
+        />
+      );
+    });
 
     return providerButtons;
   };
 
-  return <StyledSocialButtons>{providerButtons()}</StyledSocialButtons>;
+  const providerButtons = renderButtons();
+
+  return <StyledSocialButtons>{providerButtons}</StyledSocialButtons>;
 };
 
 export default SocialButtons;
