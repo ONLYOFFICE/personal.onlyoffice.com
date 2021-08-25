@@ -23,7 +23,7 @@ const toastr = {
 const notify = (
   type,
   title,
-  timeout = 1000,
+  timeout = 5000,
   closeOnClick = true,
   centerPosition = false
 ) => {
