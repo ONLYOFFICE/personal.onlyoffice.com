@@ -115,7 +115,7 @@ const StyledToast = styled(ToastContainer)`
     }
 
     @media ${device.tablet} {
-      // TODO: Discuss the behavior of notifications on mobile devices
+      /* TODO: Discuss the behavior of notifications on mobile devices*/
       position: absolute;
       &:nth-child(1) {
         z-index: 3;

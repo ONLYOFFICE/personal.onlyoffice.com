@@ -13,6 +13,8 @@ const Slide = cssTransition({
 const Toast = (props) => {
   const onToastClick = () => {
     let documentElement = document.getElementsByClassName("Toastify__toast");
+
+    ///
     console.log(props);
     if (documentElement.length > 1)
       for (var i = 0; i < documentElement.length; i++) {

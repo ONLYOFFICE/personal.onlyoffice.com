@@ -23,7 +23,7 @@ const toastr = {
 const notify = (
   type,
   title,
-  timeout = 5000,
+  timeout = 1000,
   closeOnClick = true,
   centerPosition = false
 ) => {
@@ -38,7 +38,7 @@ const notify = (
     </>,
     {
       type: type,
-      autoClose: timeout === 0 ? false : timeout < 750 ? 5000 : timeout || 5000,
+      autoClose: (timeout > 750 && timeout) || 5000, //timeout === 0 ? false : timeout < 750 ? 5000 : timeout || 5000,
       position: centerPosition && toast.POSITION.TOP_CENTER,
     }
   );
