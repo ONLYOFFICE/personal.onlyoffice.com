@@ -278,6 +278,11 @@ const Base = {
     },
   },
 
+  scrollbar: {
+    backgroundColorVertical: "rgba(0, 0, 0, 0.1)",
+    backgroundColorHorizontal: "rgba(0, 0, 0, 0.1)",
+  },
+
   infoPanel: {
     display: "flex",
     flexDirectionLeft: "row-reverse",

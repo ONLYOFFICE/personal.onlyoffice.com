@@ -7,7 +7,7 @@ import Header from "./sub-components/header";
 import Main from "./sub-components/main";
 import Footer from "./sub-components/footer";
 import Head from "./sub-components/head";
-
+import Scrollbar from '../scrollbar';
 import Toast from "../toast";
 
 import "../../styles/globals.css";
@@ -71,14 +71,20 @@ class Layout extends React.Component {
         <ErrorBoundary t={this.props.t}>
           {children}
           <Head>{headContent ? headContent.props.children : null}</Head>
-          <Header>{headerContent ? headerContent.props.children : null}</Header>
-          <Main>{mainContent ? mainContent.props.children : null}</Main>
-          <Footer
-            className="footer"
-            isHomePage={footerContent.props.isHomePage}
+          <Scrollbar
+            id="articleScrollBar"
+            className="custom-scrollbar"
+            stype="mediumBlack"
           >
-            {footerContent ? footerContent.props.children : null}
-          </Footer>
+            <Header>{headerContent ? headerContent.props.children : null}</Header>
+            <Main>{mainContent ? mainContent.props.children : null}</Main>
+            <Footer
+              className="footer"
+              isHomePage={footerContent.props.isHomePage}
+            >
+              {footerContent ? footerContent.props.children : null}
+            </Footer>
+          </Scrollbar>
           <Toast />
         </ErrorBoundary>
       </StyledLayout>
