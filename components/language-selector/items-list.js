@@ -17,25 +17,21 @@ export default function LangsList(props) {
   }
 
   return (
-    
     <StyledItemsList isOpen={isOpen} countLanguages={languages.length}>
-      <Text className="header-lng">
-        Choose your language
-      </Text>
+      <Text className="header-lng">{t("ChooseLanguage")}</Text>
       <IconButton
         iconName="/close-icon/close.react.svg"
         className="close-button-img"
         size="14px"
         onClick={onCloseSelector}
       />
-      
+
       {languages.map((language) => {
         const { shortKey, iconName, key } = language;
         const localizedPath = path.replace(currentLanguage, shortKey);
 
         return (
-          
-          <StyledItem key={key}>            
+          <StyledItem key={key}>
             <Link to={`${localizedPath}`}>
               <img src={`/flags/${iconName}`} alt={key} width="18px" />
               <Text as="span" className="title-lng">
