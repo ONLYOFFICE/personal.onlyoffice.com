@@ -54,7 +54,6 @@ const Base = {
 
     padding: "0",
     margin: "0",
-    display: "inline-block",
     textAlign: "left",
     hoverTextDecoration: "none",
     textDecoration: "underline",

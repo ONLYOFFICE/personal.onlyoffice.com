@@ -73,6 +73,7 @@ const TextInput = ({
           isSuccess={isSuccess}
           isError={isError}
           isEmpty={isEmpty}
+          className="input-label"
         >
           {placeholder}
         </Label>

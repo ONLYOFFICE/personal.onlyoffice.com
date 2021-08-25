@@ -50,7 +50,7 @@
   "Error404HeaderText": "Error 404. Page not found",
   "Error404BodyText": "This page was removed, renamed or doesn’t exist anymore.",
   "Error404PageButtonText": "Return to homepage",
-  "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1>and <2>{{privacy}}</2>",
+  "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1> and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
   "PrivacyStatement": "Privacy statement",
   "HomeDescription": "Highly compatible with MS Office formats",

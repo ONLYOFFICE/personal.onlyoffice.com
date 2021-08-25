@@ -41,7 +41,7 @@
   "PersonalLogin": "Login de conta",
   "RegistryButtonCreateNow": "Criar agora",
   "RegistrySettingSpam": "Quero assinar o boletim informativo ONLYOFFICE",
-  "RegistrySettingTerms": "Eu concordo com a ONLYOFFICE  <1>{{terms}}</1>e <2>{{privacy}}</2>.",
+  "RegistrySettingTerms": "Eu concordo com a ONLYOFFICE <1>{{terms}}</1> e <2>{{privacy}}</2>.",
   "TermAndCondition": "Termos e condições",
   "PrivacyStatement": "Declaração de privacidade",
   "AuthDocsLogIn": "Entrar",

@@ -35,6 +35,11 @@ const Label = styled.label`
     left 0.2s ease-in-out;
   transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out,
     left 0.2s ease-in-out;
+
+  @media (max-width: 592px) {
+    top: ${(props) =>
+      props.defaultChecked ? props.theme.textInput.label.top : "27%"};
+  }
 `;
 
 Label.defaultProps = { theme: Base };

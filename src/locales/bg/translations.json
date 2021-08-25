@@ -36,7 +36,7 @@
   "AuthDocsFreeDesktopApp": "Изтеглете {0}безплатното настолно приложение{1} за редактиране на файлове офлайн или за свързване с вашия облак.",
   "Email": "Електронна поща",
   "AuthDocsSignIn": "Впиши се",
-  "RegistrySettingTerms": "Приемам ONLYOFFICE <1>{{terms}}</1>и <2>{{privacy}}</2>",
+  "RegistrySettingTerms": "Приемам ONLYOFFICE <1>{{terms}}</1> и <2>{{privacy}}</2>",
   "TermAndCondition": "Общи условия",
   "PrivacyStatement": "Декларация за поверителност",
   "HomeDescription": "Високо съвместим с MS Office формати за документ",
