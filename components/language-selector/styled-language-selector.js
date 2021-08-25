@@ -27,7 +27,7 @@ const StyledItemsList = styled.div`
   border-radius: 3px;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(
-    ${(props) => Math.ceil(props.countLanguages + 1 / 3)},
+    ${(props) => Math.ceil(props.countLanguages  / 3)},
     auto
   );
   grid-auto-flow: column;

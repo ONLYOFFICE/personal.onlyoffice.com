@@ -6,7 +6,7 @@ import Text from "../text";
 import IconButton from "../icon-button";
 
 export default function LangsList(props) {
-  const { t, isOpen } = props;
+  const { t, isOpen, onCloseSelector } = props;
   return (
     
     <StyledItemsList isOpen={isOpen} countLanguages={languages.length}>
@@ -17,6 +17,7 @@ export default function LangsList(props) {
         iconName="/close-icon/close.react.svg"
         className="close-button-img"
         size="14px"
+        onClick={onCloseSelector}
       />
       
       {languages.map((language) => {
