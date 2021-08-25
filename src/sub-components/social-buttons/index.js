@@ -101,24 +101,6 @@ const SocialButtons = ({ t, isDisabled }) => {
   };
 
   const renderButtons = () => {
-    // const providerButtons =
-    //   providers &&
-    //   providers.map((item) => {
-    //     if (!providersData[item.provider]) return false;
-    //     const { icon } = providersData[item.provider];
-    //     return (
-    //       <SocialButton
-    //         key={item.provider}
-    //         iconName={icon}
-    //         dataUrl={item.url}
-    //         dataProvidername={item.provider}
-    //         onClick={onSocialButtonClick}
-    //         isDisabled={isDisabled}
-    //       />
-    //     );
-    //   });
-    // return providerButtons;
-
     const providerButtons = providersIcons.map((el) => {
       const provider =
         providers && providers.find((item) => item.provider === el.name);
