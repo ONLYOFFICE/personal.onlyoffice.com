@@ -1,9 +1,7 @@
 import React from "react";
 import { cssTransition } from "react-toastify";
-
 import PropTypes from "prop-types";
 import StyledToast from "./styled-toast";
-// import StyledToast from "./styled-toast";
 
 const Slide = cssTransition({
   enter: "SlideIn",
@@ -13,9 +11,6 @@ const Slide = cssTransition({
 const Toast = (props) => {
   const onToastClick = () => {
     let documentElement = document.getElementsByClassName("Toastify__toast");
-
-    ///
-    console.log(props);
     if (documentElement.length > 1)
       for (var i = 0; i < documentElement.length; i++) {
         documentElement &&
@@ -39,6 +34,7 @@ const Toast = (props) => {
 };
 
 Toast.propTypes = {
+  /** Auto close toast */
   autoClosed: PropTypes.bool,
   /** Accepts class  */
   className: PropTypes.string,
@@ -46,6 +42,7 @@ Toast.propTypes = {
   id: PropTypes.string,
   /** Accepts css style  */
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  /** Text toast */
   text: PropTypes.string,
   /** Title inside a toast */
   title: PropTypes.string,

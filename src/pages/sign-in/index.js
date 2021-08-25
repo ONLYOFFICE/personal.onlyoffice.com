@@ -100,11 +100,6 @@ const SignInPage = ({ location }) => {
     }
   };
 
-
-  const ONclick = () => {
-    toastr.error(t("InvalidUserNameOrPwd"));
-  }
-
   const formData = [
     { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
 
@@ -136,7 +131,7 @@ const SignInPage = ({ location }) => {
     },
     {
       type: "button",
-      callback: ONclick,
+      callback: onSubmitHandler,
 
       isSubmit: true,
       toHideButton: false,
