@@ -209,15 +209,12 @@ const StyledDownloadSection = styled(HomeSection)`
     }
 
     .desktop-button {
-      width: 100%;
+      width: calc(100% - 32px);
       height: 48px;
+
       .desktop-button-component {
         height: 48px;
       }
-    }
-    .desktop-link {
-      width: calc(100% - 32px);
-      margin-left: 16px;
     }
 
     .desktop-image {
