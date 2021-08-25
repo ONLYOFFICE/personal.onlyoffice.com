@@ -98,7 +98,7 @@ const Scrollbar = React.forwardRef((props, ref) => {
       renderView={renderView}
       renderThumbVertical={renderNavThumbVertical}
       renderThumbHorizontal={renderNavThumbHorizontal}
-      universal={universalRef}
+      universal={universalRef.current}
       {...props}
       ref={ref}
     />
