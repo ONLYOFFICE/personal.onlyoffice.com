@@ -4,6 +4,9 @@ import StyledPasswordInput from "./styled-password-input";
 import TextInput from "../text-input";
 import Text from "../text";
 
+import EyeOffIcon from "./svg/eye.off.react.svg";
+import EyeIcon from "./svg/eye.react.svg";
+
 const PasswordInput = ({
   isError,
   isSuccess,
@@ -24,6 +27,19 @@ const PasswordInput = ({
   const [isDefault, setIsDefault] = useState(true);
   const [success, setSuccess] = useState(false);
   const [isPwdError, setIsPwdError] = useState(false);
+  const [inputType, setInputType] = useState(type);
+
+  const toggleVisibilityOfPassword = () => {
+    inputType === "password" ? setInputType("text") : setInputType("password");
+  };
+  const renderTogglerShowOfPassword = () => {
+    console.log(inputType);
+    return inputType === "password" ? (
+      <EyeOffIcon className="eye-icon" onClick={toggleVisibilityOfPassword} />
+    ) : (
+      <EyeIcon className="eye-icon" onClick={toggleVisibilityOfPassword} />
+    );
+  };
 
   const validationCheck = (password) => {
     const specSymbolsTest = new RegExp("[" + generatorSpecial + "]");
@@ -77,10 +93,12 @@ const PasswordInput = ({
     onFocus(isValid, password);
   }, [isValid, password, onFocus]);
 
+  const TogglerShowOfPassword = renderTogglerShowOfPassword();
+
   return (
     <StyledPasswordInput {...rest} onBlur={onBlur} onFocus={onFocus}>
       <TextInput
-        type="password"
+        type={inputType}
         defaultInput={isDefault}
         isSuccess={success || isSuccess}
         isError={isPwdError || isError}
@@ -89,11 +107,12 @@ const PasswordInput = ({
         autoComplete={autoComplete}
         {...rest}
       />
-      {(!(success || isSuccess) && errorText) && (
+      {!(success || isSuccess) && errorText && (
         <Text className="pwd-error-text" fontSize="13px" color="#CB0000">
           {errorText}
         </Text>
       )}
+      {TogglerShowOfPassword}
     </StyledPasswordInput>
   );
 };
@@ -164,6 +183,7 @@ PasswordInput.defaultProps = {
     digits: false,
     specSymbols: false,
   },
+  type: "password",
 };
 
 export default PasswordInput;
