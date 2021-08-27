@@ -7,20 +7,19 @@ const Label = styled.label`
       ? props.theme.textInput.label.fontSize
       : props.theme.textInput.fontSize};
 
-  color: ${(props) => props.theme.textInput.placeholderColor};
+  color: ${(props) => props.isError 
+    ? "#CB0000" 
+    : props.isSuccess 
+    ? "#8BB825"
+    : props.theme.textInput.placeholderColor};
 
   position: absolute;
-  top: ${(props) =>
-    props.defaultChecked ? props.theme.textInput.label.top : "30%"};
-  left: ${(props) =>
-    props.defaultChecked ? props.theme.textInput.label.left : "0px"};
-  color: ${(props) =>
-    props.defaultChecked
-      ? (props.defaultInput && props.theme.textInput.backgroundColor) ||
-        (props.isError && props.theme.textInput.borderColorError) ||
-        (props.isSuccess && props.theme.textInput.borderColorSuccess) ||
-        props.theme.textInput.label.colorHover
-      : props.theme.textInput.label.color};
+  top: ${(props) => props.defaultChecked 
+    ? props.theme.textInput.label.top 
+    : "30%"};
+  left: ${(props) =>  props.defaultChecked 
+    ? props.theme.textInput.label.left 
+    : "0px"};
   padding: ${(props) => props.padding || props.theme.textInput.label.padding};
   margin: ${(props) => props.margin || props.theme.textInput.margin};
 

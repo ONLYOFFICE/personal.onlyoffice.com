@@ -14,7 +14,7 @@ const LanguageSelector = (props) => {
       window.addEventListener("click", handleClickOutside);
 
     return () => window.removeEventListener("click", handleClickOutside);
-  }, [isOpen]);
+  });
 
   const handleClickOutside = (e) => {
     if (
