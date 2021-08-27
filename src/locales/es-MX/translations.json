@@ -16,7 +16,7 @@
   "PersonalLogin": "Acceso a la cuenta",
   "RegistryButtonCreateNow": "Crear ahora",
   "RegistrySettingSpam": "Quiero suscribirme al boletín de ONLYOFFICE",
-  "RegistrySettingTerms": "Acepto los <1>{{terms}}</1>de ONLYOFFICE y <2>{{privacy}}</2>",
+  "RegistrySettingTerms": "Acepto los <1>{{terms}}</1> de ONLYOFFICE y <2>{{privacy}}</2>",
   "AuthDocsAlready": "¿Ya tiene una cuenta?",
   "AuthDocsConnect": "Conecta cualquier nube",
   "AuthDocsDisclaimer": "Las reseñas de los usuarios provienen de <1>{{linkText}}</1>. Las reseñas de Capterra son opiniones subjetivas de usuarios finales individuales basadas en sus propias experiencias y no representan los puntos de vista de Capterra o sus afiliados.",
@@ -48,5 +48,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Todos los derechos reservados",
   "TermsOfService": "Términos del servicio",
   "CorporateUse": "Uso corporativo",
-  "SoftpediaDescription": "ONLYOFFICE Personal es un editor online que incluye las herramientas necesarias para crear documentos, hojas de cálculo y presentaciones compatibles con Microsoft y colaborar en tiempo real."
+  "SoftpediaDescription": "ONLYOFFICE Personal es un editor online que incluye las herramientas necesarias para crear documentos, hojas de cálculo y presentaciones compatibles con Microsoft y colaborar en tiempo real.",
+  "DocSlideSectionCarouselHeading": "Trabaja con documentos de texto",
+  "DocSlideSectionCarouselText": "Obtén todas las herramientas que necesitas para editar y formatear cualquier documento.",
+  "TabSlideSectionCarouselHeading": "Organiza los datos en hojas de cálculo",
+  "TabSlideSectionCarouselText": "Organiza, examina y calcula cualquier datos complejos.",
+  "PresSlideSectionCarouselHeading": "Crea presentaciones",
+  "PresSlideSectionCarouselText": "Expresa tus ideas y preséntalas al público con facilidad.",
+  "CollaborationSlideSecitonCarouselHeading": "Colabora online",
+  "CollaborationSlideSectionCarouselText": "Invita a cualquier persona a editar documentos juntos o a hacer revisiones en tu trabajo."
 }

@@ -37,5 +37,15 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 保留所有权利",
   "TermsOfService": "服务条款",
   "CorporateUse": "公司使用",
-  "SoftpediaDescription": "ONLYOFFICE个人版是一款在线文档编辑器，其中包含了创建Microsoft兼容文档、电子表格和演示文稿所需的必要工具，还便于您同团队成员开展协作。"
+  "SoftpediaDescription": "ONLYOFFICE个人版是一款在线文档编辑器，其中包含了创建Microsoft兼容文档、电子表格和演示文稿所需的必要工具，还便于您同团队成员开展协作。",
+  "DownloadDesktopApp": "下载<1>免费桌面版应用</1>以离线编辑或连接至云端。",
+  "DownloadMobileApp": "Work with documents on-the-go with <1>ONLYOFFICE mobile applications.</1>",
+  "DocSlideSectionCarouselHeading": "处理文档",
+  "DocSlideSectionCarouselText": "获取编辑和格式化一切文档所需的所有工具。",
+  "TabSlideSectionCarouselHeading": "使用电子表格组织数据",
+  "TabSlideSectionCarouselText": "组织、检查、计算一切复杂数据。",
+  "PresSlideSectionCarouselHeading": "创建演示文稿",
+  "PresSlideSectionCarouselText": "表达您的想法，并将其轻松地呈现给观众。",
+  "CollaborationSlideSecitonCarouselHeading": "在线协作",
+  "CollaborationSlideSectionCarouselText": "邀请任何人共同编辑文档，或接收有关工作的评价意见。"
 }

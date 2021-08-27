@@ -3,11 +3,12 @@ import Base from "../themes/base";
 
 const StyledLabel = styled.label`
   display: grid;
-  grid-template-columns: min-content 100%;
-  align-items: start;
+  grid-template-columns: min-content auto;
+  align-items: center;
   gap: 8px;
   position: relative;
   margin: 0;
+  max-width: calc(100% - 32px);
 
   user-select: none;
   -o-user-select: none;
@@ -22,11 +23,6 @@ const StyledLabel = styled.label`
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 
   .checkbox-text {
-    margin-top: 2px;
-  }
-
-  .checkbox-text * {
-    padding-right: 4px;
     vertical-align: bottom;
   }
 `;

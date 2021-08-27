@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledForm = styled.section`
-  height: 100%;
+  height: auto;
 
   .login-form {
     margin-top: 96px;

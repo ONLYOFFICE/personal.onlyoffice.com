@@ -19,7 +19,7 @@ const CreateNowPage = () => {
   const buttonHref = language === "en" ? "/sign-in" : `/${language}/sign-in`;
 
   return (
-    <Layout>
+    <Layout t={t}>
       <Layout.PageHead>
         <Head
           metaDescription={t("AuthDocsMetaDescription")}

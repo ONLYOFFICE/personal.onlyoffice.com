@@ -4,21 +4,40 @@ import StyledIconButton from "./styled-icon-button";
 
 import { ReactSVG } from "react-svg";
 
-function IconButton(props) {
+function IconButton({
+  className,
+  size,
+  isDisabled,
+  isClickable,
+  id,
+  style,
+  grayed,
+  background,
+  title,
+  clickColor,
+  color,
+  hoverColor,
+  iconHoverName,
+  iconName,
+  defaultIcon,
+  onMouseEnter,
+  onMouseLeave,
+  onMouseDown,
+  iconClickName,
+  onMouseUp,
+  onClick,
+  ...rest
+}) {
   const [state, setState] = useState({
-    currentIconName: props.iconName,
+    currentIconName: iconName,
   });
 
-  const onMouseEnter = (e) => {
-    const {
-      isDisabled,
-      iconHoverName,
-      iconName,
+  const onError = () => {
+    return <ReactSVG src={defaultIcon} />;
+  };
 
-      onMouseEnter,
-    } = props;
-
-    if (isDisabled) return;
+  const onMouseEnterHandler = (e) => {
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: !("ontouchstart" in document.documentElement)
@@ -29,10 +48,8 @@ function IconButton(props) {
     onMouseEnter && onMouseEnter(e);
   };
 
-  const onMouseLeave = (e) => {
-    const { isDisabled, iconName, onMouseLeave } = props;
-
-    if (isDisabled) return;
+  const onMouseLeaveHandler = (e) => {
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: iconName,
@@ -41,16 +58,8 @@ function IconButton(props) {
     onMouseLeave && onMouseLeave(e);
   };
 
-  const onMouseDown = (e) => {
-    const {
-      isDisabled,
-      iconClickName,
-      iconName,
-
-      onMouseDown,
-    } = props;
-
-    if (isDisabled) return;
+  const onMouseDownHandler = (e) => {
+    if (isDisabled || defaultIcon) return;
 
     setState({
       currentIconName: !("ontouchstart" in document.documentElement)
@@ -61,10 +70,8 @@ function IconButton(props) {
     onMouseDown && onMouseDown(e);
   };
 
-  const onMouseUp = (e) => {
-    const { isDisabled, iconHoverName, iconName, color, onMouseUp } = props;
-
-    if (isDisabled) return;
+  const onMouseUpHandler = (e) => {
+    if (isDisabled || defaultIcon) return;
 
     switch (e.nativeEvent.which) {
       case 1: //Left click
@@ -85,46 +92,41 @@ function IconButton(props) {
     }
   };
 
-  const {
-    className,
-    size,
-    isDisabled,
-    isClickable,
-    onClick,
-    id,
-    style,
-    grayed,
-    title,
-    clickColor,
-    color,
-    hoverColor,
-  } = props;
-
   const classNameSVG = `icon-button_svg ${color && "user-color"} ${
     clickColor && "user-click-color"
   } ${hoverColor && "user-hover-color"} `;
 
+  const onClickHandler = (e) => {
+    onClick && onClick(e);
+  };
+
   return (
     <StyledIconButton
       id={id}
+      onClick={onClickHandler}
       className={className}
       size={size}
       isDisabled={isDisabled}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
-      onClick={onClick}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+      onMouseDown={onMouseDownHandler}
+      onMouseUp={onMouseUpHandler}
       isClickable={typeof onClick === "function" || isClickable}
       style={style}
       color={color}
       clickColor={clickColor}
       hoverColor={hoverColor}
+      background={background}
       grayed={grayed}
       title={title}
-      {...props}
+      {...rest}
     >
-      <ReactSVG className={classNameSVG} src={state.currentIconName} />
+      <ReactSVG
+        className={classNameSVG}
+        src={state.currentIconName}
+        fallback={defaultIcon ? onError : null}
+        {...rest}
+      />
     </StyledIconButton>
   );
   //}
@@ -140,7 +142,9 @@ IconButton.propTypes = {
   /** Icon color on hover action */
   hoverColor: PropTypes.string,
   /** Takes the path to the icon (the icon must be located in a static folder) */
-  iconName: PropTypes.string.isRequired,
+  iconName: PropTypes.string,
+  /** Takes the path to the icon (the icon must be located in a static folder) */
+  defaultIcon: PropTypes.string,
   /** Icon name on click action */
   iconClickName: PropTypes.string,
   /** Icon name on hover action */
@@ -155,6 +159,8 @@ IconButton.propTypes = {
   grayed: PropTypes.bool,
   /** What the button will trigger when clicked  */
   onClick: PropTypes.func,
+  /** If no image is found  */
+  onError: PropTypes.func,
   /**  What the button will trigger when cursor down */
   onMouseDown: PropTypes.func,
   /** What the button will trigger when cursor enter */
@@ -172,7 +178,7 @@ IconButton.propTypes = {
 };
 
 IconButton.defaultProps = {
-  iconName: "/static/images/social_icons/facebook.react.svg",
+  //iconName: "/static/images/social_icons/facebook.react.svg",
   isClickable: false,
   isDisabled: false,
   size: 24,

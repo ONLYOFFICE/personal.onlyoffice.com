@@ -44,5 +44,13 @@
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 版権所有",
   "TermsOfService": "利用規約",
   "CorporateUse": "共同利用",
-  "SoftpediaDescription": "ONLYOFFICE Personalは、Microsoft互換のドキュメント、スプレッドシート、プレゼンテーションの作成や、チームメンバーとの共同作業に必要なツールを提供しているオンラインエディターです。"
+  "SoftpediaDescription": "ONLYOFFICE Personalは、Microsoft互換のドキュメント、スプレッドシート、プレゼンテーションの作成や、チームメンバーとの共同作業に必要なツールを提供しているオンラインエディターです。",
+  "DocSlideSectionCarouselHeading": "ドキュメントとの連携",
+  "DocSlideSectionCarouselText": "あらゆるドキュメントの編集やフォーマットに必要なすべてのツールを手に入れられます。",
+  "TabSlideSectionCarouselHeading": "スプレッドシートでデータ整理",
+  "TabSlideSectionCarouselText": "どんなに複雑なデータでも、整理し、調べ、計算します。",
+  "PresSlideSectionCarouselHeading": "プレゼンテーションの作成",
+  "PresSlideSectionCarouselText": "自分のアイデアを表現し、それを簡単に聴衆に見せられます。",
+  "CollaborationSlideSecitonCarouselHeading": "オンラインでのコラボレーション",
+  "CollaborationSlideSectionCarouselText": "どなたを招待して一緒に文書を編集したり、自分の作品のレビューを受けたりすることが可能です。"
 }

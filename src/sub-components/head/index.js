@@ -30,7 +30,7 @@ const Head = (props) => {
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
       ></meta>
       <meta id="ctl00_MetaKeywords" name="keywords" content={metaKeywords} />
       <meta name="description" content={metaDescription} />
