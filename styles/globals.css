@@ -3,6 +3,8 @@ html {
   font-family: "Open Sans", sans-serif;
   scrollbar-color: #c1c1c1c1 transparent;
   scrollbar-width: thin;
+
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
