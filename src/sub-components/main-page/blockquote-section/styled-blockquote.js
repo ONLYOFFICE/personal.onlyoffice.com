@@ -10,6 +10,7 @@ const StyledBlockquote = styled(HomeSection)`
 
   max-width: 772px;
   margin: 0 auto;
+  background-color: white;
 
   :before {
     content: "";
