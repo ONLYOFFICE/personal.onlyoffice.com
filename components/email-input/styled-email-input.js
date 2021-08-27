@@ -4,7 +4,8 @@ const StyledEmailInput = styled.div`
   display: flex;
   flex-direction: column;
   .email-error-text {
-    padding-top: 65px;
+    position: absolute;
+    padding-top: 55px;
   }
 `;
 

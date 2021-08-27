@@ -9,8 +9,8 @@ const EmailInput = ({
   isSuccess,
   defaultInput,
   value,
-  errText,
-  isErrText,
+  errorText,
+  disabledValidation,
   onChange,
   type,
   autoComplete,
@@ -22,7 +22,6 @@ const EmailInput = ({
 
   const [email, setEmail] = useState("");
   const [valid, setValid] = useState("");
-  const [errorText, setErrorText] = useState("");
   const [emailDefault, setEmailDefault] = useState(true);
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -33,9 +32,9 @@ const EmailInput = ({
 
   const onChangeHandler = (e) => {
     const email = e.target.value;
-    const emailValid = Validate(email);
+    const emailValid = disabledValidation ? true : Validate(email);
     setEmail(email);
-    offValidation ? setValid(true) : setValid(emailValid);
+    setValid(emailValid);
     onChange && onChange(e, emailValid);
   };
 
@@ -43,7 +42,6 @@ const EmailInput = ({
     if (!e.currentTarget.contains(e.relatedTarget)) {
       email === "" ? setEmailDefault(true) : setEmailDefault(false);
       !valid && !!email && setEmailError(true);
-      !emailError && !!email && setErrorText(errText);
     }
   };
 
@@ -74,7 +72,7 @@ const EmailInput = ({
         autoComplete={autoComplete}
         {...rest}
       />
-      {isErrText && (
+      {(!(emailSuccess || isSuccess) && errorText) && (
         <Text className="email-error-text" fontSize="13px" color="#CB0000">
           {errorText}
         </Text>
@@ -105,15 +103,13 @@ EmailInput.propTypes = {
   /** Name text in button */
   labelButton: PropTypes.string,
   /** Error text */
-  errText: PropTypes.string,
+  errorText: PropTypes.string,
   /** Supported type of the input fields */
   type: PropTypes.oneOf(["email", "password", "text"]),
   /** Type of the button */
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
-  /** Check error text */
-  isErrText: PropTypes.bool,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
   /** Focus the input field on initial render */
@@ -123,7 +119,7 @@ EmailInput.propTypes = {
   /** Indicates the input field has an error */
   isError: PropTypes.bool,
   /** Disabled validation*/
-  offValidation: PropTypes.bool,
+  disabledValidation: PropTypes.bool,
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
@@ -147,8 +143,7 @@ EmailInput.propTypes = {
 };
 
 EmailInput.defaultProps = {
-  isErrText: false,
-  offValidation: false,
+  disabledValidation: false,
 };
 
 export default EmailInput;

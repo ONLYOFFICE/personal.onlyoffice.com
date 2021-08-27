@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
@@ -9,18 +9,14 @@ import LicenceLink from "./licence-checkbox-content";
 import { join } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
-import useErrorValidationIndication from "./sub-components/validation";
-
-const CreateForm = ({ t, isPanel, buttonHref, isErrorIndicationText }) => {
+const CreateForm = ({ t, isPanel, buttonHref }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [isSubscribe, setIsChecked] = useState(true);
   const [isAcceptLicence, setIsLicense] = useState(false);
   const [emailIsEmpty, setEmailIsEmpty] = useState(true);
-
-  const validations = { isEmpty: "", incorrectValue: "" };
-  const validationsErrorText = {errorEmptyValue: t("AuthErrorIndicationText"), errorIncorrectValue: t("AuthErrorIndicationIncorrectEmail")}
-  let valid = useErrorValidationIndication(emailValue, emailIsValid, validations, validationsErrorText, isAcceptLicence);
+  const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
+  const [errorTextInput, setErrorTextInput] = useState(null);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -44,8 +40,18 @@ const CreateForm = ({ t, isPanel, buttonHref, isErrorIndicationText }) => {
       hasError = true;
       setEmailIsValid(false);
       setEmailIsEmpty(true);
+      setErrorTextInput(t("AuthErrorIndicationText"));
     } else {
       setEmailIsEmpty(false);
+    }
+
+    if (emailValue.trim() && !emailIsValid) {
+      hasError = true;
+      setEmailIsValid(false);
+      setEmailIsIncorrect(true);
+      setErrorTextInput(t("AuthErrorIndicationIncorrectEmail"));
+    } else {
+      setEmailIsIncorrect(false);
     }
 
     if (!isAcceptLicence) {
@@ -91,8 +97,10 @@ const CreateForm = ({ t, isPanel, buttonHref, isErrorIndicationText }) => {
       labelButton: t("RegistryButtonCreateNow"),
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
+      disabledValidation: false,
+      isError: (emailIsEmpty && !emailIsValid) || (emailIsIncorrect && !emailIsValid),
+      errorText: errorTextInput,
       tabIndexProp: 1,
-      isError: emailIsEmpty && !emailIsValid,
     },
     {
       type: "checkbox",

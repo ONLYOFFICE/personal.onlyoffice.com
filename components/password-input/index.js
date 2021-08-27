@@ -9,19 +9,18 @@ const PasswordInput = ({
   isSuccess,
   defaultInput,
   value,
-  errText,
-  isErrText,
+  errorText,
   onChange,
   type,
   passwordSettings,
   generatorSpecial,
   autoComplete,
-  offValidation,
+  disabledValidation,
   ...rest
 }) => {
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState("");
-  const [errorText, setErrorText] = useState("");
+  const [errorPasswordText, setErrorPasswordText] = useState(null);
   const [isDefault, setIsDefault] = useState(true);
   const [success, setSuccess] = useState(false);
   const [isPwdError, setIsPwdError] = useState(false);
@@ -47,9 +46,9 @@ const PasswordInput = ({
 
   const onChangeHandler = (e) => {
     const pwd = e.target.value;
-    const pwdIsValid = validationCheck(pwd);
+    const pwdIsValid = disabledValidation ? true : validationCheck(pwd);
     setPassword(pwd);
-    offValidation ? setIsValid(true) : setIsValid(pwdIsValid);
+    setIsValid(pwdIsValid);
     onChange && onChange(e, pwdIsValid);
   };
 
@@ -57,7 +56,7 @@ const PasswordInput = ({
     if (!e.currentTarget.contains(e.relatedTarget) && password !== "") {
       setIsDefault(false);
       !isValid && setIsPwdError(true);
-      !isPwdError && setErrorText(errText);
+      !isPwdError && setErrorPasswordText(errorPasswordText);
     } else {
       setIsDefault(true);
     }
@@ -90,7 +89,7 @@ const PasswordInput = ({
         autoComplete={autoComplete}
         {...rest}
       />
-      {isErrText && (
+      {(!(success || isSuccess) && errorText) && (
         <Text className="pwd-error-text" fontSize="13px" color="#CB0000">
           {errorText}
         </Text>
@@ -124,18 +123,14 @@ PasswordInput.propTypes = {
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
-  /** Check error text */
-  isErrText: PropTypes.bool,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
   /** Focus the input field on initial render */
   isAutoFocussed: PropTypes.bool,
   /** Indicates the input field has an success*/
   isSuccess: PropTypes.bool,
-  /** Indicates the input field has an error */
-  isError: PropTypes.bool,
   /** Disabled validation */
-  offValidation: PropTypes.bool,
+  disabledValidation: PropTypes.bool,
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
@@ -161,9 +156,8 @@ PasswordInput.propTypes = {
 };
 
 PasswordInput.defaultProps = {
-  isErrText: false,
   generatorSpecial: "!@#$%^&*",
-  offValidation: false,
+  disabledValidation: true,
   passwordSettings: {
     minLength: 1,
     upperCase: false,
