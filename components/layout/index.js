@@ -67,7 +67,7 @@ class Layout extends React.Component {
 
     return (
       <ErrorBoundary t={this.props.t}>
-        <StyledLayout className="layout">
+        <StyledLayout id="page-layout" className="layout">
           {children}
           <Head>{headContent ? headContent.props.children : null}</Head>
 
