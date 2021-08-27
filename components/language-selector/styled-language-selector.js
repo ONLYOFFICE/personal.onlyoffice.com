@@ -6,18 +6,24 @@ export default styled.div`
   grid-template-columns: 18px 6px;
   grid-column-gap: 2px;
   position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
   .arrow-image,
   .flag-image {
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .arrow-image {
     margin-top: -4px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;
 
-const StyledItemsList = styled.div`
+const StyledPanelView = styled.div`
   position: absolute;
   display: ${(props) => (props.isOpen ? "grid" : "none")};
   width: max-content;
@@ -37,52 +43,40 @@ const StyledItemsList = styled.div`
   padding: 36px 32px;
   top: 20px;
   right: 18px;
+`;
+
+const StyledMobileView = styled.div`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: ${(props) => (props.isOpen ? "grid" : "none")};
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  right: -40px;
+  height: calc(100% - 60px);
+  width: 100%;
+  padding: 30px 20px;
+  border: none;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: auto;
+  grid-gap: 18px;
 
   .header-lng {
-    display: none;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    color: #444444;
+    margin-bottom: 30px;
+    height: 100%;
   }
+
   .close-button-img {
-    display: none;
     position: fixed;
-    top: 21px;
-    right: 21px;
-  }
-
-  @media (max-width: 767px) {
-    overflow: scroll;
-    overflow-x: hidden;
-
-    grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(${(props) => props.countLanguages + 2}, auto);
-    min-height: 100%;
-    position: fixed;
-    grid-gap: 18px;
-    top: 0px;
-    left: 0;
-    min-width: 100vw;
-    max-height: 100vh;
-    padding: 36px 20px;
-
-    border: none;
-
-    .header-lng {
-      display: block;
-      font-size: 16px;
-      font-family: "Open Sans", sans-serif;
-      color: #444444;
-      margin-bottom: 4px;
-    }
-    .close-button-img {
-      display: block;
-    }
+    top: 23px;
+    right: 20px;
   }
 `;
 
 const StyledItem = styled.div`
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   .title-lng {
     display: inline-block;
     font-size: 14px;
@@ -98,4 +92,4 @@ const StyledItem = styled.div`
   }
 `;
 
-export { StyledItem, StyledItemsList };
+export { StyledItem, StyledPanelView, StyledMobileView };
