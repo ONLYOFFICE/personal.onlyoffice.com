@@ -122,5 +122,6 @@
   "EmailChanged": "Email changed",
   "EmailChangeError": "Change client email error",
   "SomethingWentWrong": "Something went wrong.",
-  "TryLatter": "The service is currently unavailable, please try again later."
+  "TryLatter": "The service is currently unavailable, please try again later.",
+  "ChooseLanguage": "Choose your language"
 }

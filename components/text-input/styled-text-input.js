@@ -49,7 +49,8 @@ const StyledTextInput = styled.input`
     (props.backgroundColor && props.backgroundColor) ||
     props.theme.textInput.backgroundColor};
 
-  cursor: pointer;
+  cursor: text;
+  -webkit-appearance: none;
 
   &:hover:not(:focus) {
     border-color: ${(props) =>

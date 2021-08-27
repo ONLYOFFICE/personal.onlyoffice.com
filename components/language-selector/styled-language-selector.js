@@ -6,18 +6,24 @@ export default styled.div`
   grid-template-columns: 18px 6px;
   grid-column-gap: 2px;
   position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
   .arrow-image,
   .flag-image {
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .arrow-image {
     margin-top: -4px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;
 
-const StyledItemsList = styled.div`
+const StyledPanelView = styled.div`
   position: absolute;
   display: ${(props) => (props.isOpen ? "grid" : "none")};
   width: max-content;
@@ -37,24 +43,40 @@ const StyledItemsList = styled.div`
   padding: 36px 32px;
   top: 20px;
   right: 18px;
+`;
 
-  @media (max-width: 892px) {
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(
-      ${(props) => Math.ceil(props.countLanguages / 2)},
-      auto
-    );
+const StyledMobileView = styled.div`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: ${(props) => (props.isOpen ? "grid" : "none")};
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  right: -40px;
+  height: calc(100% - 60px);
+  width: 100%;
+  padding: 30px 20px;
+  border: none;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: auto;
+  grid-gap: 18px;
+
+  .header-lng {
+    margin-bottom: 30px;
+    height: 100%;
   }
-  @media (max-width: 622px) {
-    overflow: scroll;
-    overflow-x: hidden;
-    grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(${(props) => props.countLanguages}, auto);
-    max-height: 492px;
+
+  .close-button-img {
+    position: fixed;
+    top: 23px;
+    right: 20px;
   }
 `;
 
 const StyledItem = styled.div`
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   .title-lng {
     display: inline-block;
     font-size: 14px;
@@ -70,4 +92,4 @@ const StyledItem = styled.div`
   }
 `;
 
-export { StyledItem, StyledItemsList };
+export { StyledItem, StyledPanelView, StyledMobileView };
