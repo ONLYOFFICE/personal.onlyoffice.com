@@ -33,7 +33,6 @@ const PasswordInput = ({
     inputType === "password" ? setInputType("text") : setInputType("password");
   };
   const renderTogglerShowOfPassword = () => {
-    console.log(inputType);
     return inputType === "password" ? (
       <EyeOffIcon className="eye-icon" onClick={toggleVisibilityOfPassword} />
     ) : (
