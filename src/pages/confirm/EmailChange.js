@@ -10,51 +10,60 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 
 import { changeEmail, getUser } from "../../api";
-import { parseQueryParams, getConfirmHeader } from "../../helpers";
+import {
+  parseQueryParams,
+  getConfirmHeader,
+  getConfirmLinkData,
+} from "../../helpers";
+
+import { useCheckingConfirmLink } from "../../hooks";
 
 const EmailChangePage = ({ location }) => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
+  const linkData = getConfirmLinkData(location);
+  const [isValid, errorText] = useCheckingConfirmLink(linkData, t);
 
   useEffect(() => {
-    // const params = parseQueryParams(location.search);
-    // const confirmHeader = getConfirmHeader(location);
-    navigate("/", {
-      state: {
-        toastr: {
-          error: true,
-          text: t("EmailChangeError"),
+    if (isValid) {
+      const params = parseQueryParams(location.search);
+      const confirmHeader = getConfirmHeader(location);
+      const { email } = params;
+      getUser(email)
+        .then((user) => {
+          changeEmail(params.key, email, confirmHeader).then((res) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  success: true,
+                  text: t("EmailChanged"),
+                },
+              },
+            });
+          });
+        })
+        .catch((e) => {
+          navigate("/", {
+            state: {
+              toastr: {
+                error: true,
+                text: t("EmailChangeError"),
+              },
+            },
+          });
+        });
+    } else {
+      navigate("/", {
+        state: {
+          toastr: {
+            error: true,
+            text: errorText || t("EmailChangeError"),
+          },
         },
-      },
-    });
-    // const { email } = params;
-    // //getUser(email)
-    // //.then((user) => {
-    // changeEmail(params.key, email, confirmHeader)
-    //   .then((res) => {
-    //     console.log(res);
-    //     // navigate("/", {
-    //     //   state: {
-    //     //     toastr: {
-    //     //       success: true,
-    //     //       text: t("EmailChanged"),
-    //     //     },
-    //     //   },
-    //     // });
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //     // navigate("/", {
-    //     //   state: {
-    //     //     toastr: {
-    //     //       error: true,
-    //     //       text: t("EmailChangeError"),
-    //     //     },
-    //     //   },
-    //     // });
-    //   });
+      });
+    }
   });
 
   return (

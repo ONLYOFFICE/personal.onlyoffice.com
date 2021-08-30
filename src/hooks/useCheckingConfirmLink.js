@@ -33,7 +33,7 @@ export default function useCheckingConfirmLink(confirmLinkData, t) {
         setIsValid(false);
         setErrorText(e);
       });
-  }, []);
+  });
 
   return [isValid, errorText];
 }
