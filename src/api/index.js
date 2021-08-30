@@ -110,3 +110,18 @@ export function thirdPartyLogin(SerializedProfile) {
     data: { SerializedProfile },
   });
 }
+
+export function checkConfirmLink(data) {
+  return request({
+    method: "post",
+    url: "/authentication/confirm.json",
+    data,
+  });
+}
+
+export function logout() {
+  return request({
+    method: "post",
+    url: "/authentication/logout",
+  });
+}
