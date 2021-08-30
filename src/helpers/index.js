@@ -1,5 +1,6 @@
 import sjcl from "sjcl";
 import * as queryString from "query-string";
+
 export function getCookie(name) {
   let matches = document.cookie.match(
     new RegExp(name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") + "=([^;]*)")
@@ -53,8 +54,8 @@ function getObjectByLocation(location) {
   return object;
 }
 
-export function getConfirmHeader(location) {
-  const { search } = location;
+export function getConfirmLinkData(location) {
+  if (!location) return null;
 
   const queryParams = getObjectByLocation(location);
   const url = location.pathname;
@@ -62,6 +63,14 @@ export function getConfirmHeader(location) {
   const type = url.slice(posSeparator + 1);
   const confirmLinkData = Object.assign({ type }, queryParams);
 
+  return confirmLinkData;
+}
+
+export function getConfirmHeader(location) {
+  if (!location) return null;
+
+  const { search } = location;
+  const confirmLinkData = getConfirmLinkData(location);
   const confirmHeader = `type=${confirmLinkData.type}&${search.slice(1)}`;
 
   return confirmHeader;
