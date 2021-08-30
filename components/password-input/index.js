@@ -4,26 +4,42 @@ import StyledPasswordInput from "./styled-password-input";
 import TextInput from "../text-input";
 import Text from "../text";
 
+import EyeOffIcon from "./svg/eye.off.react.svg";
+import EyeIcon from "./svg/eye.react.svg";
+
 const PasswordInput = ({
   isError,
   isSuccess,
   defaultInput,
   value,
-  errText,
-  isErrText,
+  errorText,
   onChange,
   type,
   passwordSettings,
   generatorSpecial,
   autoComplete,
+  disabledValidation,
   ...rest
 }) => {
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState("");
-  const [errorText, setErrorText] = useState("");
+  const [errorPasswordText, setErrorPasswordText] = useState(null);
   const [isDefault, setIsDefault] = useState(true);
   const [success, setSuccess] = useState(false);
   const [isPwdError, setIsPwdError] = useState(false);
+  const [inputType, setInputType] = useState(type);
+
+  const toggleVisibilityOfPassword = () => {
+    inputType === "password" ? setInputType("text") : setInputType("password");
+  };
+  const renderTogglerShowOfPassword = () => {
+    console.log(inputType);
+    return inputType === "password" ? (
+      <EyeOffIcon className="eye-icon" onClick={toggleVisibilityOfPassword} />
+    ) : (
+      <EyeIcon className="eye-icon" onClick={toggleVisibilityOfPassword} />
+    );
+  };
 
   const validationCheck = (password) => {
     const specSymbolsTest = new RegExp("[" + generatorSpecial + "]");
@@ -46,7 +62,7 @@ const PasswordInput = ({
 
   const onChangeHandler = (e) => {
     const pwd = e.target.value;
-    const pwdIsValid = validationCheck(pwd);
+    const pwdIsValid = disabledValidation ? true : validationCheck(pwd);
     setPassword(pwd);
     setIsValid(pwdIsValid);
     onChange && onChange(e, pwdIsValid);
@@ -56,7 +72,7 @@ const PasswordInput = ({
     if (!e.currentTarget.contains(e.relatedTarget) && password !== "") {
       setIsDefault(false);
       !isValid && setIsPwdError(true);
-      !isPwdError && setErrorText(errText);
+      !isPwdError && setErrorPasswordText(errorPasswordText);
     } else {
       setIsDefault(true);
     }
@@ -77,10 +93,12 @@ const PasswordInput = ({
     onFocus(isValid, password);
   }, [isValid, password, onFocus]);
 
+  const TogglerShowOfPassword = renderTogglerShowOfPassword();
+
   return (
     <StyledPasswordInput {...rest} onBlur={onBlur} onFocus={onFocus}>
       <TextInput
-        type="password"
+        type={inputType}
         defaultInput={isDefault}
         isSuccess={success || isSuccess}
         isError={isPwdError || isError}
@@ -89,11 +107,12 @@ const PasswordInput = ({
         autoComplete={autoComplete}
         {...rest}
       />
-      {isErrText && (
+      {!(success || isSuccess) && errorText && (
         <Text className="pwd-error-text" fontSize="13px" color="#CB0000">
           {errorText}
         </Text>
       )}
+      {TogglerShowOfPassword}
     </StyledPasswordInput>
   );
 };
@@ -123,16 +142,14 @@ PasswordInput.propTypes = {
   typeButton: PropTypes.oneOf(["primary", "secondary", "transparent"]),
   /** Used as HTML name property */
   name: PropTypes.string,
-  /** Check error text */
-  isErrText: PropTypes.bool,
   /** Indicates that the field cannot be used */
   isDisabled: PropTypes.bool,
   /** Focus the input field on initial render */
   isAutoFocussed: PropTypes.bool,
   /** Indicates the input field has an success*/
   isSuccess: PropTypes.bool,
-  /** Indicates the input field has an error */
-  isError: PropTypes.bool,
+  /** Disabled validation */
+  disabledValidation: PropTypes.bool,
   /** square button type */
   squareButton: PropTypes.bool,
   /** enable  button*/
@@ -158,14 +175,15 @@ PasswordInput.propTypes = {
 };
 
 PasswordInput.defaultProps = {
-  isErrText: false,
   generatorSpecial: "!@#$%^&*",
+  disabledValidation: true,
   passwordSettings: {
     minLength: 1,
     upperCase: false,
     digits: false,
     specSymbols: false,
   },
+  type: "password",
 };
 
 export default PasswordInput;

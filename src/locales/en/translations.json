@@ -36,6 +36,8 @@
   "AuthDocsUsingChrome": "Using Google Chrome? Add our friendly Chrome extension.",
   "AuthDocsYourEmail": "Your e-mail*",
   "AuthDocsAccessYourDocs": "Access your documents from anywhere.",
+  "AuthErrorIndicationText": "This field can’t be empty",
+  "AuthErrorIndicationIncorrectEmail": "Incorrect email",
   "CookieMessButton": "Got it!",
   "CookieMessText": "This website uses cookies. By continuing to browse the website you agree to our <1>privacy policy</1>",
   "CreatePersonalButton": "Create ONLYOFFICE account",
@@ -120,5 +122,6 @@
   "EmailChanged": "Email changed",
   "EmailChangeError": "Change client email error",
   "SomethingWentWrong": "Something went wrong.",
-  "TryLatter": "The service is currently unavailable, please try again later."
+  "TryLatter": "The service is currently unavailable, please try again later.",
+  "ChooseLanguage": "Choose your language"
 }

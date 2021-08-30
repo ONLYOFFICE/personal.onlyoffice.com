@@ -26,6 +26,7 @@ const StyledText = styled.p`
   }
 
   cursor: default;
+  outline: none;
 `;
 
 StyledText.defaultProps = { theme: Base };

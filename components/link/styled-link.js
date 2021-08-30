@@ -27,6 +27,7 @@ const StyledLink = styled(Text)`
   }
 
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 StyledLink.defaultProps = { theme: Base };

@@ -41,6 +41,7 @@
   "AuthDocsFreeDesktopApp": "Scarica {0}applicazione su desktop gratuita{1} per modificare i file offline o connettere al tuo cloud.",
   "AuthDocsWorkWithDocs": "Lavora con i documenti {0}on-the-go{1} con {2}le applicazioni ONLYOFFICE Documents{3}.",
   "AuthDocsSignIn": "Accedi",
+  "AuthErrorIndicationText": "Inserisci indirizo di posta elettronica",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tutti i diritti riservati",
   "TermsOfService": "Termini di servizio",
   "CorporateUse": "Uso aziendale",

@@ -15,6 +15,8 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const [isSubscribe, setIsChecked] = useState(true);
   const [isAcceptLicence, setIsLicense] = useState(false);
   const [emailIsEmpty, setEmailIsEmpty] = useState(true);
+  const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
+  const [errorTextInput, setErrorTextInput] = useState(null);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -38,8 +40,18 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       hasError = true;
       setEmailIsValid(false);
       setEmailIsEmpty(true);
+      setErrorTextInput(t("AuthErrorIndicationText"));
     } else {
       setEmailIsEmpty(false);
+    }
+
+    if (emailValue.trim() && !emailIsValid) {
+      hasError = true;
+      setEmailIsValid(false);
+      setEmailIsIncorrect(true);
+      setErrorTextInput(t("AuthErrorIndicationIncorrectEmail"));
+    } else {
+      setEmailIsIncorrect(false);
     }
 
     if (!isAcceptLicence) {
@@ -59,16 +71,16 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const additionalSection = isPanel
     ? null
     : {
-        type: "other",
-        element: (
-          <AdditionalSection
-            key="additional"
-            textLabel={t("AuthDocsAlready")}
-            buttonHref={buttonHref}
-            buttonLabel={t("AuthDocsSignIn")}
-          />
-        ),
-      };
+      type: "other",
+      element: (
+        <AdditionalSection
+          key="additional"
+          textLabel={t("AuthDocsAlready")}
+          buttonHref={buttonHref}
+          buttonLabel={t("AuthDocsSignIn")}
+        />
+      ),
+    };
 
   const formData = [
     { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
@@ -85,8 +97,10 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       labelButton: t("RegistryButtonCreateNow"),
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
+      disabledValidation: false,
+      isError: (emailIsEmpty && !emailIsValid) || (emailIsIncorrect && !emailIsValid),
+      errorText: errorTextInput,
       tabIndexProp: 1,
-      isError: emailIsEmpty && !emailIsValid,
     },
     {
       type: "checkbox",

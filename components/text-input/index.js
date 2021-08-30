@@ -10,7 +10,6 @@ const TextInput = ({
   className,
   id,
   type,
-
   placeholder,
   onChange,
   defaultInput,

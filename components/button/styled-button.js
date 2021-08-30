@@ -15,6 +15,7 @@ const StyledButton = styled.button`
 
   outline: none;
   outline-color: none;
+  -webkit-tap-highlight-color: transparent;
 
   font-family: "OpenSans", sans-serif;
   letter-spacing: normal;

@@ -38,6 +38,7 @@
   "AuthDocsTitle": "あなただけのオンラインオフィス",
   "AuthDocsUsingChrome": "クイックアクセスのためのChrome拡張機能をご利用ください。",
   "AuthDocsFreeDesktopApp": "{0}無料のデスクトップアプリ{1}をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
+  "AuthErrorIndicationText": "メールを入力する",
   "Email": "メール",
   "AuthDocsSignIn": "にサインイン",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 版権所有",
