@@ -123,5 +123,10 @@
   "EmailChangeError": "Change client email error",
   "SomethingWentWrong": "Something went wrong.",
   "TryLatter": "The service is currently unavailable, please try again later.",
-  "ChooseLanguage": "Choose your language"
+  "ChooseLanguage": "Choose your language",
+  "ConfirmEmailActivated": "Email activated",
+  "ConfirmEmailActivationError": "Email activation error",
+  "ConfirmInvalidLink": "Invalid link",
+  "ConfirmExpiredLink": "Expired link",
+  "UnknownError": "Unknown error"
 }

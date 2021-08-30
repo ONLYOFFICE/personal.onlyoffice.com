@@ -8,7 +8,7 @@ import Portal from "../../../components/portal";
 import Snackbar from "../../../components/snackbar";
 
 import { getCookie } from "../../helpers";
-import { PERSONAL_COOKIE } from "../../helpers/constnts";
+import { PERSONAL_COOKIE } from "../../helpers/constants";
 
 import StyledCookieSnackbar from "./styled-cookie-snackbar";
 
