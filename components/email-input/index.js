@@ -53,9 +53,7 @@ const EmailInput = ({
     e.preventDefault();
     const email = e.target.value;
     let emailValid;
-    if (email.trim()) {
-      emailValid = Validate(email);
-    }
+    email.trim() && (emailValid = Validate(email));
     setEmail(email);
     setValid(emailValid);
     onChange && onChange(e, emailValid);
@@ -118,7 +116,7 @@ EmailInput.propTypes = {
   /** font-size text input */
   fontSize: PropTypes.string,
   /** font-weight text input*/
-  fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  fontWeight: PropTypes.string,
   /** Value of the input */
   value: PropTypes.string.isRequired,
   /** Text placeholder in input */
