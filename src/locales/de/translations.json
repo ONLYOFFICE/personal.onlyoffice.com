@@ -50,7 +50,7 @@
   "AuthDocsToLogin": "Zum Einloggen",
   "AuthDocsToMainPage": "Zur Hauptseite",
   "AuthDocsLogIn": "Anmelden",
-  "AuthErrorIndicationText": "E-Mail-Adresse eingeben",
+  "AuthErrorIndicationIncorrectEmail": "E-Mail-Adresse eingeben",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Alle Rechte vorbehalten",
   "TermsOfService": "Nutzungsbedingungen",
   "CorporateUse": "Unternehmenseinsatz",
