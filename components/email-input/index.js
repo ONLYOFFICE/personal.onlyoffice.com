@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import StyledEmailInput from "./styled-email-input";
 import TextInput from "../text-input";
 import Text from "../text";
+import emailAddresses from "email-addresses";
 
 const EmailInput = ({
   isError,
@@ -17,8 +18,6 @@ const EmailInput = ({
   offValidation,
   ...rest
 }) => {
-  //TODO: use email-addresses package
-  const REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const [email, setEmail] = useState("");
   const [valid, setValid] = useState("");
@@ -27,12 +26,34 @@ const EmailInput = ({
   const [emailError, setEmailError] = useState(false);
 
   const Validate = (email) => {
-    return REGEX.test(email);
+
+    //rfc6532 - Enable rfc6532 support (unicode in email addresses). Default: false.
+    //strict - Turn off features of RFC 5322 marked "Obsolete". Default: false.
+    //partial - Allow a failed parse to return the AST it managed to produce so far. Default: false.
+    //simple - Return just the address or addresses parsed. Default: false.
+
+    let emailValid = emailAddresses.parseOneAddress(
+      {
+        input: email,
+        options: {
+          rfc6532: true,
+          strict: true,
+          partial: true,
+          simple: true,
+          rejectTLD: true,
+        }
+      });
+
+    let isValid = emailValid === null ? false : true;
+
+    return isValid;
   };
 
   const onChangeHandler = (e) => {
+    e.preventDefault();
     const email = e.target.value;
-    const emailValid = disabledValidation ? true : Validate(email);
+    let emailValid;
+    email.trim() && (emailValid = Validate(email));
     setEmail(email);
     setValid(emailValid);
     onChange && onChange(e, emailValid);
@@ -40,7 +61,7 @@ const EmailInput = ({
 
   const onBlur = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
-      email === "" ? setEmailDefault(true) : setEmailDefault(false);
+      !email.trim() ? setEmailDefault(true) : setEmailDefault(false);
       !valid && !!email && setEmailError(true);
     }
   };
@@ -95,7 +116,7 @@ EmailInput.propTypes = {
   /** font-size text input */
   fontSize: PropTypes.string,
   /** font-weight text input*/
-  fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  fontWeight: PropTypes.string,
   /** Value of the input */
   value: PropTypes.string.isRequired,
   /** Text placeholder in input */
