@@ -13,7 +13,7 @@ const StyledHeaderContent = styled.div`
     props.withoutButton &&
     css`
       .header-button {
-        display: hidden !important;
+        display: none !important;
       }
     `}
 
@@ -52,7 +52,7 @@ const StyledHeaderContent = styled.div`
     }
 
     .header-button {
-      visibility: ${(props) => props.toHideButton && "hidden"};
+      display: ${(props) => props.toHideButton && "none"};
     }
   }
 
