@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import StyledEmailInput from "./styled-email-input";
 import TextInput from "../text-input";
-import Text from "../text";
 import emailAddresses from "email-addresses";
 
 const EmailInput = ({
@@ -18,7 +17,6 @@ const EmailInput = ({
   offValidation,
   ...rest
 }) => {
-
   const [email, setEmail] = useState("");
   const [valid, setValid] = useState("");
   const [emailDefault, setEmailDefault] = useState(true);
@@ -26,23 +24,21 @@ const EmailInput = ({
   const [emailError, setEmailError] = useState(false);
 
   const Validate = (email) => {
-
     //rfc6532 - Enable rfc6532 support (unicode in email addresses). Default: false.
     //strict - Turn off features of RFC 5322 marked "Obsolete". Default: false.
     //partial - Allow a failed parse to return the AST it managed to produce so far. Default: false.
     //simple - Return just the address or addresses parsed. Default: false.
 
-    let emailValid = emailAddresses.parseOneAddress(
-      {
-        input: email,
-        options: {
-          rfc6532: true,
-          strict: true,
-          partial: true,
-          simple: true,
-          rejectTLD: true,
-        }
-      });
+    let emailValid = emailAddresses.parseOneAddress({
+      input: email,
+      options: {
+        rfc6532: true,
+        strict: true,
+        partial: true,
+        simple: true,
+        rejectTLD: true,
+      },
+    });
 
     let isValid = emailValid === null ? false : true;
 
@@ -91,13 +87,9 @@ const EmailInput = ({
         value={email}
         onChange={onChangeHandler}
         autoComplete={autoComplete}
+        errorText={errorText}
         {...rest}
       />
-      {(!(emailSuccess || isSuccess) && errorText) && (
-        <Text className="email-error-text" fontSize="13px" color="#CB0000">
-          {errorText}
-        </Text>
-      )}
     </StyledEmailInput>
   );
 };

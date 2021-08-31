@@ -5,6 +5,7 @@ import StyledTextInput from "./styled-text-input";
 import StyledButtonInput from "./styled-button-input";
 import StyledInput from "./styled-input";
 import Label from "./styled-label";
+import Text from "../text";
 
 const TextInput = ({
   className,
@@ -31,6 +32,7 @@ const TextInput = ({
   buttonClick,
   autoComplete,
   tabIndexProp,
+  errorText,
   ...rest
 }) => {
   const inputTextRef = useRef(null);
@@ -76,6 +78,11 @@ const TextInput = ({
         >
           {placeholder}
         </Label>
+        {!isSuccess && isError && errorText && (
+          <Text className="error-text" fontSize="13px" color="#CB0000">
+            {errorText}
+          </Text>
+        )}
       </StyledInput>
       {Boolean(withButton) && (
         <StyledButtonInput

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import StyledPasswordInput from "./styled-password-input";
 import TextInput from "../text-input";
-import Text from "../text";
 
 import EyeOffIcon from "./svg/eye.off.react.svg";
 import EyeIcon from "./svg/eye.react.svg";
@@ -104,13 +103,9 @@ const PasswordInput = ({
         value={password}
         onChange={onChangeHandler}
         autoComplete={autoComplete}
+        errorText={errorText}
         {...rest}
       />
-      {!(success || isSuccess) && errorText && (
-        <Text className="pwd-error-text" fontSize="13px" color="#CB0000">
-          {errorText}
-        </Text>
-      )}
       {TogglerShowOfPassword}
     </StyledPasswordInput>
   );

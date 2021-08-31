@@ -7,6 +7,7 @@ const StyledInput = styled.div`
   width: ${(props) => props.width || props.theme.textInput.width};
   padding: 0;
   margin: 0;
+  z-index: 1;
   input:focus + label {
     top: ${(props) => props.theme.textInput.label.top};
     font-size: ${(props) => props.theme.textInput.label.fontSize};
@@ -23,6 +24,12 @@ const StyledInput = styled.div`
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  .error-text {
+    position: absolute;
+    padding-top: 55px;
+    z-index: 0;
   }
 `;
 
