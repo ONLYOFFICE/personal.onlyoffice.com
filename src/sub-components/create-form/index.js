@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
+import ReCaptcha from "../form-recaptcha";
 
 import { join } from "../../api";
 import toastr from "../../../components/toast/toastr";
@@ -17,6 +18,7 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const [emailIsEmpty, setEmailIsEmpty] = useState(true);
   const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
   const [errorTextInput, setErrorTextInput] = useState(null);
+  const captchaRef = useRef();
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -33,6 +35,8 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+
+    captchaRef.current.execute();
 
     let hasError = false;
 
@@ -123,6 +127,14 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       isDisabled: !isAcceptLicence,
       toHideButton: isPanel,
       tabIndexProp: 2,
+    },
+    {
+      type: "other",
+      element: (
+        <ReCaptcha
+          captchaRef={captchaRef}
+        />
+      ),
     },
     { type: "separator", separatorText: t("AuthDocsOr") },
     {
