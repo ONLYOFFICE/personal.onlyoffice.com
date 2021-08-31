@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React, { useState, useEffect } from "react";
+import { graphql, navigate } from "gatsby";
 import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
@@ -12,10 +12,11 @@ import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
 import { deleteSelf } from "../../api";
-import { getConfirmHeader } from "../../helpers";
 import IconButton from "../../../components/icon-button";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
+
+import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
 
 const ProfileRemovePage = ({ location }) => {
   const [isProfileDeleted, setIsProfileDeleted] = useState(false);
@@ -24,15 +25,29 @@ const ProfileRemovePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
+  useEffect(() => {
+    checkingConfirmLink(location, t).then((res) => {
+      if (!res.isValidLink) {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("UnknownError"),
+            },
+          },
+        });
+      }
+    });
+  }, []);
+
   const onSubmitHandler = () => {
     const confirmHeader = getConfirmHeader(location);
     deleteSelf(confirmHeader)
       .then((res) => {
         setIsProfileDeleted(true);
-        console.log("success delete", res);
+        toastr.success(t("DeleteProfileSuccess"));
       })
       .catch((e) => {
-        //setIsProfileDeleted(true);
         toastr.error(`${e}`);
       });
   };

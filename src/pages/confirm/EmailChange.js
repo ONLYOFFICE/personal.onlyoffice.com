@@ -13,58 +13,56 @@ import { changeEmail, getUser } from "../../api";
 import {
   parseQueryParams,
   getConfirmHeader,
-  getConfirmLinkData,
+  checkingConfirmLink,
 } from "../../helpers";
-
-import { useCheckingConfirmLink } from "../../hooks";
 
 const EmailChangePage = ({ location }) => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
-  const linkData = getConfirmLinkData(location);
-  const [isValid, errorText] = useCheckingConfirmLink(linkData, t);
 
   useEffect(() => {
-    if (isValid) {
-      const params = parseQueryParams(location.search);
-      const confirmHeader = getConfirmHeader(location);
-      const { email } = params;
-      getUser(email)
-        .then((user) => {
-          changeEmail(params.key, email, confirmHeader).then((res) => {
+    checkingConfirmLink(location, t).then((res) => {
+      if (res.isValidLink) {
+        const params = parseQueryParams(location.search);
+        const confirmHeader = getConfirmHeader(location);
+        const { email } = params;
+        getUser(email)
+          .then((user) => {
+            changeEmail(params.key, email, confirmHeader).then((res) => {
+              navigate("/", {
+                state: {
+                  toastr: {
+                    success: true,
+                    text: t("EmailChanged"),
+                  },
+                },
+              });
+            });
+          })
+          .catch((e) => {
             navigate("/", {
               state: {
                 toastr: {
-                  success: true,
-                  text: t("EmailChanged"),
+                  error: true,
+                  text: t("EmailChangeError"),
                 },
               },
             });
           });
-        })
-        .catch((e) => {
-          navigate("/", {
-            state: {
-              toastr: {
-                error: true,
-                text: t("EmailChangeError"),
-              },
+      } else {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("EmailChangeError"),
             },
-          });
-        });
-    } else {
-      navigate("/", {
-        state: {
-          toastr: {
-            error: true,
-            text: errorText || t("EmailChangeError"),
           },
-        },
-      });
-    }
-  });
+        });
+      }
+    });
+  }, []);
 
   return (
     <Layout t={t}>

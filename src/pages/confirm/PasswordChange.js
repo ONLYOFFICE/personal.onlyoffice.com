@@ -16,6 +16,7 @@ import {
   parseQueryParams,
   createPasswordHash,
   getConfirmHeader,
+  checkingConfirmLink,
 } from "../../helpers";
 
 const PasswordChangePage = ({ location }) => {
@@ -23,6 +24,11 @@ const PasswordChangePage = ({ location }) => {
   const [isPwdValid, setIsPwdValid] = useState(true);
 
   const [hashSettings, setHashSettings] = useState();
+
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   useEffect(() => {
     getSettings()
@@ -32,10 +38,20 @@ const PasswordChangePage = ({ location }) => {
       .catch((e) => console.error(e));
   }, []);
 
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
+  useEffect(() => {
+    checkingConfirmLink(location, t).then((res) => {
+      if (!res.isValidLink) {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("UnknownError"),
+            },
+          },
+        });
+      }
+    });
+  }, []);
 
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
@@ -60,7 +76,14 @@ const PasswordChangePage = ({ location }) => {
 
     changePassword(params.uid, hash, confirmHeader)
       .then(() => {
-        navigate("/sign-in");
+        navigate("/sign-in", {
+          state: {
+            toastr: {
+              success: true,
+              text: t("SuccessChangePassword"),
+            },
+          },
+        });
       })
       .catch((error) => {
         toastr.error(`${error}`);
@@ -105,11 +128,16 @@ const PasswordChangePage = ({ location }) => {
         />
       </Layout.PageHead>
       <Layout.PageHeader>
-        <HeaderContent t={t} language={language} withoutButton />
+        <HeaderContent
+          t={t}
+          language={language}
+          withoutButton
+          location={location}
+        />
       </Layout.PageHeader>
       <Layout.SectionMain>
         <StyledSection>
-          <Form formData={formData} className="login-form" />
+          <Form formData={formData} className="login-form" />{" "}
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>

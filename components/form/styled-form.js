@@ -73,9 +73,12 @@ const StyledForm = styled.form`
     margin-bottom: -2px;
   }
 
+  .form-header {
+    text-align: center;
+  }
+
   @media (max-width: 1023px) {
     .form-header {
-      text-align: center;
       margin-bottom: 1px;
     }
   }

@@ -1,5 +1,7 @@
 import sjcl from "sjcl";
 import * as queryString from "query-string";
+import { ValidationResult } from "./constants";
+import { checkConfirmLink } from "../api";
 
 export function getCookie(name) {
   let matches = document.cookie.match(
@@ -74,4 +76,31 @@ export function getConfirmHeader(location) {
   const confirmHeader = `type=${confirmLinkData.type}&${search.slice(1)}`;
 
   return confirmHeader;
+}
+
+export function checkingConfirmLink(location, t) {
+  const confirmLinkData = getConfirmLinkData(location);
+
+  return checkConfirmLink(confirmLinkData)
+    .then((validationResult) => {
+      switch (validationResult) {
+        case ValidationResult.Ok:
+          return { isValidLink: true, errorValidationLink: false };
+        case ValidationResult.Invalid:
+          return {
+            isValidLink: false,
+            errorValidationLink: t("ConfirmInvalidLink"),
+          };
+        case ValidationResult.Expired:
+          return {
+            isValidLink: false,
+            errorValidationLink: t("ConfirmExpiredLink"),
+          };
+        default:
+          return { isValidLink: false, errorValidationLink: t("UnknownError") };
+      }
+    })
+    .catch((e) => {
+      return { isValidLink: false, errorValidationLink: `${e}` };
+    });
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
@@ -16,6 +16,7 @@ import {
   parseQueryParams,
   createPasswordHash,
   getConfirmHeader,
+  checkingConfirmLink,
 } from "../../helpers";
 
 const EmpInvitePage = ({ location }) => {
@@ -42,6 +43,21 @@ const EmpInvitePage = ({ location }) => {
     t,
     i18n: { language },
   } = useTranslation();
+
+  useEffect(() => {
+    checkingConfirmLink(location, t).then((res) => {
+      if (!res.isValidLink) {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("UnknownError"),
+            },
+          },
+        });
+      }
+    });
+  }, []);
 
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);

@@ -128,5 +128,7 @@
   "ConfirmEmailActivationError": "Email activation error",
   "ConfirmInvalidLink": "Invalid link",
   "ConfirmExpiredLink": "Expired link",
-  "UnknownError": "Unknown error"
+  "UnknownError": "Unknown error",
+  "DeleteProfileSuccess": "Profile deleted successfully",
+  "SuccessChangePassword": "Password changed"
 }

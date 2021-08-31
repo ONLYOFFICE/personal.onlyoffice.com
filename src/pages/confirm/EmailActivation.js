@@ -9,10 +9,12 @@ import HeaderContent from "../../sub-components/header-content";
 import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 
-import { useCheckingConfirmLink } from "../../hooks";
-
 import { changeEmail, logout } from "../../api";
-import { getConfirmHeader, getConfirmLinkData } from "../../helpers";
+import {
+  getConfirmHeader,
+  getConfirmLinkData,
+  checkingConfirmLink,
+} from "../../helpers";
 
 const EmailActivationPage = ({ location }) => {
   const {
@@ -20,48 +22,48 @@ const EmailActivationPage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  const linkData = getConfirmLinkData(location);
-  const [isValid, errorText] = useCheckingConfirmLink(linkData, t);
-
   useEffect(() => {
-    if (isValid) {
-      const [email, uid] = [linkData.email, linkData.uid];
-      const confirmHeader = getConfirmHeader(location);
+    const linkData = getConfirmLinkData(location);
+    checkingConfirmLink(location, t).then((res) => {
+      if (res.isValidLink) {
+        const [email, uid] = [linkData.email, linkData.uid];
+        const confirmHeader = getConfirmHeader(location);
 
-      logout();
+        logout();
 
-      changeEmail(uid, email, confirmHeader)
-        .then((res) => {
-          navigate("/", {
-            state: {
-              toastr: {
-                success: true,
-                text: t("ConfirmEmailActivated"),
+        changeEmail(uid, email, confirmHeader)
+          .then((res) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  success: true,
+                  text: t("ConfirmEmailActivated"),
+                },
               },
-            },
-          });
-        })
-        .catch((e) => {
-          navigate("/", {
-            state: {
-              toastr: {
-                error: true,
-                text: t("ConfirmEmailActivationError"),
+            });
+          })
+          .catch((e) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  error: true,
+                  text: t("ConfirmEmailActivationError"),
+                },
               },
-            },
+            });
           });
-        });
-    } else {
-      navigate("/", {
-        state: {
-          toastr: {
-            error: true,
-            text: errorText || t("ConfirmEmailActivationError"),
+      } else {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("ConfirmEmailActivationError"),
+            },
           },
-        },
-      });
-    }
-  });
+        });
+      }
+    });
+  }, []);
 
   return (
     <Layout t={t}>
