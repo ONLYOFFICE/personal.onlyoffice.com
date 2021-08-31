@@ -12,9 +12,11 @@ import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
 import { deleteSelf } from "../../api";
-import IconButton from "../../../components/icon-button";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
+
+import SuccessIcon from "../../../static/reg-success-checkmark.react.svg";
+import AttentionIcon from "../../../static/attention.react.svg";
 
 import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
 
@@ -79,15 +81,10 @@ const ProfileRemovePage = ({ location }) => {
   const formData = [
     {
       type: "other",
-      element: (
-        <IconButton
-          style={{ margin: "0 auto" }}
-          iconName={
-            isProfileDeleted
-              ? "/reg-success-checkmark.react.svg"
-              : "/attention.react.svg"
-          }
-        />
+      element: isProfileDeleted ? (
+        <SuccessIcon style={{ margin: "0 auto" }} />
+      ) : (
+        <AttentionIcon style={{ margin: "0 auto" }} />
       ),
     },
     {

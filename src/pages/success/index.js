@@ -12,6 +12,8 @@ import StyledSection from "../../sub-components/section";
 import FormDescription from "../../sub-components/form-description";
 import FooterContent from "../../sub-components/footer-content";
 
+import SuccessIcon from "../../../static/reg-success-checkmark.react.svg";
+
 import { navigate } from "gatsby";
 
 const SuccessfullyPage = ({ location }) => {
@@ -31,12 +33,7 @@ const SuccessfullyPage = ({ location }) => {
   const formData = [
     {
       type: "other",
-      element: (
-        <Icon
-          style={{ margin: "0 auto" }}
-          iconName="/reg-success-checkmark.react.svg"
-        />
-      ),
+      element: <SuccessIcon style={{ margin: "0 auto" }} />,
     },
     {
       type: "heading",
