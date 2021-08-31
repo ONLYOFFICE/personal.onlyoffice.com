@@ -24,6 +24,7 @@ const PasswordChangePage = ({ location }) => {
   const [isPwdValid, setIsPwdValid] = useState(true);
 
   const [hashSettings, setHashSettings] = useState();
+  const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
 
   const {
     t,
@@ -56,6 +57,7 @@ const PasswordChangePage = ({ location }) => {
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
     setIsPwdValid(isValid);
+    setPasswordIsEmpty(false);
   };
 
   const onSubmitHandler = () => {
@@ -64,6 +66,7 @@ const PasswordChangePage = ({ location }) => {
     if (!password.trim()) {
       hasError = true;
       setIsPwdValid(false);
+      setPasswordIsEmpty(true);
     }
 
     if (hasError) {
@@ -105,6 +108,7 @@ const PasswordChangePage = ({ location }) => {
       autoComplete: "new-password",
       tabIndexProp: 1,
       isError: !isPwdValid,
+      errorText: passwordIsEmpty && t("AuthErrorIndicationText"),
     },
 
     {

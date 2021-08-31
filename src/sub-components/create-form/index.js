@@ -71,16 +71,16 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
   const additionalSection = isPanel
     ? null
     : {
-      type: "other",
-      element: (
-        <AdditionalSection
-          key="additional"
-          textLabel={t("AuthDocsAlready")}
-          buttonHref={buttonHref}
-          buttonLabel={t("AuthDocsSignIn")}
-        />
-      ),
-    };
+        type: "other",
+        element: (
+          <AdditionalSection
+            key="additional"
+            textLabel={t("AuthDocsAlready")}
+            buttonHref={buttonHref}
+            buttonLabel={t("AuthDocsSignIn")}
+          />
+        ),
+      };
 
   const formData = [
     { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
@@ -98,7 +98,8 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       buttonClick: onSubmitHandler,
       isDisabledButton: !isAcceptLicence,
       disabledValidation: false,
-      isError: (emailIsEmpty && !emailIsValid) || (emailIsIncorrect && !emailIsValid),
+      isError:
+        (emailIsEmpty && !emailIsValid) || (emailIsIncorrect && !emailIsValid),
       errorText: errorTextInput,
       tabIndexProp: 1,
     },

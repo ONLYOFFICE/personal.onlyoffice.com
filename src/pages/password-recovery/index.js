@@ -22,6 +22,8 @@ const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
 
+  const [emailIsEmpty, setEmailIsEmpty] = useState(null);
+
   const {
     t,
     i18n: { language },
@@ -33,6 +35,7 @@ const PasswordRecoveryPage = () => {
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
     setEmailIsValid(isValid);
+    setEmailIsEmpty(false);
   };
 
   const onSubmitHandler = (e) => {
@@ -42,6 +45,7 @@ const PasswordRecoveryPage = () => {
     if (!emailValue.trim()) {
       hasError = true;
       setEmailIsValid(false);
+      setEmailIsEmpty(true);
     }
 
     if (hasError) return;
@@ -85,6 +89,7 @@ const PasswordRecoveryPage = () => {
       value: emailValue,
       tabIndexProp: 1,
       isError: !emailIsValid,
+      errorText: emailIsEmpty && t("AuthErrorIndicationText"),
     },
     {
       type: "button",

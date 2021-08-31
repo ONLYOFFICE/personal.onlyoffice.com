@@ -27,6 +27,9 @@ const SignInPage = ({ location }) => {
 
   const [hashSettings, setHashSettings] = useState();
 
+  const [emailIsEmpty, setEmailIsEmpty] = useState(null);
+  const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
+
   useEffect(() => {
     getSettings()
       .then((res) => {
@@ -42,7 +45,6 @@ const SignInPage = ({ location }) => {
     }
   }, [location.state]);
 
-
   const {
     t,
     i18n: { language },
@@ -54,11 +56,13 @@ const SignInPage = ({ location }) => {
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
     setEmailIsValid(isValid);
+    setEmailIsEmpty(false);
   };
 
   const onPasswordChangeHandler = (e, isValid) => {
     setPasswordValue(e.target.value);
     setPasswordIsValid(isValid);
+    setPasswordIsEmpty(false);
   };
 
   const changeCheckbox = (e) => {
@@ -73,11 +77,13 @@ const SignInPage = ({ location }) => {
     if (!passwordValue.trim()) {
       hasError = true;
       setPasswordIsValid(false);
+      setPasswordIsEmpty(true);
     }
 
     if (!emailValue.trim()) {
       hasError = true;
       setEmailIsValid(false);
+      setEmailIsEmpty(true);
     }
 
     if (hasError) return;
@@ -112,6 +118,7 @@ const SignInPage = ({ location }) => {
       tabIndexProp: 1,
       isAutoFocussed: true,
       isError: !emailIsValid,
+      errorText: emailIsEmpty && t("AuthErrorIndicationText"),
     },
     {
       type: "input",
@@ -122,6 +129,7 @@ const SignInPage = ({ location }) => {
       autoComplete: "current-password",
       tabIndexProp: 2,
       isError: !passwordIsValid,
+      errorText: passwordIsEmpty && t("AuthErrorIndicationText"),
     },
     {
       type: "checkbox",

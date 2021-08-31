@@ -31,6 +31,10 @@ const EmpInvitePage = ({ location }) => {
   const [firstNameIsSuccess, setFirstNameIsSuccess] = useState(false);
   const [lastNameIsSuccess, setLastNameIsSuccess] = useState(false);
 
+  const [isEmptyFirstName, setIsEmptyFirstName] = useState(null);
+  const [isEmptyLastName, setIsEmptyLastName] = useState(null);
+  const [isEmptyPassword, setIsEmptyPassword] = useState(null);
+
   useEffect(() => {
     getSettings()
       .then((res) => {
@@ -62,16 +66,19 @@ const EmpInvitePage = ({ location }) => {
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);
     setFirstName(e.target.value);
+    setIsEmptyFirstName(false);
   };
 
   const onChangeLastName = (e) => {
     if (!lastNameValid) setLastNameValid(true);
     setLastName(e.target.value);
+    setIsEmptyLastName(false);
   };
 
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
     setIsPwdValid(isValid);
+    setIsEmptyPassword(false);
   };
 
   const createConfirmUser = async (registerData, loginData, key) => {
@@ -116,16 +123,19 @@ const EmpInvitePage = ({ location }) => {
     if (!firstName.trim()) {
       hasError = true;
       setFirstNameValid(false);
+      setIsEmptyFirstName(true);
     }
 
     if (!lastName.trim()) {
       hasError = true;
       setLastNameValid(false);
+      setIsEmptyLastName(true);
     }
 
     if (!password.trim()) {
       hasError = true;
       setIsPwdValid(false);
+      setIsEmptyPassword(true);
     }
 
     if (hasError) {
@@ -176,6 +186,7 @@ const EmpInvitePage = ({ location }) => {
       isError: !firstNameValid,
       onBlur: firstNameOnBlurHandler,
       isSuccess: firstNameIsSuccess,
+      errorText: isEmptyFirstName ? t("AuthErrorIndicationText") : null,
     },
     {
       type: "input",
@@ -188,6 +199,7 @@ const EmpInvitePage = ({ location }) => {
       isError: !lastNameValid,
       onBlur: lastNameOnBlurHandler,
       isSuccess: lastNameIsSuccess,
+      errorText: isEmptyLastName ? t("AuthErrorIndicationText") : null,
     },
     {
       type: "input",
@@ -198,7 +210,7 @@ const EmpInvitePage = ({ location }) => {
       autoComplete: "new-password",
       tabIndexProp: 3,
       isError: !isPwdValid,
-      errText: t("CantBeEmpty"),
+      errorText: isEmptyPassword ? t("AuthErrorIndicationText") : null,
     },
     {
       type: "button",
