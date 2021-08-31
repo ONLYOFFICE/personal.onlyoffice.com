@@ -28,7 +28,7 @@ const DesktopAppPanel = ({ t, currentLanguage }) => {
       href="https://www.onlyoffice.com/download-desktop.aspx"
     >
       <Button
-        className="desktop-button-component"
+        className="desktop-button-component download-section-icon-component"
         themeButton={false}
         textColorHover="#ffffff"
         borderColorHover="#ffffff"

@@ -35,6 +35,14 @@ const StyledDownloadSection = styled(HomeSection)`
     padding-left: 9px;
   }
 
+  .extension-icon-component:hover {
+    background-color: rgba(51, 51, 51, 0.05);
+  }
+
+  .download-section-icon-component:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   .desktop-button {
     padding-right: 8px;
   }

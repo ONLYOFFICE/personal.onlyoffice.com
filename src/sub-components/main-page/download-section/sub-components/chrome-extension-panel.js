@@ -29,6 +29,7 @@ const ChromeExtensionPanel = ({ currentLanguage }) => {
     >
       <IconButton
         size="auto"
+        className="extension-icon-component"
         iconName={`/apps-icons/${currentLanguage}/chrome.react.svg`}
         defaultIcon={`/apps-icons/en/chrome.react.svg`}
       />

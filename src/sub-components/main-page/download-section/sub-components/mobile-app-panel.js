@@ -29,6 +29,7 @@ const MobileAppPanel = ({ currentLanguage }) => {
       style={{ width: "min-content", margin: "0 auto" }}
     >
       <IconButton
+        className="download-section-icon-component"
         size="min-content"
         iconName={`/apps-icons/${currentLanguage}/appstore_white.react.svg`}
         defaultIcon="/apps-icons/en/appstore_white.react.svg"
@@ -41,6 +42,7 @@ const MobileAppPanel = ({ currentLanguage }) => {
       style={{ width: "min-content", margin: "0 auto" }}
     >
       <IconButton
+        className="download-section-icon-component"
         size="min-content"
         iconName={`/apps-icons/${currentLanguage}/googleplay_white.react.svg`}
         defaultIcon="/apps-icons/en/googleplay_white.react.svg"
