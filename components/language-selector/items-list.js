@@ -27,9 +27,10 @@ export default function LangsList(props) {
   let path = "";
   if (typeof window !== "undefined") {
     const {
-      location: { pathname },
+      location: { pathname, search },
     } = window;
-    path = pathname.includes(currentLanguage) ? pathname : `/en${pathname}`;
+
+    path = `${pathname}${search ? search : ""}`;
   }
 
   const renderItemList = () => {

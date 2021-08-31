@@ -5,6 +5,7 @@ import Button from "../button";
 const StyledButtonInput = styled(Button)`
   padding: ${(props) => props.padding || props.theme.textInput.padding};
   height: ${(props) => props.height || props.theme.textInput.height};
+  z-index: 2;
   width: ${(props) =>
     props.squareButton
       ? props.height || props.theme.textInput.height
