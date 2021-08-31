@@ -75,16 +75,17 @@ const StyledCreateSection = styled(HomeSection)`
     }
 
     @media (max-width: 1024px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: min-content 378px;
+      display: flex;
+      flex-direction: column;
+
       .text-block,
       .form-block {
         max-width: 100%;
         height: 410px;
       }
+
       .text-block {
         height: min-content;
-        min-height: 144px;
         padding-top: 14px;
         text-align: center;
 
@@ -94,10 +95,8 @@ const StyledCreateSection = styled(HomeSection)`
         }
         .description {
           padding-top: 20px;
+          padding-bottom: 10px;
         }
-      }
-      .form-block {
-        margin-top: -23px;
       }
     }
 

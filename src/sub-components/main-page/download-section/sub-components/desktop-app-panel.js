@@ -14,7 +14,7 @@ import InfoPanel, {
 const DesktopAppPanel = ({ t, currentLanguage }) => {
   const headingComponent = (
     <Text>
-      <Trans i18nKey="DownloadDesktopApp">
+      <Trans i18nKey="AuthDocsFreeDesktopApp">
         {" "}
         <Text as="span" fontWeight="bold"></Text>
       </Trans>

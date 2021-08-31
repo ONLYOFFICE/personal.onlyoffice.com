@@ -37,7 +37,7 @@
   "AuthDocsSubtitle": "MS Officeドキュメントフォーマットとの高い互換性",
   "AuthDocsTitle": "あなただけのオンラインオフィス",
   "AuthDocsUsingChrome": "クイックアクセスのためのChrome拡張機能をご利用ください。",
-  "AuthDocsFreeDesktopApp": "{0}無料のデスクトップアプリ{1}をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
+  "AuthDocsFreeDesktopApp": "<1>無料のデスクトップアプリ</1>をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
   "AuthErrorIndicationIncorrectEmail": "メールを入力する",
   "Email": "メール",
   "AuthDocsSignIn": "にサインイン",
@@ -52,5 +52,6 @@
   "PresSlideSectionCarouselHeading": "プレゼンテーションの作成",
   "PresSlideSectionCarouselText": "自分のアイデアを表現し、それを簡単に聴衆に見せられます。",
   "CollaborationSlideSecitonCarouselHeading": "オンラインでのコラボレーション",
-  "CollaborationSlideSectionCarouselText": "どなたを招待して一緒に文書を編集したり、自分の作品のレビューを受けたりすることが可能です。"
+  "CollaborationSlideSectionCarouselText": "どなたを招待して一緒に文書を編集したり、自分の作品のレビューを受けたりすることが可能です。",
+  "CreateFormHeader": "自由なオフィスづくり"
 }

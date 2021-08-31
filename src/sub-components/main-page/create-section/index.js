@@ -14,7 +14,7 @@ const CreateSection = ({ t }) => {
           {t("AuthDocsTitle")}
         </Heading>
         <Text className="description" fontSize="18px">
-          {t("HomeDescription")}
+          {t("AuthDocsSubtitle")}
         </Text>
       </div>
       <div className="form-block">

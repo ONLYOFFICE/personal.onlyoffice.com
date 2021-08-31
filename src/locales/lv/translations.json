@@ -8,7 +8,7 @@
   "AuthDocsOr": "vai ieejiet",
   "AuthDocsSendActivationEmail": "Jūsu aktivizācijas e-pasts tika nosūtīts uz",
   "AuthDocsThanksRegistration": "Paldies, ka reģistrējāties Personal ONLYOFFICE™.",
-  "AuthDocsTitle": "Bezmaksas alternatīva Microsoft® Office",
+  "AuthDocsTitle": "Jūsu personīgais tiešsaistes birojs",
   "AuthDocsTitlePage": "Bezmaksas birojs mākonī",
   "AuthDocsConnect": "Izveidojiet savienojumu ar jebkuru mākoni",
   "AuthDocsDisclaimer": "Lietotāju atsauksmes ir ņemtas no vietnes <1>{{linkText}}</1>. “Capterra” pārskati ir individuālu galalietotāju subjektīvie viedokļi no viņu pašu pieredzes, un tie neatspoguļo “Capterra” vai tā saistīto uzņēmumu viedokli.",
@@ -41,5 +41,6 @@
   "PresSlideSectionCarouselHeading": "Izveidojiet prezentācijas",
   "PresSlideSectionCarouselText": "Paudiet savas idejas un prezentējiet auditorijai vienkārši.",
   "CollaborationSlideSecitonCarouselHeading": "Sadarbojieties tiešsaistē",
-  "CollaborationSlideSectionCarouselText": "Uzaiciniet ikvienu rediģēt dokumentus kopā vai saņemt atsauksmes par jūsu darbu."
+  "CollaborationSlideSectionCarouselText": "Uzaiciniet ikvienu rediģēt dokumentus kopā vai saņemt atsauksmes par jūsu darbu.",
+  "CreateFormHeader": "Izveidojiet bezmaksas biroju"
 }

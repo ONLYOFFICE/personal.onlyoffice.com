@@ -8,7 +8,7 @@
   "AuthDocsOr": "lub zaloguj się",
   "AuthDocsSendActivationEmail": "Twój email aktywacyjny został wysłany do",
   "AuthDocsThanksRegistration": "Dziękujemy za zarejestrowanie osobistego ONLYOFFICE ™.",
-  "AuthDocsTitle": "Bezpłatna alternatywa do pakietu Microsoft® Office",
+  "AuthDocsTitle": "Twoje osobiste biuro internetowe",
   "AuthDocsTitlePage": "Pobierz wolne biuro w chmurze",
   "AuthDocsConnect": "Połącz z dowolną chmurą",
   "AuthDocsDisclaimer": "Recenzje użytkowników pochodzą ze strony <1>{{linkText}}</1>. Recenzje opublikowane na stronie Capterra stanowią subiektywną opinię indywidualnych użytkowników końcowych wyrażoną na podstawie własnego doświadczenia i nie odzwierciedlają poglądów firmy Capterra ani jej podmiotów zależnych.",
@@ -29,7 +29,7 @@
   "AuthDocsSubtitle": "Wysoce kompatybilne z formatami dokumentów MS Office",
   "AuthDocsUsingChrome": "Pobierz rozszerzenie dla Chrome, aby uzyskać szybki dostęp.",
   "CreatePersonalButton": "Utwórz bezpłatne biuro",
-  "AuthDocsFreeDesktopApp": "Pobierz {0}darmową aplikację komputerową{1}, aby edytować pliki offline lub połączyć się ze swoją chmurą.",
+  "AuthDocsFreeDesktopApp": "Pobierz <1>darmową aplikację komputerową</1>, aby edytować pliki offline lub połączyć się ze swoją chmurą.",
   "AuthDocsSignIn": "Zaloguj się",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Wszelkie prawa zastrzeżone",
   "TermsOfService": "Warunki usługi",
@@ -42,5 +42,6 @@
   "PresSlideSectionCarouselHeading": "Twórz prezentacje",
   "PresSlideSectionCarouselText": "Wizualizuj swoje pomysły i z łatwością prezentuj je odbiorcom.",
   "CollaborationSlideSecitonCarouselHeading": "Współpracuj przez Internet",
-  "CollaborationSlideSectionCarouselText": "Zaproś, kogokolwiek zechcesz do wspólnej edycji lub samodzielnego sprawdzenia dokumentów."
+  "CollaborationSlideSectionCarouselText": "Zaproś, kogokolwiek zechcesz do wspólnej edycji lub samodzielnego sprawdzenia dokumentów.",
+  "CreateFormHeader": "Utwórz bezpłatne biuro"
 }

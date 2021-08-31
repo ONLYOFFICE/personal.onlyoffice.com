@@ -8,7 +8,7 @@
   "AuthDocsOr": "ali se vpiši",
   "AuthDocsSendActivationEmail": "Vaš aktivacijski email je bil poslan k",
   "AuthDocsThanksRegistration": "Hvala za registracijo svojega osebnega ONLYOFFICE™.",
-  "AuthDocsTitle": "Brezplačna alternativa Microsoft® Office",
+  "AuthDocsTitle": "Vaša osebna spletna pisarna",
   "AuthDocsTitlePage": "Dobi brezplačno pisarno v The Cloud-u",
   "AuthDocsConnect": "Povežite v oblak",
   "AuthDocsDisclaimer": "Ocene uporabnikov so privzete is <1>{{linkText}}</1>. Ocene Capterra predstavljajo subjektivna mnenja posameznih uporabnikov na podlagi njihovih lastnih izkušenj in ne predstavljajo stališč družbe Capterra ali njenih povezanih podjetij.",
@@ -29,7 +29,7 @@
   "AuthDocsSubtitle": "Popolnoma kompatibilna z MS Office formati dokumentov",
   "AuthDocsUsingChrome": "Dobite Chrome razširitev za hiter dostop.",
   "CreatePersonalButton": "Ustvari brezplačno pisarno",
-  "AuthDocsFreeDesktopApp": "Prenesite {0}brezplačno namizno aplikacijo{1} za urejanje datotek brez povezave ali s povezavo z oblakom.",
+  "AuthDocsFreeDesktopApp": "Prenesite <1>brezplačno namizno aplikacijo</1> za urejanje datotek brez povezave ali s povezavo z oblakom.",
   "AuthDocsSignIn": "Vpiši se",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Vse pravice so pridržane",
   "TermsOfService": "Pogoji uporabe",
@@ -42,5 +42,6 @@
   "PresSlideSectionCarouselHeading": "Ustvarite predstavitve",
   "PresSlideSectionCarouselText": "Izrazite svoje ideje in jih predstavite na enostaven način občinstvu.",
   "CollaborationSlideSecitonCarouselHeading": "Sodelujte na spletu",
-  "CollaborationSlideSectionCarouselText": "Povabite druge k urejanju dokumenta ali poiščite ocene svojega dela."
+  "CollaborationSlideSectionCarouselText": "Povabite druge k urejanju dokumenta ali poiščite ocene svojega dela.",
+  "CreateFormHeader": "Ustvari brezplačno pisarno"
 }

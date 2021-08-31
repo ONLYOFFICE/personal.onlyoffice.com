@@ -43,8 +43,8 @@
   "AuthDocsAccessYourDocs": "Access your documents from anywhere.",
   "Email": "E-Mail",
   "AuthDocsAccessQuickly": "Greifen Sie auf ONLYOFFICE Personal einfacher zu.",
-  "AuthDocsFreeDesktopApp": "Erhalten Sie {0}die kostenlose Desktop-App{1}, um Dateien offline zu bearbeiten oder Ihre Cloud zu verbinden.",
-  "AuthDocsWorkWithDocs": "Bearbeiten Sie Dokumente auch unterwegs mit {0}ONLYOFFICE Documents{1}.",
+  "AuthDocsFreeDesktopApp": "Erhalten Sie <1>die kostenlose Desktop-App</1>, um Dateien offline zu bearbeiten oder Ihre Cloud zu verbinden.",
+  "AuthDocsWorkWithDocs": "Bearbeiten Sie Dokumente auch unterwegs mit <1>ONLYOFFICE Documents</1>.",
   "AuthFooterBlog": "Blog",
   "AuthDocsToLogin": "Zum Einloggen",
   "AuthDocsToMainPage": "Zur Hauptseite",
@@ -60,5 +60,6 @@
   "PresSlideSectionCarouselHeading": "Präsentationen erstellen",
   "PresSlideSectionCarouselText": "Stellen Sie Ihre Ideen dem Publikum einfacher vor.",
   "CollaborationSlideSecitonCarouselHeading": "Online zusammenarbeiten",
-  "CollaborationSlideSectionCarouselText": "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein."
+  "CollaborationSlideSectionCarouselText": "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein.",
+  "CreateFormHeader": "Kostenloses Office erstellen"
 }

@@ -28,7 +28,7 @@
   "AuthDocsSoftpediaQuote": "ONLYOFFICE Personal, Microsoft uyumlu belgeler, tablolar ve sunumlar oluşturmak ve ekip üyeleriyle işbirliği içinde çalışmak için gerekli araçları bir araya getiren çevrimiçi bir düzenleyicidir.",
   "AuthDocsSubtitle": "MS Office belge formatlarıyla son derece uyumlu",
   "CreatePersonalButton": "Ücretsiz ofis oluşturun",
-  "AuthDocsFreeDesktopApp": "Dosyaları çevrimdışı düzenlemek veya bulutunuza bağlanmak için {0}ücretsiz masaüstü uygulamasını{1} indirin.",
+  "AuthDocsFreeDesktopApp": "Dosyaları çevrimdışı düzenlemek veya bulutunuza bağlanmak için <1>ücretsiz masaüstü uygulamasını</1> indirin.",
   "AuthDocsSignIn": "Giriş Yap",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Tüm hakları saklıdır",
   "TermsOfService": "Hizmet Şartları",
@@ -41,5 +41,6 @@
   "PresSlideSectionCarouselHeading": "Sunumlar hazırlayın",
   "PresSlideSectionCarouselText": "Fikirlerinizi ortaya koyun ve hedef kitlenize kolayca sunun.",
   "CollaborationSlideSecitonCarouselHeading": "Çevrimiçi işbirliği yapın",
-  "CollaborationSlideSectionCarouselText": "Belgeleri birlikte düzenlemek veya çalışmanız hakkında yorum almak için istediğiniz kişiyi davet edin."
+  "CollaborationSlideSectionCarouselText": "Belgeleri birlikte düzenlemek veya çalışmanız hakkında yorum almak için istediğiniz kişiyi davet edin.",
+  "CreateFormHeader": "Ücretsiz ofis oluşturun"
 }

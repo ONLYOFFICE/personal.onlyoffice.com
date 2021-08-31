@@ -8,7 +8,7 @@
   "AuthDocsOr": "o entrar",
   "AuthDocsSendActivationEmail": "Un mensaje de activación enviado a ",
   "AuthDocsThanksRegistration": "Gracias por haber registrado su ONLYOFFICE™ Personal.",
-  "AuthDocsTitle": "Su oficina personal en línea",
+  "AuthDocsTitle": "Tu oficina personal online",
   "AuthDocsTitlePage": "Oficina personal en línea",
   "CookieMessButton": "¡Lo tengo!",
   "CookieMessText": "Este sitio web utiliza cookies. Al continuar navegando por el sitio web Usted acepta nuestra <1>política de privacidad</1>",
@@ -42,8 +42,8 @@
   "AuthDocsYourEmail": "Tu correo electrónico*",
   "Email": "Correo electrónico",
   "AuthDocsAccessQuickly": "Accede a ONLYOFFICE Personal rápidamente.",
-  "AuthDocsFreeDesktopApp": "Descárgate {0}la aplicación gratuita de escritorio{1} para editar archivos sin conexión o conectarte a tu nube.",
-  "AuthDocsWorkWithDocs": "Trabaja con documentos sobre la marcha usando {0}las aplicaciones ONLYOFFICE Documents{1}.",
+  "AuthDocsFreeDesktopApp": "Descárgate <1>la aplicación gratuita de escritorio</1> para editar archivos sin conexión o conectarte a tu nube.",
+  "AuthDocsWorkWithDocs": "Trabaja con documentos sobre la marcha usando <1>las aplicaciones ONLYOFFICE Documents</1>.",
   "AuthDocsToMainPage": "Ir a la página principal",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Todos los derechos reservados",
   "TermsOfService": "Términos del servicio",
@@ -56,5 +56,6 @@
   "PresSlideSectionCarouselHeading": "Crea presentaciones",
   "PresSlideSectionCarouselText": "Expresa tus ideas y preséntalas al público con facilidad.",
   "CollaborationSlideSecitonCarouselHeading": "Colabora online",
-  "CollaborationSlideSectionCarouselText": "Invita a cualquier persona a editar documentos juntos o a hacer revisiones en tu trabajo."
+  "CollaborationSlideSectionCarouselText": "Invita a cualquier persona a editar documentos juntos o a hacer revisiones en tu trabajo.",
+  "CreateFormHeader": "Crea tu oficina gratis"
 }

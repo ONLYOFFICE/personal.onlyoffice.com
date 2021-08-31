@@ -18,8 +18,6 @@ const StyledButton = styled.button`
   -webkit-tap-highlight-color: transparent;
 
   font-family: "OpenSans", sans-serif;
-  letter-spacing: normal;
-
   height: ${(props) => props.height};
   width: ${(props) => (props.isScale ? "100%" : props.width)};
 

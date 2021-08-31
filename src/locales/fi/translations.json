@@ -7,7 +7,7 @@
   "AuthDocsOr": "tai kirjaudu sisään",
   "AuthDocsSendActivationEmail": "Aktivointisähköposti on lähetetty osoitteeseen",
   "AuthDocsThanksRegistration": "Kiitos kun rekisteröit henkilökohtaisen ONLYOFFICE™ ohjelmiston.",
-  "AuthDocsTitle": "Ilmainen vaihtoehto Microsoft® Officelle",
+  "AuthDocsTitle": "Henkilökohtainen verkkotoimistosi",
   "AuthDocsTitlePage": "Hanki itsellesi toimisto pilvessä",
   "AuthDocsConnect": "Yhdistä haluamaasi pilveen",
   "AuthDocsDownload": "Lataa",
@@ -29,7 +29,7 @@
   "AuthDocsAccessYourDocs": "Access your documents from anywhere.",
   "CreatePersonalButton": "Luo ilmainen toimisto",
   "AuthDocsAccessQuickly": "Access ONLYOFFICE personal quickly.",
-  "AuthDocsFreeDesktopApp": "Lataa {0}ilmainen työpöytäsovellus{1}, jos haluat muokata tiedostoja offline-tilassa tai muodostaa yhteyden pilveen.",
+  "AuthDocsFreeDesktopApp": "Lataa <1>ilmainen työpöytäsovellus</1>, jos haluat muokata tiedostoja offline-tilassa tai muodostaa yhteyden pilveen.",
   "Email": "Sähköposti",
   "AuthDocsSignIn": "Kirjaudu sisään",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Kaikki oikeudet pidätetään",
@@ -43,5 +43,6 @@
   "PresSlideSectionCarouselHeading": "Esitysten luominen",
   "PresSlideSectionCarouselText": "Ilmaise ideasi ja esitä ne yleisölle vaivatta.",
   "CollaborationSlideSecitonCarouselHeading": "Tee yhteistyötä verkossa",
-  "CollaborationSlideSectionCarouselText": "Kutsu kenet tahansa muokkaamaan asiakirjoja samaan aikaan tai pyydä arvioimaan työsi."
+  "CollaborationSlideSectionCarouselText": "Kutsu kenet tahansa muokkaamaan asiakirjoja samaan aikaan tai pyydä arvioimaan työsi.",
+  "CreateFormHeader": "Luo ilmainen toimisto"
 }

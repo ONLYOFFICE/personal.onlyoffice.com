@@ -8,7 +8,7 @@
   "AuthDocsOr": "hoặc đăng nhập",
   "AuthDocsSendActivationEmail": "Email kích hoạt của bạn đã được gửi tới",
   "AuthDocsThanksRegistration": "Cảm ơn bạn đã đăng ký ONLYOFFICE™ Personal.",
-  "AuthDocsTitle": "Thay thế miễn phí cho Microsoft® Office",
+  "AuthDocsTitle": "Văn phòng trực tuyến của riêng bạn",
   "AuthDocsTitlePage": "Nhận Ứng dụng Văn phòng Miễn phí trên Đám mây",
   "AuthDocsConnect": "Kết nối với bất kỳ đám mây nào",
   "AuthDocsDisclaimer": "Các đánh giá của người dùng được lấy từ <1>{{linkText}}</1>. Các đánh giá của Capterra là nhận xét chủ quan của người dùng cuối dựa trên trải nghiệm của chính họ và không đại diện cho quan điểm của Capterra hoặc các cộng tác viên của Capterra.",
@@ -29,7 +29,7 @@
   "AuthDocsSubtitle": "Tương thích cao với các định dạng tài liệu MS Office",
   "AuthDocsUsingChrome": "Tải tiện ích mở rộng của Chrome để truy cập nhanh.",
   "CreatePersonalButton": "Tạo văn phòng miễn phí",
-  "AuthDocsFreeDesktopApp": "Tải xuống ứng {0}dụng miễn phí dành cho máy tính{1} để giúp chỉnh sửa tài liệu khi ngoại tuyến hoặc kết nối với đám mây của bạn.",
+  "AuthDocsFreeDesktopApp": "Tải xuống ứng <1>dụng miễn phí dành cho máy tính</1> để giúp chỉnh sửa tài liệu khi ngoại tuyến hoặc kết nối với đám mây của bạn.",
   "AuthDocsSignIn": "Đăng nhập",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Bảo lưu mọi quyền",
   "TermsOfService": "Điều khoản dịch vụ",
@@ -42,5 +42,6 @@
   "PresSlideSectionCarouselHeading": "Tạo bản trình bày",
   "PresSlideSectionCarouselText": "Thể hiện và trình bày ý tưởng của bạn cho người xem một cách dễ dàng.",
   "CollaborationSlideSecitonCarouselHeading": "Cùng làm việc trực tuyến",
-  "CollaborationSlideSectionCarouselText": "Mời bất kỳ ai cùng chỉnh sửa tài liệu hoặc nhận đánh giá đối với công việc của bạn."
+  "CollaborationSlideSectionCarouselText": "Mời bất kỳ ai cùng chỉnh sửa tài liệu hoặc nhận đánh giá đối với công việc của bạn.",
+  "CreateFormHeader": "Tạo văn phòng miễn phí"
 }

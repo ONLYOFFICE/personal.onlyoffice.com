@@ -33,18 +33,16 @@
   "AuthDocsSoftpediaQuote": "ONLYOFFICE Personal е онлайн редактор, който има нужните инструменти за създаване на съвместими с Microsoft документи, таблици и презентации и съвместна работа с членове на екипа.",
   "AuthDocsSubtitle": "Високо съвместим с MS Office формати за документ",
   "AuthDocsUsingChrome": "Вземете притурката за Chrome за бърз достъп.",
-  "AuthDocsFreeDesktopApp": "Изтеглете {0}безплатното настолно приложение{1} за редактиране на файлове офлайн или за свързване с вашия облак.",
+  "AuthDocsFreeDesktopApp": "Изтеглете <1>безплатното настолно приложение</1> за редактиране на файлове офлайн или за свързване с вашия облак.",
   "Email": "Електронна поща",
   "AuthDocsSignIn": "Впиши се",
   "RegistrySettingTerms": "Приемам ONLYOFFICE <1>{{terms}}</1> и <2>{{privacy}}</2>",
   "TermAndCondition": "Общи условия",
   "PrivacyStatement": "Декларация за поверителност",
-  "HomeDescription": "Високо съвместим с MS Office формати за документ",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Всички права запазени",
   "TermsOfService": "Условия за ползване",
   "CorporateUse": "Корпоративно ползване",
   "SoftpediaDescription": "ONLYOFFICE Personal е онлайн редактор, който има нужните инструменти за създаване на съвместими с Microsoft документи, таблици и презентации и съвместна работа с членове на екипа.",
-  "DownloadDesktopApp": "Изтеглете <1>безплатното настолно приложение</1> за редактиране на файлове офлайн или за свързване с вашия облак.",
   "DocSlideSectionCarouselHeading": "Работете с документи",
   "DocSlideSectionCarouselText": "Получете всички инструменти, от които се нуждаете, за да редактирате и форматирате всеки документ.",
   "TabSlideSectionCarouselHeading": "Организирайте данни в таблици",
@@ -52,5 +50,6 @@
   "PresSlideSectionCarouselHeading": "Създавайте презентации",
   "PresSlideSectionCarouselText": "Изразете идеите си и лесно ги презентирайте на аудиторията.",
   "CollaborationSlideSecitonCarouselHeading": "Сътрудничете си онлайн",
-  "CollaborationSlideSectionCarouselText": "Поканете всеки да редактира документи или да получавате рецензии за работата си."
+  "CollaborationSlideSectionCarouselText": "Поканете всеки да редактира документи или да получавате рецензии за работата си.",
+  "CreateFormHeader": "Създайте безплатен офис"
 }

@@ -8,7 +8,7 @@
   "AuthDocsOr": "alebo sa prihláste",
   "AuthDocsSendActivationEmail": "Váš aktivačný e-mail bol odoslaný",
   "AuthDocsThanksRegistration": "Ďakujeme, že ste si zaregistrovali svoj osobný ONLYOFFICE™.",
-  "AuthDocsTitle": "Bezplatná alternatíva k Microsoft® Office",
+  "AuthDocsTitle": "Vysoká kompatibilita s formátmi dokumentov MS Office",
   "AuthDocsTitlePage": "Získajte bezplatný Office v cloude",
   "AuthDocsConnect": "Pripojte sa k akémukoľvek cloudu",
   "AuthDocsDisclaimer": "Recenzie používateľov sú prevzaté z webu <1>{{linkText}}</1>. Recenzie spoločnosti Capterra predstavujú subjektívne názory jednotlivých koncových používateľov na základe ich vlastných skúseností a nereprezentujú názory spoločnosti Capterra alebo jej pridružených spoločností.",
@@ -26,10 +26,9 @@
   "AuthDocsPowerfulTextSub": "Získajte všetky nástroje, ktoré potrebujete na úpravu a formátovanie akéhokoľvek dokumentu.",
   "AuthDocsSoftpedia": "Softpedia",
   "AuthDocsSoftpediaQuote": "ONLYOFFICE Personal je online editor, ktorý obsahuje potrebné nástroje na vytváranie dokumentov, tabuliek a prezentácií kompatibilných s analogickými dokumentmi Microsoftom a umožňuje spoluprácu s členmi tímu.",
-  "AuthDocsSubtitle": "Vysoká kompatibilita s formátmi dokumentov MS Office",
   "AuthDocsUsingChrome": "Získajte rozšírenie pre Chrome, ktoré Vám zabezpečí rýchly prístup.",
   "CreatePersonalButton": "Vytvorte si kanceláriu zadarmo",
-  "AuthDocsFreeDesktopApp": "Stiahnite si {0}bezplatnú aplikáciu{1} pre počítač a upravujte súbory offline alebo sa pripojte k Vášmu cloudu.",
+  "AuthDocsFreeDesktopApp": "Stiahnite si <1>bezplatnú aplikáciu</1> pre počítač a upravujte súbory offline alebo sa pripojte k Vášmu cloudu.",
   "AuthDocsSignIn": "Prihlásiť sa",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Všetky práva vyhradené",
   "TermsOfService": "Podmienky používania",
@@ -42,5 +41,6 @@
   "PresSlideSectionCarouselHeading": "Vytvárajte prezentácie",
   "PresSlideSectionCarouselText": "Vyjadrite svoje nápady a jednoducho ich predstavte publiku.",
   "CollaborationSlideSecitonCarouselHeading": "Spolupracujte online",
-  "CollaborationSlideSectionCarouselText": "Pozvite kohokoľvek, aby spoločne s Vami upravoval dokumenty alebo posúdil Vašu prácu."
+  "CollaborationSlideSectionCarouselText": "Pozvite kohokoľvek, aby spoločne s Vami upravoval dokumenty alebo posúdil Vašu prácu.",
+  "CreateFormHeader": "Vytvorte si kanceláriu zadarmo"
 }

@@ -42,8 +42,8 @@
   "AuthErrorIndicationIncorrectEmail": "Entrez une adresse e-mail",
   "Email": "Adresse de courriel",
   "AuthDocsAccessQuickly": "Accédez rapidement à ONLYOFFICE personal.",
-  "AuthDocsFreeDesktopApp": "Téléchargez les {0}applications de bureau gratuites{1} pour éditer vos documents ou connectez-vous à un cloud.",
-  "AuthDocsWorkWithDocs": "Travaillez sur les documents {0}partout avec{1} {2}les applications ONLYOFFICE Documents{3}.",
+  "AuthDocsFreeDesktopApp": "Téléchargez les <1>applications de bureau gratuites</1> pour éditer vos documents ou connectez-vous à un cloud.",
+  "AuthDocsWorkWithDocs": "Travaillez sur les documents partout avec <1>les applications ONLYOFFICE Documents</1>.",
   "AuthDocsToMainPage": "Passer à la page principale",
   "RegistrySettingTerms": "J'accept les <1>{{terms}}</1> d'ONLYOFFICE et la <2>{{privacy}}</2>",
   "TermAndCondition": "Termes et conditions",
@@ -60,7 +60,6 @@
   "CollaborationSlideSecitonCarouselHeading": "Collaborez en ligne",
   "CollaborationSlideSectionCarouselText": "Invitez les collègues à éditer les documents ou sollicitez leurs avis sur votre travail.",
   "DownloadExtensionChrome": "AAccédez rapidement à ONLYOFFICE personal. <1>Obtenez une extension Chrome pour un accès rapide.</1>",
-  "DownloadDesktopApp": "Téléchargez les <1>applications de bureau gratuites</1> pour éditer vos documents ou connectez-vous à un cloud.",
-  "DownloadMobileApp": "Travaillez sur les documents partout avec <1>les applications ONLYOFFICE Documents.</1>",
-  "SoftpediaDescription": "ONLYOFFICE Personal est une suite des éditeurs en ligne offrant tous les outils nécessaires pour créer les documents texte, les classeurs et les présentations compatibles avec Microsoft et les coéditer en temps réel."
+  "SoftpediaDescription": "ONLYOFFICE Personal est une suite des éditeurs en ligne offrant tous les outils nécessaires pour créer les documents texte, les classeurs et les présentations compatibles avec Microsoft et les coéditer en temps réel.",
+  "CreateFormHeader": "Créez votre bureau gratuit"
 }

@@ -29,6 +29,8 @@ const StyledHeaderContent = styled.div`
     height: 48px;
     min-width: 105px;
     margin-top: 14px;
+    letter-spacing: 0.48px;
+    font-weight: 500;
   }
 
   .language-selector {

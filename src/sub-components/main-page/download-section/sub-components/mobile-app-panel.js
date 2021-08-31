@@ -14,7 +14,7 @@ import InfoPanel, {
 const MobileAppPanel = ({ currentLanguage }) => {
   const headingComponent = (
     <Text>
-      <Trans i18nKey="DownloadMobileApp">
+      <Trans i18nKey="AuthDocsWorkWithDocs">
         {" "}
         <Text as="span" fontWeight="bold"></Text>
       </Trans>

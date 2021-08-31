@@ -47,12 +47,15 @@ const StyledCloudsSection = styled(HomeSection)`
         height: 124px;
       }
     }
+
+    .clouds-header {
+      font-size: 30px;
+    }
   }
 
   @media ${device.tablet} {
     .clouds-header {
       padding: 0 0 20px;
-      font-size: 30px;
     }
   }
 

@@ -1,9 +1,9 @@
 {
-  "AuthDocsFreeDesktopApp": "Lejupielādējiet {0}bezmaksas darbvirsmas lietotni{1}, lai rediģētu failus bezsaistē vai izveidojiet savienojumu ar mākoni.",
+  "AuthDocsFreeDesktopApp": "Lejupielādējiet <1>bezmaksas darbvirsmas lietotni</1>, lai rediģētu failus bezsaistē vai izveidojiet savienojumu ar mākoni.",
   "AuthDocsHearTheWeb": "Ouça a web",
   "AuthDocsSubtitle": "Altamente compatível com os formatos dos documentos MS Office",
   "AuthDocsLogIn": "Entrar",
   "AuthDocsSignIn": "Assinar",
-  "AuthDocsWorkWithDocs": "Trabalhe com documentos mesmo {0}enquanto viaja{1} com os {2}Documentos gratuitos da ONLYOFFICE{3}.",
+  "AuthDocsWorkWithDocs": "Trabalhe com documentos mesmo enquanto viaja com os <1>Documentos gratuitos da ONLYOFFICE</1>.",
   "AuthDocsTitle": "O teu escritório pessoal online"
 }
