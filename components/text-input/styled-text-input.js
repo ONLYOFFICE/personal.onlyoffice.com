@@ -34,7 +34,7 @@ const StyledTextInput = styled.input`
   box-shadow: ${(props) => props.theme.textInput.boxShadow};
   box-sizing: ${(props) => props.theme.textInput.boxSizing};
   border: ${(props) => props.theme.textInput.border};
-
+  z-index: 1;
   border-right: ${(props) =>
     (props.checkButton && "none") || props.theme.textInput.border};
 
