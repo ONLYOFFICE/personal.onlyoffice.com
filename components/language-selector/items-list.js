@@ -36,7 +36,16 @@ export default function LangsList(props) {
   const renderItemList = () => {
     return languages.map((language) => {
       const { shortKey, iconName, key } = language;
-      const localizedPath = path.replace(currentLanguage, shortKey);
+      let localizedPath;
+      if (currentLanguage === "en") {
+        if (path.includes("en")) {
+          localizedPath = path.replace(currentLanguage, shortKey);
+        } else {
+          localizedPath = `/${shortKey}${path}`;
+        }
+      } else {
+        localizedPath = path.replace(currentLanguage, shortKey);
+      }
 
       return (
         <StyledItem key={key}>
