@@ -52,8 +52,7 @@ const DesktopAppPanel = ({ t, currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="panel-image desktop-image"
-        imgUrl={`/info-screenshots/${currentLanguage}/desktop.react.svg`}
-        defaultImgUrl="/info-screenshots/en/desktop.react.svg"
+        imgUrl={`/info-screenshots/${currentLanguage}/desktop.png`}
       />
     </InfoPanel>
   );

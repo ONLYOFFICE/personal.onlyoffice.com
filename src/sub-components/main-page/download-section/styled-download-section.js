@@ -63,7 +63,7 @@ const StyledDownloadSection = styled(HomeSection)`
   .panel-image {
     position: relative;
     height: 100%;
-    svg {
+    img {
       position: absolute;
       width: 100%;
       bottom: 0px;
@@ -71,15 +71,20 @@ const StyledDownloadSection = styled(HomeSection)`
   }
 
   .extension-img {
-    right: -33px;
-    svg {
-      height: 318px;
-      width: 514px;
+    right: -13px;
+    img {
+      height: 369px;
+      width: 542px;
     }
   }
 
+  .mobile-text{
+    max-width: 420px;
+  }
+
   .mobile-app-img {
-    right: -22px;
+    right: -1px;
+    top: 6px;
   }
 
   @media (max-width: 1200px) {

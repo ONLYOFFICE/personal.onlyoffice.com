@@ -64,8 +64,7 @@ const MobileAppPanel = ({ currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="mobile-app-img panel-image"
-        imgUrl={`/info-screenshots/${currentLanguage}/mobile.react.svg`}
-        defaultImgUrl="/info-screenshots/en/mobile.react.svg"
+        imgUrl={`/info-screenshots/${currentLanguage}/mobile.png`}
       />
     </InfoPanel>
   );
