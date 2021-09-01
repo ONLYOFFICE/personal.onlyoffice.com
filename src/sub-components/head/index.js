@@ -34,7 +34,7 @@ const Head = (props) => {
       ></meta>
       <meta id="ctl00_MetaKeywords" name="keywords" content={metaKeywords} />
       <meta name="description" content={metaDescription} />
-      <link rel="manifest" href="static/manifest.json" />
+      <link rel="manifest" href="/manifest.json" />
       <link
         rel="alternate"
         type="application/atom+xml"

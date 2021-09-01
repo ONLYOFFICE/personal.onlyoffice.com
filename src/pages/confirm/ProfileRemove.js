@@ -11,7 +11,7 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { deleteSelf } from "../../api";
+import { deleteSelf, logout } from "../../api";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
 
@@ -44,6 +44,8 @@ const ProfileRemovePage = ({ location }) => {
 
   const onSubmitHandler = () => {
     const confirmHeader = getConfirmHeader(location);
+    logout();
+
     deleteSelf(confirmHeader)
       .then((res) => {
         setIsProfileDeleted(true);

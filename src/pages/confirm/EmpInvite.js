@@ -11,7 +11,7 @@ import FormDescription from "../../sub-components/form-description";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
 
-import { getSettings, createUser, login } from "../../api";
+import { getSettings, createUser, login, logout } from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
@@ -156,6 +156,7 @@ const EmpInvitePage = ({ location }) => {
       lastname: lastName,
       email: params.email,
     };
+    logout();
 
     createConfirmUser(personalData, loginData, confirmHeader)
       .then(() => window.location.replace("/"))

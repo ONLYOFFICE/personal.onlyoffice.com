@@ -11,7 +11,7 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { getSettings, changePassword } from "../../api";
+import { getSettings, changePassword, logout } from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
@@ -76,6 +76,8 @@ const PasswordChangePage = ({ location }) => {
     const params = parseQueryParams(location.search);
     const confirmHeader = getConfirmHeader(location);
     const hash = createPasswordHash(password, hashSettings);
+
+    logout();
 
     changePassword(params.uid, hash, confirmHeader)
       .then(() => {
