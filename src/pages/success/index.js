@@ -76,8 +76,7 @@ const SuccessfullyPage = ({ location }) => {
           language={language}
           href={buttonHref}
           labelButton={t("RegistryButtonCreateNow")}
-          headerText={t("AuthDocsDontHave")}
-          toHideButton
+          withoutButton
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
