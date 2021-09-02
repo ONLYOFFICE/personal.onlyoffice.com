@@ -20,20 +20,18 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/logo/favicon_general.png",
+        icon: "./static/site-assets/logo/favicon_general.png",
+
+        name: `personal.onlyoffice.com`,
+        short_name: `Personal`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `rgb(255, 134, 92)`,
+        display: `standalone`,
       },
     },
     { resolve: "gatsby-transformer-remark" },
     { resolve: "gatsby-plugin-mdx" },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -95,7 +93,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-asset-path",
       options: {
-        copyAssets: false,
+        fileTypes: ["js", "map"],
       },
     },
   ],
