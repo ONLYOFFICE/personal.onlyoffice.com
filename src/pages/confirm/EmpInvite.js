@@ -36,10 +36,12 @@ const EmpInvitePage = ({ location }) => {
   const [isEmptyPassword, setIsEmptyPassword] = useState(null);
 
   useEffect(() => {
-    getSettings()
-      .then((res) => {
-        setHashSettings(res.passwordHash);
-      })
+    logout()
+      .then(() =>
+        getSettings().then((res) => {
+          setHashSettings(res.passwordHash);
+        })
+      )
       .catch((e) => console.error(e));
   }, []);
 
@@ -156,7 +158,6 @@ const EmpInvitePage = ({ location }) => {
       lastname: lastName,
       email: params.email,
     };
-    logout();
 
     createConfirmUser(personalData, loginData, confirmHeader)
       .then(() => window.location.replace("/"))
