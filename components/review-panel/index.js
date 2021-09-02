@@ -4,43 +4,41 @@ import StyledReviewPanel from "./styled-review-panel";
 import Text from "../text";
 import Rating from "./sub-components/rating";
 
-const ReviewPanel = ({ 
-  className, 
-  styledHeaderText, 
-  styledMainText, 
-  headerText, 
-  countStar, 
-  mainText, 
-  ...rest}) => {
+const ReviewPanel = ({
+  className,
+  styledHeaderText,
+  styledMainText,
+  headerText,
+  countStar,
+  mainText,
+  ...rest
+}) => {
   return (
-        <StyledReviewPanel {...rest} className={className}>
-          <div className={"headerReviewPanel"}>
-            <Text 
-              fontSize="13px" 
-              fontWeight="700" 
-              style={styledHeaderText}
-            >
-                {headerText}
-            </Text>
-            <Rating countStar={countStar} />
-          </div>
-          <Text 
-            fontSize="16px"
-            lineHeight="26px" 
-            style={styledMainText}
-          >
-              {mainText}
-          </Text>
-        </StyledReviewPanel>
-      );
+    <StyledReviewPanel {...rest} className={className}>
+      <div className={"headerReviewPanel"}>
+        <Text fontSize="13px" fontWeight="700" style={styledHeaderText}>
+          {headerText}
+        </Text>
+        <Rating countStar={countStar} />
+      </div>
+      <Text
+        fontSize="16px"
+        lineHeight="26px"
+        className="review-panel-main-text"
+        style={styledMainText}
+      >
+        {mainText}
+      </Text>
+    </StyledReviewPanel>
+  );
 };
 
 ReviewPanel.propTypes = {
   /** Header text rewiew */
   headerText: PropTypes.string,
-  /** Main text rewiew */ 
+  /** Main text rewiew */
   mainText: PropTypes.string,
-  /** Rating star */ 
+  /** Rating star */
   countStar: PropTypes.number,
   /** Accepts header text CSS style */
   styledHeaderText: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

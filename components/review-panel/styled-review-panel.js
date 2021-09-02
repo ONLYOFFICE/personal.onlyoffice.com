@@ -39,8 +39,11 @@ const StyledReviewPanel = styled.div`
     }
   }
 
-  @media (max-width: 527px) {
+  @media (max-width: 592px) {
     width: auto;
+    .review-panel-main-text {
+      font-size: 14px;
+    }
   }
 
   @media ${device.mobileL} {
