@@ -78,7 +78,7 @@ const EmailChangePage = ({ location }) => {
         <HeaderContent t={t} language={language} withoutButton />
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <StyledSection></StyledSection>
+        <StyledSection style={{ height: "100vh" }}></StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent t={t} />
