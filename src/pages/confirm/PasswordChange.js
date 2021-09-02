@@ -11,7 +11,7 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { getSettings, changePassword, logout } from "../../api";
+import { getSettings, changePassword, logout, login } from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
@@ -81,14 +81,7 @@ const PasswordChangePage = ({ location }) => {
 
     changePassword(params.uid, hash, confirmHeader)
       .then(() => {
-        navigate("/sign-in", {
-          state: {
-            toastr: {
-              success: true,
-              text: t("SuccessChangePassword"),
-            },
-          },
-        });
+        login(params.email, hash).then(() => window.open("/", "_self"));
       })
       .catch((error) => {
         toastr.error(`${error}`);
@@ -129,7 +122,7 @@ const PasswordChangePage = ({ location }) => {
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
           metaKeywords={t("AuthDocsMetaKeywords")}
-          title={t("AuthDocsTitlePage")}
+          title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>

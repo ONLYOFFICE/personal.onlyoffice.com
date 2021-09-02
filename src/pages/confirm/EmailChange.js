@@ -30,15 +30,8 @@ const EmailChangePage = ({ location }) => {
         const { email } = params;
         getUser(email)
           .then((user) => {
-            changeEmail(params.key, email, confirmHeader).then((res) => {
-              navigate("/", {
-                state: {
-                  toastr: {
-                    success: true,
-                    text: t("EmailChanged"),
-                  },
-                },
-              });
+            changeEmail(user.id, email, confirmHeader).then((res) => {
+              window.open("/", "_self");
             });
           })
           .catch((e) => {
