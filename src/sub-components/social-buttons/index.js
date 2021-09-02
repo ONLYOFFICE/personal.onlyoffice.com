@@ -10,15 +10,15 @@ import { thirdPartyLogin } from "../../api";
 const providersIcons = [
   {
     name: "Google",
-    icon: "/social-icons/google.react.svg",
+    icon: "/site-assets/social-icons/google.react.svg",
   },
   {
     name: "Facebook",
-    icon: "/social-icons/facebook.react.svg",
+    icon: "/site-assets/social-icons/facebook.react.svg",
   },
   {
     name: "LinkedIn",
-    icon: "/social-icons/linkedin.react.svg",
+    icon: "/site-assets/social-icons/linkedin.react.svg",
   },
 ];
 

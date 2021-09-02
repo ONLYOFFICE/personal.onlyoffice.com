@@ -15,8 +15,8 @@ import { deleteSelf, logout } from "../../api";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
 
-import SuccessIcon from "../../../static/reg-success-checkmark.react.svg";
-import AttentionIcon from "../../../static/attention.react.svg";
+import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark.react.svg";
+import AttentionIcon from "../../../static/site-assets/icons/attention.react.svg";
 
 import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
 

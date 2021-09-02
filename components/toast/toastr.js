@@ -1,8 +1,8 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-import SuccesToastIcon from "../../static/icons/toast_icon02.react.svg";
-import ErrorToastIcon from "../../static/icons/toast_icon01.react.svg";
+import SuccesToastIcon from "../../static/site-assets/icons/toast.success.react.svg";
+import ErrorToastIcon from "../../static/site-assets/icons/toast.error.react.svg";
 
 import Text from "../text";
 import { StyledDiv, IconWrapper } from "./styled-toastr";

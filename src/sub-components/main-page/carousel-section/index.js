@@ -26,7 +26,7 @@ const CarouselSection = (props) => {
   });
 
   const mapCarouselItems = (arrayItems) => {
-    const srcImage = `/screenshots/${localizedPath}/`;
+    const srcImage = `/site-assets/screenshots/${localizedPath}/`;
 
     return arrayItems.slides.map((item) => {
       if (item.type === "image")

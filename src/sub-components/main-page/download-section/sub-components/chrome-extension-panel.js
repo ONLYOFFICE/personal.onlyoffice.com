@@ -30,8 +30,8 @@ const ChromeExtensionPanel = ({ currentLanguage }) => {
       <IconButton
         size="auto"
         className="extension-icon-component"
-        iconName={`/apps-icons/${currentLanguage}/chrome.react.svg`}
-        defaultIcon={`/apps-icons/en/chrome.react.svg`}
+        iconName={`/site-assets/apps-icons/${currentLanguage}/chrome.react.svg`}
+        defaultIcon={`/site-assets/apps-icons/en/chrome.react.svg`}
       />
     </Link>,
   ];
@@ -46,8 +46,8 @@ const ChromeExtensionPanel = ({ currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="extension-img panel-image"
-        imgUrl={`/info-screenshots/${currentLanguage}/extension.react.svg`}
-        defaultImgUrl="/info-screenshots/en/extension.react.svg"
+        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/extension.react.svg`}
+        defaultImgUrl="/site-assets/info-screenshots/en/extension.react.svg"
       />
     </InfoPanel>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledLayout = styled.div`
   height: 100%;
   background-color: transparent;
-  background-image: url("/background.svg");
+  background-image: url("/site-assets/backgrounds/background.svg");
   background-position: center -508px;
   background-repeat: no-repeat;
 
