@@ -40,6 +40,11 @@ const Head = (props) => {
         title="Teamlab Portal"
         href="https://personal.onlyoffice.com/services/whatsnew/feed.ashx?c=Teamlab+Portal"
       />
+      <link
+        rel="icon"
+        href="/site-assets/logo/favicon_general.png"
+        type="image/x-icon"
+      ></link>
 
       {languages.map((lng) => {
         const { key, shortKey } = lng;
