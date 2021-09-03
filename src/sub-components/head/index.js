@@ -44,7 +44,7 @@ const Head = (props) => {
         rel="icon"
         href="/site-assets/logo/favicon_general.png"
         type="image/x-icon"
-      ></link>
+      />
 
       {languages.map((lng) => {
         const { key, shortKey } = lng;
@@ -52,12 +52,10 @@ const Head = (props) => {
           <link
             key={key}
             rel="alternate"
-            href={
-              "https://www.personal.onlyoffice.com/" + shortKey === "en"
-                ? ""
-                : shortKey
-            }
-          ></link>
+            href={`https://personal.onlyoffice.com/${
+              shortKey === "en" ? "" : shortKey
+            }`}
+          />
         );
       })}
     </Helmet>
