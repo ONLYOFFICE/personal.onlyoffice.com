@@ -46,8 +46,7 @@ const ChromeExtensionPanel = ({ currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="extension-img panel-image"
-        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/extension.react.svg`}
-        defaultImgUrl="/site-assets/info-screenshots/en/extension.react.svg"
+        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/extension.png`}
       />
     </InfoPanel>
   );

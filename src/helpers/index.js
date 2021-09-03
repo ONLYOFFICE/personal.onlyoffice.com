@@ -2,6 +2,7 @@ import sjcl from "sjcl";
 import * as queryString from "query-string";
 import { ValidationResult } from "./constants";
 import { checkConfirmLink } from "../api";
+import config from "../../config.json";
 
 export function getCookie(name) {
   let matches = document.cookie.match(
@@ -104,3 +105,18 @@ export function checkingConfirmLink(location, t) {
       return { isValidLink: false, errorValidationLink: `${e}` };
     });
 }
+
+export const getLocalizedImagePrefix = (prefixes, language) => {
+  if (!Array.isArray(prefixes) || !language) return false;
+
+  let prefix = config.defaultLanguage;
+
+  prefixes.map((el) => {
+    if (language.includes(el)) {
+      prefix = el;
+    }
+    return false;
+  });
+
+  return prefix;
+};

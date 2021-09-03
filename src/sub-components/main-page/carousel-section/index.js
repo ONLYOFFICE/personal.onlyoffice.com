@@ -7,6 +7,7 @@ import {
   imageCarouselSettings,
 } from "./sub-components/carousel-settings";
 import { getTextItems, getImageItems } from "./sub-components/carousel-slides";
+import { getLocalizedImagePrefix } from "../../../helpers";
 
 const localizedImages = ["ru", "de", "fr", "en"];
 
@@ -16,17 +17,10 @@ const CarouselSection = (props) => {
   const textSliderRef = useRef();
   const imageSliderRef = useRef();
 
-  let localizedPath = "en";
-
-  localizedImages.map((languageKey) => {
-    if (language.includes(languageKey)) {
-      localizedPath = languageKey;
-    }
-    return false;
-  });
+  const prefix = getLocalizedImagePrefix(localizedImages, language);
 
   const mapCarouselItems = (arrayItems) => {
-    const srcImage = `/site-assets/screenshots/${localizedPath}/`;
+    const srcImage = `/site-assets/screenshots/${prefix}/`;
 
     return arrayItems.slides.map((item) => {
       if (item.type === "image")

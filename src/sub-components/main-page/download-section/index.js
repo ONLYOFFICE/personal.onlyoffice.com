@@ -7,7 +7,13 @@ import DesktopAppPanel from "./sub-components/desktop-app-panel";
 import MobileAppPanel from "./sub-components/mobile-app-panel";
 
 import StyledDownloadSection from "./styled-download-section";
+import { getLocalizedImagePrefix } from "../../../helpers";
+
+const localizedImages = ["ru", "de", "fr", "en"];
+
 const DownloadSection = ({ t, language }) => {
+  const prefix = getLocalizedImagePrefix(localizedImages, language);
+
   return (
     <StyledDownloadSection background="#f9f9f9">
       <Heading textAlign="center" level={2} className="download-heading">
@@ -16,17 +22,17 @@ const DownloadSection = ({ t, language }) => {
       <ChromeExtensionPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={language}
+        currentLanguage={prefix}
       />
       <DesktopAppPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={language}
+        currentLanguage={prefix}
       />
       <MobileAppPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={language}
+        currentLanguage={prefix}
       />
     </StyledDownloadSection>
   );

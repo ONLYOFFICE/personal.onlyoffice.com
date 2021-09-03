@@ -63,23 +63,13 @@ const StyledDownloadSection = styled(HomeSection)`
   .panel-image {
     position: relative;
     height: 100%;
-    svg {
-      position: absolute;
+    .info-panel-img {
       width: 100%;
-      bottom: 0px;
     }
   }
 
-  .extension-img {
-    right: -33px;
-    svg {
-      height: 318px;
-      width: 514px;
-    }
-  }
-
-  .mobile-app-img {
-    right: -22px;
+  .mobile-text {
+    max-width: 420px;
   }
 
   @media (max-width: 1200px) {
@@ -99,30 +89,27 @@ const StyledDownloadSection = styled(HomeSection)`
     .mobile-button {
       padding-left: 32px;
     }
-
-    .extension-img {
-      right: -20px;
-      svg {
-        height: 298px;
-      }
-    }
-
-    .desktop-image {
-      svg {
-        height: 309px;
-      }
-    }
-
-    .mobile-app-img {
-      svg {
-        height: 339px;
-        right: -4px;
-      }
-    }
   }
 
   @media (max-width: 1024px) {
     width: 100%;
+
+    .info-panel-img {
+      margin-bottom: -6px;
+    }
+
+    .extension-img,
+    .desktop-image {
+      .info-panel-img {
+        margin-top: -47px;
+      }
+    }
+
+    .mobile-app-img {
+      .info-panel-img {
+        margin-top: -10px;
+      }
+    }
 
     .download-heading {
       font-size: 30px;
@@ -156,31 +143,6 @@ const StyledDownloadSection = styled(HomeSection)`
       position: relative;
       height: 100%;
       margin: 0 auto;
-
-      svg {
-        position: relative;
-        width: 100%;
-        bottom: -5px;
-      }
-    }
-    .extension-img {
-      right: 0;
-      svg {
-        height: 316px;
-      }
-    }
-
-    .desktop-image {
-      svg {
-        height: 330px;
-      }
-    }
-
-    .mobile-app-img {
-      right: 0;
-      svg {
-        height: 390px;
-      }
     }
   }
 
@@ -209,13 +171,6 @@ const StyledDownloadSection = styled(HomeSection)`
       margin-bottom: 0;
     }
 
-    .extension-img {
-      svg {
-        height: 169px;
-        margin-top: -20px;
-      }
-    }
-
     .desktop-button {
       width: calc(100% - 32px);
       height: 48px;
@@ -225,19 +180,25 @@ const StyledDownloadSection = styled(HomeSection)`
       }
     }
 
-    .desktop-image {
-      svg {
-        height: 180px;
-        margin-top: -8px;
-      }
-    }
-
     .mobile-button {
       padding: 0;
     }
+
+    .extension-img {
+      .info-panel-img {
+        margin-top: -57px;
+      }
+    }
+
+    .desktop-image {
+      .info-panel-img {
+        margin-top: -47px;
+      }
+    }
+
     .mobile-app-img {
-      svg {
-        height: 206px;
+      .info-panel-img {
+        margin-top: -8px;
       }
     }
   }
