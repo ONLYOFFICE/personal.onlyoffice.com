@@ -14,7 +14,8 @@ const StyledBlockquote = styled(HomeSection)`
 
   :before {
     content: "";
-    background-image: url(/icons/softpedia.svg), url(/icons/blockqute.svg);
+    background-image: url(/site-assets/icons/softpedia.svg),
+      url(/site-assets/icons/blockqute.svg);
     background-position: center 60%, top;
     background-repeat: no-repeat;
     display: block;

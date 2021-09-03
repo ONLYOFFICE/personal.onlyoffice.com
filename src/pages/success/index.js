@@ -11,7 +11,7 @@ import StyledSection from "../../sub-components/section";
 import FormDescription from "../../sub-components/form-description";
 import FooterContent from "../../sub-components/footer-content";
 
-import SuccessIcon from "../../../static/reg-success-checkmark.react.svg";
+import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark.react.svg";
 
 import { navigate } from "gatsby";
 
@@ -76,8 +76,7 @@ const SuccessfullyPage = ({ location }) => {
           language={language}
           href={buttonHref}
           labelButton={t("RegistryButtonCreateNow")}
-          headerText={t("AuthDocsDontHave")}
-          toHideButton
+          withoutButton
         />
       </Layout.PageHeader>
       <Layout.SectionMain>

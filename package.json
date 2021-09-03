@@ -1,11 +1,11 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "private": true,
   "scripts": {
     "develop": "gatsby develop -p 9000",
     "start": "gatsby develop -p 9000",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 8082 -s ./static",
@@ -21,6 +21,7 @@
     "gatsby": "^3.9.0",
     "gatsby-cli": "^3.9.0",
     "gatsby-image": "^3.9.0",
+    "gatsby-plugin-asset-path": "^3.0.4",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

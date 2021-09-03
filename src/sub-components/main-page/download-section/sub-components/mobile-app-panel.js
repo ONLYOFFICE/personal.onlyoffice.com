@@ -31,8 +31,8 @@ const MobileAppPanel = ({ currentLanguage }) => {
       <IconButton
         className="download-section-icon-component"
         size="min-content"
-        iconName={`/apps-icons/${currentLanguage}/appstore_white.react.svg`}
-        defaultIcon="/apps-icons/en/appstore_white.react.svg"
+        iconName={`/site-assets/apps-icons/${currentLanguage}/appstore_white.react.svg`}
+        defaultIcon="/site-assets/apps-icons/en/appstore_white.react.svg"
       />
     </Link>,
     <Link
@@ -44,8 +44,8 @@ const MobileAppPanel = ({ currentLanguage }) => {
       <IconButton
         className="download-section-icon-component"
         size="min-content"
-        iconName={`/apps-icons/${currentLanguage}/googleplay_white.react.svg`}
-        defaultIcon="/apps-icons/en/googleplay_white.react.svg"
+        iconName={`/site-assets/apps-icons/${currentLanguage}/googleplay_white.react.svg`}
+        defaultIcon="/site-assets/apps-icons/en/googleplay_white.react.svg"
       />
     </Link>,
   ];
@@ -64,7 +64,7 @@ const MobileAppPanel = ({ currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="mobile-app-img panel-image"
-        imgUrl={`/info-screenshots/${currentLanguage}/mobile.png`}
+        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/mobile.png`}
       />
     </InfoPanel>
   );

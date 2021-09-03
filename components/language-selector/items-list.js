@@ -50,7 +50,11 @@ export default function LangsList(props) {
       return (
         <StyledItem key={key}>
           <Link to={`${localizedPath}`}>
-            <img src={`/flags/${iconName}`} alt={key} width="18px" />
+            <img
+              src={`/site-assets/flags/${iconName}`}
+              alt={key}
+              width="18px"
+            />
             <Text as="span" className="title-lng">
               {t(key)}
             </Text>
@@ -75,7 +79,7 @@ export default function LangsList(props) {
               {t("ChooseLanguage")}
             </Text>
             <IconButton
-              iconName="/close-icon/close.react.svg"
+              iconName="/site-assets/icons/close.react.svg"
               className="close-button-img"
               size="14px"
               onClick={onCloseSelector}

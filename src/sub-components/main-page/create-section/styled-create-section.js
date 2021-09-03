@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import HomeSection from "../../home-section";
 
 const backgroundStyle = css`
-  background-image: url("/background-homepage.svg");
+  background-image: url("/site-assets/backgrounds/background-homepage.svg");
   background-repeat: no-repeat;
   background-position: bottom;
 

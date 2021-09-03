@@ -28,9 +28,7 @@ const EmailActivationPage = ({ location }) => {
       if (res.isValidLink) {
         const [email, uid] = [linkData.email, linkData.uid];
         const confirmHeader = getConfirmHeader(location);
-
         logout();
-
         changeEmail(uid, email, confirmHeader)
           .then((res) => {
             navigate("/", {
@@ -79,7 +77,7 @@ const EmailActivationPage = ({ location }) => {
         <HeaderContent t={t} language={language} withoutButton />
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <StyledSection></StyledSection>
+        <StyledSection style={{ height: "100vh" }}></StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent t={t} />

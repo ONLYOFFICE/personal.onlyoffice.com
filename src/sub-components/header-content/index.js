@@ -2,7 +2,7 @@ import React from "react";
 
 import StyledHeaderContent from "./styled-header-content";
 import LanguageSelector from "../../../components/language-selector";
-import HeaderLogo from "../../../static/icons/header-logo.react.svg";
+import HeaderLogo from "../../../static/site-assets/icons/header-logo.react.svg";
 import Button from "../../../components/button";
 import Text from "../../../components/text";
 import Link from "../../../components/internal-link";

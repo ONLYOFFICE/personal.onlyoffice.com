@@ -10,7 +10,7 @@ const StyledPasswordInput = styled.div`
     position: absolute;
     top: 32%;
     right: 16px;
-
+    z-index: 2;
     outline: none;
     -webkit-tap-highlight-color: transparent;
   }

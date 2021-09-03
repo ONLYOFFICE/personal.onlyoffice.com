@@ -4,15 +4,15 @@ import { ReactSVG } from "react-svg";
 import StyledStar from "./styled-star";
 
 const Star = ({ className, ...rest }) => {
-  return(
-        <StyledStar>
-            <ReactSVG 
-                src={`/icons/star.react.svg`} 
-                className={className}
-                wrapper="svg"
-             />
-        </StyledStar>
-        );
+  return (
+    <StyledStar>
+      <ReactSVG
+        src={`/site-assets/icons/star.react.svg`}
+        className={className}
+        wrapper="svg"
+      />
+    </StyledStar>
+  );
 };
 
 Star.propTypes = {

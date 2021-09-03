@@ -14,7 +14,7 @@ import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
 import SocialButtons from "../../sub-components/social-buttons";
 
-import { getSettings, login, getUser } from "../../api";
+import { getSettings, login } from "../../api";
 
 import { createPasswordHash } from "../../helpers/";
 
@@ -92,13 +92,6 @@ const SignInPage = ({ location }) => {
 
     if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
-        .then(getUser)
-        // .then((user) => {
-        //   // const currentLanguage = languages.find(
-        //   //   (el) => el.shortKey === language
-        //   // );
-        //   // updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
-        // })
         .then(() => window.open("/", "_self"))
         .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {
@@ -182,7 +175,7 @@ const SignInPage = ({ location }) => {
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
           metaKeywords={t("AuthDocsMetaKeywords")}
-          title={t("AuthDocsTitlePage")}
+          title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>

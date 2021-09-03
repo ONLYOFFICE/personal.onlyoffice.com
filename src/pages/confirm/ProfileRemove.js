@@ -11,12 +11,12 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { deleteSelf } from "../../api";
+import { deleteSelf, logout } from "../../api";
 import FormDescription from "../../sub-components/form-description";
 import Link from "../../../components/link";
 
-import SuccessIcon from "../../../static/reg-success-checkmark.react.svg";
-import AttentionIcon from "../../../static/attention.react.svg";
+import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark.react.svg";
+import AttentionIcon from "../../../static/site-assets/icons/attention.react.svg";
 
 import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
 
@@ -44,6 +44,8 @@ const ProfileRemovePage = ({ location }) => {
 
   const onSubmitHandler = () => {
     const confirmHeader = getConfirmHeader(location);
+    logout();
+
     deleteSelf(confirmHeader)
       .then((res) => {
         setIsProfileDeleted(true);
@@ -109,7 +111,7 @@ const ProfileRemovePage = ({ location }) => {
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
           metaKeywords={t("AuthDocsMetaKeywords")}
-          title={t("AuthDocsTitlePage")}
+          title={t("ConfirmTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>

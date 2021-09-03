@@ -32,6 +32,9 @@ const StyledReview = styled(HomeSection)`
   }
 
   @media (max-width: 1024px) {
+    .review-heading {
+      font-size: 30px;
+    }
     .review-panel-block {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -55,8 +58,13 @@ const StyledReview = styled(HomeSection)`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 592px) {
+    padding-bottom: 68px;
+    padding-top: 40px;
+
     .review-panel-block {
+      display: grid;
+      grid-template-columns: 1fr;
       width: 100%;
       margin: 0 auto;
       padding: 12px 0 8px 0;
@@ -64,14 +72,6 @@ const StyledReview = styled(HomeSection)`
 
     .review-heading {
       font-size: 18px;
-    }
-  }
-
-  @media (max-width: 578px) {
-    padding-bottom: 68px;
-    .review-panel-block {
-      display: grid;
-      grid-template-columns: 1fr;
     }
   }
 `;

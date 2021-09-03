@@ -63,6 +63,10 @@ const StyledCarousel = styled.div`
             .slick-prev {
               left: calc(50% - 550px);
               z-index: 1;
+              margin-top: 28px;
+            }
+
+            .slick-prev::before {
               transform: rotate(135deg);
             }
 

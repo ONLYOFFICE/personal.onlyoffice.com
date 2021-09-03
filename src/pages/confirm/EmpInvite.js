@@ -11,13 +11,22 @@ import FormDescription from "../../sub-components/form-description";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
 
-import { getSettings, createUser, login } from "../../api";
+import {
+  getSettings,
+  createUser,
+  login,
+  logout,
+  getUser,
+  updateUserCulture,
+} from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
   getConfirmHeader,
   checkingConfirmLink,
 } from "../../helpers";
+
+import languages from "../../../languages.json";
 
 const EmpInvitePage = ({ location }) => {
   const [firstName, setFirstName] = useState("");
@@ -28,18 +37,18 @@ const EmpInvitePage = ({ location }) => {
 
   const [firstNameValid, setFirstNameValid] = useState(true);
   const [lastNameValid, setLastNameValid] = useState(true);
-  const [firstNameIsSuccess, setFirstNameIsSuccess] = useState(false);
-  const [lastNameIsSuccess, setLastNameIsSuccess] = useState(false);
 
-  const [isEmptyFirstName, setIsEmptyFirstName] = useState(null);
-  const [isEmptyLastName, setIsEmptyLastName] = useState(null);
-  const [isEmptyPassword, setIsEmptyPassword] = useState(null);
+  const [isEmptyFirstName, setIsEmptyFirstName] = useState(true);
+  const [isEmptyLastName, setIsEmptyLastName] = useState(true);
+  const [isEmptyPassword, setIsEmptyPassword] = useState(true);
 
   useEffect(() => {
-    getSettings()
-      .then((res) => {
-        setHashSettings(res.passwordHash);
-      })
+    logout()
+      .then(() =>
+        getSettings().then((res) => {
+          setHashSettings(res.passwordHash);
+        })
+      )
       .catch((e) => console.error(e));
   }, []);
 
@@ -101,19 +110,24 @@ const EmpInvitePage = ({ location }) => {
     return user;
   };
 
+  const checkString = (string) => {
+    const regex = /\d/g;
+    return regex.test(string);
+  };
+
   const firstNameOnBlurHandler = () => {
-    if (!!firstName.trim()) {
-      setFirstNameIsSuccess(true);
+    if (!!firstName.trim() && !checkString(firstName)) {
+      setFirstNameValid(true);
     } else {
-      setFirstNameIsSuccess(false);
+      setFirstNameValid(false);
     }
   };
 
   const lastNameOnBlurHandler = () => {
-    if (!!lastName.trim()) {
-      setLastNameIsSuccess(true);
+    if (!!lastName.trim() && !checkString(lastName)) {
+      setLastNameValid(true);
     } else {
-      setLastNameIsSuccess(false);
+      setLastNameValid(false);
     }
   };
 
@@ -158,6 +172,13 @@ const EmpInvitePage = ({ location }) => {
     };
 
     createConfirmUser(personalData, loginData, confirmHeader)
+      .then(getUser)
+      .then((user) => {
+        const currentLanguage = languages.find(
+          (el) => el.shortKey === language
+        );
+        updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+      })
       .then(() => window.location.replace("/"))
       .catch((error) => {
         toastr.error(`${error}`);
@@ -185,7 +206,7 @@ const EmpInvitePage = ({ location }) => {
       autoComplete: "given-name",
       isError: !firstNameValid,
       onBlur: firstNameOnBlurHandler,
-      isSuccess: firstNameIsSuccess,
+      isSuccess: firstNameValid && !isEmptyFirstName,
       errorText: isEmptyFirstName ? t("AuthErrorIndicationText") : null,
     },
     {
@@ -198,7 +219,7 @@ const EmpInvitePage = ({ location }) => {
       autoComplete: "family-name",
       isError: !lastNameValid,
       onBlur: lastNameOnBlurHandler,
-      isSuccess: lastNameIsSuccess,
+      isSuccess: lastNameValid && !isEmptyLastName,
       errorText: isEmptyLastName ? t("AuthErrorIndicationText") : null,
     },
     {
@@ -228,7 +249,7 @@ const EmpInvitePage = ({ location }) => {
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
           metaKeywords={t("AuthDocsMetaKeywords")}
-          title={t("AuthDocsTitlePage")}
+          title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>
@@ -237,7 +258,11 @@ const EmpInvitePage = ({ location }) => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <StyledSection>
-          <Form formData={formData} className="login-form" />
+          <Form
+            formData={formData}
+            submitForm={onSubmitHandler}
+            className="login-form"
+          />
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>

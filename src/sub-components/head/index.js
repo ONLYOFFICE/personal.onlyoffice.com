@@ -30,17 +30,21 @@ const Head = (props) => {
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-      ></meta>
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+      />
       <meta id="ctl00_MetaKeywords" name="keywords" content={metaKeywords} />
       <meta name="description" content={metaDescription} />
-      <link rel="manifest" href="static/manifest.json" />
       <link
         rel="alternate"
         type="application/atom+xml"
         title="Teamlab Portal"
         href="https://personal.onlyoffice.com/services/whatsnew/feed.ashx?c=Teamlab+Portal"
       />
+      <link
+        rel="icon"
+        href="/site-assets/logo/favicon_general.png"
+        type="image/x-icon"
+      ></link>
 
       {languages.map((lng) => {
         const { key, shortKey } = lng;

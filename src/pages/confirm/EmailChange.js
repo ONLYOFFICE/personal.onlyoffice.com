@@ -30,15 +30,8 @@ const EmailChangePage = ({ location }) => {
         const { email } = params;
         getUser(email)
           .then((user) => {
-            changeEmail(params.key, email, confirmHeader).then((res) => {
-              navigate("/", {
-                state: {
-                  toastr: {
-                    success: true,
-                    text: t("EmailChanged"),
-                  },
-                },
-              });
+            changeEmail(user.id, email, confirmHeader).then((res) => {
+              window.open("/", "_self");
             });
           })
           .catch((e) => {
@@ -78,7 +71,7 @@ const EmailChangePage = ({ location }) => {
         <HeaderContent t={t} language={language} withoutButton />
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <StyledSection></StyledSection>
+        <StyledSection style={{ height: "100vh" }}></StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>
         <FooterContent t={t} />
