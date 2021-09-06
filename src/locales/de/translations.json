@@ -47,5 +47,11 @@
   "CollaborationSlideSecitonCarouselHeading": "Online zusammenarbeiten",
   "CollaborationSlideSectionCarouselText": "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein.",
   "DownloadExtensionChrome": "Greifen Sie auf ONLYOFFICE Personal einfacher zu. <1>Erhalten Sie die Chrome-Erweiterung für schnelleren Zugriff.</1>",
-  "CreateFormHeader": "Kostenloses Office erstellen"
+  "CreateFormHeader": "Kostenloses Office erstellen",
+  "ProviderNotConnected": "Der Anbieter ist nicht mit Ihrem Konto verbunden",
+  "ConfirmJoinDescription": "Sie haben die Registrierung erfolgreich bestätigt. Erstellen Sie ein Kennwort und beginnen Sie mit der Arbeit!",
+  "FirstName": "Vorname",
+  "LastName": "Nachname",
+  "Password": "Kennwort",
+  "Join": "Beitreten"
 }

@@ -8,6 +8,7 @@
   "AuthDocsEnterViaSocial": "Or enter via your social networks",
   "AuthDocsForgotPswd": "Forgot password?",
   "AuthDocsHearTheWeb": "Hear the web",
+  "AuthDocsSoftpedia": "Softpedia",
   "AuthDocsLogIn": "Login",
   "AuthDocsMetaDescription": "ONLYOFFICE Personal is a free online editing suite for text documents, spreadsheets and presentations with an individual cloud storage.",
   "AuthDocsMetaKeywords": "edit word online, word editor online, word online free, word office online",
@@ -109,5 +110,6 @@
   "DeleteProfileSuccess": "Profile deleted successfully",
   "SuccessChangePassword": "Password changed",
   "AuthorizationTitle": "Authorization - ONLYOFFICE",
-  "ConfirmTitle": "Confirmation - ONLYOFFICE"
+  "ConfirmTitle": "Confirmation - ONLYOFFICE",
+  "ProviderNotConnected": "Provider is not connected to your account"
 }

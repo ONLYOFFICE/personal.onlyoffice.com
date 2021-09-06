@@ -68,5 +68,6 @@
   "IncorrectEmail": "Неверный адрес электронной почты",
   "AuthorizationTitle": "Авторизация - ONLYOFFICE",
   "ConfirmTitle": "Подтверждение - ONLYOFFICE",
-  "ConfirmPasswordChangeTitle": "Теперь вы можете создать новый пароль."
+  "ConfirmPasswordChangeTitle": "Теперь вы можете создать новый пароль.",
+  "ProviderNotConnected": "Провайдер не подключен к вашему аккаунту"
 }

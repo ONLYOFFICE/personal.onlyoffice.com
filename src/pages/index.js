@@ -55,7 +55,10 @@ const IndexPage = ({ location }) => {
         <CarouselSection t={t} language={language} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
         <DownloadSection t={t} language={language} />
-        <BlockquoteSection text={t("SoftpediaDescription")} />
+        <BlockquoteSection
+          text={t("SoftpediaDescription")}
+          linkText={t("AuthDocsSoftpedia")}
+        />
         <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>

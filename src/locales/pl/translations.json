@@ -29,5 +29,10 @@
   "PresSlideSectionCarouselText": "Wizualizuj swoje pomysły i z łatwością prezentuj je odbiorcom.",
   "CollaborationSlideSecitonCarouselHeading": "Współpracuj przez Internet",
   "CollaborationSlideSectionCarouselText": "Zaproś, kogokolwiek zechcesz do wspólnej edycji lub samodzielnego sprawdzenia dokumentów.",
-  "CreateFormHeader": "Utwórz bezpłatne biuro"
+  "CreateFormHeader": "Utwórz bezpłatne biuro",
+  "ConfirmJoinDescription": "Potwierdzasz rejestrację. Utwórz hasło i rozpocznij pracę!",
+  "FirstName": "Imię",
+  "LastName": "Nazwisko",
+  "Password": "Hasło",
+  "Join": "Przyłączyć się"
 }

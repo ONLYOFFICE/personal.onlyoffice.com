@@ -28,5 +28,10 @@
   "PresSlideSectionCarouselText": "Ilmaise ideasi ja esitä ne yleisölle vaivatta.",
   "CollaborationSlideSecitonCarouselHeading": "Tee yhteistyötä verkossa",
   "CollaborationSlideSectionCarouselText": "Kutsu kenet tahansa muokkaamaan asiakirjoja samaan aikaan tai pyydä arvioimaan työsi.",
-  "CreateFormHeader": "Luo ilmainen toimisto"
+  "CreateFormHeader": "Luo ilmainen toimisto",
+  "ConfirmJoinDescription": "Olet onnistuneesti vahvistanut rekisteröitymisesi. Määritä salasana ja aloita sivuston käyttö!",
+  "FirstName": "Etunimi",
+  "LastName": "Sukunimi",
+  "Password": "Salasana",
+  "Join": "Liity"
 }

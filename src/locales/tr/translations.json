@@ -29,5 +29,10 @@
   "PresSlideSectionCarouselText": "Fikirlerinizi ortaya koyun ve hedef kitlenize kolayca sunun.",
   "CollaborationSlideSecitonCarouselHeading": "Çevrimiçi işbirliği yapın",
   "CollaborationSlideSectionCarouselText": "Belgeleri birlikte düzenlemek veya çalışmanız hakkında yorum almak için istediğiniz kişiyi davet edin.",
-  "CreateFormHeader": "Ücretsiz ofis oluşturun"
+  "CreateFormHeader": "Ücretsiz ofis oluşturun",
+  "ConfirmJoinDescription": "Kaydınızı başarıyla onayladınız. Şifre oluşturun ve çalışmaya başlayın!",
+  "FirstName": "İsim",
+  "LastName": "Soyadı",
+  "Password": "Şifre",
+  "Join": "Katıl"
 }

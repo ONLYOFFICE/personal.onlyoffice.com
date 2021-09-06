@@ -31,5 +31,10 @@
   "PresSlideSectionCarouselHeading": "创建演示文稿",
   "PresSlideSectionCarouselText": "表达您的想法，并将其轻松地呈现给观众。",
   "CollaborationSlideSecitonCarouselHeading": "在线协作",
-  "CollaborationSlideSectionCarouselText": "邀请任何人共同编辑文档，或接收有关工作的评价意见。"
+  "CollaborationSlideSectionCarouselText": "邀请任何人共同编辑文档，或接收有关工作的评价意见。",
+  "ConfirmJoinDescription": "您已成功确认注册。创建密码并开始工作！",
+  "FirstName": "名字",
+  "LastName": "姓",
+  "Password": "密码",
+  "Join": "加入"
 }

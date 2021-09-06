@@ -3,9 +3,7 @@ import Link from "../../../../components/link";
 import Text from "../../../../components/text";
 import StyledBlockquote from "./styled-blockquote";
 
-const Blockquote = (props) => {
-  const { text } = props;
-
+const Blockquote = ({ text, linkText }) => {
   return (
     <StyledBlockquote>
       <Text
@@ -23,7 +21,7 @@ const Blockquote = (props) => {
         href="https://webapps.softpedia.com/app/OnlyOffice-Personal/"
         type="external"
       >
-        Softpedia
+        {linkText}
       </Link>
     </StyledBlockquote>
   );

@@ -19,5 +19,8 @@
   "PresSlideSectionCarouselText": "Εκφράστε τις ιδέες σας και παρουσιάστε τις στο κοινό εύκολα.",
   "CollaborationSlideSecitonCarouselHeading": "Συνεργαστείτε στο διαδίκτυο",
   "CollaborationSlideSectionCarouselText": "Προσκαλέστε όποιον θέλετε για να επεξεργαστείτε τα έγγραφα μαζί ή να λάβετε κριτικές σχετικά με την εργασία σας.",
-  "CreateFormHeader": "Δημιουργήστε ένα δωρεάν γραφείο"
+  "CreateFormHeader": "Δημιουργήστε ένα δωρεάν γραφείο",
+  "FirstName": "Όνομα",
+  "LastName": "Επώνυμο",
+  "Password": "Συνθηματικό"
 }

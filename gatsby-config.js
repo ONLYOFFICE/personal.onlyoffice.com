@@ -1,5 +1,5 @@
 const languages = require("./languages.json");
-const { defaultLanguage } = require("./config.json");
+const { defaultLanguage, customAssetPrefix } = require("./config.json");
 
 const availableLanguages = languages.map((el) => el.shortKey);
 
@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: "https://www.personal.onlyoffice.com",
     title: "personal-gatsby",
   },
-  assetPrefix: "site-assets",
+  assetPrefix: customAssetPrefix,
   plugins: [
     { resolve: "gatsby-plugin-styled-components" },
     { resolve: "gatsby-plugin-image" },
@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "./static/site-assets/logo/favicon_general.png",
+        icon: `./static/${customAssetPrefix}/logo/favicon_general.png`,
 
         name: `personal.onlyoffice.com`,
         short_name: `Personal`,

@@ -29,5 +29,10 @@
   "PresSlideSectionCarouselText": "Druk uw ideeën uit en presenteer ze gemakkelijk aan het publiek.",
   "CollaborationSlideSecitonCarouselHeading": "Werk online samen",
   "CollaborationSlideSectionCarouselText": "Nodig iedereen uit om samen documenten te bewerken of beoordelingen op uw werk te krijgen.",
-  "CreateFormHeader": "Maak gratis office"
+  "CreateFormHeader": "Maak gratis office",
+  "ConfirmJoinDescription": "U heeft uw registratie succesvol bevestigd. Maak een wachtwoord aan en start uw werk!",
+  "FirstName": "Voornaam",
+  "LastName": "Familienaam",
+  "Password": "Wachtwoord",
+  "Join": "Aansluiten"
 }

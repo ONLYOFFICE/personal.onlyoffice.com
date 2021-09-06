@@ -29,5 +29,10 @@
   "PresSlideSectionCarouselText": "Thể hiện và trình bày ý tưởng của bạn cho người xem một cách dễ dàng.",
   "CollaborationSlideSecitonCarouselHeading": "Cùng làm việc trực tuyến",
   "CollaborationSlideSectionCarouselText": "Mời bất kỳ ai cùng chỉnh sửa tài liệu hoặc nhận đánh giá đối với công việc của bạn.",
-  "CreateFormHeader": "Tạo văn phòng miễn phí"
+  "CreateFormHeader": "Tạo văn phòng miễn phí",
+  "ConfirmJoinDescription": "Bạn đã xác nhận đăng ký thành công. Tạo mật khẩu và bắt đầu công việc của bạn!",
+  "FirstName": "Tên",
+  "LastName": "Họ",
+  "Password": "Mật khẩu",
+  "Join": "Tham gia"
 }

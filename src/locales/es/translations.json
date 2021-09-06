@@ -44,5 +44,10 @@
   "PresSlideSectionCarouselText": "Expresa tus ideas y preséntalas al público con facilidad.",
   "CollaborationSlideSecitonCarouselHeading": "Colabora online",
   "CollaborationSlideSectionCarouselText": "Invita a cualquier persona a editar documentos juntos o a hacer revisiones en tu trabajo.",
-  "CreateFormHeader": "Crea tu oficina gratis"
+  "CreateFormHeader": "Crea tu oficina gratis",
+  "ConfirmJoinDescription": "Usted ha confirmado su registro. ¡Cree una contraseña y empiece a trabajar!",
+  "FirstName": "Nombre",
+  "LastName": "Apellido",
+  "Password": "Contraseña",
+  "Join": "Unirse"
 }

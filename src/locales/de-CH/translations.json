@@ -44,5 +44,11 @@
   "PresSlideSectionCarouselText": "Stellen Sie Ihre Ideen dem Publikum einfacher vor.",
   "CollaborationSlideSecitonCarouselHeading": "Online zusammenarbeiten",
   "CollaborationSlideSectionCarouselText": "Laden Sie neue Benutzer für gemeinsame Bearbeitung oder Überprüfung eines Dokuments ein.",
-  "CreateFormHeader": "Kostenloses Office erstellen"
+  "CreateFormHeader": "Kostenloses Office erstellen",
+  "ProviderNotConnected": "Der Anbieter ist nicht mit Ihrem Konto verbunden",
+  "ConfirmJoinDescription": "Sie haben die Registrierung erfolgreich bestätigt. Erstellen Sie ein Kennwort und beginnen Sie mit der Arbeit!",
+  "FirstName": "Vorname",
+  "LastName": "Nachname",
+  "Password": "Kennwort",
+  "Join": "Beitreten"
 }

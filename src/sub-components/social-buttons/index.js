@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import SocialButton from "../../../components/social-button";
 import { getAuthProviders } from "../../api";
 import toastr from "../../../components/toast/toastr";
@@ -25,15 +25,18 @@ const providersIcons = [
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
 
-  const authCallback = (profile) => {
-    thirdPartyLogin(profile.Serialized)
-      .then(() => {
-        window.location.href = "/";
-      })
-      .catch(() => {
-        toastr.error("ProviderNotConnected");
-      });
-  };
+  const authCallback = useCallback(
+    (profile) => {
+      thirdPartyLogin(profile.Serialized)
+        .then(() => {
+          window.location.href = "/";
+        })
+        .catch(() => {
+          toastr.error(t("ProviderNotConnected"));
+        });
+    },
+    [t]
+  );
   useEffect(() => {
     window.authCallback = authCallback;
     getAuthProviders()
@@ -41,7 +44,7 @@ const SocialButtons = ({ t, isDisabled }) => {
         setProviders(providers);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [authCallback]);
 
   const getLoginLink = (token, code) => {
     return `/login.ashx?p=${token}&code=${code}`;

@@ -30,5 +30,10 @@
   "PresSlideSectionCarouselText": "Виражайте свої ідеї та легко презентуйте їх аудиторії.",
   "CollaborationSlideSecitonCarouselHeading": "Онлайн-співпраця",
   "CollaborationSlideSectionCarouselText": "Запросіть будь-яку особу до спільного редагування документів або рецензування вашої роботи.",
-  "CreateFormHeader": "Створити безкоштовний офіс"
+  "CreateFormHeader": "Створити безкоштовний офіс",
+  "ConfirmJoinDescription": "Ви успішно підтвердили свою реєстрацію. Вигадайте пароль і розпочніть свою роботу!",
+  "FirstName": "Ім'я",
+  "LastName": "Прізвище",
+  "Password": "Пароль",
+  "Join": "Приєднатися"
 }

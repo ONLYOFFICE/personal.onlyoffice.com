@@ -29,5 +29,10 @@
   "PresSlideSectionCarouselText": "Izrazite svoje ideje in jih predstavite na enostaven način občinstvu.",
   "CollaborationSlideSecitonCarouselHeading": "Sodelujte na spletu",
   "CollaborationSlideSectionCarouselText": "Povabite druge k urejanju dokumenta ali poiščite ocene svojega dela.",
-  "CreateFormHeader": "Ustvari brezplačno pisarno"
+  "CreateFormHeader": "Ustvari brezplačno pisarno",
+  "ConfirmJoinDescription": "Uspešno ste potrdili svojo registracijo. Ustvarite geslo in začnite svoje delo!",
+  "FirstName": "Ime",
+  "LastName": "Priimek",
+  "Password": "Geslo",
+  "Join": "Pridruži se"
 }

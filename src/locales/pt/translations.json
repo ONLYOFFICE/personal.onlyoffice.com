@@ -5,5 +5,8 @@
   "AuthDocsLogIn": "Entrar",
   "AuthDocsSignIn": "Assinar",
   "AuthDocsWorkWithDocs": "Trabalhe com documentos mesmo enquanto viaja com os <1>Documentos gratuitos da ONLYOFFICE</1>.",
-  "AuthDocsTitle": "O teu escritório pessoal online"
+  "AuthDocsTitle": "O teu escritório pessoal online",
+  "FirstName": "Primeiro nome",
+  "LastName": "Último nome",
+  "Password": "Senha"
 }

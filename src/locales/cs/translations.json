@@ -28,5 +28,10 @@
   "PresSlideSectionCarouselText": "Vyjadřujte své myšlenky a prezentujte je snadno publiku.",
   "CollaborationSlideSecitonCarouselHeading": "Spolupracujte online",
   "CollaborationSlideSectionCarouselText": "Pozvěte kohokoli ke společným úpravám dokumentů nebo získejte recenze na svou práci.",
-  "CreateFormHeader": "Vytvoření bezplatné kanceláře"
+  "CreateFormHeader": "Vytvoření bezplatné kanceláře",
+  "ConfirmJoinDescription": "Úspěšně jste potvrdili svou registraci. Vytvořte heslo a začněte pracovat!",
+  "FirstName": "Křestní jméno",
+  "LastName": "Příjmení",
+  "Password": "Heslo",
+  "Join": "Připojit"
 }

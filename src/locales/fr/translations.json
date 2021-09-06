@@ -46,5 +46,10 @@
   "CollaborationSlideSectionCarouselText": "Invitez les collègues à éditer les documents ou sollicitez leurs avis sur votre travail.",
   "DownloadExtensionChrome": "AAccédez rapidement à ONLYOFFICE personal. <1>Obtenez une extension Chrome pour un accès rapide.</1>",
   "SoftpediaDescription": "ONLYOFFICE Personal est une suite des éditeurs en ligne offrant tous les outils nécessaires pour créer les documents texte, les classeurs et les présentations compatibles avec Microsoft et les coéditer en temps réel.",
-  "CreateFormHeader": "Créez votre bureau gratuit"
+  "CreateFormHeader": "Créez votre bureau gratuit",
+  "ConfirmJoinDescription": "Votre inscription a été complétée avec succès. Créez un mot de passe et commencez votre travail !",
+  "FirstName": "Prénom",
+  "LastName": "Nom",
+  "Password": "Mot de passe",
+  "Join": "S'inscrire"
 }

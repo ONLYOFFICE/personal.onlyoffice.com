@@ -4,5 +4,6 @@
         "timeout": "30000"
     },
     "appServerUrl": "",
-    "defaultLanguage": "en"
+    "defaultLanguage": "en",
+    "customAssetPrefix": "site-assets"
 }

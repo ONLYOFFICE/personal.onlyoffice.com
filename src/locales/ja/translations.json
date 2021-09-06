@@ -39,5 +39,10 @@
   "PresSlideSectionCarouselText": "自分のアイデアを表現し、それを簡単に聴衆に見せられます。",
   "CollaborationSlideSecitonCarouselHeading": "オンラインでのコラボレーション",
   "CollaborationSlideSectionCarouselText": "どなたを招待して一緒に文書を編集したり、自分の作品のレビューを受けたりすることが可能です。",
-  "CreateFormHeader": "自由なオフィスづくり"
+  "CreateFormHeader": "自由なオフィスづくり",
+  "ConfirmJoinDescription": "登録は正常に承認されました。パスワードを作成して、仕事し始めます！",
+  "FirstName": "名",
+  "LastName": "姓",
+  "Password": "パスワード",
+  "Join": "参加する"
 }

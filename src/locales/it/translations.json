@@ -40,5 +40,10 @@
   "PresSlideSectionCarouselText": "Esprimi le tue idee e presentale al pubblico facilmente.",
   "CollaborationSlideSecitonCarouselHeading": "Collabora in tempo reale",
   "CollaborationSlideSectionCarouselText": "Invita chiunque a modificare i documenti insieme o ottieni recensioni sul tuo lavoro.",
-  "CreateFormHeader": "Crea account ONLYOFFICE"
+  "CreateFormHeader": "Crea account ONLYOFFICE",
+  "ConfirmJoinDescription": "La tua iscrizione è stata copletata con successo. Crea la password e inzia a lavorare!",
+  "FirstName": "Nome",
+  "LastName": "Cognome",
+  "Password": "Password",
+  "Join": "Accedi"
 }

@@ -46,5 +46,10 @@
   "PresSlideSectionCarouselText": "Expresse suas ideias e as apresente para o público facilmente.",
   "CollaborationSlideSecitonCarouselHeading": "Colaborar online",
   "CollaborationSlideSectionCarouselText": "Convide qualquer pessoa para editar documentos em conjunto ou obter revisões de seu trabalho.",
-  "CreateFormHeader": "Crie office grátis"
+  "CreateFormHeader": "Crie office grátis",
+  "ConfirmJoinDescription": "Você confirmou seu registro com sucesso. Crie uma senha e comece seu trabalho!",
+  "FirstName": "Nome",
+  "LastName": "Sobrenome",
+  "Password": "Senha",
+  "Join": "Aderir"
 }
