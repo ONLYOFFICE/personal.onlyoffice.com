@@ -8,5 +8,8 @@
   "AuthDocsTitle": "O teu escritório pessoal online",
   "FirstName": "Primeiro nome",
   "LastName": "Último nome",
-  "Password": "Senha"
+  "Password": "Senha",
+  "InvalidUserNameOrPwd": "Nome de utilizador ou senha inválidos.",
+  "Email": "Email",
+  "Remember": "Lembrar"
 }

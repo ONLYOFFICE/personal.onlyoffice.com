@@ -36,5 +36,7 @@
   "FirstName": "名字",
   "LastName": "姓",
   "Password": "密码",
-  "Join": "加入"
+  "Join": "加入",
+  "InvalidUserNameOrPwd": "用户名或密码无效。",
+  "Remember": "记住"
 }

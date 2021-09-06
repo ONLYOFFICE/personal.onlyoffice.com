@@ -49,5 +49,7 @@
   "FirstName": "Nombre",
   "LastName": "Apellido",
   "Password": "Contraseña",
-  "Join": "Unirse"
+  "Join": "Unirse",
+  "InvalidUserNameOrPwd": "Nombre de usuario o contraseña inválida",
+  "Remember": "Recordar"
 }

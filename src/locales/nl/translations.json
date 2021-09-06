@@ -34,5 +34,8 @@
   "FirstName": "Voornaam",
   "LastName": "Familienaam",
   "Password": "Wachtwoord",
-  "Join": "Aansluiten"
+  "Join": "Aansluiten",
+  "InvalidUserNameOrPwd": "Ongeldige gebruikersnaam of wachtwoord.",
+  "Email": "E-mail",
+  "Remember": "Onthouden"
 }

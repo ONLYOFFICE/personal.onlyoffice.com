@@ -34,5 +34,8 @@
   "FirstName": "İsim",
   "LastName": "Soyadı",
   "Password": "Şifre",
-  "Join": "Katıl"
+  "Join": "Katıl",
+  "InvalidUserNameOrPwd": "Geçersiz kullanıcı adı veya şifre.",
+  "Email": "E-posta",
+  "Remember": "Hatırla"
 }

@@ -51,5 +51,7 @@
   "FirstName": "Nome",
   "LastName": "Sobrenome",
   "Password": "Senha",
-  "Join": "Aderir"
+  "Join": "Aderir",
+  "InvalidUserNameOrPwd": "Nome de usuário ou senha inválida.",
+  "Remember": "Lembrar"
 }

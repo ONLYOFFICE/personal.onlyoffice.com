@@ -51,5 +51,7 @@
   "FirstName": "Prénom",
   "LastName": "Nom",
   "Password": "Mot de passe",
-  "Join": "S'inscrire"
+  "Join": "S'inscrire",
+  "InvalidUserNameOrPwd": "Nom d'utilisateur ou mot de passe non valide(s).",
+  "Remember": "Rappeler"
 }

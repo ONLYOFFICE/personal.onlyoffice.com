@@ -35,5 +35,7 @@
   "FirstName": "Ім'я",
   "LastName": "Прізвище",
   "Password": "Пароль",
-  "Join": "Приєднатися"
+  "Join": "Приєднатися",
+  "InvalidUserNameOrPwd": "Невірний логін або пароль.",
+  "Remember": "Запам'ятати"
 }

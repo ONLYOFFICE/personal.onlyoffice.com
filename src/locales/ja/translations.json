@@ -44,5 +44,7 @@
   "FirstName": "名",
   "LastName": "姓",
   "Password": "パスワード",
-  "Join": "参加する"
+  "Join": "参加する",
+  "InvalidUserNameOrPwd": "ユーザ名またはパスワードが無効である。",
+  "Remember": "覚える"
 }

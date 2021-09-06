@@ -45,5 +45,8 @@
   "FirstName": "Nome",
   "LastName": "Cognome",
   "Password": "Password",
-  "Join": "Accedi"
+  "Join": "Accedi",
+  "InvalidUserNameOrPwd": "Nome utente o password non validi.",
+  "Email": "Email",
+  "Remember": "Ricorda"
 }

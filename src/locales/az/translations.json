@@ -1,5 +1,8 @@
 {
     "FirstName": "Ad",
     "LastName": "Soyad",
-    "Password": "Parol"
+    "Password": "Parol",
+    "InvalidUserNameOrPwd": "Etibarsız istifadəçi adı və ya parol",
+    "Email": "Elektron poçt",
+    "Remember": "Yadda saxla"
 }

@@ -34,5 +34,7 @@
   "FirstName": "Ime",
   "LastName": "Priimek",
   "Password": "Geslo",
-  "Join": "Pridruži se"
+  "Join": "Pridruži se",
+  "InvalidUserNameOrPwd": "Nepravilno uporabniško ime ali geslo",
+  "Email": "e-naslov"
 }

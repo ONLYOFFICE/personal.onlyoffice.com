@@ -53,5 +53,7 @@
   "FirstName": "Vorname",
   "LastName": "Nachname",
   "Password": "Kennwort",
-  "Join": "Beitreten"
+  "Join": "Beitreten",
+  "InvalidUserNameOrPwd": "Ungültiger Name oder Kennwort.",
+  "Remember": "Speichern"
 }

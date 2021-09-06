@@ -22,5 +22,7 @@
   "CreateFormHeader": "Δημιουργήστε ένα δωρεάν γραφείο",
   "FirstName": "Όνομα",
   "LastName": "Επώνυμο",
-  "Password": "Συνθηματικό"
+  "Password": "Συνθηματικό",
+  "InvalidUserNameOrPwd": "Άκυρο όνομα χρήστη ή κωδικός πρόσβασης.",
+  "Remember": "Θυμάμαι"
 }

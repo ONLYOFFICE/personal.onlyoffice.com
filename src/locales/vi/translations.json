@@ -34,5 +34,8 @@
   "FirstName": "Tên",
   "LastName": "Họ",
   "Password": "Mật khẩu",
-  "Join": "Tham gia"
+  "Join": "Tham gia",
+  "InvalidUserNameOrPwd": "Tên người dùng hoặc mật khẩu không chính xác.",
+  "Email": "Email",
+  "Remember": "Ghi nhớ"
 }

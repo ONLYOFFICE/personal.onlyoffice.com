@@ -33,5 +33,7 @@
   "FirstName": "Etunimi",
   "LastName": "Sukunimi",
   "Password": "Salasana",
-  "Join": "Liity"
+  "Join": "Liity",
+  "InvalidUserNameOrPwd": "Virheellinen käyttäjänimi tai salasana.",
+  "Remember": "Muista"
 }

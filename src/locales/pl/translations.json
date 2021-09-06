@@ -34,5 +34,8 @@
   "FirstName": "Imię",
   "LastName": "Nazwisko",
   "Password": "Hasło",
-  "Join": "Przyłączyć się"
+  "Join": "Przyłączyć się",
+  "InvalidUserNameOrPwd": "Nieprawidłowa nazwa użytkownika lub hasło.",
+  "Email": "E-mail",
+  "Remember": "Pamiętaj"
 }

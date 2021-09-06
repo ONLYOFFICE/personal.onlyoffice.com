@@ -33,5 +33,8 @@
   "FirstName": "Křestní jméno",
   "LastName": "Příjmení",
   "Password": "Heslo",
-  "Join": "Připojit"
+  "Join": "Připojit",
+  "InvalidUserNameOrPwd": "Špatné uživatelské jméno nebo heslo.",
+  "Email": "Email",
+  "Remember": "Zapamatovat "
 }

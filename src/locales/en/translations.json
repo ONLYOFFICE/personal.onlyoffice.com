@@ -111,5 +111,6 @@
   "SuccessChangePassword": "Password changed",
   "AuthorizationTitle": "Authorization - ONLYOFFICE",
   "ConfirmTitle": "Confirmation - ONLYOFFICE",
-  "ProviderNotConnected": "Provider is not connected to your account"
+  "ProviderNotConnected": "Provider is not connected to your account",
+  "Remember": "Remember"
 }
