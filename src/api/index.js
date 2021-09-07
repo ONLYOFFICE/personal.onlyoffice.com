@@ -125,3 +125,14 @@ export function logout() {
     url: "/authentication/logout",
   });
 }
+
+export function getPortalPasswordSettings(confirmKey = null) {
+  const options = {
+    method: "get",
+    url: "/settings/security/password",
+  };
+
+  if (confirmKey) options.headers = { confirm: confirmKey };
+
+  return request(options);
+}
