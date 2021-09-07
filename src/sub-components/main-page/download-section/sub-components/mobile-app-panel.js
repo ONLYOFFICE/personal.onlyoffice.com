@@ -11,7 +11,7 @@ import InfoPanel, {
   ButtonGroup,
 } from "../../../../../components/info-panel";
 
-const MobileAppPanel = ({ currentLanguage }) => {
+const MobileAppPanel = ({ currentLanguage, localizedScreenshotPrefix }) => {
   const headingComponent = (
     <Text>
       <Trans i18nKey="AuthDocsWorkWithDocs">
@@ -64,7 +64,7 @@ const MobileAppPanel = ({ currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="mobile-app-img panel-image"
-        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/mobile.png`}
+        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/mobile.png`}
       />
     </InfoPanel>
   );

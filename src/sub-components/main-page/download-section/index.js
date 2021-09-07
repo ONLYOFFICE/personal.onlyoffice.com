@@ -12,7 +12,10 @@ import { getLocalizedImagePrefix } from "../../../helpers";
 const localizedImages = ["ru", "de", "fr", "en"];
 
 const DownloadSection = ({ t, language }) => {
-  const prefix = getLocalizedImagePrefix(localizedImages, language);
+  const localizedScreenshotPrefix = getLocalizedImagePrefix(
+    localizedImages,
+    language
+  );
 
   return (
     <StyledDownloadSection background="#f9f9f9">
@@ -22,17 +25,19 @@ const DownloadSection = ({ t, language }) => {
       <ChromeExtensionPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={prefix}
+        currentLanguage={language}
+        localizedScreenshotPrefix={localizedScreenshotPrefix}
       />
       <DesktopAppPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={prefix}
+        localizedScreenshotPrefix={localizedScreenshotPrefix}
       />
       <MobileAppPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={prefix}
+        currentLanguage={language}
+        localizedScreenshotPrefix={localizedScreenshotPrefix}
       />
     </StyledDownloadSection>
   );

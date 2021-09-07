@@ -1,5 +1,4 @@
 import React from "react";
-import { Trans } from "gatsby-plugin-react-i18next";
 
 import InfoPanel, {
   ImageGroup,
@@ -10,7 +9,11 @@ import Text from "../../../../../components/text";
 import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
 
-const ChromeExtensionPanel = ({ currentLanguage, t }) => {
+const ChromeExtensionPanel = ({
+  currentLanguage,
+  t,
+  localizedScreenshotPrefix,
+}) => {
   const extensionText = t("DownloadExtensionChrome");
   const header = t("DownloadExtensionHeader");
 
@@ -47,7 +50,7 @@ const ChromeExtensionPanel = ({ currentLanguage, t }) => {
       </ButtonGroup>
       <ImageGroup
         className="extension-img panel-image"
-        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/extension.png`}
+        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/extension.png`}
       />
     </InfoPanel>
   );

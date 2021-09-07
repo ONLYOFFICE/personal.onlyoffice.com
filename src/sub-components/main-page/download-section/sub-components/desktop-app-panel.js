@@ -11,7 +11,7 @@ import InfoPanel, {
   ButtonGroup,
 } from "../../../../../components/info-panel";
 
-const DesktopAppPanel = ({ t, currentLanguage }) => {
+const DesktopAppPanel = ({ t, localizedScreenshotPrefix }) => {
   const headingComponent = (
     <Text>
       <Trans i18nKey="AuthDocsFreeDesktopApp">
@@ -52,7 +52,7 @@ const DesktopAppPanel = ({ t, currentLanguage }) => {
       </ButtonGroup>
       <ImageGroup
         className="panel-image desktop-image"
-        imgUrl={`/site-assets/info-screenshots/${currentLanguage}/desktop.png`}
+        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/desktop.png`}
       />
     </InfoPanel>
   );
