@@ -1,6 +1,28 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Base } from "../themes";
 import { Dark } from "../themes";
+
+const hoverAndActiveStyles = css`
+  background-color: ${(props) =>
+    props.backgroundColorHover ||
+    (props.typeButton === "primary"
+      ? props.theme.button.backgroundColorPrimaryHover
+      : props.typeButton === "transparent"
+      ? "transparent"
+      : props.theme.button.backgroundColorSecondaryHover)};
+  border-color: ${(props) =>
+    props.borderColorHover
+      ? props.borderColorHove
+      : props.typeButton === "transparent" &&
+        props.theme.button.borderColorHover};
+  color: ${(props) =>
+    props.textColorHover ||
+    (props.typeButton === "transparent"
+      ? props.theme.button.textColorTransparentTypeHover
+      : props.typeButton === "secondary"
+      ? props.theme.button.textColorSecondaryType
+      : props.theme.button.textColor)};
+`;
 
 const StyledButton = styled.button`
   transition: 0.5s;
@@ -53,27 +75,15 @@ const StyledButton = styled.button`
       ? "transparent"
       : props.theme.button.backgroundColorSecondary};
 
-  &:hover {
-    cursor: pointer;
-    background-color: ${(props) =>
-      props.backgroundColorHover ||
-      (props.typeButton === "primary"
-        ? props.theme.button.backgroundColorPrimaryHover
-        : props.typeButton === "transparent"
-        ? "transparent"
-        : props.theme.button.backgroundColorSecondaryHover)};
-    border-color: ${(props) =>
-      props.borderColorHover
-        ? props.borderColorHove
-        : props.typeButton === "transparent" &&
-          props.theme.button.borderColorHover};
-    color: ${(props) =>
-      props.textColorHover ||
-      (props.typeButton === "transparent"
-        ? props.theme.button.textColorTransparentTypeHover
-        : props.typeButton === "secondary"
-        ? props.theme.button.textColorSecondaryType
-        : props.theme.button.textColor)};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      ${hoverAndActiveStyles};
+    }
+  }
+
+  &:active {
+    ${hoverAndActiveStyles};
   }
 
   &:disabled {

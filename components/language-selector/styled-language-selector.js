@@ -86,6 +86,7 @@ const StyledItem = styled.div`
     color: #333;
     vertical-align: middle;
   }
+
   .title-lng:hover {
     color: #ff865c;
     cursor: pointer;

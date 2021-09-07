@@ -20,12 +20,14 @@ const StyledIconButton = styled.div`
     }
   }
 
-  &:hover:not(:active) {
-    cursor: ${(props) =>
-      !props.isDisabled || props.isClickable ? "pointer" : "default"};
-    .user-hover-color {
-      path {
-        fill: ${(props) => props.hoverColor} !important;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:active) {
+      cursor: ${(props) =>
+        !props.isDisabled || props.isClickable ? "pointer" : "default"};
+      .user-hover-color {
+        path {
+          fill: ${(props) => props.hoverColor} !important;
+        }
       }
     }
   }
@@ -37,8 +39,10 @@ const StyledIconButton = styled.div`
   }
 
   filter: ${(props) => (props.grayed ? "grayscale(1)" : "grayscale(0)")};
-  &:hover {
-    filter: ${(props) => (props.grayed ? "grayscale(0)" : "none")};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      filter: ${(props) => (props.grayed ? "grayscale(0)" : "none")};
+    }
   }
 `;
 
