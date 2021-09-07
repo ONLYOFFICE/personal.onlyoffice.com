@@ -67,5 +67,10 @@
   "ConfirmDeleteAccountButton": "Supprimer mon compte",
   "ConfirmDeleteAccountSuccessHeader": "Votre compte a été supprimé avec succès.",
   "ConfirmDeleteAccountHeader": "Attention! Vous êtes sur le point de supprimer ce compte.",
-  "AuthErrorIndicationText": "Ce champ ne peut pas être vide"
+  "AuthErrorIndicationText": "Ce champ ne peut pas être vide",
+  "PasswordLimitDigits": "chiffres",
+  "PasswordLimitLength": "de {{fromNumber}} à {{toNumber}} caractères",
+  "PasswordLimitMessage": "Le mot de passe doit contenir: ",
+  "PasswordLimitSpecialSymbols": "caractères spéciaux",
+  "PasswordLimitUpperCase": "lettres majuscules"
 }

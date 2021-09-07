@@ -69,5 +69,10 @@
   "ConfirmDeleteAccountButton": "Mein Konto löschen",
   "ConfirmDeleteAccountSuccessHeader": "Ihr Konto wurde erfolgreich gelöscht.",
   "ConfirmDeleteAccountHeader": "Achtung! Sie sind im Begriff, Ihr Konto zu löschen.",
-  "AuthErrorIndicationText": "Das Feld kann nicht leer sein"
+  "AuthErrorIndicationText": "Das Feld kann nicht leer sein",
+  "PasswordLimitDigits": "Zahlen",
+  "PasswordLimitLength": "von {{fromNumber}} bis {{toNumber}} Symbole",
+  "PasswordLimitMessage": "Das Kennwort muss enthalten: ",
+  "PasswordLimitSpecialSymbols": "Sonderzeichen",
+  "PasswordLimitUpperCase": "Großbuchstaben"
 }

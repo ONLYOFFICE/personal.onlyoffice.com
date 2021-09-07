@@ -46,5 +46,9 @@
   "Ok": "OK",
   "AuthErrorIndicationText": "Toto pole nemôže byť prázdne",
   "AuthErrorIndicationIncorrectEmail": "Nesprávna e-mailová adresa",
-  "DownloadExtensionChrome": " Získajte rozšírenie pre Chrome, ktoré Vám zabezpečí rýchly prístup."
+  "DownloadExtensionChrome": " Získajte rozšírenie pre Chrome, ktoré Vám zabezpečí rýchly prístup.",
+  "PasswordLimitDigits": "číslice",
+  "PasswordLimitLength": "od {{fromNumber}} do {{toNumber}} znakov",
+  "PasswordLimitMessage": "Heslo musí obsahovať: ",
+  "PasswordLimitUpperCase": "veľké písmená"
 }

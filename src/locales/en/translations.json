@@ -115,5 +115,10 @@
   "ProviderNotConnected": "Provider is not connected to your account",
   "Remember": "Remember",
   "PasswordRecovery": "Password recovery",
-  "Send": "Send"
+  "Send": "Send",
+  "PasswordLimitDigits": "digits",
+  "PasswordLimitLength": "from {{fromNumber}} to {{toNumber}} characters",
+  "PasswordLimitMessage": "Password must contain: ",
+  "PasswordLimitSpecialSymbols": "special characters",
+  "PasswordLimitUpperCase": "capital letters"
 }

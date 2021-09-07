@@ -63,5 +63,10 @@
   "ConfirmDeleteAccountButton": "Elimina il mio account",
   "ConfirmDeleteAccountSuccessHeader": "Il tuo account è stato eliminato con successo.",
   "ConfirmDeleteAccountHeader": "Attenzione! Stai per eliminare il tuo account.",
-  "AuthErrorIndicationText": "Questo campo non può essere vuoto"
+  "AuthErrorIndicationText": "Questo campo non può essere vuoto",
+  "PasswordLimitDigits": "cifre",
+  "PasswordLimitLength": "da {{fromNumber}} a {{toNumber}} caratteri",
+  "PasswordLimitMessage": "La password deve contenere: ",
+  "PasswordLimitSpecialSymbols": "caratteri speciali",
+  "PasswordLimitUpperCase": "lettere maiuscole"
 }

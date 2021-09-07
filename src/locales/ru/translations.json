@@ -72,5 +72,10 @@
   "ConfirmPasswordChangeTitle": "Теперь вы можете создать новый пароль.",
   "ProviderNotConnected": "Провайдер не подключен к вашему аккаунту",
   "UnknownError": "Произошла неизвестная ошибка",
-  "Ok": "Ok"
+  "Ok": "Ok",
+  "PasswordLimitDigits": "цифры",
+  "PasswordLimitLength": "от {{fromNumber}} до {{toNumber}} символов",
+  "PasswordLimitMessage": "Пароль должен содержать: ",
+  "PasswordLimitSpecialSymbols": "специальные символы",
+  "PasswordLimitUpperCase": "заглавные буквы"
 }

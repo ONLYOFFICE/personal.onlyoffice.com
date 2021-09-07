@@ -67,5 +67,10 @@
   "ConfirmDeleteAccountSuccessHeader": "Sua conta foi excluída com sucesso.",
   "ConfirmDeleteAccountHeader": "Atenção! Você está prestes a apagar sua conta.",
   "AuthErrorIndicationText": "Este campo não pode ficar vazio",
-  "AuthErrorIndicationIncorrectEmail": "Endereço de email incorreto"
+  "AuthErrorIndicationIncorrectEmail": "Endereço de email incorreto",
+  "PasswordLimitDigits": "dígitos",
+  "PasswordLimitLength": "de {{fromNumber}} para {{toNumber}} caracteres",
+  "PasswordLimitMessage": "Senha deve conter: ",
+  "PasswordLimitSpecialSymbols": "caracteres especiais",
+  "PasswordLimitUpperCase": "letras maiúsculas"
 }
