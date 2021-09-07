@@ -40,5 +40,8 @@
   "IncorrectEmail": "Nepareiza e-pasta adrese",
   "PasswordRecovery": "Paroles atjaunošana",
   "RecoveryInstructions": "Lūdzu, ievadiet e-pastu, kuru izmantojāt reģistrācijas procesā. Paroles atjaunošanas instrukcijas tiks nosūtīti uz šo e-pasta adresi.",
-  "Send": "Sūtīt"
+  "Send": "Sūtīt",
+  "UnknownError": "Notika nepazīstama kļūda",
+  "ConfirmPasswordChangeTitle": "Tagad jūs varat izveidot jaunu paroli.",
+  "Ok": "OK"
 }

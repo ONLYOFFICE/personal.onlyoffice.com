@@ -57,5 +57,8 @@
   "IncorrectEmail": "Adresse e-mail incorrecte",
   "PasswordRecovery": "Récupération de mot de passe",
   "RecoveryInstructions": "S'il vous plaît entrez l'adresse e-mail que vous avez utilisée lors de votre inscription sur le portail. Les instructions de récupération de votre mot de passe seront envoyées à cette adresse.",
-  "Send": "Envoyer"
+  "Send": "Envoyer",
+  "UnknownError": "Une erreur inconnue s'est produite",
+  "ConfirmPasswordChangeTitle": "Maintenant, vous pouvez créer un nouveau mot de passe.",
+  "Ok": "OK"
 }

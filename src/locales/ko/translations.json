@@ -13,5 +13,8 @@
   "IncorrectEmail": "잘못된 이메일 주소",
   "PasswordRecovery": "비밀번호 복구",
   "RecoveryInstructions": "포털에 등록하면서 사용한 이메일 주소를 입력하십시오.비밀번호 복구 방법은 해당 이메일 주소로 보내집니다.",
-  "Send": "보내기"
+  "Send": "보내기",
+  "UnknownError": "알 수없는 오류가 발생했습니다",
+  "ConfirmPasswordChangeTitle": "새 비밀번호를 만들",
+  "Ok": "확인"
 }

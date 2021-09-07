@@ -40,5 +40,8 @@
   "Remember": "Ghi nhớ",
   "IncorrectEmail": "Địa chỉ email không chính xác",
   "RecoveryInstructions": "Vui lòng nhập địa chỉ email mà bạn đã dùng khi đăng ký cổng thông tin này. Hướng dẫn khôi phục mật khẩu sẽ được gửi đến địa chỉ email đó.",
-  "Send": "Gửi"
+  "Send": "Gửi",
+  "UnknownError": "Xảy ra lỗi không xác định",
+  "ConfirmPasswordChangeTitle": "Bây giờ bạn có thể tạo một mật khẩu mới.",
+  "Ok": "OK"
 }

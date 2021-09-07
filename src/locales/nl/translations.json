@@ -41,5 +41,8 @@
   "IncorrectEmail": "Onjuist e-mailadres",
   "PasswordRecovery": "Wachtwoordherstel",
   "RecoveryInstructions": "Voer alstublieft het e-mailadres in dat u heeft gebruikt bij het registreren op het portaal. De wachtwoordherstelinstructies zullen daar naar toe worden verzonden.",
-  "Send": "Verzenden"
+  "Send": "Verzenden",
+  "UnknownError": "Er is een onbekende fout opgetreden.",
+  "ConfirmPasswordChangeTitle": "Nu kunt u een nieuw wachtwoord aanmaken",
+  "Ok": "Ok"
 }

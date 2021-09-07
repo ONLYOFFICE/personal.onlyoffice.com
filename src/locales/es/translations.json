@@ -54,5 +54,8 @@
   "Remember": "Recordar",
   "IncorrectEmail": "Dirección de correo electrónico incorrecta",
   "RecoveryInstructions": "Por favor, introduzca el correo electrónico que usted ha utilizado registrándose en el portal. Las instrucciones para la recuperación de la contraseña serán enviados a su dirección de correo electrónico.",
-  "Send": "Enviar"
+  "Send": "Enviar",
+  "UnknownError": "Ha ocurrido un error desconocido",
+  "ConfirmPasswordChangeTitle": "Ahora usted puede crear una contraseña nueva.",
+  "Ok": "OK"
 }

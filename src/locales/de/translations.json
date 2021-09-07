@@ -59,5 +59,8 @@
   "IncorrectEmail": "Falsche E-Mail-Adresse",
   "PasswordRecovery": "Wiederherstellung des Kennworts",
   "RecoveryInstructions": "Bitte geben Sie die E-Mail-Adresse ein, die Sie für die Registrierung auf dem Portal verwendet haben. Die Hinweise für die Kennwortwiederherstellung werden an Ihre E-Mail-Adresse geschickt.",
-  "Send": "Senden"
+  "Send": "Senden",
+  "UnknownError": "Ein unbekannter Fehler ist aufgetreten",
+  "ConfirmPasswordChangeTitle": "Jetzt können Sie ein neues Kennwort erstellen.",
+  "Ok": "Ok"
 }

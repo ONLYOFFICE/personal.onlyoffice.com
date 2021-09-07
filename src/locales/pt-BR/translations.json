@@ -57,5 +57,8 @@
   "IncorrectEmail": "Endereço de email incorreto",
   "PasswordRecovery": "Recuperação de senha",
   "RecoveryInstructions": "Por favor, insira o e-mail que você usou durante o registro no portal. As instruções de recuperação de senha serão enviadas para o endereço de email.",
-  "Send": "Enviar"
+  "Send": "Enviar",
+  "UnknownError": "Ocorreu um erro desconhecido",
+  "ConfirmPasswordChangeTitle": "Agora você pode criar uma nova senha.",
+  "Ok": "OK"
 }

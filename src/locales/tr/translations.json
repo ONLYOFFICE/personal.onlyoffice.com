@@ -41,5 +41,8 @@
   "IncorrectEmail": "Yanlış eposta adresi",
   "PasswordRecovery": "Şifre isteme",
   "RecoveryInstructions": "Lütfen portala kaydolurken kullandığınız eposta adresini girin. Şifre kurtarma kılavuzu eposta adresinize gönderilecektir.",
-  "Send": "Gönder"
+  "Send": "Gönder",
+  "UnknownError": "Bilinmeyen bir hata oluştu",
+  "ConfirmPasswordChangeTitle": "Artık yeni şifre oluşturabilirsiniz.",
+  "Ok": "Tamam"
 }

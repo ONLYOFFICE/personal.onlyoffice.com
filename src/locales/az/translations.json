@@ -8,5 +8,8 @@
     "IncorrectEmail": "Səhv elektron poçt ünvanı",
     "PasswordRecovery": "Parolun bərpa edilməsi",
     "RecoveryInstructions": "Portalda qeydiyyatdan keçən zaman istifadə etdiyini elektron poçtunuzu daxil edin. Parolu bərpa etmə instruksiyaları həmin elektron poçt ünvanına göndəriləcəklər.",
-    "Send": "Göndər"
+    "Send": "Göndər",
+    "UnknownError": "Bilinməyən bir xəta baş verdi",
+    "ConfirmPasswordChangeTitle": "Yeni parol yarat",
+    "Ok": "OK"
 }

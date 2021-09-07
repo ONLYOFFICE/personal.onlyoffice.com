@@ -39,5 +39,8 @@
   "IncorrectEmail": "Virheellinen sähköpostiosoite",
   "PasswordRecovery": "Salasanan palauttaminen",
   "RecoveryInstructions": "Kirjoita sähköpostiosoite, jota käytit rekisteröitymiseen sivustolle. Salasanan palautusohjeet lähetetään tähän osoitteeseen.",
-  "Send": "Lähetä"
+  "Send": "Lähetä",
+  "UnknownError": "Tuntematon virhe. Ihan outo. Toiselta planeetalta.",
+  "ConfirmPasswordChangeTitle": "Luo uusi salasana",
+  "Ok": "OK"
 }

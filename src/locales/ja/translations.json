@@ -50,5 +50,8 @@
   "IncorrectEmail": "正しくないメールアドレス",
   "PasswordRecovery": "パスワードの復元",
   "RecoveryInstructions": "ポータルに登録している間に使用したメールアドレスを入力してください。パスワード回復手順では、その電子メールアドレスに送信されます。",
-  "Send": "送信"
+  "Send": "送信",
+  "UnknownError": "不明なエラーが発生しました",
+  "ConfirmPasswordChangeTitle": "新しいパスワードを作成できます",
+  "Ok": "OK"
 }

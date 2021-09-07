@@ -41,5 +41,8 @@
   "IncorrectEmail": "Nieprawidłowy adres e-mail",
   "PasswordRecovery": "Odzyskaj hasło",
   "RecoveryInstructions": "Podaj adres e-mail, użyty podczas rejestracji. Instrukcje dotyczące odzyskania hasła będą wysłane na ten adres.",
-  "Send": "Wysłać"
+  "Send": "Wysłać",
+  "UnknownError": "Wystąpił nieznany błąd",
+  "ConfirmPasswordChangeTitle": "Ustaw nowe hasło",
+  "Ok": "OK"
 }

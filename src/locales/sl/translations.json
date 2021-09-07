@@ -40,5 +40,8 @@
   "IncorrectEmail": "Nepravilen e-naslov",
   "PasswordRecovery": "Obnovitev gesla",
   "RecoveryInstructions": "Prosim vnesite e-naslov, s katerim ste registrirani na portal. Navodila za obnovitev gesla bodo poslana na ta e-naslov.",
-  "Send": "Pošlji"
+  "Send": "Pošlji",
+  "UnknownError": "Prišlo je do neznane napake",
+  "ConfirmPasswordChangeTitle": "Zdaj lahko ustvarite novo geslo.",
+  "Ok": "Ok"
 }

@@ -69,5 +69,7 @@
   "AuthorizationTitle": "Авторизация - ONLYOFFICE",
   "ConfirmTitle": "Подтверждение - ONLYOFFICE",
   "ConfirmPasswordChangeTitle": "Теперь вы можете создать новый пароль.",
-  "ProviderNotConnected": "Провайдер не подключен к вашему аккаунту"
+  "ProviderNotConnected": "Провайдер не подключен к вашему аккаунту",
+  "UnknownError": "Произошла неизвестная ошибка",
+  "Ok": "Ok"
 }

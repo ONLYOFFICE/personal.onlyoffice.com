@@ -42,5 +42,8 @@
   "IncorrectEmail": "Email地址不正确",
   "PasswordRecovery": "密码重置",
   "RecoveryInstructions": "请您填写注册此工作站时使用的Email地址。系统会将详细的密码恢复指引发送到该Email地址中。",
-  "Send": "发送"
+  "Send": "发送",
+  "UnknownError": "发生未知的错误",
+  "ConfirmPasswordChangeTitle": "创建新密码",
+  "Ok": "确定"
 }

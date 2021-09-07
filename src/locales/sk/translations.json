@@ -40,5 +40,8 @@
   "IncorrectEmail": "Nesprávna e-mailová adresa",
   "PasswordRecovery": "Obnova hesla",
   "RecoveryInstructions": "Prosím zadajte e-mail, ktorý ste použili pri registrácii do portálu. Pokyny k zmene hesla Vám budú odoslané na túto e-mailovú adresu.",
-  "Send": "Poslať"
+  "Send": "Poslať",
+  "UnknownError": "Vyskytla sa neznáma chyba",
+  "ConfirmPasswordChangeTitle": "Teraz môžete vytvoriť nové heslo.",
+  "Ok": "OK"
 }
