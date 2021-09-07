@@ -18,6 +18,7 @@ import {
   logout,
   getUser,
   updateUserCulture,
+  getPortalPasswordSettings,
 } from "../../api";
 import {
   parseQueryParams,
@@ -41,6 +42,8 @@ const EmpInvitePage = ({ location }) => {
   const [isEmptyFirstName, setIsEmptyFirstName] = useState(true);
   const [isEmptyLastName, setIsEmptyLastName] = useState(true);
   const [isEmptyPassword, setIsEmptyPassword] = useState(true);
+
+  const [passwordSettings, setPasswordSettings] = useState(null);
 
   useEffect(() => {
     logout()
@@ -68,6 +71,22 @@ const EmpInvitePage = ({ location }) => {
             },
           },
         });
+      } else {
+        const key = getConfirmHeader(location);
+        getPortalPasswordSettings(key)
+          .then((res) => {
+            setPasswordSettings(res);
+          })
+          .catch((e) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  error: true,
+                  text: `${e}` || t("UnknownError"),
+                },
+              },
+            });
+          });
       }
     });
   }, []);
@@ -232,6 +251,16 @@ const EmpInvitePage = ({ location }) => {
       tabIndexProp: 3,
       isError: !isPwdValid,
       errorText: isEmptyPassword ? t("AuthErrorIndicationText") : null,
+      passwordSettings: passwordSettings,
+      disabledValidation: false,
+      tooltipText: t("PasswordLimitMessage"),
+      lengthErrorText: t("PasswordLimitLength", {
+        fromNumber: passwordSettings?.minLength || 8,
+        toNumber: 30,
+      }),
+      digitsErrorText: t("PasswordLimitDigits"),
+      capitalErrorText: t("PasswordLimitUpperCase"),
+      specialErrorText: t("PasswordLimitSpecialSymbols"),
     },
     {
       type: "button",

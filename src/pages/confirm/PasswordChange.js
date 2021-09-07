@@ -11,7 +11,13 @@ import Head from "../../sub-components/head";
 import StyledSection from "../../sub-components/section";
 import Form from "../../../components/form";
 
-import { getSettings, changePassword, logout, login } from "../../api";
+import {
+  getSettings,
+  changePassword,
+  logout,
+  login,
+  getPortalPasswordSettings,
+} from "../../api";
 import {
   parseQueryParams,
   createPasswordHash,
@@ -25,6 +31,8 @@ const PasswordChangePage = ({ location }) => {
 
   const [hashSettings, setHashSettings] = useState();
   const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
+
+  const [passwordSettings, setPasswordSettings] = useState(null);
 
   const {
     t,
@@ -52,6 +60,22 @@ const PasswordChangePage = ({ location }) => {
             },
           },
         });
+      } else {
+        const key = getConfirmHeader(location);
+        getPortalPasswordSettings(key)
+          .then((res) => {
+            setPasswordSettings(res);
+          })
+          .catch((e) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  error: true,
+                  text: `${e}` || t("UnknownError"),
+                },
+              },
+            });
+          });
       }
     });
   }, []);
@@ -104,6 +128,16 @@ const PasswordChangePage = ({ location }) => {
       tabIndexProp: 1,
       isError: !isPwdValid,
       errorText: passwordIsEmpty && t("AuthErrorIndicationText"),
+      passwordSettings: passwordSettings,
+      disabledValidation: false,
+      tooltipText: t("PasswordLimitMessage"),
+      lengthErrorText: t("PasswordLimitLength", {
+        fromNumber: passwordSettings?.minLength || 8,
+        toNumber: 30,
+      }),
+      digitsErrorText: t("PasswordLimitDigits"),
+      capitalErrorText: t("PasswordLimitUpperCase"),
+      specialErrorText: t("PasswordLimitSpecialSymbols"),
     },
 
     {
