@@ -28,6 +28,13 @@ const PasswordInput = ({
   const [isPwdError, setIsPwdError] = useState(false);
   const [inputType, setInputType] = useState(type);
 
+  const [isDigitsError, setIsDigitsError] = useState(false);
+  const [isSpecialSymbolsError, setIsSpecialError] = useState(false);
+  const [isLengthError, setIsLengthError] = useState(false);
+  const [isCapitalError, setIsCapitalError] = useState(false);
+
+  const [errorTooltip, setErrorTooltip] = useState(false);
+
   const toggleVisibilityOfPassword = () => {
     inputType === "password" ? setInputType("text") : setInputType("password");
   };
@@ -55,6 +62,11 @@ const PasswordInput = ({
       ? password.trim().length >= passwordSettings.minLength
       : true;
 
+    setIsSpecialError(!isSpecial);
+    setIsCapitalError(!isCapital);
+    setIsLengthError(!isLength);
+    setIsDigitsError(!isDigits);
+
     return isCapital && isDigits && isSpecial && isLength;
   };
 
@@ -71,6 +83,7 @@ const PasswordInput = ({
       setIsDefault(false);
       !isValid && setIsPwdError(true);
       !isPwdError && setErrorPasswordText(errorPasswordText);
+      setErrorTooltip(renderErrorText());
     } else {
       setIsDefault(true);
     }
@@ -84,6 +97,7 @@ const PasswordInput = ({
       setIsDefault(true);
       setIsPwdError(false);
       setSuccess(false);
+      setErrorTooltip(null);
     }
   }, [isValid]);
 
@@ -92,6 +106,32 @@ const PasswordInput = ({
   }, [isValid, password, onFocus]);
 
   const TogglerShowOfPassword = renderTogglerShowOfPassword();
+
+  const renderErrorText = () => {
+    const {
+      lengthErrorText,
+      digitsErrorText,
+      capitalErrorText,
+      specialErrorText,
+      tooltipText,
+    } = rest;
+
+    return (
+      <>
+        {!disabledValidation ? (
+          <>
+            {tooltipText}
+            {isLengthError ? lengthErrorText : null}
+            {isDigitsError ? `, ${digitsErrorText}` : null}
+            {isCapitalError ? `, ${capitalErrorText}` : null}
+            {isSpecialSymbolsError ? `, ${specialErrorText}` : null}{" "}
+          </>
+        ) : (
+          errorText
+        )}
+      </>
+    );
+  };
 
   return (
     <StyledPasswordInput {...rest} onBlur={onBlur} onFocus={onFocus}>
@@ -103,7 +143,7 @@ const PasswordInput = ({
         value={password}
         onChange={onChangeHandler}
         autoComplete={autoComplete}
-        errorText={errorText}
+        errorText={errorTooltip}
         {...rest}
       />
       {TogglerShowOfPassword}
