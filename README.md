@@ -64,7 +64,7 @@ Open [http://localhost:8082](http://localhost:8082) with your browser to see the
 ### The stack we are using:
 
 - [Gatsbyjs](https://www.gatsbyjs.com) - The static site generator
-- [Linaria](https://linaria.dev) - Zero-Runtime CSS in JS
+- [styled-components](https://styled-components.com/) - Visual primitives for the component age
 - [Storybook](https://storybook.js.org) - Sandbox to build UIs
 
 Official website: [https://www.onlyoffice.com](https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer "https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer")
