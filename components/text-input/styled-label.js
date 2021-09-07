@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Base } from "../themes";
 
 const Label = styled.label`
+  width: calc(100% - 40px);
   font-size: ${(props) =>
     !props.isEmpty
       ? props.theme.textInput.label.fontSize

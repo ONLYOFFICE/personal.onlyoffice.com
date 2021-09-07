@@ -3,6 +3,7 @@ import { Base } from "../themes";
 import { Dark } from "../themes";
 
 const StyledButton = styled.button`
+  transition: 0.5s;
   overflow: ${(props) => props.theme.button.overflow};
   text-overflow: ${(props) => props.theme.button.textOverflow};
   white-space: ${(props) => props.theme.button.whiteSpace};

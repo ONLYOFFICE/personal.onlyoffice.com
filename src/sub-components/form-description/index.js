@@ -5,7 +5,7 @@ import Text from "../../../components/text";
 
 const StyledDescription = styled(Text)`
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   @media (max-width: 592px) {
     font-size: 13px;
   }

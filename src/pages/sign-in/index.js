@@ -175,7 +175,7 @@ const SignInPage = ({ location }) => {
         <Head
           metaDescription={t("AuthDocsMetaDescription")}
           metaKeywords={t("AuthDocsMetaKeywords")}
-          title={t("AuthorizationTitle")}
+          title={t("AuthDocsTitlePage")}
           metaDescriptionOg={t("MetaDescriptionOg")}
         />
       </Layout.PageHead>

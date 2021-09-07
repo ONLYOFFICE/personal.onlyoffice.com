@@ -53,7 +53,7 @@ const LanguageSelector = (props) => {
         width={"18px"}
       />
       <div className="arrow-image">
-        {isOpen ? <ArrowDown alt="arrow-down" /> : <ArrowUp alt="arrow-up" />}
+        {isOpen ? <ArrowUp alt="arrow-up" /> : <ArrowDown alt="arrow-down" />}
       </div>
       <ItemsList
         className={`languages-list lng-selector ${

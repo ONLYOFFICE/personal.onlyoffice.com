@@ -24,6 +24,7 @@ const StyledCloudsSection = styled(HomeSection)`
 
     .item-cloud {
       cursor: default;
+      transition: 0.5s;
     }
   }
 

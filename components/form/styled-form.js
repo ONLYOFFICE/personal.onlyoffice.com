@@ -77,6 +77,11 @@ const StyledForm = styled.form`
     text-align: center;
   }
 
+  .form-button {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+  }
+
   @media (max-width: 1023px) {
     .form-header {
       margin-bottom: 1px;
@@ -94,6 +99,7 @@ const StyledForm = styled.form`
     .form-button {
       height: 48px;
       margin: 0;
+      font-size: 13px;
     }
 
     .form-input {

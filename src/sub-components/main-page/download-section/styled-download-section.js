@@ -4,6 +4,10 @@ import HomeSection from "../../home-section";
 const StyledDownloadSection = styled(HomeSection)`
   margin: 0 auto;
   padding-bottom: 112px;
+  .download-section-icon-component,
+  .extension-icon-component {
+    transition: 0.5s;
+  }
   .download-heading {
     margin-top: 104px;
     margin-bottom: 26px;

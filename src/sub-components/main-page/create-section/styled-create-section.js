@@ -88,6 +88,8 @@ const StyledCreateSection = styled(HomeSection)`
         height: min-content;
         padding-top: 14px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
         .heading,
         .description {
