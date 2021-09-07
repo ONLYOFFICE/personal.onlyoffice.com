@@ -37,5 +37,9 @@
   "Join": "Aansluiten",
   "InvalidUserNameOrPwd": "Ongeldige gebruikersnaam of wachtwoord.",
   "Email": "E-mail",
-  "Remember": "Onthouden"
+  "Remember": "Onthouden",
+  "IncorrectEmail": "Onjuist e-mailadres",
+  "PasswordRecovery": "Wachtwoordherstel",
+  "RecoveryInstructions": "Voer alstublieft het e-mailadres in dat u heeft gebruikt bij het registreren op het portaal. De wachtwoordherstelinstructies zullen daar naar toe worden verzonden.",
+  "Send": "Verzenden"
 }

@@ -38,5 +38,9 @@
   "Password": "密码",
   "Join": "加入",
   "InvalidUserNameOrPwd": "用户名或密码无效。",
-  "Remember": "记住"
+  "Remember": "记住",
+  "IncorrectEmail": "Email地址不正确",
+  "PasswordRecovery": "密码重置",
+  "RecoveryInstructions": "请您填写注册此工作站时使用的Email地址。系统会将详细的密码恢复指引发送到该Email地址中。",
+  "Send": "发送"
 }

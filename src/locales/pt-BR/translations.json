@@ -53,5 +53,9 @@
   "Password": "Senha",
   "Join": "Aderir",
   "InvalidUserNameOrPwd": "Nome de usuário ou senha inválida.",
-  "Remember": "Lembrar"
+  "Remember": "Lembrar",
+  "IncorrectEmail": "Endereço de email incorreto",
+  "PasswordRecovery": "Recuperação de senha",
+  "RecoveryInstructions": "Por favor, insira o e-mail que você usou durante o registro no portal. As instruções de recuperação de senha serão enviadas para o endereço de email.",
+  "Send": "Enviar"
 }

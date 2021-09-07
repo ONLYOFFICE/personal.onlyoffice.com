@@ -36,5 +36,9 @@
   "Join": "Připojit",
   "InvalidUserNameOrPwd": "Špatné uživatelské jméno nebo heslo.",
   "Email": "Email",
-  "Remember": "Zapamatovat "
+  "Remember": "Zapamatovat ",
+  "IncorrectEmail": "Nesprávná e-mailová adresa",
+  "PasswordRecovery": "Obnovení hesla",
+  "RecoveryInstructions": "Prosím zadejte e-mail, který jste použili při registraci portálu. Instrukce ohledně obnovení hesla Vám budou zaslány na tuto emailovou adresu.",
+  "Send": "Poslat"
 }

@@ -37,5 +37,9 @@
   "Join": "Katıl",
   "InvalidUserNameOrPwd": "Geçersiz kullanıcı adı veya şifre.",
   "Email": "E-posta",
-  "Remember": "Hatırla"
+  "Remember": "Hatırla",
+  "IncorrectEmail": "Yanlış eposta adresi",
+  "PasswordRecovery": "Şifre isteme",
+  "RecoveryInstructions": "Lütfen portala kaydolurken kullandığınız eposta adresini girin. Şifre kurtarma kılavuzu eposta adresinize gönderilecektir.",
+  "Send": "Gönder"
 }

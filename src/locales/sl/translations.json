@@ -36,5 +36,9 @@
   "Password": "Geslo",
   "Join": "Pridruži se",
   "InvalidUserNameOrPwd": "Nepravilno uporabniško ime ali geslo",
-  "Email": "e-naslov"
+  "Email": "e-naslov",
+  "IncorrectEmail": "Nepravilen e-naslov",
+  "PasswordRecovery": "Obnovitev gesla",
+  "RecoveryInstructions": "Prosim vnesite e-naslov, s katerim ste registrirani na portal. Navodila za obnovitev gesla bodo poslana na ta e-naslov.",
+  "Send": "Pošlji"
 }

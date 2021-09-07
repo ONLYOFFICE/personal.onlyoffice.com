@@ -37,5 +37,8 @@
   "Join": "Tham gia",
   "InvalidUserNameOrPwd": "Tên người dùng hoặc mật khẩu không chính xác.",
   "Email": "Email",
-  "Remember": "Ghi nhớ"
+  "Remember": "Ghi nhớ",
+  "IncorrectEmail": "Địa chỉ email không chính xác",
+  "RecoveryInstructions": "Vui lòng nhập địa chỉ email mà bạn đã dùng khi đăng ký cổng thông tin này. Hướng dẫn khôi phục mật khẩu sẽ được gửi đến địa chỉ email đó.",
+  "Send": "Gửi"
 }

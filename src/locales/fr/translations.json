@@ -53,5 +53,9 @@
   "Password": "Mot de passe",
   "Join": "S'inscrire",
   "InvalidUserNameOrPwd": "Nom d'utilisateur ou mot de passe non valide(s).",
-  "Remember": "Rappeler"
+  "Remember": "Rappeler",
+  "IncorrectEmail": "Adresse e-mail incorrecte",
+  "PasswordRecovery": "Récupération de mot de passe",
+  "RecoveryInstructions": "S'il vous plaît entrez l'adresse e-mail que vous avez utilisée lors de votre inscription sur le portail. Les instructions de récupération de votre mot de passe seront envoyées à cette adresse.",
+  "Send": "Envoyer"
 }

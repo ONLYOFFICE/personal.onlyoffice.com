@@ -48,5 +48,9 @@
   "Join": "Accedi",
   "InvalidUserNameOrPwd": "Nome utente o password non validi.",
   "Email": "Email",
-  "Remember": "Ricorda"
+  "Remember": "Ricorda",
+  "IncorrectEmail": "Indirizzo email non corretto",
+  "PasswordRecovery": "Recupero della password",
+  "RecoveryInstructions": "Per favore, inserisci l'indirizzo email utilizzato per la registrazione nel portale per inviare le istruzioni per il recupero della password",
+  "Send": "Invia"
 }

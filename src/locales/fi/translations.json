@@ -35,5 +35,9 @@
   "Password": "Salasana",
   "Join": "Liity",
   "InvalidUserNameOrPwd": "Virheellinen käyttäjänimi tai salasana.",
-  "Remember": "Muista"
+  "Remember": "Muista",
+  "IncorrectEmail": "Virheellinen sähköpostiosoite",
+  "PasswordRecovery": "Salasanan palauttaminen",
+  "RecoveryInstructions": "Kirjoita sähköpostiosoite, jota käytit rekisteröitymiseen sivustolle. Salasanan palautusohjeet lähetetään tähän osoitteeseen.",
+  "Send": "Lähetä"
 }

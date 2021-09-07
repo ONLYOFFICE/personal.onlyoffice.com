@@ -46,5 +46,9 @@
   "Password": "パスワード",
   "Join": "参加する",
   "InvalidUserNameOrPwd": "ユーザ名またはパスワードが無効である。",
-  "Remember": "覚える"
+  "Remember": "覚える",
+  "IncorrectEmail": "正しくないメールアドレス",
+  "PasswordRecovery": "パスワードの復元",
+  "RecoveryInstructions": "ポータルに登録している間に使用したメールアドレスを入力してください。パスワード回復手順では、その電子メールアドレスに送信されます。",
+  "Send": "送信"
 }

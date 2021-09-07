@@ -11,5 +11,9 @@
   "Password": "Senha",
   "InvalidUserNameOrPwd": "Nome de utilizador ou senha inválidos.",
   "Email": "Email",
-  "Remember": "Lembrar"
+  "Remember": "Lembrar",
+  "IncorrectEmail": "Endereço de e-mail incorreto",
+  "PasswordRecovery": "Recuperação de senha",
+  "Send": "Enviar",
+  "RecoveryInstructions": "Por favor, digite o endereço de e-mail que usou durante o registo no portal. As instruções de recuperação de senha serão enviadas para esse endereço de e-mail."
 }

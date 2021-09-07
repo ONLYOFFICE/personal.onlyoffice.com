@@ -4,5 +4,9 @@
     "Password": "Parol",
     "InvalidUserNameOrPwd": "Etibarsız istifadəçi adı və ya parol",
     "Email": "Elektron poçt",
-    "Remember": "Yadda saxla"
+    "Remember": "Yadda saxla",
+    "IncorrectEmail": "Səhv elektron poçt ünvanı",
+    "PasswordRecovery": "Parolun bərpa edilməsi",
+    "RecoveryInstructions": "Portalda qeydiyyatdan keçən zaman istifadə etdiyini elektron poçtunuzu daxil edin. Parolu bərpa etmə instruksiyaları həmin elektron poçt ünvanına göndəriləcəklər.",
+    "Send": "Göndər"
 }

@@ -112,5 +112,7 @@
   "AuthorizationTitle": "Authorization - ONLYOFFICE",
   "ConfirmTitle": "Confirmation - ONLYOFFICE",
   "ProviderNotConnected": "Provider is not connected to your account",
-  "Remember": "Remember"
+  "Remember": "Remember",
+  "PasswordRecovery": "Password recovery",
+  "Send": "Send"
 }
