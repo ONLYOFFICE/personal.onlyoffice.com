@@ -45,5 +45,6 @@
   "Ok": "OK",
   "AuthErrorIndicationText": "Toto pole nemůže být prázdné",
   "AuthErrorIndicationIncorrectEmail": "Nesprávná e-mailová adresa",
-  "DownloadExtensionChrome": " Získejte rozšíření pro Chrome pro rychlý přístup."
+  "DownloadExtensionChrome": " Získejte rozšíření pro Chrome pro rychlý přístup.",
+  "AuthDocsDownload": "Stáhnout"
 }
