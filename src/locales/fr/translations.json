@@ -65,5 +65,6 @@
   "ConfirmDeleteAccountDesc": "En cliquant sur le bouton \"Supprimer mon compte\" vous acceptez notre <1>Politique de confidentialité</1>.",
   "ConfirmDeleteAccountButton": "Supprimer mon compte",
   "ConfirmDeleteAccountSuccessHeader": "Votre compte a été supprimé avec succès.",
-  "ConfirmDeleteAccountHeader": "Attention! Vous êtes sur le point de supprimer ce compte."
+  "ConfirmDeleteAccountHeader": "Attention! Vous êtes sur le point de supprimer ce compte.",
+  "AuthErrorIndicationText": "Ce champ ne peut pas être vide"
 }

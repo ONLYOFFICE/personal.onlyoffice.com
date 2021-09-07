@@ -44,5 +44,7 @@
   "Send": "Gönder",
   "UnknownError": "Bilinmeyen bir hata oluştu",
   "ConfirmPasswordChangeTitle": "Artık yeni şifre oluşturabilirsiniz.",
-  "Ok": "Tamam"
+  "Ok": "Tamam",
+  "AuthErrorIndicationText": "Bu alan boş olamaz",
+  "AuthErrorIndicationIncorrectEmail": "Yanlış eposta adresi"
 }

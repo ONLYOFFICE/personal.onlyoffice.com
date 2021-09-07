@@ -57,5 +57,7 @@
   "ConfirmDeleteAccountDesc": "Като кликнете върху бутона \"Изтриване на моя профил\", Вие се съгласявате с нашата <1> Декларация за поверителност </1>.",
   "ConfirmDeleteAccountButton": "Изтрий моя акаунт",
   "ConfirmDeleteAccountSuccessHeader": "Профилът ви бе успешно изтрит.",
-  "ConfirmDeleteAccountHeader": "Внимание! На път сте да изтриете профила си."
+  "ConfirmDeleteAccountHeader": "Внимание! На път сте да изтриете профила си.",
+  "AuthErrorIndicationText": "Това поле не може да бъде празно",
+  "AuthErrorIndicationIncorrectEmail": "Грешен имейл адрес"
 }

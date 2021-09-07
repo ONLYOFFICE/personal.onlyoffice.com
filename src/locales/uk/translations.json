@@ -42,5 +42,7 @@
   "RecoveryInstructions": "Будь ласка, введіть адресу електронної пошти, вказану при реєстрації на порталі. Інструкції по відновленню паролю будуть відправлені на цю адресу електронної пошти.",
   "Send": "Надіслати",
   "UnknownError": "Виникла невідома помилка",
-  "ConfirmPasswordChangeTitle": "Встановити новий пароль"
+  "ConfirmPasswordChangeTitle": "Встановити новий пароль",
+  "AuthErrorIndicationText": "Це поле не може бути порожнім",
+  "AuthErrorIndicationIncorrectEmail": "Неправильна адреса електронної пошти"
 }

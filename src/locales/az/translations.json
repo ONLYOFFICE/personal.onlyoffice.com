@@ -11,5 +11,7 @@
     "Send": "Göndər",
     "UnknownError": "Bilinməyən bir xəta baş verdi",
     "ConfirmPasswordChangeTitle": "Yeni parol yarat",
-    "Ok": "OK"
+    "Ok": "OK",
+    "AuthErrorIndicationText": "Bu sahə boş ola bilməz",
+    "AuthErrorIndicationIncorrectEmail": "Səhv elektron poçt ünvanı"
 }

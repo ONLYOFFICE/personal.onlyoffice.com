@@ -43,5 +43,7 @@
   "Send": "Poslať",
   "UnknownError": "Vyskytla sa neznáma chyba",
   "ConfirmPasswordChangeTitle": "Teraz môžete vytvoriť nové heslo.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "Toto pole nemôže byť prázdne",
+  "AuthErrorIndicationIncorrectEmail": "Nesprávna e-mailová adresa"
 }

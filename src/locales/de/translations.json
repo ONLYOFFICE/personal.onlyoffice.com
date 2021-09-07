@@ -67,5 +67,6 @@
   "ConfirmDeleteAccountDesc": "Durch Klick auf den Button \"Mein Konto löschen\" erklären Sie sich mit unserer <1>Datenschutzerklärung</1> einverstanden.",
   "ConfirmDeleteAccountButton": "Mein Konto löschen",
   "ConfirmDeleteAccountSuccessHeader": "Ihr Konto wurde erfolgreich gelöscht.",
-  "ConfirmDeleteAccountHeader": "Achtung! Sie sind im Begriff, Ihr Konto zu löschen."
+  "ConfirmDeleteAccountHeader": "Achtung! Sie sind im Begriff, Ihr Konto zu löschen.",
+  "AuthErrorIndicationText": "Das Feld kann nicht leer sein"
 }

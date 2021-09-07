@@ -43,5 +43,7 @@
   "Send": "Sūtīt",
   "UnknownError": "Notika nepazīstama kļūda",
   "ConfirmPasswordChangeTitle": "Tagad jūs varat izveidot jaunu paroli.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "Šis lauks nevar būt tukšs",
+  "AuthErrorIndicationIncorrectEmail": "Nepareiza e-pasta adrese"
 }

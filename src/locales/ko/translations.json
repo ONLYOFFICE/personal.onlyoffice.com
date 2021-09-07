@@ -16,5 +16,7 @@
   "Send": "보내기",
   "UnknownError": "알 수없는 오류가 발생했습니다",
   "ConfirmPasswordChangeTitle": "새 비밀번호를 만들",
-  "Ok": "확인"
+  "Ok": "확인",
+  "AuthErrorIndicationText": "이 필드는 비워 둘 수 없습니다",
+  "AuthErrorIndicationIncorrectEmail": "잘못된 이메일 주소"
 }

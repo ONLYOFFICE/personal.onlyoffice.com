@@ -43,5 +43,7 @@
   "Send": "Pošlji",
   "UnknownError": "Prišlo je do neznane napake",
   "ConfirmPasswordChangeTitle": "Zdaj lahko ustvarite novo geslo.",
-  "Ok": "Ok"
+  "Ok": "Ok",
+  "AuthErrorIndicationText": "To polje ne more biti prazno",
+  "AuthErrorIndicationIncorrectEmail": "Nepravilen e-naslov"
 }

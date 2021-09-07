@@ -57,5 +57,6 @@
   "ConfirmDeleteAccountSuccessDesc": "アカウントとそれに対応したデータの削除について読むために、<1>プライバシー・ポリシー</1>をご覧ください。",
   "ConfirmDeleteAccountDesc": "「アカウントを削除」ボタンをクリックすると、<1> プライバシーポリシー</1> に同意いただいたものと致します。",
   "ConfirmDeleteAccountButton": "アカウントを削除する",
-  "ConfirmDeleteAccountHeader": "ご注意ください！アカウントを削除しようとしています。続けますか？"
+  "ConfirmDeleteAccountHeader": "ご注意ください！アカウントを削除しようとしています。続けますか？",
+  "AuthErrorIndicationText": "このフィールドは空欄にできません"
 }

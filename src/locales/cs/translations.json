@@ -42,5 +42,7 @@
   "RecoveryInstructions": "Prosím zadejte e-mail, který jste použili při registraci portálu. Instrukce ohledně obnovení hesla Vám budou zaslány na tuto emailovou adresu.",
   "Send": "Poslat",
   "ConfirmPasswordChangeTitle": "Nyní můžete vytvořit nové heslo.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "Toto pole nemůže být prázdné",
+  "AuthErrorIndicationIncorrectEmail": "Nesprávná e-mailová adresa"
 }

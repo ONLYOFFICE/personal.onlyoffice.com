@@ -43,5 +43,7 @@
   "Send": "Gửi",
   "UnknownError": "Xảy ra lỗi không xác định",
   "ConfirmPasswordChangeTitle": "Bây giờ bạn có thể tạo một mật khẩu mới.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "Trường này không được để trống",
+  "AuthErrorIndicationIncorrectEmail": "Địa chỉ email không chính xác"
 }

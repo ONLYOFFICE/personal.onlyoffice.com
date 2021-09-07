@@ -17,5 +17,6 @@
   "Send": "Enviar",
   "RecoveryInstructions": "Por favor, digite o endereço de e-mail que usou durante o registo no portal. As instruções de recuperação de senha serão enviadas para esse endereço de e-mail.",
   "UnknownError": "Ocorreu um erro desconhecido",
-  "ConfirmPasswordChangeTitle": "Criar nova password"
+  "ConfirmPasswordChangeTitle": "Criar nova password",
+  "AuthErrorIndicationIncorrectEmail": "Endereço de e-mail incorreto"
 }

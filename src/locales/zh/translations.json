@@ -47,5 +47,7 @@
   "ConfirmPasswordChangeTitle": "创建新密码",
   "Ok": "确定",
   "ConfirmDeleteAccountDesc": "单击“删除我的帐户”按钮，表示您同意我们的<1>隐私策略</1>。",
-  "ConfirmDeleteAccountButton": "删除我的帐户"
+  "ConfirmDeleteAccountButton": "删除我的帐户",
+  "AuthErrorIndicationText": "该栏不得为空",
+  "AuthErrorIndicationIncorrectEmail": "Email地址不正确"
 }

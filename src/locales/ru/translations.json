@@ -20,7 +20,7 @@
   "AuthDocsToLogin": "Вернуться к входу",
   "CreateSuccessfullyButton": "На главную страницу",
   "AuthDocsYourEmail": "Ваш e-mail*",
-  "AuthErrorIndicationText": "Это поле не может быть пустым",
+  "AuthErrorIndicationText": "Поле не может быть пустым",
   "AuthErrorIndicationIncorrectEmail": "Введите адрес электронной почты",
   "CookieMessButton": "Понятно",
   "CookieMessText": "На этом сайте используются файлы cookie. Продолжая просмотр этого сайта, вы принимаете условия нашей <1>политики конфиденциальности</1>",

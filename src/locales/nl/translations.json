@@ -44,5 +44,7 @@
   "Send": "Verzenden",
   "UnknownError": "Er is een onbekende fout opgetreden.",
   "ConfirmPasswordChangeTitle": "Nu kunt u een nieuw wachtwoord aanmaken",
-  "Ok": "Ok"
+  "Ok": "Ok",
+  "AuthErrorIndicationText": "Dit veld mag niet leeg zijn",
+  "AuthErrorIndicationIncorrectEmail": "Onjuist e-mailadres"
 }

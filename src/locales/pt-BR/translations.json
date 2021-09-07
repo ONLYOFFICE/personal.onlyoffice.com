@@ -65,5 +65,7 @@
   "ConfirmDeleteAccountDesc": "Ao clicar no botão \"Apagar minha conta\" você concorda com nossa política de <1>Política de privacidade</1>.",
   "ConfirmDeleteAccountButton": "Apagar minha conta",
   "ConfirmDeleteAccountSuccessHeader": "Sua conta foi excluída com sucesso.",
-  "ConfirmDeleteAccountHeader": "Atenção! Você está prestes a apagar sua conta."
+  "ConfirmDeleteAccountHeader": "Atenção! Você está prestes a apagar sua conta.",
+  "AuthErrorIndicationText": "Este campo não pode ficar vazio",
+  "AuthErrorIndicationIncorrectEmail": "Endereço de email incorreto"
 }

@@ -62,5 +62,6 @@
   "ConfirmDeleteAccountDesc": "Haciendo clic en el botón \"Eliminar mi cuenta\", Usted acepta nuestra <1>Política de Privacidad</1>.",
   "ConfirmDeleteAccountButton": "Eliminar mi cuenta",
   "ConfirmDeleteAccountSuccessHeader": "Su cuenta ha sido eliminada con éxito.",
-  "ConfirmDeleteAccountHeader": "¡Atención! Usted va a eliminar su cuenta."
+  "ConfirmDeleteAccountHeader": "¡Atención! Usted va a eliminar su cuenta.",
+  "AuthErrorIndicationText": "Este campo no puede ser vacío"
 }

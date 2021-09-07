@@ -44,5 +44,7 @@
   "Send": "Wysłać",
   "UnknownError": "Wystąpił nieznany błąd",
   "ConfirmPasswordChangeTitle": "Ustaw nowe hasło",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "To pole nie może być puste",
+  "AuthErrorIndicationIncorrectEmail": "Nieprawidłowy adres e-mail"
 }

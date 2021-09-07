@@ -42,5 +42,7 @@
   "Send": "Lähetä",
   "UnknownError": "Tuntematon virhe. Ihan outo. Toiselta planeetalta.",
   "ConfirmPasswordChangeTitle": "Luo uusi salasana",
-  "Ok": "OK"
+  "Ok": "OK",
+  "AuthErrorIndicationText": "Tämä kenttä ei voi olla tyhjä. Ei vain voi.",
+  "AuthErrorIndicationIncorrectEmail": "Virheellinen sähköpostiosoite"
 }
