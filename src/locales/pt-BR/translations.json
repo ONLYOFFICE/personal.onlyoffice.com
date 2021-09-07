@@ -60,5 +60,10 @@
   "Send": "Enviar",
   "UnknownError": "Ocorreu um erro desconhecido",
   "ConfirmPasswordChangeTitle": "Agora você pode criar uma nova senha.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "ConfirmDeleteAccountSuccessDesc": "Consulte nossa <1>Política de privacidade</1> para saber mais sobre como excluir sua conta e os dados associados a ela.",
+  "ConfirmDeleteAccountDesc": "Ao clicar no botão \"Apagar minha conta\" você concorda com nossa política de <1>Política de privacidade</1>.",
+  "ConfirmDeleteAccountButton": "Apagar minha conta",
+  "ConfirmDeleteAccountSuccessHeader": "Sua conta foi excluída com sucesso.",
+  "ConfirmDeleteAccountHeader": "Atenção! Você está prestes a apagar sua conta."
 }

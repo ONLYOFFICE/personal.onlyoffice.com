@@ -57,5 +57,10 @@
   "Send": "Enviar",
   "UnknownError": "Ha ocurrido un error desconocido",
   "ConfirmPasswordChangeTitle": "Ahora usted puede crear una contraseña nueva.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "ConfirmDeleteAccountSuccessDesc": "Consulte con nuestra <1>Política de Privacidad</1> para aprender más sobre la eliminación de su cuenta y los datos asociados.",
+  "ConfirmDeleteAccountDesc": "Haciendo clic en el botón \"Eliminar mi cuenta\", Usted acepta nuestra <1>Política de Privacidad</1>.",
+  "ConfirmDeleteAccountButton": "Eliminar mi cuenta",
+  "ConfirmDeleteAccountSuccessHeader": "Su cuenta ha sido eliminada con éxito.",
+  "ConfirmDeleteAccountHeader": "¡Atención! Usted va a eliminar su cuenta."
 }

@@ -60,5 +60,10 @@
   "Send": "Envoyer",
   "UnknownError": "Une erreur inconnue s'est produite",
   "ConfirmPasswordChangeTitle": "Maintenant, vous pouvez créer un nouveau mot de passe.",
-  "Ok": "OK"
+  "Ok": "OK",
+  "ConfirmDeleteAccountSuccessDesc": "Voir notre <1>Politique de confidentialité</1> pour savoir plus à propos de la suppression de votre compte  et des données asosciées.",
+  "ConfirmDeleteAccountDesc": "En cliquant sur le bouton \"Supprimer mon compte\" vous acceptez notre <1>Politique de confidentialité</1>.",
+  "ConfirmDeleteAccountButton": "Supprimer mon compte",
+  "ConfirmDeleteAccountSuccessHeader": "Votre compte a été supprimé avec succès.",
+  "ConfirmDeleteAccountHeader": "Attention! Vous êtes sur le point de supprimer ce compte."
 }

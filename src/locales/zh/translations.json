@@ -45,5 +45,7 @@
   "Send": "发送",
   "UnknownError": "发生未知的错误",
   "ConfirmPasswordChangeTitle": "创建新密码",
-  "Ok": "确定"
+  "Ok": "确定",
+  "ConfirmDeleteAccountDesc": "单击“删除我的帐户”按钮，表示您同意我们的<1>隐私策略</1>。",
+  "ConfirmDeleteAccountButton": "删除我的帐户"
 }
