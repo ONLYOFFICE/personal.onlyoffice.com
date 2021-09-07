@@ -12,7 +12,6 @@
   "AuthDocsDisclaimer": "Recenzje użytkowników pochodzą ze strony <1>{{linkText}}</1>. Recenzje opublikowane na stronie Capterra stanowią subiektywną opinię indywidualnych użytkowników końcowych wyrażoną na podstawie własnego doświadczenia i nie odzwierciedlają poglądów firmy Capterra ani jej podmiotów zależnych.",
   "AuthDocsDownload": "Pobierz",
   "AuthDocsHearTheWeb": "Co na to Internet?",
-  "AuthDocsLogIn": "Zaloguj się",
   "AuthDocsOnlineDesktopMobile": "Na przeglądarkę, komputer i urządzenia mobilne",
   "AuthDocsSubtitle": "Wysoce kompatybilne z formatami dokumentów MS Office",
   "AuthDocsFreeDesktopApp": "Pobierz <1>darmową aplikację komputerową</1>, aby edytować pliki offline lub połączyć się ze swoją chmurą.",
@@ -46,5 +45,6 @@
   "ConfirmPasswordChangeTitle": "Ustaw nowe hasło",
   "Ok": "OK",
   "AuthErrorIndicationText": "To pole nie może być puste",
-  "AuthErrorIndicationIncorrectEmail": "Nieprawidłowy adres e-mail"
+  "AuthErrorIndicationIncorrectEmail": "Nieprawidłowy adres e-mail",
+  "DownloadExtensionChrome": " Pobierz rozszerzenie dla Chrome, aby uzyskać szybki dostęp."
 }

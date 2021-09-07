@@ -6,7 +6,7 @@
   "AuthDocsOr": "o entrar",
   "CreateSuccessfullyDesc": "Un mensaje de activación enviado a {{email}}. Compruebe su correo electrónico para confirmar la cuenta.",
   "CreateSuccessfullyHeader": "Gracias por haber registrado su ONLYOFFICE™ Personal.",
-  "AuthDocsTitle": "Su oficina personal en línea",
+  "AuthDocsTitle": "Tu oficina personal online",
   "AuthDocsTitlePage": "Oficina personal en línea",
   "CookieMessButton": "¡Lo tengo!",
   "CookieMessText": "Este sitio web utiliza cookies. Al continuar navegando por el sitio web Usted acepta nuestra <1>política de privacidad</1>",
@@ -22,9 +22,9 @@
   "AuthDocsDontHave": "¿No tienes cuenta?",
   "AuthDocsDownload": "Descargar",
   "AuthDocsHearTheWeb": "Escucha la web",
-  "AuthDocsLogIn": "Acceso",
+  "AuthDocsLogIn": "Entrar",
   "AuthDocsOnlineDesktopMobile": "Online, Escritorio y Móvil",
-  "AuthDocsSignIn": "Iniciar sesión",
+  "AuthDocsSignIn": "Acceso",
   "AuthDocsSubtitle": "Máxima compatibilidad con los formatos de MS Office",
   "AuthDocsToLogin": "Volver al inicio de sesión",
   "AuthDocsYourEmail": "Tu correo electrónico*",
@@ -63,5 +63,7 @@
   "ConfirmDeleteAccountButton": "Eliminar mi cuenta",
   "ConfirmDeleteAccountSuccessHeader": "Su cuenta ha sido eliminada con éxito.",
   "ConfirmDeleteAccountHeader": "¡Atención! Usted va a eliminar su cuenta.",
-  "AuthErrorIndicationText": "Este campo no puede ser vacío"
+  "AuthErrorIndicationText": "Este campo no puede ser vacío",
+  "DownloadExtensionHeader": "Accede a ONLYOFFICE Personal rápidamente.",
+  "DownloadExtensionChrome": " Obtén la extensión de Chrome para tener un acceso rápido."
 }

@@ -14,7 +14,7 @@
   "AuthDocsOnlineDesktopMobile": "Online, desktop & Mobil",
   "AuthDocsSubtitle": "Vysoká kompatibilita s formátem dokumentů MS Office",
   "AuthDocsFreeDesktopApp": "Pracujte s dokumenty na cestách s <1>bezplatnou aplikací</1> Dokumenty ONLYOFFICE.",
-  "AuthDocsLogIn": "Přihlásit se",
+  "AuthDocsLogIn": "Login",
   "AuthDocsSignIn": "Přihlásit se",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Všechna práva vyhrazena",
   "TermsOfService": "Podmínky použití",
@@ -44,5 +44,6 @@
   "ConfirmPasswordChangeTitle": "Nyní můžete vytvořit nové heslo.",
   "Ok": "OK",
   "AuthErrorIndicationText": "Toto pole nemůže být prázdné",
-  "AuthErrorIndicationIncorrectEmail": "Nesprávná e-mailová adresa"
+  "AuthErrorIndicationIncorrectEmail": "Nesprávná e-mailová adresa",
+  "DownloadExtensionChrome": " Získejte rozšíření pro Chrome pro rychlý přístup."
 }

@@ -45,5 +45,7 @@
   "ConfirmPasswordChangeTitle": "Bây giờ bạn có thể tạo một mật khẩu mới.",
   "Ok": "OK",
   "AuthErrorIndicationText": "Trường này không được để trống",
-  "AuthErrorIndicationIncorrectEmail": "Địa chỉ email không chính xác"
+  "AuthErrorIndicationIncorrectEmail": "Địa chỉ email không chính xác",
+  "DownloadExtensionChrome": " Tải tiện ích mở rộng của Chrome để truy cập nhanh.",
+  "DownloadExtensionHeader": "ONLYOFFICE Personal là một trình soạn thảo trực tuyến bao gồm các công cụ cần thiết để tạo các tài liệu, bảng tính và bản trình bày tương thích với Microsoft và cho phép cùng làm việc với các thành viên trong nhóm."
 }

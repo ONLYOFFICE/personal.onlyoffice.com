@@ -12,7 +12,7 @@
   "AuthDocsDisclaimer": "Recenzie používateľov sú prevzaté z webu <1>{{linkText}}</1>. Recenzie spoločnosti Capterra predstavujú subjektívne názory jednotlivých koncových používateľov na základe ich vlastných skúseností a nereprezentujú názory spoločnosti Capterra alebo jej pridružených spoločností.",
   "AuthDocsDownload": "Stiahnuť",
   "AuthDocsHearTheWeb": "Čo sa hovorí na webe",
-  "AuthDocsLogIn": "Prihlásiť sa",
+  "AuthDocsLogIn": "Prihlásenie",
   "AuthDocsOnlineDesktopMobile": "Online, na počítači aj mobile",
   "AuthDocsFreeDesktopApp": "Stiahnite si <1>bezplatnú aplikáciu</1> pre počítač a upravujte súbory offline alebo sa pripojte k Vášmu cloudu.",
   "AuthDocsSignIn": "Prihlásiť sa",
@@ -45,5 +45,6 @@
   "ConfirmPasswordChangeTitle": "Teraz môžete vytvoriť nové heslo.",
   "Ok": "OK",
   "AuthErrorIndicationText": "Toto pole nemôže byť prázdne",
-  "AuthErrorIndicationIncorrectEmail": "Nesprávna e-mailová adresa"
+  "AuthErrorIndicationIncorrectEmail": "Nesprávna e-mailová adresa",
+  "DownloadExtensionChrome": " Získajte rozšírenie pre Chrome, ktoré Vám zabezpečí rýchly prístup."
 }

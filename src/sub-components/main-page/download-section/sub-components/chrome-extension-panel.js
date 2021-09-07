@@ -10,13 +10,14 @@ import Text from "../../../../../components/text";
 import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
 
-const ChromeExtensionPanel = ({ currentLanguage }) => {
+const ChromeExtensionPanel = ({ currentLanguage, t }) => {
+  const extensionText = t("DownloadExtensionChrome");
+  const header = t("DownloadExtensionHeader");
+
   const headingComponent = (
     <Text fontWeight="bold">
-      <Trans i18nKey="DownloadExtensionChrome">
-        {" "}
-        <Text as="span"> </Text>
-      </Trans>
+      {header}
+      <Text as="span">{extensionText}</Text>
     </Text>
   );
 

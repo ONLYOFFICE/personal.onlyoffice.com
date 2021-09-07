@@ -12,7 +12,7 @@
   "AuthDocsDisclaimer": "Відгуки користувачів взяті з <1>{{linkText}}</1>. Відгуки на Capterra — це суб'єктивні думки окремих кінцевих користувачів, сформовані на основі їхнього власного досвіду. Ці відгуки не відображають погляди компанії Capterra та її афілійованих осіб.",
   "AuthDocsDownload": "Завантажити",
   "AuthDocsHearTheWeb": "Що кажуть в Інтернеті",
-  "AuthDocsLogIn": "Вхід",
+  "AuthDocsLogIn": "Логін",
   "AuthDocsOnlineDesktopMobile": "Доступ онлайн, а також на настільних і мобільних пристроях",
   "AuthDocsSubtitle": "Висока сумісність із форматами Microsoft Office",
   "AuthDocsFreeDesktopApp": "Завантажте <1>безкоштовну настільну програму</1>, щоб редагувати файли в автономному режимі або підключатися до своєї хмари.",
@@ -44,5 +44,6 @@
   "UnknownError": "Виникла невідома помилка",
   "ConfirmPasswordChangeTitle": "Встановити новий пароль",
   "AuthErrorIndicationText": "Це поле не може бути порожнім",
-  "AuthErrorIndicationIncorrectEmail": "Неправильна адреса електронної пошти"
+  "AuthErrorIndicationIncorrectEmail": "Неправильна адреса електронної пошти",
+  "DownloadExtensionChrome": " Встановіть розширення Chrome для швидкого доступу."
 }

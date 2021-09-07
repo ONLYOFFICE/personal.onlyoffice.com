@@ -26,7 +26,7 @@
   "AuthDocsFreeDesktopApp": "<1>無料のデスクトップアプリ</1>をダウンロードし、オフラインでファイルを編集したり、クラウドに接続られます。",
   "AuthErrorIndicationIncorrectEmail": "メールを入力する",
   "Email": "メール",
-  "AuthDocsSignIn": "にサインイン",
+  "AuthDocsSignIn": "ログイン",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. 版権所有",
   "TermsOfService": "利用規約",
   "CorporateUse": "共同利用",
@@ -58,5 +58,6 @@
   "ConfirmDeleteAccountDesc": "「アカウントを削除」ボタンをクリックすると、<1> プライバシーポリシー</1> に同意いただいたものと致します。",
   "ConfirmDeleteAccountButton": "アカウントを削除する",
   "ConfirmDeleteAccountHeader": "ご注意ください！アカウントを削除しようとしています。続けますか？",
-  "AuthErrorIndicationText": "このフィールドは空欄にできません"
+  "AuthErrorIndicationText": "このフィールドは空欄にできません",
+  "DownloadExtensionChrome": " クイックアクセスのためのChrome拡張機能をご利用ください。"
 }

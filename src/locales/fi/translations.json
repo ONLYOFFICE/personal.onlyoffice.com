@@ -10,7 +10,7 @@
   "AuthDocsConnect": "Yhdistä haluamaasi pilveen",
   "AuthDocsDownload": "Lataa",
   "AuthDocsHearTheWeb": "Verkkoarvosteluja",
-  "AuthDocsLogIn": "Kirjaudu sisään",
+  "AuthDocsLogIn": "Käyttäjätunnus",
   "AuthDocsOnlineDesktopMobile": "Verkossa, työpöydällä & mobiilina",
   "AuthDocsSubtitle": "Erittäin yhteensopiva MS Office -asiakirjamuotojen kanssa",
   "AuthDocsFreeDesktopApp": "Lataa <1>ilmainen työpöytäsovellus</1>, jos haluat muokata tiedostoja offline-tilassa tai muodostaa yhteyden pilveen.",
@@ -44,5 +44,6 @@
   "ConfirmPasswordChangeTitle": "Luo uusi salasana",
   "Ok": "OK",
   "AuthErrorIndicationText": "Tämä kenttä ei voi olla tyhjä. Ei vain voi.",
-  "AuthErrorIndicationIncorrectEmail": "Virheellinen sähköpostiosoite"
+  "AuthErrorIndicationIncorrectEmail": "Virheellinen sähköpostiosoite",
+  "DownloadExtensionChrome": " Hanki Chrome-laajennus vaivattomaan käyttöön."
 }

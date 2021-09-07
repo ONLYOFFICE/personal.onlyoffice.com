@@ -15,7 +15,7 @@
   "AuthDocsLogIn": "Pieteikties",
   "AuthDocsOnlineDesktopMobile": "Tiešsaistē, galddatorā un mobilajā ierīcē",
   "AuthDocsSubtitle": "Ļoti saderīgs ar MS Office dokumentu formātiem",
-  "AuthDocsSignIn": "Pierakstīties",
+  "AuthDocsSignIn": "Pieteikties",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Visas tiesības paturētas",
   "TermsOfService": "Lietošanas nosacījumi",
   "CorporateUse": "Korporatīvā lietošana",
@@ -45,5 +45,6 @@
   "ConfirmPasswordChangeTitle": "Tagad jūs varat izveidot jaunu paroli.",
   "Ok": "OK",
   "AuthErrorIndicationText": "Šis lauks nevar būt tukšs",
-  "AuthErrorIndicationIncorrectEmail": "Nepareiza e-pasta adrese"
+  "AuthErrorIndicationIncorrectEmail": "Nepareiza e-pasta adrese",
+  "DownloadExtensionChrome": " Lai ātri piekļūtu, iegūstiet Chrome paplašinājumu."
 }

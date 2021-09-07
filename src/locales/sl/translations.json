@@ -12,11 +12,11 @@
   "AuthDocsDisclaimer": "Ocene uporabnikov so privzete is <1>{{linkText}}</1>. Ocene Capterra predstavljajo subjektivna mnenja posameznih uporabnikov na podlagi njihovih lastnih izkušenj in ne predstavljajo stališč družbe Capterra ali njenih povezanih podjetij.",
   "AuthDocsDownload": "Prenos",
   "AuthDocsHearTheWeb": "Poslušaj splet",
-  "AuthDocsLogIn": "Prijava",
+  "AuthDocsLogIn": "Vpis",
   "AuthDocsOnlineDesktopMobile": "Povezano, namizje & mobilno",
   "AuthDocsSubtitle": "Popolnoma kompatibilna z MS Office formati dokumentov",
   "AuthDocsFreeDesktopApp": "Prenesite <1>brezplačno namizno aplikacijo</1> za urejanje datotek brez povezave ali s povezavo z oblakom.",
-  "AuthDocsSignIn": "Vpiši se",
+  "AuthDocsSignIn": "Prijava",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Vse pravice so pridržane",
   "TermsOfService": "Pogoji uporabe",
   "CorporateUse": "Korporativna uporaba",
@@ -45,5 +45,6 @@
   "ConfirmPasswordChangeTitle": "Zdaj lahko ustvarite novo geslo.",
   "Ok": "Ok",
   "AuthErrorIndicationText": "To polje ne more biti prazno",
-  "AuthErrorIndicationIncorrectEmail": "Nepravilen e-naslov"
+  "AuthErrorIndicationIncorrectEmail": "Nepravilen e-naslov",
+  "DownloadExtensionChrome": " Dobite Chrome razširitev za hiter dostop."
 }

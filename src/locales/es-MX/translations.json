@@ -20,9 +20,9 @@
   "AuthDocsDontHave": "¿No tienes cuenta?",
   "AuthDocsDownload": "Descargar",
   "AuthDocsHearTheWeb": "Escucha la web",
-  "AuthDocsLogIn": "Acceso",
+  "AuthDocsLogIn": "Entrar",
   "AuthDocsOnlineDesktopMobile": "Online, Escritorio y Móvil",
-  "AuthDocsSignIn": "Iniciar sesión",
+  "AuthDocsSignIn": "Acceso",
   "AuthDocsSubtitle": "Máxima compatibilidad con los formatos de MS Office",
   "AuthDocsToLogin": "Volver al inicio de sesión",
   "AuthDocsYourEmail": "Tu correo electrónico*",
@@ -42,5 +42,7 @@
   "PresSlideSectionCarouselText": "Expresa tus ideas y preséntalas al público con facilidad.",
   "CollaborationSlideSecitonCarouselHeading": "Colabora online",
   "CollaborationSlideSectionCarouselText": "Invita a cualquier persona a editar documentos juntos o a hacer revisiones en tu trabajo.",
-  "CreateFormHeader": "Crea tu oficina gratis"
+  "CreateFormHeader": "Crea tu oficina gratis",
+  "DownloadExtensionHeader": "Accede a ONLYOFFICE Personal rápidamente.",
+  "DownloadExtensionChrome": " Obtén la extensión de Chrome para tener un acceso rápido."
 }
