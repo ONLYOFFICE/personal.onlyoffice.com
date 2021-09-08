@@ -96,5 +96,6 @@ module.exports = {
         fileTypes: ["js", "map"],
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
