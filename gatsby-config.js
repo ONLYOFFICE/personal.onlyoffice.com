@@ -89,13 +89,13 @@ module.exports = {
         },
       },
     },
-
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-asset-path",
       options: {
-        fileTypes: ["js", "map"],
+        fileTypes: ["js", "css"],
+        removeMapFiles: true,
       },
     },
-    `gatsby-plugin-offline`,
   ],
 };
