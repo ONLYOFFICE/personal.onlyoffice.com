@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../components/layout";
@@ -20,6 +20,13 @@ const IndexPage = ({ location }) => {
     t,
     i18n: { language },
   } = useTranslation();
+
+  useEffect(() => {
+    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
+    if (isDesktopClient) {
+      navigate("/sign-in");
+    }
+  }, []);
 
   useEffect(() => {
     if (location.state && location.state.hasOwnProperty("toastr")) {
