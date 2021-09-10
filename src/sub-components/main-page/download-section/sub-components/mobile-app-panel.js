@@ -11,7 +11,10 @@ import InfoPanel, {
   ButtonGroup,
 } from "../../../../../components/info-panel";
 
-const MobileAppPanel = ({ currentLanguage, localizedScreenshotPrefix }) => {
+const MobileAppPanel = ({
+  localizedScreenshotPrefix,
+  localizedAppsIconsPrefix,
+}) => {
   const headingComponent = (
     <Text>
       <Trans i18nKey="AuthDocsWorkWithDocs">
@@ -31,7 +34,7 @@ const MobileAppPanel = ({ currentLanguage, localizedScreenshotPrefix }) => {
       <IconButton
         className="download-section-icon-component"
         size="min-content"
-        iconName={`/site-assets/apps-icons/${currentLanguage}/appstore_white.react.svg`}
+        iconName={`/site-assets/apps-icons/${localizedAppsIconsPrefix}/appstore_white.react.svg`}
         defaultIcon="/site-assets/apps-icons/en/appstore_white.react.svg"
       />
     </Link>,
@@ -44,7 +47,7 @@ const MobileAppPanel = ({ currentLanguage, localizedScreenshotPrefix }) => {
       <IconButton
         className="download-section-icon-component"
         size="min-content"
-        iconName={`/site-assets/apps-icons/${currentLanguage}/googleplay_white.react.svg`}
+        iconName={`/site-assets/apps-icons/${localizedAppsIconsPrefix}/googleplay_white.react.svg`}
         defaultIcon="/site-assets/apps-icons/en/googleplay_white.react.svg"
       />
     </Link>,

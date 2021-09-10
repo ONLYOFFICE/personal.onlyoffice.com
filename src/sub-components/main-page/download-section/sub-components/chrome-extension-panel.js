@@ -10,9 +10,9 @@ import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
 
 const ChromeExtensionPanel = ({
-  currentLanguage,
   t,
   localizedScreenshotPrefix,
+  localizedChromeStorePrefix,
 }) => {
   const extensionText = t("DownloadExtensionChrome");
   const header = t("DownloadExtensionHeader");
@@ -34,7 +34,7 @@ const ChromeExtensionPanel = ({
       <IconButton
         size="auto"
         className="extension-icon-component"
-        iconName={`/site-assets/apps-icons/${currentLanguage}/chrome.react.svg`}
+        iconName={`/site-assets/apps-icons/${localizedChromeStorePrefix}/chrome.react.svg`}
         defaultIcon={`/site-assets/apps-icons/en/chrome.react.svg`}
       />
     </Link>,

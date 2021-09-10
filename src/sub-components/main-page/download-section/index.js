@@ -10,10 +10,34 @@ import StyledDownloadSection from "./styled-download-section";
 import { getLocalizedImagePrefix } from "../../../helpers";
 
 const localizedImages = ["ru", "de", "fr", "en"];
+const localizedAppsIcons = [
+  "ch",
+  "cz",
+  "de",
+  "en",
+  "es",
+  "fr",
+  "it",
+  "ja",
+  "nl",
+  "pt",
+  "ru",
+];
+const localizedChromeStore = ["en", "ru", "es", "pt", "it", "de", "fr"];
 
 const DownloadSection = ({ t, language }) => {
   const localizedScreenshotPrefix = getLocalizedImagePrefix(
     localizedImages,
+    language
+  );
+
+  const localizedAppsIconsPrefix = getLocalizedImagePrefix(
+    localizedAppsIcons,
+    language
+  );
+
+  const localizedChromeStorePrefix = getLocalizedImagePrefix(
+    localizedChromeStore,
     language
   );
 
@@ -25,8 +49,8 @@ const DownloadSection = ({ t, language }) => {
       <ChromeExtensionPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={language}
         localizedScreenshotPrefix={localizedScreenshotPrefix}
+        localizedChromeStorePrefix={localizedChromeStorePrefix}
       />
       <DesktopAppPanel
         className="download-info-panel"
@@ -36,8 +60,8 @@ const DownloadSection = ({ t, language }) => {
       <MobileAppPanel
         className="download-info-panel"
         t={t}
-        currentLanguage={language}
         localizedScreenshotPrefix={localizedScreenshotPrefix}
+        localizedAppsIconsPrefix={localizedAppsIconsPrefix}
       />
     </StyledDownloadSection>
   );
