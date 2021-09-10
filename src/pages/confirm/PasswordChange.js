@@ -40,12 +40,10 @@ const PasswordChangePage = ({ location }) => {
   } = useTranslation();
 
   useEffect(() => {
-    logout()
-      .then(() =>
-        getSettings().then((res) => {
-          setHashSettings(res.passwordHash);
-        })
-      )
+    getSettings()
+      .then((res) => {
+        setHashSettings(res.passwordHash);
+      })
       .catch((e) => console.error(e));
   }, []);
 
@@ -104,6 +102,7 @@ const PasswordChangePage = ({ location }) => {
     const hash = createPasswordHash(password, hashSettings);
 
     changePassword(params.uid, hash, confirmHeader)
+      .then(() => logout())
       .then(() => {
         login(params.email, hash).then(() => window.open("/", "_self"));
       })
