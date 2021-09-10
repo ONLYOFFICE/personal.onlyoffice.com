@@ -26,6 +26,7 @@
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.9.0",
+    "gatsby-plugin-load-script": "^1.1.0",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-portal": "^1.0.7",
@@ -55,7 +56,6 @@
     "sjcl": "^1.0.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
-    "workbox-window": "^6.2.4",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
