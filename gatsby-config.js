@@ -89,7 +89,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-asset-path",
       options: {
