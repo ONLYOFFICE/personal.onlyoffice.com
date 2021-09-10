@@ -17,19 +17,19 @@ module.exports = {
     { resolve: "gatsby-plugin-gatsby-cloud" },
     { resolve: "gatsby-plugin-react-helmet" },
     { resolve: "gatsby-plugin-sitemap" },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: `./static/${customAssetPrefix}/logo/favicon_general.png`,
+    // {
+    //   resolve: "gatsby-plugin-manifest",
+    //   options: {
+    //     icon: `./static/${customAssetPrefix}/logo/favicon_general.png`,
 
-        name: `personal.onlyoffice.com`,
-        short_name: `Personal`,
-        start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `rgb(255, 134, 92)`,
-        display: `standalone`,
-      },
-    },
+    //     name: `personal.onlyoffice.com`,
+    //     short_name: `Personal`,
+    //     start_url: `/`,
+    //     background_color: `#FFFFFF`,
+    //     theme_color: `rgb(255, 134, 92)`,
+    //     display: `standalone`,
+    //   },
+    // },
     { resolve: "gatsby-transformer-remark" },
     { resolve: "gatsby-plugin-mdx" },
     {
