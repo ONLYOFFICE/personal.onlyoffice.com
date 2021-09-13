@@ -46,12 +46,11 @@ const EmpInvitePage = ({ location }) => {
   const [passwordSettings, setPasswordSettings] = useState(null);
 
   useEffect(() => {
-    logout()
-      .then(() =>
-        getSettings().then((res) => {
-          setHashSettings(res.passwordHash);
-        })
-      )
+    getSettings()
+      .then((res) => {
+        setHashSettings(res.passwordHash);
+      })
+
       .catch((e) => console.error(e));
   }, []);
 
@@ -190,18 +189,20 @@ const EmpInvitePage = ({ location }) => {
       email: params.email,
     };
 
-    createConfirmUser(personalData, loginData, confirmHeader)
-      .then(getUser)
-      .then((user) => {
-        const currentLanguage = languages.find(
-          (el) => el.shortKey === language
-        );
-        updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
-      })
-      .then(() => window.location.replace("/"))
-      .catch((error) => {
-        toastr.error(`${error}`);
-      });
+    logout().then(() =>
+      createConfirmUser(personalData, loginData, confirmHeader)
+        .then(getUser)
+        .then((user) => {
+          const currentLanguage = languages.find(
+            (el) => el.shortKey === language
+          );
+          updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+        })
+        .then(() => window.location.replace("/"))
+        .catch((error) => {
+          toastr.error(`${error}`);
+        })
+    );
   };
 
   const formData = [

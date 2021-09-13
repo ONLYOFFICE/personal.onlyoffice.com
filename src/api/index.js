@@ -3,7 +3,7 @@ import { request } from "./client";
 export function getSettings() {
   return request({
     method: "get",
-    url: "/settings.json",
+    url: "/settings.json?withpassword=true",
   });
 }
 
