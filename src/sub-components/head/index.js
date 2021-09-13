@@ -34,12 +34,12 @@ const Head = (props) => {
       />
       <meta id="ctl00_MetaKeywords" name="keywords" content={metaKeywords} />
       <meta name="description" content={metaDescription} />
-      <link
+      {/* <link
         rel="alternate"
         type="application/atom+xml"
         title="Teamlab Portal"
         href="https://personal.onlyoffice.com/services/whatsnew/feed.ashx?c=Teamlab+Portal"
-      />
+      /> */}
       <link
         rel="icon"
         href="/site-assets/logo/favicon_general.png"
