@@ -42,7 +42,7 @@
 "PersonalLogin":  "Вхід до облікового запису",
 "RegistryButtonCreateNow":  "Створити зараз",
 "RegistrySettingSpam":  "Я хочу підписатися на розсилку ONLYOFFICE ",
-"RegistrySettingTerms":  "Я погоджуюся з <1>Умовами та положеннями</1> й <2>Положенням про конфіденційність</2> ONLYOFFICE",
+"RegistrySettingTerms":  "Я погоджуюся з <1>{{terms}}</1> й <2>{{privacy}}</2> ONLYOFFICE",
 "DownloadExtensionHeader":  "Швидкий доступ до ONLYOFFICE Personal. ",
 "AuthDocsFreeDesktopApp":  "Завантажте <1>безкоштовну настільну програму</1>, щоб редагувати файли в автономному режимі або підключатися до своєї хмари.",
 "AuthDocsWorkWithDocs":  "Працюйте з документами <1>на ходу</1> з програмами <2>ONLYOFFICE</2> для мобільних пристроїв.",
