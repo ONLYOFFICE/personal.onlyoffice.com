@@ -62,8 +62,16 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
 
     if (emailIsValid)
       join(emailValue)
-        .then(() => {
-          navigate("/success", { state: { email: emailValue } });
+        .then((res) => {
+          navigate("/success", {
+            state: {
+              email: emailValue,
+              toastr: {
+                success: true,
+                text: res,
+              },
+            },
+          });
         })
         .catch((err) => toastr.error(`${err}`));
   };

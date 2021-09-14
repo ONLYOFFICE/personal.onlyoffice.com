@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
+import toastr from "../../../components/toast/toastr";
 
 import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
@@ -16,6 +17,17 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 import { navigate } from "gatsby";
 
 const SuccessfullyPage = ({ location }) => {
+  useEffect(() => {
+    if (location.state && location.state.hasOwnProperty("toastr")) {
+      if (location.state.toastr.success) {
+        toastr.success(location.state.toastr.text);
+      }
+      if (location.state.toastr.error) {
+        toastr.error(location.state.toastr.text);
+      }
+    }
+  }, [location.state]);
+
   const {
     t,
     i18n: { language },
