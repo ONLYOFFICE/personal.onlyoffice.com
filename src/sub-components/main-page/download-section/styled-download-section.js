@@ -23,6 +23,7 @@ const StyledDownloadSection = styled(HomeSection)`
     margin: 0 auto;
     margin-top: 115px;
     text-align: center;
+    word-break: break-word;
   }
 
   .extension-text {
