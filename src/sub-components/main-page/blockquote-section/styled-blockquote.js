@@ -32,8 +32,6 @@ const StyledBlockquote = styled(HomeSection)`
 
   .blockquote-description {
     text-align: center;
-    max-width: 1120px;
-    word-break: break-word;
   }
 
   .blockquote-link {
