@@ -55,6 +55,10 @@ const StyledCreateSection = styled(HomeSection)`
       .heading {
         letter-spacing: -0.03em;
       }
+
+      .heading {
+        line-height: 60px;
+      }
     }
 
     @media (max-width: 1200px) {
@@ -86,7 +90,7 @@ const StyledCreateSection = styled(HomeSection)`
 
       .text-block {
         height: min-content;
-        padding-top: 14px;
+        padding: 14px 16px 0 16px;
         text-align: center;
         display: flex;
         flex-direction: column;
