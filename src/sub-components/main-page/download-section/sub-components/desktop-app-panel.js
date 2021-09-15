@@ -5,12 +5,9 @@ import Text from "../../../../../components/text";
 import Link from "../../../../../components/link";
 import Button from "../../../../../components/button";
 
-import InfoPanel, {
-  ImageGroup,
-  HeadingGroup,
-  ButtonGroup,
-} from "../../../../../components/info-panel";
-
+import HeadingGroup from "./heading-group";
+import ButtonGroup from "./button-group";
+import StyledDesktopAppPanel from "./styled-desktop-app-panel";
 const DesktopAppPanel = ({ t, localizedScreenshotPrefix }) => {
   const headingComponent = (
     <Text>
@@ -42,19 +39,28 @@ const DesktopAppPanel = ({ t, localizedScreenshotPrefix }) => {
     </Link>,
   ];
 
+  const contentComponent = [
+    <HeadingGroup className="panel-text desktop-text" key="heading-desktop-app">
+      {headingComponent}
+    </HeadingGroup>,
+    <ButtonGroup
+      className="panel-buttons desktop-button"
+      key="button-desktop-app"
+    >
+      {linkComponents}
+    </ButtonGroup>,
+  ];
+
   return (
-    <InfoPanel orangeBackground imageOnLeft>
-      <HeadingGroup className="panel-text desktop-text">
-        {headingComponent}
-      </HeadingGroup>
-      <ButtonGroup className="panel-buttons desktop-button">
-        {linkComponents}
-      </ButtonGroup>
-      <ImageGroup
-        className="panel-image desktop-image"
-        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/desktop.png`}
-      />
-    </InfoPanel>
+    <StyledDesktopAppPanel
+      orangeBackground
+      imageOnLeft
+      contentComponent={contentComponent}
+      imageData={{
+        className: "panel-image desktop-image",
+        imageUrl: `/site-assets/info-screenshots/${localizedScreenshotPrefix}/desktop.png`,
+      }}
+    />
   );
 };
 

@@ -5,11 +5,10 @@ import Text from "../../../../../components/text";
 import Link from "../../../../../components/link";
 import IconButton from "../../../../../components/icon-button";
 
-import InfoPanel, {
-  ImageGroup,
-  HeadingGroup,
-  ButtonGroup,
-} from "../../../../../components/info-panel";
+import HeadingGroup from "./heading-group";
+import ButtonGroup from "./button-group";
+
+import StyledMobileAppPanel from "./styled-mobile-app-panel";
 
 const MobileAppPanel = ({
   localizedScreenshotPrefix,
@@ -53,23 +52,28 @@ const MobileAppPanel = ({
     </Link>,
   ];
 
-  return (
-    <InfoPanel
-      grayBackground
-      headingComponent={headingComponent}
-      linkComponents={linkComponents}
+  const contentComponent = [
+    <HeadingGroup className="panel-text mobile-text" key="heading-mobile-app">
+      {headingComponent}
+    </HeadingGroup>,
+    <ButtonGroup
+      className="panel-buttons mobile-button"
+      key="button-mobile-app"
     >
-      <HeadingGroup className="panel-text mobile-text">
-        {headingComponent}
-      </HeadingGroup>
-      <ButtonGroup className="panel-buttons mobile-button">
-        {linkComponents}
-      </ButtonGroup>
-      <ImageGroup
-        className="mobile-app-img panel-image"
-        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/mobile.png`}
-      />
-    </InfoPanel>
+      {linkComponents}
+    </ButtonGroup>,
+  ];
+
+  return (
+    <StyledMobileAppPanel
+      grayBackground
+      contentComponent={contentComponent}
+      imageData={{
+        className: "mobile-app-img panel-image",
+
+        imageUrl: `/site-assets/info-screenshots/${localizedScreenshotPrefix}/mobile.png`,
+      }}
+    />
   );
 };
 

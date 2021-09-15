@@ -4,17 +4,7 @@ import { Base } from "../themes";
 
 const headingStyle = css`
   .info-panel-heading * {
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    line-height: 160%;
     color: ${(props) => (props.whiteBackground ? "#333333" : "#ffffff")};
-    vertical-align: baseline;
-    display: inline;
-    margin-right: 4px;
-
-    @media (max-width: 592px) {
-      font-size: 14px;
-    }
   }
 `;
 
@@ -42,7 +32,6 @@ const whiteStyle = css`
 const StyledInfoPanel = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 33px 0;
   width: 1118px;
   height: 380px;
@@ -58,33 +47,27 @@ const StyledInfoPanel = styled.div`
 
   align-items: center;
 
-  .info-panel-heading {
-    grid-area: ${(props) =>
-      props.imageOnLeft ? "1 / 2 / 1 / 2" : "1 / 1 / 1 / 1"};
-  }
-
-  .info-panel-button-group {
-    grid-area: ${(props) =>
-      props.imageOnLeft ? "2 / 2 / 2 / 2" : "2 / 1 / 2 / 1"};
-  }
-
   .info-panel-image-group {
-    grid-area: ${(props) =>
-      props.imageOnLeft ? "1 / 1 / 3 / 1" : "1 / 2 / 3 / 2"};
+    grid-area: ${(props) => (props.imageOnLeft ? "1 / 1 " : "1 / 2 ")};
+    .info-panel-img {
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   @media ${device.laptopM} {
-    height: 354px;
+    min-height: 354px;
     max-width: 928px;
     width: 100%;
-
-    .info-panel-button-group,
-    .info-panel-heading {
-      width: 312px;
-    }
+    height: min-content;
 
     .info-panel-image-group {
-      width: 550px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      .info-panel-img {
+        position: relative;
+      }
     }
   }
 
@@ -93,14 +76,6 @@ const StyledInfoPanel = styled.div`
     grid-template-rows: auto;
     grid-gap: 32px;
     height: min-content;
-
-    .info-panel-heading {
-      grid-area: unset;
-    }
-
-    .info-panel-button-group {
-      grid-area: unset;
-    }
 
     .info-panel-image-group {
       grid-area: unset;
@@ -112,6 +87,14 @@ const StyledInfoPanel = styled.div`
 
     .info-panel-image-group {
       width: auto;
+    }
+  }
+
+  @media (max-width: 592px) {
+    .info-panel-image-group {
+      .info-panel-img {
+        height: 200px;
+      }
     }
   }
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const StyledButtonsGroup = styled.div`
+  align-self: start;
+  margin: 0 auto;
   display: grid;
   grid-gap: 8px;
   grid-template-columns: ${(props) =>
