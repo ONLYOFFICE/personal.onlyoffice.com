@@ -31,7 +31,7 @@ const StyledDesktopAppPanel = styled(InfoPanel)`
 
     .desktop-image {
       .info-panel-img {
-        margin-top: -77px;
+        margin-top: -120px;
       }
     }
   }

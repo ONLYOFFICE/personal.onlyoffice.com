@@ -36,7 +36,7 @@ const StyledChromeExtensionPanel = styled(InfoPanel)`
   @media (max-width: 592px) {
     .extension-img {
       .info-panel-img {
-        margin-top: -67px;
+        margin-top: -112px;
       }
     }
   }

@@ -40,7 +40,7 @@ const StyledMobileAppPanel = styled(InfoPanel)`
 
     .mobile-app-img {
       .info-panel-img {
-        margin-top: -32px;
+        margin-top: -42px;
       }
     }
   }
