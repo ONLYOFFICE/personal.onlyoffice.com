@@ -22,7 +22,7 @@ const EmailChangePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
-  useEffect(() => {
+  /* useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
       if (res.isValidLink) {
         const params = parseQueryParams(location.search);
@@ -55,7 +55,7 @@ const EmailChangePage = ({ location }) => {
         });
       }
     });
-  }, []);
+  }, []); */
 
   return (
     <Layout t={t}>
