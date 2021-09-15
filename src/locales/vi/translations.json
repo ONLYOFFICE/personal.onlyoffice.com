@@ -118,7 +118,7 @@
   "TryLatter": "Dịch vụ hiện không khả dụng, vui lòng thử lại sau.",
   "ConfirmEmailActivated": "Đã kích hoạt email",
   "ConfirmEmailActivationError": "Lỗi kích hoạt email",
-  "ConfirmInvalidLink": "Liên kết không hợp lệ",
+  "ConfirmInvalidLink": "Liên kết không hợp lệ", 
   "ConfirmExpiredLink": "Liên kết đã hết hạn",
   "UnknownError": "Lỗi không xác định",
   "DeleteProfileSuccess": "Hồ sơ đã được xóa thành công",
