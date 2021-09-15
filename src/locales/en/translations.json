@@ -1,6 +1,6 @@
 {
   "MetaDescriptionOg": "ONLYOFFICE is a cloud office that enables you to manage documents, projects, team and customer relations in one place.",
-  "AuthDocsAlready": "Already have account?",
+  "AuthDocsAlready": "Already have an account?",
   "AuthDocsConnect": "Connect any cloud",
   "AuthDocsDisclaimer": "The user reviews are taken from <1>{{linkText}}</1>. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
   "AuthDocsDontHave": "Don't have an account?",
@@ -36,7 +36,7 @@
   "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1> and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
   "PrivacyStatement": "Privacy statement",
-  "CreateSuccessfullyHeader": "Thank you for registering your Personal ONLYOFFICE.",
+  "CreateSuccessfullyHeader":  "Thank you for registering your ONLYOFFICE™ Personal.",
   "CreateSuccessfullyDesc": "Your activation email has been sent to {{email}}. Check your email inbox to confirm the account.",
   "CreateSuccessfullyButton": "Go to main page",
   "RecoveryInstructions": "Please enter the email you used while registering on the portal. The password recovery instructions will be sent to that email address.",
