@@ -59,36 +59,36 @@ const EmpInvitePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
- // useEffect(() => {
-  //    checkingConfirmLink(location, t).then((res) => {
-  //      if (!res.isValidLink) {
-  //        navigate("/", {
-   //         state: {
-   //           toastr: {
-  //              error: true,
-   //             text: res.errorValidationLink || t("UnknownError"),
-  //            },
-   //         },
-  //        });
-  //      } else {
-  //        const key = getConfirmHeader(location);
-  //        getPortalPasswordSettings(key)
- //          .then((res) => {
-  //            setPasswordSettings(res);
-  //          })
-  //          .catch((e) => {
-  //            navigate("/", {
-  //              state: {
-  //                toastr: {
-  //                  error: true,
-  //                  text: `${e}` || t("UnknownError"),
- //                 },
- //              },
- //             });
- //           });
- //     }
- //   });
-//  }, []);
+  useEffect(() => {
+    checkingConfirmLink(location, t).then((res) => {
+      if (!res.isValidLink) {
+        navigate("/", {
+          state: {
+            toastr: {
+              error: true,
+              text: res.errorValidationLink || t("UnknownError"),
+            },
+          },
+        });
+      } else {
+        const key = getConfirmHeader(location);
+        getPortalPasswordSettings(key)
+          .then((res) => {
+            setPasswordSettings(res);
+          })
+          .catch((e) => {
+            navigate("/", {
+              state: {
+                toastr: {
+                  error: true,
+                  text: `${e}` || t("UnknownError"),
+                },
+              },
+            });
+          });
+      }
+    });
+  }, []);
 
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);
