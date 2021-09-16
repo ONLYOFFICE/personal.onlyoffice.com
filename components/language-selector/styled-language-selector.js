@@ -92,6 +92,12 @@ const StyledItem = styled.div`
     color: #ff865c;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+    .title-lng {
+      width: 70vw;
+    }
+  }
 `;
 
 export { StyledItem, StyledPanelView, StyledMobileView };
