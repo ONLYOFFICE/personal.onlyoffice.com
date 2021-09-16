@@ -85,6 +85,7 @@ const StyledItem = styled.div`
     margin-top: -5px;
     color: #333;
     vertical-align: middle;
+    width: 10vw;
   }
 
   .title-lng:hover {
