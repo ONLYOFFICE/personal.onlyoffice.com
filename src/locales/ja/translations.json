@@ -35,7 +35,7 @@
   "AuthDocsYourEmail":  "メールアドレス*",
   "AuthDocsAccessYourDocs":  "どこからでもドキュメントにアクセスできます。",
   "CookieMessButton":  "了解しました",
-  "CookieMessText":  "当ウェブサイトがクッキーを利用しています。当ウェブサイトを利用上、弊社の｛0｝プライバシー・ポリシー｛1｝同意したことになります。",
+  "CookieMessText":  "当ウェブサイトがクッキーを利用しています。当ウェブサイトを利用上、弊社の<1>プライバシー・ポリシー</1>同意したことになります。",
   "CreatePersonalButton":  "ONLYOFFICEアカウントを作成する",
   "Email":  "メール",
   "PersonalLogin":  "アカウントログイン",
