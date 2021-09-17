@@ -1,13 +1,12 @@
 import React from "react";
 
-import InfoPanel, {
-  ImageGroup,
-  HeadingGroup,
-  ButtonGroup,
-} from "../../../../../components/info-panel";
 import Text from "../../../../../components/text";
 import IconButton from "../../../../../components/icon-button";
 import Link from "../../../../../components/link";
+import HeadingGroup from "./heading-group";
+import ButtonGroup from "./button-group";
+
+import StyledChromeExtensionPanel from "./styled-chrome-extension-panel";
 
 const ChromeExtensionPanel = ({
   t,
@@ -40,19 +39,27 @@ const ChromeExtensionPanel = ({
     </Link>,
   ];
 
+  const contentComponent = [
+    <HeadingGroup className="panel-text" key="heading-chrome-extension">
+      {headingComponent}
+    </HeadingGroup>,
+    <ButtonGroup
+      className="panel-buttons extension-button"
+      key="button-chrome-extension"
+    >
+      {linkComponent}
+    </ButtonGroup>,
+  ];
+
   return (
-    <InfoPanel whiteBackground>
-      <HeadingGroup className="panel-text extension-text">
-        {headingComponent}
-      </HeadingGroup>
-      <ButtonGroup className="panel-buttons extension-button">
-        {linkComponent}
-      </ButtonGroup>
-      <ImageGroup
-        className="extension-img panel-image"
-        imgUrl={`/site-assets/info-screenshots/${localizedScreenshotPrefix}/extension.png`}
-      />
-    </InfoPanel>
+    <StyledChromeExtensionPanel
+      whiteBackground
+      contentComponent={contentComponent}
+      imageData={{
+        className: "extension-img panel-image",
+        imageUrl: `/site-assets/info-screenshots/${localizedScreenshotPrefix}/extension.png`,
+      }}
+    />
   );
 };
 

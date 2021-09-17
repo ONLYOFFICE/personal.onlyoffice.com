@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 
 import StyledInfoPanel from "./styled-info-panel";
 import ImageGroup from "./sub-components/image-group";
-import ButtonGroup from "./sub-components/button-group";
-import HeadingGroup from "./sub-components/heading-group";
+import ContentGroup from "./sub-components/content-group";
 
-const InfoPanel = (props) => {
-  return <StyledInfoPanel {...props} />;
+const InfoPanel = ({ imageData, contentComponent, ...rest }) => {
+  return (
+    <StyledInfoPanel {...rest}>
+      <ContentGroup children={contentComponent} />
+      <ImageGroup imageData={imageData} />
+    </StyledInfoPanel>
+  );
 };
 
 InfoPanel.propTypes = {
@@ -16,5 +20,3 @@ InfoPanel.propTypes = {
 };
 
 export default InfoPanel;
-
-export { ButtonGroup, HeadingGroup, ImageGroup };
