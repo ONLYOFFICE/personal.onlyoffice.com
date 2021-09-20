@@ -111,7 +111,7 @@ const SignInPage = ({ location }) => {
       tabIndexProp: 1,
       isAutoFocussed: true,
       isError: !emailIsValid,
-      errorText: emailIsEmpty && t("AuthErrorIndicationText"),
+      errorText: emailIsEmpty ? t("AuthErrorIndicationText") : "",
     },
     {
       type: "input",
@@ -122,7 +122,7 @@ const SignInPage = ({ location }) => {
       autoComplete: "current-password",
       tabIndexProp: 2,
       isError: !passwordIsValid,
-      errorText: passwordIsEmpty && t("AuthErrorIndicationText"),
+      errorText: passwordIsEmpty ? t("AuthErrorIndicationText") : "",
     },
     {
       type: "checkbox",

@@ -17,7 +17,7 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 
 import { navigate } from "gatsby";
 
-const SuccessfullyPage = ({ location }) => {
+const SuccessPage = ({ location }) => {
   useEffect(() => {
     if (location.state && location.state.hasOwnProperty("toastr")) {
       if (location.state.toastr.success) {
@@ -64,7 +64,7 @@ const SuccessfullyPage = ({ location }) => {
   const formData = [
     {
       type: "other",
-      element: <SuccessIcon style={{ margin: "0 auto" }} />,
+      element: <SuccessIcon style={{ margin: "0 auto" }} key="success-icon" />,
     },
     {
       type: "heading",
@@ -125,7 +125,7 @@ const SuccessfullyPage = ({ location }) => {
   );
 };
 
-export default SuccessfullyPage;
+export default SuccessPage;
 
 export const query = graphql`
   query($language: String!) {
