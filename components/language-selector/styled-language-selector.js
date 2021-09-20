@@ -27,11 +27,10 @@ const StyledPanelView = styled.div`
   position: absolute;
   display: ${(props) => (props.isOpen ? "grid" : "none")};
   width: max-content;
-  max-width: 766px;
+  max-width: 1008px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 3px;
-  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(
     ${(props) => Math.ceil(props.countLanguages / 3)},
     auto
@@ -43,6 +42,15 @@ const StyledPanelView = styled.div`
   padding: 36px 32px;
   top: 20px;
   right: 18px;
+  width: max-content;
+
+  @media (max-width: 1200px) {
+    max-width: 80vw;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: calc(100vw - 180px);
+  }
 `;
 
 const StyledMobileView = styled.div`
@@ -81,10 +89,22 @@ const StyledItem = styled.div`
     display: inline-block;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
-    margin-left: 12px;
     margin-top: -5px;
     color: #333;
     vertical-align: middle;
+    width: 100%;
+  }
+
+  .language-item-image {
+    margin-top: -1px;
+  }
+
+  .language-item-link {
+    display: grid;
+    grid-template-columns: 18px auto;
+    width: 100%;
+    text-decoration: none;
+    grid-gap: 12px;
   }
 
   .title-lng:hover {

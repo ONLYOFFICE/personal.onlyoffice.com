@@ -55,7 +55,7 @@ const EmailChangePage = ({ location }) => {
         });
       }
     });
-  }, []);
+  }, []); 
 
   return (
     <Layout t={t}>
