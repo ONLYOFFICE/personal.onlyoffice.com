@@ -12,8 +12,12 @@ const LanguageSelector = (props) => {
     typeof window !== "undefined" &&
       isOpen &&
       window.addEventListener("click", handleClickOutside);
+    window.addEventListener("resize", resizeHandler);
 
-    return () => window.removeEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("resize", resizeHandler);
+    };
   });
 
   const handleClickOutside = (e) => {
@@ -23,6 +27,12 @@ const LanguageSelector = (props) => {
         e.target.closest(".close-button-img"))
     ) {
       onCloseSelector();
+    }
+  };
+
+  const resizeHandler = (e) => {
+    if (window.innerWidth < 769) {
+      setIsOpen(false);
     }
   };
 

@@ -9,6 +9,7 @@ import languages from "../../languages";
 import Text from "../text";
 import IconButton from "../icon-button";
 import Portal from "../portal";
+//import Link from "../internal-link";
 export default function LangsList(props) {
   const { t, isOpen, currentLanguage, onCloseSelector } = props;
   const isPanelView = typeof window !== "undefined" && window.innerWidth >= 767;
@@ -49,11 +50,12 @@ export default function LangsList(props) {
 
       return (
         <StyledItem key={key}>
-          <Link to={`${localizedPath}`}>
+          <Link to={`${localizedPath}`} className="language-item-link">
             <img
               src={`/site-assets/flags/${iconName}`}
               alt={key}
               width="18px"
+              className="language-item-image"
             />
             <Text as="span" className="title-lng">
               {t(key)}
