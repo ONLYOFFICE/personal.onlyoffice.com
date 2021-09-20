@@ -58,7 +58,7 @@ const IndexPage = ({ location }) => {
         />
       </Layout.PageHeader>
       <Layout.SectionMain>
-        <CreateSection t={t} />
+        <CreateSection t={t} currentLanguage={language} />
         <CarouselSection t={t} language={language} />
         <CloudsSection textHeading={t("AuthDocsConnect")} />
         <DownloadSection t={t} language={language} />

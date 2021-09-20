@@ -40,7 +40,11 @@ const CreateNowPage = () => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <StyledSection>
-          <CreateForm t={t} buttonHref={buttonHref} />
+          <CreateForm
+            t={t}
+            buttonHref={buttonHref}
+            currentLanguage={language}
+          />
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>

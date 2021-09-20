@@ -6,25 +6,27 @@ import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
 
-import { join } from "../../api";
+import { registration } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
-const CreateForm = ({ t, isPanel, buttonHref }) => {
+const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
-  const [isSubscribe, setIsChecked] = useState(true);
+  const [isSubscribe, setIsSubscribe] = useState(true);
   const [isAcceptLicence, setIsLicense] = useState(false);
   const [emailIsEmpty, setEmailIsEmpty] = useState(true);
   const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
   const [errorTextInput, setErrorTextInput] = useState(null);
+  const [emailIsExist, setEmailIsExist] = useState(false);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
     setEmailIsValid(isValid);
+    setEmailIsExist(false);
   };
 
   const changeSubscribe = (e) => {
-    setIsChecked(e.target.checked);
+    setIsSubscribe(e.target.checked);
   };
 
   const changeAcceptLicense = (e) => {
@@ -61,17 +63,18 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
     if (hasError) return false;
 
     if (emailIsValid)
-      join(emailValue)
+      registration(emailValue, isSubscribe, currentLanguage)
         .then((res) => {
-          navigate("/success", {
-            state: {
-              email: emailValue,
-              toastr: {
-                success: true,
-                text: res,
+          if (res) {
+            setEmailIsExist(true);
+            setErrorTextInput(res);
+          } else {
+            navigate("/success", {
+              state: {
+                email: emailValue,
               },
-            },
-          });
+            });
+          }
         })
         .catch((err) => toastr.error(`${err}`));
   };
@@ -107,7 +110,9 @@ const CreateForm = ({ t, isPanel, buttonHref }) => {
       isDisabledButton: !isAcceptLicence,
       disabledValidation: false,
       isError:
-        (emailIsEmpty && !emailIsValid) || (emailIsIncorrect && !emailIsValid),
+        (emailIsEmpty && !emailIsValid) ||
+        (emailIsIncorrect && !emailIsValid) ||
+        emailIsExist,
       errorText: errorTextInput,
       tabIndexProp: 1,
     },

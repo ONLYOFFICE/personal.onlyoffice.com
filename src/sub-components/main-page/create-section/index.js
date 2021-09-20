@@ -6,7 +6,7 @@ import Text from "../../../../components/text";
 import StyledCreateSection from "./styled-create-section";
 import CreateForm from "../../create-form";
 
-const CreateSection = ({ t }) => {
+const CreateSection = ({ t, currentLanguage }) => {
   return (
     <StyledCreateSection>
       <div className="text-block">
@@ -18,7 +18,7 @@ const CreateSection = ({ t }) => {
         </Text>
       </div>
       <div className="form-block">
-        <CreateForm t={t} isPanel />
+        <CreateForm t={t} isPanel currentLanguage={currentLanguage} />
       </div>
     </StyledCreateSection>
   );
