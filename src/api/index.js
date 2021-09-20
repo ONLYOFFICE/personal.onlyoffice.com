@@ -136,3 +136,18 @@ export function getPortalPasswordSettings(confirmKey = null) {
 
   return request(options);
 }
+
+export function registration(
+  email,
+  spam,
+  lang,
+  campaign = false,
+  recaptchaResponse = null
+) {
+  const data = { email, lang, campaign, spam, recaptchaResponse };
+  return request({
+    method: "post",
+    url: "/people/register.json",
+    data,
+  });
+}
