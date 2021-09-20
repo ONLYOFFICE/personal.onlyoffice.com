@@ -82,7 +82,7 @@ const EmailInput = ({
       <TextInput
         type="email"
         defaultInput={emailDefault}
-        isSuccess={emailSuccess || isSuccess}
+        isSuccess={emailSuccess}
         isError={emailError || isError}
         value={email}
         onChange={onChangeHandler}

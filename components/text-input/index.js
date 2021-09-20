@@ -78,7 +78,7 @@ const TextInput = ({
         >
           {placeholder}
         </Label>
-        {!isSuccess && isError && errorText && (
+        {isError && errorText && (
           <Text className="error-text" fontSize="13px" color="#CB0000">
             {errorText}
           </Text>
