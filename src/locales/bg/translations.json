@@ -93,7 +93,7 @@
   "Error404PageButtonText": "Връщане към заглавна страница",
   "TermAndCondition": "Общи условия",
   "PrivacyStatement": "Декларация за поверителност",
-  "CreateSuccessfullyDesc": "Вашият имейл за активиране е изпратен на {{email}}. Проверете входящата си поща за потвърждение на профила.",
+  "CreateSuccessfullyDesc": "Вашият имейл за активиране е изпратен на <1>{{email}}</1>. Проверете входящата си поща за потвърждение на профила.",
   "CreateSuccessfullyButton": "Отиди на заглавна страница",
   "CreateFormHeader": "Създайте Вашия безплатен офис",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Всички права запазени",
@@ -127,4 +127,3 @@
   "ProviderNotConnected": "Доставчикът не е свързан с профила Ви",
   "DocSlideSectionCarouselHeading": "Работете с документи"
 }
-  

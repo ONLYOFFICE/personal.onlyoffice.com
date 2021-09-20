@@ -31,7 +31,7 @@
   "MetaDescriptionOg": "ONLYOFFICE is a cloud office that enables you to manage documents, projects, team and customer relations in one place.",
   "MetaKeywords": "edit word online, word editor online, word online free, word office online",
   "AuthDocsAlready": "Already have account?",
-  "CreateSuccessfullyDesc": "Your activation email has been sent to {{email}}. Check your email inbox to confirm the account.",
+  "CreateSuccessfullyDesc": "Your activation email has been sent to <1>{{email}}</1>. Check your email inbox to confirm the account.",
   "AuthDocsConnect": "Connect any cloud",
   "AuthDocsDisclaimer": "The user reviews are taken from <1>{{linkText}}</1>. Capterra reviews constitute the subjective opinions of individual end users based on their own experiences and do not represent the views of Capterra or its affiliates.",
   "AuthDocsDontHave": "Don't have an account?",

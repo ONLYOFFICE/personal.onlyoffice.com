@@ -13,7 +13,7 @@
   "AuthDocsMetaDescription": "ONLYOFFICE Personal je brezplačna spletna zbirka za urejanje besedilnih dokumentov, preglednic in predstavitev z individualnim shranjevanjem v oblaku.",
   "AuthDocsMetaKeywords": "word uredi na spletu, word urejevalnik na spletu, brezplačen spletni word, word spletna pisarna",
   "AuthDocsOnlineDesktopMobile": "Povezano, namizje & mobilno",
-  "AuthDocsOr": "ali se vpiši",  
+  "AuthDocsOr": "ali se vpiši",
   "AuthDocsPowerfulTexts": "Delo s tekstovnimi datotekami",
   "AuthDocsPowerfulTextSub": "Napišite ali uredite profesionalno z vsemi urejevalnimi funkcijami, ki jih boste kdajkoli potrebovali. Dodajte oblike, grafe, tabele in druge objekte. Uporabite elemente postavitve, dodajte končne opombe in komentarje, navzkrižne reference, številke strani in drugo. Preglejte in primerjajte besedila.",
   "CollaborationSlideSecitonCarouselHeading": "Sodelujte na spletu",
@@ -42,10 +42,10 @@
   "PersonalLogin": "Prijava v račun",
   "RegistryButtonCreateNow": "Ustvarite zdaj",
   "RegistrySettingSpam": "Želim se prijaviti na ONLYOFFICE novice",
-  "RegistrySettingTerms": "Strinjam se z ONLYOFFICE  <1>{{terms}}</1> in <2>{{privacy}}</2>",  
+  "RegistrySettingTerms": "Strinjam se z ONLYOFFICE  <1>{{terms}}</1> in <2>{{privacy}}</2>",
   "AuthDocsFreeDesktopApp": "Prenesite <1>brezplačno namizno aplikacijo</1> za urejanje datotek brez povezave ali s povezavo v oblaku.",
   "AuthDocsWorkWithDocs": "Delajte z dokumenti na poti z <1>ONLYOFFICE mobilnimi aplikacijami</1>.",
-  "AuthFooterBlog": "Blog",  
+  "AuthFooterBlog": "Blog",
   "ChooseLanguage": "Izberite vaš jezik",
   "FirstName": "Ime",
   "LastName": "Priimek",
@@ -95,7 +95,7 @@
   "Error404PageButtonText": "Vrnitev na domačo stran",
   "TermAndCondition": "Pogoji uporabe",
   "PrivacyStatement": "Izjava o zasebnosti",
-  "CreateSuccessfullyDesc": "Vaš aktivacijski e-mail naslov je bil poslan na {{email}}. Preverite svoj e-mail predal, da potrdite račun.",
+  "CreateSuccessfullyDesc": "Vaš aktivacijski e-mail naslov je bil poslan na <1>{{email}}</1>. Preverite svoj e-mail predal, da potrdite račun.",
   "CreateSuccessfullyButton": "Pojdite na osnovno stran",
   "CreateFormHeader": "Ustvarite brezplačno pisarno",
   "CopyrightAndRights": "© Ascensio System SIA {{currentYear}}. Vse pravice so pridržane",
@@ -128,4 +128,3 @@
   "ProviderNotConnected": "Ponudnik ni povezan z vašim računom",
   "DocSlideSectionCarouselHeading": "Delo z dokumenti"
 }
-  

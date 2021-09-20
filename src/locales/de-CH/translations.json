@@ -4,7 +4,7 @@
   "AuthDocsMetaDescription": "ONLYOFFICE Personal ist eine kostenlose Bearbeitungs-Suite für Textdokumente, Tabellen und Präsentationen mit einem individuellen Cloud-Speicher.",
   "AuthDocsMetaKeywords": "Word Office, Word Office online, Word Office kostenlos, Word Office Dokument",
   "AuthDocsOr": "oder anmelden",
-  "CreateSuccessfullyDesc": "Die Aktivierungsemail wurde gesendet an {{email}}. Prüfen Sie Ihr E-Mail-Postfach, um das Konto zu bestätigen.",
+  "CreateSuccessfullyDesc": "Die Aktivierungsemail wurde gesendet an <1>{{email}}</1>. Prüfen Sie Ihr E-Mail-Postfach, um das Konto zu bestätigen.",
   "CreateSuccessfullyHeader": "Vielen Dank für die Registrierung bei ONLYOFFICE™ Personal.",
   "AuthDocsTitle": "Ihr persönliches Online-Office",
   "AuthDocsTitlePage": "Persönliches Online-Office",

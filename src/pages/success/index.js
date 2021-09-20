@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
+import Text from "../../../components/text";
 
 import Head from "../../sub-components/head";
 import HeaderContent from "../../sub-components/header-content";
@@ -41,6 +42,25 @@ const SuccessfullyPage = ({ location }) => {
     navigate("/");
   };
 
+  const formDescriptionContent = () => {
+    const email = location.state ? location.state.email : "";
+    return (
+      <Trans
+        i18nKey="CreateSuccessfullyDesc"
+        email={location.state ? location.state.email : ""}
+      >
+        {" "}
+        <Text
+          as="span"
+          fontWeight="bold"
+          style={{ verticalAlign: "bottom", fontSize: "16px" }}
+        >
+          {{ email }}
+        </Text>
+      </Trans>
+    );
+  };
+
   const formData = [
     {
       type: "other",
@@ -56,9 +76,7 @@ const SuccessfullyPage = ({ location }) => {
       element: (
         <FormDescription
           key="recovery-instructions"
-          label={t("CreateSuccessfullyDesc", {
-            email: location.state ? location.state.email : "",
-          })}
+          label={formDescriptionContent()}
         />
       ),
     },
