@@ -31,7 +31,7 @@ const EmailChangePage = ({ location }) => {
         getUser(email)
           .then((user) => {
             changeEmail(user.id, email, confirmHeader).then((res) => {
-              window.open("/", "_self");
+              window.location.replace("/");
             });
           })
           .catch((e) => {
@@ -55,7 +55,7 @@ const EmailChangePage = ({ location }) => {
         });
       }
     });
-  }, []); 
+  }, []);
 
   return (
     <Layout t={t}>

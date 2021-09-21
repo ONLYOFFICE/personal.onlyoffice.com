@@ -104,7 +104,7 @@ const PasswordChangePage = ({ location }) => {
     changePassword(params.uid, hash, confirmHeader)
       .then(() => logout())
       .then(() => {
-        login(params.email, hash).then(() => window.open("/", "_self"));
+        login(params.email, hash).then(() => window.location.replace("/"));
       })
       .catch((error) => {
         toastr.error(`${error}`);
