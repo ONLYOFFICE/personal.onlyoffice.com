@@ -45,6 +45,29 @@ const EmpInvitePage = ({ location }) => {
 
   const [passwordSettings, setPasswordSettings] = useState(null);
 
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
+  useEffect(() => {
+    const params = parseQueryParams(location.search);
+    const { lang: linkLanguage } = params;
+
+    if (language !== linkLanguage) {
+      let localizedPath;
+      if (language === "en" && !location.pathname.includes("en")) {
+        localizedPath = `/${linkLanguage}${location.pathname}${location.search}`;
+      } else {
+        localizedPath = `${location.pathname.replace(language, linkLanguage)}${
+          location.search
+        }`;
+      }
+
+      navigate(localizedPath);
+    }
+  }, [language, location.pathname, location.search]);
+
   useEffect(() => {
     getSettings()
       .then((res) => {
@@ -53,11 +76,6 @@ const EmpInvitePage = ({ location }) => {
 
       .catch((e) => console.error(e));
   }, []);
-
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
 
   useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
@@ -196,7 +214,7 @@ const EmpInvitePage = ({ location }) => {
           const currentLanguage = languages.find(
             (el) => el.shortKey === language
           );
-          updateUserCulture(user.id, currentLanguage?.key || "ru-RU");
+          updateUserCulture(user.id, currentLanguage?.key || "en");
         })
         .then(() => window.location.replace("/"))
         .catch((error) => {
