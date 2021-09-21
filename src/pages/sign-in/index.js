@@ -200,7 +200,7 @@ const SignInPage = ({ location }) => {
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>
-        <FooterContent t={t} />
+        <FooterContent t={t} language={language} />
       </Layout.PageFooter>
     </Layout>
   );

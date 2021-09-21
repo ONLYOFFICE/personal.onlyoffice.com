@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import packages from "../../../package.json";
 
@@ -11,9 +11,28 @@ import Social from "./sub-components/social-item";
 
 const date = new Date();
 const currentYear = date.getFullYear();
+const availableLanguages = [
+  "en",
+  "fr",
+  "de",
+  "es",
+  "pt",
+  "it",
+  "cs",
+  "nl",
+  "ja",
+  "zh",
+  "ru",
+];
 
 const FooterContent = (props) => {
   const { t, language, isHomePage, ...rest } = props;
+  const [localizedPrefix, setLocalizedPrefix] = useState();
+
+  useEffect(() => {
+    const lang = availableLanguages.filter((lng) => language.includes(lng));
+    setLocalizedPrefix(lang);
+  }, [language]);
 
   return (
     <StyledFooter
@@ -55,7 +74,7 @@ const FooterContent = (props) => {
             <CustomLink
               className="personal-footer-link"
               color="#444444"
-              href={`https://www.onlyoffice.com`}
+              href={`https://www.onlyoffice.com/${localizedPrefix}`}
               target="_blank"
             >
               {t("CorporateUse")}

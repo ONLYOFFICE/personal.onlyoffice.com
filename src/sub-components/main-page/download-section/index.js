@@ -56,6 +56,7 @@ const DownloadSection = ({ t, language }) => {
         className="download-info-panel"
         t={t}
         localizedScreenshotPrefix={localizedScreenshotPrefix}
+        currentLanguage={language}
       />
       <MobileAppPanel
         className="download-info-panel"

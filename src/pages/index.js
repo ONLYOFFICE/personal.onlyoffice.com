@@ -69,7 +69,7 @@ const IndexPage = ({ location }) => {
         <ReviewSection t={t} />
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
-        <FooterContent t={t} isHomePage />
+        <FooterContent t={t} isHomePage language={language} />
       </Layout.PageFooter>
     </Layout>
   );
