@@ -92,7 +92,9 @@ const SignInPage = ({ location }) => {
 
     if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
-        .then(() => window.open("/", "_self"))
+        .then(() => {
+          window.location.replace("/");
+        })
         .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {
       toastr.error(t("InvalidUserNameOrPwd"));
