@@ -8,7 +8,16 @@ import Button from "../../../../../components/button";
 import HeadingGroup from "./heading-group";
 import ButtonGroup from "./button-group";
 import StyledDesktopAppPanel from "./styled-desktop-app-panel";
+
+import useLocalizedPrefixForLink from "../../../../hooks/useLocalizedPrefixForLink";
+import { availableLinkLanguages } from "../../../../helpers/constants";
+
 const DesktopAppPanel = ({ t, localizedScreenshotPrefix, currentLanguage }) => {
+  const localizedPrefix = useLocalizedPrefixForLink(
+    availableLinkLanguages,
+    currentLanguage
+  );
+
   const headingComponent = (
     <Text>
       <Trans i18nKey="AuthDocsFreeDesktopApp">
@@ -22,7 +31,9 @@ const DesktopAppPanel = ({ t, localizedScreenshotPrefix, currentLanguage }) => {
     <Link
       className="desktop-link"
       key="desktop-app"
-      href={`https://www.onlyoffice.com/${currentLanguage}/download-desktop.aspx`}
+      href={`https://www.onlyoffice.com/${
+        localizedPrefix ? localizedPrefix + "/" : ""
+      }download-desktop.aspx`}
     >
       <Button
         className="desktop-button-component download-section-icon-component"

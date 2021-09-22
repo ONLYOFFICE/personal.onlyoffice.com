@@ -5,3 +5,17 @@ export const ValidationResult = Object.freeze({
   Invalid: 1,
   Expired: 2,
 });
+
+export const availableLinkLanguages = [
+  "en",
+  "fr",
+  "de",
+  "es",
+  "pt",
+  "it",
+  "cs",
+  "nl",
+  "ja",
+  "zh",
+  "ru",
+];

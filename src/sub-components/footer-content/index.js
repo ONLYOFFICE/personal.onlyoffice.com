@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import packages from "../../../package.json";
 
@@ -9,30 +9,17 @@ import Text from "../../../components/text";
 import StyledFooter from "./styled-footer-content";
 import Social from "./sub-components/social-item";
 
+import useLocalizedPrefixForLink from "../../hooks/useLocalizedPrefixForLink";
+import { availableLinkLanguages } from "../../helpers/constants";
+
 const date = new Date();
 const currentYear = date.getFullYear();
-const availableLanguages = [
-  "en",
-  "fr",
-  "de",
-  "es",
-  "pt",
-  "it",
-  "cs",
-  "nl",
-  "ja",
-  "zh",
-  "ru",
-];
 
-const FooterContent = (props) => {
-  const { t, language, isHomePage, ...rest } = props;
-  const [localizedPrefix, setLocalizedPrefix] = useState();
-
-  useEffect(() => {
-    const lang = availableLanguages.filter((lng) => language.includes(lng));
-    setLocalizedPrefix(lang);
-  }, [language]);
+const FooterContent = ({ t, language, isHomePage, ...rest }) => {
+  const localizedPrefix = useLocalizedPrefixForLink(
+    availableLinkLanguages,
+    language
+  );
 
   return (
     <StyledFooter
