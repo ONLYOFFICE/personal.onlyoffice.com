@@ -30,6 +30,11 @@ const StyledInput = styled.div`
     position: absolute;
     padding-top: 55px;
     z-index: 0;
+    width: max-content;
+
+    @media (max-width: 592px) {
+      padding-top: 46px;
+    }
   }
 `;
 
