@@ -33,6 +33,10 @@ const panelStyle = css`
       margin-bottom: 2px;
     }
 
+    .form-input {
+      margin-bottom: 14px;
+    }
+
     .form-separator {
       margin-top: 8px;
       margin-bottom: 22px;

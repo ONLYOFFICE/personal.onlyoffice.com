@@ -34,6 +34,9 @@ const StyledInput = styled.div`
 
     @media (max-width: 592px) {
       padding-top: 46px;
+      max-width: calc(100vw - 64px);
+      line-height: 16px;
+      position: relative;
     }
   }
 `;
