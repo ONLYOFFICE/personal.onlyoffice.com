@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "../../../components/internal-link";
 
-const FormLink = (props) => {
-  const { href, label, currentLanguage } = props;
+const FormLink = ({ href, label, currentLanguage }) => {
   return (
     <Link
       fontSize="16px"

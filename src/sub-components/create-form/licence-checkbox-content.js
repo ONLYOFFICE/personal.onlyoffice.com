@@ -10,9 +10,7 @@ const StyledLicenceCheckbox = styled.div`
   max-width: calc(100% - 24px);
 `;
 
-const LicenseCheckboxContent = (props) => {
-  const { t } = props;
-
+const LicenseCheckboxContent = ({ t }) => {
   const terms = t("TermAndCondition");
   const privacy = t("PrivacyStatement");
 

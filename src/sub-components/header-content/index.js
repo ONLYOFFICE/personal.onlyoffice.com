@@ -9,17 +9,15 @@ import Link from "../../../components/internal-link";
 
 import CookieSnackbar from "../cookie-snackbar";
 
-const HeaderContent = (props) => {
-  const {
-    t,
-    language,
-    href,
-    labelButton,
-    headerText,
-    withoutButton,
-    ...rest
-  } = props;
-
+const HeaderContent = ({
+  t,
+  language,
+  href,
+  labelButton,
+  headerText,
+  withoutButton,
+  ...rest
+}) => {
   const homepagePath = language === "en" ? "/" : `/${language}`;
 
   return (

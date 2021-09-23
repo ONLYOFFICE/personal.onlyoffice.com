@@ -11,8 +11,8 @@ import { getLocalizedImagePrefix } from "../../../helpers";
 
 const localizedImages = ["ru", "de", "fr", "en"];
 const localizedAppsIcons = [
-  "ch",
-  "cz",
+  "zh",
+  "cs",
   "de",
   "en",
   "es",

@@ -5,15 +5,13 @@ import Button from "../../../components/button";
 
 import StyledAdditionalSection from "./styled-additional-section";
 
-const AdditionalSection = (props) => {
-  const {
-    textLabel,
-    buttonHref,
-    buttonLabel,
-    marginTop,
-    smallMarginTop,
-  } = props;
-
+const AdditionalSection = ({
+  textLabel,
+  buttonHref,
+  buttonLabel,
+  marginTop,
+  smallMarginTop,
+}) => {
   return (
     <StyledAdditionalSection
       key="additional"

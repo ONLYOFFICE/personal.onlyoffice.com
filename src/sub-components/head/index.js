@@ -2,9 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import languages from "../../../languages";
 
-const Head = (props) => {
-  const { metaDescription, metaKeywords, title, metaDescriptionOg } = props;
-
+const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
   return (
     <Helmet>
       <title>{title}</title>
