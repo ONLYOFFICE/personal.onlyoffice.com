@@ -108,8 +108,7 @@ const SocialButtons = ({ t, isDisabled }) => {
       const provider =
         providers &&
         providers.find(
-          (item) =>
-            item.provider.toLocaleLowerCase() === el.name.toLocaleLowerCase()
+          (item) => item.provider.toLowerCase() === el.name.toLowerCase()
         );
 
       return (
