@@ -106,7 +106,11 @@ const SocialButtons = ({ t, isDisabled }) => {
   const renderButtons = () => {
     const providerButtons = providersIcons.map((el) => {
       const provider =
-        providers && providers.find((item) => item.provider === el.name);
+        providers &&
+        providers.find(
+          (item) =>
+            item.provider.toLocaleLowerCase() === el.name.toLocaleLowerCase()
+        );
 
       return (
         <SocialButton
