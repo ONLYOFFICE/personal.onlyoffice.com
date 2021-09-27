@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 
 import Form from "../../../components/form";
@@ -18,6 +18,13 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
   const [errorTextInput, setErrorTextInput] = useState(null);
   const [emailIsExist, setEmailIsExist] = useState(false);
+
+  const [isDesktopClient, setIsDesktopClient] = useState(null);
+
+  useEffect(() => {
+    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
+    setIsDesktopClient(isDesktopClient);
+  }, []);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -93,6 +100,26 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
         ),
       };
 
+  const formSeparator = isDesktopClient
+    ? null
+    : {
+        type: "separator",
+        separatorText: t("AuthDocsOr"),
+      };
+
+  const socialButtonsSection = isDesktopClient
+    ? null
+    : {
+        type: "other",
+        element: (
+          <SocialButtons
+            key="social-buttons"
+            t={t}
+            isDisabled={!isAcceptLicence}
+          />
+        ),
+      };
+
   const formData = [
     { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
 
@@ -138,16 +165,9 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       toHideButton: isPanel,
       tabIndexProp: 2,
     },
-    { type: "separator", separatorText: t("AuthDocsOr") },
+    { ...formSeparator },
     {
-      type: "other",
-      element: (
-        <SocialButtons
-          key="social-buttons"
-          t={t}
-          isDisabled={!isAcceptLicence}
-        />
-      ),
+      ...socialButtonsSection,
     },
     {
       ...additionalSection,
