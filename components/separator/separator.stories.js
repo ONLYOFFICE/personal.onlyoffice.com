@@ -16,14 +16,12 @@ export default {
 const Template = ({ ...args }) => {
   return (
     <div style={{ width: "100%" }}>
-      <Separator {...args}>
-        {args.children}
-      </Separator>
+      <Separator {...args}>{args.children}</Separator>
     </div>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "",
+  children: "Some Text",
 };

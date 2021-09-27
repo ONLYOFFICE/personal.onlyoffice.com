@@ -26,5 +26,5 @@ const Template = ({ ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  iconName: "social-icons/facebook.react.svg",
+  iconName: "static/images/social-icons/facebook.react.svg",
 };

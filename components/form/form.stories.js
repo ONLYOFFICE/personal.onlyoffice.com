@@ -66,15 +66,15 @@ const Template = ({ ...args }) => {
         }}
       >
         <SocialButton
-          iconName="social-icons/google.react.svg"
+          iconName="static/images/social-icons/google.react.svg"
           onClick={clickSocialButton}
         />
         <SocialButton
-          iconName="social-icons/facebook.react.svg"
+          iconName="static/images/social-icons/facebook.react.svg"
           onClick={clickSocialButton}
         />
         <SocialButton
-          iconName="social-icons/linkedin.react.svg"
+          iconName="static/images/social-icons/linkedin.react.svg"
           onClick={clickSocialButton}
         />
       </div>
