@@ -24,6 +24,7 @@ const providersIcons = [
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
+  //const [isDisabledButton, setIsDisabledData] = useState(false);
 
   const authCallback = useCallback(
     (profile) => {
@@ -74,7 +75,7 @@ const SocialButtons = ({ t, isDisabled }) => {
   };
 
   const onSocialButtonClick = (e) => {
-    if (isDisabled) return false;
+    if (isDisabled || providers.length <= 0) return false;
     const targetButton = e.target.closest(".social-button");
     if (!targetButton) toastr.error(t("SomethingWentWrong"));
     const providerName = targetButton.dataset.providername;
@@ -118,7 +119,7 @@ const SocialButtons = ({ t, isDisabled }) => {
           dataUrl={provider?.url}
           dataProvidername={provider?.provider}
           onClick={onSocialButtonClick}
-          isDisabled={isDisabled || !provider}
+          isDisabled={isDisabled || !provider || providers.length <= 0}
         />
       );
     });
