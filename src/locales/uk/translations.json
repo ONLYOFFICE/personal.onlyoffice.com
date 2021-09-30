@@ -127,5 +127,10 @@
     "AuthorizationTitle": "Авторизація ONLYOFFICE",
     "ConfirmTitle": "Підтвердження ONLYOFFICE",
     "ProviderNotConnected": "Постачальник не підключений до вашого облікового запису",
-    "DocSlideSectionCarouselHeading": "Робота з текстовими документами"
+    "DocSlideSectionCarouselHeading": "Робота з текстовими документами",
+    "PasswordLimitDigits": "цифри",
+    "PasswordLimitLength": "від {{fromNumber}} до {{toNumber}} символів",
+    "PasswordLimitMessage": "Пароль має містити:",
+    "PasswordLimitUpperCase": "великі літери",
+    "PasswordLimitSpecialSymbols": "спеціальні символи"
 }
