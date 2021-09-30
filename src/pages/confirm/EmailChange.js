@@ -22,6 +22,7 @@ const EmailChangePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
+  /* eslint-disable */
   useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
       if (res.isValidLink) {
@@ -56,6 +57,7 @@ const EmailChangePage = ({ location }) => {
       }
     });
   }, []);
+  /* eslint-enable */
 
   return (
     <Layout t={t}>

@@ -27,6 +27,7 @@ const ProfileRemovePage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
+  /* eslint-disable */
   useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
       if (!res.isValidLink) {
@@ -41,6 +42,7 @@ const ProfileRemovePage = ({ location }) => {
       }
     });
   }, []);
+  /* eslint-enable */
 
   const onSubmitHandler = () => {
     const confirmHeader = getConfirmHeader(location);

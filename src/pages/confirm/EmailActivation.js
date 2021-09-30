@@ -22,6 +22,7 @@ const EmailActivationPage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
+  /* eslint-disable */
   useEffect(() => {
     const linkData = getConfirmLinkData(location);
     checkingConfirmLink(location, t).then((res) => {
@@ -62,6 +63,7 @@ const EmailActivationPage = ({ location }) => {
       }
     });
   }, []);
+  /* eslint-enable */
 
   return (
     <Layout t={t}>

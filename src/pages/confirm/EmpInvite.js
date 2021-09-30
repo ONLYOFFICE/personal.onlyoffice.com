@@ -77,6 +77,7 @@ const EmpInvitePage = ({ location }) => {
       .catch((e) => console.error(e));
   }, []);
 
+  /* eslint-disable */
   useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
       if (!res.isValidLink) {
@@ -107,6 +108,7 @@ const EmpInvitePage = ({ location }) => {
       }
     });
   }, []);
+  /* eslint-enable */
 
   const onChangeFirstName = (e) => {
     if (!firstNameValid) setFirstNameValid(true);

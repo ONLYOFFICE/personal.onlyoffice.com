@@ -47,6 +47,7 @@ const PasswordChangePage = ({ location }) => {
       .catch((e) => console.error(e));
   }, []);
 
+  /* eslint-disable */
   useEffect(() => {
     checkingConfirmLink(location, t).then((res) => {
       if (!res.isValidLink) {
@@ -77,6 +78,7 @@ const PasswordChangePage = ({ location }) => {
       }
     });
   }, []);
+  /* eslint-enable */
 
   const onPasswordChange = (e, isValid) => {
     setPassword(e.target.value);
