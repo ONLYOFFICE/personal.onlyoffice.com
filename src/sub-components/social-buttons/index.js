@@ -40,6 +40,7 @@ const SocialButtons = ({ t, isDisabled }) => {
   );
   useEffect(() => {
     window.authCallback = authCallback;
+
     getAuthProviders()
       .then((providers) => {
         setProviders(providers);

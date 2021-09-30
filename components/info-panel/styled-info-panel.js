@@ -89,14 +89,6 @@ const StyledInfoPanel = styled.div`
       width: auto;
     }
   }
-
-  @media (max-width: 592px) {
-    .info-panel-image-group {
-      .info-panel-img {
-        height: 200px;
-      }
-    }
-  }
 `;
 
 StyledInfoPanel.defaultProps = { theme: Base };

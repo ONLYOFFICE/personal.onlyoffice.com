@@ -33,13 +33,6 @@ const StyledChromeExtensionPanel = styled(InfoPanel)`
       }
     }
   }
-  @media (max-width: 592px) {
-    .extension-img {
-      .info-panel-img {
-        margin-top: -112px;
-      }
-    }
-  }
 `;
 
 export default StyledChromeExtensionPanel;

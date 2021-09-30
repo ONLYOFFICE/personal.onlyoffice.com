@@ -28,12 +28,6 @@ const StyledDesktopAppPanel = styled(InfoPanel)`
         height: 48px;
       }
     }
-
-    .desktop-image {
-      .info-panel-img {
-        margin-top: -120px;
-      }
-    }
   }
 `;
 
