@@ -127,5 +127,10 @@
   "AuthorizationTitle": "승인 - ONLYOFFICE",
   "ConfirmTitle": "확인 - ONLYOFFICE",
   "ProviderNotConnected": "제공 업체가 고객님의 계정에 연결되어 있지 않습니다",
-  "DocSlideSectionCarouselHeading": "텍스트 문서 작업"
+  "DocSlideSectionCarouselHeading": "텍스트 문서 작업",
+  "PasswordLimitDigits": "숫자",
+  "PasswordLimitLength": "{{fromNumber}} ~ {{toNumber}}글자",
+  "PasswordLimitMessage": "비밀번호는 반드시 다음을 포함해야 합니다: ",
+  "PasswordLimitUpperCase": "대문자",
+  "PasswordLimitSpecialSymbols": "특수 문자"
 }
