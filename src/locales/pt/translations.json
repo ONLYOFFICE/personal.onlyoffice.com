@@ -126,5 +126,10 @@
   "AuthorizationTitle": "Autorização - ONLYOFFICE",
   "ConfirmTitle": "Confirmação - ONLYOFFICE",
   "ProviderNotConnected": "O fornecedor do armazenamento não está ligado à sua conta",
-  "DocSlideSectionCarouselHeading": "Trabalhe com documentos de texto"
+  "DocSlideSectionCarouselHeading": "Trabalhe com documentos de texto",
+  "PasswordLimitDigits": "dígitos",
+  "PasswordLimitLength": "de {{fromNumber}} a {{toNumber}} caracteres",
+  "PasswordLimitMessage": "A palavra-passe tem de conter:",
+  "PasswordLimitUpperCase": "letras maiúsculas",
+  "PasswordLimitSpecialSymbols": "caracteres especiais"
 }

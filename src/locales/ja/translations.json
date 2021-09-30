@@ -126,5 +126,10 @@
   "AuthorizationTitle": "承認 - ONLYOFFICE",
   "ConfirmTitle": "確認 - ONLYOFFICE",
   "ProviderNotConnected": "プロバイダーがアカウントに接続されていません",
-  "DocSlideSectionCarouselHeading": "ドキュメントとの連携"
+  "DocSlideSectionCarouselHeading": "ドキュメントとの連携",
+  "PasswordLimitDigits": "桁",
+  "PasswordLimitLength": "from {{fromNumber}}から{{toNumber}}までの文字数",
+  "PasswordLimitMessage": "パスワードは必ず含まれる",
+  "PasswordLimitUpperCase": "大文字",
+  "PasswordLimitSpecialSymbols": "特殊文字"
 }

@@ -124,5 +124,11 @@
   "AuthorizationTitle": "Autorisatie - ONLYOFFICE",
   "ConfirmTitle": "Bevestiging - ONLYOFFICE",
   "ProviderNotConnected": "Provider is niet verbonden met uw account",
-  "DocSlideSectionCarouselHeading": "Werk met documenten"
+  "DocSlideSectionCarouselHeading": "Werk met documenten",
+  "PasswordLimitDigits": "cijfers",
+  "PasswordLimitLength": "van {{fromNumber}} tot {{toNumber}} tekens",
+  "PasswordLimitMessage": "Wachtwoord moet het volgende bevatten: ",
+  "PasswordLimitUpperCase": "hoofdletters",
+  "PasswordLimitSpecialSymbols": "speciale tekens",
+  "AuthDocsWorkWithDocs": "Werk met documenten <1>on-the-go</1> met <2>ONLYOFFICE mobiele toepassingen</2>."
 }

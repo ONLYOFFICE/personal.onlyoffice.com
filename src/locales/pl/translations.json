@@ -125,5 +125,10 @@
   "AuthorizationTitle": "Autoryzacja – ONLYOFFICE",
   "ConfirmTitle": "Potwierdzenie – ONLYOFFICE",
   "ProviderNotConnected": "Dostawca nie jest podłączony do Twojego konta",
-  "DocSlideSectionCarouselHeading": "Pracuj z dokumentami"
+  "DocSlideSectionCarouselHeading": "Pracuj z dokumentami",
+  "PasswordLimitDigits": "cyfry",
+  "PasswordLimitLength": "od {{fromNumber}} do {{toNumber}} znaków",
+  "PasswordLimitMessage": "Hasło musi zawierać: ",
+  "PasswordLimitUpperCase": "wielkie litery",
+  "PasswordLimitSpecialSymbols": "znaki specjalne"
 }

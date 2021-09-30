@@ -126,5 +126,11 @@
   "AuthorizationTitle": "Avtorizacija - ONLYOFFICE",
   "ConfirmTitle": "Potrditev - ONLYOFFICE",
   "ProviderNotConnected": "Ponudnik ni povezan z vašim računom",
-  "DocSlideSectionCarouselHeading": "Delo z dokumenti"
+  "DocSlideSectionCarouselHeading": "Delo z dokumenti",
+  "PasswordLimitDigits": "digiti",
+  "PasswordLimitLength": "od {{fromNumber}} do {{toNumber}} znakov",
+  "PasswordLimitMessage": "Geslo mora vsebovati: ",
+  "PasswordLimitUpperCase": "velike črke",
+  "PasswordLimitSpecialSymbols": "posebne znake",
+  "DownloadExtensionHeader": "Doseži ONLYOFFICE osebje hitro."
 }

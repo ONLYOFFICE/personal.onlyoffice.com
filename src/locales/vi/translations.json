@@ -126,5 +126,10 @@
   "AuthorizationTitle": "Ủy quyền - ONLYOFFICE",
   "ConfirmTitle": "Xác nhận - ONLYOFFICE",
   "ProviderNotConnected": "Nhà cung cấp không được kết nối với tài khoản của bạn",
-  "DocSlideSectionCarouselHeading": "Làm việc với các tài liệu văn bản"
+  "DocSlideSectionCarouselHeading": "Làm việc với các tài liệu văn bản",
+  "PasswordLimitDigits": "chữ số",
+  "PasswordLimitLength": "từ {{fromNumber}} đến {{toNumber}} ký tự",
+  "PasswordLimitMessage": "Mật khẩu phải bao gồm:",
+  "PasswordLimitUpperCase": "chữ in hoa",
+  "PasswordLimitSpecialSymbols": "ký tự đặc biệt"
 }

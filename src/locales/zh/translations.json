@@ -126,5 +126,10 @@
   "AuthorizationTitle": "授权 - ONLYOFFICE",
   "ConfirmTitle": "确认 - ONLYOFFICE",
   "ProviderNotConnected": "供应商未连接至您的账户",
-  "DocSlideSectionCarouselHeading": "处理文本文档"
+  "DocSlideSectionCarouselHeading": "处理文本文档",
+  "PasswordLimitDigits": "数字",
+  "PasswordLimitLength": "{{fromNumber}}-{{toNumber}} 字符",
+  "PasswordLimitMessage": "密码必须包含：",
+  "PasswordLimitUpperCase": "大写字母",
+  "PasswordLimitSpecialSymbols": "特殊字符"
 }

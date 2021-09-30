@@ -125,5 +125,11 @@
   "AuthorizationTitle": "Авторизация - ONLYOFFICE",
   "ConfirmTitle": "Потвърждение - ONLYOFFICE",
   "ProviderNotConnected": "Доставчикът не е свързан с профила Ви",
-  "DocSlideSectionCarouselHeading": "Работете с документи"
+  "DocSlideSectionCarouselHeading": "Работете с документи",
+  "PasswordLimitDigits": "цифри",
+  "PasswordLimitLength": "от {{fromNumber}} до {{toNumber}} символа",
+  "PasswordLimitMessage": "Паролата трябва да съдържа:",
+  "PasswordLimitUpperCase": "главни букви",
+  "PasswordLimitSpecialSymbols": "специални символи",
+  "AuthDocsAlready": "Вече имате профил?"
 }
