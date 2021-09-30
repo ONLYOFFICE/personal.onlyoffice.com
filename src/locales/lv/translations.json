@@ -125,5 +125,11 @@
   "AuthorizationTitle": "Autorizācija - ONLYOFFICE",
   "ConfirmTitle": "Apstiprinājums - ONLYOFFICE",
   "ProviderNotConnected": "Pakalpojumu sniedzējs nav savienots ar jūsu kontu",
-  "DocSlideSectionCarouselHeading": "Darbojieties ar teksta dokumentiem"
+  "DocSlideSectionCarouselHeading": "Darbojieties ar teksta dokumentiem",
+  "PasswordLimitDigits": "cipari",
+  "PasswordLimitLength": "no {{fromNumber}} līdz {{toNumber}} rakstzīmei (-ēm)",
+  "PasswordLimitMessage": "Parolei jāsatur:",
+  "PasswordLimitUpperCase": "lielie burti",
+  "PasswordLimitSpecialSymbols": "īpašas rakstzīmes",
+  "AuthDocsDontHave": "Vai jums nav konta?"
 }
