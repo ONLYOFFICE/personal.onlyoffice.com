@@ -26,7 +26,6 @@
   "SoftpediaDescription": "ONLYOFFICE Personal je online editor, který obsahuje potřebné nástroje pro vytváření dokumentů, tabulek a prezentací kompatibilních s aplikací Microsoft a pro spolupráci s členy týmu.",
   "AuthDocsSubtitle": "Vysoká kompatibilita s formátem dokumentů MS Office",
   "CreateSuccessfullyHeader": "Děkujeme Vám, že jste si zaregistrovali Váš ONLYOFFICE™ Personal.",
-  "AuthDocsTitle": "Bezplatná alternativa k Microsoft® Office",
   "AuthDocsTitlePage": "Získejte bezplatné Office v Cloudu",
   "AuthDocsToLogin": "Zpět na Přihlášení",
   "AuthDocsToMainPage": "Přejít na hlavní stránku",
@@ -41,7 +40,6 @@
   "RegistryButtonCreateNow": "Vytvořit hned teď",
   "RegistrySettingSpam": "Chci se přihlásit k odběru newsletteru ONLYOFFICE",
   "RegistrySettingTerms": "Souhlasím s <1>{{terms}}</1> a <2>{{privacy}}</2>.",
-  "DownloadExtensionHeader": "Přístup k osobnímu ONLYOFFICE rychle.",
   "AuthDocsFreeDesktopApp": "Stáhněte si <1>zdarma desktopovou aplikaci</1> a upravujte soubory offline nebo se připojte ke cloudu.",
   "AuthDocsWorkWithDocs": "Pracujte s dokumenty na cestách pomocí <1>mobilních aplikací</1> ONLYOFFICE.",
   "AuthFooterBlog": "Blog",
@@ -125,5 +123,12 @@
   "AuthorizationTitle": "Autorizace - ONLYOFFICE",
   "ConfirmTitle": "Potvrzení - ONLYOFFICE",
   "ProviderNotConnected": "Poskytovatel není připojen k vašemu účtu",
-  "DocSlideSectionCarouselHeading": "Práce s dokumenty"
+  "DocSlideSectionCarouselHeading": "Práce s dokumenty",
+  "PasswordLimitDigits": "číslice",
+  "PasswordLimitLength": "od {{fromNumber}} do {{toNumber}} znaků",
+  "PasswordLimitMessage": "Heslo musí obsahovat: ",
+  "PasswordLimitUpperCase": "velká písmena",
+  "PasswordLimitSpecialSymbols": "speciální znaky",
+  "DownloadExtensionHeader": "Rychlý přístup k osobnímu ONLYOFFICE.",
+  "AuthDocsTitle": "Vaše osobní online kancelář"
 }
