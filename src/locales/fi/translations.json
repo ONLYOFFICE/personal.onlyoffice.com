@@ -126,5 +126,11 @@
   "SuccessChangePassword": "Salasana vaihdettu",
   "AuthorizationTitle": "Valtuutus - ONLYOFFICE",
   "ConfirmTitle": "Vahvistus - ONLYOFFICE",
-  "ProviderNotConnected": "Toimittaja ei ole yhteydessä tiliisi"
+  "ProviderNotConnected": "Toimittaja ei ole yhteydessä tiliisi",
+  "PasswordLimitDigits": "Numerot",
+  "PasswordLimitLength": "{{fromNumber}} - {{toNumber}} merkkiä",
+  "PasswordLimitMessage": "Salasanassa on oltava:",
+  "PasswordLimitUpperCase": "isoja kirjaimia",
+  "PasswordLimitSpecialSymbols": "Erikoismerkkejä",
+  "CreateSuccessfullyButton": "Palaa etusivulle"
 }
