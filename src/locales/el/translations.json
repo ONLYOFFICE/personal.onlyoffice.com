@@ -127,5 +127,10 @@
     "AuthorizationTitle": "Εξουσιοδότηση - ONLYOFFICE",
     "ConfirmTitle": "Επιβεβαίωση - ONLYOFFICE",
     "ProviderNotConnected": "Ο πάροχος δεν είναι συνδεδεμένος στον λογαριασμό σας.",
-    "DocSlideSectionCarouselHeading": "Εργαστείτε με έγγραφα"
+    "DocSlideSectionCarouselHeading": "Εργαστείτε με έγγραφα",
+    "PasswordLimitDigits": "ψηφία",
+    "PasswordLimitLength": "από {{fromNumber}} έως {{toNumber}} χαρακτήρες",
+    "PasswordLimitMessage": "Ο κωδικός πρόσβασης πρέπει να περιέχει:",
+    "PasswordLimitUpperCase": "κεφαλαία γράμματα",
+    "PasswordLimitSpecialSymbols": "ειδικούς χαρακτήρες"
 }
