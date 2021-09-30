@@ -126,5 +126,10 @@
   "AuthorizationTitle": "Yetki - ONLYOFFICE",
   "ConfirmTitle": "Onay- ONLYOFFICE",
   "ProviderNotConnected": "Sağlayıcı hesabınıza bağlı değil",
-  "DocSlideSectionCarouselHeading": " Belgeler üzerinde çalışın"
+  "DocSlideSectionCarouselHeading": " Belgeler üzerinde çalışın",
+  "PasswordLimitDigits": "basamaklar",
+  "PasswordLimitLength": "{{fromNumber}} karakterden {{toNumber}} karaktere kadar",
+  "PasswordLimitMessage": "Şifre şunları içermelidir:",
+  "PasswordLimitUpperCase": "büyük harfler",
+  "PasswordLimitSpecialSymbols": "özel karakterler"
 }
