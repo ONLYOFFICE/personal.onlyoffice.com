@@ -1,4 +1,5 @@
-import React from "react";
+//TODO: Enable service-worker after fix of infinite reloading (Bug 53063)
+/*import React from "react";
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
@@ -9,4 +10,4 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
       async
     />,
   ]);
-};
+};*/
