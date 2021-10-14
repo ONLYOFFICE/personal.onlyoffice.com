@@ -54,14 +54,23 @@ const EmpInvitePage = ({ location }) => {
     const params = parseQueryParams(location.search);
     const { lang: linkLanguage } = params;
 
+    if (!linkLanguage)
+      console.error(
+        "The link does not contain the 'lang' parameter. The default language is 'en'"
+      );
+
     if (language !== linkLanguage) {
       let localizedPath;
+
       if (language === "en" && !location.pathname.includes("en")) {
-        localizedPath = `/${linkLanguage}${location.pathname}${location.search}`;
-      } else {
-        localizedPath = `${location.pathname.replace(language, linkLanguage)}${
+        localizedPath = `/${linkLanguage || "en"}${location.pathname}${
           location.search
         }`;
+      } else {
+        localizedPath = `${location.pathname.replace(
+          language,
+          linkLanguage || "en"
+        )}${location.search}`;
       }
 
       navigate(localizedPath);
