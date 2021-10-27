@@ -32,8 +32,6 @@ const SignInPage = ({ location }) => {
 
   const [isDesktopClient, setIsDesktopClient] = useState(null);
 
-  console.log(location);
-
   useEffect(() => {
     const isDesktopClient = window["AscDesktopEditor"] !== undefined;
     setIsDesktopClient(isDesktopClient);

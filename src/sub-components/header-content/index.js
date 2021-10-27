@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import StyledHeaderContent from "./styled-header-content";
 import LanguageSelector from "../../../components/language-selector";
@@ -18,7 +18,23 @@ const HeaderContent = ({
   withoutButton,
   ...rest
 }) => {
-  const homepagePath = language === "en" ? "/" : `/${language}`;
+  const [isDesktopClient, setIsDesktopClient] = useState(null);
+  const [homepagePath, setHomePagePath] = useState(
+    language === "en" ? "/" : `/${language}`
+  );
+
+  useEffect(() => {
+    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
+    setIsDesktopClient(isDesktopClient);
+  }, []);
+
+  useEffect(() => {
+    if (isDesktopClient) {
+      let path = language === "en" ? "/" : `/${language}/`;
+      path += "sign-in";
+      setHomePagePath(path);
+    }
+  });
 
   return (
     <StyledHeaderContent {...rest}>
@@ -55,7 +71,9 @@ const HeaderContent = ({
         currentLanguage={language}
         t={t}
       />
-      <CookieSnackbar buttonLabel={t("CookieMessButton")} />
+      {!isDesktopClient && (
+        <CookieSnackbar buttonLabel={t("CookieMessButton")} />
+      )}
     </StyledHeaderContent>
   );
 };
