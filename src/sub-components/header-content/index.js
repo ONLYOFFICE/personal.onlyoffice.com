@@ -34,7 +34,7 @@ const HeaderContent = ({
       path += "sign-in";
       setHomePagePath(path);
     }
-  });
+  }, [isDesktopClient, language]);
 
   return (
     <StyledHeaderContent {...rest}>
