@@ -32,6 +32,8 @@ const SignInPage = ({ location }) => {
 
   const [isDesktopClient, setIsDesktopClient] = useState(null);
 
+  console.log(location);
+
   useEffect(() => {
     const isDesktopClient = window["AscDesktopEditor"] !== undefined;
     setIsDesktopClient(isDesktopClient);
@@ -100,7 +102,9 @@ const SignInPage = ({ location }) => {
     if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
         .then(() => {
-          window.location.replace("/");
+          const redirectPath = sessionStorage.getItem("redirectPath") || "/";
+          sessionStorage.removeItem("redirectPath");
+          window.location.replace(redirectPath || "/");
         })
         .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {

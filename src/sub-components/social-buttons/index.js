@@ -30,7 +30,9 @@ const SocialButtons = ({ t, isDisabled }) => {
     (profile) => {
       thirdPartyLogin(profile.Serialized)
         .then(() => {
-          window.location.href = "/";
+          const redirectPath = sessionStorage.getItem("redirectPath") || "/";
+          sessionStorage.removeItem("redirectPath");
+          window.location.href = redirectPath;
         })
         .catch(() => {
           toastr.error(t("ProviderNotConnected"));
