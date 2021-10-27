@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import StyledHeaderContent from "./styled-header-content";
 import LanguageSelector from "../../../components/language-selector";
@@ -8,6 +8,9 @@ import Text from "../../../components/text";
 import Link from "../../../components/internal-link";
 
 import CookieSnackbar from "../cookie-snackbar";
+import config from "../../../config.json";
+
+const { defaultLanguage } = config;
 
 const HeaderContent = ({
   t,
@@ -18,23 +21,14 @@ const HeaderContent = ({
   withoutButton,
   ...rest
 }) => {
-  const [isDesktopClient, setIsDesktopClient] = useState(null);
-  const [homepagePath, setHomePagePath] = useState(
-    language === "en" ? "/" : `/${language}`
-  );
+  const isDesktopClient =
+    typeof window !== "undefined" && window["AscDesktopEditor"] !== undefined;
 
-  useEffect(() => {
-    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
-    setIsDesktopClient(isDesktopClient);
-  }, []);
+  let homepagePath = `/${language || defaultLanguage}`;
 
-  useEffect(() => {
-    if (isDesktopClient) {
-      let path = language === "en" ? "/" : `/${language}/`;
-      path += "sign-in";
-      setHomePagePath(path);
-    }
-  }, [isDesktopClient, language]);
+  if (isDesktopClient) {
+    homepagePath += "/sign-in";
+  }
 
   return (
     <StyledHeaderContent {...rest}>
