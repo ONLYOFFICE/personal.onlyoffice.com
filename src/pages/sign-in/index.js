@@ -100,9 +100,9 @@ const SignInPage = ({ location }) => {
     if (emailIsValid && passwordIsValid) {
       login(emailValue, hash)
         .then(() => {
-          const redirectPath = sessionStorage.getItem("redirectPath") || "/";
-          sessionStorage.removeItem("redirectPath");
-          window.location.replace(redirectPath || "/");
+          const redirectPath = localStorage.getItem("redirectPath");
+          if (redirectPath) localStorage.removeItem("redirectPath");
+          window.location.href = redirectPath || "/";
         })
         .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
     } else {
