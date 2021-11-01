@@ -7,24 +7,16 @@ import StyledSocialButtons from "./styled-social-buttons";
 
 import { thirdPartyLogin } from "../../api";
 
-const providersIcons = [
-  {
-    name: "Google",
-    icon: "/site-assets/social-icons/google.react.svg",
-  },
-  {
-    name: "Facebook",
-    icon: "/site-assets/social-icons/facebook.react.svg",
-  },
-  {
-    name: "LinkedIn",
-    icon: "/site-assets/social-icons/linkedin.react.svg",
-  },
-];
+import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
+import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
+import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
+
+import config from "../../../config.json";
+
+const { availableProviders } = config;
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
-  //const [isDisabledButton, setIsDisabledData] = useState(false);
 
   const authCallback = useCallback(
     (profile) => {
@@ -107,32 +99,61 @@ const SocialButtons = ({ t, isDisabled }) => {
     }
   };
 
-  const renderButtons = () => {
-    const providerButtons = providersIcons.map((el) => {
-      const provider =
-        providers &&
-        providers.find(
-          (item) => item.provider.toLowerCase() === el.name.toLowerCase()
-        );
-
-      return (
-        <SocialButton
-          key={el.name}
-          iconName={el.icon}
-          dataUrl={provider?.url}
-          dataProvidername={provider?.provider}
-          onClick={onSocialButtonClick}
-          isDisabled={isDisabled || !provider || providers.length <= 0}
-        />
+  const getIconProps = (name) => {
+    if (!name) return;
+    const provider =
+      providers &&
+      providers.find(
+        (item) => item.provider.toLowerCase() === name.toLowerCase()
       );
-    });
 
-    return providerButtons;
+    if (!provider) return { isDisabled: true };
+
+    const props = {
+      dataUrl: provider?.url,
+      dataProvidername: provider?.provider,
+      onClick: onSocialButtonClick,
+      isDisabled: isDisabled || !provider || providers.length <= 0,
+    };
+
+    return props;
   };
 
-  const providerButtons = renderButtons();
+  const googleProps = getIconProps(availableProviders.google);
+  const facebookProps = getIconProps(availableProviders.facebook);
+  const linkedInProps = getIconProps(availableProviders.linkedIn);
 
-  return <StyledSocialButtons>{providerButtons}</StyledSocialButtons>;
+  return (
+    <StyledSocialButtons>
+      {availableProviders.google && (
+        <SocialButton
+          iconName={availableProviders.google}
+          iconComponent={
+            <GoogleIcon className="social-button-img" size="max-content" />
+          }
+          {...googleProps}
+        />
+      )}
+      {availableProviders.facebook && (
+        <SocialButton
+          iconName={availableProviders.facebook}
+          iconComponent={
+            <FacebookIcon className="social-button-img" size="max-content" />
+          }
+          {...facebookProps}
+        />
+      )}
+      {availableProviders.linkedIn && (
+        <SocialButton
+          iconName={availableProviders.linkedIn}
+          iconComponent={
+            <LinkedInIcon className="social-button-img" size="max-content" />
+          }
+          {...linkedInProps}
+        />
+      )}
+    </StyledSocialButtons>
+  );
 };
 
 export default SocialButtons;
