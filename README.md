@@ -1,33 +1,33 @@
 # personal.onlyoffice.com
 
-App for creating an account for personal online office
+App for creating an account for personal online office.
 
 ## How to install
 
-You must have yarn and latest node.js installed.
+You must have **yarn** and the latest **node.js** installed.
 
-### Installs Node.js (npm and npx are included in the installation)
+### Install Node.js (npm and npx are included in the installation)
 
-You need to install LTS version
+You need to install LTS version.
 
 [Node.js](https://nodejs.org/)
 
-### Installs yarn globally
+### Install yarn globally
 
-npm i -g yarn
+```npm i -g yarn```
 
 ### It should respond with a version number
 
-yarn -v
-node -v
+```yarn -v```
+```node -v```
 
-### To install dependencies:
+### Install the dependencies
 
 ```bash
 yarn
 ```
 
-### Run the development server:
+### Run the development server
 
 ```bash
 yarn develop
@@ -39,7 +39,7 @@ or
 gatsby develop
 ```
 
-Open [http://localhost:9000](http://localhost:9000) with your browser to see the result.
+Open [http://localhost:9000](http://localhost:9000) in your browser to see the result.
 
 ### Build
 
@@ -49,7 +49,7 @@ Run:
 yarn build
 ```
 
-to build website into /public folder with one page per locale automatically generated.
+to build the website into public folder with one page per locale automatically generated.
 
 ### Run the storybook
 
@@ -57,14 +57,14 @@ to build website into /public folder with one page per locale automatically gene
 yarn storybook
 ```
 
-Open [http://localhost:8082](http://localhost:8082) with your browser to see the result.
+Open [http://localhost:8082](http://localhost:8082) in your browser to see the result.
 
 ## Project info
 
 ### The stack we are using:
 
-- [Gatsbyjs](https://www.gatsbyjs.com) - The static site generator
-- [styled-components](https://styled-components.com/) - Visual primitives for the component age
-- [Storybook](https://storybook.js.org) - Sandbox to build UIs
+- [Gatsbyjs](https://www.gatsbyjs.com) - The static site generator.
+- [styled-components](https://styled-components.com/) - Visual primitives for the component age.
+- [Storybook](https://storybook.js.org) - Sandbox to build UIs.
 
-Official website: [https://www.onlyoffice.com](https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer "https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer")
+Official website: [https://www.onlyoffice.com](https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer "https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=AppServer").
