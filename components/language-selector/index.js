@@ -50,6 +50,10 @@ const LanguageSelector = (props) => {
 
   const { currentLanguage, t } = props;
 
+  const flagName = currentLanguage.includes("-")
+    ? currentLanguage.toLowerCase()
+    : `${currentLanguage}-${currentLanguage}`;
+
   return (
     <StyledLanguageSelector
       {...props}
@@ -58,7 +62,7 @@ const LanguageSelector = (props) => {
     >
       <img
         className="flag-image"
-        alt="flag"
+        alt={flagName}
         src={`/site-assets/flags/${currentLanguage}.svg`}
         width={"18px"}
       />

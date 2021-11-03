@@ -53,7 +53,7 @@ export default function LangsList(props) {
           <Link to={`${localizedPath}`} className="language-item-link">
             <img
               src={`/site-assets/flags/${iconName}`}
-              alt={key}
+              alt={key.toLowerCase()}
               width="18px"
               className="language-item-image"
             />
