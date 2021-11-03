@@ -30,13 +30,6 @@ const SignInPage = ({ location }) => {
   const [emailIsEmpty, setEmailIsEmpty] = useState(null);
   const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
 
-  const [isDesktopClient, setIsDesktopClient] = useState(null);
-
-  useEffect(() => {
-    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
-    setIsDesktopClient(isDesktopClient);
-  }, []);
-
   useEffect(() => {
     getSettings()
       .then((res) => {
@@ -110,16 +103,15 @@ const SignInPage = ({ location }) => {
     }
   };
 
-  const formSeparator = isDesktopClient
-    ? null
-    : { type: "separator", separatorText: t("AuthDocsEnterViaSocial") };
+  const formSeparator = {
+    type: "separator",
+    separatorText: t("AuthDocsEnterViaSocial"),
+  };
 
-  const socialButtonsSection = isDesktopClient
-    ? null
-    : {
-        type: "other",
-        element: <SocialButtons key="social-buttons" t={t} />,
-      };
+  const socialButtonsSection = {
+    type: "other",
+    element: <SocialButtons key="social-buttons" t={t} />,
+  };
 
   const formData = [
     { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
