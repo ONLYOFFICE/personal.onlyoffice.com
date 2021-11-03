@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import SocialButton from "../../../components/social-button";
-import { getAuthProviders } from "../../api";
+import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
-
-import { thirdPartyLogin } from "../../api";
 
 import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
 import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
@@ -20,7 +18,7 @@ const SocialButtons = ({ t, isDisabled }) => {
 
   const authCallback = useCallback(
     (profile) => {
-      thirdPartyLogin(profile.Serialized)
+      thirdPartyLogin(profile)
         .then(() => {
           const redirectPath = localStorage.getItem("redirectPath");
           if (redirectPath) localStorage.removeItem("redirectPath");
@@ -28,6 +26,10 @@ const SocialButtons = ({ t, isDisabled }) => {
         })
         .catch(() => {
           toastr.error(t("ProviderNotConnected"));
+        })
+        .finally(() => {
+          localStorage.removeItem("profile");
+          localStorage.removeItem("code");
         });
     },
     [t]
@@ -35,7 +37,12 @@ const SocialButtons = ({ t, isDisabled }) => {
   useEffect(() => {
     window.authCallback = authCallback;
 
-    getAuthProviders()
+    const profile = localStorage.getItem("profile");
+    if (profile) return authCallback(profile);
+
+    const isDesktop = window["AscDesktopEditor"] !== undefined;
+
+    getAuthProviders(isDesktop)
       .then((providers) => {
         setProviders(providers);
       })
@@ -43,7 +50,7 @@ const SocialButtons = ({ t, isDisabled }) => {
   }, [authCallback]);
 
   const getLoginLink = (token, code) => {
-    return `/login.ashx?p=${token}&code=${code}`;
+    return `/login.ashx?p=${token}&code=${code}&desktop=true`;
   };
 
   const getOAuthToken = (tokenGetterWin) => {
@@ -75,13 +82,16 @@ const SocialButtons = ({ t, isDisabled }) => {
     if (!targetButton) toastr.error(t("SomethingWentWrong"));
     const providerName = targetButton.dataset.providername;
     const url = targetButton.dataset.url;
+    const isDesktop = window["AscDesktopEditor"] !== undefined;
 
     try {
-      const tokenGetterWin = window.open(
-        url,
-        "login",
-        "width=800,height=500,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no"
-      );
+      const tokenGetterWin = isDesktop
+        ? (window.location.href = url)
+        : window.open(
+            url,
+            "login",
+            "width=800,height=500,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no"
+          );
 
       getOAuthToken(tokenGetterWin).then((code) => {
         const token = window.btoa(
