@@ -54,7 +54,7 @@ module.exports = {
         languages: availableLanguages,
         defaultLanguage,
         siteUrl: `https://personal.onlyoffice.com/`,
-        redirect: true,
+        redirect: false,
         generateDefaultLanguagePage: `/en`,
 
         i18nextOptions: {
