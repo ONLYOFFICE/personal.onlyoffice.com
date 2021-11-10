@@ -57,12 +57,16 @@ export default function LangsList(props) {
         localizedPath = path.replace(currentLanguage, shortKey);
       }
 
+      const flagName = shortKey.includes("-")
+        ? shortKey
+        : `${shortKey}-${shortKey}`;
+
       return (
         <StyledItem key={key} data-language={shortKey} onClick={onClickHandler}>
           <Link to={`${localizedPath}`} className="language-item-link">
             <img
               src={`/site-assets/flags/${iconName}`}
-              alt={key.toLowerCase()}
+              alt={flagName.toLowerCase()}
               width="18px"
               className="language-item-image"
             />
