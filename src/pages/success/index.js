@@ -16,6 +16,7 @@ import FooterContent from "../../sub-components/footer-content";
 import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark.react.svg";
 
 import { navigate } from "gatsby";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const SuccessPage = ({ location }) => {
   useEffect(() => {
@@ -125,7 +126,7 @@ const SuccessPage = ({ location }) => {
   );
 };
 
-export default SuccessPage;
+export default withDetectLanguage(SuccessPage);
 
 export const query = graphql`
   query($language: String!) {

@@ -19,6 +19,7 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 import AttentionIcon from "../../../static/site-assets/icons/attention.react.svg";
 
 import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const ProfileRemovePage = ({ location }) => {
   const [isProfileDeleted, setIsProfileDeleted] = useState(false);
@@ -132,7 +133,7 @@ const ProfileRemovePage = ({ location }) => {
   );
 };
 
-export default ProfileRemovePage;
+export default withDetectLanguage(ProfileRemovePage);
 
 export const query = graphql`
   query($language: String!) {

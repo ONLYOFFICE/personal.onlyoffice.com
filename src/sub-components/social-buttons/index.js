@@ -34,6 +34,7 @@ const SocialButtons = ({ t, isDisabled }) => {
     },
     [t]
   );
+
   useEffect(() => {
     window.authCallback = authCallback;
 
@@ -47,6 +48,10 @@ const SocialButtons = ({ t, isDisabled }) => {
         setProviders(providers);
       })
       .catch((err) => console.log(err));
+
+    return () => {
+      setProviders(null);
+    };
   }, [authCallback]);
 
   const getLoginLink = (token, code) => {

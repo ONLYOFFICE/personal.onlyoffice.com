@@ -24,6 +24,7 @@ import {
   getConfirmHeader,
   checkingConfirmLink,
 } from "../../helpers";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const PasswordChangePage = ({ location }) => {
   const [password, setPassword] = useState("");
@@ -181,7 +182,7 @@ const PasswordChangePage = ({ location }) => {
   );
 };
 
-export default PasswordChangePage;
+export default withDetectLanguage(PasswordChangePage);
 
 export const query = graphql`
   query($language: String!) {

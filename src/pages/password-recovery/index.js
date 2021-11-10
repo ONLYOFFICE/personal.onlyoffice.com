@@ -17,6 +17,7 @@ import FooterContent from "../../sub-components/footer-content";
 import { recoveryPassword } from "../../api";
 
 import { navigate } from "gatsby";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -161,7 +162,7 @@ const PasswordRecoveryPage = () => {
   );
 };
 
-export default PasswordRecoveryPage;
+export default withDetectLanguage(PasswordRecoveryPage);
 
 export const query = graphql`
   query($language: String!) {

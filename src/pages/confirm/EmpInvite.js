@@ -28,6 +28,7 @@ import {
 } from "../../helpers";
 
 import languages from "../../../languages.json";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const EmpInvitePage = ({ location }) => {
   const [firstName, setFirstName] = useState("");
@@ -331,7 +332,7 @@ const EmpInvitePage = ({ location }) => {
   );
 };
 
-export default EmpInvitePage;
+export default withDetectLanguage(EmpInvitePage);
 
 export const query = graphql`
   query($language: String!) {

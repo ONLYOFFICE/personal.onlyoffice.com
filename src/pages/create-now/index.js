@@ -9,6 +9,7 @@ import HeaderContent from "../../sub-components/header-content";
 import StyledSection from "../../sub-components/section";
 import FooterContent from "../../sub-components/footer-content";
 import CreateForm from "../../sub-components/create-form";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const CreateNowPage = () => {
   const {
@@ -54,7 +55,7 @@ const CreateNowPage = () => {
   );
 };
 
-export default CreateNowPage;
+export default withDetectLanguage(CreateNowPage);
 
 export const query = graphql`
   query($language: String!) {

@@ -15,6 +15,8 @@ import CloudsSection from "../sub-components/main-page/clouds-section";
 import BlockquoteSection from "../sub-components/main-page/blockquote-section";
 import DownloadSection from "../sub-components/main-page/download-section";
 
+import withDetectLanguage from "../helpers/withDetectLanguage";
+
 const IndexPage = ({ location }) => {
   const {
     t,
@@ -75,7 +77,7 @@ const IndexPage = ({ location }) => {
   );
 };
 
-export default IndexPage;
+export default withDetectLanguage(IndexPage);
 
 export const query = graphql`
   query($language: String!) {

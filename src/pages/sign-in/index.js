@@ -18,6 +18,8 @@ import { getSettings, login } from "../../api";
 
 import { createPasswordHash } from "../../helpers/";
 
+import withDetectLanguage from "../../helpers/withDetectLanguage";
+
 const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
@@ -219,7 +221,7 @@ const SignInPage = ({ location }) => {
   );
 };
 
-export default SignInPage;
+export default withDetectLanguage(SignInPage);
 
 export const query = graphql`
   query($language: String!) {
