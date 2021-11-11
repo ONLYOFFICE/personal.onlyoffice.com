@@ -3,35 +3,9 @@ import browserLang from "browser-lang";
 import { navigate } from "gatsby";
 import { getCookie, setCookie } from ".";
 import { SITE_LANGUAGE_COOKIE } from "./constants";
+import { parseQueryParams } from ".";
 
 const cookieOption = { "max-age": 31536000 };
-
-const setLanguageCookie = (value) => {
-  setCookie(SITE_LANGUAGE_COOKIE, value, cookieOption);
-};
-
-const replaceLanguagePrefix = (currentLanguage, pathname, languages) => {
-  const separatedUrl = pathname.split("/");
-  const pureSeparatedUrl = separatedUrl.filter((item) => item);
-  const isPrefix = languages.includes(pureSeparatedUrl[0]);
-
-  let newPath;
-
-  if (!isPrefix) {
-    pureSeparatedUrl.unshift(`/${currentLanguage}`);
-  } else {
-    pureSeparatedUrl[0] = currentLanguage;
-  }
-
-  newPath = pureSeparatedUrl.join("/");
-
-  return newPath;
-};
-
-const getLanguageFromPath = (pathname) => {
-  const separatedUrl = pathname.split("/");
-  return separatedUrl[1];
-};
 
 const withDetectLanguage = (WrappedPage) => {
   return (props) => {
@@ -40,7 +14,9 @@ const withDetectLanguage = (WrappedPage) => {
         pageContext: {
           i18n: { defaultLanguage, languages },
         },
+        location,
       } = props;
+      const { pathname, search, state } = location;
 
       const langCookie = getCookie(SITE_LANGUAGE_COOKIE);
 
@@ -51,22 +27,43 @@ const withDetectLanguage = (WrappedPage) => {
           fallback: defaultLanguage,
         });
 
-      const prefixFromPath = getLanguageFromPath(window.location.pathname);
+      const separatedUrl = pathname.split("/");
+      const prefixFromPath = separatedUrl[1];
 
       const isAvailablePrefix = languages.includes(prefixFromPath);
 
-      if (isAvailablePrefix && detected !== prefixFromPath) {
-        setLanguageCookie(prefixFromPath);
+      const replaceLanguagePrefix = () => {
+        if (defaultLanguage === detected) return false;
+
+        const pureSeparatedUrl = separatedUrl.filter((item) => item);
+        const isPrefix = languages.includes(pureSeparatedUrl[0]);
+
+        const params = parseQueryParams(search);
+        const { lang: linkLanguage } = params;
+
+        const currentLanguage =
+          linkLanguage && linkLanguage !== detected ? linkLanguage : detected;
+
+        let newPath;
+
+        if (!isPrefix) {
+          pureSeparatedUrl.unshift(`/${currentLanguage}`);
+        } else {
+          pureSeparatedUrl[0] = currentLanguage;
+        }
+
+        newPath = pureSeparatedUrl.join("/") + search;
+
+        navigate(newPath, { state: { ...state } });
+      };
+
+      if (isAvailablePrefix && (detected !== prefixFromPath || !langCookie)) {
+        setCookie(SITE_LANGUAGE_COOKIE, prefixFromPath, cookieOption);
       }
 
       if (!isAvailablePrefix) {
-        setLanguageCookie(detected);
-        const newPath = replaceLanguagePrefix(
-          detected,
-          window.location.pathname,
-          languages
-        );
-        navigate(newPath);
+        setCookie(SITE_LANGUAGE_COOKIE, detected, cookieOption);
+        replaceLanguagePrefix();
       }
     }
     return <WrappedPage {...props} />;
