@@ -120,24 +120,20 @@ const EmpInvitePage = ({ location }) => {
 
     const user = await createUser(data, key);
 
-    console.log("Created user", user);
-
     const { userName, passwordHash } = loginData;
 
     const response = await login(userName, passwordHash);
-
-    console.log("Login", response);
 
     return user;
   };
 
   const checkString = (string) => {
-    const regex = /\d/g;
+    const regex = /^[a-zA-Z]+$/;
     return regex.test(string);
   };
 
   const firstNameOnBlurHandler = () => {
-    if (!!firstName.trim() && !checkString(firstName)) {
+    if (!!firstName.trim() && checkString(firstName)) {
       setFirstNameValid(true);
     } else {
       setFirstNameValid(false);
@@ -145,7 +141,7 @@ const EmpInvitePage = ({ location }) => {
   };
 
   const lastNameOnBlurHandler = () => {
-    if (!!lastName.trim() && !checkString(lastName)) {
+    if (!!lastName.trim() && checkString(lastName)) {
       setLastNameValid(true);
     } else {
       setLastNameValid(false);
@@ -155,22 +151,22 @@ const EmpInvitePage = ({ location }) => {
   const onSubmitHandler = () => {
     let hasError = false;
 
-    if (!firstName.trim()) {
+    if (!firstName.trim() || !firstNameValid) {
       hasError = true;
       setFirstNameValid(false);
-      setIsEmptyFirstName(true);
+      !firstName.trim() && setIsEmptyFirstName(true);
     }
 
-    if (!lastName.trim()) {
+    if (!lastName.trim() || !lastNameValid) {
       hasError = true;
       setLastNameValid(false);
-      setIsEmptyLastName(true);
+      !lastName.trim() && setIsEmptyLastName(true);
     }
 
-    if (!password.trim()) {
+    if (!password.trim() || !isPwdValid) {
       hasError = true;
       setIsPwdValid(false);
-      setIsEmptyPassword(true);
+      !password.trim() && setIsEmptyPassword(true);
     }
 
     if (hasError) {
@@ -230,7 +226,11 @@ const EmpInvitePage = ({ location }) => {
       isError: !firstNameValid,
       onBlur: firstNameOnBlurHandler,
       isSuccess: firstNameValid && !isEmptyFirstName,
-      errorText: isEmptyFirstName ? t("AuthErrorIndicationText") : null,
+      errorText: !firstNameValid
+        ? isEmptyFirstName
+          ? t("AuthErrorIndicationText")
+          : t("UnknownError")
+        : null,
     },
     {
       type: "input",
@@ -243,7 +243,11 @@ const EmpInvitePage = ({ location }) => {
       isError: !lastNameValid,
       onBlur: lastNameOnBlurHandler,
       isSuccess: lastNameValid && !isEmptyLastName,
-      errorText: isEmptyLastName ? t("AuthErrorIndicationText") : null,
+      errorText: !lastNameValid
+        ? isEmptyLastName
+          ? t("AuthErrorIndicationText")
+          : t("UnknownError")
+        : null,
     },
     {
       type: "input",
