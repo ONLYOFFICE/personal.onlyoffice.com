@@ -43,19 +43,20 @@ const SocialButtons = ({ t, isDisabled }) => {
 
     const isDesktop = window["AscDesktopEditor"] !== undefined;
 
-    getAuthProviders(isDesktop)
-      .then((providers) => {
-        setProviders(providers);
-      })
-      .catch((err) => console.log(err));
+    getAuthProviders(isDesktop).then((providers) => {
+      setProviders(providers);
+    });
+    //.catch((err) => console.log(err));
 
     return () => {
       setProviders(null);
     };
   }, [authCallback]);
 
-  const getLoginLink = (token, code) => {
-    return `/login.ashx?p=${token}&code=${code}&desktop=true`;
+  const getLoginLink = (token, code, isDesktopEditors) => {
+    return `/login.ashx?p=${token}&code=${code}${
+      isDesktopEditors ? "&desktop=true" : ""
+    }`;
   };
 
   const getOAuthToken = (tokenGetterWin) => {
@@ -107,7 +108,7 @@ const SocialButtons = ({ t, isDisabled }) => {
           })
         );
 
-        tokenGetterWin.location.href = getLoginLink(token, code);
+        tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
       });
     } catch (err) {
       console.log(err);
