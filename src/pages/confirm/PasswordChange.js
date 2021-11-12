@@ -41,11 +41,10 @@ const PasswordChangePage = ({ location }) => {
   } = useTranslation();
 
   useEffect(() => {
-    getSettings()
-      .then((res) => {
-        setHashSettings(res.passwordHash);
-      })
-      .catch((e) => console.error(e));
+    getSettings().then((res) => {
+      setHashSettings(res.passwordHash);
+    });
+    //.catch((e) => console.error(e));
   }, []);
 
   /* eslint-disable */
@@ -104,10 +103,12 @@ const PasswordChangePage = ({ location }) => {
     const confirmHeader = getConfirmHeader(location);
     const hash = createPasswordHash(password, hashSettings);
 
-    changePassword(params.uid, hash, confirmHeader)
-      .then(() => logout())
+    logout()
+      .then(() => changePassword(params.uid, hash, confirmHeader))
       .then(() => {
-        login(params.email, hash).then(() => window.location.replace("/"));
+        login(params.email, hash).then(() => {
+          window.location.replace("/");
+        });
       })
       .catch((error) => {
         toastr.error(`${error}`);
@@ -172,7 +173,11 @@ const PasswordChangePage = ({ location }) => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <StyledSection>
-          <Form formData={formData} className="login-form" />{" "}
+          <Form
+            formData={formData}
+            submitForm={onSubmitHandler}
+            className="login-form"
+          />
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>

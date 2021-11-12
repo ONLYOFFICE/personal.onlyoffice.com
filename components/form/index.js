@@ -14,14 +14,10 @@ const Form = (props) => {
   const { isPanel, formData, submitForm } = props;
 
   const onSubmitHandler = (e) => {
+    e.preventDefault();
     submitForm(e);
   };
 
-  const onKeyDownHandler = (e) => {
-    if (e.which === 13) {
-      onSubmitHandler(e);
-    }
-  };
   const formElements = [];
 
   formData.forEach((item, indx) => {
@@ -83,12 +79,7 @@ const Form = (props) => {
   const itemsCount = formElements && formElements.length;
 
   return (
-    <StyledForm
-      {...props}
-      itemsCount={itemsCount}
-      onSubmit={onSubmitHandler}
-      onKeyDown={onKeyDownHandler}
-    >
+    <StyledForm {...props} itemsCount={itemsCount} onSubmit={onSubmitHandler}>
       {formElements}
     </StyledForm>
   );
