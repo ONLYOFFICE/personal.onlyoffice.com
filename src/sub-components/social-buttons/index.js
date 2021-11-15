@@ -43,10 +43,11 @@ const SocialButtons = ({ t, isDisabled }) => {
 
     const isDesktop = window["AscDesktopEditor"] !== undefined;
 
-    getAuthProviders(isDesktop).then((providers) => {
-      setProviders(providers);
-    });
-    //.catch((err) => console.log(err));
+    getAuthProviders(isDesktop)
+      .then((providers) => {
+        setProviders(providers);
+      })
+      .catch((err) => console.log(err));
 
     return () => {
       setProviders(null);
@@ -99,17 +100,19 @@ const SocialButtons = ({ t, isDisabled }) => {
             "width=800,height=500,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no"
           );
 
-      getOAuthToken(tokenGetterWin).then((code) => {
-        const token = window.btoa(
-          JSON.stringify({
-            auth: providerName,
-            mode: "popup",
-            callback: "authCallback",
-          })
-        );
+      getOAuthToken(tokenGetterWin)
+        .then((code) => {
+          const token = window.btoa(
+            JSON.stringify({
+              auth: providerName,
+              mode: "popup",
+              callback: "authCallback",
+            })
+          );
 
-        tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
-      });
+          tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
+        })
+        .catch((e) => console.log("authorization canceled"));
     } catch (err) {
       console.log(err);
     }
