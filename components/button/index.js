@@ -22,12 +22,12 @@ const Button = ({
 
   return (
     <StyledButton
+      {...rest}
       disabled={isDisabled}
       theme={theme}
-      type={isSubmit ? "submit" : undefined}
+      type={isSubmit ? "submit" : "button"}
       isScale={isScale ? isScale : undefined}
       themeButton={themeButton}
-      {...rest}
     >
       {icon && <Icon icon={icon} />} {label}
     </StyledButton>

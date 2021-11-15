@@ -37,7 +37,7 @@ const SignInPage = ({ location }) => {
       .then((res) => {
         setHashSettings(res.passwordHash);
       })
-      .catch((e) => console.error(e));
+      .catch((e) => console.log(e));
   }, []);
 
   useEffect(() => {
