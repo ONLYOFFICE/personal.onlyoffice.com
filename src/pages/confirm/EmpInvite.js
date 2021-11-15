@@ -122,7 +122,7 @@ const EmpInvitePage = ({ location }) => {
 
     const { userName, passwordHash } = loginData;
 
-    const response = await login(userName, passwordHash);
+    await login(userName, passwordHash);
 
     return user;
   };
@@ -148,7 +148,8 @@ const EmpInvitePage = ({ location }) => {
     }
   };
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
     let hasError = false;
 
     if (!firstName.trim() || !firstNameValid) {
@@ -195,13 +196,17 @@ const EmpInvitePage = ({ location }) => {
           const currentLanguage = languages.find(
             (el) => el.shortKey === language
           );
-          updateUserCulture(user.id, currentLanguage?.key || "en");
+          return updateUserCulture(
+            user.id,
+            currentLanguage?.key || "en"
+          ).catch((e) => console.log(e));
         })
         .then(() => window.location.replace("/"))
         .catch((error) => {
           toastr.error(`${error}`);
         })
     );
+    //.catch((e) => console.log(e));
   };
 
   const formData = [
