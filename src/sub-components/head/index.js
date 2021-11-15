@@ -2,10 +2,21 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import languages from "../../../languages";
 
-const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
+const Head = ({
+  metaDescription,
+  metaKeywords,
+  title,
+  metaDescriptionOg,
+  currentLanguage,
+}) => {
   return (
-    <Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang: currentLanguage,
+      }}
+    >
       <title>{title}</title>
+
       <meta charset="utf-8" />
       <meta
         id="ctl00_MetaImageOG"

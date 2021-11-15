@@ -161,6 +161,7 @@ const PasswordChangePage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>

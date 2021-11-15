@@ -116,6 +116,7 @@ const ProfileRemovePage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("ConfirmTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>

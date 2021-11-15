@@ -83,6 +83,7 @@ const IndexPage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthDocsTitlePage")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
