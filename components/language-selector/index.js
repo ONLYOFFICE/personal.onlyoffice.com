@@ -51,10 +51,6 @@ const LanguageSelector = (props) => {
 
   const { currentLanguage, t } = props;
 
-  // const flagName = currentLanguage.includes("-")
-  //   ? currentLanguage.toLowerCase()
-  //   : `${currentLanguage}-${currentLanguage}`;
-
   const language = languages.find((lang) => lang.shortKey === currentLanguage);
 
   return (

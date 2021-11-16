@@ -86,7 +86,9 @@ const PasswordChangePage = ({ location }) => {
     setPasswordIsEmpty(false);
   };
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
     let hasError = false;
 
     if (!password.trim()) {

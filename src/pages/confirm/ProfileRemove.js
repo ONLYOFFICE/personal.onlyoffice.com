@@ -45,7 +45,8 @@ const ProfileRemovePage = ({ location }) => {
   }, []);
   /* eslint-enable */
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
     const confirmHeader = getConfirmHeader(location);
     logout();
 
