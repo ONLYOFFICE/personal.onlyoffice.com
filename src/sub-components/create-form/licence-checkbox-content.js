@@ -7,7 +7,7 @@ import Text from "../../../components/text";
 
 const StyledLicenceCheckbox = styled.div`
   width: max-content;
-  max-width: calc(100% - 24px);
+  max-width: 100%;
 `;
 
 const LicenseCheckboxContent = ({ t }) => {
