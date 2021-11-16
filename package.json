@@ -1,6 +1,6 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": true,
   "scripts": {
     "develop": "gatsby develop -p 9000",
