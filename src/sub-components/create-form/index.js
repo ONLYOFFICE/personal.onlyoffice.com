@@ -7,6 +7,7 @@ import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
 
 import { registration } from "../../api";
+import { sendMetrics } from "../../helpers";
 import toastr from "../../../components/toast/toastr";
 
 const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
@@ -39,25 +40,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const changeAcceptLicense = (e) => {
     setIsLicense(e.target.checked);
   };
-
-  const sendMetrics = (action, category, label, value) =>{
-    const values = {};
-    if (typeof category !== 'undefined'){
-      values['event_category'] = category;
-    }
-    if (typeof label !== 'undefined'){
-      values['event_label'] = label;
-    }
-    if (typeof value !== 'undefined'){
-      values['value'] = value;
-    }
-    if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined'){
-      window.gtag('event', action, values);
-    } else{
-      console.log('event', action, values)
-    }
-
-  }
 
   const onSubmitHandler = (e) => {
     e.preventDefault();

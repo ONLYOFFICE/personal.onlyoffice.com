@@ -6,6 +6,7 @@ import toastr from "../../../components/toast/toastr";
 import StyledSocialButtons from "./styled-social-buttons";
 
 import { thirdPartyLogin } from "../../api";
+import { sendMetrics } from "../../helpers";
 
 const providersIcons = [
   {
@@ -99,7 +100,7 @@ const SocialButtons = ({ t, isDisabled }) => {
             callback: "authCallback",
           })
         );
-
+        sendMetrics('click', 'ClickOnMainPage');
         tokenGetterWin.location.href = getLoginLink(token, code);
       });
     } catch (err) {
