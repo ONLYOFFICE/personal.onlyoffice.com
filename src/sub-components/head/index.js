@@ -5,6 +5,16 @@ import languages from "../../../languages";
 const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
   return (
     <Helmet>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12442749-5"></script>
+      <script>
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-12442749-5');
+      `}
+      </script>
       <title>{title}</title>
       <meta charset="utf-8" />
       <meta
