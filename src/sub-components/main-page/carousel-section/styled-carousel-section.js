@@ -34,7 +34,6 @@ const StyledCarouselSection = styled(HomeSection)`
   }
 
   .text-carousel {
-    display: grid;
     margin: 0 auto;
     .slick-slider {
       .slick-list {
