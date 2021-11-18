@@ -1,6 +1,6 @@
 const languages = require("./languages.json");
 const { defaultLanguage, customAssetPrefix } = require("./config.json");
-
+const siteUrl = process.env.URL || `https://www.personal.onlyoffice.com`
 const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
@@ -16,7 +16,48 @@ module.exports = {
     { resolve: "gatsby-transformer-sharp" },
     { resolve: "gatsby-plugin-gatsby-cloud" },
     { resolve: "gatsby-plugin-react-helmet" },
-    { resolve: "gatsby-plugin-sitemap" },
+    { resolve: "gatsby-plugin-sitemap",
+      options: {
+        excludes: [
+          '**/404/',
+          '**/404.html',
+          '**/confirm/**/*',
+          '**/create-now/',
+          '**/password-recovery/',
+          '**/sign-in/',
+          '**/success/',
+        ],
+        query: `
+        {
+          siteBuildMetadata{
+            buildTime
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          siteBuildMetadata: {buildTime: lastMod}
+        }) => {
+          const wpNodeMap = lastMod
+          return allPages.map(page => {
+            return { ...page, wpNodeMap}
+          })
+        },
+        serialize: ({ path, wpNodeMap }) => {
+          return {
+            url: path,
+            changefreq: `monthly`,
+            priority: 1.0,
+            lastmod: wpNodeMap,
+          }
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -28,6 +69,13 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `rgb(255, 134, 92)`,
         display: `standalone`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: 'https://www.personal.onlyoffice.com/sitemap.xml',
+        policy: [{ userAgent: '*', disallow: ['/sign-in/','/password-recovery/', '/create-now/'] }]
       },
     },
     { resolve: "gatsby-transformer-remark" },
