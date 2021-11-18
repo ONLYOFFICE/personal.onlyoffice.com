@@ -10,11 +10,10 @@ import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 
+import CarouselSection from "../sub-components/main-page/carousel-section";
+
 import withDetectLanguage from "../helpers/withDetectLanguage";
 
-const CarouselSection = React.lazy(() =>
-  import("../sub-components/main-page/carousel-section")
-);
 const CloudsSection = React.lazy(() =>
   import("../sub-components/main-page/clouds-section")
 );
@@ -59,7 +58,6 @@ const IndexPage = ({ location }) => {
       <>
         {!isSSR && (
           <React.Suspense fallback={<div />}>
-            <CarouselSection t={t} language={language} />
             <CloudsSection textHeading={t("AuthDocsConnect")} />
             <DownloadSection t={t} language={language} />
             <BlockquoteSection
@@ -96,6 +94,7 @@ const IndexPage = ({ location }) => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <CreateSection t={t} currentLanguage={language} />
+        <CarouselSection t={t} language={language} />
         {content}
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
