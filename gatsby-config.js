@@ -54,7 +54,7 @@ module.exports = {
         languages: availableLanguages,
         defaultLanguage,
         siteUrl: `https://personal.onlyoffice.com/`,
-        redirect: true,
+        redirect: false,
         generateDefaultLanguagePage: `/en`,
 
         i18nextOptions: {
@@ -72,6 +72,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-fonts",
       options: {
         fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
+        display: "swap",
       },
     },
     {

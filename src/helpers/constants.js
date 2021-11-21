@@ -1,4 +1,5 @@
 export const PERSONAL_COOKIE = "onlyoffice_personal_cookie";
+export const SITE_LANGUAGE_COOKIE = "onlyoffice_personal_site_language";
 
 export const ValidationResult = Object.freeze({
   Ok: 0,

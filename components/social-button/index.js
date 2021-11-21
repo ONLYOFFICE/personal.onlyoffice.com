@@ -9,6 +9,7 @@ const SocialButton = ({
   dataProvidername,
   onClick,
   isDisabled,
+  iconComponent,
   ...rest
 }) => {
   return (
@@ -19,7 +20,15 @@ const SocialButton = ({
       className="social-button"
       isDisabled={isDisabled}
     >
-      <IconButton className="social-button-img" size="max-content" {...rest} />
+      {iconComponent ? (
+        iconComponent
+      ) : (
+        <IconButton
+          className="social-button-img"
+          size="max-content"
+          {...rest}
+        />
+      )}
     </StyledSocialButton>
   );
 };
