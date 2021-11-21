@@ -5,5 +5,10 @@
     },
     "appServerUrl": "",
     "defaultLanguage": "en",
-    "customAssetPrefix": "site-assets"
+    "customAssetPrefix": "site-assets",
+    "availableProviders": {
+        "google": "Google",
+        "facebook": "Facebook",
+        "linkedIn": "LinkedIn"
+    }
 }

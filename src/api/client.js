@@ -32,7 +32,7 @@ const getResponseError = (res) => {
   }
 
   if (res.isAxiosError && res.message) {
-    console.error(res.message);
+    //console.error(res.message);
     return res.message;
   }
 };
@@ -51,7 +51,7 @@ export const request = (options) => {
   };
 
   const onError = function (errorResponse) {
-    console.error("Request Failed:", errorResponse);
+    //console.error("Request Failed:", errorResponse);
 
     const errorText = errorResponse.response
       ? getResponseError(errorResponse.response)

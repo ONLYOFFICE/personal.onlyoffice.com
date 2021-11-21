@@ -24,6 +24,7 @@ import {
   getConfirmHeader,
   checkingConfirmLink,
 } from "../../helpers";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const PasswordChangePage = ({ location }) => {
   const [password, setPassword] = useState("");
@@ -40,11 +41,10 @@ const PasswordChangePage = ({ location }) => {
   } = useTranslation();
 
   useEffect(() => {
-    getSettings()
-      .then((res) => {
-        setHashSettings(res.passwordHash);
-      })
-      .catch((e) => console.error(e));
+    getSettings().then((res) => {
+      setHashSettings(res.passwordHash);
+    });
+    //.catch((e) => console.error(e));
   }, []);
 
   /* eslint-disable */
@@ -86,7 +86,9 @@ const PasswordChangePage = ({ location }) => {
     setPasswordIsEmpty(false);
   };
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
     let hasError = false;
 
     if (!password.trim()) {
@@ -103,10 +105,12 @@ const PasswordChangePage = ({ location }) => {
     const confirmHeader = getConfirmHeader(location);
     const hash = createPasswordHash(password, hashSettings);
 
-    changePassword(params.uid, hash, confirmHeader)
-      .then(() => logout())
+    logout()
+      .then(() => changePassword(params.uid, hash, confirmHeader))
       .then(() => {
-        login(params.email, hash).then(() => window.location.replace("/"));
+        login(params.email, hash).then(() => {
+          window.location.replace("/");
+        });
       })
       .catch((error) => {
         toastr.error(`${error}`);
@@ -159,6 +163,7 @@ const PasswordChangePage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
@@ -171,7 +176,11 @@ const PasswordChangePage = ({ location }) => {
       </Layout.PageHeader>
       <Layout.SectionMain>
         <StyledSection>
-          <Form formData={formData} className="login-form" />{" "}
+          <Form
+            formData={formData}
+            submitForm={onSubmitHandler}
+            className="login-form"
+          />
         </StyledSection>
       </Layout.SectionMain>
       <Layout.PageFooter>
@@ -181,7 +190,7 @@ const PasswordChangePage = ({ location }) => {
   );
 };
 
-export default PasswordChangePage;
+export default withDetectLanguage(PasswordChangePage);
 
 export const query = graphql`
   query($language: String!) {

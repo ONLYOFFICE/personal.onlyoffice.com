@@ -6,6 +6,8 @@ const StyledSocialButtons = styled.div`
   width: min-content;
   margin: auto;
   margin-bottom: 1px;
+
+  max-height: 39px;
 `;
 
 export default StyledSocialButtons;

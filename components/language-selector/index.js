@@ -4,6 +4,7 @@ import StyledLanguageSelector from "./styled-language-selector";
 import ArrowDown from "../../static/site-assets/icons/arrow-drop-down.react.svg";
 import ArrowUp from "../../static/site-assets/icons/arrow-drop-up.react.svg";
 import ItemsList from "./items-list";
+import languages from "../../languages";
 
 const LanguageSelector = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,8 @@ const LanguageSelector = (props) => {
 
   const { currentLanguage, t } = props;
 
+  const language = languages.find((lang) => lang.shortKey === currentLanguage);
+
   return (
     <StyledLanguageSelector
       {...props}
@@ -58,7 +61,7 @@ const LanguageSelector = (props) => {
     >
       <img
         className="flag-image"
-        alt="flag"
+        alt={language.key}
         src={`/site-assets/flags/${currentLanguage}.svg`}
         width={"18px"}
       />

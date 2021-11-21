@@ -54,10 +54,13 @@ export function getUser() {
   });
 }
 
-export function getAuthProviders() {
+export function getAuthProviders(desktop = false) {
   return request({
     method: "get",
     url: `/people/thirdparty/providers`,
+    data: {
+      desktop,
+    },
   });
 }
 

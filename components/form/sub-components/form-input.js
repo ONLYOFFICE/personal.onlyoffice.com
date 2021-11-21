@@ -35,39 +35,45 @@ const FormTextInput = (props) => {
   switch (inputType) {
     case "text":
       return (
-        <TextInput
-          className="form-input form-text"
-          {...rest}
-          buttonClick={buttonClick}
-          classNameButton={classNameButton}
-          withButton={withButtonCheck}
-          onChange={callback}
-          backgroundColor={isPanel && "#f9f9f9"}
-        />
+        <label>
+          <TextInput
+            className="form-input form-text"
+            {...rest}
+            buttonClick={buttonClick}
+            classNameButton={classNameButton}
+            withButton={withButtonCheck}
+            onChange={callback}
+            backgroundColor={isPanel && "#f9f9f9"}
+          />
+        </label>
       );
     case "email":
       return (
-        <EmailInput
-          className="form-input form-email"
-          {...rest}
-          buttonClick={buttonClick}
-          classNameButton={classNameButton}
-          withButton={withButtonCheck}
-          onChange={callback}
-          backgroundColor={isPanel && "#f9f9f9"}
-        />
+        <label>
+          <EmailInput
+            className="form-input form-email"
+            {...rest}
+            buttonClick={buttonClick}
+            classNameButton={classNameButton}
+            withButton={withButtonCheck}
+            onChange={callback}
+            backgroundColor={isPanel && "#f9f9f9"}
+          />
+        </label>
       );
     case "password":
       return (
-        <PasswordInput
-          className="form-input form-password"
-          {...rest}
-          buttonClick={buttonClick}
-          classNameButton={classNameButton}
-          withButton={withButtonCheck}
-          onChange={callback}
-          backgroundColor={isPanel && "#f9f9f9"}
-        />
+        <label>
+          <PasswordInput
+            className="form-input form-password"
+            {...rest}
+            buttonClick={buttonClick}
+            classNameButton={classNameButton}
+            withButton={withButtonCheck}
+            onChange={callback}
+            backgroundColor={isPanel && "#f9f9f9"}
+          />
+        </label>
       );
     default:
       return null;

@@ -21,6 +21,16 @@ export default styled.div`
     outline: none;
     -webkit-tap-highlight-color: transparent;
   }
+
+  .flag-image {
+    height: 100%;
+    width: 100%;
+    margin-top: -11px;
+
+    @media (max-width: 592px) {
+      margin-top: -5px;
+    }
+  }
 `;
 
 const StyledPanelView = styled.div`

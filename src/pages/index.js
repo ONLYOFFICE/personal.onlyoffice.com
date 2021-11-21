@@ -9,11 +9,23 @@ import CreateSection from "../sub-components/main-page/create-section";
 import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
+
 import CarouselSection from "../sub-components/main-page/carousel-section";
-import ReviewSection from "../sub-components/main-page/review-section";
-import CloudsSection from "../sub-components/main-page/clouds-section";
-import BlockquoteSection from "../sub-components/main-page/blockquote-section";
-import DownloadSection from "../sub-components/main-page/download-section";
+
+import withDetectLanguage from "../helpers/withDetectLanguage";
+
+const CloudsSection = React.lazy(() =>
+  import("../sub-components/main-page/clouds-section")
+);
+const DownloadSection = React.lazy(() =>
+  import("../sub-components/main-page/download-section")
+);
+const BlockquoteSection = React.lazy(() =>
+  import("../sub-components/main-page/blockquote-section")
+);
+const ReviewSection = React.lazy(() =>
+  import("../sub-components/main-page/review-section")
+);
 
 const IndexPage = ({ location }) => {
   const {
@@ -39,6 +51,28 @@ const IndexPage = ({ location }) => {
     }
   }, [location.state]);
 
+  const isSSR = typeof window === "undefined";
+
+  const lazyRender = () => {
+    return (
+      <>
+        {!isSSR && (
+          <React.Suspense fallback={<div />}>
+            <CloudsSection textHeading={t("AuthDocsConnect")} />
+            <DownloadSection t={t} language={language} />
+            <BlockquoteSection
+              text={t("SoftpediaDescription")}
+              linkText={t("AuthDocsSoftpedia")}
+            />
+            <ReviewSection t={t} />
+          </React.Suspense>
+        )}
+      </>
+    );
+  };
+
+  const content = lazyRender();
+
   return (
     <Layout t={t}>
       <Layout.PageHead>
@@ -47,6 +81,7 @@ const IndexPage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthDocsTitlePage")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
@@ -60,13 +95,7 @@ const IndexPage = ({ location }) => {
       <Layout.SectionMain>
         <CreateSection t={t} currentLanguage={language} />
         <CarouselSection t={t} language={language} />
-        <CloudsSection textHeading={t("AuthDocsConnect")} />
-        <DownloadSection t={t} language={language} />
-        <BlockquoteSection
-          text={t("SoftpediaDescription")}
-          linkText={t("AuthDocsSoftpedia")}
-        />
-        <ReviewSection t={t} />
+        {content}
       </Layout.SectionMain>
       <Layout.PageFooter isHomePage>
         <FooterContent t={t} isHomePage language={language} />
@@ -75,7 +104,7 @@ const IndexPage = ({ location }) => {
   );
 };
 
-export default IndexPage;
+export default withDetectLanguage(IndexPage);
 
 export const query = graphql`
   query($language: String!) {

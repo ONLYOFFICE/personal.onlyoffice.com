@@ -1,34 +1,24 @@
 import React, { useEffect, useState, useCallback } from "react";
 import SocialButton from "../../../components/social-button";
-import { getAuthProviders } from "../../api";
+import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
 
-import { thirdPartyLogin } from "../../api";
+import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
+import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
+import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
 
-const providersIcons = [
-  {
-    name: "Google",
-    icon: "/site-assets/social-icons/google.react.svg",
-  },
-  {
-    name: "Facebook",
-    icon: "/site-assets/social-icons/facebook.react.svg",
-  },
-  {
-    name: "LinkedIn",
-    icon: "/site-assets/social-icons/linkedin.react.svg",
-  },
-];
+import config from "../../../config.json";
+
+const { availableProviders } = config;
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
-  //const [isDisabledButton, setIsDisabledData] = useState(false);
 
   const authCallback = useCallback(
     (profile) => {
-      thirdPartyLogin(profile.Serialized)
+      thirdPartyLogin(profile)
         .then(() => {
           const redirectPath = localStorage.getItem("redirectPath");
           if (redirectPath) localStorage.removeItem("redirectPath");
@@ -36,22 +26,38 @@ const SocialButtons = ({ t, isDisabled }) => {
         })
         .catch(() => {
           toastr.error(t("ProviderNotConnected"));
+        })
+        .finally(() => {
+          localStorage.removeItem("profile");
+          localStorage.removeItem("code");
         });
     },
     [t]
   );
+
   useEffect(() => {
     window.authCallback = authCallback;
 
-    getAuthProviders()
+    const profile = localStorage.getItem("profile");
+    if (profile) return authCallback(profile);
+
+    const isDesktop = window["AscDesktopEditor"] !== undefined;
+
+    getAuthProviders(isDesktop)
       .then((providers) => {
         setProviders(providers);
       })
       .catch((err) => console.log(err));
+
+    return () => {
+      setProviders(null);
+    };
   }, [authCallback]);
 
-  const getLoginLink = (token, code) => {
-    return `/login.ashx?p=${token}&code=${code}`;
+  const getLoginLink = (token, code, isDesktopEditors) => {
+    return `/login.ashx?p=${token}&code=${code}${
+      isDesktopEditors ? "&desktop=true" : ""
+    }`;
   };
 
   const getOAuthToken = (tokenGetterWin) => {
@@ -83,56 +89,90 @@ const SocialButtons = ({ t, isDisabled }) => {
     if (!targetButton) toastr.error(t("SomethingWentWrong"));
     const providerName = targetButton.dataset.providername;
     const url = targetButton.dataset.url;
+    const isDesktop = window["AscDesktopEditor"] !== undefined;
 
     try {
-      const tokenGetterWin = window.open(
-        url,
-        "login",
-        "width=800,height=500,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no"
-      );
+      const tokenGetterWin = isDesktop
+        ? (window.location.href = url)
+        : window.open(
+            url,
+            "login",
+            "width=800,height=500,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no"
+          );
 
-      getOAuthToken(tokenGetterWin).then((code) => {
-        const token = window.btoa(
-          JSON.stringify({
-            auth: providerName,
-            mode: "popup",
-            callback: "authCallback",
-          })
-        );
+      getOAuthToken(tokenGetterWin)
+        .then((code) => {
+          const token = window.btoa(
+            JSON.stringify({
+              auth: providerName,
+              mode: "popup",
+              callback: "authCallback",
+            })
+          );
 
-        tokenGetterWin.location.href = getLoginLink(token, code);
-      });
+          tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
+        })
+        .catch((e) => console.log("authorization canceled"));
     } catch (err) {
       console.log(err);
     }
   };
 
-  const renderButtons = () => {
-    const providerButtons = providersIcons.map((el) => {
-      const provider =
-        providers &&
-        providers.find(
-          (item) => item.provider.toLowerCase() === el.name.toLowerCase()
-        );
-
-      return (
-        <SocialButton
-          key={el.name}
-          iconName={el.icon}
-          dataUrl={provider?.url}
-          dataProvidername={provider?.provider}
-          onClick={onSocialButtonClick}
-          isDisabled={isDisabled || !provider || providers.length <= 0}
-        />
+  const getIconProps = (name) => {
+    if (!name) return;
+    const provider =
+      providers &&
+      providers.find(
+        (item) => item.provider.toLowerCase() === name.toLowerCase()
       );
-    });
 
-    return providerButtons;
+    if (!provider) return { isDisabled: true };
+
+    const props = {
+      dataUrl: provider?.url,
+      dataProvidername: provider?.provider,
+      onClick: onSocialButtonClick,
+      isDisabled: isDisabled || !provider || providers.length <= 0,
+    };
+
+    return props;
   };
 
-  const providerButtons = renderButtons();
+  const googleProps = getIconProps(availableProviders.google);
+  const facebookProps = getIconProps(availableProviders.facebook);
+  const linkedInProps = getIconProps(availableProviders.linkedIn);
 
-  return <StyledSocialButtons>{providerButtons}</StyledSocialButtons>;
+  return (
+    <StyledSocialButtons>
+      {availableProviders.google && (
+        <SocialButton
+          iconName={availableProviders.google}
+          iconComponent={
+            <GoogleIcon className="social-button-img" size="max-content" />
+          }
+          {...googleProps}
+        />
+      )}
+      {availableProviders.facebook && (
+        <SocialButton
+          iconName={availableProviders.facebook}
+          iconComponent={
+            <FacebookIcon className="social-button-img" size="max-content" />
+          }
+          {...facebookProps}
+        />
+      )}
+      {availableProviders.linkedIn && (
+        <SocialButton
+          iconName={availableProviders.linkedIn}
+          iconComponent={
+            <LinkedInIcon className="social-button-img" size="max-content" />
+          }
+          {...linkedInProps}
+        />
+      )}
+    </StyledSocialButtons>
+  );
 };
 
 export default SocialButtons;
