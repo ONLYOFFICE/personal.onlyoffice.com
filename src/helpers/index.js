@@ -121,20 +121,16 @@ export const getLocalizedImagePrefix = (prefixes, language) => {
   return prefix;
 };
 
-export const sendMetrics = (action, category, label, value) =>{
+export const sendMetrics = (category, action, label) =>{
   const values = {};
+  if (typeof window == 'undefined' || typeof window.gtag == 'undefined' || typeof action == 'undefined'){
+    return;
+  }
   if (typeof category !== 'undefined'){
     values['event_category'] = category;
   }
   if (typeof label !== 'undefined'){
     values['event_label'] = label;
   }
-  if (typeof value !== 'undefined'){
-    values['value'] = value;
-  }
-  if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined'){
-    window.gtag('event', action, values);
-  } else{
-    console.log('event', action, values)
-  }
+  window.gtag('event', action, values);
 }

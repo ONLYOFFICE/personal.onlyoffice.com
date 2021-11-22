@@ -100,7 +100,7 @@ const SocialButtons = ({ t, isDisabled }) => {
             callback: "authCallback",
           })
         );
-        sendMetrics('click', 'ClickOnMainPage');
+        sendMetrics('RegisterOnMainPage', 'Click', 'Create Now' );
         tokenGetterWin.location.href = getLoginLink(token, code);
       });
     } catch (err) {

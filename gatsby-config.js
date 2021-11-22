@@ -1,11 +1,10 @@
 const languages = require("./languages.json");
-const { defaultLanguage, customAssetPrefix } = require("./config.json");
-const siteUrl = process.env.URL || `https://www.personal.onlyoffice.com`
+const { defaultLanguage, customAssetPrefix, siteUrl } = require("./config.json");
 const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.personal.onlyoffice.com",
+    siteUrl: siteUrl,
     title: "personal-gatsby",
   },
   assetPrefix: customAssetPrefix,
@@ -101,7 +100,7 @@ module.exports = {
         localeJsonSourceName: `locale`,
         languages: availableLanguages,
         defaultLanguage,
-        siteUrl: `https://personal.onlyoffice.com/`,
+        siteUrl: siteUrl,
         redirect: true,
         generateDefaultLanguagePage: `/en`,
 

@@ -77,7 +77,7 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
             setEmailIsExist(true);
             setErrorTextInput(res);
           } else {
-            sendMetrics('click', 'ClickOnMainPage');
+            sendMetrics('RegisterOnMainPage', 'Click', 'Social Button');
             navigate("/success", {
               state: {
                 email: emailValue,
