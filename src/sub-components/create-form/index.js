@@ -143,7 +143,7 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
         (emailIsIncorrect && !emailIsValid) ||
         emailIsExist,
       errorText: errorTextInput,
-      tabIndexProp: 1,
+      tabIndexProp: 0,
     },
     {
       type: "checkbox",
@@ -165,7 +165,7 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       label: t("RegistryButtonCreateNow"),
       isDisabled: !isAcceptLicence,
       toHideButton: isPanel,
-      tabIndexProp: 2,
+      tabIndexProp: 0,
     },
     { ...formSeparator },
     {

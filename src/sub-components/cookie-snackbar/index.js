@@ -7,7 +7,7 @@ import Button from "../../../components/button";
 import Portal from "../../../components/portal";
 import Snackbar from "../../../components/snackbar";
 
-import { getCookie } from "../../helpers";
+import { getCookie, setCookie } from "../../helpers";
 import { PERSONAL_COOKIE } from "../../helpers/constants";
 
 import StyledCookieSnackbar from "./styled-cookie-snackbar";
@@ -23,7 +23,8 @@ const CookieSnackbar = ({ buttonLabel }) => {
   }, []);
 
   const onSetCookie = () => {
-    document.cookie = `${PERSONAL_COOKIE}=true`;
+    //document.cookie = `${PERSONAL_COOKIE}=true`;
+    setCookie(PERSONAL_COOKIE, true, { "max-age": 31536000 });
     setShowCookieBar(false);
   };
 

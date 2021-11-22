@@ -19,6 +19,7 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 import AttentionIcon from "../../../static/site-assets/icons/attention.react.svg";
 
 import { getConfirmHeader, checkingConfirmLink } from "../../helpers";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const ProfileRemovePage = ({ location }) => {
   const [isProfileDeleted, setIsProfileDeleted] = useState(false);
@@ -44,7 +45,8 @@ const ProfileRemovePage = ({ location }) => {
   }, []);
   /* eslint-enable */
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
     const confirmHeader = getConfirmHeader(location);
     logout();
 
@@ -115,6 +117,7 @@ const ProfileRemovePage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("ConfirmTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
@@ -132,7 +135,7 @@ const ProfileRemovePage = ({ location }) => {
   );
 };
 
-export default ProfileRemovePage;
+export default withDetectLanguage(ProfileRemovePage);
 
 export const query = graphql`
   query($language: String!) {

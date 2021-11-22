@@ -24,6 +24,12 @@ const StyledSocialButton = styled.div`
         }
       `}
   }
+
+  .social-button-img {
+    &:hover:not(:active) {
+      cursor: ${(props) => (!props.isDisabled ? "pointer" : "default")};
+    }
+  }
 `;
 
 export default StyledSocialButton;

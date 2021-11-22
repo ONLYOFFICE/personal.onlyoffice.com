@@ -28,6 +28,7 @@ import {
 } from "../../helpers";
 
 import languages from "../../../languages.json";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const EmpInvitePage = ({ location }) => {
   const [firstName, setFirstName] = useState("");
@@ -51,39 +52,12 @@ const EmpInvitePage = ({ location }) => {
   } = useTranslation();
 
   useEffect(() => {
-    const params = parseQueryParams(location.search);
-    const { lang: linkLanguage } = params;
-
-    if (!linkLanguage)
-      console.error(
-        "The link does not contain the 'lang' parameter. The default language is 'en'"
-      );
-
-    if (language !== linkLanguage) {
-      let localizedPath;
-
-      if (language === "en" && !location.pathname.includes("en")) {
-        localizedPath = `/${linkLanguage || "en"}${location.pathname}${
-          location.search
-        }`;
-      } else {
-        localizedPath = `${location.pathname.replace(
-          language,
-          linkLanguage || "en"
-        )}${location.search}`;
-      }
-
-      navigate(localizedPath);
-    }
-  }, [language, location.pathname, location.search]);
-
-  useEffect(() => {
     getSettings()
       .then((res) => {
         setHashSettings(res.passwordHash);
       })
 
-      .catch((e) => console.error(e));
+      .catch((e) => console.log(e));
   }, []);
 
   /* eslint-disable */
@@ -146,24 +120,20 @@ const EmpInvitePage = ({ location }) => {
 
     const user = await createUser(data, key);
 
-    console.log("Created user", user);
-
     const { userName, passwordHash } = loginData;
 
-    const response = await login(userName, passwordHash);
-
-    console.log("Login", response);
+    await login(userName, passwordHash);
 
     return user;
   };
 
   const checkString = (string) => {
-    const regex = /\d/g;
+    const regex = /^[a-zA-Z]+$/;
     return regex.test(string);
   };
 
   const firstNameOnBlurHandler = () => {
-    if (!!firstName.trim() && !checkString(firstName)) {
+    if (!!firstName.trim() && checkString(firstName)) {
       setFirstNameValid(true);
     } else {
       setFirstNameValid(false);
@@ -171,32 +141,33 @@ const EmpInvitePage = ({ location }) => {
   };
 
   const lastNameOnBlurHandler = () => {
-    if (!!lastName.trim() && !checkString(lastName)) {
+    if (!!lastName.trim() && checkString(lastName)) {
       setLastNameValid(true);
     } else {
       setLastNameValid(false);
     }
   };
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
     let hasError = false;
 
-    if (!firstName.trim()) {
+    if (!firstName.trim() || !firstNameValid) {
       hasError = true;
       setFirstNameValid(false);
-      setIsEmptyFirstName(true);
+      !firstName.trim() && setIsEmptyFirstName(true);
     }
 
-    if (!lastName.trim()) {
+    if (!lastName.trim() || !lastNameValid) {
       hasError = true;
       setLastNameValid(false);
-      setIsEmptyLastName(true);
+      !lastName.trim() && setIsEmptyLastName(true);
     }
 
-    if (!password.trim()) {
+    if (!password.trim() || !isPwdValid) {
       hasError = true;
       setIsPwdValid(false);
-      setIsEmptyPassword(true);
+      !password.trim() && setIsEmptyPassword(true);
     }
 
     if (hasError) {
@@ -225,13 +196,17 @@ const EmpInvitePage = ({ location }) => {
           const currentLanguage = languages.find(
             (el) => el.shortKey === language
           );
-          updateUserCulture(user.id, currentLanguage?.key || "en");
+          return updateUserCulture(
+            user.id,
+            currentLanguage?.key || "en"
+          ).catch((e) => console.log(e));
         })
         .then(() => window.location.replace("/"))
         .catch((error) => {
           toastr.error(`${error}`);
         })
     );
+    //.catch((e) => console.log(e));
   };
 
   const formData = [
@@ -256,7 +231,11 @@ const EmpInvitePage = ({ location }) => {
       isError: !firstNameValid,
       onBlur: firstNameOnBlurHandler,
       isSuccess: firstNameValid && !isEmptyFirstName,
-      errorText: isEmptyFirstName ? t("AuthErrorIndicationText") : null,
+      errorText: !firstNameValid
+        ? isEmptyFirstName
+          ? t("AuthErrorIndicationText")
+          : t("UnknownError")
+        : null,
     },
     {
       type: "input",
@@ -269,7 +248,11 @@ const EmpInvitePage = ({ location }) => {
       isError: !lastNameValid,
       onBlur: lastNameOnBlurHandler,
       isSuccess: lastNameValid && !isEmptyLastName,
-      errorText: isEmptyLastName ? t("AuthErrorIndicationText") : null,
+      errorText: !lastNameValid
+        ? isEmptyLastName
+          ? t("AuthErrorIndicationText")
+          : t("UnknownError")
+        : null,
     },
     {
       type: "input",
@@ -310,6 +293,7 @@ const EmpInvitePage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthorizationTitle")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
@@ -331,7 +315,7 @@ const EmpInvitePage = ({ location }) => {
   );
 };
 
-export default EmpInvitePage;
+export default withDetectLanguage(EmpInvitePage);
 
 export const query = graphql`
   query($language: String!) {

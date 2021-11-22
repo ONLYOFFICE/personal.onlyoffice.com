@@ -9,7 +9,9 @@ import languages from "../../languages";
 import Text from "../text";
 import IconButton from "../icon-button";
 import Portal from "../portal";
-//import Link from "../internal-link";
+import { setCookie } from "../../src/helpers";
+import { SITE_LANGUAGE_COOKIE } from "../../src/helpers/constants";
+
 export default function LangsList(props) {
   const { t, isOpen, currentLanguage, onCloseSelector } = props;
   const isPanelView = typeof window !== "undefined" && window.innerWidth >= 767;
@@ -34,6 +36,13 @@ export default function LangsList(props) {
     path = `${pathname}${search ? search : ""}`;
   }
 
+  const onClickHandler = (e) => {
+    const selectedLanguage = e.currentTarget.dataset.language;
+    setCookie(SITE_LANGUAGE_COOKIE, selectedLanguage, {
+      "max-age": 31536000,
+    });
+  };
+
   const renderItemList = () => {
     return languages.map((language) => {
       const { shortKey, iconName, key } = language;
@@ -49,11 +58,11 @@ export default function LangsList(props) {
       }
 
       return (
-        <StyledItem key={key}>
+        <StyledItem key={key} data-language={shortKey} onClick={onClickHandler}>
           <Link to={`${localizedPath}`} className="language-item-link">
             <img
               src={`/site-assets/flags/${iconName}`}
-              alt={key}
+              alt={language.key}
               width="18px"
               className="language-item-image"
             />

@@ -15,6 +15,7 @@ import {
   getConfirmLinkData,
   checkingConfirmLink,
 } from "../../helpers";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const EmailActivationPage = ({ location }) => {
   const {
@@ -73,6 +74,7 @@ const EmailActivationPage = ({ location }) => {
           metaKeywords={t("AuthDocsMetaKeywords")}
           title={t("AuthDocsTitlePage")}
           metaDescriptionOg={t("MetaDescriptionOg")}
+          currentLanguage={language}
         />
       </Layout.PageHead>
       <Layout.PageHeader>
@@ -88,7 +90,7 @@ const EmailActivationPage = ({ location }) => {
   );
 };
 
-export default EmailActivationPage;
+export default withDetectLanguage(EmailActivationPage);
 
 export const query = graphql`
   query($language: String!) {

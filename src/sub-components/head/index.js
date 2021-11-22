@@ -2,9 +2,19 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import languages from "../../../languages";
 
-const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
-  return (
-    <Helmet>
+const Head = ({
+  metaDescription,
+  metaKeywords,
+  title,
+  metaDescriptionOg,
+  currentLanguage,
+}) => {
+  return ( 
+    <Helmet
+      htmlAttributes={{
+        lang: currentLanguage,
+      }}
+    >
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12442749-5"></script>
       <script>
       {`
@@ -16,6 +26,7 @@ const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
       `}
       </script>
       <title>{title}</title>
+
       <meta charset="utf-8" />
       <meta
         id="ctl00_MetaImageOG"
@@ -38,7 +49,7 @@ const Head = ({ metaDescription, metaKeywords, title, metaDescriptionOg }) => {
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
       />
       <meta id="ctl00_MetaKeywords" name="keywords" content={metaKeywords} />
       <meta name="description" content={metaDescription} />
