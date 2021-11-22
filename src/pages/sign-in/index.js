@@ -72,7 +72,7 @@ const SignInPage = ({ location }) => {
   };
 
   const onSubmitHandler = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
 
     let hasError;
 
