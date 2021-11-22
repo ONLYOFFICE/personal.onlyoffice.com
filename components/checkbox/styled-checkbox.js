@@ -8,7 +8,7 @@ const StyledLabel = styled.label`
   gap: 8px;
   position: relative;
   margin: 0;
-  max-width: calc(100% - 32px);
+  max-width: 100%;
 
   user-select: none;
   -o-user-select: none;
