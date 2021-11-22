@@ -149,9 +149,10 @@ export function PageTrack(key) {
       'event': key
     });
   }
-  if (window.ga) {
-    window.ga('www.send', 'event', key);
-    window.ga('testTracker.send', 'event', key);
+  if (window.gtag) {
+    window.gtag('event', key,{
+      'event_category': key
+    });
   }
 };
 

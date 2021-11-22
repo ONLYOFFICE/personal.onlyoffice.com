@@ -109,7 +109,7 @@ const SocialButtons = ({ t, isDisabled }) => {
               callback: "authCallback",
             })
           );
-
+          window.PageTrack('Personal_Portal_Register');
           tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
         })
         .catch((e) => console.log("authorization canceled"));
