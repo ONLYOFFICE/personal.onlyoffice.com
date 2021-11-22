@@ -6,7 +6,7 @@ import toastr from "../../../components/toast/toastr";
 import StyledSocialButtons from "./styled-social-buttons";
 
 import { thirdPartyLogin } from "../../api";
-import { sendMetrics } from "../../helpers";
+import { PageTrack } from "../../helpers";
 
 const providersIcons = [
   {
@@ -100,7 +100,7 @@ const SocialButtons = ({ t, isDisabled }) => {
             callback: "authCallback",
           })
         );
-        sendMetrics('RegisterOnMainPage', 'Click', 'Create Now' );
+        window.PageTrack('Personal_Portal_Register');
         tokenGetterWin.location.href = getLoginLink(token, code);
       });
     } catch (err) {
