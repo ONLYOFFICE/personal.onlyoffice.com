@@ -1,5 +1,9 @@
 const languages = require("./languages.json");
-const { defaultLanguage, customAssetPrefix, siteUrl } = require("./config.json");
+const {
+  defaultLanguage,
+  customAssetPrefix,
+  siteUrl,
+} = require("./config.json");
 const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
@@ -15,16 +19,17 @@ module.exports = {
     { resolve: "gatsby-transformer-sharp" },
     { resolve: "gatsby-plugin-gatsby-cloud" },
     { resolve: "gatsby-plugin-react-helmet" },
-    { resolve: "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
       options: {
         excludes: [
-          '**/404/',
-          '**/404.html',
-          '**/confirm/**/*',
-          '**/create-now/',
-          '**/password-recovery/',
-          '**/sign-in/',
-          '**/success/',
+          "**/404/",
+          "**/404.html",
+          "**/confirm/**/*",
+          "**/create-now/",
+          "**/password-recovery/",
+          "**/sign-in/",
+          "**/success/",
         ],
         query: `
         {
@@ -40,12 +45,12 @@ module.exports = {
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({
           allSitePage: { nodes: allPages },
-          siteBuildMetadata: {buildTime: lastMod}
+          siteBuildMetadata: { buildTime: lastMod },
         }) => {
-          const wpNodeMap = lastMod
-          return allPages.map(page => {
-            return { ...page, wpNodeMap}
-          })
+          const wpNodeMap = lastMod;
+          return allPages.map((page) => {
+            return { ...page, wpNodeMap };
+          });
         },
         serialize: ({ path, wpNodeMap }) => {
           return {
@@ -53,7 +58,7 @@ module.exports = {
             changefreq: `monthly`,
             priority: 1.0,
             lastmod: wpNodeMap,
-          }
+          };
         },
       },
     },
@@ -71,10 +76,21 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        sitemap: 'https://www.personal.onlyoffice.com/sitemap.xml',
-        policy: [{ userAgent: '*', disallow: ['/sign-in/','/password-recovery/', '/create-now/'] }]
+        sitemap: "https://personal.onlyoffice.com/sitemap.xml",
+        policy: [
+          {
+            userAgent: "*",
+            disallow: [
+              "/sign-in/",
+              "/password-recovery/",
+              "/create-now/",
+              "/success/",
+              "/confirm/",
+            ],
+          },
+        ],
       },
     },
     { resolve: "gatsby-transformer-remark" },

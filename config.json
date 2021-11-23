@@ -6,7 +6,7 @@
     "appServerUrl": "",
     "defaultLanguage": "en",
     "customAssetPrefix": "site-assets",
-    "siteUrl": "https://www.personal.onlyoffice.com",
+    "siteUrl": "https://personal.onlyoffice.com",
     "availableProviders": {
         "google": "Google",
         "facebook": "Facebook",

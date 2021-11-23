@@ -1,11 +1,7 @@
 import sjcl from "sjcl";
 import * as queryString from "query-string";
-import {
-  ValidationResult
-} from "./constants";
-import {
-  checkConfirmLink
-} from "../api";
+import { ValidationResult } from "./constants";
+import { checkConfirmLink } from "../api";
 import config from "../../config.json";
 
 export function getCookie(name) {
@@ -30,11 +26,7 @@ export function createPasswordHash(password, hashSettings) {
   )
     throw new Error("Invalid params.");
 
-  const {
-    size,
-    iterations,
-    salt
-  } = hashSettings;
+  const { size, iterations, salt } = hashSettings;
 
   let bits = sjcl.misc.pbkdf2(password, salt, iterations);
   bits = bits.slice(0, size / 32);
@@ -55,11 +47,11 @@ function getObjectByLocation(location) {
   const searchUrl = location.search.substring(1);
   const object = JSON.parse(
     '{"' +
-    decodeURIComponent(searchUrl)
-    .replace(/"/g, '\\"')
-    .replace(/&/g, '","')
-    .replace(/=/g, '":"') +
-    '"}'
+      decodeURIComponent(searchUrl)
+        .replace(/"/g, '\\"')
+        .replace(/&/g, '","')
+        .replace(/=/g, '":"') +
+      '"}'
   );
 
   return object;
@@ -72,9 +64,12 @@ export function getConfirmLinkData(location) {
   const url = location.pathname;
   const posSeparator = url.lastIndexOf("/");
   const type = url.slice(posSeparator + 1);
-  const confirmLinkData = Object.assign({
-    type
-  }, queryParams);
+  const confirmLinkData = Object.assign(
+    {
+      type,
+    },
+    queryParams
+  );
 
   return confirmLinkData;
 }
@@ -82,9 +77,7 @@ export function getConfirmLinkData(location) {
 export function getConfirmHeader(location) {
   if (!location) return null;
 
-  const {
-    search
-  } = location;
+  const { search } = location;
   const confirmLinkData = getConfirmLinkData(location);
   const confirmHeader = `type=${confirmLinkData.type}&${search.slice(1)}`;
 
@@ -99,28 +92,30 @@ export function checkingConfirmLink(location, t) {
       switch (validationResult) {
         case ValidationResult.Ok:
           return {
-            isValidLink: true, errorValidationLink: false
+            isValidLink: true,
+            errorValidationLink: false,
           };
         case ValidationResult.Invalid:
           return {
             isValidLink: false,
-              errorValidationLink: t("ConfirmInvalidLink"),
+            errorValidationLink: t("ConfirmInvalidLink"),
           };
         case ValidationResult.Expired:
           return {
             isValidLink: false,
-              errorValidationLink: t("ConfirmExpiredLink"),
+            errorValidationLink: t("ConfirmExpiredLink"),
           };
         default:
           return {
-            isValidLink: false, errorValidationLink: t("UnknownError")
+            isValidLink: false,
+            errorValidationLink: t("UnknownError"),
           };
       }
     })
     .catch((e) => {
       return {
         isValidLink: false,
-        errorValidationLink: `${e}`
+        errorValidationLink: `${e}`,
       };
     });
 }
@@ -140,21 +135,21 @@ export const getLocalizedImagePrefix = (prefixes, language) => {
   return prefix;
 };
 
-export function PageTrack(key) {
-  if (typeof window == 'undefined') {
+export function sendAnalytics(key) {
+  if (typeof window == "undefined") {
     return;
   }
   if (window.dataLayer) {
     window.dataLayer.push({
-      'event': key
+      event: key,
     });
   }
   if (window.gtag) {
-    window.gtag('event', key,{
-      'event_category': key
+    window.gtag("event", key, {
+      event_category: key,
     });
   }
-};
+}
 
 export const setCookie = (name, value, options = null) => {
   options = {

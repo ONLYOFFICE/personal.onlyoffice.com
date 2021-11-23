@@ -9,15 +9,18 @@ const Head = ({
   metaDescriptionOg,
   currentLanguage,
 }) => {
-  return ( 
+  return (
     <Helmet
       htmlAttributes={{
         lang: currentLanguage,
       }}
     >
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12442749-5"></script>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-12442749-5"
+      ></script>
       <script>
-      {`
+        {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());

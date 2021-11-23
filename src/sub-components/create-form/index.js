@@ -7,7 +7,7 @@ import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
 
 import { registration } from "../../api";
-import { PageTrack } from "../../helpers";
+import { sendAnalytics } from "../../helpers";
 import toastr from "../../../components/toast/toastr";
 
 const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
@@ -77,7 +77,7 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
             setEmailIsExist(true);
             setErrorTextInput(res);
           } else {
-            window.PageTrack('Personal_Portal_Register');
+            sendAnalytics("Personal_Portal_Register");
             navigate("/success", {
               state: {
                 email: emailValue,
