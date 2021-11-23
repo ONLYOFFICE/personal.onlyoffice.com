@@ -4,7 +4,7 @@ import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
-
+import { sendAnalytics } from "../../helpers";
 import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
 import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
 import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
@@ -109,7 +109,7 @@ const SocialButtons = ({ t, isDisabled }) => {
               callback: "authCallback",
             })
           );
-
+          sendAnalytics("Personal_Portal_Register");
           tokenGetterWin.location.href = getLoginLink(token, code, isDesktop);
         })
         .catch((e) => console.log("authorization canceled"));
