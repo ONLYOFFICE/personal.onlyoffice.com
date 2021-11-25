@@ -39,7 +39,7 @@ const IndexPage = ({ location }) => {
       navigate("/sign-in");
     }
   }, []);
-
+  /* eslint-disable */
   useEffect(() => {
     if (location.state && location.state.hasOwnProperty("toastr")) {
       if (location.state.toastr.success) {
@@ -49,8 +49,8 @@ const IndexPage = ({ location }) => {
         toastr.error(location.state.toastr.text);
       }
     }
-  }, [location.state]);
-
+  }, []);
+  /* eslint-enable */
   const isSSR = typeof window === "undefined";
 
   const lazyRender = () => {
