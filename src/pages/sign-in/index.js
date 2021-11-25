@@ -39,14 +39,14 @@ const SignInPage = ({ location }) => {
       })
       .catch((e) => console.log(e));
   }, []);
-
+  /* eslint-disable */
   useEffect(() => {
     if (location.state) {
       location.state.hasOwnProperty("toastr") &&
         toastr.success(location.state.toastr.text);
     }
-  }, [location.state]);
-
+  }, []);
+  /* eslint-enable */
   const {
     t,
     i18n: { language },
