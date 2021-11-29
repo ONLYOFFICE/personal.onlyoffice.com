@@ -8,10 +8,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
 
@@ -34,11 +30,12 @@ yarn-error.log*
 .vercel
 node_modules
 
-# linaria cache
-/.linaria-cache/
 
 # gatsby cache 
 /.cache/
 
 # gatsby build bundle
 /public/
+
+# revision markdown
+/src/markdown-pages/revision.md
