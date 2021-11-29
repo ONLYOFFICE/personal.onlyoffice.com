@@ -88,18 +88,17 @@ module.exports = {
               "/create-now/",
               "/success/",
               "/confirm/",
+              "/revision/",
             ],
           },
         ],
       },
     },
-    { resolve: "gatsby-transformer-remark" },
-    { resolve: "gatsby-plugin-mdx" },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
     },
@@ -110,6 +109,15 @@ module.exports = {
         name: `locale`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    { resolve: "gatsby-transformer-remark" },
+    { resolve: "gatsby-plugin-mdx" },
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
@@ -129,6 +137,12 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
+        pages: [
+          {
+            matchPath: "/revision",
+            languages: [""],
+          },
+        ],
       },
     },
     {
