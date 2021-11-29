@@ -1,4 +1,0 @@
----
-path: "/revision"
-title: "Revision"
----
