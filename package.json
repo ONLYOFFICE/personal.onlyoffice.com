@@ -3,14 +3,14 @@
   "version": "1.0.21",
   "private": true,
   "scripts": {
-    "develop": "gatsby develop -p 9000",
-    "start": "gatsby develop -p 9000",
-    "build": "gatsby build --prefix-paths",
+    "develop": "yarn debug-info && gatsby develop -p 9000",
+    "start": "yarn debug-info && gatsby develop -p 9000",
+    "build": "yarn debug-info && gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 8082 -s ./static",
     "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch",
-    "debug-info": "node ./debug-info --unreleased-only --template debuginfo --output public/debuginfo.md"
+    "debug-info": "node ./debug-info --unreleased-only --template debuginfo --output src/markdown-pages/revision.md"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
@@ -52,6 +52,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.1",
+    "react-markdown": "^7.1.0",
     "react-slick": "^0.28.1",
     "react-svg": "^14.0.3",
     "react-toastify": "^6.2.0",
