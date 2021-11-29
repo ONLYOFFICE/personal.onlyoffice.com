@@ -1,5 +1,5 @@
 const { Command } = require("commander");
-const { version } = require("../package.json");
+const { version } = require("../../package.json");
 const { fetchRemote } = require("./remote");
 const { fetchTags } = require("./tags");
 const { parseReleases } = require("./releases");
