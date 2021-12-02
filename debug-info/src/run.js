@@ -12,6 +12,9 @@ const {
   fileExists,
   updateLog,
   formatBytes,
+  getGitBranchName,
+  getGitHashLastCommit,
+  getBuildDate,
 } = require("./utils");
 
 const DEFAULT_OPTIONS = {
@@ -125,6 +128,10 @@ const getOptions = async (argv) => {
     .option("--append-git-tag <string>", "string to append to git tag command")
     .option("--prepend", "prepend changelog to output file")
     .option("--stdout", "output changelog to stdout")
+    .option(
+      "--revision-for-gatsby",
+      `revision output for gatsby (added meta in revision.hbs)`
+    )
     .version(version)
     .parse(argv)
     .opts();
@@ -134,14 +141,17 @@ const getOptions = async (argv) => {
   const dotOptions = await readJson(
     commandOptions.config || DEFAULT_OPTIONS.config
   );
+
   const options = {
     ...DEFAULT_OPTIONS,
     ...dotOptions,
     ...packageOptions,
     ...commandOptions,
   };
+
   const remote = await fetchRemote(options);
   const latestVersion = await getLatestVersion(options);
+
   return {
     ...options,
     ...remote,
@@ -172,16 +182,29 @@ const run = async (argv) => {
   log(`${tags.length} version tags found…`);
   const onParsed = ({ title }) => log(`Fetched ${title}…`);
   const releases = await parseReleases(tags, options, onParsed);
-  const changelog = await compileTemplate(releases, options);
+
+  const hashLastCommit = await getGitHashLastCommit();
+  const currentBranchName = await getGitBranchName();
+  const buildDate = await getBuildDate();
+
+  const detailInfo = {
+    hashLastCommit: hashLastCommit,
+    currentBranchName: currentBranchName,
+    buildDate: buildDate,
+  };
+  console.log(options);
+  const changelog = await compileTemplate(releases, detailInfo, options);
   await write(changelog, options, log);
 };
 
 const write = async (changelog, options, log) => {
+  console.log(changelog);
   if (options.stdout) {
     process.stdout.write(changelog);
     return;
   }
   const bytes = formatBytes(Buffer.byteLength(changelog, "utf8"));
+  console.log(options, "write");
   const existing =
     (await fileExists(options.output)) &&
     (await readFile(options.output, "utf8"));
