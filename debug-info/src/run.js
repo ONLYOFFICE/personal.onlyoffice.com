@@ -192,19 +192,16 @@ const run = async (argv) => {
     currentBranchName: currentBranchName,
     buildDate: buildDate,
   };
-  console.log(options);
   const changelog = await compileTemplate(releases, detailInfo, options);
   await write(changelog, options, log);
 };
 
 const write = async (changelog, options, log) => {
-  console.log(changelog);
   if (options.stdout) {
     process.stdout.write(changelog);
     return;
   }
   const bytes = formatBytes(Buffer.byteLength(changelog, "utf8"));
-  console.log(options, "write");
   const existing =
     (await fileExists(options.output)) &&
     (await readFile(options.output, "utf8"));
