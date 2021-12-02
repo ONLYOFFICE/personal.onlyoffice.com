@@ -1,12 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import config from "../../package.json";
-import Text from "../../components/text";
-import Heading from "../../components/heading";
 import styled from "styled-components";
+import config from "../../package.json";
 
-const { version } = config;
+import Text from "../../components/text";
 
 const StyledComponent = styled.div`
   display: grid;
@@ -14,24 +11,20 @@ const StyledComponent = styled.div`
   margin: 10px 20px;
 `;
 
-const getBuildDate = () => {
-  // eslint-disable-next-line
-  return BUILD_AT;
-};
+const { version } = config;
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
-  const buildData = getBuildDate();
   return (
     <StyledComponent>
-      <Heading level={3}>Debug Info</Heading>
-      <Text>{`version: ${version}`}</Text>
-      <Text>{`Build date: ${buildData}`}</Text>
-      <div
-        className="change-log-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <Text>
+        {`Version: ${version}`}
+        <div
+          className="change-log-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </Text>
     </StyledComponent>
   );
 }
