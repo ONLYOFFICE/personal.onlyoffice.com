@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import SocialButton from "../../../components/social-button";
 import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
-import { sendAnalytics } from "../../helpers";
+import { sendAnalytics, parseQueryParams } from "../../helpers";
 import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
 import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
 import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
@@ -15,6 +15,8 @@ const { availableProviders } = config;
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
+
+  const googleButtonRef = useRef(null);
 
   const authCallback = useCallback(
     (profile) => {
@@ -40,7 +42,9 @@ const SocialButtons = ({ t, isDisabled }) => {
 
     const profile = localStorage.getItem("profile");
     if (profile) return authCallback(profile);
+  }, [authCallback]);
 
+  useEffect(() => {
     const isDesktop = window["AscDesktopEditor"] !== undefined;
 
     getAuthProviders(isDesktop)
@@ -48,11 +52,18 @@ const SocialButtons = ({ t, isDisabled }) => {
         setProviders(providers);
       })
       .catch((err) => console.log(err));
+  }, []);
 
-    return () => {
-      setProviders(null);
-    };
-  }, [authCallback]);
+  /* eslint-disable */
+  useEffect(() => {
+    const google = availableProviders.google.toLowerCase();
+    const urlParams = parseQueryParams(window.location.search);
+    if (urlParams?.from === google && providers?.length) {
+      const googleProvider = providers.filter((p) => p.provider === google)[0];
+      loginWithSocial(google, googleProvider.url);
+    }
+  }, [providers]);
+  /* eslint-enable */
 
   const getLoginLink = (token, code, isDesktopEditors) => {
     return `/login.ashx?p=${token}&code=${code}${
@@ -89,6 +100,11 @@ const SocialButtons = ({ t, isDisabled }) => {
     if (!targetButton) toastr.error(t("SomethingWentWrong"));
     const providerName = targetButton.dataset.providername;
     const url = targetButton.dataset.url;
+
+    loginWithSocial(providerName, url);
+  };
+
+  const loginWithSocial = (providerName, url) => {
     const isDesktop = window["AscDesktopEditor"] !== undefined;
 
     try {
@@ -151,6 +167,7 @@ const SocialButtons = ({ t, isDisabled }) => {
             <GoogleIcon className="social-button-img" size="max-content" />
           }
           {...googleProps}
+          innerRef={googleButtonRef}
         />
       )}
       {availableProviders.facebook && (
