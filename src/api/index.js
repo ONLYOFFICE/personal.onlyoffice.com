@@ -7,10 +7,11 @@ export function getSettings() {
   });
 }
 
-export function login(userName, passwordHash) {
+export function login(userName, passwordHash, session) {
   const data = {
     userName,
     passwordHash,
+    session,
   };
 
   return request({

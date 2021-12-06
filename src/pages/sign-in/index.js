@@ -91,9 +91,10 @@ const SignInPage = ({ location }) => {
     if (hasError) return;
 
     const hash = createPasswordHash(passwordValue, hashSettings);
+    const session = !isChecked;
 
     if (emailIsValid && passwordIsValid) {
-      login(emailValue, hash)
+      login(emailValue, hash, session)
         .then(() => {
           const redirectPath = localStorage.getItem("redirectPath");
           if (redirectPath) localStorage.removeItem("redirectPath");
