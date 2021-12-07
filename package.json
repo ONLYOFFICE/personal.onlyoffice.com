@@ -10,7 +10,7 @@
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 8082 -s ./static",
     "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch",
-    "debug-info": "node debug-info/src/ --unreleased-only --template revision --revision-for-gatsby --custom-fields gatsby revision --output src/markdown-pages/revision.md"
+    "debug-info": "auto-changelog --unreleased-only --template debuginfo --custom title=Revision,gatsby=true,path=revision --output src/markdown-pages/revision.md"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
@@ -73,6 +73,7 @@
     "@storybook/react": "^6.3.2",
     "@svgr/rollup": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
+    "auto-changelog": "https://github.com/ONLYOFFICE/auto-changelog.git#master",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "commander": "^7.2.0",

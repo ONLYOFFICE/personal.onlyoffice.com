@@ -13,13 +13,20 @@ const StyledComponent = styled.div`
 
 const { version } = config;
 
+const getBuildDate = () => {
+  // eslint-disable-next-line
+  return BUILD_AT;
+};
+
 export default function Template({ data }) {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
+  const buildData = getBuildDate();
   return (
     <StyledComponent>
+      <Text>{`Version: ${version}`} </Text>
+      <Text>{`Build date: ${buildData}`} </Text>
       <Text>
-        {`Version: ${version}`}
         <div
           className="change-log-content"
           dangerouslySetInnerHTML={{ __html: html }}

@@ -4653,6 +4653,16 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+"auto-changelog@https://github.com/ONLYOFFICE/auto-changelog.git#master":
+  version "2.3.0"
+  resolved "https://github.com/ONLYOFFICE/auto-changelog.git#9b1feefae1e4fefefff1cb06ea9c4f1b87a83487"
+  dependencies:
+    commander "^7.2.0"
+    handlebars "^4.7.7"
+    node-fetch "^2.6.5"
+    parse-github-url "^1.0.2"
+    semver "^7.3.5"
+
 autoprefixer@^10.2.4:
   version "10.3.2"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.3.2.tgz#836e4b4f59eb6876c41012c1c937be74035f3ec8"
