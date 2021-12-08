@@ -1,4 +1,8 @@
 import { request } from "./client";
+import config from "../../config.json";
+import { parseQueryParams } from "../helpers";
+
+const { availableProviders } = config;
 
 export function getSettings() {
   return request({
@@ -56,9 +60,15 @@ export function getUser() {
 }
 
 export function getAuthProviders(desktop = false) {
+  const params = parseQueryParams(window.location.search);
+
   return request({
     method: "get",
-    url: `/people/thirdparty/providers`,
+    url: `/people/thirdparty/providers${
+      params?.from === availableProviders.google.toLocaleLowerCase()
+        ? "/?desktop=true"
+        : ""
+    }`,
     data: {
       desktop,
     },

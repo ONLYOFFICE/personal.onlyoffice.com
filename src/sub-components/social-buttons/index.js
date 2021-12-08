@@ -56,13 +56,16 @@ const SocialButtons = ({ t, isDisabled }) => {
 
   /* eslint-disable */
   useEffect(() => {
-    const google = availableProviders?.google.toLowerCase();
+    const google = availableProviders.google.toLowerCase();
     const urlParams = parseQueryParams(window.location.search);
-    if (urlParams?.from === google && providers?.length) {
-      const googleProvider = providers.filter((p) => p.provider === google)[0];
-      loginWithSocial(google, googleProvider.url);
+
+    if (urlParams?.from === google) {
+      getAuthProviders().then((providers) => {
+        const googleProvider = providers.find((p) => p.provider === google);
+        loginWithSocial(google, googleProvider.url, true);
+      });
     }
-  }, [providers]);
+  }, []);
   /* eslint-enable */
 
   const getLoginLink = (token, code, isDesktopEditors) => {
@@ -104,8 +107,8 @@ const SocialButtons = ({ t, isDisabled }) => {
     loginWithSocial(providerName, url);
   };
 
-  const loginWithSocial = (providerName, url) => {
-    const isDesktop = window["AscDesktopEditor"] !== undefined;
+  const loginWithSocial = (providerName, url, fromExtension) => {
+    const isDesktop = window["AscDesktopEditor"] !== undefined || fromExtension;
 
     try {
       const tokenGetterWin = isDesktop
