@@ -7,6 +7,7 @@ import Header from "./sub-components/header";
 import Main from "./sub-components/main";
 import Footer from "./sub-components/footer";
 import Head from "./sub-components/head";
+import Background from "./sub-components/background";
 import Toast from "../toast";
 
 import "../../styles/globals.css";
@@ -68,6 +69,7 @@ class Layout extends React.Component {
     return (
       <ErrorBoundary t={this.props.t}>
         <StyledLayout id="page-layout" className="layout">
+          <Background />
           {children}
           <Head>{headContent ? headContent.props.children : null}</Head>
 

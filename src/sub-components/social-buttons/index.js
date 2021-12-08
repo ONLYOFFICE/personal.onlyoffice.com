@@ -56,7 +56,7 @@ const SocialButtons = ({ t, isDisabled }) => {
 
   /* eslint-disable */
   useEffect(() => {
-    const google = availableProviders.google.toLowerCase();
+    const google = availableProviders?.google.toLowerCase();
     const urlParams = parseQueryParams(window.location.search);
     if (urlParams?.from === google && providers?.length) {
       const googleProvider = providers.filter((p) => p.provider === google)[0];
