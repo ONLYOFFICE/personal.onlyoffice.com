@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledMain = styled.main`
-  z-index: 1;
+  z-index: 0;
 `;
 
 export default StyledMain;
