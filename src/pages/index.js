@@ -6,7 +6,6 @@ import Layout from "../../components/layout";
 import toastr from "../../components/toast/toastr";
 
 import CreateSection from "../sub-components/main-page/create-section";
-import FooterContent from "../sub-components/footer-content";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 
@@ -25,6 +24,10 @@ const BlockquoteSection = React.lazy(() =>
 );
 const ReviewSection = React.lazy(() =>
   import("../sub-components/main-page/review-section")
+);
+
+const FooterSection = React.lazy(() =>
+  import("../sub-components/footer-content")
 );
 
 const IndexPage = ({ location }) => {
@@ -71,7 +74,18 @@ const IndexPage = ({ location }) => {
     );
   };
 
+  const footerRender = () => {
+    return (
+      !isSSR && (
+        <React.Suspense fallback={<div />}>
+          <FooterSection t={t} isHomePage language={language} />
+        </React.Suspense>
+      )
+    );
+  };
+
   const content = lazyRender();
+  const footer = footerRender();
 
   return (
     <Layout t={t}>
@@ -97,9 +111,7 @@ const IndexPage = ({ location }) => {
         <CarouselSection t={t} language={language} />
         {content}
       </Layout.SectionMain>
-      <Layout.PageFooter isHomePage>
-        <FooterContent t={t} isHomePage language={language} />
-      </Layout.PageFooter>
+      <Layout.PageFooter isHomePage>{footer}</Layout.PageFooter>
     </Layout>
   );
 };
