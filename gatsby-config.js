@@ -30,6 +30,7 @@ module.exports = {
           "**/password-recovery/",
           "**/sign-in/",
           "**/success/",
+          "revision/",
         ],
         query: `
         {
@@ -148,7 +149,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
+        fonts: [`Open Sans:400,500,600,700`],
         display: "swap",
       },
     },
