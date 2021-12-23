@@ -88,8 +88,8 @@ export function checkingConfirmLink(location, t) {
   const confirmLinkData = getConfirmLinkData(location);
 
   return checkConfirmLink(confirmLinkData)
-    .then((validationResult) => {
-      switch (validationResult) {
+    .then((result) => {
+      switch (result) {
         case ValidationResult.Ok:
           return {
             isValidLink: true,

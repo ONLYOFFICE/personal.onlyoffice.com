@@ -35,8 +35,9 @@ const FormTextInput = (props) => {
   switch (inputType) {
     case "text":
       return (
-        <label>
+        <label htmlFor="text-input">
           <TextInput
+            name="text-input"
             className="form-input form-text"
             {...rest}
             buttonClick={buttonClick}
@@ -49,8 +50,9 @@ const FormTextInput = (props) => {
       );
     case "email":
       return (
-        <label>
+        <label htmlFor="email-input">
           <EmailInput
+            name="email-input"
             className="form-input form-email"
             {...rest}
             buttonClick={buttonClick}
@@ -63,8 +65,9 @@ const FormTextInput = (props) => {
       );
     case "password":
       return (
-        <label>
+        <label htmlFor="password-input">
           <PasswordInput
+            name="password-input"
             className="form-input form-password"
             {...rest}
             buttonClick={buttonClick}
