@@ -8,7 +8,7 @@ const FormTextInput = (props) => {
   const { item, isPanel } = props;
   const { type, inputType, buttonClick, withButton, callback, ...rest } = item;
 
-  const [withButtonCheck, setWidthButton] = useState(false);
+  const [withButtonCheck, setWidthButton] = useState(withButton);
 
   useEffect(() => {
     window && item.isSubmit && window.addEventListener("resize", checkingBtn);
