@@ -23,7 +23,7 @@ const FormTextInput = (props) => {
   });
 
   const checkingBtn = () => {
-    window && window.innerWidth >= 592
+    window && window.innerWidth >= 593
       ? setWidthButton(withButton)
       : setWidthButton(false);
   };
