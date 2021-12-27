@@ -1,15 +1,16 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "1.0.15",
+  "version": "1.0.29",
   "private": true,
   "scripts": {
-    "develop": "gatsby develop -p 9000",
-    "start": "gatsby develop -p 9000",
-    "build": "gatsby build --prefix-paths",
+    "develop": "yarn debug-info && gatsby develop -p 9000",
+    "start": "yarn debug-info && gatsby develop -p 9000",
+    "build": "yarn debug-info && gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 8082 -s ./static",
-    "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch"
+    "bump": "yarn version --no-git-tag-version --no-commit-hooks --patch",
+    "debug-info": "auto-changelog --unreleased-only --template debuginfo --custom title=Revision,gatsby=true,path=revision --output src/markdown-pages/revision.md"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.6",
@@ -33,6 +34,7 @@
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-react-i18next": "^1.1.1",
     "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-robots-txt": "^1.6.14",
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-plugin-sitemap": "^4.5.0",
     "gatsby-plugin-styled-components": "^4.11.0",
@@ -50,6 +52,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.1",
+    "react-markdown": "^7.1.0",
     "react-slick": "^0.28.1",
     "react-svg": "^14.0.3",
     "react-toastify": "^6.2.0",
@@ -70,9 +73,15 @@
     "@storybook/react": "^6.3.2",
     "@svgr/rollup": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
+    "auto-changelog": "https://github.com/ONLYOFFICE/auto-changelog.git#master",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
+    "commander": "^7.2.0",
     "copy-webpack-plugin": "6.4.0",
-    "css-loader": "^5.2.6"
+    "css-loader": "^5.2.6",
+    "handlebars": "^4.7.7",
+    "node-fetch": "^2.6.5",
+    "parse-github-url": "^1.0.2",
+    "semver": "^7.3.5"
   }
 }

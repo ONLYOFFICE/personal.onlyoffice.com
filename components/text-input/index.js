@@ -84,7 +84,7 @@ const TextInput = ({
           </Text>
         )}
       </StyledInput>
-      {Boolean(withButton) && (
+      {withButton && (
         <StyledButtonInput
           id={idButton}
           className={classNameButton}
