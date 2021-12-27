@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import packages from "../../../package.json";
 
 import CustomLink from "../../../components/link";
 import IconButton from "../../../components/icon-button";
@@ -73,10 +72,6 @@ const FooterContent = ({ t, language, isHomePage, ...rest }) => {
             fontSize="14px"
           >
             {t("CopyrightAndRights", { currentYear })}
-            <span style={{ color: "#f9f9f9" }}>{
-              //TODO: deleted before release
-              `(v.${packages.version})`
-            }</span>
           </Text>
         </div>
       </div>

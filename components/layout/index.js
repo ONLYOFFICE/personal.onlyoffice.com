@@ -1,4 +1,5 @@
 import React from "react";
+import { createGlobalStyle } from "styled-components";
 
 import ErrorBoundary from "../error-boundary";
 
@@ -7,9 +8,39 @@ import Header from "./sub-components/header";
 import Main from "./sub-components/main";
 import Footer from "./sub-components/footer";
 import Head from "./sub-components/head";
+import Background from "./sub-components/background";
 import Toast from "../toast";
 
-import "../../styles/globals.css";
+const GlobalStyles = createGlobalStyle`
+  html {
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+    scrollbar-color: #c1c1c1c1 transparent;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+  }
+
+  html::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 245px;
+
+    background: #c1c1c1c1;
+    opacity: 0.2;
+    border-radius: 6px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+  }
+`;
 
 function PageHead() {
   return null;
@@ -67,7 +98,9 @@ class Layout extends React.Component {
 
     return (
       <ErrorBoundary t={this.props.t}>
+        <GlobalStyles />
         <StyledLayout id="page-layout" className="layout">
+          <Background />
           {children}
           <Head>{headContent ? headContent.props.children : null}</Head>
 

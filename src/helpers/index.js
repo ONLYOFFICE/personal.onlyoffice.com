@@ -64,7 +64,12 @@ export function getConfirmLinkData(location) {
   const url = location.pathname;
   const posSeparator = url.lastIndexOf("/");
   const type = url.slice(posSeparator + 1);
-  const confirmLinkData = Object.assign({ type }, queryParams);
+  const confirmLinkData = Object.assign(
+    {
+      type,
+    },
+    queryParams
+  );
 
   return confirmLinkData;
 }
@@ -83,10 +88,13 @@ export function checkingConfirmLink(location, t) {
   const confirmLinkData = getConfirmLinkData(location);
 
   return checkConfirmLink(confirmLinkData)
-    .then((validationResult) => {
-      switch (validationResult) {
+    .then((result) => {
+      switch (result) {
         case ValidationResult.Ok:
-          return { isValidLink: true, errorValidationLink: false };
+          return {
+            isValidLink: true,
+            errorValidationLink: false,
+          };
         case ValidationResult.Invalid:
           return {
             isValidLink: false,
@@ -98,11 +106,17 @@ export function checkingConfirmLink(location, t) {
             errorValidationLink: t("ConfirmExpiredLink"),
           };
         default:
-          return { isValidLink: false, errorValidationLink: t("UnknownError") };
+          return {
+            isValidLink: false,
+            errorValidationLink: t("UnknownError"),
+          };
       }
     })
     .catch((e) => {
-      return { isValidLink: false, errorValidationLink: `${e}` };
+      return {
+        isValidLink: false,
+        errorValidationLink: `${e}`,
+      };
     });
 }
 
@@ -120,6 +134,22 @@ export const getLocalizedImagePrefix = (prefixes, language) => {
 
   return prefix;
 };
+
+export function sendAnalytics(key) {
+  if (typeof window == "undefined") {
+    return;
+  }
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: key,
+    });
+  }
+  if (window.gtag) {
+    window.gtag("event", key, {
+      event_category: key,
+    });
+  }
+}
 
 export const setCookie = (name, value, options = null) => {
   options = {

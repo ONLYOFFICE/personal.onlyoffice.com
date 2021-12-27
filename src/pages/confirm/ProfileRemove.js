@@ -88,9 +88,9 @@ const ProfileRemovePage = ({ location }) => {
     {
       type: "other",
       element: isProfileDeleted ? (
-        <SuccessIcon style={{ margin: "0 auto" }} />
+        <SuccessIcon key="other-success" style={{ margin: "0 auto" }} />
       ) : (
-        <AttentionIcon style={{ margin: "0 auto" }} />
+        <AttentionIcon key="other-attention" style={{ margin: "0 auto" }} />
       ),
     },
     {

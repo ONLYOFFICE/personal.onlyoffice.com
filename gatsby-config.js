@@ -1,11 +1,14 @@
 const languages = require("./languages.json");
-const { defaultLanguage, customAssetPrefix } = require("./config.json");
-
+const {
+  defaultLanguage,
+  customAssetPrefix,
+  siteUrl,
+} = require("./config.json");
 const availableLanguages = languages.map((el) => el.shortKey);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.personal.onlyoffice.com",
+    siteUrl: siteUrl,
     title: "personal-gatsby",
   },
   assetPrefix: customAssetPrefix,
@@ -16,7 +19,50 @@ module.exports = {
     { resolve: "gatsby-transformer-sharp" },
     { resolve: "gatsby-plugin-gatsby-cloud" },
     { resolve: "gatsby-plugin-react-helmet" },
-    { resolve: "gatsby-plugin-sitemap" },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        excludes: [
+          "**/404/",
+          "**/404.html",
+          "**/confirm/**/*",
+          "**/create-now/",
+          "**/password-recovery/",
+          "**/sign-in/",
+          "**/success/",
+          "revision/",
+        ],
+        query: `
+        {
+          siteBuildMetadata{
+            buildTime
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          siteBuildMetadata: { buildTime: lastMod },
+        }) => {
+          const wpNodeMap = lastMod;
+          return allPages.map((page) => {
+            return { ...page, wpNodeMap };
+          });
+        },
+        serialize: ({ path, wpNodeMap }) => {
+          return {
+            url: path,
+            changefreq: `monthly`,
+            priority: 1.0,
+            lastmod: wpNodeMap,
+          };
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -30,13 +76,30 @@ module.exports = {
         display: `standalone`,
       },
     },
-    { resolve: "gatsby-transformer-remark" },
-    { resolve: "gatsby-plugin-mdx" },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: "https://personal.onlyoffice.com/sitemap.xml",
+        policy: [
+          {
+            userAgent: "*",
+            disallow: [
+              "/sign-in/",
+              "/password-recovery/",
+              "/create-now/",
+              "/success/",
+              "/confirm/",
+              "/revision/",
+            ],
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
     },
@@ -48,12 +111,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    { resolve: "gatsby-transformer-remark" },
+    { resolve: "gatsby-plugin-mdx" },
+    {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
         languages: availableLanguages,
         defaultLanguage,
-        siteUrl: `https://personal.onlyoffice.com/`,
+        siteUrl: siteUrl,
         redirect: false,
         generateDefaultLanguagePage: `/en`,
 
@@ -66,12 +138,18 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
+        pages: [
+          {
+            matchPath: "/revision",
+            languages: [""],
+          },
+        ],
       },
     },
     {
       resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [`Open Sans:200,300,400,400i,500,600,700,800`],
+        fonts: [`Open Sans:400,500,600,700`],
         display: "swap",
       },
     },

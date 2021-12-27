@@ -19,6 +19,7 @@ import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const SuccessPage = ({ location }) => {
+  /* eslint-disable */
   useEffect(() => {
     if (location.state && location.state.hasOwnProperty("toastr")) {
       if (location.state.toastr.success) {
@@ -28,8 +29,8 @@ const SuccessPage = ({ location }) => {
         toastr.error(location.state.toastr.text);
       }
     }
-  }, [location.state]);
-
+  }, []);
+  /* eslint-enable */
   const {
     t,
     i18n: { language },

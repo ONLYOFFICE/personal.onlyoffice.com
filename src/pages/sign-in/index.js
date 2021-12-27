@@ -39,14 +39,14 @@ const SignInPage = ({ location }) => {
       })
       .catch((e) => console.log(e));
   }, []);
-
+  /* eslint-disable */
   useEffect(() => {
     if (location.state) {
       location.state.hasOwnProperty("toastr") &&
         toastr.success(location.state.toastr.text);
     }
-  }, [location.state]);
-
+  }, []);
+  /* eslint-enable */
   const {
     t,
     i18n: { language },
@@ -91,9 +91,10 @@ const SignInPage = ({ location }) => {
     if (hasError) return;
 
     const hash = createPasswordHash(passwordValue, hashSettings);
+    const session = !isChecked;
 
     if (emailIsValid && passwordIsValid) {
-      login(emailValue, hash)
+      login(emailValue, hash, session)
         .then(() => {
           const redirectPath = localStorage.getItem("redirectPath");
           if (redirectPath) localStorage.removeItem("redirectPath");
