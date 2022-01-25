@@ -1,6 +1,6 @@
 {
   "name": "personal.onlyoffice.com",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "private": true,
   "scripts": {
     "develop": "yarn debug-info && gatsby develop -p 9000",
