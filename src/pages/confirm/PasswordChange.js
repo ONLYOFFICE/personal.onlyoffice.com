@@ -91,7 +91,7 @@ const PasswordChangePage = ({ location }) => {
 
     let hasError = false;
 
-    if (!password.trim()) {
+    if (!password.trim() || !isPwdValid) {
       hasError = true;
       setIsPwdValid(false);
       setPasswordIsEmpty(true);
