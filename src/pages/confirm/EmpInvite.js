@@ -127,13 +127,8 @@ const EmpInvitePage = ({ location }) => {
     return user;
   };
 
-  const checkString = (string) => {
-    const regex = /^[a-zA-Z]+$/;
-    return regex.test(string);
-  };
-
   const firstNameOnBlurHandler = () => {
-    if (!!firstName.trim() && checkString(firstName)) {
+    if (!!firstName.trim()) {
       setFirstNameValid(true);
     } else {
       setFirstNameValid(false);
@@ -141,7 +136,7 @@ const EmpInvitePage = ({ location }) => {
   };
 
   const lastNameOnBlurHandler = () => {
-    if (!!lastName.trim() && checkString(lastName)) {
+    if (!!lastName.trim()) {
       setLastNameValid(true);
     } else {
       setLastNameValid(false);

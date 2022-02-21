@@ -23,6 +23,7 @@ import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const ProfileRemovePage = ({ location }) => {
   const [isProfileDeleted, setIsProfileDeleted] = useState(false);
+  const [isDeleteClicked, setIsDeleteClicked] = useState(false);
   const {
     t,
     i18n: { language },
@@ -47,6 +48,9 @@ const ProfileRemovePage = ({ location }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    if (isDeleteClicked) return;
+    setIsDeleteClicked(true);
+
     const confirmHeader = getConfirmHeader(location);
     logout();
 
@@ -55,9 +59,8 @@ const ProfileRemovePage = ({ location }) => {
         setIsProfileDeleted(true);
         toastr.success(t("DeleteProfileSuccess"));
       })
-      .catch((e) => {
-        toastr.error(`${e}`);
-      });
+      .catch((e) => toastr.error(`${e}`))
+      .finally(() => setIsDeleteClicked(false));
   };
 
   const DeleteProfileDesc = (
@@ -82,6 +85,7 @@ const ProfileRemovePage = ({ location }) => {
         typeButton: "primary",
         label: t("ConfirmDeleteAccountButton"),
         tabIndexProp: 1,
+        isDisabled: isDeleteClicked,
       };
 
   const formData = [

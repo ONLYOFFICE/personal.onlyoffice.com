@@ -17,6 +17,10 @@ const StyledButtonInput = styled(Button)`
   float: right;
 
   padding: 20px;
+
+  @media (max-width: 592px) {
+    display: none;
+  }
 `;
 
 StyledButtonInput.defaultProps = { theme: Base };

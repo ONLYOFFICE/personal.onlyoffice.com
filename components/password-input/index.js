@@ -18,6 +18,7 @@ const PasswordInput = ({
   generatorSpecial,
   autoComplete,
   disabledValidation,
+  maxLength,
   ...rest
 }) => {
   const [password, setPassword] = useState("");
@@ -58,8 +59,11 @@ const PasswordInput = ({
       ? specSymbolsTest.test(password)
       : true;
 
+    const lengthPassword = password.trim().length;
+
     const isLength = passwordSettings.minLength
-      ? password.trim().length >= passwordSettings.minLength
+      ? lengthPassword >= passwordSettings.minLength &&
+        lengthPassword <= maxLength
       : true;
 
     setIsSpecialError(!isSpecial);
@@ -206,18 +210,21 @@ PasswordInput.propTypes = {
   classNameButton: PropTypes.string,
   /** Set of settings for password generator and validator */
   passwordSettings: PropTypes.object,
+  /** Set maximum password length. Only works if passwordSettings is passed */
+  maxLength: PropTypes.number,
 };
 
 PasswordInput.defaultProps = {
   generatorSpecial: "!@#$%^&*",
   disabledValidation: true,
   passwordSettings: {
-    minLength: 1,
+    minLength: 8,
     upperCase: false,
     digits: false,
     specSymbols: false,
   },
   type: "password",
+  maxLength: 30,
 };
 
 export default PasswordInput;

@@ -8,19 +8,21 @@ import languages from "../../languages";
 
 const LanguageSelector = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  /* eslint-disable */
   useEffect(() => {
-    typeof window !== "undefined" &&
-      isOpen &&
+    if (isOpen) {
       window.addEventListener("click", handleClickOutside);
-    window.addEventListener("resize", resizeHandler);
+      window.addEventListener("resize", resizeHandler);
+      window.addEventListener("keydown", onKeyDownHandler);
+    }
 
     return () => {
       window.removeEventListener("click", handleClickOutside);
       window.removeEventListener("resize", resizeHandler);
+      window.removeEventListener("keydown", onKeyDownHandler);
     };
-  });
-
+  }, [isOpen]);
+  /* eslint-enable */
   const handleClickOutside = (e) => {
     if (
       isOpen &&
@@ -29,6 +31,10 @@ const LanguageSelector = (props) => {
     ) {
       onCloseSelector();
     }
+  };
+
+  const onKeyDownHandler = (e) => {
+    e.keyCode === 27 && onCloseSelector();
   };
 
   const resizeHandler = (e) => {
