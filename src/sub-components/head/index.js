@@ -36,6 +36,7 @@ const Head = ({
         property="og:image"
         content="https://static.onlyoffice.com/studio/tag/personal.11.5.3/skins/default/images/logo/fb_icon_325x325.jpg"
       />
+      <meta name="google" content="notranslate" />
       <meta property="og:type" content="website" />
       <meta id="ctl00_MetaTitleOG" property="og:title" content="ONLYOFFICE" />
       <meta
