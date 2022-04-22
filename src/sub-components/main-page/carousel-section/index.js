@@ -9,7 +9,7 @@ import {
 import { getTextItems, getImageItems } from "./sub-components/carousel-slides";
 import { getLocalizedImagePrefix } from "../../../helpers";
 
-const localizedImages = ["ru", "de", "fr", "en"];
+const localizedImages = ["ru", "de", "fr", "en-US"];
 
 const CarouselSection = (props) => {
   const { t, language } = props;

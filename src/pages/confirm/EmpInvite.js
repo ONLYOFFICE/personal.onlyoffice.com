@@ -61,36 +61,36 @@ const EmpInvitePage = ({ location }) => {
   }, []);
 
   /* eslint-disable */
-  useEffect(() => {
-    checkingConfirmLink(location, t).then((res) => {
-      if (!res.isValidLink) {
-        navigate("/", {
-          state: {
-            toastr: {
-              error: true,
-              text: res.errorValidationLink || t("UnknownError"),
-            },
-          },
-        });
-      } else {
-        const key = getConfirmHeader(location);
-        getPortalPasswordSettings(key)
-          .then((res) => {
-            setPasswordSettings(res);
-          })
-          .catch((e) => {
-            navigate("/", {
-              state: {
-                toastr: {
-                  error: true,
-                  text: `${e}` || t("UnknownError"),
-                },
-              },
-            });
-          });
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   checkingConfirmLink(location, t).then((res) => {
+  //     if (!res.isValidLink) {
+  //       navigate("/", {
+  //         state: {
+  //           toastr: {
+  //             error: true,
+  //             text: res.errorValidationLink || t("UnknownError"),
+  //           },
+  //         },
+  //       });
+  //     } else {
+  //       const key = getConfirmHeader(location);
+  //       getPortalPasswordSettings(key)
+  //         .then((res) => {
+  //           setPasswordSettings(res);
+  //         })
+  //         .catch((e) => {
+  //           navigate("/", {
+  //             state: {
+  //               toastr: {
+  //                 error: true,
+  //                 text: `${e}` || t("UnknownError"),
+  //               },
+  //             },
+  //           });
+  //         });
+  //     }
+  //   });
+  // }, []);
   /* eslint-enable */
 
   const onChangeFirstName = (e) => {
@@ -193,7 +193,7 @@ const EmpInvitePage = ({ location }) => {
           );
           return updateUserCulture(
             user.id,
-            currentLanguage?.key || "en"
+            currentLanguage?.key || "en-US"
           ).catch((e) => console.log(e));
         })
         .then(() => window.location.replace("/"))
@@ -314,7 +314,7 @@ export default withDetectLanguage(EmpInvitePage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

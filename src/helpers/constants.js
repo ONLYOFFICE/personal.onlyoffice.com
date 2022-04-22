@@ -8,7 +8,7 @@ export const ValidationResult = Object.freeze({
 });
 
 export const availableLinkLanguages = [
-  "en",
+  "en-US",
   "fr",
   "de",
   "es",

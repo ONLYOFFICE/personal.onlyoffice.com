@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
-
+import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
@@ -37,7 +37,7 @@ const SuccessPage = ({ location }) => {
   } = useTranslation();
 
   const buttonHref =
-    language === "en" ? "/create-now" : `/${language}/create-now`;
+    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -132,7 +132,7 @@ export default withDetectLanguage(SuccessPage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

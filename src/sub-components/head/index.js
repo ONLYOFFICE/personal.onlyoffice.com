@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import languages from "../../../languages";
-
+import { defaultLanguage } from "../../../config.json";
 const Head = ({
   metaDescription,
   metaKeywords,
@@ -76,7 +76,7 @@ const Head = ({
             key={key}
             rel="alternate"
             href={`https://personal.onlyoffice.com/${
-              shortKey === "en" ? "" : shortKey
+              shortKey === defaultLanguage ? "" : shortKey
             }`}
           />
         );

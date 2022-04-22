@@ -127,7 +127,7 @@ module.exports = {
         defaultLanguage,
         siteUrl: siteUrl,
         redirect: false,
-        generateDefaultLanguagePage: `/en`,
+        generateDefaultLanguagePage: `/en-US`,
 
         i18nextOptions: {
           fallbackLng: defaultLanguage,
