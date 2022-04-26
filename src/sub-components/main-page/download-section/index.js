@@ -9,12 +9,12 @@ import MobileAppPanel from "./sub-components/mobile-app-panel";
 import StyledDownloadSection from "./styled-download-section";
 import { getLocalizedImagePrefix } from "../../../helpers";
 
-const localizedImages = ["ru", "de", "fr", "en"];
+const localizedImages = ["ru", "de", "fr", "en-US"];
 const localizedAppsIcons = [
   "zh",
   "cs",
   "de",
-  "en",
+  "en-US",
   "es",
   "fr",
   "it",
@@ -23,7 +23,7 @@ const localizedAppsIcons = [
   "pt",
   "ru",
 ];
-const localizedChromeStore = ["en", "ru", "es", "pt", "it", "de", "fr"];
+const localizedChromeStore = ["en-US", "ru", "es", "pt", "it", "de", "fr"];
 
 const DownloadSection = ({ t, language }) => {
   const localizedScreenshotPrefix = getLocalizedImagePrefix(

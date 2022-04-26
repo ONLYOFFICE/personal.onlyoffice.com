@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { defaultLanguage } from "../../config.json";
 
 export default function useLocalizedPrefixForLink(
   availableLanguages,
@@ -9,7 +10,11 @@ export default function useLocalizedPrefixForLink(
   useEffect(() => {
     let prefix;
 
-    if (!availableLanguages || !currentLanguage || currentLanguage === "en") {
+    if (
+      !availableLanguages ||
+      !currentLanguage ||
+      currentLanguage === defaultLanguage
+    ) {
       prefix = "";
     } else {
       const language = availableLanguages.find((lang) =>

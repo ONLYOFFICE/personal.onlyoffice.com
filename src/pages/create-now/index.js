@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-
+import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 
 import Head from "../../sub-components/head";
@@ -17,7 +17,8 @@ const CreateNowPage = () => {
     i18n: { language },
   } = useTranslation();
 
-  const buttonHref = language === "en" ? "/sign-in" : `/${language}/sign-in`;
+  const buttonHref =
+    language === defaultLanguage ? "/sign-in" : `/${language}/sign-in`;
 
   return (
     <Layout t={t}>
@@ -60,7 +61,7 @@ export default withDetectLanguage(CreateNowPage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

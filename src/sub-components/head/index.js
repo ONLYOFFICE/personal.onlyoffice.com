@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import languages from "../../../languages";
-
+import { defaultLanguage } from "../../../config.json";
 const Head = ({
   metaDescription,
   metaKeywords,
@@ -36,6 +36,7 @@ const Head = ({
         property="og:image"
         content="https://static.onlyoffice.com/studio/tag/personal.11.5.3/skins/default/images/logo/fb_icon_325x325.jpg"
       />
+      <meta name="google" content="notranslate" />
       <meta property="og:type" content="website" />
       <meta id="ctl00_MetaTitleOG" property="og:title" content="ONLYOFFICE" />
       <meta
@@ -75,7 +76,7 @@ const Head = ({
             key={key}
             rel="alternate"
             href={`https://personal.onlyoffice.com/${
-              shortKey === "en" ? "" : shortKey
+              shortKey === defaultLanguage ? "" : shortKey
             }`}
           />
         );

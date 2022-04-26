@@ -24,7 +24,7 @@ export default NotFoundPage;
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

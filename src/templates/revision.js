@@ -44,7 +44,7 @@ export const pageQuery = graphql`
         path
       }
     }
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

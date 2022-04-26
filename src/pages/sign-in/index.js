@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-
+import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
@@ -53,7 +53,7 @@ const SignInPage = ({ location }) => {
   } = useTranslation();
 
   const buttonHref =
-    language === "en" ? "/create-now" : `/${language}/create-now`;
+    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -227,7 +227,7 @@ export default withDetectLanguage(SignInPage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

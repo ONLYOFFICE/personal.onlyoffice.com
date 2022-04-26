@@ -42,7 +42,11 @@ const withDetectLanguage = (WrappedPage) => {
         const { lang: linkLanguage } = params;
 
         const currentLanguage =
-          linkLanguage && linkLanguage !== detected ? linkLanguage : detected;
+          linkLanguage && linkLanguage !== detected
+            ? !languages.includes(linkLanguage)
+              ? defaultLanguage
+              : linkLanguage
+            : detected;
 
         let newPath;
 

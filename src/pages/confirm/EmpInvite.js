@@ -193,7 +193,7 @@ const EmpInvitePage = ({ location }) => {
           );
           return updateUserCulture(
             user.id,
-            currentLanguage?.key || "en"
+            currentLanguage?.key || "en-US"
           ).catch((e) => console.log(e));
         })
         .then(() => window.location.replace("/"))
@@ -314,7 +314,7 @@ export default withDetectLanguage(EmpInvitePage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns

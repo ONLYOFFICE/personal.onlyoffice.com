@@ -13,7 +13,7 @@ import FormLink from "../../sub-components/form-link";
 import FormDescription from "../../sub-components/form-description";
 import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
-
+import { defaultLanguage } from "../../../config.json";
 import { recoveryPassword } from "../../api";
 
 import { navigate } from "gatsby";
@@ -31,7 +31,7 @@ const PasswordRecoveryPage = () => {
   } = useTranslation();
 
   const buttonHref =
-    language === "en" ? "/create-now" : `/${language}/create-now`;
+    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -167,7 +167,7 @@ export default withDetectLanguage(PasswordRecoveryPage);
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: { language: { in: [$language, "en"] } }) {
+    locales: allLocale(filter: { language: { in: [$language, "en-US"] } }) {
       edges {
         node {
           ns
