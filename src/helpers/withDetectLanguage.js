@@ -21,7 +21,7 @@ const withDetectLanguage = (WrappedPage) => {
       const langCookie = getCookie(SITE_LANGUAGE_COOKIE);
 
       let detected =
-        langCookie ||
+        (langCookie && languages.includes(langCookie)) ||
         browserLang({
           languages,
           fallback: defaultLanguage,
