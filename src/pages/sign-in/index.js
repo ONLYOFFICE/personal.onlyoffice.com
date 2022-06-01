@@ -19,6 +19,7 @@ import { getSettings, login } from "../../api";
 import { createPasswordHash } from "../../helpers/";
 
 import withDetectLanguage from "../../helpers/withDetectLanguage";
+import { showToastr } from "../../helpers/";
 
 const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");
@@ -39,18 +40,15 @@ const SignInPage = ({ location }) => {
       })
       .catch((e) => console.log(e));
   }, []);
-  /* eslint-disable */
-  useEffect(() => {
-    if (location.state) {
-      location.state.hasOwnProperty("toastr") &&
-        toastr.success(location.state.toastr.text);
-    }
-  }, []);
-  /* eslint-enable */
   const {
     t,
     i18n: { language },
   } = useTranslation();
+  /* eslint-disable */
+  useEffect(() => {
+    showToastr(location, t);
+  }, []);
+  /* eslint-enable */
 
   const buttonHref =
     language === defaultLanguage ? "/create-now" : `/${language}/create-now`;

@@ -4,7 +4,12 @@ import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
-import { sendAnalytics, parseQueryParams } from "../../helpers";
+import {
+  sendAnalytics,
+  parseQueryParams,
+  redirectToMainPage,
+  removeOAuthKey,
+} from "../../helpers";
 import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
 import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
 import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
@@ -22,16 +27,13 @@ const SocialButtons = ({ t, isDisabled }) => {
     (profile) => {
       thirdPartyLogin(profile)
         .then(() => {
-          const redirectPath = localStorage.getItem("redirectPath");
-          if (redirectPath) localStorage.removeItem("redirectPath");
-          window.location.href = redirectPath || "/";
+          redirectToMainPage();
         })
         .catch(() => {
           toastr.error(t("ProviderNotConnected"));
         })
         .finally(() => {
-          localStorage.removeItem("profile");
-          localStorage.removeItem("code");
+          removeOAuthKey();
         });
     },
     [t]
