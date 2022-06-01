@@ -180,3 +180,8 @@ export const redirectToMainPage = () => {
   if (redirectPath) localStorage.removeItem("redirectPath");
   window.location.href = redirectPath || "/";
 };
+
+export const removeOAuthKey = () => {
+  localStorage.removeItem("profile");
+  localStorage.removeItem("code");
+};
