@@ -16,7 +16,7 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 
 import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
-import { showToastr } from "../../helpers";
+import showToastr from "../../helpers/showToastr";
 
 const SuccessPage = ({ location }) => {
   const {

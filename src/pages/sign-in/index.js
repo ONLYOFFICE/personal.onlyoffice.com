@@ -19,7 +19,7 @@ import { getSettings, login } from "../../api";
 import { createPasswordHash } from "../../helpers/";
 
 import withDetectLanguage from "../../helpers/withDetectLanguage";
-import { showToastr } from "../../helpers/";
+import showToastr from "../../helpers/showToastr";
 
 const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");

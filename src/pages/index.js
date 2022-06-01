@@ -7,7 +7,7 @@ import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
 import CarouselSection from "../sub-components/main-page/carousel-section";
 import withDetectLanguage from "../helpers/withDetectLanguage";
-import { showToastr } from "../helpers";
+import showToastr from "../helpers/showToastr";
 
 const CloudsSection = React.lazy(() =>
   import("../sub-components/main-page/clouds-section")
