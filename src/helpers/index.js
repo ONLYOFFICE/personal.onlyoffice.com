@@ -3,7 +3,6 @@ import * as queryString from "query-string";
 import { ValidationResult } from "./constants";
 import { checkConfirmLink } from "../api";
 import config from "../../config.json";
-import toastr from "../../components/toast/toastr";
 
 export function getCookie(name) {
   let matches = document.cookie.match(
@@ -185,17 +184,4 @@ export const redirectToMainPage = () => {
 export const removeOAuthKey = () => {
   localStorage.removeItem("profile");
   localStorage.removeItem("code");
-};
-
-export const showToastr = (location, t) => {
-  if (!location || !t || !location?.state?.toastr) return;
-
-  if (location.state.toastr?.success) {
-    toastr.success(location.state.toastr.text);
-  }
-  if (location.state.toastr?.error) {
-    if (location.state.toastr?.isProviderError)
-      toastr.error(t("ProviderNotConnected"));
-    else toastr.error(location.state.toastr.text);
-  }
 };
