@@ -74,12 +74,12 @@ Romb.propTypes = {
 };
 
 // eslint-disable-next-line react/prop-types
-const Loader = ({ size }) => (
-  <>
+const Loader = ({ size, ...rest }) => (
+  <div {...rest}>
     <Romb color="blue" size={size} />
     <Romb color="green" size={size} />
     <Romb color="red" size={size} />
-  </>
+  </div>
 );
 
 Loader.propTypes = {
