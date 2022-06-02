@@ -17,6 +17,11 @@ const OAuthPage = () => {
   useEffect(() => {
     const profile = localStorage.getItem("profile");
 
+    if (!profile) {
+      navigate("/");
+      return;
+    }
+
     thirdPartyLogin(profile)
       .then(() => {
         redirectToMainPage();

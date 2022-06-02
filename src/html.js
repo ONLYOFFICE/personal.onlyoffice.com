@@ -16,7 +16,7 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            if (localStorage.getItem("profile") && localStorage.getItem("code") && window.location.pathname !== '/oauth') {
+            if (localStorage.getItem("profile") && localStorage.getItem("code") && !window.location.pathname.includes('oauth')) {
               window.location.href = window.location.origin + '/oauth';
             }`,
           }}
