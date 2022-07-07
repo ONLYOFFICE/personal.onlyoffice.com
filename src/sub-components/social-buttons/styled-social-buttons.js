@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { isChrome, browserVersion } from "react-device-detect";
 
 const StyledSocialButtons = styled.div`
   display: flex;

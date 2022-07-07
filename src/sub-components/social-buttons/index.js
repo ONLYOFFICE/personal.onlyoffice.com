@@ -51,7 +51,6 @@ const SocialButtons = ({ t, isDisabled }) => {
     const platform = navigator.userAgent;
     const linuxPlatform = /Linux/;
 
-    console.log(linuxPlatform.test(platform));
     setIsLinuxDesktopEditor(linuxPlatform.test(platform) && isDesktop);
 
     getAuthProviders(isDesktop)
