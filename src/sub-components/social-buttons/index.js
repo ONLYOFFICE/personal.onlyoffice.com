@@ -20,7 +20,7 @@ const { availableProviders } = config;
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
-
+  const [isLinuxDesktopEditor, setIsLinuxDesktopEditor] = useState(false);
   const googleButtonRef = useRef(null);
 
   const authCallback = useCallback(
@@ -48,6 +48,11 @@ const SocialButtons = ({ t, isDisabled }) => {
 
   useEffect(() => {
     const isDesktop = window["AscDesktopEditor"] !== undefined;
+    const platform = navigator.userAgent;
+    const linuxPlatform = /Linux/;
+
+    console.log(linuxPlatform.test(platform));
+    setIsLinuxDesktopEditor(linuxPlatform.test(platform) && isDesktop);
 
     getAuthProviders(isDesktop)
       .then((providers) => {
@@ -164,9 +169,10 @@ const SocialButtons = ({ t, isDisabled }) => {
   const linkedInProps = getIconProps(availableProviders.linkedIn);
 
   return (
-    <StyledSocialButtons>
+    <StyledSocialButtons isLinuxDesktopEditor={isLinuxDesktopEditor}>
       {availableProviders.google && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.google}
           iconComponent={
             <GoogleIcon className="social-button-img" size="max-content" />
@@ -177,6 +183,7 @@ const SocialButtons = ({ t, isDisabled }) => {
       )}
       {availableProviders.facebook && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.facebook}
           iconComponent={
             <FacebookIcon className="social-button-img" size="max-content" />
@@ -186,6 +193,7 @@ const SocialButtons = ({ t, isDisabled }) => {
       )}
       {availableProviders.linkedIn && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.linkedIn}
           iconComponent={
             <LinkedInIcon className="social-button-img" size="max-content" />
