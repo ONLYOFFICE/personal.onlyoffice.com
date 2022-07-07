@@ -16,8 +16,6 @@ import {
   createUser,
   login,
   logout,
-  getUser,
-  updateUserCulture,
   getPortalPasswordSettings,
 } from "../../api";
 import {
@@ -27,7 +25,6 @@ import {
   checkingConfirmLink,
 } from "../../helpers";
 
-import languages from "../../../languages.json";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
 
 const EmpInvitePage = ({ location }) => {
@@ -119,7 +116,6 @@ const EmpInvitePage = ({ location }) => {
     );
 
     const user = await createUser(data, key);
-
     const { userName, passwordHash } = loginData;
 
     await login(userName, passwordHash);
@@ -182,26 +178,16 @@ const EmpInvitePage = ({ location }) => {
       firstname: firstName,
       lastname: lastName,
       email: params.email,
+      culturename: params?.lang || "en",
     };
 
     logout().then(() =>
       createConfirmUser(personalData, loginData, confirmHeader)
-        .then(getUser)
-        .then((user) => {
-          const currentLanguage = languages.find(
-            (el) => el.shortKey === language
-          );
-          return updateUserCulture(
-            user.id,
-            currentLanguage?.key || "en-US"
-          ).catch((e) => console.log(e));
-        })
         .then(() => window.location.replace("/"))
         .catch((error) => {
           toastr.error(`${error}`);
         })
     );
-    //.catch((e) => console.log(e));
   };
 
   const formData = [
