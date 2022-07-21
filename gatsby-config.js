@@ -31,6 +31,7 @@ module.exports = {
           "**/sign-in/",
           "**/success/",
           "revision/",
+          "oauth/",
         ],
         query: `
         {
@@ -90,6 +91,7 @@ module.exports = {
               "/success/",
               "/confirm/",
               "/revision/",
+              "/oauth/",
             ],
           },
         ],
@@ -141,6 +143,10 @@ module.exports = {
         pages: [
           {
             matchPath: "/revision",
+            languages: [""],
+          },
+          {
+            matchPath: "/oauth",
             languages: [""],
           },
         ],

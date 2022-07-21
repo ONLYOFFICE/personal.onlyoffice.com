@@ -8,6 +8,10 @@ const StyledSocialButtons = styled.div`
   margin-bottom: 1px;
 
   max-height: 39px;
+
+  .social-button {
+    ${(props) => props.isLinuxDesktopEditor && " margin-right: 26px;"}
+  }
 `;
 
 export default StyledSocialButtons;

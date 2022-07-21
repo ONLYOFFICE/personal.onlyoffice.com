@@ -174,3 +174,14 @@ export const setCookie = (name, value, options = null) => {
 
   document.cookie = updatedCookie;
 };
+
+export const redirectToMainPage = () => {
+  const redirectPath = localStorage.getItem("redirectPath");
+  if (redirectPath) localStorage.removeItem("redirectPath");
+  window.location.href = redirectPath || "/";
+};
+
+export const removeOAuthKey = () => {
+  localStorage.removeItem("profile");
+  localStorage.removeItem("code");
+};

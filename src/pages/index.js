@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
 import { graphql, navigate } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-
 import Layout from "../../components/layout";
-import toastr from "../../components/toast/toastr";
-
 import CreateSection from "../sub-components/main-page/create-section";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-
 import CarouselSection from "../sub-components/main-page/carousel-section";
-
 import withDetectLanguage from "../helpers/withDetectLanguage";
+import showToastr from "../helpers/showToastr";
 
 const CloudsSection = React.lazy(() =>
   import("../sub-components/main-page/clouds-section")
@@ -36,24 +32,19 @@ const IndexPage = ({ location }) => {
     i18n: { language },
   } = useTranslation();
 
+  /* eslint-disable */
+  useEffect(() => {
+    showToastr(location, t);
+  }, []);
+
   useEffect(() => {
     const isDesktopClient = window["AscDesktopEditor"] !== undefined;
     if (isDesktopClient) {
       navigate("/sign-in");
     }
   }, []);
-  /* eslint-disable */
-  useEffect(() => {
-    if (location.state && location.state.hasOwnProperty("toastr")) {
-      if (location.state.toastr.success) {
-        toastr.success(location.state.toastr.text);
-      }
-      if (location.state.toastr.error) {
-        toastr.error(location.state.toastr.text);
-      }
-    }
-  }, []);
   /* eslint-enable */
+
   const isSSR = typeof window === "undefined";
 
   const lazyRender = () => {

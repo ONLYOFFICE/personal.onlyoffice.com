@@ -4,7 +4,12 @@ import { getAuthProviders, thirdPartyLogin } from "../../api";
 import toastr from "../../../components/toast/toastr";
 
 import StyledSocialButtons from "./styled-social-buttons";
-import { sendAnalytics, parseQueryParams } from "../../helpers";
+import {
+  sendAnalytics,
+  parseQueryParams,
+  redirectToMainPage,
+  removeOAuthKey,
+} from "../../helpers";
 import GoogleIcon from "../../../static/site-assets/social-icons/google.react.svg";
 import FacebookIcon from "../../../static/site-assets/social-icons/facebook.react.svg";
 import LinkedInIcon from "../../../static/site-assets/social-icons/linkedin.react.svg";
@@ -15,23 +20,20 @@ const { availableProviders } = config;
 
 const SocialButtons = ({ t, isDisabled }) => {
   const [providers, setProviders] = useState();
-
+  const [isLinuxDesktopEditor, setIsLinuxDesktopEditor] = useState(false);
   const googleButtonRef = useRef(null);
 
   const authCallback = useCallback(
     (profile) => {
       thirdPartyLogin(profile)
         .then(() => {
-          const redirectPath = localStorage.getItem("redirectPath");
-          if (redirectPath) localStorage.removeItem("redirectPath");
-          window.location.href = redirectPath || "/";
+          redirectToMainPage();
         })
         .catch(() => {
           toastr.error(t("ProviderNotConnected"));
         })
         .finally(() => {
-          localStorage.removeItem("profile");
-          localStorage.removeItem("code");
+          removeOAuthKey();
         });
     },
     [t]
@@ -46,6 +48,10 @@ const SocialButtons = ({ t, isDisabled }) => {
 
   useEffect(() => {
     const isDesktop = window["AscDesktopEditor"] !== undefined;
+    const platform = navigator.userAgent;
+    const linuxPlatform = /Linux/;
+
+    setIsLinuxDesktopEditor(linuxPlatform.test(platform) && isDesktop);
 
     getAuthProviders(isDesktop)
       .then((providers) => {
@@ -162,9 +168,10 @@ const SocialButtons = ({ t, isDisabled }) => {
   const linkedInProps = getIconProps(availableProviders.linkedIn);
 
   return (
-    <StyledSocialButtons>
+    <StyledSocialButtons isLinuxDesktopEditor={isLinuxDesktopEditor}>
       {availableProviders.google && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.google}
           iconComponent={
             <GoogleIcon className="social-button-img" size="max-content" />
@@ -175,6 +182,7 @@ const SocialButtons = ({ t, isDisabled }) => {
       )}
       {availableProviders.facebook && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.facebook}
           iconComponent={
             <FacebookIcon className="social-button-img" size="max-content" />
@@ -184,6 +192,7 @@ const SocialButtons = ({ t, isDisabled }) => {
       )}
       {availableProviders.linkedIn && (
         <SocialButton
+          className="social-button"
           iconName={availableProviders.linkedIn}
           iconComponent={
             <LinkedInIcon className="social-button-img" size="max-content" />

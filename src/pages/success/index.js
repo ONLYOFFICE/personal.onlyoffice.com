@@ -4,7 +4,6 @@ import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
 import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
-import toastr from "../../../components/toast/toastr";
 import Text from "../../../components/text";
 
 import Head from "../../sub-components/head";
@@ -17,24 +16,19 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 
 import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
+import showToastr from "../../helpers/showToastr";
 
 const SuccessPage = ({ location }) => {
-  /* eslint-disable */
-  useEffect(() => {
-    if (location.state && location.state.hasOwnProperty("toastr")) {
-      if (location.state.toastr.success) {
-        toastr.success(location.state.toastr.text);
-      }
-      if (location.state.toastr.error) {
-        toastr.error(location.state.toastr.text);
-      }
-    }
-  }, []);
-  /* eslint-enable */
   const {
     t,
     i18n: { language },
   } = useTranslation();
+
+  /* eslint-disable */
+  useEffect(() => {
+    showToastr(location, t);
+  }, []);
+  /* eslint-enable */
 
   const buttonHref =
     language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
