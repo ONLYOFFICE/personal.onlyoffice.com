@@ -5,7 +5,7 @@ import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
-import Link from "../../../components/link";
+import Link from "../../../components/internal-link";
 
 import { registration } from "../../api";
 import { sendAnalytics } from "../../helpers";
@@ -106,9 +106,9 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
 
   let homepagePath = `/${currentLanguage || defaultLanguage}`;
 
-  if (isDesktopClient) {
+  //if (isDesktopClient) { // ! Need to be clarified
     homepagePath += "/sign-in";
-  }
+  //}
 
   const formBottomSeparator = isDesktopClient
     ? null
@@ -118,6 +118,7 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
         {t("AuthDocsAlready")}
         &nbsp;
         <Link
+          key="bottom-separator"
           href={homepagePath}
           tabIndex={-1}
         >
@@ -173,7 +174,10 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
     },
     {
       type: "other",
-      element: <LicenceLink t={t} />,
+      element: <LicenceLink
+        key="licence-link"
+        t={t}
+      />,
     },
     {
       type: "button",

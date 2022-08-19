@@ -23,9 +23,10 @@ const panelStyle = css`
     margin-bottom: 8px;
   }
 
-  .form-separator a {
+  .form-separator a span {
     font-weight: 700;
     letter-spacing: 0.05em;
+    padding: 0;
     text-transform: uppercase;
   }
 

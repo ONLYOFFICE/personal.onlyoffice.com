@@ -7,7 +7,8 @@ const StyledHeaderContent = styled.div`
 
   display: grid;
   grid-gap: 24px;
-  grid-template-columns: minmax(54px, 924px) min-content 34px;
+  grid-template-columns: minmax(54px, 924px) min-content 37px;
+  justify-content: space-between;
 
   ${(props) =>
     props.withoutButton &&
@@ -35,7 +36,6 @@ const StyledHeaderContent = styled.div`
 
   .language-selector {
     margin-top: 27px;
-    margin-left: 6px;
   }
 
   @media (max-width: 1200px) {

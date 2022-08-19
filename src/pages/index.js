@@ -95,6 +95,7 @@ const IndexPage = ({ location }) => {
           language={language}
           href="sign-in"
           labelButton={t("AuthDocsLogIn")}
+          withoutButton
         />
       </Layout.PageHeader>
       <Layout.SectionMain>

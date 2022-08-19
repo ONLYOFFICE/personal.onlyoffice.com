@@ -51,7 +51,8 @@ const StyledCreateSection = styled(HomeSection)`
         font-size: 25px;
         line-height: 120%;
 
-        pre {
+        i {
+          display: block;
           margin: 0;
         }
       }
@@ -109,7 +110,7 @@ const StyledCreateSection = styled(HomeSection)`
           padding-top: 20px;
           padding-bottom: 10px;
 
-          pre {
+          i {
             display: none;
           }
         }

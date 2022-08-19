@@ -16,7 +16,7 @@ const CreateSection = ({ t, currentLanguage }) => {
         </Heading>
         <Text className="description">
           <Trans i18nKey="AuthDocsSubtitle100">
-            100% compatible<pre></pre> with Microsoft Office formats
+            100% compatible<i></i> with Microsoft Office formats
           </Trans>
         </Text>
       </div>

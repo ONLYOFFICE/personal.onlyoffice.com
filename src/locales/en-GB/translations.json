@@ -61,6 +61,7 @@
   "RegistryButtonCreateNow": "Create now",
   "RegistrySettingSpam": "I want to subscribe to the ONLYOFFICE newsletter",
   "RegistrySettingTerms": "I agree to ONLYOFFICE <1>{{terms}}</1> and <2>{{privacy}}</2>",
+  "ByClickingAgreeTermsPrivacy": "By clicking the button “CREATE NOW” you agree to ONLYOFFICE <1>{{terms}}</1> and <2>{{privacy}}</2>",
   "TermAndCondition": "Terms and conditions",
   "PrivacyStatement": "Privacy statement",
   "AuthDocsFreeDesktopApp": "Download <1>free desktop app</1> to edit files offline or connect to your cloud.",
