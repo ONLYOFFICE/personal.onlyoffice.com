@@ -14,6 +14,7 @@ const globalColors = {
   greenMain: "#F9FEEF",
 
   grayLight: "#CCCCCC",
+  grayE2: "#E2E2E2",
 
   activeSuccess: "#CAE796",
   activeError: "#FFBFAA",

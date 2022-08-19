@@ -6,10 +6,12 @@ const panelStyle = css`
   box-shadow: ${(props) => props.theme.form.boxShadow};
   max-width: 100%;
   background-color: white;
-  grid-gap: 16px;
+  grid-gap: 24px;
 
   .form-header {
-    letter-spacing: -0.02em;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
     text-align: "center";
   }
 
@@ -21,9 +23,10 @@ const panelStyle = css`
     margin-bottom: 8px;
   }
 
-  .form-separator {
-    margin-top: -2px;
-    margin-bottom: 18px;
+  .form-separator a {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   @media (max-width: 592px) {
@@ -73,8 +76,6 @@ const StyledForm = styled.form`
   }
 
   .form-separator {
-    margin-top: 6px;
-    margin-bottom: -2px;
   }
 
   .form-header {
@@ -82,8 +83,6 @@ const StyledForm = styled.form`
   }
 
   .form-button {
-    font-size: 14px;
-    letter-spacing: 0.01em;
   }
 
   @media (max-width: 1023px) {

@@ -7,8 +7,6 @@ const StyledCloudsSection = styled(HomeSection)`
 
   .clouds-header {
     display: block;
-    padding: 0 0 30px;
-    font-size: 32px;
   }
 
   .clouds {

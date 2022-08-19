@@ -2,7 +2,7 @@
   "AuthDocsEnterViaSocial": "Tai syötä some verkkojesi kautta",
   "AuthDocsForgotPswd": "Unohditko salasanan?",
   "AuthDocsMetaKeywords": "Muokkaa word asiakirjoja online, tekstinkäsittelyn tiedostoja online",
-  "AuthDocsOr": "tai kirjaudu sisään",
+  "AuthDocsOrSignIn": "tai kirjaudu sisään",
   "CreateSuccessfullyDesc": "Aktivointisähköposti on lähetetty osoitteeseen <1>{{email}}</1>. Löydät vahvistusviestin sähköpostilaatikostasi.",
   "CreateSuccessfullyHeader": "Kiitos kun rekisteröit henkilökohtaisen ONLYOFFICE™ ohjelmiston.",
   "AuthDocsTitle": "Henkilökohtainen verkkotoimistosi",

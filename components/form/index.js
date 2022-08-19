@@ -62,7 +62,7 @@ const Form = (props) => {
             key={`${item.type}-${indx}`}
             className="form-separator"
             fontSize="14px"
-            fontWeight="bold"
+            fontWeight="700"
           >
             {item.separatorText}
           </Separator>

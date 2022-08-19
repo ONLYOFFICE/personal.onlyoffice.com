@@ -5,10 +5,14 @@ import Form from "../../../components/form";
 import AdditionalSection from "../../sub-components/additional-section";
 import SocialButtons from "../../sub-components/social-buttons";
 import LicenceLink from "./licence-checkbox-content";
+import Link from "../../../components/link";
 
 import { registration } from "../../api";
 import { sendAnalytics } from "../../helpers";
 import toastr from "../../../components/toast/toastr";
+import config from "../../../config.json";
+
+const { defaultLanguage } = config;
 
 const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const [emailValue, setEmailValue] = useState("");
@@ -109,6 +113,28 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
         separatorText: t("AuthDocsOr"),
       };
 
+  let homepagePath = `/${currentLanguage || defaultLanguage}`;
+
+  if (isDesktopClient) {
+    homepagePath += "/sign-in";
+  }
+
+  const formBottomSeparator = isDesktopClient
+    ? null
+    : {
+      type: "separator",
+      separatorText: <>
+        {t("AuthDocsAlready")}
+        &nbsp;
+        <Link
+          href={homepagePath}
+          tabIndex={-1}
+        >
+          {t("AuthDocsLogIn")}
+        </Link>
+      </>,
+    };
+
   const socialButtonsSection = isDesktopClient
     ? null
     : {
@@ -125,6 +151,11 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const formData = [
     { type: "heading", headingText: t("CreateFormHeader"), isHeader: true },
 
+    
+    {
+      ...socialButtonsSection,
+    },
+    { ...formSeparator },
     {
       type: "input",
       inputType: "email",
@@ -167,13 +198,10 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       toHideButton: isPanel,
       tabIndexProp: 0,
     },
-    { ...formSeparator },
-    {
-      ...socialButtonsSection,
-    },
     {
       ...additionalSection,
     },
+    { ...formBottomSeparator },
   ];
 
   return (

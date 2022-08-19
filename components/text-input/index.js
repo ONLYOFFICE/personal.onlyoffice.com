@@ -100,9 +100,9 @@ const TextInput = ({
           icon={iconButton}
           squareButton={squareButton}
           isSubmit={isSubmit}
-          minwidth="149px"
-          fontSize="14px"
-          fontWeight="bold"
+          minwidth="137px"
+          fontSize="13px"
+          fontWeight="600"
           lineHeight="16px"
           tabIndex={tabIndexProp}
         />

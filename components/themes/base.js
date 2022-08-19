@@ -10,6 +10,7 @@ const {
   gray,
   grayTextInput,
   grayLight,
+  grayE2,
 
   activeSuccess,
   activeError,
@@ -44,6 +45,7 @@ const Base = {
     topVerticalAlign: "text-top",
     middleVerticalAlign: "middle",
     bottomVerticalAlign: "text-bottom",
+    letterSpacing: "0.04em",
     lineHeight: "13px",
     textTransform: "uppercase",
     fontSize: "12px",
@@ -143,7 +145,7 @@ const Base = {
     alignItems: "center",
 
     div: {
-      backgroundColor: grayLight,
+      backgroundColor: grayE2,
 
       height: "1px",
       flex: "1",
@@ -190,7 +192,7 @@ const Base = {
   },
 
   header: {
-    fontSize: ["48px", "40px", "32px", "24px", "18px", "14px", "14px"],
+    fontSize: ["48px", "48px", "32px", "24px", "18px", "14px", "14px"],
     lineHeight: ["74px", "53px", "38px", "32px", "24px", "19px", "19px"],
     fontWeight: 700,
     overflow: "auto",
@@ -202,10 +204,9 @@ const Base = {
   },
 
   form: {
-    border: `1px solid ${grayLight}`,
     borderRadius: "5px",
     boxShadow: "0px 20px 50px rgb(85 85 85 / 15%)",
-    padding: "24px 32px 44px 32px",
+    padding: "32px",
   },
 
   socialButton: {},

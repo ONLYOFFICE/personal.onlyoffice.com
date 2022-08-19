@@ -55,6 +55,7 @@ const StyledButton = styled.button`
   font-size: ${(props) => props.fontSize || props.theme.button.fontSize};
   font-weight: ${(props) => props.fontWeight || props.theme.button.fontWeight};
   text-transform: ${(props) => props.theme.button.textTransform};
+  letter-spacing: ${(props) => props.letterSpacing || props.theme.button.letterSpacing};
   line-height: ${(props) => props.lineHeight || props.theme.button.lineHeight};
 
   color: ${(props) =>

@@ -16,7 +16,6 @@ const CloudsSection = ({ textHeading, ...rest }) => {
     >
       <Heading
         textAlign="center"
-        padding="0 0 30px"
         level={2}
         className="clouds-header"
       >

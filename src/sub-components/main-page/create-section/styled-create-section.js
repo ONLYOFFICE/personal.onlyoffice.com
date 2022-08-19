@@ -32,7 +32,7 @@ const StyledCreateSection = styled(HomeSection)`
 
   .section-page {
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 32px;
     grid-template-columns: 1fr 1fr;
 
     .text-block,
@@ -45,10 +45,15 @@ const StyledCreateSection = styled(HomeSection)`
       text-align: left;
       padding-top: 88px;
       letter-spacing: -0.03em;
+
       .description {
         padding-top: 24px;
-        font-size: 22px;
-        line-height: 150%;
+        font-size: 25px;
+        line-height: 120%;
+
+        pre {
+          margin: 0;
+        }
       }
 
       .description,
@@ -57,7 +62,7 @@ const StyledCreateSection = styled(HomeSection)`
       }
 
       .heading {
-        line-height: 60px;
+        line-height: 53px;
       }
     }
 
@@ -99,9 +104,14 @@ const StyledCreateSection = styled(HomeSection)`
         .description {
           text-align: center;
         }
+
         .description {
           padding-top: 20px;
           padding-bottom: 10px;
+
+          pre {
+            display: none;
+          }
         }
       }
     }
