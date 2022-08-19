@@ -1,13 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { Trans } from "gatsby-plugin-react-i18next";
+import globalColors from "../../../components/utils/global-colors";
 
 import Link from "../../../components/link";
 import Text from "../../../components/text";
 
 const StyledLicenceCheckbox = styled.div`
-  width: max-content;
+  margin-top: -8px;
   max-width: 100%;
+
+  p {
+    color: ${globalColors.grayTextInput};
+    font-size: 12px;
+    line-height: 16px;
+  }
 `;
 
 const LicenseCheckboxContent = ({ t }) => {
@@ -18,14 +25,15 @@ const LicenseCheckboxContent = ({ t }) => {
     <StyledLicenceCheckbox>
       <Text>
         <Trans
-          i18nKey="RegistrySettingTerms"
+          i18nKey="ByClickingAgreeTermsPrivacy"
           terms={t("TermAndCondition")}
           privacy={t("PrivacyStatement")}
         >
-          I agree to ONLYOFFICE
+          By clicking the button “CREATE NOW” you agree to ONLYOFFICE 
           <Link href="https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4543205&doc=VXlOK1NnMVdIYStuSFpMeFR4UVpmNE5VS3VTdENYdU50WjJ5Unh0OERiUT0_IjQ1NDMyMDUi0">
             {{ terms }}
           </Link>
+          and 
           <Link href="https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=5048502&doc=SXhWMEVzSEYxNlVVaXJJeUVtS0kyYk14YWdXTEFUQmRWL250NllHNUFGbz0_IjUwNDg1MDIi0&_ga=2.248662407.1867121315.1526272545-169631771.1404734630">
             {{ privacy }}
           </Link>

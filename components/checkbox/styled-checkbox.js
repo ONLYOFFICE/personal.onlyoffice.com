@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Base from "../themes/base";
+import globalColors from "../utils/global-colors";
 
 const StyledLabel = styled.label`
   display: grid;
@@ -23,6 +24,7 @@ const StyledLabel = styled.label`
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 
   .checkbox-text {
+    color: ${globalColors.grayTextInput};
     vertical-align: bottom;
   }
 `;

@@ -18,7 +18,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [isSubscribe, setIsSubscribe] = useState(true);
-  const [isAcceptLicence, setIsLicense] = useState(false);
   const [emailIsEmpty, setEmailIsEmpty] = useState(true);
   const [emailIsIncorrect, setEmailIsIncorrect] = useState(true);
   const [errorTextInput, setErrorTextInput] = useState(null);
@@ -39,10 +38,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
 
   const changeSubscribe = (e) => {
     setIsSubscribe(e.target.checked);
-  };
-
-  const changeAcceptLicense = (e) => {
-    setIsLicense(e.target.checked);
   };
 
   const onSubmitHandler = (e) => {
@@ -66,10 +61,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       setErrorTextInput(t("AuthErrorIndicationIncorrectEmail"));
     } else {
       setEmailIsIncorrect(false);
-    }
-
-    if (!isAcceptLicence) {
-      hasError = true;
     }
 
     if (hasError) return false;
@@ -143,7 +134,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
           <SocialButtons
             key="social-buttons"
             t={t}
-            isDisabled={!isAcceptLicence}
           />
         ),
       };
@@ -167,7 +157,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       isSubmit: true,
       labelButton: t("RegistryButtonCreateNow"),
       buttonClick: onSubmitHandler,
-      isDisabledButton: !isAcceptLicence,
       disabledValidation: false,
       isError:
         (emailIsEmpty && !emailIsValid) ||
@@ -183,10 +172,8 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       label: t("RegistrySettingSpam"),
     },
     {
-      type: "checkbox",
-      callback: changeAcceptLicense,
-      isChecked: isAcceptLicence,
-      label: <LicenceLink t={t} />,
+      type: "other",
+      element: <LicenceLink t={t} />,
     },
     {
       type: "button",
@@ -194,7 +181,6 @@ const CreateForm = ({ t, isPanel, buttonHref, currentLanguage }) => {
       isSubmit: true,
       typeButton: "primary",
       label: t("RegistryButtonCreateNow"),
-      isDisabled: !isAcceptLicence,
       toHideButton: isPanel,
       tabIndexProp: 0,
     },
