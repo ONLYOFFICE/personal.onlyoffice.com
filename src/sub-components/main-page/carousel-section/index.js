@@ -2,12 +2,9 @@ import React, { useRef } from "react";
 
 import Carousel from "../../../../components/carousel";
 import StyledCarouselSection from "./styled-carousel-section";
-import {
-  textCarouselSettings,
-  imageCarouselSettings,
-} from "./sub-components/carousel-settings";
-import { getTextItems, getImageItems } from "./sub-components/carousel-slides";
+import { getButtonItems, getTextItems, getImageItems } from "./sub-components/carousel-slides";
 import { getLocalizedImagePrefix } from "../../../helpers";
+import Text from "../../../../components/text";
 
 const localizedImages = ["ru", "de", "fr", "en-US"];
 
@@ -34,6 +31,45 @@ const CarouselSection = (props) => {
 
   const textCarouselData = mapCarouselItems(getTextItems(t));
   const imageCarouselData = mapCarouselItems(getImageItems(t));
+
+  const buttonCarouselItems = getButtonItems(t);
+  const srcIcon = `/site-assets/carousel-icons/`;
+
+  const textCarouselSettings = {
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
+    fade: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    customPaging: function(i) {
+      const curItem = buttonCarouselItems.slides[i];
+      return (
+        <a>
+          <img src={`${srcIcon}${curItem.iconName}`} />
+          <Text>{curItem.buttonText}</Text>
+        </a>
+      );
+    },
+  };
+
+  const imageCarouselSettings = {
+    fade: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+  };
 
   return (
     <StyledCarouselSection

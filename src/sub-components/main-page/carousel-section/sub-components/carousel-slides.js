@@ -1,3 +1,40 @@
+const getButtonItems = (t) => {
+  return {
+    slides: [
+      {
+        id: 0,
+        type: "button",
+        buttonText: t("Documents"),
+        iconName: "documents.svg",
+      },
+      {
+        id: 1,
+        type: "button",
+        buttonText: t("Spreadsheets"),
+        iconName: "spreadsheets.svg",
+      },
+      {
+        id: 2,
+        type: "button",
+        buttonText: t("Presentations"),
+        iconName: "presentations.svg",
+      },
+      {
+        id: 3,
+        type: "button",
+        buttonText: t("Collaborate"),
+        iconName: "collaborate.svg",
+      },
+    ],
+    get: function (id) {
+      const isSlides = (s) => s.id === id;
+      return this.slides.find(isSlides);
+    },
+    getAll: function () {
+      return this.slides;
+    },
+  };
+};
 const getTextItems = (t) => {
   return {
     slides: [
@@ -77,4 +114,4 @@ const getImageItems = () => {
   };
 };
 
-export { getTextItems, getImageItems };
+export { getButtonItems, getTextItems, getImageItems };

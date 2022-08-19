@@ -1,8 +1,43 @@
 import styled, { css } from "styled-components";
+import globalColors from "../utils/global-colors";
 
 const StyledCarousel = styled.div`
   margin: 0 auto;
   padding: 0px;
+
+  .slick-thumb {
+    bottom: auto;
+    column-gap: 24px;
+    display: flex !important;
+    justify-content: center;
+    top: -144px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    li {
+      display: block;
+      height: auto;
+      margin: 0;
+      width: auto;
+
+      &.slick-active p {
+        color: ${globalColors.orangeMain};
+        text-decoration: underline;
+      }
+
+      p {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        line-height: 15px;
+        margin-top: 16px;
+        text-transform: uppercase;
+      }
+    }
+  }
 
   .slick-slider {
     margin: 0 auto;

@@ -2,10 +2,17 @@ import styled from "styled-components";
 import HomeSection from "../../home-section";
 
 const StyledCarouselSection = styled(HomeSection)`
+  .carousel-item-button {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 15px;
+  }
+
   .carousel-item-image {
     width: 100%;
     height: 100%;
   }
+
   .image-carousel {
     display: block;
     object-fit: cover;
@@ -35,6 +42,8 @@ const StyledCarouselSection = styled(HomeSection)`
 
   .text-carousel {
     margin: 0 auto;
+    padding-top: 144px;
+    
     .slick-slider {
       .slick-list {
         max-width: 928px;
