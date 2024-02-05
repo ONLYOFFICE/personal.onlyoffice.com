@@ -26,10 +26,6 @@ const HeaderContent = ({
 
   let homepagePath = `/${language || defaultLanguage}`;
 
-  if (isDesktopClient) {
-    homepagePath += "/sign-in";
-  }
-
   return (
     <StyledHeaderContent {...rest}>
       <div className="logo-wrapper">

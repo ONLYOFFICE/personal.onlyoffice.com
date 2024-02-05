@@ -26,9 +26,7 @@ module.exports = {
           "**/404/",
           "**/404.html",
           "**/confirm/**/*",
-          "**/create-now/",
           "**/password-recovery/",
-          "**/sign-in/",
           "**/success/",
           "revision/",
           "oauth/",
@@ -85,9 +83,7 @@ module.exports = {
           {
             userAgent: "*",
             disallow: [
-              "/sign-in/",
               "/password-recovery/",
-              "/create-now/",
               "/success/",
               "/confirm/",
               "/revision/",

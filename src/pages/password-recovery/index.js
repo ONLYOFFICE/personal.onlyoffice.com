@@ -31,7 +31,9 @@ const PasswordRecoveryPage = () => {
   } = useTranslation();
 
   const buttonHref =
-    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
+    language === defaultLanguage
+      ? "https://www.onlyoffice.com/docspace-registration.aspx"
+      : `https://www.onlyoffice.com/${language}/docspace-registration.aspx`;
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -54,7 +56,7 @@ const PasswordRecoveryPage = () => {
     if (emailIsValid) {
       recoveryPassword(emailValue)
         .then(() =>
-          navigate("/sign-in", {
+          navigate("/", {
             state: {
               toastr: {
                 success: true,
@@ -107,24 +109,24 @@ const PasswordRecoveryPage = () => {
         <FormLink
           key="pass-recovery-link"
           currentLanguage={language}
-          href="sign-in"
+          href=""
           label={t("AuthDocsToLogin")}
         />
       ),
     },
-    {
-      type: "other",
-      element: (
-        <AdditionalSection
-          marginTop="56px"
-          smallMarginTop="22px"
-          key="additional"
-          textLabel={t("AuthDocsDontHave")}
-          buttonHref={buttonHref}
-          buttonLabel={t("RegistryButtonCreateNow")}
-        />
-      ),
-    },
+    // {
+    //   type: "other",
+    //   element: (
+    //     <AdditionalSection
+    //       marginTop="56px"
+    //       smallMarginTop="22px"
+    //       key="additional"
+    //       textLabel={t("AuthDocsDontHave")}
+    //       buttonHref={buttonHref}
+    //       buttonLabel={t("RegistryButtonCreateNow")}
+    //     />
+    //   ),
+    // },
   ];
   return (
     <Layout t={t}>
