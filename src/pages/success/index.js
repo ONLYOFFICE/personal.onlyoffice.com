@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
-import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 import Text from "../../../components/text";
@@ -17,6 +16,7 @@ import SuccessIcon from "../../../static/site-assets/icons/reg-success-checkmark
 import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
 import showToastr from "../../helpers/showToastr";
+import { getCreateUrl } from "../../helpers";
 
 const SuccessPage = ({ location }) => {
   const {
@@ -30,10 +30,7 @@ const SuccessPage = ({ location }) => {
   }, []);
   /* eslint-enable */
 
-  const buttonHref =
-    language === defaultLanguage
-      ? "https://www.onlyoffice.com/docspace-registration.aspx"
-      : `https://www.onlyoffice.com/${language}/docspace-registration.aspx`;
+  const buttonHref = getCreateUrl(language);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();

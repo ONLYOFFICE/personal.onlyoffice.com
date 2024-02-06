@@ -16,7 +16,7 @@ import SocialButtons from "../sub-components/social-buttons";
 
 import { getSettings, login } from "../api";
 
-import { createPasswordHash } from "../helpers";
+import { createPasswordHash, getCreateUrl } from "../helpers";
 
 import withDetectLanguage from "../helpers/withDetectLanguage";
 import showToastr from "../helpers/showToastr";
@@ -50,10 +50,7 @@ const SignInPage = ({ location }) => {
   }, []);
   /* eslint-enable */
 
-  const buttonHref =
-    language === defaultLanguage
-      ? "https://www.onlyoffice.com/docspace-registration.aspx"
-      : `https://www.onlyoffice.com/${language}/docspace-registration.aspx`;
+  const buttonHref = getCreateUrl(language);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);

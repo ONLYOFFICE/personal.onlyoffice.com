@@ -13,11 +13,11 @@ import FormLink from "../../sub-components/form-link";
 import FormDescription from "../../sub-components/form-description";
 import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
-import { defaultLanguage } from "../../../config.json";
 import { recoveryPassword } from "../../api";
 
 import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
+import { getCreateUrl } from "../../helpers";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -30,10 +30,7 @@ const PasswordRecoveryPage = () => {
     i18n: { language },
   } = useTranslation();
 
-  const buttonHref =
-    language === defaultLanguage
-      ? "https://www.onlyoffice.com/docspace-registration.aspx"
-      : `https://www.onlyoffice.com/${language}/docspace-registration.aspx`;
+  const buttonHref = getCreateUrl(language);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -114,19 +111,19 @@ const PasswordRecoveryPage = () => {
         />
       ),
     },
-    // {
-    //   type: "other",
-    //   element: (
-    //     <AdditionalSection
-    //       marginTop="56px"
-    //       smallMarginTop="22px"
-    //       key="additional"
-    //       textLabel={t("AuthDocsDontHave")}
-    //       buttonHref={buttonHref}
-    //       buttonLabel={t("RegistryButtonCreateNow")}
-    //     />
-    //   ),
-    // },
+    {
+      type: "other",
+      element: (
+        <AdditionalSection
+          marginTop="56px"
+          smallMarginTop="22px"
+          key="additional"
+          textLabel={t("AuthDocsDontHave")}
+          buttonHref={buttonHref}
+          buttonLabel={t("RegistryButtonCreateNow")}
+        />
+      ),
+    },
   ];
   return (
     <Layout t={t}>

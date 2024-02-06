@@ -185,3 +185,43 @@ export const removeOAuthKey = () => {
   localStorage.removeItem("profile");
   localStorage.removeItem("code");
 };
+
+export const getCreateUrl = (language) => {
+  let dstPath = "";
+
+  if (language !== config.defaultLanguage) {
+    const docspaceLangs = [
+      "en-GB",
+      "fr",
+      "de",
+      "es",
+      "pt-BR",
+      "it",
+      "cs",
+      "nl",
+      "ja",
+      "zh",
+      "ru",
+    ];
+
+    const lng = docspaceLangs.find((l) => l === language);
+
+    if (!!lng) {
+      switch (lng) {
+        case "en-GB":
+          dstPath += "en";
+          break;
+        case "pt-BR":
+          dstPath += "pt";
+          break;
+        default:
+          dstPath += language;
+          break;
+      }
+
+      dstPath += "/";
+    }
+  }
+
+  return `https://www.onlyoffice.com/${dstPath}docspace-registration.aspx`;
+};
