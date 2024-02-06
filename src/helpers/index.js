@@ -196,6 +196,7 @@ export const getCreateUrl = (language) => {
       "de",
       "es",
       "pt-BR",
+      "pt",
       "it",
       "cs",
       "nl",
