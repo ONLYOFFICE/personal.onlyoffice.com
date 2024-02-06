@@ -194,7 +194,9 @@ export const getCreateUrl = (language) => {
       "en-GB",
       "fr",
       "de",
+      "de-CH",
       "es",
+      "es-MX",
       "pt-BR",
       "pt",
       "it",
@@ -214,6 +216,12 @@ export const getCreateUrl = (language) => {
           break;
         case "pt-BR":
           dstPath += "pt";
+          break;
+        case "es-MX":
+          dstPath += "es";
+          break;
+        case "de-CH":
+          dstPath += "de";
           break;
         default:
           dstPath += language;
