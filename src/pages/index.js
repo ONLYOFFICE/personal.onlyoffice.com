@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { defaultLanguage } from "../../config.json";
 import Layout from "../../components/layout";
 import Form from "../../components/form";
 import toastr from "../../components/toast/toastr";

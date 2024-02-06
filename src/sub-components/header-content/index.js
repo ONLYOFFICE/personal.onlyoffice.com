@@ -10,8 +10,6 @@ import Link from "../../../components/internal-link";
 import CookieSnackbar from "../cookie-snackbar";
 import config from "../../../config.json";
 
-const { defaultLanguage } = config;
-
 const HeaderContent = ({
   t,
   language,
@@ -24,7 +22,7 @@ const HeaderContent = ({
   const isDesktopClient =
     typeof window !== "undefined" && window["AscDesktopEditor"] !== undefined;
 
-  let homepagePath = `/${language || defaultLanguage}`;
+  let homepagePath = `/${language || config.defaultLanguage}`;
 
   return (
     <StyledHeaderContent {...rest}>
