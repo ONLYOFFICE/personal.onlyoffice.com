@@ -7,8 +7,7 @@ FROM $REPO:$REPO_TAG AS base
 ARG SRC_PATH
 ARG GIT_BRANCH=develop
 
-RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null && \
-    apt-get -y update && \
+RUN apt-get -y update && \
     apt-get install -yq git yarn 
 
 RUN echo ${GIT_BRANCH}  && \
