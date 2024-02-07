@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import Layout from "../../components/layout";
-import Form from "../../components/form";
-import toastr from "../../components/toast/toastr";
+import Layout from "../../../components/layout";
+import Form from "../../../components/form";
+import toastr from "../../../components/toast/toastr";
 
-import AdditionalSection from "../sub-components/additional-section";
-import FooterContent from "../sub-components/footer-content";
-import FormLink from "../sub-components/form-link";
-import Head from "../sub-components/head";
-import HeaderContent from "../sub-components/header-content";
-import StyledSection from "../sub-components/section";
-import SocialButtons from "../sub-components/social-buttons";
+import AdditionalSection from "../../sub-components/additional-section";
+import FooterContent from "../../sub-components/footer-content";
+import FormLink from "../../sub-components/form-link";
+import Head from "../../sub-components/head";
+import HeaderContent from "../../sub-components/header-content";
+import StyledSection from "../../sub-components/section";
+import SocialButtons from "../../sub-components/social-buttons";
 
-import { getSettings, login } from "../api";
+import { getSettings, login } from "../../api";
 
-import { createPasswordHash, getCreateUrl } from "../helpers";
+import { createPasswordHash, getCreateUrl } from "../../helpers";
 
-import withDetectLanguage from "../helpers/withDetectLanguage";
-import showToastr from "../helpers/showToastr";
+import withDetectLanguage from "../../helpers/withDetectLanguage";
+import showToastr from "../../helpers/showToastr";
 
 const SignInPage = ({ location }) => {
   const [emailValue, setEmailValue] = useState("");
