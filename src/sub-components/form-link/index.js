@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "../../../components/internal-link";
-import { defaultLanguage } from "../../../config.json";
+import config from "../../../config.json";
 const FormLink = ({ href, label, currentLanguage }) => {
   return (
     <Link
       fontSize="16px"
       href={
-        currentLanguage === defaultLanguage
+        currentLanguage === config.defaultLanguage
           ? `/${href}`
           : `/${currentLanguage}/${href}`
       }

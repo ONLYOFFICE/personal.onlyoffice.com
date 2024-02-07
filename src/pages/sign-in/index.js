@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { defaultLanguage } from "../../../config.json";
 import Layout from "../../../components/layout";
 import Form from "../../../components/form";
 import toastr from "../../../components/toast/toastr";
@@ -16,7 +15,7 @@ import SocialButtons from "../../sub-components/social-buttons";
 
 import { getSettings, login } from "../../api";
 
-import { createPasswordHash } from "../../helpers/";
+import { createPasswordHash, getCreateUrl } from "../../helpers";
 
 import withDetectLanguage from "../../helpers/withDetectLanguage";
 import showToastr from "../../helpers/showToastr";
@@ -50,8 +49,7 @@ const SignInPage = ({ location }) => {
   }, []);
   /* eslint-enable */
 
-  const buttonHref =
-    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
+  const buttonHref = getCreateUrl(language);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);

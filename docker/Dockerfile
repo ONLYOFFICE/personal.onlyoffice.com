@@ -1,14 +1,13 @@
 ### STAGE 1: Base image ######
 ARG REPO=node
-ARG REPO_TAG=14.17
+ARG REPO_TAG=18.14
 ARG SRC_PATH=/app/onlyoffice/src
 
 FROM $REPO:$REPO_TAG AS base
 ARG SRC_PATH
 ARG GIT_BRANCH=develop
 
-RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null && \
-    apt-get -y update && \
+RUN apt-get -y update && \
     apt-get install -yq git yarn 
 
 RUN echo ${GIT_BRANCH}  && \

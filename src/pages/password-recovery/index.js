@@ -13,11 +13,11 @@ import FormLink from "../../sub-components/form-link";
 import FormDescription from "../../sub-components/form-description";
 import AdditionalSection from "../../sub-components/additional-section";
 import FooterContent from "../../sub-components/footer-content";
-import { defaultLanguage } from "../../../config.json";
 import { recoveryPassword } from "../../api";
 
 import { navigate } from "gatsby";
 import withDetectLanguage from "../../helpers/withDetectLanguage";
+import { getCreateUrl } from "../../helpers";
 
 const PasswordRecoveryPage = () => {
   const [emailValue, setEmailValue] = useState("");
@@ -30,8 +30,7 @@ const PasswordRecoveryPage = () => {
     i18n: { language },
   } = useTranslation();
 
-  const buttonHref =
-    language === defaultLanguage ? "/create-now" : `/${language}/create-now`;
+  const buttonHref = getCreateUrl(language);
 
   const onEmailChangeHandler = (e, isValid) => {
     setEmailValue(e.target.value);
@@ -54,7 +53,7 @@ const PasswordRecoveryPage = () => {
     if (emailIsValid) {
       recoveryPassword(emailValue)
         .then(() =>
-          navigate("/sign-in", {
+          navigate("/", {
             state: {
               toastr: {
                 success: true,
@@ -107,7 +106,7 @@ const PasswordRecoveryPage = () => {
         <FormLink
           key="pass-recovery-link"
           currentLanguage={language}
-          href="sign-in"
+          href=""
           label={t("AuthDocsToLogin")}
         />
       ),

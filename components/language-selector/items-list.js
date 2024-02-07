@@ -11,7 +11,7 @@ import IconButton from "../icon-button";
 import Portal from "../portal";
 import { setCookie } from "../../src/helpers";
 import { SITE_LANGUAGE_COOKIE } from "../../src/helpers/constants";
-import { defaultLanguage } from "../../config.json";
+import config from "../../config.json";
 
 export default function LangsList(props) {
   const { t, isOpen, currentLanguage, onCloseSelector } = props;
@@ -48,8 +48,8 @@ export default function LangsList(props) {
     return languages.map((language) => {
       const { shortKey, iconName, key } = language;
       let localizedPath;
-      if (currentLanguage === defaultLanguage) {
-        if (path.includes(defaultLanguage)) {
+      if (currentLanguage === config.defaultLanguage) {
+        if (path.includes(config.defaultLanguage)) {
           localizedPath = path.replace(currentLanguage, shortKey);
         } else {
           localizedPath = `/${shortKey}${path}`;

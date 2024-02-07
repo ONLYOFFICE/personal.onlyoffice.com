@@ -1,82 +1,185 @@
-import React, { useEffect } from "react";
-import { graphql, navigate } from "gatsby";
+import React, { useState, useEffect } from "react";
+import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../../components/layout";
-import CreateSection from "../sub-components/main-page/create-section";
+import Form from "../../components/form";
+import toastr from "../../components/toast/toastr";
+
+import AdditionalSection from "../sub-components/additional-section";
+import FooterContent from "../sub-components/footer-content";
+import FormLink from "../sub-components/form-link";
 import Head from "../sub-components/head";
 import HeaderContent from "../sub-components/header-content";
-import CarouselSection from "../sub-components/main-page/carousel-section";
+import StyledSection from "../sub-components/section";
+import SocialButtons from "../sub-components/social-buttons";
+
+import { getSettings, login } from "../api";
+
+import { createPasswordHash, getCreateUrl } from "../helpers";
+
 import withDetectLanguage from "../helpers/withDetectLanguage";
 import showToastr from "../helpers/showToastr";
 
-const CloudsSection = React.lazy(() =>
-  import("../sub-components/main-page/clouds-section")
-);
-const DownloadSection = React.lazy(() =>
-  import("../sub-components/main-page/download-section")
-);
-const BlockquoteSection = React.lazy(() =>
-  import("../sub-components/main-page/blockquote-section")
-);
-const ReviewSection = React.lazy(() =>
-  import("../sub-components/main-page/review-section")
-);
+const SignInPage = ({ location }) => {
+  const [emailValue, setEmailValue] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(true);
+  const [passwordValue, setPasswordValue] = useState("");
+  const [passwordIsValid, setPasswordIsValid] = useState(true);
+  const [isChecked, setIsChecked] = useState(true);
 
-const FooterSection = React.lazy(() =>
-  import("../sub-components/footer-content")
-);
+  const [hashSettings, setHashSettings] = useState();
 
-const IndexPage = ({ location }) => {
+  const [emailIsEmpty, setEmailIsEmpty] = useState(null);
+  const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
+
+  useEffect(() => {
+    getSettings()
+      .then((res) => {
+        setHashSettings(res.passwordHash);
+      })
+      .catch((e) => console.log(e));
+  }, []);
   const {
     t,
     i18n: { language },
   } = useTranslation();
-
   /* eslint-disable */
   useEffect(() => {
     showToastr(location, t);
   }, []);
-
-  useEffect(() => {
-    const isDesktopClient = window["AscDesktopEditor"] !== undefined;
-    if (isDesktopClient) {
-      navigate("/sign-in");
-    }
-  }, []);
   /* eslint-enable */
 
-  const isSSR = typeof window === "undefined";
+  const buttonHref = getCreateUrl(language);
 
-  const lazyRender = () => {
-    return (
-      <>
-        {!isSSR && (
-          <React.Suspense fallback={<div />}>
-            <CloudsSection textHeading={t("AuthDocsConnect")} />
-            <DownloadSection t={t} language={language} />
-            <BlockquoteSection
-              text={t("SoftpediaDescription")}
-              linkText={t("AuthDocsSoftpedia")}
-            />
-            <ReviewSection t={t} />
-          </React.Suspense>
-        )}
-      </>
-    );
+  const onEmailChangeHandler = (e, isValid) => {
+    setEmailValue(e.target.value);
+    setEmailIsValid(isValid);
+    setEmailIsEmpty(false);
   };
 
-  const footerRender = () => {
-    return (
-      !isSSR && (
-        <React.Suspense fallback={<div />}>
-          <FooterSection t={t} isHomePage language={language} />
-        </React.Suspense>
-      )
-    );
+  const onPasswordChangeHandler = (e, isValid) => {
+    setPasswordValue(e.target.value);
+    setPasswordIsValid(isValid);
+    setPasswordIsEmpty(false);
   };
 
-  const content = lazyRender();
-  const footer = footerRender();
+  const changeCheckbox = (e) => {
+    setIsChecked(e.target.checked);
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    let hasError;
+
+    if (!passwordValue.trim()) {
+      hasError = true;
+      setPasswordIsValid(false);
+      setPasswordIsEmpty(true);
+    }
+
+    if (!emailValue.trim()) {
+      hasError = true;
+      setEmailIsValid(false);
+      setEmailIsEmpty(true);
+    }
+
+    if (hasError) return;
+
+    const hash = createPasswordHash(passwordValue, hashSettings);
+    const session = !isChecked;
+
+    if (emailIsValid && passwordIsValid) {
+      login(emailValue, hash, session)
+        .then(() => {
+          const redirectPath = localStorage.getItem("redirectPath");
+          if (redirectPath) localStorage.removeItem("redirectPath");
+          window.location.href = redirectPath || "/";
+        })
+        .catch((e) => toastr.error(t("InvalidUserNameOrPwd")));
+    } else {
+      toastr.error(t("InvalidUserNameOrPwd"));
+    }
+  };
+
+  const formSeparator = {
+    type: "separator",
+    separatorText: t("AuthDocsEnterViaSocial"),
+  };
+
+  const socialButtonsSection = {
+    type: "other",
+    element: <SocialButtons key="social-buttons" t={t} />,
+  };
+
+  const formData = [
+    { type: "heading", headingText: t("PersonalLogin"), isHeader: true },
+
+    {
+      type: "input",
+      inputType: "email",
+      placeholder: t("Email"),
+      callback: onEmailChangeHandler,
+      value: emailValue,
+      tabIndexProp: 1,
+      isAutoFocussed: true,
+      isError: !emailIsValid,
+      errorText: emailIsEmpty ? t("AuthErrorIndicationText") : "",
+    },
+    {
+      type: "input",
+      inputType: "password",
+      placeholder: t("Password"),
+      callback: onPasswordChangeHandler,
+      value: passwordValue,
+      autoComplete: "current-password",
+      tabIndexProp: 2,
+      isError: !passwordIsValid,
+      errorText: passwordIsEmpty ? t("AuthErrorIndicationText") : "",
+    },
+    {
+      type: "checkbox",
+      callback: changeCheckbox,
+      isChecked: isChecked,
+      label: t("Remember"),
+    },
+    {
+      type: "button",
+      callback: onSubmitHandler,
+
+      isSubmit: true,
+      toHideButton: false,
+      typeButton: "primary",
+      label: t("AuthDocsSignIn"),
+      tabIndexProp: 3,
+    },
+    {
+      type: "other",
+      element: (
+        <FormLink
+          key="pass-recovery-link"
+          currentLanguage={language}
+          href="password-recovery"
+          label={t("AuthDocsForgotPswd")}
+        />
+      ),
+    },
+    { ...formSeparator },
+    {
+      ...socialButtonsSection,
+    },
+    {
+      type: "other",
+      element: (
+        <AdditionalSection
+          key="additional"
+          textLabel={t("AuthDocsDontHave")}
+          buttonHref={buttonHref}
+          buttonLabel={t("RegistryButtonCreateNow")}
+        />
+      ),
+    },
+  ];
 
   return (
     <Layout t={t}>
@@ -93,21 +196,30 @@ const IndexPage = ({ location }) => {
         <HeaderContent
           t={t}
           language={language}
-          href="sign-in"
-          labelButton={t("AuthDocsLogIn")}
+          href={buttonHref}
+          labelButton={t("RegistryButtonCreateNow")}
+          headerText={t("AuthDocsDontHave")}
+          toHideButton
         />
       </Layout.PageHeader>
+
       <Layout.SectionMain>
-        <CreateSection t={t} currentLanguage={language} />
-        <CarouselSection t={t} language={language} />
-        {content}
+        <StyledSection>
+          <Form
+            className="login-form"
+            submitForm={onSubmitHandler}
+            formData={formData}
+          />
+        </StyledSection>
       </Layout.SectionMain>
-      <Layout.PageFooter isHomePage>{footer}</Layout.PageFooter>
+      <Layout.PageFooter>
+        <FooterContent t={t} language={language} />
+      </Layout.PageFooter>
     </Layout>
   );
 };
 
-export default withDetectLanguage(IndexPage);
+export default withDetectLanguage(SignInPage);
 
 export const query = graphql`
   query($language: String!) {
