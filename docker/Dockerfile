@@ -1,6 +1,6 @@
 ### STAGE 1: Base image ######
 ARG REPO=node
-ARG REPO_TAG=14.17
+ARG REPO_TAG=18.14
 ARG SRC_PATH=/app/onlyoffice/src
 
 FROM $REPO:$REPO_TAG AS base
